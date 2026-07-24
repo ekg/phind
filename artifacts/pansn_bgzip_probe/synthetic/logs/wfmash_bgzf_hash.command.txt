@@ -1,0 +1,1 @@
+argv: wfmash /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/canonical/EXAMPLE_ASM_A_v1.pansn.fa.gz /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/canonical/EXAMPLE_ASM_B_v2.pansn.fa.gz -m -p 80 -l 500 -w 100 -s 100 -k 15 -t 1 -f --quiet

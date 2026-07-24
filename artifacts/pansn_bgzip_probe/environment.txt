@@ -1,0 +1,11 @@
+generated_utc=2026-07-24T20:13:52Z
+probe_root=/home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe
+kernel=Linux 6.8.0-134-generic x86_64 GNU/Linux
+hostname=lambda01
+architecture=x86_64
+locale=C
+shell=5.2.21(1)-release
+path=/home/erikg/.pi/agent/bin:/home/erikg/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/erikg/.elan/bin:/home/erikg/.local/bin:/home/erikg/bin:/home/erikg/.nvm/versions/node/v24.18.0/bin:/home/erikg/micromamba/condabin:/home/erikg/.elan/bin:/home/erikg/.cargo/bin:/home/erikg/.local/bin:/home/erikg/bin:/home/erikg/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/erikg/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/erikg/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/bin:/home/erikg/.fzf/bin:/home/erikg/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/bin
+PRETTY_NAME="Ubuntu 24.04.2 LTS"
+VERSION_ID="24.04"
+scope=synthetic_only; no network; no production inputs read

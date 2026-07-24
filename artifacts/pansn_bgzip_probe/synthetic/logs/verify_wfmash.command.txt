@@ -1,0 +1,1 @@
+bash -o pipefail -c $'awk -F \'\\t\' \'\nBEGIN { ok=0 }\nNF>=12 {\n  if ($1 !~ /^EXAMPLE_ASM_B_v2#1#/) exit 20\n  if ($6 !~ /^EXAMPLE_ASM_A_v1#1#/) exit 21\n  ok=1\n}\nEND { if (!ok) exit 22 }\n\' \'/home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/results/wfmash_bgzf_hash.paf\''

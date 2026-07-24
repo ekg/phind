@@ -1,0 +1,5 @@
+synthetic_assemblies=2
+retained_fasta_files=4
+retained_probe_bytes=144115
+fasta_limit=5
+byte_limit=104857600

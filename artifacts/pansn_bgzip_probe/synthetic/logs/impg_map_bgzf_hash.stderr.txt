@@ -1,0 +1,2 @@
+[2026-07-24T20:13:52Z INFO  impg] Loading syng index from prefix: /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a
+read GBWT with 1050 vertices and 2100 edges from /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.1gbwt

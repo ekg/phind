@@ -1,0 +1,17 @@
+case	exit_status	result
+bgzip_test_a	0	PASS
+bgzip_test_b	0	PASS
+checksums	0	PASS
+convert_gzip_to_bgzf	0	PASS
+convert_plain_to_bgzf	0	PASS
+generate_inputs	0	PASS
+gzip_test_source_b	0	PASS
+impg_map_bgzf_hash	0	PASS
+impg_syng_bgzf_hash	0	PASS
+samtools_faidx_a	0	PASS
+samtools_faidx_b	0	PASS
+samtools_region_hash	0	PASS
+verify_impg	0	PASS
+verify_samtools	0	PASS
+verify_wfmash	0	PASS
+wfmash_bgzf_hash	0	PASS

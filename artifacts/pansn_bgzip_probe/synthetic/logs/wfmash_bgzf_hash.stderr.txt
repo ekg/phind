@@ -1,0 +1,25 @@
+[wfmash] Parameters: k=15, s=100, w=100 (split), l=500, c=2000, P=50000, j=100000, D=100000, S=10000, n=1, p=80%, t=1, b=9223372036854775807
+[wfmash] Filters: skip-self, hg(Δ=0,conf=1), mode=3 (1=map,2=1-to-1,3=none)
+[wfmash] Output: /dev/stdout
+[wfmash] Memory handler installed - will abort cleanly on allocation failure
+[wfmash] MashMap v3.5.0
+[wfmash] Final parameters: identity=80.0%, sketchSize=100, minimumHits=3, windowLength=100, kmerSize=15
+[wfmash::mashmap] 2 queries (27600bp) in 1 groups (≈27600bp/group)
+[wfmash::mashmap] 2 targets (28800bp) in 1 groups (≈28800bp/group)
+[wfmash::mashmap] Processing 1 target subsets (≈28800bp/subset)
+[wfmash::mashmap] Processing subset 1/1 (mapping)
+[wfmash::mashmap] indexing [0.0% complete, 0/100 units, 0s elapsed]
+[wfmash::mashmap] indexing finishing...
+[wfmash::mashmap] indexing [100.0% complete, 100/100 units, 0s elapsed]
+[wfmash::mashmap] indexing completed.
+[wfmash::mashmap] building [0.0% complete, 0/28914 units, 0s elapsed]
+[wfmash::mashmap] building finishing...
+[wfmash::mashmap] building [100.0% complete, 28914/28914 units, 0s elapsed]
+[wfmash::mashmap] building completed.
+[wfmash::mashmap] Processed 2 sequences (0 skipped, 28800 total bp), 28772 unique hashes, 28914 windows
+[wfmash::mashmap] Filtered 0/28914 k-mers occurring > 5 times (target: 0.02%)
+[wfmash::mashmap] reference index computed in 0s
+[wfmash::mashmap] mapping  [0.0% complete, 0/27600 units, 0s elapsed]
+[wfmash::mashmap] mapping  [100.0% complete, 27600/27600 units, 0s elapsed]
+[wfmash::mashmap] Subset processing complete, results saved to: /dev/stdout
+[wfmash::mashmap] Mapped query in 0.3s, results saved to: /dev/stdout

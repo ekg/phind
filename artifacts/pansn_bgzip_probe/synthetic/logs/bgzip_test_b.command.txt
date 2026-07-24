@@ -1,0 +1,1 @@
+argv: bgzip -t /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/canonical/EXAMPLE_ASM_B_v2.pansn.fa.gz

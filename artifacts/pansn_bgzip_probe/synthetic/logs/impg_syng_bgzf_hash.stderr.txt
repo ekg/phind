@@ -1,0 +1,14 @@
+[2026-07-24T20:13:52Z INFO  impg] Building syng index with syncmer params: paper k=63, paper s=8, internal k=8, w=55, seed=7, threads=1
+[2026-07-24T20:13:52Z INFO  impg] Reading sequences from FASTA: /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/canonical/EXAMPLE_ASM_A_v1.pansn.fa.gz at +0us
+[2026-07-24T20:13:52Z INFO  impg] Online regular sampled position sidecars enabled: every 256 syncmer steps per path
+[2026-07-24T20:13:52Z INFO  impg]   Processing EXAMPLE_ASM_A_v1#1#EXAMPLE_CHROMOSOME_v1 (24000 bp)
+[2026-07-24T20:13:52Z INFO  impg]   Indexed EXAMPLE_ASM_A_v1#1#EXAMPLE_CHROMOSOME_v1: 24000 bp, 880 syncmers, indexed=true, elapsed 2.938ms, total 1 sequences / 24000 bp / 880 syncmers at +3.208ms
+[2026-07-24T20:13:52Z INFO  impg]   Processing EXAMPLE_ASM_A_v1#1#EXAMPLE_PLASMID_v1 (4800 bp)
+[2026-07-24T20:13:52Z INFO  impg]   Indexed EXAMPLE_ASM_A_v1#1#EXAMPLE_PLASMID_v1: 4800 bp, 170 syncmers, indexed=true, elapsed 497us, total 2 sequences / 28800 bp / 1050 syncmers at +3.750ms
+[2026-07-24T20:13:52Z INFO  impg] Built syng paths from 2 sequences (28800 bp, 1050 syncmers) in 3.754ms
+[2026-07-24T20:13:52Z INFO  impg::syng] Parallel regular sampled-position rebuild: 2 paths, 1050 syncmer steps, grid period 256, 1 rayon threads
+[2026-07-24T20:13:52Z INFO  impg] Regular sampled path-step grid compacted in 113us: 7 checkpoints across 2 paths from 2 walked paths (sample_rate=256 syncmer steps) at +3.871ms
+[2026-07-24T20:13:52Z INFO  impg] Saving index to prefix: /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a
+[2026-07-24T20:13:52Z INFO  impg] Index saved in 6.563ms: /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.1khash, /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.1gbwt, /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.syng.names, /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.syng.spos, /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.syng.pstep, /home/erikg/phind/.wg-worktrees/agent-7/artifacts/pansn_bgzip_probe/synthetic/impg_index/example_a.syng.meta
+[2026-07-24T20:13:52Z INFO  impg] Name map contains 2 sequences
+[2026-07-24T20:13:52Z INFO  impg] Total syng build time: 10.453ms
