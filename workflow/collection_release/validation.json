@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "root_input_sha256",
+    "external_COMPLETE_and_SHA256SUMS",
+    "tracked_SHA256SUMS",
+    "lossless_occurrence_order",
+    "exact_requested_equals_resolved",
+    "deterministic_unique_ids",
+    "terminal_reject",
+    "metadata_status_accounting",
+    "stage_b_order"
+  ],
+  "counts": {
+    "current": 25291,
+    "input_candidates": 26077,
+    "metadata_unavailable_exact_valid": 72,
+    "occurrences": 26078,
+    "sequence_payloads": 0,
+    "stage_b": 10,
+    "suppressed_terminal": 714
+  },
+  "external_inventory_sha256": "bd27dcca6c1e33eda8ccaafd30224aae5a2b5770ee6a87246474d6d55844f0e9",
+  "release_id": "collection-v1-f7494b4b89d1382b",
+  "validated_at_utc": "2026-07-24T22:07:49.175459Z",
+  "verdict": "PASS"
+}
