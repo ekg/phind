@@ -1,0 +1,16 @@
+name: phind-consumer-compat-v1
+channels:
+  - conda-forge
+  - bioconda
+channel_priority: strict
+dependencies:
+  - python=3.12
+  - mash=2.3
+  - rapidnj=2.3.2
+  - skani=0.3.1
+  - quast=5.3.0
+  - gffread=0.12.7
+  - prodigal=2.6.3
+  - mmseqs2=18.8cc5c
+  - hmmer=3.4
+  - mcl=22.282

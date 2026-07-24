@@ -1,0 +1,20 @@
+consumer_id	tool	verdict	input_form	view_contract	invocation	output_name_behavior
+bgzip	bgzip	PASS	canonical per-assembly BGZF	direct	bgzip -t CANONICAL	does not rewrite FASTA names
+gffread	gffread 0.12.7 plus project strict semantic adapter	PASS	staged plain FASTA and reversible raw-seqid GFF view	gff-semantic-alias-v1	gffread semantic.gff3 -g staged.fa -w transcripts.fa	raw %23 does not equal FASTA #; adapter records lexical<->semantic mapping
+hmmer	HMMER 3.4	PASS	bounded protein alignment/HMM and Prodigal protein FASTA	direct	hmmbuild; hmmsearch --tblout	target identifiers retain literal #
+impg-map	IMPG 0.4.1 map	PASS	six-file SYNG prefix plus BGZF query	direct	impg map -a PREFIX -q QUERY.bgzf -o paf	PAF query/target names exact
+impg-query	IMPG 0.4.1 query	PASS	six-file SYNG prefix plus exact 0-based half-open range	direct	impg query -a PREFIX -r 'path:start-end' -d 0 -o bed --syng-raw	BED path is exact; raw interval is syncmer-padded and is not asserted base-aligned
+impg-syng-build	IMPG 0.4.1 syng	PASS	staged all-10 combined BGZF	combined-bgzf-all10-v1	impg syng -f PANEL -o PREFIX --parallel-dictionary	.names retains all 1,223 literal PanSN paths
+mash	Mash 2.3	PASS	ten canonical per-assembly BGZF files; whole-file mode (never -i)	direct	mash sketch -k 21 -s 1000 -l LIST; mash triangle COMPOUND.msh	sketch labels are input paths and are reversibly joined to ordered assembly manifest; one sketch/assembly
+mcl	MCL 22.282	PASS	ABC network over exact protein identifiers	direct	mcl network.abc --abc -I 2.0	cluster labels retain literal # identifiers
+mmseqs2	MMseqs2 18.8cc5c	PASS	Prodigal protein FASTA staged derivative	direct	mmseqs easy-cluster proteins.faa ... --min-seq-id 0.5 -c 0.8	cluster TSV retains full protein IDs
+odgi	odgi (pinned graph environment)	PASS	pggb final GFA	direct	odgi build; odgi paths -L/-f	exact two paths and FASTA headers
+pggb	pggb 0.6.0	PASS	bounded BGZF fixture derived from one authorized assembly	graph-fixture-v1	pggb -i FIXTURE.bgzf ... -t 2 -n 2	final GFA retains literal # path names
+prodigal	Prodigal 2.6.3	PASS	bounded BGZF fixture derived from an authorized canonical path	graph-fixture-v1	prodigal -i FIXTURE.fa.gz -a proteins.faa -d genes.fna -f gff	gene/GFF IDs retain path prefix and literal #
+quast	QUAST 5.3.0	PASS	canonical per-assembly BGZF directly	direct	quast.py --threads 1 -o OUT ASSEMBLY.bgzf	report column derives from file label; accession join remains external
+rapidnj	RapidNJ 2.3.2	PASS	checksum-verified full PHYLIP staged from Mash lower PHYLIP	mash-to-rapidnj-full-v1	rapidnj FULL_MATRIX -i pd -o t	quoted Newick tips preserve the ten Mash labels
+samtools-faidx	samtools faidx	PASS	canonical BGZF plus immutable .fai/.gzi	direct	samtools faidx CANONICAL 'literal#path:1-N'	FASTA header retains literal # exactly
+seqwish	seqwish (pinned graph environment)	PASS	pggb PAF plus fixture sequences	direct	invoked inside pinned pggb pipeline	induced GFA paths retain exact names
+skani	skani 0.3.1	PASS	canonical per-assembly BGZF directly	direct	skani dist ASSEMBLY.bgzf ASSEMBLY.bgzf	reports input file labels; downstream joins by manifest accession
+smoothxg	smoothxg (pinned graph environment)	PASS	seqwish GFA	direct	invoked inside pinned pggb pipeline	smooth final GFA paths retain exact names
+vg	vg (pinned graph environment)	PASS	pggb final GFA via vg convert	direct	vg convert -g -v; vg paths -L/-F	exact two paths and FASTA headers

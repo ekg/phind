@@ -1,0 +1,1 @@
+{"clean_restart_promoted_only_after_complete":true,"injected_signal":"SIGKILL","interrupted_final_absent_after_cleanup":true,"partial_cleaned":true,"partial_never_published":true,"tested_at_utc":"2026-07-24T23:08:05Z","verdict":"PASS","worker_returncode":-9}
