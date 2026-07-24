@@ -1,0 +1,10 @@
+probeA	360	8	335	+	genomeA	1200	188	515	341	327	0	an:i:11	sk:i:31
+probeA	360	8	335	+	genomeC	1200	188	515	341	327	0	an:i:11	sk:i:31
+probeA	360	75	335	+	genomeB	1200	255	515	217	260	0	an:i:7	sk:i:31
+probeA	360	9	176	+	genomeA	1200	189	356	155	167	0	an:i:5	sk:i:31
+probeA	360	9	176	+	genomeC	1200	189	356	155	167	0	an:i:5	sk:i:31
+probeA	360	252	348	+	genomeA	1200	432	528	93	96	0	an:i:3	sk:i:31
+probeA	360	3	93	+	genomeB	1200	183	273	93	90	0	an:i:3	sk:i:31
+probeA	360	252	348	+	genomeC	1200	432	528	93	96	0	an:i:3	sk:i:31
+probeA	360	13	93	+	genomeA	1200	193	273	62	80	0	an:i:2	sk:i:31
+probeA	360	203	269	+	genomeA	1200	383	449	62	66	0	an:i:2	sk:i:31

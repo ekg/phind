@@ -1,0 +1,260 @@
+$ wc -c /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/probe.fa
+3765 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa
+ 405 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/probe.fa
+4170 total
+[exit_status=0]
+$ /usr/bin/time -v /home/erikg/.cargo/bin/impg syng -f /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng --syncmer-length 31 --smer-length 5 --position-sample-rate 16 -t 1
+[2026-07-24T20:02:27Z INFO  impg] Building syng index with syncmer params: paper k=31, paper s=5, internal k=5, w=26, seed=7, threads=1
+[2026-07-24T20:02:27Z INFO  impg] Reading sequences from FASTA: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa at +5us
+[2026-07-24T20:02:27Z INFO  impg] Online regular sampled position sidecars enabled: every 16 syncmer steps per path
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeA (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed genomeA: 1200 bp, 105 syncmers, indexed=true, elapsed 396us, total 1 sequences / 1200 bp / 105 syncmers at +508us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeB (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed genomeB: 1200 bp, 103 syncmers, indexed=true, elapsed 122us, total 2 sequences / 2400 bp / 208 syncmers at +638us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeC (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed genomeC: 1200 bp, 107 syncmers, indexed=true, elapsed 44us, total 3 sequences / 3600 bp / 315 syncmers at +692us
+[2026-07-24T20:02:27Z INFO  impg] Built syng paths from 3 sequences (3600 bp, 315 syncmers) in 702us
+[2026-07-24T20:02:27Z INFO  impg::syng] Parallel regular sampled-position rebuild: 3 paths, 315 syncmer steps, grid period 16, 1 rayon threads
+[2026-07-24T20:02:27Z INFO  impg] Regular sampled path-step grid compacted in 115us: 24 checkpoints across 3 paths from 3 walked paths (sample_rate=16 syncmer steps) at +828us
+[2026-07-24T20:02:27Z INFO  impg] Saving index to prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng
+[2026-07-24T20:02:27Z INFO  impg] Index saved in 7.356ms: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.1khash, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.1gbwt, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.names, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.spos, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.pstep, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.meta
+[2026-07-24T20:02:27Z INFO  impg] Name map contains 3 sequences
+[2026-07-24T20:02:27Z INFO  impg] Total syng build time: 8.202ms
+	Command being timed: "/home/erikg/.cargo/bin/impg syng -f /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng --syncmer-length 31 --smer-length 5 --position-sample-rate 16 -t 1"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 91%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12288
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4130
+	Voluntary context switches: 17
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 40
+	File system outputs: 96
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[exit_status=0]
+$ /usr/bin/time -v /home/erikg/.cargo/bin/impg syng -f /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng --syncmer-length 31 --smer-length 5 --position-sample-rate 16 --parallel-dictionary -t 2
+[2026-07-24T20:02:27Z INFO  impg] Building syng index with syncmer params: paper k=31, paper s=5, internal k=5, w=26, seed=7, threads=2
+[2026-07-24T20:02:27Z INFO  impg] Reading sequences from FASTA for parallel dictionary build: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa at +0us
+[2026-07-24T20:02:27Z INFO  impg] Read 3 FASTA sequences (3600 bp) for dictionary prepass
+[2026-07-24T20:02:27Z INFO  impg] Built packed syncmer dictionary in 257us: 139 unique syncmer nodes at +308us
+[2026-07-24T20:02:27Z INFO  impg] Online regular sampled position sidecars enabled: every 16 syncmer steps per path
+[2026-07-24T20:02:27Z INFO  impg] Preloaded 139 syncmer nodes into KmerHash in 519us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeA (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed sequence 1/3 genomeA: 1200 bp, 105 syncmers, indexed=true, elapsed 51us, total 1 sequences / 3600 bp / 105 syncmers at +886us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeB (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed sequence 2/3 genomeB: 1200 bp, 103 syncmers, indexed=true, elapsed 31us, total 2 sequences / 3600 bp / 208 syncmers at +921us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeC (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed sequence 3/3 genomeC: 1200 bp, 107 syncmers, indexed=true, elapsed 24us, total 3 sequences / 3600 bp / 315 syncmers at +949us
+[2026-07-24T20:02:27Z INFO  impg] Built syng paths from 3 sequences (3600 bp, 315 syncmers) in 952us
+[2026-07-24T20:02:27Z INFO  impg::syng] Parallel regular sampled-position rebuild: 3 paths, 315 syncmer steps, grid period 16, 2 rayon threads
+[2026-07-24T20:02:27Z INFO  impg] Regular sampled path-step grid compacted in 75us: 24 checkpoints across 3 paths from 3 walked paths (sample_rate=16 syncmer steps) at +1.035ms
+[2026-07-24T20:02:27Z INFO  impg] Saving index to prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng
+[2026-07-24T20:02:27Z INFO  impg] Index saved in 7.254ms: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1khash, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.names, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.spos, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.pstep, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.meta
+[2026-07-24T20:02:27Z INFO  impg] Name map contains 3 sequences
+[2026-07-24T20:02:27Z INFO  impg] Total syng build time: 8.307ms
+	Command being timed: "/home/erikg/.cargo/bin/impg syng -f /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng --syncmer-length 31 --smer-length 5 --position-sample-rate 16 --parallel-dictionary -t 2"
+	User time (seconds): 0.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 92%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12288
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4153
+	Voluntary context switches: 27
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 40
+	File system outputs: 96
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[exit_status=0]
+$ /usr/bin/time -v /home/erikg/.cargo/bin/impg syng -f /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng --syncmer-length 31 --smer-length 5 --position-sample-rate 16 --parallel-dictionary -t 2
+[2026-07-24T20:02:27Z INFO  impg] Building syng index with syncmer params: paper k=31, paper s=5, internal k=5, w=26, seed=7, threads=2
+[2026-07-24T20:02:27Z INFO  impg] Reading sequences from FASTA for parallel dictionary build: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa at +0us
+[2026-07-24T20:02:27Z INFO  impg] Read 3 FASTA sequences (3600 bp) for dictionary prepass
+[2026-07-24T20:02:27Z INFO  impg] Built packed syncmer dictionary in 246us: 139 unique syncmer nodes at +306us
+[2026-07-24T20:02:27Z INFO  impg] Online regular sampled position sidecars enabled: every 16 syncmer steps per path
+[2026-07-24T20:02:27Z INFO  impg] Preloaded 139 syncmer nodes into KmerHash in 495us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeA (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed sequence 1/3 genomeA: 1200 bp, 105 syncmers, indexed=true, elapsed 49us, total 1 sequences / 3600 bp / 105 syncmers at +857us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeB (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed sequence 2/3 genomeB: 1200 bp, 103 syncmers, indexed=true, elapsed 30us, total 2 sequences / 3600 bp / 208 syncmers at +892us
+[2026-07-24T20:02:27Z INFO  impg]   Processing genomeC (1200 bp)
+[2026-07-24T20:02:27Z INFO  impg]   Indexed sequence 3/3 genomeC: 1200 bp, 107 syncmers, indexed=true, elapsed 26us, total 3 sequences / 3600 bp / 315 syncmers at +922us
+[2026-07-24T20:02:27Z INFO  impg] Built syng paths from 3 sequences (3600 bp, 315 syncmers) in 925us
+[2026-07-24T20:02:27Z INFO  impg::syng] Parallel regular sampled-position rebuild: 3 paths, 315 syncmer steps, grid period 16, 2 rayon threads
+[2026-07-24T20:02:27Z INFO  impg] Regular sampled path-step grid compacted in 73us: 24 checkpoints across 3 paths from 3 walked paths (sample_rate=16 syncmer steps) at +1.005ms
+[2026-07-24T20:02:27Z INFO  impg] Saving index to prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng
+[2026-07-24T20:02:27Z INFO  impg] Index saved in 7.252ms: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.1khash, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.1gbwt, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.names, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.spos, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.pstep, /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.meta
+[2026-07-24T20:02:27Z INFO  impg] Name map contains 3 sequences
+[2026-07-24T20:02:27Z INFO  impg] Total syng build time: 8.274ms
+	Command being timed: "/home/erikg/.cargo/bin/impg syng -f /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng --syncmer-length 31 --smer-length 5 --position-sample-rate 16 --parallel-dictionary -t 2"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 92%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12288
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4155
+	Voluntary context switches: 27
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 48
+	File system outputs: 96
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[exit_status=0]
+$ bash -c for\ s\ in\ 1khash\ 1gbwt\ names\ pstep\ spos\ meta\;\ do\ sha256sum\ \"\$1/serial.syng.\$s\"\ \"\$1/parallel.syng.\$s\"\ \"\$1/parallel_repeat.syng.\$s\"\;\ done _ /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+c57fcbc9d2a79e3af8433f219f57bb89740cc7f4e17c62ad32985184053c7da5  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.1khash
+813188cd5abe81e532cd6d32ac784000b96f9d343a5ac3698c129f4644a07f33  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1khash
+813188cd5abe81e532cd6d32ac784000b96f9d343a5ac3698c129f4644a07f33  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.1khash
+9a8d4bd5ea4bdefd0f94cb4785c4b74a9ff095de778aa9b3beefb738e2cc125f  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.1gbwt
+873c3962690d63c8e3cd600c690e22c42c8b110ddea08385a47f319b2e6a7678  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt
+873c3962690d63c8e3cd600c690e22c42c8b110ddea08385a47f319b2e6a7678  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.1gbwt
+5a0d7fe4bd9419885d55a0292ec254c2529b68a302e08ad6a1862b8aba1122bc  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.names
+41f62fc6056ce3ef752c1c873ed08cc7f3fe6a34fb728d6e58f1d3cc32427bf6  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.names
+41f62fc6056ce3ef752c1c873ed08cc7f3fe6a34fb728d6e58f1d3cc32427bf6  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.names
+d116be333cb346106add56322b396111450bd8e2097ff1ab8a0db02c5c46faa7  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.pstep
+9ce4b26af2d4ccbac4a1909168b671c0c72171fdbfed75444c0c48d6f26a2ae6  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.pstep
+9ce4b26af2d4ccbac4a1909168b671c0c72171fdbfed75444c0c48d6f26a2ae6  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.pstep
+cb2abad14722fb5799c1b4097eafc5cd0f934ddc2361b62e3c93d21f84240f4b  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.spos
+abb9aea5e10ffe72d26d36a39a4fae1df7053063840b00f941b70fc857c7b91d  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.spos
+abb9aea5e10ffe72d26d36a39a4fae1df7053063840b00f941b70fc857c7b91d  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.spos
+da4d337491ef38b39ec04c84fea0671d368ac1225fec7eb4e71960ef32adaa6e  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.meta
+da4d337491ef38b39ec04c84fea0671d368ac1225fec7eb4e71960ef32adaa6e  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.meta
+da4d337491ef38b39ec04c84fea0671d368ac1225fec7eb4e71960ef32adaa6e  /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.meta
+[exit_status=0]
+$ bash -c for\ s\ in\ 1khash\ 1gbwt\ names\ pstep\ spos\ meta\;\ do\ cmp\ -s\ \"\$1/parallel.syng.\$s\"\ \"\$1/parallel_repeat.syng.\$s\"\ \|\|\ exit\ 1\;\ done _ /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+[exit_status=0]
+$ bash -c \"\$1\"\ query\ -a\ \"\$2/parallel.syng\"\ -r\ genomeA:180-540\ -d\ 50\ --syng-raw\ -o\ bed\ -t\ 2\ \>\"\$2/query.bed\" _ /home/erikg/.cargo/bin/impg /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+[2026-07-24T20:02:27Z INFO  impg] Loading syng index from prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng
+read GBWT with 139 vertices and 304 edges from /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt
+[2026-07-24T20:02:27Z INFO  impg] Syng query: genomeA:180-540 (genomeA:180-540)
+[2026-07-24T20:02:27Z INFO  impg] Collected 3 merged intervals (gap-2d, d=50)
+[2026-07-24T20:02:27Z INFO  impg] Collected 3 merged intervals
+[2026-07-24T20:02:27Z INFO  impg] Syng query complete: genomeA:180-540 (genomeA:180-540) in 186us
+[exit_status=0]
+$ bash -c \"\$1\"\ map\ -a\ \"\$2/parallel.syng\"\ -q\ \"\$2/probe.fa\"\ -o\ gaf\ -t\ 2\ \>\"\$2/map.gaf\" _ /home/erikg/.cargo/bin/impg /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+[2026-07-24T20:02:27Z INFO  impg] Loading syng syncmer dictionary from prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng
+[2026-07-24T20:02:27Z INFO  impg] Mapped 1 query sequences to 1 GAF records (31 syncmer anchors) in 0.001s using 2 threads
+[exit_status=0]
+$ bash -c \"\$1\"\ map\ -a\ \"\$2/parallel.syng\"\ -q\ \"\$2/probe.fa\"\ -o\ paf\ --min-anchors\ 2\ --max-hits\ 10\ -t\ 2\ \>\"\$2/map.paf\" _ /home/erikg/.cargo/bin/impg /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+[2026-07-24T20:02:27Z INFO  impg] Loading syng index from prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng
+read GBWT with 139 vertices and 304 edges from /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg syng2gfa -a /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng --sequence-files /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa --gfa-mode raw -o /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.raw.gfa -t 2
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] loading syng index from prefix '/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng'
+read GBWT with 139 vertices and 304 edges from /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] building sequence index for 1 file(s) (gap fill)
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] 139 syncmer segments (length 31 bp), GFA 1.0, gap fill: FASTA/AGC
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] collected 3 path walks in 0.000s using 2 rayon threads
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] reduced path walks into 2 unique gap segment(s) and 153 edge(s) in 0.000s
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] spliced 2 unique real-DNA gap segment(s) from 6 gap occurrence(s), 7 unique bp (21 bp over paths)
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] wrote 141 S, 153 L, 3 path line(s) in 0.000s
+[2026-07-24T20:02:27Z INFO  impg::commands::syng2gfa] [syng2gfa] wrote 141 S (139 syncmer + 2 gap, 7 gap bp), 153 L, 3 P/W lines (0 paths skipped) to '/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.raw.gfa' (raw)
+[exit_status=0]
+$ bash -c \"\$1\"\ query\ -a\ \"\$2/parallel.syng\"\ -r\ genomeA:180-540\ -d\ 50\ --syng-raw\ -o\ fasta\ --sequence-files\ \"\$2/panel.fa\"\ -t\ 2\ \>\"\$2/query.fa\" _ /home/erikg/.cargo/bin/impg /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+[2026-07-24T20:02:27Z INFO  impg] Loading syng index from prefix: /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng
+read GBWT with 139 vertices and 304 edges from /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt
+[2026-07-24T20:02:27Z INFO  impg] Building FASTA index for 1 file
+[2026-07-24T20:02:27Z INFO  impg] Syng query: genomeA:180-540 (genomeA:180-540)
+[2026-07-24T20:02:27Z INFO  impg] Syng query complete: genomeA:180-540 (genomeA:180-540) in 230us
+[exit_status=0]
+$ wc -l /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/query.bed /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/map.gaf /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/map.paf /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.raw.gfa /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/query.fa
+    3 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/query.bed
+    1 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/map.gaf
+   10 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/map.paf
+  298 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.raw.gfa
+    6 /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/query.fa
+  318 total
+[exit_status=0]
+$ du -ah /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.1khash
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.meta
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.pstep
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.spos
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.spos
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/query.fa
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.pstep
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.1gbwt
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.meta
+12K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.raw.gfa
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.1khash
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.pstep
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/panel.fa.fai
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/query.bed
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.1gbwt
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/map.paf
+24K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/probe.log
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1khash
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.spos
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/map.gaf
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.meta
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/probe.fa
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/serial.syng.names
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel_repeat.syng.names
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.names
+4.0K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic/parallel.syng.1gbwt
+140K	/home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+[exit_status=0]
+$ bash -c find\ \"\$1\"\ -type\ f\ -printf\ \"%s\\t%P\\n\"\ \|\ sort\ -n _ /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+70	panel.fa.fai
+78	serial.syng.names
+84	parallel_repeat.syng.names
+84	parallel.syng.names
+103	parallel_repeat.syng.meta
+103	parallel.syng.meta
+103	serial.syng.meta
+106	query.bed
+265	serial.syng.pstep
+269	parallel_repeat.syng.pstep
+269	parallel.syng.pstep
+275	map.gaf
+405	probe.fa
+648	map.paf
+672	parallel_repeat.syng.spos
+672	parallel.syng.spos
+672	serial.syng.spos
+1655	query.fa
+2066	parallel_repeat.syng.1khash
+2066	parallel.syng.1khash
+2066	serial.syng.1khash
+3706	serial.syng.1gbwt
+3732	parallel_repeat.syng.1gbwt
+3732	parallel.syng.1gbwt
+3765	panel.fa
+9085	panel.raw.gfa
+23707	probe.log
+[exit_status=0]
+$ bash -c find\ \"\$1\"\ -type\ f\ -printf\ \"%s\\n\"\ \|\ awk\ \"\{s+=\\\$1\}\ END\{print\ s\}\" _ /home/erikg/phind/.wg-worktrees/agent-6/artifacts/impg_probe/synthetic
+61237
+[exit_status=0]

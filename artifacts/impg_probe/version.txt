@@ -1,0 +1,77 @@
+Evidence access date: 2026-07-24
+Installed path requested: /home/erikg/.cargo/bin/impg
+$ command -v impg
+/home/erikg/.cargo/bin/impg
+[exit_status=0]
+$ ls -ld /home/erikg/.cargo/bin/impg
+-rwxrwxr-x 1 erikg erikg 17172496 Jul 24 19:17 /home/erikg/.cargo/bin/impg
+[exit_status=0]
+$ readlink /home/erikg/.cargo/bin/impg
+[exit_status=1]
+$ readlink -f /home/erikg/.cargo/bin/impg
+/home/erikg/.cargo/bin/impg
+[exit_status=0]
+$ file /home/erikg/.cargo/bin/impg
+/home/erikg/.cargo/bin/impg: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /gnu/store/m31vlvwm79m89fk3xk0z4h7snk61y510-glibc-2.41/lib/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped
+[exit_status=0]
+$ stat /home/erikg/.cargo/bin/impg
+  File: /home/erikg/.cargo/bin/impg
+  Size: 17172496  	Blocks: 33544      IO Block: 4096   regular file
+Device: 259,5	Inode: 255328789   Links: 1
+Access: (0775/-rwxrwxr-x)  Uid: ( 1001/   erikg)   Gid: ( 1001/   erikg)
+Access: 2026-07-24 19:17:38.984203356 +0000
+Modify: 2026-07-24 19:17:35.447203438 +0000
+Change: 2026-07-24 19:17:35.456203437 +0000
+ Birth: 2026-07-24 19:17:35.431203438 +0000
+[exit_status=0]
+$ sha256sum /home/erikg/.cargo/bin/impg
+509296fb5c052be291a1841ea41f9bd4eb98e49b58b5f22cd69603729a94285f  /home/erikg/.cargo/bin/impg
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg --version
+impg 0.4.1
+[exit_status=0]
+$ ldd /home/erikg/.cargo/bin/impg
+	linux-vdso.so.1 (0x00007ffe4bf7d000)
+	libstdc++.so.6 => /var/guix/profiles/per-user/erikg/profiles/tepka3jk5npgrcv54oyos3tocv3unkjnkkaft4fja33nadabmjnq/lib/../lib/libstdc++.so.6 (0x000074240c392000)
+	libm.so.6 => /var/guix/profiles/per-user/erikg/profiles/tepka3jk5npgrcv54oyos3tocv3unkjnkkaft4fja33nadabmjnq/lib/../lib/libm.so.6 (0x000074240d454000)
+	libgcc_s.so.1 => /var/guix/profiles/per-user/erikg/profiles/tepka3jk5npgrcv54oyos3tocv3unkjnkkaft4fja33nadabmjnq/lib/../lib/libgcc_s.so.1 (0x000074240d427000)
+	libc.so.6 => /var/guix/profiles/per-user/erikg/profiles/tepka3jk5npgrcv54oyos3tocv3unkjnkkaft4fja33nadabmjnq/lib/../lib/libc.so.6 (0x000074240c1a4000)
+	/gnu/store/m31vlvwm79m89fk3xk0z4h7snk61y510-glibc-2.41/lib/ld-linux-x86-64.so.2 => /lib64/ld-linux-x86-64.so.2 (0x000074240d544000)
+[exit_status=0]
+$ readelf -p .comment /home/erikg/.cargo/bin/impg
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 14.3.0
+  [    12]  rustc version 1.93.0 (254b59607 2026-01-19) (built from a source tarball)
+
+[exit_status=0]
+$ git -C /home/erikg/impg remote -v
+origin	git@github.com:ekg/impg.git (fetch)
+origin	git@github.com:ekg/impg.git (push)
+[exit_status=0]
+$ git -C /home/erikg/impg rev-parse HEAD
+1bc9cf2aa9ddb46b9a1dd0cc8fbd2f094ab9de86
+[exit_status=0]
+$ git -C /home/erikg/impg describe --tags --always --dirty
+v0.4.1-13-g1bc9cf2
+[exit_status=0]
+$ git -C /home/erikg/impg status --short
+[exit_status=0]
+$ sha256sum /home/erikg/impg/target/guix/release/impg
+509296fb5c052be291a1841ea41f9bd4eb98e49b58b5f22cd69603729a94285f  /home/erikg/impg/target/guix/release/impg
+[exit_status=0]
+$ python3 - (read Cargo installation registry entry)
+impg 0.4.1 (path+file:///home/erikg/impg)
+bins: ['gfaffix', 'impg']
+features: []
+profile: release
+target: x86_64-unknown-linux-gnu
+rustc: rustc 1.93.0 (254b59607 2026-01-19) (built from a source tarball)
+binary: rustc
+commit-hash: 254b59607d4417e9dffbc307138ae5c86280fe4c
+commit-date: 2026-01-19
+host: x86_64-unknown-linux-gnu
+release: 1.93.0
+LLVM version: 21.1.8
+
+[exit_status=0]

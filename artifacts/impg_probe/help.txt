@@ -1,0 +1,3676 @@
+$ /home/erikg/.cargo/bin/impg --help
+Command-line tool for querying pangenome alignment
+
+Usage: impg <COMMAND>
+
+Commands:
+  index                 Create an IMPG index
+  lace                  Lace files together
+  partition             Partition the alignment
+  query                 Query overlaps in the alignment
+  refine                Refine loci to maximize the number of samples that span both ends of the
+                        region
+  similarity            Compute pairwise similarity between sequences in a region
+  genotype              Genotype a locus from graph-derived sample evidence
+  project               Project graph alignments into typed GFA genotype evidence
+  infer                 Infer allele calls across ranges or partitions from graph-derived evidence
+  stats                 Print alignment statistics
+  graph                 Build a pangenome graph from FASTA sequences using sweepga+seqwish
+  normalize-self-loops  Collapse path-local repeat-unit self-loop runs in a blunt GFA
+  crush                 Resolve bounded bubbles in an existing blunt GFA
+  gfa2vcf               Call VCF variants from an existing GFA using POVU
+  graph-report          Describe GFA topology, layout stress, repeats, and optional POVU flubbles
+  render                Render a syng-backed source-coordinate region into a GBZ-style bundle
+  align                 Generate alignment pairs with sparsification strategies
+  map                   Map sequences to a syng index using exact shared syncmers
+  read-index            Build a compact read-to-syncmer inverted index
+  syng                  Build a GBWT syncmer index from sequences
+  syng2gfa              Dump a syng index to GFA (S = syncmer, L = adjacency, P/W = path)
+  syng-repair           Repair or create sampled positional sidecars for an existing syng index
+
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg index --help
+Create an IMPG index
+
+Usage: impg index [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Alignment input:
+  -a, --alignment-files <ALIGNMENT_FILES>...
+          Path to the alignment files (PAF, 1ALN, or TPA format)
+
+      --alignment-list <ALIGNMENT_LIST>
+          Path to a text file containing paths to alignment files (one per line, PAF, 1ALN, or TPA
+          format)
+
+Index options:
+  -i, --index <INDEX>
+          Path to the IMPG index file (implies single-index mode)
+
+  -f, --force-reindex
+          Force the regeneration of the index, even if it already exists
+
+      --index-mode <INDEX_MODE>
+          Index mode: single, per-file or auto (single, but per-file if >= 100 files)
+
+          Possible values:
+          - auto:     Auto-select based on file count
+          - single:   Single combined index
+          - per-file: One index per alignment file
+          
+          [default: auto]
+
+      --unidirectional
+          Disable bidirectional alignment interpretation (default: bidirectional enabled). By
+          default, every alignment A->B creates implicit reverse mapping B->A, guaranteeing all
+          genomes are bridges for transitive queries
+
+Alignment options:
+      --trace-spacing <TRACE_SPACING>
+          Trace spacing for .1aln alignment files (used when converting tracepoints to CIGAR)
+          
+          [default: 100]
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg lace --help
+Lace files together
+
+Usage: impg lace [OPTIONS] --output <OUTPUT>
+
+Options:
+  -f, --files <FILES>...       List of input files (space-separated)
+  -l, --file-list <FILE_LIST>  Text file containing input file paths (one per line)
+      --format <FORMAT>        Input file format (gfa, vcf, auto) [default: auto]
+  -h, --help                   Print help
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+      --reference <REFERENCE>
+          Reference (FASTA or AGC) file for validating contig lengths in VCF files
+  -o, --output <OUTPUT>
+          Output file path
+      --compress <COMPRESS>
+          Output compression format (none, gzip, bgzip, zstd, auto) [default: auto]
+      --fill-gaps <FILL_GAPS>
+          Gap filling mode: 0=none, 1=middle gaps only, 2=all gaps (requires --sequence-files or
+          --sequence-list for end gaps, GFA mode only) [default: 0]
+      --skip-validation
+          Skip path range length validation (faster but may miss data integrity issues)
+      --temp-dir <TEMP_DIR>
+          Directory for temporary files [default: $TMPDIR or cwd; use "ramdisk" for /dev/shm]
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg partition --help
+Partition the alignment
+
+Usage: impg partition [OPTIONS] --window-size <WINDOW_SIZE>
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Alignment input:
+  -a, --alignment-files <ALIGNMENT_FILES>...
+          Path to the alignment files (PAF, 1ALN, or TPA format)
+
+      --alignment-list <ALIGNMENT_LIST>
+          Path to a text file containing paths to alignment files (one per line, PAF, 1ALN, or TPA
+          format)
+
+Index options:
+  -i, --index <INDEX>
+          Path to the IMPG index file (implies single-index mode)
+
+  -f, --force-reindex
+          Force the regeneration of the index, even if it already exists
+
+      --index-mode <INDEX_MODE>
+          Index mode: single, per-file or auto (single, but per-file if >= 100 files)
+
+          Possible values:
+          - auto:     Auto-select based on file count
+          - single:   Single combined index
+          - per-file: One index per alignment file
+          
+          [default: auto]
+
+      --unidirectional
+          Disable bidirectional alignment interpretation (default: bidirectional enabled). By
+          default, every alignment A->B creates implicit reverse mapping B->A, guaranteeing all
+          genomes are bridges for transitive queries
+
+Alignment options:
+      --trace-spacing <TRACE_SPACING>
+          Trace spacing for .1aln alignment files (used when converting tracepoints to CIGAR)
+          
+          [default: 100]
+
+      --poa-scoring <POA_SCORING>
+          POA alignment scores as match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2
+          
+          [default: 1,4,6,2,26,1]
+
+      --aligner <ALIGNER>
+          Aligner to use for FASTA input
+          
+          [default: fastga]
+          [possible values: fastga, wfmash]
+
+      --fastga
+          Use FastGA aligner (shorthand for --aligner fastga)
+
+      --wfmash
+          Use wfmash aligner (shorthand for --aligner wfmash)
+
+      --fastga-frequency <FREQUENCY>
+          FastGA k-mer frequency threshold (use k-mers occurring ≤ N times). Overrides
+          --fastga-frequency-multiplier when set
+
+      --fastga-frequency-multiplier <FASTGA_FREQUENCY_MULTIPLIER>
+          FastGA k-mer frequency multiplier: when --fastga-frequency is unset, the effective
+          frequency = `num_pansn_haplotypes * multiplier` (clamped to at least 10). Default 1
+          reproduces FastGA's historical behavior of one k-mer hit per haplotype
+          
+          [default: 1]
+
+      --map-pct-identity <MAP_PCT_IDENTITY>
+          Minimum percent identity for wfmash mapping (e.g. "90" or ANI preset "ani50-2")
+
+      --all-pairs
+          Align all genome pairs separately (slower, uses more memory, but handles many genomes)
+
+      --batch-bytes <BATCH_BYTES>
+          Maximum sequence data per batch (e.g., "50M", "2G"). Partitions genomes into batches.
+          Stored as a raw string so library consumers (like impg's `sweepga::align_self_paf`) can
+          pass it verbatim; parse via `crate::cli::parse_metric_number` at use sites when you need a
+          numeric byte count
+
+      --batch-size <BATCH_SIZE>
+          Explicit number of genomes per batch (manual override). Overrides --batch-bytes and
+          --max-disk
+
+      --max-disk <MAX_DISK>
+          Maximum disk space for temporary files during alignment (e.g., "100G", "500M"). Computes
+          batch size automatically to stay within budget. Overrides --batch-bytes
+
+      --zstd
+          Compress k-mer index with zstd for ~2x disk savings and faster I/O
+
+      --zstd-level <ZSTD_LEVEL>
+          Zstd compression level (1-19, higher = smaller files but slower). Default: 3
+          
+          [default: 3]
+
+      --temp-dir <TEMPDIR>
+          Temporary directory for intermediate files (defaults to TMPDIR env var, then current
+          directory; use "ramdisk" for /dev/shm)
+
+Syng input:
+      --syng-padding <SYNG_PADDING>
+          Boundary padding in bp for syng queries (default: 120 = 2× syncmer length)
+          
+          [default: 120]
+
+      --syng-min-chain-anchors <SYNG_MIN_CHAIN_ANCHORS>
+          Minimum anchor count required for a syng chain to become a partition edge. Raising this
+          drops weak/paralog-noise chains before partition's union-find closes over them, preventing
+          the transitive-collapse catch-all on TE/subtelomere-rich regions. 0 disables chain
+          filtering (raw per-syncmer intervals)
+          
+          [default: 0]
+
+      --syng-min-chain-fraction <SYNG_MIN_CHAIN_FRACTION>
+          Minimum fraction of the query window a syng chain must cover to become a partition edge.
+          0.0 disables the extent filter
+          
+          [default: 0]
+
+Partition options:
+      --no-rehome-singletons
+          Disable post-partition sliver rehoming. By default, singleton partitions (slivers created
+          by greedy masking) are iteratively reassigned to their flank partitions — the partition
+          that owns the biologically contiguous context. This is source-agnostic and runs for both
+          syng- and alignment-backed partitioning
+
+  -w, --window-size <WINDOW_SIZE>
+          Window size for partitioning
+
+      --starting-sequences-file <STARTING_SEQUENCES_FILE>
+          Path to the file with sequence names to start with (one per line)
+
+      --selection-mode <SELECTION_MODE>
+          Selection mode for next sequence:
+          - "longest": sequence with longest single missing region
+          - "total": sequence with highest total missing regions
+          - "sample[,separator]": sample with highest total missing regions
+          - "haplotype[,separator]": haplotype highest total missing regions
+          The sample/haplotype modes assume PanSN naming; '#' is the default separator.
+          
+          [default: longest]
+
+      --min-missing-size <MIN_MISSING_SIZE>
+          Minimum region size for missing regions
+          
+          [default: 3000]
+
+      --min-boundary-distance <MIN_BOUNDARY_DISTANCE>
+          Minimum distance from sequence start/end - closer regions will be extended to the
+          boundaries
+          
+          [default: 3000]
+
+      --separate-files
+          Output separate files for each partition when 'bed'
+
+Filtering and merging:
+  -d, --merge-distance <MERGE_DISTANCE>
+          Required. Merge query-gathered ranges separated by at most this many bp (accepts k/m/g
+          suffixes, e.g. 50k or 1m) before partition assignment. This sets the largest internal
+          gap/SV a one-hop query can absorb into one partition interval; larger gaps stay split. Use
+          0 for only overlapping/touching ranges, or --no-merge to disable merging
+
+      --no-merge
+          Explicitly disable merging before partition assignment
+
+      --min-result-identity <MIN_RESULT_IDENTITY>
+          Minimum gap-compressed identity threshold (0.0-1.0)
+
+Transitive query options:
+      --transitive-dfs
+          Use Depth-First Search instead of BFS for transitive queries (slower, but returns fewer
+          overlapping results)
+
+  -m, --max-depth <MAX_DEPTH>
+          Maximum recursion depth for transitive overlaps (0 for no limit)
+          
+          [default: 2]
+
+      --min-transitive-len <MIN_TRANSITIVE_LEN>
+          Minimum region size to consider for transitive queries (default: 101; for fastga
+          --approximate, set > trace_spacing)
+
+      --min-distance-between-ranges <MIN_DISTANCE_BETWEEN_RANGES>
+          Minimum distance between transitive ranges to consider on the same sequence
+          
+          [default: 10]
+
+Performance:
+      --approximate
+          Use approximate mode for faster queries with tracepoint files (.1aln/.tpa, only bed/bedpe
+          output)
+
+Output options:
+  -o, --output-format <OUTPUT_FORMAT>
+          Output format: 'bed', 'gfa' (v1.0), 'vcf', 'maf', or 'fasta' ('gfa', 'vcf', 'maf', and
+          'fasta' require --sequence-files or --sequence-list)
+          
+          [default: bed]
+
+      --output-folder <OUTPUT_FOLDER>
+          Output folder for partition files (default: current directory)
+
+      --reverse-complement
+          Reverse complement reverse strand sequences (for 'fasta' output)
+
+      --force-large-region
+          Force processing of large regions (>10kbp) with maf/gfa output formats
+
+      --gfa-engine <ENGINE[:MODE|WINDOW][,key=value...]>
+          GFA engine: 'pggb' (default), 'seqwish', 'poa', 'syng', or 'syng-local'. Append ':WINDOW'
+          to pggb/seqwish/poa for partitioned mode, e.g. 'pggb:10000'. Syng modes are
+          'syng'/'syng:blunt' (default bluntg output), 'syng:raw', or 'syng-local'; comma parameters
+          assert global syng params for 'syng' and select rebuild params for 'syng-local', e.g.
+          'syng-local,k=127,s=16'
+          
+          [default: pggb]
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+Basic filtering:
+      --min-aln-length <BLOCK_LENGTH>
+          Minimum alignment block length (omit to use aligner default)
+
+      --num-mappings <NUM_MAPPINGS>
+          n:m-best mappings kept in query:target dimensions. 1:1 (orthogonal), use ∞/many for
+          unbounded. Default matches impg's historical pangenome setting: no mapping-axis filter
+          before scaffolding
+          
+          [default: many:many]
+
+      --overlap <OVERLAP>
+          Maximum overlap ratio for plane sweep filtering
+          
+          [default: 0.95]
+
+      --scoring <SCORING>
+          Scoring function for plane sweep
+          
+          [default: log-length-ani]
+          [possible values: ani, length, length-ani, log-length-ani, matches]
+
+      --min-aln-identity <MIN_IDENTITY>
+          Minimum per-mapping identity filter applied to PAF records after alignment (0-1 fraction,
+          1-100%, or "aniN" for Nth percentile). This is a post-alignment PAF filter, not an
+          alignment-stage knob — for wfmash's alignment-stage identity cutoff, use
+          `--map-pct-identity`
+          
+          [default: 0]
+
+      --self
+          Keep self-mappings (excluded by default)
+
+      --no-filter
+          Disable all filtering
+
+      --min-map-length <MIN_MAP_LENGTH>
+          Drop mappings shorter than this before plane-sweep / scaffold filtering. Accepts k/m/g
+          suffixes
+          
+          [default: 0]
+
+Scaffolding and chaining:
+      --scaffold-jump <SCAFFOLD_JUMP>
+          Scaffold jump (gap) distance. 0 = disable scaffolding, >0 = enable (accepts k/m/g suffix).
+          Default matches impg's historical 50kb — pass `--scaffold-jump 0` to turn scaffolding off
+          
+          [default: 50k]
+
+      --scaffold-mass <SCAFFOLD_MASS>
+          Minimum scaffold chain length (accepts k/m/g suffix)
+          
+          [default: 10k]
+
+      --scaffold-filter <SCAFFOLD_FILTER>
+          Scaffold filter mode: "1:1" (best), "M:N" (M per query, N per target), "many" (unbounded)
+          
+          [default: many:many]
+
+      --scaffold-overlap <SCAFFOLD_OVERLAP>
+          Scaffold chain overlap threshold for plane sweep filtering
+          
+          [default: 0.5]
+
+      --scaffold-dist <SCAFFOLD_DIST>
+          Maximum Euclidean distance from scaffold anchor for rescue (0 = no rescue, accepts k/m/g
+          suffix)
+          
+          [default: 0]
+
+      --min-scaffold-identity <MIN_SCAFFOLD_IDENTITY>
+          Minimum scaffold identity threshold (0-1 fraction, 1-100%, "aniN", or defaults to
+          --min-aln-identity)
+          
+          [default: 0]
+
+      --scaffolds-only
+          Output scaffold chains only (for debugging)
+
+      --no-adaptive-scaffolds
+          Disable scaffold-parameter adaptation to input sequence length.
+          
+          By default, when the FASTA average sequence length is known, `--scaffold-mass` is clamped
+          to `avg_seq_len * 3/5` (nice-rounded) and `--scaffold-jump` is clamped to `avg_seq_len *
+          10`. This is a no-op for whole-genome inputs (user values are already smaller than the
+          clamps) but prevents default thresholds from filtering out everything when inputs are
+          short (e.g. pangenome-window excerpts). Pass `--no-adaptive-scaffolds` to turn the
+          clamping off.
+
+Advanced filtering:
+      --sparsify <SPARSIFY>
+          Sparsification strategy: `none` (default = all pairs), `auto`, `<frac>` / `random:<frac>`,
+          `giant:<prob>` / `connectivity:<prob>`, `tree:<near>[:<far>[:<random>]]` / `knn:…`,
+          `wfmash:auto` / `wfmash:<frac>`. Parsed once by clap at CLI-parse time via
+          `SparsificationStrategy::from_str`
+          
+          [default: none]
+
+      --mash-kmer-size <MASH_KMER_SIZE>
+          K-mer size used by the mash sketches driving tree/giant sparsification
+          
+          [default: 15]
+
+      --mash-sketch-size <MASH_SKETCH_SIZE>
+          Sketch size (number of minimizers) for the mash sketches driving tree/giant sparsification
+          
+          [default: 1000]
+
+      --joblist
+          Instead of running alignments, emit one shell command per genome pair to stdout (or
+          `--output-file`) and exit. Useful for cluster / grid dispatch: each emitted line is a
+          standalone `sweepga` invocation that aligns one pair. Requires multiple FASTA inputs
+
+      --joblist-output-dir <JOBLIST_OUTPUT_DIR>
+          Output directory for per-pair PAFs emitted by `--joblist`. Defaults to the current working
+          directory. Ignored when `--joblist` is unset
+
+      --ani-method <ANI_METHOD>
+          Method for calculating ANI: all, orthogonal, nX[-sort] (e.g. n50, n90-identity,
+          n100-score)
+          
+          [default: n100]
+
+AGC archive options:
+      --agc-prefix <AGC_PREFIX>
+          Extract only samples matching this prefix (AGC input)
+
+      --agc-samples <AGC_SAMPLES>
+          Extract only these samples (comma-separated or @file with one per line)
+
+      --agc-queries <AGC_QUERIES>
+          Query samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-targets <AGC_TARGETS>
+          Target samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-temp-dir <AGC_TEMPDIR>
+          Temp directory for AGC extraction (defaults to --temp-dir)
+
+Pair selection:
+      --pairs <PAIRS_FILE>
+          File of sample pairs to align (TSV: query<tab>target, one pair per line)
+
+      --pairs-done <PAIRS_DONE>
+          File to append completed pairs (for resume capability)
+
+      --pairs-remaining <PAIRS_REMAINING>
+          File to write remaining pairs after run (for resume capability)
+
+      --list-pairs
+          List all sample pairs and exit (for generating pairs files)
+
+      --shuffle-pairs
+          Shuffle pair order (for load balancing across runs)
+
+      --shuffle-seed <SHUFFLE_SEED>
+          Seed for pair shuffling (for reproducible ordering)
+
+      --max-pairs <MAX_PAIRS>
+          Maximum number of pairs to process in this run (0 = unlimited)
+          
+          [default: 0]
+
+      --pair-start <PAIR_START>
+          Start index for pair range (0-based, use with shuffle-seed for stable ordering)
+          
+          [default: 0]
+
+      --sparsify-pairs <SPARSIFY_PAIRS>
+          Sparsification strategy for pair selection (none, auto, random:<frac>, giant:<prob>,
+          tree:<near>:<far>:<random>[:<kmer>])
+          
+          [default: none]
+
+Graph induction (seqwish):
+      --repeat-max <REPEAT_MAX>
+          Maximum repeat count for transitive closure (0 = no limit)
+          
+          [default: 0]
+
+      --min-repeat-dist <MIN_REPEAT_DIST>
+          Minimum distance between repeats
+          
+          [default: 0]
+
+      --min-match-len <MIN_MATCH_LEN>
+          Minimum match length filter for alignments
+          
+          [default: 23]
+
+      --sparse-factor <SPARSE_FACTOR>
+          Sparse factor for input matches (0.0 = keep all)
+          
+          [default: 0]
+
+      --transclose-batch <TRANSCLOSE_BATCH>
+          Batch size for transitive closure computation
+          
+          [default: 10000000]
+
+      --disk-backed
+          Use disk-backed interval trees (slower but lower memory)
+
+Graph smoothing (pggb engine):
+      --target-poa-length <TARGET_POA_LENGTH>
+          Comma-separated target POA block lengths in bp, one per smoothing pass (default:
+          "700,1100" matching pggb's `-G 700,1100`)
+          
+          [default: 700,1100]
+
+      --max-node-length <MAX_NODE_LENGTH>
+          Maximum node length before chopping (default: 100)
+          
+          [default: 100]
+
+      --poa-padding-fraction <POA_PADDING_FRACTION>
+          Fraction of avg block length to use as POA padding (default: 0.001)
+          
+          [default: 0.001]
+
+      --debug-dir <DEBUG_DIR>
+          Save intermediate debug files (PAFs, FASTAs, sub-GFAs, chunk info) to this directory
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg query --help
+Query overlaps in the alignment
+
+Usage: impg query [OPTIONS]
+
+Options:
+  -O, --output-prefix <OUTPUT_PREFIX>
+          Prefix for output file (automatically appends the extension based on format; required for
+          'gbwt' output)
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Alignment input:
+  -a, --alignment-files <ALIGNMENT_FILES>...
+          Path to the alignment files (PAF, 1ALN, or TPA format)
+
+      --alignment-list <ALIGNMENT_LIST>
+          Path to a text file containing paths to alignment files (one per line, PAF, 1ALN, or TPA
+          format)
+
+Index options:
+  -i, --index <INDEX>
+          Path to the IMPG index file (implies single-index mode)
+
+  -f, --force-reindex
+          Force the regeneration of the index, even if it already exists
+
+      --index-mode <INDEX_MODE>
+          Index mode: single, per-file or auto (single, but per-file if >= 100 files)
+
+          Possible values:
+          - auto:     Auto-select based on file count
+          - single:   Single combined index
+          - per-file: One index per alignment file
+          
+          [default: auto]
+
+      --unidirectional
+          Disable bidirectional alignment interpretation (default: bidirectional enabled). By
+          default, every alignment A->B creates implicit reverse mapping B->A, guaranteeing all
+          genomes are bridges for transitive queries
+
+Alignment options:
+      --trace-spacing <TRACE_SPACING>
+          Trace spacing for .1aln alignment files (used when converting tracepoints to CIGAR)
+          
+          [default: 100]
+
+      --poa-scoring <POA_SCORING>
+          POA alignment scores as match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2
+          
+          [default: 1,4,6,2,26,1]
+
+      --aligner <ALIGNER>
+          Aligner to use for FASTA input
+          
+          [default: fastga]
+          [possible values: fastga, wfmash]
+
+      --fastga
+          Use FastGA aligner (shorthand for --aligner fastga)
+
+      --wfmash
+          Use wfmash aligner (shorthand for --aligner wfmash)
+
+      --fastga-frequency <FREQUENCY>
+          FastGA k-mer frequency threshold (use k-mers occurring ≤ N times). Overrides
+          --fastga-frequency-multiplier when set
+
+      --fastga-frequency-multiplier <FASTGA_FREQUENCY_MULTIPLIER>
+          FastGA k-mer frequency multiplier: when --fastga-frequency is unset, the effective
+          frequency = `num_pansn_haplotypes * multiplier` (clamped to at least 10). Default 1
+          reproduces FastGA's historical behavior of one k-mer hit per haplotype
+          
+          [default: 1]
+
+      --map-pct-identity <MAP_PCT_IDENTITY>
+          Minimum percent identity for wfmash mapping (e.g. "90" or ANI preset "ani50-2")
+
+      --all-pairs
+          Align all genome pairs separately (slower, uses more memory, but handles many genomes)
+
+      --batch-bytes <BATCH_BYTES>
+          Maximum sequence data per batch (e.g., "50M", "2G"). Partitions genomes into batches.
+          Stored as a raw string so library consumers (like impg's `sweepga::align_self_paf`) can
+          pass it verbatim; parse via `crate::cli::parse_metric_number` at use sites when you need a
+          numeric byte count
+
+      --batch-size <BATCH_SIZE>
+          Explicit number of genomes per batch (manual override). Overrides --batch-bytes and
+          --max-disk
+
+      --max-disk <MAX_DISK>
+          Maximum disk space for temporary files during alignment (e.g., "100G", "500M"). Computes
+          batch size automatically to stay within budget. Overrides --batch-bytes
+
+      --zstd
+          Compress k-mer index with zstd for ~2x disk savings and faster I/O
+
+      --zstd-level <ZSTD_LEVEL>
+          Zstd compression level (1-19, higher = smaller files but slower). Default: 3
+          
+          [default: 3]
+
+      --temp-dir <TEMPDIR>
+          Temporary directory for intermediate files (defaults to TMPDIR env var, then current
+          directory; use "ramdisk" for /dev/shm)
+
+Syng input:
+      --syng-padding <SYNG_PADDING>
+          Boundary padding in bp for syng queries (default: 120 = 2× syncmer length)
+          
+          [default: 120]
+
+      --syng-extension <SYNG_EXTENSION>
+          Source-side window extension (bp) for syncmer lookup. Widens the query interval during
+          syncmer discovery only; boundaries remain clipped by BiWFA refinement. Helps when the
+          query lands just past the end of a conserved syncmer block (default: 0)
+          
+          [default: 0]
+
+      --syng-extend-budget <SYNG_EXTEND_BUDGET>
+          Boundary-extension budget (bp) per cluster in syng queries. `refine_homolog_by_alignment`
+          expands the anchor-supported sub-query and the refinement target window outward by this
+          amount on each side before BiWFA. Target extension clips to neighbor-cluster bounds on the
+          same `(genome, strand)`; source extension clips to the user's query region and to half the
+          clipped target span (keeps BiWFA's two inputs similarly-sized, avoiding the O(s²)
+          pathology of a wide query forced into a narrow target). The default 1 kb recovers most
+          indel-bounded block boundaries (typical intra-homology indels are &lt; 500 bp) while
+          staying tractable on repeat-dense queries with tens of thousands of clusters. Raise for
+          sparser pangenomes with longer conserved blocks
+          
+          [default: 1000]
+
+      --syng-min-chain-anchors <SYNG_MIN_CHAIN_ANCHORS>
+          Maximum adaptive minimum anchor count for a syng scaffold chain to be emitted. The
+          effective threshold is estimated from query span, syncmer density, and 95% identity, then
+          capped by this value. The default keeps short queries proportional while avoiding dropout
+          in large CNV/SV loci whose valid scaffold chains are local. Set 0 to disable anchor-count
+          filtering
+          
+          [default: 20]
+
+      --syng-min-chain-fraction <SYNG_MIN_CHAIN_FRACTION>
+          Minimum chain query-extent as a fraction of the queried range (0.0 to 1.0). Chains whose
+          anchor span on the query axis covers less than `fraction × query_range_len` are dropped.
+          Default 0.0 leaves short-hit suppression to the SweepGA scaffold filter, which is safer
+          for large CNV and multi-bubble loci. Raise for strict locus-scale projection
+          
+          [default: 0]
+
+      --syng-seed-drop-top-fraction <SYNG_SEED_DROP_TOP_FRACTION>
+          Drop this fraction of the query syncmer seed nodes with the highest GBWT occurrence counts
+          before locating hits. Default 0.0005 drops the top 0.05% most repetitive query-local
+          seeds, minimizer-style, without making frequency filtering carry the query algorithm. Set
+          to 0 to disable
+          
+          [default: 0.0005]
+
+      --syng-seed-max-occurrences <SYNG_SEED_MAX_OCCURRENCES>
+          Drop syncmer seed nodes occurring more than this many times across both GBWT orientations
+          before locating hits. Default 0 disables the absolute cap; use this only when you want a
+          hard occurrence ceiling for a specific panel size
+          
+          [default: 0]
+
+      --syng-seed-walk-anchors <SYNG_SEED_WALK_ANCHORS>
+          Consecutive syncmers per bounded exact GBWT walk seed. Default 5 prevents isolated
+          high-copy syncmers from seeding ranges while preserving sensitivity across divergent
+          homologs. Set 3 for more sensitive, higher-volume seeds
+          
+          [default: 5]
+
+      --syng-raw
+          Debug-only: skip boundary realignment and emit raw syncmer-resolution intervals from
+          syng's query_region. The default syng path runs BiWFA boundary realignment for
+          base-pair-precise edges (and iterates under --transitive). Use --syng-raw to inspect the
+          underlying syng hits without refinement
+
+Query region:
+  -r, --target-range <TARGET_RANGE>
+          Target range in the format `seq_name:start-end`
+
+  -b, --target-bed <TARGET_BED>
+          Path to the BED file containing target regions
+
+Filtering and merging:
+  -d, --merge-distance <MERGE_DISTANCE>
+          Required. Merge query-gathered ranges separated by at most this many bp. Accepts k/m/g
+          suffixes, e.g. 50k or 1m. This also sets the largest internal gap/SV one query hop can
+          absorb into one reported interval; larger gaps stay split. Use 0 for only
+          overlapping/touching ranges, or --no-merge to disable merging
+
+      --no-merge
+          Explicitly disable merging for all output formats
+
+      --min-result-identity <MIN_RESULT_IDENTITY>
+          Minimum gap-compressed identity threshold (0.0-1.0)
+
+  -l, --min-output-length <MIN_OUTPUT_LENGTH>
+          Minimum output length: filter results shorter than this (bp)
+
+      --subset-sequence-list <SUBSET_SEQUENCE_LIST>
+          Path to a file listing sequence names to include (one per line)
+
+      --consider-strandness
+          Consider strandness when merging output intervals (defaults: merge strands for
+          bed/gfa/maf; keep separate for fasta/fasta-aln)
+
+Transitive queries:
+  -x, --transitive
+          Enable transitive queries (uses BFS by default, or DFS with --transitive-dfs)
+
+Transitive query options:
+      --transitive-dfs
+          Use Depth-First Search instead of BFS for transitive queries (slower, but returns fewer
+          overlapping results)
+
+  -m, --max-depth <MAX_DEPTH>
+          Maximum recursion depth for transitive overlaps (0 for no limit)
+          
+          [default: 2]
+
+      --min-transitive-len <MIN_TRANSITIVE_LEN>
+          Minimum region size to consider for transitive queries (default: 101; for fastga
+          --approximate, set > trace_spacing)
+
+      --min-distance-between-ranges <MIN_DISTANCE_BETWEEN_RANGES>
+          Minimum distance between transitive ranges to consider on the same sequence
+          
+          [default: 10]
+
+Coordinate options:
+      --original-sequence-coordinates
+          Update coordinates to original sequences when input sequences are subsequences
+          (seq_name:start-end) for 'bed', 'bedpe', and 'paf'
+
+Performance:
+      --approximate
+          Use approximate mode for faster queries with tracepoint files (.1aln/.tpa, only bed/bedpe
+          output)
+
+Output options:
+  -o, --output-format <OUTPUT_FORMAT>
+          Output format; see Output formats below
+          
+          [default: auto]
+
+      --reverse-complement
+          Reverse complement reverse strand sequences (for 'fasta' output)
+
+      --force-large-region
+          Force processing of large regions (>10kbp) with maf/gfa output formats
+
+      --gfa-engine <ENGINE[:MODE|WINDOW][,key=value...]>
+          GFA engine: 'pggb' (default), 'seqwish', 'poa', 'syng', or 'syng-local'. Append ':WINDOW'
+          to pggb/seqwish/poa for partitioned mode, e.g. 'pggb:10000'. Syng modes are
+          'syng'/'syng:blunt' (default bluntg output), 'syng:raw', or 'syng-local'; comma parameters
+          assert global syng params for 'syng' and select rebuild params for 'syng-local', e.g.
+          'syng-local,k=127,s=16'
+          
+          [default: pggb]
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+Basic filtering:
+      --min-aln-length <BLOCK_LENGTH>
+          Minimum alignment block length (omit to use aligner default)
+
+      --num-mappings <NUM_MAPPINGS>
+          n:m-best mappings kept in query:target dimensions. 1:1 (orthogonal), use ∞/many for
+          unbounded. Default matches impg's historical pangenome setting: no mapping-axis filter
+          before scaffolding
+          
+          [default: many:many]
+
+      --overlap <OVERLAP>
+          Maximum overlap ratio for plane sweep filtering
+          
+          [default: 0.95]
+
+      --scoring <SCORING>
+          Scoring function for plane sweep
+          
+          [default: log-length-ani]
+          [possible values: ani, length, length-ani, log-length-ani, matches]
+
+      --min-aln-identity <MIN_IDENTITY>
+          Minimum per-mapping identity filter applied to PAF records after alignment (0-1 fraction,
+          1-100%, or "aniN" for Nth percentile). This is a post-alignment PAF filter, not an
+          alignment-stage knob — for wfmash's alignment-stage identity cutoff, use
+          `--map-pct-identity`
+          
+          [default: 0]
+
+      --self
+          Keep self-mappings (excluded by default)
+
+      --no-filter
+          Disable all filtering
+
+      --min-map-length <MIN_MAP_LENGTH>
+          Drop mappings shorter than this before plane-sweep / scaffold filtering. Accepts k/m/g
+          suffixes
+          
+          [default: 0]
+
+Scaffolding and chaining:
+      --scaffold-jump <SCAFFOLD_JUMP>
+          Scaffold jump (gap) distance. 0 = disable scaffolding, >0 = enable (accepts k/m/g suffix).
+          Default matches impg's historical 50kb — pass `--scaffold-jump 0` to turn scaffolding off
+          
+          [default: 50k]
+
+      --scaffold-mass <SCAFFOLD_MASS>
+          Minimum scaffold chain length (accepts k/m/g suffix)
+          
+          [default: 10k]
+
+      --scaffold-filter <SCAFFOLD_FILTER>
+          Scaffold filter mode: "1:1" (best), "M:N" (M per query, N per target), "many" (unbounded)
+          
+          [default: many:many]
+
+      --scaffold-overlap <SCAFFOLD_OVERLAP>
+          Scaffold chain overlap threshold for plane sweep filtering
+          
+          [default: 0.5]
+
+      --scaffold-dist <SCAFFOLD_DIST>
+          Maximum Euclidean distance from scaffold anchor for rescue (0 = no rescue, accepts k/m/g
+          suffix)
+          
+          [default: 0]
+
+      --min-scaffold-identity <MIN_SCAFFOLD_IDENTITY>
+          Minimum scaffold identity threshold (0-1 fraction, 1-100%, "aniN", or defaults to
+          --min-aln-identity)
+          
+          [default: 0]
+
+      --scaffolds-only
+          Output scaffold chains only (for debugging)
+
+      --no-adaptive-scaffolds
+          Disable scaffold-parameter adaptation to input sequence length.
+          
+          By default, when the FASTA average sequence length is known, `--scaffold-mass` is clamped
+          to `avg_seq_len * 3/5` (nice-rounded) and `--scaffold-jump` is clamped to `avg_seq_len *
+          10`. This is a no-op for whole-genome inputs (user values are already smaller than the
+          clamps) but prevents default thresholds from filtering out everything when inputs are
+          short (e.g. pangenome-window excerpts). Pass `--no-adaptive-scaffolds` to turn the
+          clamping off.
+
+Advanced filtering:
+      --sparsify <SPARSIFY>
+          Sparsification strategy: `none` (default = all pairs), `auto`, `<frac>` / `random:<frac>`,
+          `giant:<prob>` / `connectivity:<prob>`, `tree:<near>[:<far>[:<random>]]` / `knn:…`,
+          `wfmash:auto` / `wfmash:<frac>`. Parsed once by clap at CLI-parse time via
+          `SparsificationStrategy::from_str`
+          
+          [default: none]
+
+      --mash-kmer-size <MASH_KMER_SIZE>
+          K-mer size used by the mash sketches driving tree/giant sparsification
+          
+          [default: 15]
+
+      --mash-sketch-size <MASH_SKETCH_SIZE>
+          Sketch size (number of minimizers) for the mash sketches driving tree/giant sparsification
+          
+          [default: 1000]
+
+      --joblist
+          Instead of running alignments, emit one shell command per genome pair to stdout (or
+          `--output-file`) and exit. Useful for cluster / grid dispatch: each emitted line is a
+          standalone `sweepga` invocation that aligns one pair. Requires multiple FASTA inputs
+
+      --joblist-output-dir <JOBLIST_OUTPUT_DIR>
+          Output directory for per-pair PAFs emitted by `--joblist`. Defaults to the current working
+          directory. Ignored when `--joblist` is unset
+
+      --ani-method <ANI_METHOD>
+          Method for calculating ANI: all, orthogonal, nX[-sort] (e.g. n50, n90-identity,
+          n100-score)
+          
+          [default: n100]
+
+AGC archive options:
+      --agc-prefix <AGC_PREFIX>
+          Extract only samples matching this prefix (AGC input)
+
+      --agc-samples <AGC_SAMPLES>
+          Extract only these samples (comma-separated or @file with one per line)
+
+      --agc-queries <AGC_QUERIES>
+          Query samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-targets <AGC_TARGETS>
+          Target samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-temp-dir <AGC_TEMPDIR>
+          Temp directory for AGC extraction (defaults to --temp-dir)
+
+Pair selection:
+      --pairs <PAIRS_FILE>
+          File of sample pairs to align (TSV: query<tab>target, one pair per line)
+
+      --pairs-done <PAIRS_DONE>
+          File to append completed pairs (for resume capability)
+
+      --pairs-remaining <PAIRS_REMAINING>
+          File to write remaining pairs after run (for resume capability)
+
+      --list-pairs
+          List all sample pairs and exit (for generating pairs files)
+
+      --shuffle-pairs
+          Shuffle pair order (for load balancing across runs)
+
+      --shuffle-seed <SHUFFLE_SEED>
+          Seed for pair shuffling (for reproducible ordering)
+
+      --max-pairs <MAX_PAIRS>
+          Maximum number of pairs to process in this run (0 = unlimited)
+          
+          [default: 0]
+
+      --pair-start <PAIR_START>
+          Start index for pair range (0-based, use with shuffle-seed for stable ordering)
+          
+          [default: 0]
+
+      --sparsify-pairs <SPARSIFY_PAIRS>
+          Sparsification strategy for pair selection (none, auto, random:<frac>, giant:<prob>,
+          tree:<near>:<far>:<random>[:<kmer>])
+          
+          [default: none]
+
+Graph induction (seqwish):
+      --repeat-max <REPEAT_MAX>
+          Maximum repeat count for transitive closure (0 = no limit)
+          
+          [default: 0]
+
+      --min-repeat-dist <MIN_REPEAT_DIST>
+          Minimum distance between repeats
+          
+          [default: 0]
+
+      --min-match-len <MIN_MATCH_LEN>
+          Minimum match length filter for alignments
+          
+          [default: 23]
+
+      --sparse-factor <SPARSE_FACTOR>
+          Sparse factor for input matches (0.0 = keep all)
+          
+          [default: 0]
+
+      --transclose-batch <TRANSCLOSE_BATCH>
+          Batch size for transitive closure computation
+          
+          [default: 10000000]
+
+      --disk-backed
+          Use disk-backed interval trees (slower but lower memory)
+
+Graph smoothing (pggb engine):
+      --target-poa-length <TARGET_POA_LENGTH>
+          Comma-separated target POA block lengths in bp, one per smoothing pass (default:
+          "700,1100" matching pggb's `-G 700,1100`)
+          
+          [default: 700,1100]
+
+      --max-node-length <MAX_NODE_LENGTH>
+          Maximum node length before chopping (default: 100)
+          
+          [default: 100]
+
+      --poa-padding-fraction <POA_PADDING_FRACTION>
+          Fraction of avg block length to use as POA padding (default: 0.001)
+          
+          [default: 0.001]
+
+      --debug-dir <DEBUG_DIR>
+          Save intermediate debug files (PAFs, FASTAs, sub-GFAs, chunk info) to this directory
+
+Graph rendering:
+      --render-graph
+          Render the final query graph with gfalook. Defaults to PNG beside the graph output when -O
+          is set; use --render-graph-output to override
+
+      --render-graph-output <RENDER_GRAPH_OUTPUT>
+          Output image file or, for BED graph output, output directory. Extension selects png/svg;
+          extensionless paths use --render-graph-format
+
+      --render-graph-format <RENDER_GRAPH_FORMAT>
+          Default render image format when the render path has no .png/.svg extension
+          
+          [default: png]
+
+      --render-graph-width <RENDER_GRAPH_WIDTH>
+          Render width in pixels
+          
+          [default: 3200]
+
+      --render-graph-height <RENDER_GRAPH_HEIGHT>
+          Render height in pixels
+          
+          [default: 1800]
+
+      --render-graph-path-height <RENDER_GRAPH_PATH_HEIGHT>
+          Pixel height for each path row
+          
+          [default: 3]
+
+      --render-graph-mean-depth
+          Pass -m to gfalook, coloring the 1D graph by mean path depth
+
+Graph characterization:
+      --describe-graph
+          Write an LLM-readable graph characterization report beside each graph output
+
+      --graph-report-output <GRAPH_REPORT_OUTPUT>
+          Output report file or, for BED graph output, output directory. Extension selects
+          md/json/tsv; extensionless paths use --graph-report-format
+
+      --graph-report-format <GRAPH_REPORT_FORMAT>
+          Report format for --describe-graph
+          
+          [default: markdown]
+
+      --graph-report-top <GRAPH_REPORT_TOP>
+          Number of long links, path jumps, depth runs, and POVU sites to list
+          
+          [default: 10]
+
+      --graph-report-povu
+          Include POVU flubble/site decomposition in the graph report
+
+      --graph-report-reference-name <GRAPH_REPORT_REFERENCE_NAMES>
+          Reference path/name hint for the POVU decomposition. May be repeated
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+
+Output formats:
+  auto       bed for -r/--target-range; bedpe for -b/--target-bed
+  bed        merged homologous intervals as BED rows
+  bedpe      paired query/result intervals; useful for batch queries and CIGAR-aware output
+  paf        PAF-like projected interval matches
+  gfa        local sequence graph built from query-selected intervals using --gfa-engine
+  vcf        POVU VCF calls from the local sequence graph selected by --gfa-engine
+  maf        multiple-alignment output for query-selected intervals
+  fasta      FASTA sequences for query-selected intervals
+  fasta+paf  FASTA sequences plus PAF-like interval mappings
+  fasta-aln  FASTA alignment output from the local POA/MAF path
+  gbwt       region-specific syng GBWT/khash output; requires -O and sequence files
+
+For BED graph output (`-b regions.bed -o gfa|vcf|gbwt`), `-O` is an output
+directory and each BED row is written to its own file named from BED column 4.
+Use `--render-graph` with `-o gfa|vcf` to also write a gfalook 1D rendering
+of the final graph. PNG is the default; use `--render-graph-format svg` or a
+`.svg` output path for SVG. With BED graph output the render output is a
+directory and receives one image per BED row. Add `--render-graph-depth` to
+pass `-m` to gfalook and color the 1D rendering by mean path depth.
+Use `--describe-graph` with `-o gfa|vcf` to also write a Markdown/JSON/TSV
+graph characterization report. The report summarizes topology, layout stress,
+path-depth architecture, repeat-glue signals, and optional POVU flubbles
+(`--graph-report-povu`). With BED graph output the report output is a directory
+and receives one report per BED row.
+
+Syng notes:
+  With -a/--alignment pointing to a syng index, supported query outputs are
+  bed, bedpe, gfa, vcf, fasta, and gbwt. Use -o gfa for a local sequence GFA from
+  query-selected intervals. `--gfa-engine syng` emits a syng syncmer GFA and
+  defaults to syng:blunt plus gfasort pipeline Ygs; use syng:raw to preserve
+  native overlaps and `:nosort` to skip final ordering. `--gfa-engine syng-local`
+  rebuilds a fresh regional syng index from query-selected sequences; its
+  k/s/seed parameters select the local rebuild scheme rather than asserting the
+  global index. Syng and syng-local GFA extraction
+  selects the top 0.05% high-frequency local syncmer nodes and private-splits
+  unsupported occurrences before bluntification, while rescuing supported
+  high-frequency runs by `freq-run` (default 10 syncmers) or exact spans by
+  `freq-span` (default 1k bp). Spectrum-selected dispersed scaffold glue uses
+  the same `freq-run` / `freq-span` rescue before any private split. They also
+  require other shared syncmer support to appear in a short consecutive run by
+  default, and clone rare repeated-copy local syncmer contexts so repeats seed
+  ranges but do not glue unrelated copies;
+  use `:nomask` or `:nofilter` to disable this or
+  `:mask,top=0.001,max-occ=500,freq-run=10,freq-span=1k,sequence-k=191,min-run=3`
+  to tune it. Add `:mask,freq-run-aware=false` or
+  `:mask,legacy-freq-mask=true` to reproduce legacy node-level frequency
+  removal. The
+  explicit `sequence-k` filter splits weak shared syncmer topology into
+  private per-occurrence segments unless it is supported by an exact repeated
+  consecutive-syncmer span of that many bp or by the configured `min-run`
+  anchor run. Blunt output pins private copies to the shared syncmer's blunt
+  trim coordinates so splitting cannot change post-blunt path spellings. Add
+  `:cut-ns` to drop ambiguous N-runs from fetched gap DNA and split emitted
+  graph paths at those breaks.
+  The compact forms
+  `-o gfa:syng:blunt,k=63,s=8,seed=7`, `-o gfa:syng:crush`,
+  `-o gfa:syng-local:blunt,k=127,s=16,seed=7:crush`,
+  `-o gfa:syng:crush:sort,pipeline=Ygs`, and `-o vcf:syng` are accepted
+  as shorthand. Use
+  `impg syng2gfa` to dump the whole syng syncmer graph instead.
+
+GFA engine shorthand:
+  `-o gfa:pggb`, `-o gfa:seqwish`, `-o gfa:poa`, `-o gfa:syng`, and the
+  matching `-o vcf:<engine>` forms are equivalent to
+  `-o <format> --gfa-engine <engine>`. Alignment-backed graph builds can also
+  name the aligner prefix, e.g. `-o gfa:wfmash:seqwish`,
+  `-o gfa:fastga:pggb`, or `-o gfa:sweepga:seqwish`. Add `:crush` to run
+  exact path-preserving blunt-graph resolution and default final cleanup, e.g.
+  `-o gfa:pggb:crush`, `-o gfa:seqwish:crush`, or `-o gfa:syng:crush`.
+  Add `cut-n=<bp>` before the engine, e.g. `-o gfa:cut-n=100:pggb`, to clip
+  terminal N-runs of at least that length from extracted query sequences before
+  graph construction; internal N-runs and shorter terminal runs are preserved.
+  Crush methods include allwave, poa, poasta, abpoa, star-biwfa, sweepga,
+  wfmash, hierarchical, chain-povu, top-flubble-sweepga, motif-local; e.g.
+  `-o gfa:syng:crush,method=allwave,k-nearest=5,k-farthest=2`.
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg refine --help
+Refine loci to maximize the number of samples that span both ends of the region
+
+Usage: impg refine [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Alignment input:
+  -a, --alignment-files <ALIGNMENT_FILES>...
+          Path to the alignment files (PAF, 1ALN, or TPA format)
+
+      --alignment-list <ALIGNMENT_LIST>
+          Path to a text file containing paths to alignment files (one per line, PAF, 1ALN, or TPA
+          format)
+
+Index options:
+  -i, --index <INDEX>
+          Path to the IMPG index file (implies single-index mode)
+
+  -f, --force-reindex
+          Force the regeneration of the index, even if it already exists
+
+      --index-mode <INDEX_MODE>
+          Index mode: single, per-file or auto (single, but per-file if >= 100 files)
+
+          Possible values:
+          - auto:     Auto-select based on file count
+          - single:   Single combined index
+          - per-file: One index per alignment file
+          
+          [default: auto]
+
+      --unidirectional
+          Disable bidirectional alignment interpretation (default: bidirectional enabled). By
+          default, every alignment A->B creates implicit reverse mapping B->A, guaranteeing all
+          genomes are bridges for transitive queries
+
+Alignment options:
+      --trace-spacing <TRACE_SPACING>
+          Trace spacing for .1aln alignment files (used when converting tracepoints to CIGAR)
+          
+          [default: 100]
+
+Query region:
+  -r, --target-range <TARGET_RANGE>
+          Target range in the format `seq_name:start-end`
+
+  -b, --target-bed <TARGET_BED>
+          Path to the BED file containing target regions
+
+Filtering and merging:
+  -d, --merge-distance <MERGE_DISTANCE>
+          Required. Merge query-gathered ranges separated by at most this many bp. Accepts k/m/g
+          suffixes, e.g. 50k or 1m. This also sets the largest internal gap/SV one query hop can
+          absorb into one reported interval; larger gaps stay split. Use 0 for only
+          overlapping/touching ranges, or --no-merge to disable merging
+
+      --no-merge
+          Explicitly disable merging for all output formats
+
+      --min-result-identity <MIN_RESULT_IDENTITY>
+          Minimum gap-compressed identity threshold (0.0-1.0)
+
+  -l, --min-output-length <MIN_OUTPUT_LENGTH>
+          Minimum output length: filter results shorter than this (bp)
+
+      --subset-sequence-list <SUBSET_SEQUENCE_LIST>
+          Path to a file listing sequence names to include (one per line)
+
+      --consider-strandness
+          Consider strandness when merging output intervals (defaults: merge strands for
+          bed/gfa/maf; keep separate for fasta/fasta-aln)
+
+Transitive queries:
+  -x, --transitive
+          Enable transitive queries (uses BFS by default, or DFS with --transitive-dfs)
+
+Transitive query options:
+      --transitive-dfs
+          Use Depth-First Search instead of BFS for transitive queries (slower, but returns fewer
+          overlapping results)
+
+  -m, --max-depth <MAX_DEPTH>
+          Maximum recursion depth for transitive overlaps (0 for no limit)
+          
+          [default: 2]
+
+      --min-transitive-len <MIN_TRANSITIVE_LEN>
+          Minimum region size to consider for transitive queries (default: 101; for fastga
+          --approximate, set > trace_spacing)
+
+      --min-distance-between-ranges <MIN_DISTANCE_BETWEEN_RANGES>
+          Minimum distance between transitive ranges to consider on the same sequence
+          
+          [default: 10]
+
+Coordinate options:
+      --original-sequence-coordinates
+          Update coordinates to original sequences when input sequences are subsequences
+          (seq_name:start-end) for 'bed', 'bedpe', and 'paf'
+
+Performance:
+      --approximate
+          Use approximate mode for faster queries with tracepoint files (.1aln/.tpa, only bed/bedpe
+          output)
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+Refinement options:
+      --span-bp <SPAN_BP>
+          Minimum number of bases that supporting samples must span at each region boundary
+          
+          [default: 1000]
+
+      --max-extension <MAX_EXTENSION>
+          Maximum per-side extension explored when maximizing boundary support. Values <= 1 are
+          treated as fractions of the locus length; values > 1 as absolute bp
+          
+          [default: 0.5]
+
+      --pansn-mode <PANSN_MODE>
+          PanSN aggregation mode when counting support (sample/haplotype)
+
+          Possible values:
+          - sample:    First `#`-separated segment (`SAMPLE`). Falls back to the whole name for
+            non-PanSN inputs
+          - haplotype: First two `#`-separated segments (`SAMPLE#HAPLOTYPE`). Falls back to just
+            `SAMPLE` if the second segment is missing/empty, which in turn falls back to the whole
+            name for non-PanSN inputs
+
+      --extension-step <EXTENSION_STEP>
+          Step size for expanding flanks (bp)
+          
+          [default: 1000]
+
+      --blacklist-bed <BLACKLIST_BED>
+          BED file with ranges to blacklist when counting maximum possible entities
+
+Output options:
+      --support-output <SUPPORT_OUTPUT>
+          Optional BED file capturing the entities that span the refined region
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg similarity --help
+Compute pairwise similarity between sequences in a region
+
+Usage: impg similarity [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Alignment input:
+  -a, --alignment-files <ALIGNMENT_FILES>...
+          Path to the alignment files (PAF, 1ALN, or TPA format)
+
+      --alignment-list <ALIGNMENT_LIST>
+          Path to a text file containing paths to alignment files (one per line, PAF, 1ALN, or TPA
+          format)
+
+Index options:
+  -i, --index <INDEX>
+          Path to the IMPG index file (implies single-index mode)
+
+  -f, --force-reindex
+          Force the regeneration of the index, even if it already exists
+
+      --index-mode <INDEX_MODE>
+          Index mode: single, per-file or auto (single, but per-file if >= 100 files)
+
+          Possible values:
+          - auto:     Auto-select based on file count
+          - single:   Single combined index
+          - per-file: One index per alignment file
+          
+          [default: auto]
+
+      --unidirectional
+          Disable bidirectional alignment interpretation (default: bidirectional enabled). By
+          default, every alignment A->B creates implicit reverse mapping B->A, guaranteeing all
+          genomes are bridges for transitive queries
+
+Alignment options:
+      --trace-spacing <TRACE_SPACING>
+          Trace spacing for .1aln alignment files (used when converting tracepoints to CIGAR)
+          
+          [default: 100]
+
+      --poa-scoring <POA_SCORING>
+          POA alignment scores as match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2
+          
+          [default: 1,4,6,2,26,1]
+
+      --aligner <ALIGNER>
+          Aligner to use for FASTA input
+          
+          [default: fastga]
+          [possible values: fastga, wfmash]
+
+      --fastga
+          Use FastGA aligner (shorthand for --aligner fastga)
+
+      --wfmash
+          Use wfmash aligner (shorthand for --aligner wfmash)
+
+      --fastga-frequency <FREQUENCY>
+          FastGA k-mer frequency threshold (use k-mers occurring ≤ N times). Overrides
+          --fastga-frequency-multiplier when set
+
+      --fastga-frequency-multiplier <FASTGA_FREQUENCY_MULTIPLIER>
+          FastGA k-mer frequency multiplier: when --fastga-frequency is unset, the effective
+          frequency = `num_pansn_haplotypes * multiplier` (clamped to at least 10). Default 1
+          reproduces FastGA's historical behavior of one k-mer hit per haplotype
+          
+          [default: 1]
+
+      --map-pct-identity <MAP_PCT_IDENTITY>
+          Minimum percent identity for wfmash mapping (e.g. "90" or ANI preset "ani50-2")
+
+      --all-pairs
+          Align all genome pairs separately (slower, uses more memory, but handles many genomes)
+
+      --batch-bytes <BATCH_BYTES>
+          Maximum sequence data per batch (e.g., "50M", "2G"). Partitions genomes into batches.
+          Stored as a raw string so library consumers (like impg's `sweepga::align_self_paf`) can
+          pass it verbatim; parse via `crate::cli::parse_metric_number` at use sites when you need a
+          numeric byte count
+
+      --batch-size <BATCH_SIZE>
+          Explicit number of genomes per batch (manual override). Overrides --batch-bytes and
+          --max-disk
+
+      --max-disk <MAX_DISK>
+          Maximum disk space for temporary files during alignment (e.g., "100G", "500M"). Computes
+          batch size automatically to stay within budget. Overrides --batch-bytes
+
+      --zstd
+          Compress k-mer index with zstd for ~2x disk savings and faster I/O
+
+      --zstd-level <ZSTD_LEVEL>
+          Zstd compression level (1-19, higher = smaller files but slower). Default: 3
+          
+          [default: 3]
+
+      --temp-dir <TEMPDIR>
+          Temporary directory for intermediate files (defaults to TMPDIR env var, then current
+          directory; use "ramdisk" for /dev/shm)
+
+Query region:
+  -r, --target-range <TARGET_RANGE>
+          Target range in the format `seq_name:start-end`
+
+  -b, --target-bed <TARGET_BED>
+          Path to the BED file containing target regions
+
+Filtering and merging:
+  -d, --merge-distance <MERGE_DISTANCE>
+          Required. Merge query-gathered ranges separated by at most this many bp. Accepts k/m/g
+          suffixes, e.g. 50k or 1m. This also sets the largest internal gap/SV one query hop can
+          absorb into one reported interval; larger gaps stay split. Use 0 for only
+          overlapping/touching ranges, or --no-merge to disable merging
+
+      --no-merge
+          Explicitly disable merging for all output formats
+
+      --min-result-identity <MIN_RESULT_IDENTITY>
+          Minimum gap-compressed identity threshold (0.0-1.0)
+
+  -l, --min-output-length <MIN_OUTPUT_LENGTH>
+          Minimum output length: filter results shorter than this (bp)
+
+      --subset-sequence-list <SUBSET_SEQUENCE_LIST>
+          Path to a file listing sequence names to include (one per line)
+
+      --consider-strandness
+          Consider strandness when merging output intervals (defaults: merge strands for
+          bed/gfa/maf; keep separate for fasta/fasta-aln)
+
+Transitive queries:
+  -x, --transitive
+          Enable transitive queries (uses BFS by default, or DFS with --transitive-dfs)
+
+Transitive query options:
+      --transitive-dfs
+          Use Depth-First Search instead of BFS for transitive queries (slower, but returns fewer
+          overlapping results)
+
+  -m, --max-depth <MAX_DEPTH>
+          Maximum recursion depth for transitive overlaps (0 for no limit)
+          
+          [default: 2]
+
+      --min-transitive-len <MIN_TRANSITIVE_LEN>
+          Minimum region size to consider for transitive queries (default: 101; for fastga
+          --approximate, set > trace_spacing)
+
+      --min-distance-between-ranges <MIN_DISTANCE_BETWEEN_RANGES>
+          Minimum distance between transitive ranges to consider on the same sequence
+          
+          [default: 10]
+
+Coordinate options:
+      --original-sequence-coordinates
+          Update coordinates to original sequences when input sequences are subsequences
+          (seq_name:start-end) for 'bed', 'bedpe', and 'paf'
+
+Performance:
+      --approximate
+          Use approximate mode for faster queries with tracepoint files (.1aln/.tpa, only bed/bedpe
+          output)
+
+Output options:
+      --distances
+          Output distances instead of similarities
+
+      --all
+          Emit entries for all pairs of groups, including those with zero intersection
+
+      --delim <DELIM>
+          The part of each path name before this delimiter is a group identifier
+
+      --delim-pos <DELIM_POS>
+          Consider the N-th occurrence of the delimiter (1-indexed, default: 1)
+          
+          [default: 1]
+
+      --reverse-complement
+          Reverse complement reverse strand sequences (for 'fasta' output)
+
+      --force-large-region
+          Force processing of large regions (>10kbp) with maf/gfa output formats
+
+      --gfa-engine <ENGINE[:MODE|WINDOW][,key=value...]>
+          GFA engine: 'pggb' (default), 'seqwish', 'poa', 'syng', or 'syng-local'. Append ':WINDOW'
+          to pggb/seqwish/poa for partitioned mode, e.g. 'pggb:10000'. Syng modes are
+          'syng'/'syng:blunt' (default bluntg output), 'syng:raw', or 'syng-local'; comma parameters
+          assert global syng params for 'syng' and select rebuild params for 'syng-local', e.g.
+          'syng-local,k=127,s=16'
+          
+          [default: pggb]
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+Basic filtering:
+      --min-aln-length <BLOCK_LENGTH>
+          Minimum alignment block length (omit to use aligner default)
+
+      --num-mappings <NUM_MAPPINGS>
+          n:m-best mappings kept in query:target dimensions. 1:1 (orthogonal), use ∞/many for
+          unbounded. Default matches impg's historical pangenome setting: no mapping-axis filter
+          before scaffolding
+          
+          [default: many:many]
+
+      --overlap <OVERLAP>
+          Maximum overlap ratio for plane sweep filtering
+          
+          [default: 0.95]
+
+      --scoring <SCORING>
+          Scoring function for plane sweep
+          
+          [default: log-length-ani]
+          [possible values: ani, length, length-ani, log-length-ani, matches]
+
+      --min-aln-identity <MIN_IDENTITY>
+          Minimum per-mapping identity filter applied to PAF records after alignment (0-1 fraction,
+          1-100%, or "aniN" for Nth percentile). This is a post-alignment PAF filter, not an
+          alignment-stage knob — for wfmash's alignment-stage identity cutoff, use
+          `--map-pct-identity`
+          
+          [default: 0]
+
+      --self
+          Keep self-mappings (excluded by default)
+
+      --no-filter
+          Disable all filtering
+
+      --min-map-length <MIN_MAP_LENGTH>
+          Drop mappings shorter than this before plane-sweep / scaffold filtering. Accepts k/m/g
+          suffixes
+          
+          [default: 0]
+
+Scaffolding and chaining:
+      --scaffold-jump <SCAFFOLD_JUMP>
+          Scaffold jump (gap) distance. 0 = disable scaffolding, >0 = enable (accepts k/m/g suffix).
+          Default matches impg's historical 50kb — pass `--scaffold-jump 0` to turn scaffolding off
+          
+          [default: 50k]
+
+      --scaffold-mass <SCAFFOLD_MASS>
+          Minimum scaffold chain length (accepts k/m/g suffix)
+          
+          [default: 10k]
+
+      --scaffold-filter <SCAFFOLD_FILTER>
+          Scaffold filter mode: "1:1" (best), "M:N" (M per query, N per target), "many" (unbounded)
+          
+          [default: many:many]
+
+      --scaffold-overlap <SCAFFOLD_OVERLAP>
+          Scaffold chain overlap threshold for plane sweep filtering
+          
+          [default: 0.5]
+
+      --scaffold-dist <SCAFFOLD_DIST>
+          Maximum Euclidean distance from scaffold anchor for rescue (0 = no rescue, accepts k/m/g
+          suffix)
+          
+          [default: 0]
+
+      --min-scaffold-identity <MIN_SCAFFOLD_IDENTITY>
+          Minimum scaffold identity threshold (0-1 fraction, 1-100%, "aniN", or defaults to
+          --min-aln-identity)
+          
+          [default: 0]
+
+      --scaffolds-only
+          Output scaffold chains only (for debugging)
+
+      --no-adaptive-scaffolds
+          Disable scaffold-parameter adaptation to input sequence length.
+          
+          By default, when the FASTA average sequence length is known, `--scaffold-mass` is clamped
+          to `avg_seq_len * 3/5` (nice-rounded) and `--scaffold-jump` is clamped to `avg_seq_len *
+          10`. This is a no-op for whole-genome inputs (user values are already smaller than the
+          clamps) but prevents default thresholds from filtering out everything when inputs are
+          short (e.g. pangenome-window excerpts). Pass `--no-adaptive-scaffolds` to turn the
+          clamping off.
+
+Advanced filtering:
+      --sparsify <SPARSIFY>
+          Sparsification strategy: `none` (default = all pairs), `auto`, `<frac>` / `random:<frac>`,
+          `giant:<prob>` / `connectivity:<prob>`, `tree:<near>[:<far>[:<random>]]` / `knn:…`,
+          `wfmash:auto` / `wfmash:<frac>`. Parsed once by clap at CLI-parse time via
+          `SparsificationStrategy::from_str`
+          
+          [default: none]
+
+      --mash-kmer-size <MASH_KMER_SIZE>
+          K-mer size used by the mash sketches driving tree/giant sparsification
+          
+          [default: 15]
+
+      --mash-sketch-size <MASH_SKETCH_SIZE>
+          Sketch size (number of minimizers) for the mash sketches driving tree/giant sparsification
+          
+          [default: 1000]
+
+      --joblist
+          Instead of running alignments, emit one shell command per genome pair to stdout (or
+          `--output-file`) and exit. Useful for cluster / grid dispatch: each emitted line is a
+          standalone `sweepga` invocation that aligns one pair. Requires multiple FASTA inputs
+
+      --joblist-output-dir <JOBLIST_OUTPUT_DIR>
+          Output directory for per-pair PAFs emitted by `--joblist`. Defaults to the current working
+          directory. Ignored when `--joblist` is unset
+
+      --ani-method <ANI_METHOD>
+          Method for calculating ANI: all, orthogonal, nX[-sort] (e.g. n50, n90-identity,
+          n100-score)
+          
+          [default: n100]
+
+AGC archive options:
+      --agc-prefix <AGC_PREFIX>
+          Extract only samples matching this prefix (AGC input)
+
+      --agc-samples <AGC_SAMPLES>
+          Extract only these samples (comma-separated or @file with one per line)
+
+      --agc-queries <AGC_QUERIES>
+          Query samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-targets <AGC_TARGETS>
+          Target samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-temp-dir <AGC_TEMPDIR>
+          Temp directory for AGC extraction (defaults to --temp-dir)
+
+Pair selection:
+      --pairs <PAIRS_FILE>
+          File of sample pairs to align (TSV: query<tab>target, one pair per line)
+
+      --pairs-done <PAIRS_DONE>
+          File to append completed pairs (for resume capability)
+
+      --pairs-remaining <PAIRS_REMAINING>
+          File to write remaining pairs after run (for resume capability)
+
+      --list-pairs
+          List all sample pairs and exit (for generating pairs files)
+
+      --shuffle-pairs
+          Shuffle pair order (for load balancing across runs)
+
+      --shuffle-seed <SHUFFLE_SEED>
+          Seed for pair shuffling (for reproducible ordering)
+
+      --max-pairs <MAX_PAIRS>
+          Maximum number of pairs to process in this run (0 = unlimited)
+          
+          [default: 0]
+
+      --pair-start <PAIR_START>
+          Start index for pair range (0-based, use with shuffle-seed for stable ordering)
+          
+          [default: 0]
+
+      --sparsify-pairs <SPARSIFY_PAIRS>
+          Sparsification strategy for pair selection (none, auto, random:<frac>, giant:<prob>,
+          tree:<near>:<far>:<random>[:<kmer>])
+          
+          [default: none]
+
+Graph induction (seqwish):
+      --repeat-max <REPEAT_MAX>
+          Maximum repeat count for transitive closure (0 = no limit)
+          
+          [default: 0]
+
+      --min-repeat-dist <MIN_REPEAT_DIST>
+          Minimum distance between repeats
+          
+          [default: 0]
+
+      --min-match-len <MIN_MATCH_LEN>
+          Minimum match length filter for alignments
+          
+          [default: 23]
+
+      --sparse-factor <SPARSE_FACTOR>
+          Sparse factor for input matches (0.0 = keep all)
+          
+          [default: 0]
+
+      --transclose-batch <TRANSCLOSE_BATCH>
+          Batch size for transitive closure computation
+          
+          [default: 10000000]
+
+      --disk-backed
+          Use disk-backed interval trees (slower but lower memory)
+
+Graph smoothing (pggb engine):
+      --target-poa-length <TARGET_POA_LENGTH>
+          Comma-separated target POA block lengths in bp, one per smoothing pass (default:
+          "700,1100" matching pggb's `-G 700,1100`)
+          
+          [default: 700,1100]
+
+      --max-node-length <MAX_NODE_LENGTH>
+          Maximum node length before chopping (default: 100)
+          
+          [default: 100]
+
+      --poa-padding-fraction <POA_PADDING_FRACTION>
+          Fraction of avg block length to use as POA padding (default: 0.001)
+          
+          [default: 0.001]
+
+      --debug-dir <DEBUG_DIR>
+          Save intermediate debug files (PAFs, FASTAs, sub-GFAs, chunk info) to this directory
+
+PCA options:
+      --pca
+          Perform PCA/MDS dimensionality reduction on the distance matrix
+
+      --pca-components <PCA_COMPONENTS>
+          Number of PCA components to output (default: 2)
+          
+          [default: 2]
+
+      --polarize-n-prev <POLARIZE_N_PREV>
+          Number of previous regions to use for adaptive polarization (0 to disable)
+          
+          [default: 3]
+
+      --polarize-guide-samples <POLARIZE_GUIDE_SAMPLES>
+          Comma-separated names of the samples to use for adaptive polarization
+
+      --pca-measure <PCA_MEASURE>
+          Similarity measure to use for PCA distance matrix ("jaccard", "cosine", or "dice")
+          
+          [default: jaccard]
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg genotype --help
+Genotype a locus from graph-derived sample evidence
+
+Usage: impg genotype <COMMAND>
+
+Commands:
+  cos  Genotype a locus by cosine similarity over graph-feature coverage
+
+Options:
+  -h, --help  Print help
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg genotype cos --help
+Genotype a locus by cosine similarity over graph-feature coverage
+
+Usage: impg genotype cos [OPTIONS]
+
+Options:
+  -a, --index <INDEX>
+          Syng index prefix or .1khash/.1gbwt/.spos/.pstep/.names/.meta path
+
+      --graph <GRAPH>
+          Prebuilt local GFA graph to genotype with gfa-segment features
+
+      --render-bundle <RENDER_BUNDLE>
+          Render bundle directory produced by `impg render --engine syng-native`
+
+  -p, --pack <PACK>
+          Sample support vector produced by `impg map -o pack`
+
+      --proj <PROJ>
+          Sample projection bundle produced by `impg map -o proj`
+
+  -r, --target-range <TARGET_RANGE>
+          Reference path range to genotype, in the format `seq_name:start-end`
+
+      --target-path <TARGET_PATH>
+          Graph path or path interval to genotype, in the format `PATH[:start-end]`
+
+      --pack-feature-space <PACK_FEATURE_SPACE>
+          Declare the feature space of an untyped graph pack (gfa-segment or variation-graph-node)
+
+      --pack-graph-id <PACK_GRAPH_ID>
+          Optional graph ID assertion for graph packs
+
+      --graph-feature-id-mode <GRAPH_FEATURE_ID_MODE>
+          How GFA S-line names map to integer pack feature IDs
+
+          Possible values:
+          - auto:         Use numeric GFA segment names when all segment names are positive u32s;
+            otherwise use dense import order
+          - dense:        Assign feature IDs 1..N in S-line import order
+          - segment-name: Require every S-line segment name to be a positive u32 and use that as the
+            feature ID
+          
+          [default: auto]
+
+      --graph-contribution-model <GRAPH_CONTRIBUTION_MODEL>
+          Contribution model for graph-node evidence
+
+          Possible values:
+          - raw:               Score raw graph-node traversal counts
+          - length-normalized: Divide sample node counts by segment length and count candidate
+            partial traversals by covered-bp / segment-length
+          
+          [default: raw]
+
+      --candidate-mode <CANDIDATE_MODE>
+          Candidate extraction mode
+
+          Possible values:
+          - spanning:    Keep path candidates whose shared anchors span the requested reference
+            range
+          - overlapping: Score every query-gathered candidate interval independently
+          
+          [default: spanning]
+
+      --ploidy <PLOIDY>
+          Ploidy for genotype combinations
+          
+          [default: 2]
+
+      --top-n <TOP_N>
+          Number of genotype combinations to emit
+          
+          [default: 20]
+
+      --candidate-top-k <CANDIDATE_TOP_K>
+          Keep only the best N single-haplotype candidates before combination search (0 = keep all)
+          
+          [default: 200]
+
+      --max-combinations <MAX_COMBINATIONS>
+          Maximum haplotype combinations to score
+          
+          [default: 1000000]
+
+      --syng-padding <SYNG_PADDING>
+          Target-side padding in bp for syng candidate discovery
+          
+          [default: 0]
+
+      --syng-extension <SYNG_EXTENSION>
+          Source-side extension in bp for syng candidate discovery
+          
+          [default: 0]
+
+      --min-anchors <MIN_ANCHORS>
+          Minimum shared syncmer anchors required for a candidate
+          
+          [default: 2]
+
+      --min-span-fraction <MIN_SPAN_FRACTION>
+          For spanning mode, minimum fraction of the requested reference range covered by shared
+          anchors
+          
+          [default: 0.8]
+
+      --emit-report <EMIT_REPORT>
+          Optional human-readable evidence report path for debugging candidate vectors and score
+          decomposition
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+Output options:
+      --gfa-engine <ENGINE[:MODE|WINDOW][,key=value...]>
+          GFA engine: 'pggb' (default), 'seqwish', 'poa', 'syng', or 'syng-local'. Append ':WINDOW'
+          to pggb/seqwish/poa for partitioned mode, e.g. 'pggb:10000'. Syng modes are
+          'syng'/'syng:blunt' (default bluntg output), 'syng:raw', or 'syng-local'; comma parameters
+          assert global syng params for 'syng' and select rebuild params for 'syng-local', e.g.
+          'syng-local,k=127,s=16'
+          
+          [default: pggb]
+
+Alignment options:
+      --poa-scoring <POA_SCORING>
+          POA alignment scores as match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2
+          
+          [default: 1,4,6,2,26,1]
+
+      --aligner <ALIGNER>
+          Aligner to use for FASTA input
+          
+          [default: fastga]
+          [possible values: fastga, wfmash]
+
+      --fastga
+          Use FastGA aligner (shorthand for --aligner fastga)
+
+      --wfmash
+          Use wfmash aligner (shorthand for --aligner wfmash)
+
+      --fastga-frequency <FREQUENCY>
+          FastGA k-mer frequency threshold (use k-mers occurring ≤ N times). Overrides
+          --fastga-frequency-multiplier when set
+
+      --fastga-frequency-multiplier <FASTGA_FREQUENCY_MULTIPLIER>
+          FastGA k-mer frequency multiplier: when --fastga-frequency is unset, the effective
+          frequency = `num_pansn_haplotypes * multiplier` (clamped to at least 10). Default 1
+          reproduces FastGA's historical behavior of one k-mer hit per haplotype
+          
+          [default: 1]
+
+      --map-pct-identity <MAP_PCT_IDENTITY>
+          Minimum percent identity for wfmash mapping (e.g. "90" or ANI preset "ani50-2")
+
+      --all-pairs
+          Align all genome pairs separately (slower, uses more memory, but handles many genomes)
+
+      --batch-bytes <BATCH_BYTES>
+          Maximum sequence data per batch (e.g., "50M", "2G"). Partitions genomes into batches.
+          Stored as a raw string so library consumers (like impg's `sweepga::align_self_paf`) can
+          pass it verbatim; parse via `crate::cli::parse_metric_number` at use sites when you need a
+          numeric byte count
+
+      --batch-size <BATCH_SIZE>
+          Explicit number of genomes per batch (manual override). Overrides --batch-bytes and
+          --max-disk
+
+      --max-disk <MAX_DISK>
+          Maximum disk space for temporary files during alignment (e.g., "100G", "500M"). Computes
+          batch size automatically to stay within budget. Overrides --batch-bytes
+
+      --zstd
+          Compress k-mer index with zstd for ~2x disk savings and faster I/O
+
+      --zstd-level <ZSTD_LEVEL>
+          Zstd compression level (1-19, higher = smaller files but slower). Default: 3
+          
+          [default: 3]
+
+      --temp-dir <TEMPDIR>
+          Temporary directory for intermediate files (defaults to TMPDIR env var, then current
+          directory; use "ramdisk" for /dev/shm)
+
+Basic filtering:
+      --min-aln-length <BLOCK_LENGTH>
+          Minimum alignment block length (omit to use aligner default)
+
+      --num-mappings <NUM_MAPPINGS>
+          n:m-best mappings kept in query:target dimensions. 1:1 (orthogonal), use ∞/many for
+          unbounded. Default matches impg's historical pangenome setting: no mapping-axis filter
+          before scaffolding
+          
+          [default: many:many]
+
+      --overlap <OVERLAP>
+          Maximum overlap ratio for plane sweep filtering
+          
+          [default: 0.95]
+
+      --scoring <SCORING>
+          Scoring function for plane sweep
+          
+          [default: log-length-ani]
+          [possible values: ani, length, length-ani, log-length-ani, matches]
+
+      --min-aln-identity <MIN_IDENTITY>
+          Minimum per-mapping identity filter applied to PAF records after alignment (0-1 fraction,
+          1-100%, or "aniN" for Nth percentile). This is a post-alignment PAF filter, not an
+          alignment-stage knob — for wfmash's alignment-stage identity cutoff, use
+          `--map-pct-identity`
+          
+          [default: 0]
+
+      --self
+          Keep self-mappings (excluded by default)
+
+      --no-filter
+          Disable all filtering
+
+      --min-map-length <MIN_MAP_LENGTH>
+          Drop mappings shorter than this before plane-sweep / scaffold filtering. Accepts k/m/g
+          suffixes
+          
+          [default: 0]
+
+Scaffolding and chaining:
+      --scaffold-jump <SCAFFOLD_JUMP>
+          Scaffold jump (gap) distance. 0 = disable scaffolding, >0 = enable (accepts k/m/g suffix).
+          Default matches impg's historical 50kb — pass `--scaffold-jump 0` to turn scaffolding off
+          
+          [default: 50k]
+
+      --scaffold-mass <SCAFFOLD_MASS>
+          Minimum scaffold chain length (accepts k/m/g suffix)
+          
+          [default: 10k]
+
+      --scaffold-filter <SCAFFOLD_FILTER>
+          Scaffold filter mode: "1:1" (best), "M:N" (M per query, N per target), "many" (unbounded)
+          
+          [default: many:many]
+
+      --scaffold-overlap <SCAFFOLD_OVERLAP>
+          Scaffold chain overlap threshold for plane sweep filtering
+          
+          [default: 0.5]
+
+      --scaffold-dist <SCAFFOLD_DIST>
+          Maximum Euclidean distance from scaffold anchor for rescue (0 = no rescue, accepts k/m/g
+          suffix)
+          
+          [default: 0]
+
+      --min-scaffold-identity <MIN_SCAFFOLD_IDENTITY>
+          Minimum scaffold identity threshold (0-1 fraction, 1-100%, "aniN", or defaults to
+          --min-aln-identity)
+          
+          [default: 0]
+
+      --scaffolds-only
+          Output scaffold chains only (for debugging)
+
+      --no-adaptive-scaffolds
+          Disable scaffold-parameter adaptation to input sequence length.
+          
+          By default, when the FASTA average sequence length is known, `--scaffold-mass` is clamped
+          to `avg_seq_len * 3/5` (nice-rounded) and `--scaffold-jump` is clamped to `avg_seq_len *
+          10`. This is a no-op for whole-genome inputs (user values are already smaller than the
+          clamps) but prevents default thresholds from filtering out everything when inputs are
+          short (e.g. pangenome-window excerpts). Pass `--no-adaptive-scaffolds` to turn the
+          clamping off.
+
+Advanced filtering:
+      --sparsify <SPARSIFY>
+          Sparsification strategy: `none` (default = all pairs), `auto`, `<frac>` / `random:<frac>`,
+          `giant:<prob>` / `connectivity:<prob>`, `tree:<near>[:<far>[:<random>]]` / `knn:…`,
+          `wfmash:auto` / `wfmash:<frac>`. Parsed once by clap at CLI-parse time via
+          `SparsificationStrategy::from_str`
+          
+          [default: none]
+
+      --mash-kmer-size <MASH_KMER_SIZE>
+          K-mer size used by the mash sketches driving tree/giant sparsification
+          
+          [default: 15]
+
+      --mash-sketch-size <MASH_SKETCH_SIZE>
+          Sketch size (number of minimizers) for the mash sketches driving tree/giant sparsification
+          
+          [default: 1000]
+
+      --joblist
+          Instead of running alignments, emit one shell command per genome pair to stdout (or
+          `--output-file`) and exit. Useful for cluster / grid dispatch: each emitted line is a
+          standalone `sweepga` invocation that aligns one pair. Requires multiple FASTA inputs
+
+      --joblist-output-dir <JOBLIST_OUTPUT_DIR>
+          Output directory for per-pair PAFs emitted by `--joblist`. Defaults to the current working
+          directory. Ignored when `--joblist` is unset
+
+      --ani-method <ANI_METHOD>
+          Method for calculating ANI: all, orthogonal, nX[-sort] (e.g. n50, n90-identity,
+          n100-score)
+          
+          [default: n100]
+
+AGC archive options:
+      --agc-prefix <AGC_PREFIX>
+          Extract only samples matching this prefix (AGC input)
+
+      --agc-samples <AGC_SAMPLES>
+          Extract only these samples (comma-separated or @file with one per line)
+
+      --agc-queries <AGC_QUERIES>
+          Query samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-targets <AGC_TARGETS>
+          Target samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-temp-dir <AGC_TEMPDIR>
+          Temp directory for AGC extraction (defaults to --temp-dir)
+
+Pair selection:
+      --pairs <PAIRS_FILE>
+          File of sample pairs to align (TSV: query<tab>target, one pair per line)
+
+      --pairs-done <PAIRS_DONE>
+          File to append completed pairs (for resume capability)
+
+      --pairs-remaining <PAIRS_REMAINING>
+          File to write remaining pairs after run (for resume capability)
+
+      --list-pairs
+          List all sample pairs and exit (for generating pairs files)
+
+      --shuffle-pairs
+          Shuffle pair order (for load balancing across runs)
+
+      --shuffle-seed <SHUFFLE_SEED>
+          Seed for pair shuffling (for reproducible ordering)
+
+      --max-pairs <MAX_PAIRS>
+          Maximum number of pairs to process in this run (0 = unlimited)
+          
+          [default: 0]
+
+      --pair-start <PAIR_START>
+          Start index for pair range (0-based, use with shuffle-seed for stable ordering)
+          
+          [default: 0]
+
+      --sparsify-pairs <SPARSIFY_PAIRS>
+          Sparsification strategy for pair selection (none, auto, random:<frac>, giant:<prob>,
+          tree:<near>:<far>:<random>[:<kmer>])
+          
+          [default: none]
+
+Graph induction (seqwish):
+      --repeat-max <REPEAT_MAX>
+          Maximum repeat count for transitive closure (0 = no limit)
+          
+          [default: 0]
+
+      --min-repeat-dist <MIN_REPEAT_DIST>
+          Minimum distance between repeats
+          
+          [default: 0]
+
+      --min-match-len <MIN_MATCH_LEN>
+          Minimum match length filter for alignments
+          
+          [default: 23]
+
+      --sparse-factor <SPARSE_FACTOR>
+          Sparse factor for input matches (0.0 = keep all)
+          
+          [default: 0]
+
+      --transclose-batch <TRANSCLOSE_BATCH>
+          Batch size for transitive closure computation
+          
+          [default: 10000000]
+
+      --disk-backed
+          Use disk-backed interval trees (slower but lower memory)
+
+Graph smoothing (pggb engine):
+      --target-poa-length <TARGET_POA_LENGTH>
+          Comma-separated target POA block lengths in bp, one per smoothing pass (default:
+          "700,1100" matching pggb's `-G 700,1100`)
+          
+          [default: 700,1100]
+
+      --max-node-length <MAX_NODE_LENGTH>
+          Maximum node length before chopping (default: 100)
+          
+          [default: 100]
+
+      --poa-padding-fraction <POA_PADDING_FRACTION>
+          Fraction of avg block length to use as POA padding (default: 0.001)
+          
+          [default: 0.001]
+
+      --debug-dir <DEBUG_DIR>
+          Save intermediate debug files (PAFs, FASTAs, sub-GFAs, chunk info) to this directory
+
+  -O, --output <OUTPUT>
+          Output file path (default: stdout; .zst/.zstd enables zstd compression)
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg project --help
+Project graph alignments into typed GFA genotype evidence
+
+Usage: impg project [OPTIONS] --gfa <GFA> --gaf <GAF> --output <OUTPUT>
+
+Options:
+      --gfa <GFA>
+          GFA graph whose S-line segment names appear in the GAF path walks
+
+      --gaf <GAF>
+          GAF alignments with path fields like >segA<segB over GFA segment names
+
+  -o, --output-format <OUTPUT_FORMAT>
+          Output format: proj (projection bundle) or pack-tsv
+          
+          [default: proj]
+
+  -O, --output <OUTPUT>
+          Output projection directory or typed pack TSV path
+
+      --read-contributions <READ_CONTRIBUTIONS>
+          Optional read-contribution table path for -o pack-tsv output; proj bundles always include
+          one
+
+      --graph-feature-id-mode <GRAPH_FEATURE_ID_MODE>
+          How GFA S-line names map to integer pack feature IDs
+
+          Possible values:
+          - auto:         Use numeric GFA segment names when all segment names are positive u32s;
+            otherwise use dense import order
+          - dense:        Assign feature IDs 1..N in S-line import order
+          - segment-name: Require every S-line segment name to be a positive u32 and use that as the
+            feature ID
+          
+          [default: auto]
+
+      --graph-contribution-model <GRAPH_CONTRIBUTION_MODEL>
+          Contribution model declared for graph-node evidence
+
+          Possible values:
+          - raw:               Score raw graph-node traversal counts
+          - length-normalized: Divide sample node counts by segment length and count candidate
+            partial traversals by covered-bp / segment-length
+          
+          [default: raw]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg infer --help
+Infer allele calls across ranges or partitions from graph-derived evidence
+
+Usage: impg infer [OPTIONS]
+
+Options:
+  -a, --index <INDEX>
+          Syng index prefix or .1khash/.1gbwt/.spos/.pstep/.names/.meta path
+
+      --render-bundle <RENDER_BUNDLE>
+          Render bundle directory produced by `impg render --engine syng-native`
+
+  -p, --pack <PACK>
+          Sample support vector produced by `impg map -o pack`
+
+      --proj <PROJ>
+          Sample projection bundle produced by `impg map -o proj`
+
+      --gaf <GAF>
+          Per-read GAF syncmer walks produced by `impg map -o gaf`
+
+  -r, --target-range <TARGET_RANGE>
+          Type exactly one target range, in the format `seq_name:start-end`
+
+      --target-bed <TARGET_BED>
+          BED-like target ranges to type independently
+
+      --partitions <PARTITIONS>
+          BED-like partitions from `impg partition`; the first row per partition is used as the
+          typed reference range
+
+  -w, --window-size <WINDOW_SIZE>
+          Window size for internal partition discovery when no target input is provided
+          
+          [default: 1000000]
+
+  -d, --merge-distance <MERGE_DISTANCE>
+          Required for internal partition discovery. Merge query-gathered ranges separated by at
+          most this many bp (accepts k/m/g suffixes, e.g. 50k or 1m)
+
+      --starting-sequences-file <STARTING_SEQUENCES_FILE>
+          Path to sequence names used to seed internal partition discovery
+
+      --selection-mode <SELECTION_MODE>
+          Selection mode for internal partition discovery
+          
+          [default: longest]
+
+      --min-missing-size <MIN_MISSING_SIZE>
+          Minimum region size for missing regions during internal partition discovery
+          
+          [default: 3000]
+
+      --min-boundary-distance <MIN_BOUNDARY_DISTANCE>
+          Minimum distance from sequence start/end during internal partition discovery
+          
+          [default: 3000]
+
+      --partition-syng-padding <PARTITION_SYNG_PADDING>
+          Boundary padding in bp for syng queries during internal partition discovery
+          
+          [default: 120]
+
+      --partition-syng-min-chain-anchors <PARTITION_SYNG_MIN_CHAIN_ANCHORS>
+          Minimum anchor count for syng chains during internal partition discovery
+          
+          [default: 0]
+
+      --partition-syng-min-chain-fraction <PARTITION_SYNG_MIN_CHAIN_FRACTION>
+          Minimum query-span fraction for syng chains during internal partition discovery
+          
+          [default: 0]
+
+      --no-rehome-singletons
+          Disable post-partition singleton sliver rehoming during internal partition discovery
+
+      --score <SCORE>
+          Scoring method
+          
+          [default: cos]
+
+      --candidate-mode <CANDIDATE_MODE>
+          Candidate extraction mode
+
+          Possible values:
+          - spanning:    Keep path candidates whose shared anchors span the requested reference
+            range
+          - overlapping: Score every query-gathered candidate interval independently
+          
+          [default: spanning]
+
+      --ploidy <PLOIDY>
+          Ploidy for genotype combinations
+          
+          [default: 2]
+
+      --top-n <TOP_N>
+          Number of genotype combinations to emit per target
+          
+          [default: 1]
+
+      --candidate-top-k <CANDIDATE_TOP_K>
+          Keep only the best N single-haplotype candidates before combination search (0 = keep all)
+          
+          [default: 200]
+
+      --max-combinations <MAX_COMBINATIONS>
+          Maximum haplotype combinations to score per target
+          
+          [default: 1000000]
+
+      --syng-padding <SYNG_PADDING>
+          Target-side padding in bp for syng candidate discovery during local typing
+          
+          [default: 0]
+
+      --syng-extension <SYNG_EXTENSION>
+          Source-side extension in bp for syng candidate discovery during local typing
+          
+          [default: 0]
+
+      --min-anchors <MIN_ANCHORS>
+          Minimum shared syncmer anchors required for a candidate
+          
+          [default: 2]
+
+      --min-span-fraction <MIN_SPAN_FRACTION>
+          For spanning mode, minimum fraction of the requested reference range covered by shared
+          anchors
+          
+          [default: 0.8]
+
+  -O, --output <OUTPUT>
+          Output file path (default: stdout; .zst/.zstd enables zstd compression)
+
+      --stitch <STITCH>
+          Stitch local calls into phased mosaic paths
+
+          Possible values:
+          - none: Emit independent local calls only
+          - beam: Stitch retained local calls into phased mosaics with a beam search
+          
+          [default: none]
+
+      --phase-block-size <PHASE_BLOCK_SIZE>
+          Split each target into fixed-size phase blocks before stitching (0 disables)
+          
+          [default: 0]
+
+      --stitch-beam <STITCH_BEAM>
+          Number of partial mosaics retained during beam stitching
+          
+          [default: 200]
+
+      --switch-penalty <SWITCH_PENALTY>
+          Cost of switching panel haplotypes in the stitched mosaic
+          
+          [default: 20]
+
+      --stitch-gap <STITCH_GAP>
+          Maximum same-path adjacency gap before marking a stitch uncertain
+          
+          [default: 1000]
+
+      --read-link-weight <READ_LINK_WEIGHT>
+          Weight for read-walk evidence when scoring stitched phase transitions
+          
+          [default: 1]
+
+      --min-read-link-anchors <MIN_READ_LINK_ANCHORS>
+          Minimum read syncmer anchors a candidate must share before it contributes read-link
+          evidence
+          
+          [default: 2]
+
+      --strict-stitch
+          Reject uncertain FASTA/GFA sequence joins instead of labeling or padding them
+
+      --emit-mosaic <EMIT_MOSAIC>
+          Write stitched mosaic segments as TSV
+
+      --emit-fasta <EMIT_FASTA>
+          Write inferred haplotype sequences as FASTA; requires --sequence-files or --sequence-list
+
+      --emit-gfa <EMIT_GFA>
+          Write inferred haplotype paths as GFA; requires --sequence-files or --sequence-list
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg stats --help
+Print alignment statistics
+
+Usage: impg stats [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Alignment input:
+  -a, --alignment-files <ALIGNMENT_FILES>...
+          Path to the alignment files (PAF, 1ALN, or TPA format)
+
+      --alignment-list <ALIGNMENT_LIST>
+          Path to a text file containing paths to alignment files (one per line, PAF, 1ALN, or TPA
+          format)
+
+Index options:
+  -i, --index <INDEX>
+          Path to the IMPG index file (implies single-index mode)
+
+  -f, --force-reindex
+          Force the regeneration of the index, even if it already exists
+
+      --index-mode <INDEX_MODE>
+          Index mode: single, per-file or auto (single, but per-file if >= 100 files)
+
+          Possible values:
+          - auto:     Auto-select based on file count
+          - single:   Single combined index
+          - per-file: One index per alignment file
+          
+          [default: auto]
+
+      --unidirectional
+          Disable bidirectional alignment interpretation (default: bidirectional enabled). By
+          default, every alignment A->B creates implicit reverse mapping B->A, guaranteeing all
+          genomes are bridges for transitive queries
+
+Alignment options:
+      --trace-spacing <TRACE_SPACING>
+          Trace spacing for .1aln alignment files (used when converting tracepoints to CIGAR)
+          
+          [default: 100]
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+      --list-sequences
+          List sequence names and lengths (skip overlap statistics)
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg graph --help
+Build a pangenome graph from FASTA sequences using sweepga+seqwish
+
+Usage: impg graph [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+  -a, --paf-file <PAF_FILE>
+          Input PAF file (skip alignment step if provided)
+
+  -g, --output <OUTPUT>
+          Output GFA file path (use "-" for stdout)
+          
+          [default: -]
+
+Output options:
+      --gfa-engine <ENGINE[:MODE|WINDOW][,key=value...]>
+          GFA engine: 'pggb' (default), 'seqwish', 'poa', 'syng', or 'syng-local'. Append ':WINDOW'
+          to pggb/seqwish/poa for partitioned mode, e.g. 'pggb:10000'. Syng modes are
+          'syng'/'syng:blunt' (default bluntg output), 'syng:raw', or 'syng-local'; comma parameters
+          assert global syng params for 'syng' and select rebuild params for 'syng-local', e.g.
+          'syng-local,k=127,s=16'
+          
+          [default: pggb]
+
+Alignment options:
+      --poa-scoring <POA_SCORING>
+          POA alignment scores as match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2
+          
+          [default: 1,4,6,2,26,1]
+
+      --aligner <ALIGNER>
+          Aligner to use for FASTA input
+          
+          [default: fastga]
+          [possible values: fastga, wfmash]
+
+      --fastga
+          Use FastGA aligner (shorthand for --aligner fastga)
+
+      --wfmash
+          Use wfmash aligner (shorthand for --aligner wfmash)
+
+      --fastga-frequency <FREQUENCY>
+          FastGA k-mer frequency threshold (use k-mers occurring ≤ N times). Overrides
+          --fastga-frequency-multiplier when set
+
+      --fastga-frequency-multiplier <FASTGA_FREQUENCY_MULTIPLIER>
+          FastGA k-mer frequency multiplier: when --fastga-frequency is unset, the effective
+          frequency = `num_pansn_haplotypes * multiplier` (clamped to at least 10). Default 1
+          reproduces FastGA's historical behavior of one k-mer hit per haplotype
+          
+          [default: 1]
+
+      --map-pct-identity <MAP_PCT_IDENTITY>
+          Minimum percent identity for wfmash mapping (e.g. "90" or ANI preset "ani50-2")
+
+      --all-pairs
+          Align all genome pairs separately (slower, uses more memory, but handles many genomes)
+
+      --batch-bytes <BATCH_BYTES>
+          Maximum sequence data per batch (e.g., "50M", "2G"). Partitions genomes into batches.
+          Stored as a raw string so library consumers (like impg's `sweepga::align_self_paf`) can
+          pass it verbatim; parse via `crate::cli::parse_metric_number` at use sites when you need a
+          numeric byte count
+
+      --batch-size <BATCH_SIZE>
+          Explicit number of genomes per batch (manual override). Overrides --batch-bytes and
+          --max-disk
+
+      --max-disk <MAX_DISK>
+          Maximum disk space for temporary files during alignment (e.g., "100G", "500M"). Computes
+          batch size automatically to stay within budget. Overrides --batch-bytes
+
+      --zstd
+          Compress k-mer index with zstd for ~2x disk savings and faster I/O
+
+      --zstd-level <ZSTD_LEVEL>
+          Zstd compression level (1-19, higher = smaller files but slower). Default: 3
+          
+          [default: 3]
+
+      --temp-dir <TEMPDIR>
+          Temporary directory for intermediate files (defaults to TMPDIR env var, then current
+          directory; use "ramdisk" for /dev/shm)
+
+Basic filtering:
+      --min-aln-length <BLOCK_LENGTH>
+          Minimum alignment block length (omit to use aligner default)
+
+      --num-mappings <NUM_MAPPINGS>
+          n:m-best mappings kept in query:target dimensions. 1:1 (orthogonal), use ∞/many for
+          unbounded. Default matches impg's historical pangenome setting: no mapping-axis filter
+          before scaffolding
+          
+          [default: many:many]
+
+      --overlap <OVERLAP>
+          Maximum overlap ratio for plane sweep filtering
+          
+          [default: 0.95]
+
+      --scoring <SCORING>
+          Scoring function for plane sweep
+          
+          [default: log-length-ani]
+          [possible values: ani, length, length-ani, log-length-ani, matches]
+
+      --min-aln-identity <MIN_IDENTITY>
+          Minimum per-mapping identity filter applied to PAF records after alignment (0-1 fraction,
+          1-100%, or "aniN" for Nth percentile). This is a post-alignment PAF filter, not an
+          alignment-stage knob — for wfmash's alignment-stage identity cutoff, use
+          `--map-pct-identity`
+          
+          [default: 0]
+
+      --self
+          Keep self-mappings (excluded by default)
+
+      --no-filter
+          Disable all filtering
+
+      --min-map-length <MIN_MAP_LENGTH>
+          Drop mappings shorter than this before plane-sweep / scaffold filtering. Accepts k/m/g
+          suffixes
+          
+          [default: 0]
+
+Scaffolding and chaining:
+      --scaffold-jump <SCAFFOLD_JUMP>
+          Scaffold jump (gap) distance. 0 = disable scaffolding, >0 = enable (accepts k/m/g suffix).
+          Default matches impg's historical 50kb — pass `--scaffold-jump 0` to turn scaffolding off
+          
+          [default: 50k]
+
+      --scaffold-mass <SCAFFOLD_MASS>
+          Minimum scaffold chain length (accepts k/m/g suffix)
+          
+          [default: 10k]
+
+      --scaffold-filter <SCAFFOLD_FILTER>
+          Scaffold filter mode: "1:1" (best), "M:N" (M per query, N per target), "many" (unbounded)
+          
+          [default: many:many]
+
+      --scaffold-overlap <SCAFFOLD_OVERLAP>
+          Scaffold chain overlap threshold for plane sweep filtering
+          
+          [default: 0.5]
+
+      --scaffold-dist <SCAFFOLD_DIST>
+          Maximum Euclidean distance from scaffold anchor for rescue (0 = no rescue, accepts k/m/g
+          suffix)
+          
+          [default: 0]
+
+      --min-scaffold-identity <MIN_SCAFFOLD_IDENTITY>
+          Minimum scaffold identity threshold (0-1 fraction, 1-100%, "aniN", or defaults to
+          --min-aln-identity)
+          
+          [default: 0]
+
+      --scaffolds-only
+          Output scaffold chains only (for debugging)
+
+      --no-adaptive-scaffolds
+          Disable scaffold-parameter adaptation to input sequence length.
+          
+          By default, when the FASTA average sequence length is known, `--scaffold-mass` is clamped
+          to `avg_seq_len * 3/5` (nice-rounded) and `--scaffold-jump` is clamped to `avg_seq_len *
+          10`. This is a no-op for whole-genome inputs (user values are already smaller than the
+          clamps) but prevents default thresholds from filtering out everything when inputs are
+          short (e.g. pangenome-window excerpts). Pass `--no-adaptive-scaffolds` to turn the
+          clamping off.
+
+Advanced filtering:
+      --sparsify <SPARSIFY>
+          Sparsification strategy: `none` (default = all pairs), `auto`, `<frac>` / `random:<frac>`,
+          `giant:<prob>` / `connectivity:<prob>`, `tree:<near>[:<far>[:<random>]]` / `knn:…`,
+          `wfmash:auto` / `wfmash:<frac>`. Parsed once by clap at CLI-parse time via
+          `SparsificationStrategy::from_str`
+          
+          [default: none]
+
+      --mash-kmer-size <MASH_KMER_SIZE>
+          K-mer size used by the mash sketches driving tree/giant sparsification
+          
+          [default: 15]
+
+      --mash-sketch-size <MASH_SKETCH_SIZE>
+          Sketch size (number of minimizers) for the mash sketches driving tree/giant sparsification
+          
+          [default: 1000]
+
+      --joblist
+          Instead of running alignments, emit one shell command per genome pair to stdout (or
+          `--output-file`) and exit. Useful for cluster / grid dispatch: each emitted line is a
+          standalone `sweepga` invocation that aligns one pair. Requires multiple FASTA inputs
+
+      --joblist-output-dir <JOBLIST_OUTPUT_DIR>
+          Output directory for per-pair PAFs emitted by `--joblist`. Defaults to the current working
+          directory. Ignored when `--joblist` is unset
+
+      --ani-method <ANI_METHOD>
+          Method for calculating ANI: all, orthogonal, nX[-sort] (e.g. n50, n90-identity,
+          n100-score)
+          
+          [default: n100]
+
+AGC archive options:
+      --agc-prefix <AGC_PREFIX>
+          Extract only samples matching this prefix (AGC input)
+
+      --agc-samples <AGC_SAMPLES>
+          Extract only these samples (comma-separated or @file with one per line)
+
+      --agc-queries <AGC_QUERIES>
+          Query samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-targets <AGC_TARGETS>
+          Target samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-temp-dir <AGC_TEMPDIR>
+          Temp directory for AGC extraction (defaults to --temp-dir)
+
+Pair selection:
+      --pairs <PAIRS_FILE>
+          File of sample pairs to align (TSV: query<tab>target, one pair per line)
+
+      --pairs-done <PAIRS_DONE>
+          File to append completed pairs (for resume capability)
+
+      --pairs-remaining <PAIRS_REMAINING>
+          File to write remaining pairs after run (for resume capability)
+
+      --list-pairs
+          List all sample pairs and exit (for generating pairs files)
+
+      --shuffle-pairs
+          Shuffle pair order (for load balancing across runs)
+
+      --shuffle-seed <SHUFFLE_SEED>
+          Seed for pair shuffling (for reproducible ordering)
+
+      --max-pairs <MAX_PAIRS>
+          Maximum number of pairs to process in this run (0 = unlimited)
+          
+          [default: 0]
+
+      --pair-start <PAIR_START>
+          Start index for pair range (0-based, use with shuffle-seed for stable ordering)
+          
+          [default: 0]
+
+      --sparsify-pairs <SPARSIFY_PAIRS>
+          Sparsification strategy for pair selection (none, auto, random:<frac>, giant:<prob>,
+          tree:<near>:<far>:<random>[:<kmer>])
+          
+          [default: none]
+
+Graph induction (seqwish):
+      --repeat-max <REPEAT_MAX>
+          Maximum repeat count for transitive closure (0 = no limit)
+          
+          [default: 0]
+
+      --min-repeat-dist <MIN_REPEAT_DIST>
+          Minimum distance between repeats
+          
+          [default: 0]
+
+      --min-match-len <MIN_MATCH_LEN>
+          Minimum match length filter for alignments
+          
+          [default: 23]
+
+      --sparse-factor <SPARSE_FACTOR>
+          Sparse factor for input matches (0.0 = keep all)
+          
+          [default: 0]
+
+      --transclose-batch <TRANSCLOSE_BATCH>
+          Batch size for transitive closure computation
+          
+          [default: 10000000]
+
+      --disk-backed
+          Use disk-backed interval trees (slower but lower memory)
+
+Graph smoothing (pggb engine):
+      --target-poa-length <TARGET_POA_LENGTH>
+          Comma-separated target POA block lengths in bp, one per smoothing pass (default:
+          "700,1100" matching pggb's `-G 700,1100`)
+          
+          [default: 700,1100]
+
+      --max-node-length <MAX_NODE_LENGTH>
+          Maximum node length before chopping (default: 100)
+          
+          [default: 100]
+
+      --poa-padding-fraction <POA_PADDING_FRACTION>
+          Fraction of avg block length to use as POA padding (default: 0.001)
+          
+          [default: 0.001]
+
+      --debug-dir <DEBUG_DIR>
+          Save intermediate debug files (PAFs, FASTAs, sub-GFAs, chunk info) to this directory
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg normalize-self-loops --help
+Collapse path-local repeat-unit self-loop runs in a blunt GFA
+
+Usage: impg normalize-self-loops [OPTIONS] --gfa <GFA>
+
+Options:
+  -g, --gfa <GFA>                    Input blunt GFA path, or '-' for stdin
+  -o, --output <OUTPUT>              Output normalized GFA path, or '-' for stdout [default: -]
+      --max-unit-len <MAX_UNIT_LEN>  Maximum self-loop segment length to normalize; 0 means
+                                     unlimited [default: 0]
+      --report <REPORT>              Optional JSON report path for normalization counts
+  -h, --help                         Print help
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg crush --help
+Resolve bounded bubbles in an existing blunt GFA
+
+Usage: impg crush [OPTIONS] --gfa <GFA>
+
+Options:
+  -g, --gfa <GFA>
+          Input blunt GFA path, or '-' for stdin
+  -o, --output <OUTPUT>
+          Output GFA path, or '-' for stdout [default: -]
+      --max-iterations <MAX_ITERATIONS>
+          Maximum frontier replacement rounds [default: 1]
+      --max-span <MAX_SPAN>
+          Maximum root-path span in bp for a candidate bubble; 0 disables this guard [default: 0]
+      --max-traversal-len <MAX_TRAVERSAL_LEN>
+          Maximum traversal length for direct single-bubble candidates; iterative multi-bubble
+          reports this as a diagnostic only [default: 10k]
+      --min-traversal-len <MIN_TRAVERSAL_LEN>
+          Minimum longest-traversal length for a candidate; useful for large-first passes [default:
+          0]
+      --max-median-traversal-len <MAX_MEDIAN_TRAVERSAL_LEN>
+          Maximum median traversal length for direct single-bubble candidates; iterative
+          multi-bubble reports this as a diagnostic only [default: 1k]
+      --max-total-sequence <MAX_TOTAL_SEQUENCE>
+          Maximum total sequence across all traversals for direct single-bubble candidates;
+          iterative multi-bubble reports this as a diagnostic only [default: 1m]
+      --max-traversals <MAX_TRAVERSALS>
+          Maximum number of path-supported traversals through one direct candidate [default: 10k]
+      --auto-spoa-max-traversal-len <AUTO_SPOA_MAX_TRAVERSAL_LEN>
+          Median traversal-length upper bound (exclusive) for auto-mode sPOA routing; 0 disables
+          [default: 1k]
+      --auto-poasta-max-traversal-len <AUTO_POASTA_MAX_TRAVERSAL_LEN>
+          Median traversal-length upper bound (exclusive) for auto-mode POASTA routing; bubbles at
+          or above this go to sweepga. 0 disables [default: 10k]
+      --auto-allwave-max-total-sequence <AUTO_ALLWAVE_MAX_TOTAL_SEQUENCE>
+          Legacy auto-routing knob retained for CLI compatibility [default: 200k]
+      --auto-allwave-max-traversals <AUTO_ALLWAVE_MAX_TRAVERSALS>
+          Legacy auto-routing knob retained for CLI compatibility [default: 128]
+      --polish-rounds <POLISH_ROUNDS>
+          Small-tangle polish rounds after pairwise induction; use until-done to exhaust [default:
+          until-done]
+      --polish-method <POLISH_METHOD>
+          Polish method after pairwise induction: poa, poasta, or smooth [default: poa]
+      --polish-max-traversal-len <POLISH_MAX_TRAVERSAL_LEN>
+          Maximum traversal length for the small-tangle polish pass [default: 10k]
+      --polish-max-median-traversal-len <POLISH_MAX_MEDIAN_TRAVERSAL_LEN>
+          Maximum median traversal length for the small-tangle polish pass [default: 1k]
+      --polish-max-total-sequence <POLISH_MAX_TOTAL_SEQUENCE>
+          Maximum total sequence across all traversals in one polish candidate [default: 1m]
+      --polish-max-traversals <POLISH_MAX_TRAVERSALS>
+          Maximum number of path-supported traversals through one polish candidate [default: 10k]
+      --method <METHOD>
+          Resolver method: auto, allwave, poa, poasta, abpoa, star-biwfa, sweepga, wfmash,
+          hierarchical, chain-greedy, chain-povu, top-flubble-sweepga,
+          iterative-multi-level/multi-bubble, coverage-multi-bubble, or motif-local [default: auto]
+      --abpoa-bin <ABPOA_BIN>
+          abPOA executable for --method abpoa [default: abpoa]
+      --poa-scoring <POA_SCORING>
+          POA/SPOA/POASTA scoring as match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2
+          [default: 1,4,6,2,26,1]
+      --k-nearest <K_NEAREST>
+          Pair-sampling nearest-neighbor count for allwave/sweepga crush [default: 3]
+      --k-farthest <K_FARTHEST>
+          Pair-sampling farthest-neighbor count for allwave/sweepga crush [default: 1]
+      --pair-trees <PAIR_TREE_COUNT>
+          Independent tree-sampling passes to union for allwave/sweepga crush [default: 1]
+      --random-fraction <RANDOM_FRACTION>
+          Deterministic random pair fraction for allwave/sweepga crush [default: 0.01]
+      --mash-k <MASH_K>
+          Mash k-mer size for allwave/sweepga pair selection [default: 15]
+      --seqwish-k <REPLACEMENT_SEQWISH_MIN_MATCH_LEN>
+          Legacy adaptive base for local replacement seqwish min-match; exact-run filtering defaults
+          off unless --min-match-length opts in [default: 311]
+      --min-match-length <REPLACEMENT_MIN_MATCH_LENGTH>
+          Local replacement exact-run floor: off, adaptive, 0/1, or a fixed bp length [default: off]
+      --replacement-min-map-length <REPLACEMENT_MIN_MAP_LENGTH>
+          Minimum pairwise mapping length kept before replacement seqwish induction; 0 follows the
+          effective min-match length [default: 0]
+      --replacement-min-identity <REPLACEMENT_MIN_IDENTITY>
+          Minimum pairwise mapping identity kept before replacement seqwish induction; 0 disables
+          [default: 0.0]
+      --replacement-num-mappings <REPLACEMENT_NUM_MAPPINGS>
+          Plane-sweep mapping filter before replacement seqwish induction; accepts 1:1, 1-many,
+          one-to-many, many:many [default: 1:1]
+      --replacement-scaffold-filter <REPLACEMENT_SCAFFOLD_FILTER>
+          Scaffold-chain filter before replacement seqwish induction; accepts 1:1, 1-many,
+          one-to-many, many:many [default: 1:1]
+      --sweepga-aligner <SWEEPGA_ALIGNER>
+          SweepGA aligner backend for --method sweepga: fastga or wfmash [default: fastga]
+      --sweepga-kmer-frequency <SWEEPGA_KMER_FREQUENCY>
+          SweepGA/FastGA k-mer frequency for --method sweepga; 0 auto-scales for bubble-local
+          repeats [default: 0]
+      --sweepga-min-aln-length <SWEEPGA_MIN_ALN_LENGTH>
+          SweepGA minimum alignment length for --method sweepga [default: 0]
+      --sweepga-map-pct-identity <SWEEPGA_MAP_PCT_IDENTITY>
+          SweepGA wfmash percent identity for --method sweepga
+      --max-pair-alignments <MAX_PAIR_ALIGNMENTS>
+          Maximum selected/produced pair alignments for diagnostics; iterative multi-bubble does not
+          skip candidates on this limit [default: 10k]
+      --max-replacement-paf-bytes <MAX_REPLACEMENT_PAF_BYTES>
+          Maximum estimated PAF bytes for diagnostics; iterative multi-bubble does not skip
+          candidates on this limit [default: 67108864]
+      --sweepga-no-filter [<SWEEPGA_NO_FILTER>]
+          Skip SweepGA post-alignment filtering for --method sweepga [default: false] [possible
+          values: true, false]
+      --sweepga-sparse-pairs [<SWEEPGA_SPARSE_PAIRS>]
+          Deprecated for crush: SweepGA replacement induction always uses one all-vs-all
+          self-alignment batch [default: false] [possible values: true, false]
+      --replacement-flank-bp <REPLACEMENT_FLANK_BP>
+          Bubble-flanking context in bp added on each side of the bubble interior when feeding the
+          replacement aligner; 0 disables. Clipped from the aligner output before integration. See
+          docs/crush-wider-context-bubbles.md [default: 0]
+      --chain-target-bp <CHAIN_GREEDY_TARGET_BP>
+          Target root-path span for --method chain-greedy chain blocks [default: 10k]
+      --window-mode <MULTI_LEVEL_WINDOW_MODE>
+          Candidate source set for --method iterative-multi-level: largest, parent, sibling,
+          sliding, outward, motif, or combined [default: combined]
+      --motif-max-sparse-paths <MOTIF_MAX_SPARSE_PATHS>
+          Maximum paths supporting a sparse motif-local offshoot core [default: 5]
+      --motif-min-flank-paths <MOTIF_MIN_FLANK_PATHS>
+          Minimum paths supporting motif-local anchor flanks; 0 auto-scales to path count [default:
+          0]
+      --motif-min-order-jump <MOTIF_MIN_ORDER_JUMP>
+          Minimum graph-order jump for motif-local sparse offshoot discovery [default: 1k]
+      --motif-max-window-bp <MOTIF_MAX_WINDOW_BP>
+          Maximum bp length for one motif-local anchor-pair window [default: 10k]
+      --window-target-bp <MULTI_LEVEL_WINDOW_TARGET_BP>
+          Maximum root-path span for generated iterative-multi-level windows; 0 reuses
+          --chain-target-bp [default: 0]
+      --max-window-sites <MULTI_LEVEL_MAX_WINDOW_SITES>
+          Maximum discovered flubble sites to merge into one iterative-multi-level window [default:
+          8]
+      --candidate-limit <MULTI_LEVEL_CANDIDATE_LIMIT>
+          Maximum generated iterative-multi-level candidates to build per round; 0 disables
+          [default: 192]
+      --admission-only [<MULTI_LEVEL_ADMISSION_ONLY>]
+          Report iterative multi-level/outward candidate admission and exit without building
+          replacements [default: false] [possible values: true, false]
+      --max-transclosure-cells <MULTI_LEVEL_MAX_TRANSCLOSURE_CELLS>
+          Maximum estimated transitive-closure cells for outward residual diagnostics; 0 disables
+          the warning [default: 0]
+      --max-poasta-cells <MULTI_LEVEL_MAX_POASTA_CELLS>
+          Maximum estimated POASTA cells for outward residual diagnostics; 0 disables the warning
+          [default: 0]
+      --min-objective-delta <MULTI_LEVEL_MIN_OBJECTIVE_DELTA>
+          Minimum positive local objective score required for iterative-multi-level candidate
+          acceptance [default: 1]
+      --objective <MULTI_LEVEL_OBJECTIVE>
+          Objective for iterative multi-bubble candidate acceptance: size or coverage [default:
+          size]
+      --repeat-aware-boundaries [<MULTI_LEVEL_REPEAT_AWARE_BOUNDARIES>]
+          Avoid tiny high-frequency low-complexity anchors as multi-bubble window boundaries
+          [default: false] [possible values: true, false]
+  -h, --help
+          Print help
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg gfa2vcf --help
+Call VCF variants from an existing GFA using POVU
+
+Usage: impg gfa2vcf [OPTIONS] --gfa <GFA>
+
+Options:
+  -g, --gfa <GFA>
+          Input GFA path, or '-' for stdin
+  -o, --output <OUTPUT>
+          Output VCF path, or '-' for stdout [default: -]
+  -r, --reference-name <REFERENCE_NAMES>
+          Reference path/name hint for POVU. May be repeated; if omitted, POVU uses its default
+          reference selection
+  -h, --help
+          Print help
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg graph-report --help
+Describe GFA topology, layout stress, repeats, and optional POVU flubbles
+
+Usage: impg graph-report [OPTIONS] --gfa <GFA>
+
+Options:
+  -g, --gfa <GFA>
+          Input GFA path, or '-' for stdin
+  -o, --output <OUTPUT>
+          Output report path, or '-' for stdout [default: -]
+      --format <FORMAT>
+          Report format: markdown, json, or tsv [default: markdown]
+      --top <TOP>
+          Number of long links, path jumps, depth runs, and POVU sites to list [default: 10]
+      --povu
+          Include POVU flubble/site decomposition
+      --flubble-path-gfa <FLUBBLE_PATH_GFA>
+          Write a GFA copy with diagnostic POVU flubble traversal P-lines
+      --flubble-path-mode <FLUBBLE_PATH_MODE>
+          Traversals to write with --flubble-path-gfa: dominant or per-path [default: dominant]
+  -r, --reference-name <REFERENCE_NAMES>
+          Reference path/name hint for POVU. May be repeated
+  -h, --help
+          Print help
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg render --help
+Render a syng-backed source-coordinate region into a GBZ-style bundle
+
+Usage: impg render [OPTIONS] --index <INDEX> --target-range <TARGET_RANGE> --output <OUTPUT>
+
+Options:
+  -a, --index <INDEX>
+          Syng index prefix or .1khash/.1gbwt/.spos/.pstep/.names/.meta path
+  -r, --target-range <TARGET_RANGE>
+          Source coordinate range to render, in the format `seq_name:start-end`
+  -O, --output <OUTPUT>
+          Output render bundle directory
+      --engine <ENGINE>
+          Render engine. `syng` defaults to `syng:blunt`; use `syng:raw` to keep native overlaps
+          [default: syng]
+      --syng-padding <SYNG_PADDING>
+          Boundary padding in bp for syng candidate discovery [default: 120]
+      --syng-extension <SYNG_EXTENSION>
+          Source-side extension in bp for syng candidate discovery [default: 0]
+      --no-gfa
+          Do not emit an explicit GFA view of the rendered syng region
+      --keep-existing
+          Write into an existing output directory
+  -h, --help
+          Print help
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg align --help
+Generate alignment pairs with sparsification strategies
+
+Usage: impg align [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+  -o, --output-dir <OUTPUT_DIR>
+          Output directory for alignments
+          
+          [default: alignments]
+
+      --format <FORMAT>
+          Output format: paf, 1aln, or joblist
+          
+          [default: joblist]
+
+      --run-joblist <RUN_JOBLIST>
+          Execute an existing joblist file (one shell command per line) in parallel with
+          progress/ETA logging. When set, sparsification and sequence inputs are ignored
+
+      --jobs <JOBS>
+          Parallel slots for `--run-joblist`. Each slot runs one command at a time; per-command
+          thread count is whatever the joblist line already specifies. Defaults to `--threads`
+
+Alignment options:
+      --aligner <ALIGNER>
+          Aligner to use for FASTA input
+          
+          [default: fastga]
+          [possible values: fastga, wfmash]
+
+      --fastga
+          Use FastGA aligner (shorthand for --aligner fastga)
+
+      --wfmash
+          Use wfmash aligner (shorthand for --aligner wfmash)
+
+      --fastga-frequency <FREQUENCY>
+          FastGA k-mer frequency threshold (use k-mers occurring ≤ N times). Overrides
+          --fastga-frequency-multiplier when set
+
+      --fastga-frequency-multiplier <FASTGA_FREQUENCY_MULTIPLIER>
+          FastGA k-mer frequency multiplier: when --fastga-frequency is unset, the effective
+          frequency = `num_pansn_haplotypes * multiplier` (clamped to at least 10). Default 1
+          reproduces FastGA's historical behavior of one k-mer hit per haplotype
+          
+          [default: 1]
+
+      --map-pct-identity <MAP_PCT_IDENTITY>
+          Minimum percent identity for wfmash mapping (e.g. "90" or ANI preset "ani50-2")
+
+      --all-pairs
+          Align all genome pairs separately (slower, uses more memory, but handles many genomes)
+
+      --batch-bytes <BATCH_BYTES>
+          Maximum sequence data per batch (e.g., "50M", "2G"). Partitions genomes into batches.
+          Stored as a raw string so library consumers (like impg's `sweepga::align_self_paf`) can
+          pass it verbatim; parse via `crate::cli::parse_metric_number` at use sites when you need a
+          numeric byte count
+
+      --batch-size <BATCH_SIZE>
+          Explicit number of genomes per batch (manual override). Overrides --batch-bytes and
+          --max-disk
+
+      --max-disk <MAX_DISK>
+          Maximum disk space for temporary files during alignment (e.g., "100G", "500M"). Computes
+          batch size automatically to stay within budget. Overrides --batch-bytes
+
+      --zstd
+          Compress k-mer index with zstd for ~2x disk savings and faster I/O
+
+      --zstd-level <ZSTD_LEVEL>
+          Zstd compression level (1-19, higher = smaller files but slower). Default: 3
+          
+          [default: 3]
+
+      --temp-dir <TEMPDIR>
+          Temporary directory for intermediate files (defaults to TMPDIR env var, then current
+          directory; use "ramdisk" for /dev/shm)
+
+Basic filtering:
+      --min-aln-length <BLOCK_LENGTH>
+          Minimum alignment block length (omit to use aligner default)
+
+      --num-mappings <NUM_MAPPINGS>
+          n:m-best mappings kept in query:target dimensions. 1:1 (orthogonal), use ∞/many for
+          unbounded. Default matches impg's historical pangenome setting: no mapping-axis filter
+          before scaffolding
+          
+          [default: many:many]
+
+      --overlap <OVERLAP>
+          Maximum overlap ratio for plane sweep filtering
+          
+          [default: 0.95]
+
+      --scoring <SCORING>
+          Scoring function for plane sweep
+          
+          [default: log-length-ani]
+          [possible values: ani, length, length-ani, log-length-ani, matches]
+
+      --min-aln-identity <MIN_IDENTITY>
+          Minimum per-mapping identity filter applied to PAF records after alignment (0-1 fraction,
+          1-100%, or "aniN" for Nth percentile). This is a post-alignment PAF filter, not an
+          alignment-stage knob — for wfmash's alignment-stage identity cutoff, use
+          `--map-pct-identity`
+          
+          [default: 0]
+
+      --self
+          Keep self-mappings (excluded by default)
+
+      --no-filter
+          Disable all filtering
+
+      --min-map-length <MIN_MAP_LENGTH>
+          Drop mappings shorter than this before plane-sweep / scaffold filtering. Accepts k/m/g
+          suffixes
+          
+          [default: 0]
+
+Scaffolding and chaining:
+      --scaffold-jump <SCAFFOLD_JUMP>
+          Scaffold jump (gap) distance. 0 = disable scaffolding, >0 = enable (accepts k/m/g suffix).
+          Default matches impg's historical 50kb — pass `--scaffold-jump 0` to turn scaffolding off
+          
+          [default: 50k]
+
+      --scaffold-mass <SCAFFOLD_MASS>
+          Minimum scaffold chain length (accepts k/m/g suffix)
+          
+          [default: 10k]
+
+      --scaffold-filter <SCAFFOLD_FILTER>
+          Scaffold filter mode: "1:1" (best), "M:N" (M per query, N per target), "many" (unbounded)
+          
+          [default: many:many]
+
+      --scaffold-overlap <SCAFFOLD_OVERLAP>
+          Scaffold chain overlap threshold for plane sweep filtering
+          
+          [default: 0.5]
+
+      --scaffold-dist <SCAFFOLD_DIST>
+          Maximum Euclidean distance from scaffold anchor for rescue (0 = no rescue, accepts k/m/g
+          suffix)
+          
+          [default: 0]
+
+      --min-scaffold-identity <MIN_SCAFFOLD_IDENTITY>
+          Minimum scaffold identity threshold (0-1 fraction, 1-100%, "aniN", or defaults to
+          --min-aln-identity)
+          
+          [default: 0]
+
+      --scaffolds-only
+          Output scaffold chains only (for debugging)
+
+      --no-adaptive-scaffolds
+          Disable scaffold-parameter adaptation to input sequence length.
+          
+          By default, when the FASTA average sequence length is known, `--scaffold-mass` is clamped
+          to `avg_seq_len * 3/5` (nice-rounded) and `--scaffold-jump` is clamped to `avg_seq_len *
+          10`. This is a no-op for whole-genome inputs (user values are already smaller than the
+          clamps) but prevents default thresholds from filtering out everything when inputs are
+          short (e.g. pangenome-window excerpts). Pass `--no-adaptive-scaffolds` to turn the
+          clamping off.
+
+Advanced filtering:
+      --sparsify <SPARSIFY>
+          Sparsification strategy: `none` (default = all pairs), `auto`, `<frac>` / `random:<frac>`,
+          `giant:<prob>` / `connectivity:<prob>`, `tree:<near>[:<far>[:<random>]]` / `knn:…`,
+          `wfmash:auto` / `wfmash:<frac>`. Parsed once by clap at CLI-parse time via
+          `SparsificationStrategy::from_str`
+          
+          [default: none]
+
+      --mash-kmer-size <MASH_KMER_SIZE>
+          K-mer size used by the mash sketches driving tree/giant sparsification
+          
+          [default: 15]
+
+      --mash-sketch-size <MASH_SKETCH_SIZE>
+          Sketch size (number of minimizers) for the mash sketches driving tree/giant sparsification
+          
+          [default: 1000]
+
+      --joblist
+          Instead of running alignments, emit one shell command per genome pair to stdout (or
+          `--output-file`) and exit. Useful for cluster / grid dispatch: each emitted line is a
+          standalone `sweepga` invocation that aligns one pair. Requires multiple FASTA inputs
+
+      --joblist-output-dir <JOBLIST_OUTPUT_DIR>
+          Output directory for per-pair PAFs emitted by `--joblist`. Defaults to the current working
+          directory. Ignored when `--joblist` is unset
+
+      --ani-method <ANI_METHOD>
+          Method for calculating ANI: all, orthogonal, nX[-sort] (e.g. n50, n90-identity,
+          n100-score)
+          
+          [default: n100]
+
+AGC archive options:
+      --agc-prefix <AGC_PREFIX>
+          Extract only samples matching this prefix (AGC input)
+
+      --agc-samples <AGC_SAMPLES>
+          Extract only these samples (comma-separated or @file with one per line)
+
+      --agc-queries <AGC_QUERIES>
+          Query samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-targets <AGC_TARGETS>
+          Target samples for asymmetric alignment (prefix or comma-separated/@file list)
+
+      --agc-temp-dir <AGC_TEMPDIR>
+          Temp directory for AGC extraction (defaults to --temp-dir)
+
+Pair selection:
+      --pairs <PAIRS_FILE>
+          File of sample pairs to align (TSV: query<tab>target, one pair per line)
+
+      --pairs-done <PAIRS_DONE>
+          File to append completed pairs (for resume capability)
+
+      --pairs-remaining <PAIRS_REMAINING>
+          File to write remaining pairs after run (for resume capability)
+
+      --list-pairs
+          List all sample pairs and exit (for generating pairs files)
+
+      --shuffle-pairs
+          Shuffle pair order (for load balancing across runs)
+
+      --shuffle-seed <SHUFFLE_SEED>
+          Seed for pair shuffling (for reproducible ordering)
+
+      --max-pairs <MAX_PAIRS>
+          Maximum number of pairs to process in this run (0 = unlimited)
+          
+          [default: 0]
+
+      --pair-start <PAIR_START>
+          Start index for pair range (0-based, use with shuffle-seed for stable ordering)
+          
+          [default: 0]
+
+      --sparsify-pairs <SPARSIFY_PAIRS>
+          Sparsification strategy for pair selection (none, auto, random:<frac>, giant:<prob>,
+          tree:<near>:<far>:<random>[:<kmer>])
+          
+          [default: none]
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg map --help
+Map sequences to a syng index using exact shared syncmers
+
+Usage: impg map [OPTIONS] --index <INDEX> --query <QUERY>
+
+Options:
+  -a, --index <INDEX>
+          Syng index prefix or .1khash/.1gbwt/.spos/.pstep/.names/.meta path
+  -q, --query <QUERY>
+          Query FASTA or FASTQ file
+  -o, --output-format <OUTPUT_FORMAT>
+          Output format: gaf (read syncmer walks), paf (projected coordinates), pack (compact
+          support vector), pack-tsv (text support vector), or proj (projection bundle) [default:
+          gaf]
+  -O, --output <OUTPUT>
+          Output file path (default: stdout; .zst/.zstd enables zstd compression)
+      --min-anchors <MIN_ANCHORS>
+          Minimum shared syncmer anchors required to emit a mapping [default: 1]
+      --chain-budget <CHAIN_BUDGET>
+          Anchor chaining budget for PAF projection [default: 10000]
+      --max-hits <MAX_HITS>
+          Maximum PAF hits to emit per query (0 = no limit) [default: 0]
+      --pack-compression-level <PACK_COMPRESSION_LEVEL>
+          Zstd compression level for binary pack output (1..=22; 19 is compact but slower) [default:
+          12]
+      --pack-block-size <PACK_BLOCK_SIZE>
+          Dense node-count block size for binary pack random access [default: 1048576]
+  -h, --help
+          Print help
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg read-index --help
+Build a compact read-to-syncmer inverted index
+
+Usage: impg read-index [OPTIONS] --index <INDEX> --query <QUERY>... --output <OUTPUT>
+
+Options:
+  -a, --index <INDEX>
+          Syng index prefix or .1khash/.meta path
+  -q, --query <QUERY>...
+          Query FASTA/FASTQ file(s). Repeat -q or pass multiple paths after one -q
+  -o, --output <OUTPUT>
+          Output prefix (produces .r2s.meta, .r2s.sample, .r2s.post)
+      --min-syncmers <MIN_SYNCMERS>
+          Minimum distinct syng syncmer nodes required to keep a read [default: 1]
+      --node-sample-rate <NODE_SAMPLE_RATE>
+          Sample every N observed syncmer nodes for random-access lookup [default: 256]
+  -h, --help
+          Print help
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg syng --help
+Build a GBWT syncmer index from sequences
+
+Usage: impg syng [OPTIONS] --output <OUTPUT>
+
+Options:
+      --agc <AGC>        AGC archive input
+  -f, --fasta <FASTA>    FASTA input file
+  -o, --output <OUTPUT>  Output file prefix (produces .1khash, .1gbwt, and syng sidecars; avoids
+                         .syng.syng.* if prefix ends in .syng)
+  -h, --help             Print help
+
+Position sampling:
+      --position-sample-rate <POSITION_SAMPLE_RATE>
+          Sample every N syncmer steps plus each path's terminal syncmer [default: 256]
+
+Construction:
+      --parallel-dictionary  Build a deterministic global syncmer dictionary in a parallel prepass,
+                             then replay paths through it
+
+Syncmer parameters:
+      --syncmer-k <SYNCMER_K>
+          Inner k-mer length for syncmer extraction
+      --smer-length <SMER_LENGTH>
+          Inner smer length for syncmer extraction (`s` in the syng paper; default 8)
+      --syncmer-w <SYNCMER_W>
+          Window length for syncmer extraction (total syncmer length = w + k)
+      --syncmer-length <SYNCMER_LENGTH>
+          Total syncmer length (`k` in the syng paper; must be odd; default 63)
+      --syncmer-seed <SYNCMER_SEED>
+          Hash function seed for syncmer extraction [default: 7]
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg syng2gfa --help
+Dump a syng index to GFA (S = syncmer, L = adjacency, P/W = path).
+
+Loads `<prefix>.1khash`, `<prefix>.1gbwt`, `<prefix>.syng.names`, `<prefix>.syng.meta` (and
+`.syng.spos`) and writes a GFA with one segment per syncmer plus one segment per inter-syncmer gap.
+Gaps are filled with real DNA when `--sequence-files` is provided (sequence names must match the
+syng path names); otherwise they are filled with `N`s and a warning is emitted. Default mode is
+`blunt`, which runs pangenome/bluntg; use `--gfa-mode raw` to keep native syng link overlaps.
+
+Usage: impg syng2gfa [OPTIONS] --syng-prefix <SYNG_PREFIX>
+
+Options:
+  -a, --syng-prefix <SYNG_PREFIX>
+          Syng index prefix (the same prefix passed to `impg syng -o`)
+
+  -o, --output <OUTPUT>
+          Output GFA path (default: stdout; use "-" for stdout)
+          
+          [default: -]
+
+      --gfa-version <GFA_VERSION>
+          GFA spec version: `1.0` (P lines, default) or `1.1` (W lines, PanSN-parsed)
+          
+          [default: 1.0]
+
+      --gfa-mode <GFA_MODE>
+          Syng GFA mode: `blunt` (default; zero-overlap blunt graph via bluntg) or `raw`
+          
+          [default: blunt]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Sequence input:
+      --sequence-files <SEQUENCE_FILES>...
+          List of sequence file paths (FASTA or AGC) (required for 'gfa', 'maf', and 'fasta')
+
+      --sequence-list <SEQUENCE_LIST>
+          Path to a text file containing paths to sequence files (FASTA or AGC) (required for 'gfa',
+          'maf', and 'fasta')
+
+General options:
+  -t, --threads <THREADS>
+          Number of threads for parallel processing
+          
+          [default: 4]
+
+  -v, --verbose <VERBOSE>
+          Verbosity level (0 = error, 1 = info, 2 = debug)
+          
+          [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg syng-repair --help
+Repair or create sampled positional sidecars for an existing syng index
+
+Usage: impg syng-repair [OPTIONS] --index <INDEX>
+
+Options:
+  -a, --index <INDEX>  Syng index prefix or .1khash/.1gbwt/.spos/.pstep/.names/.meta path
+      --force          Resample and overwrite existing position sidecars
+  -h, --help           Print help
+
+Position sampling:
+      --position-sample-rate <POSITION_SAMPLE_RATE>
+          Sample every N syncmer steps plus each path's terminal syncmer [default: 256]
+      --serial-position-sampling
+          Rebuild sidecars serially instead of walking paths in parallel
+      --position-progress-interval <POSITION_PROGRESS_INTERVAL>
+          Log positional repair progress after this many completed paths (0 disables) [default: 1]
+
+General options:
+  -t, --threads <THREADS>  Number of threads for parallel processing [default: 4]
+  -v, --verbose <VERBOSE>  Verbosity level (0 = error, 1 = info, 2 = debug) [default: 1]
+[exit_status=0]
+$ /home/erikg/.cargo/bin/impg version
+error: unrecognized subcommand 'version'
+
+Usage: impg <COMMAND>
+
+For more information, try '--help'.
+[exit_status=2]
