@@ -1,0 +1,105 @@
+captured_at=2026-07-24T20:04:17+00:00
+PATH=/home/erikg/.pi/agent/bin:/home/erikg/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/erikg/.elan/bin:/home/erikg/.local/bin:/home/erikg/bin:/home/erikg/.nvm/versions/node/v24.18.0/bin:/home/erikg/micromamba/condabin:/home/erikg/.elan/bin:/home/erikg/.cargo/bin:/home/erikg/.local/bin:/home/erikg/bin:/home/erikg/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/erikg/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/erikg/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/bin:/home/erikg/.fzf/bin:/home/erikg/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/bin
+purpose=Installed executable/version/help discovery; no tool was installed or run on sequences.
+
+[mesh]
+status=NOT_FOUND_ON_PATH
+
+[mesh-distance]
+status=NOT_FOUND_ON_PATH
+
+[mesh_triangle]
+status=NOT_FOUND_ON_PATH
+
+[mesh-triangle]
+status=NOT_FOUND_ON_PATH
+
+[mash]
+status=NOT_FOUND_ON_PATH
+
+[mashtree]
+status=NOT_FOUND_ON_PATH
+
+[MashTree]
+status=NOT_FOUND_ON_PATH
+
+[rapidnj]
+status=NOT_FOUND_ON_PATH
+
+[quicktree]
+status=NOT_FOUND_ON_PATH
+
+[FastTree]
+status=NOT_FOUND_ON_PATH
+
+[fasttree]
+status=NOT_FOUND_ON_PATH
+
+[FastTreeMP]
+status=NOT_FOUND_ON_PATH
+
+[iqtree]
+status=NOT_FOUND_ON_PATH
+
+[iqtree2]
+status=NOT_FOUND_ON_PATH
+
+[iqtree3]
+status=NOT_FOUND_ON_PATH
+
+[snippy]
+status=NOT_FOUND_ON_PATH
+
+[snippy-core]
+status=NOT_FOUND_ON_PATH
+
+[run_gubbins.py]
+status=NOT_FOUND_ON_PATH
+
+[gubbins]
+status=NOT_FOUND_ON_PATH
+
+[fastANI]
+status=NOT_FOUND_ON_PATH
+
+[skani]
+status=NOT_FOUND_ON_PATH
+
+[checkm]
+status=NOT_FOUND_ON_PATH
+
+[checkm2]
+status=NOT_FOUND_ON_PATH
+
+[quast.py]
+status=NOT_FOUND_ON_PATH
+
+[quast]
+status=NOT_FOUND_ON_PATH
+
+[dpkg-query]
+dpkg-query: no packages found matching mash
+dpkg-query: no packages found matching mashtree
+dpkg-query: no packages found matching rapidnj
+dpkg-query: no packages found matching iqtree
+dpkg-query: no packages found matching snippy
+dpkg-query: no packages found matching gubbins
+dpkg-query: no packages found matching fastani
+dpkg-query: no packages found matching skani
+dpkg-query: no packages found matching checkm2
+dpkg-query: no packages found matching quast
+
+[micromamba environments and matching package metadata]
+  Name               Active  Path
+────────────────────────────────────────────────────────────────────────────
+  base                       /home/erikg/micromamba
+  bitnet                     /home/erikg/micromamba/envs/bitnet
+  cuda_12.4                  /home/erikg/micromamba/envs/cuda_12.4
+  cuda_ok                    /home/erikg/micromamba/envs/cuda_ok
+  cuda_yay                   /home/erikg/micromamba/envs/cuda_yay
+  deepseed-examples          /home/erikg/micromamba/envs/deepseed-examples
+  gruf_env                   /home/erikg/micromamba/envs/gruf_env
+  mingru                     /home/erikg/micromamba/envs/mingru
+  pggb-env                   /home/erikg/micromamba/envs/pggb-env
+  whisper                    /home/erikg/micromamba/envs/whisper
+  wtf                        /home/erikg/micromamba/envs/wtf

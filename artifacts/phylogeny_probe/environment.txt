@@ -1,0 +1,49 @@
+captured_at=2026-07-24T20:04:16+00:00
+working_directory=/home/erikg/phind/.wg-worktrees/agent-5
+shell=/usr/bin/zsh
+
+[uname]
+Linux lambda01 6.8.0-134-generic #134-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 26 18:43:11 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+[lscpu selected fields]
+Architecture:                            x86_64
+CPU(s):                                  256
+On-line CPU(s) list:                     0-255
+Model name:                              AMD EPYC 7713 64-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      64
+Socket(s):                               2
+CPU(s) scaling MHz:                      45%
+NUMA node(s):                            2
+NUMA node0 CPU(s):                       0-63,128-191
+NUMA node1 CPU(s):                       64-127,192-255
+
+[free -h]
+               total        used        free      shared  buff/cache   available
+Mem:           1.0Ti        45Gi       142Gi       173Mi       826Gi       961Gi
+Swap:          8.0Gi       7.9Gi        71Mi
+
+[df -h current filesystem]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2   14T   11T  2.5T  82% /
+
+[locale]
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER="en_US.UTF-8"
+LC_NAME="en_US.UTF-8"
+LC_ADDRESS="en_US.UTF-8"
+LC_TELEPHONE="en_US.UTF-8"
+LC_MEASUREMENT="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF-8"
+LC_ALL=
+
+[python]
+/usr/bin/python3
+Python 3.12.3
