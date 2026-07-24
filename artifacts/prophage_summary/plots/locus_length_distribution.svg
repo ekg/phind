@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<title id="title">Unique-locus inclusive-length distribution</title>
+<desc id="desc">Grouped percentages. Denominators differ by series and are printed in the legend; interval length is end-begin+1.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#222}.title{font-size:18px;font-weight:bold}.small{font-size:11px}.axis{stroke:#333;stroke-width:1}.grid{stroke:#ddd;stroke-width:1}.legend{font-size:12px}</style>
+<text class="title" x="450.0" y="25" text-anchor="middle">Unique-locus inclusive-length distribution</text>
+<line class="grid" x1="75" y1="435.00" x2="875" y2="435.00"/>
+<text class="small" x="67" y="439.00" text-anchor="end">0%</text>
+<line class="grid" x1="75" y1="362.00" x2="875" y2="362.00"/>
+<text class="small" x="67" y="366.00" text-anchor="end">11%</text>
+<line class="grid" x1="75" y1="289.00" x2="875" y2="289.00"/>
+<text class="small" x="67" y="293.00" text-anchor="end">22%</text>
+<line class="grid" x1="75" y1="216.00" x2="875" y2="216.00"/>
+<text class="small" x="67" y="220.00" text-anchor="end">34%</text>
+<line class="grid" x1="75" y1="143.00" x2="875" y2="143.00"/>
+<text class="small" x="67" y="147.00" text-anchor="end">45%</text>
+<line class="grid" x1="75" y1="70.00" x2="875" y2="70.00"/>
+<text class="small" x="67" y="74.00" text-anchor="end">56%</text>
+<text class="small" x="132.14" y="453" text-anchor="middle">&lt;1k</text>
+<rect x="92.71" y="431.00" width="25.29" height="4.00" fill="#355f8d"><title>All records: 817/132,404 loci (0.62%)</title></rect>
+<rect x="119.00" y="435.00" width="25.29" height="0.00" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 0/7,695 loci (0.00%)</title></rect>
+<rect x="145.29" y="434.33" width="25.29" height="0.67" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 120/115,442 loci (0.10%)</title></rect>
+<text class="small" x="246.43" y="453" text-anchor="middle">1–&lt;5k</text>
+<rect x="207.00" y="397.47" width="25.29" height="37.53" fill="#355f8d"><title>All records: 7,656/132,404 loci (5.78%)</title></rect>
+<rect x="233.29" y="422.60" width="25.29" height="12.40" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 147/7,695 loci (1.91%)</title></rect>
+<rect x="259.57" y="413.77" width="25.29" height="21.23" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 3,777/115,442 loci (3.27%)</title></rect>
+<text class="small" x="360.71" y="453" text-anchor="middle">5–&lt;10k</text>
+<rect x="321.29" y="352.12" width="25.29" height="82.88" fill="#355f8d"><title>All records: 16,909/132,404 loci (12.77%)</title></rect>
+<rect x="347.57" y="367.86" width="25.29" height="67.14" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 796/7,695 loci (10.34%)</title></rect>
+<rect x="373.86" y="367.42" width="25.29" height="67.58" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 12,020/115,442 loci (10.41%)</title></rect>
+<text class="small" x="475.00" y="453" text-anchor="middle">10–&lt;20k</text>
+<rect x="435.57" y="259.83" width="25.29" height="175.17" fill="#355f8d"><title>All records: 35,736/132,404 loci (26.99%)</title></rect>
+<rect x="461.86" y="245.99" width="25.29" height="189.01" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 2,241/7,695 loci (29.12%)</title></rect>
+<rect x="488.14" y="269.34" width="25.29" height="165.66" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 29,467/115,442 loci (25.53%)</title></rect>
+<text class="small" x="589.29" y="453" text-anchor="middle">20–&lt;50k</text>
+<rect x="549.86" y="110.80" width="25.29" height="324.20" fill="#355f8d"><title>All records: 66,139/132,404 loci (49.95%)</title></rect>
+<rect x="576.14" y="131.03" width="25.29" height="303.97" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 3,604/7,695 loci (46.84%)</title></rect>
+<rect x="602.43" y="70.00" width="25.29" height="365.00" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 64,924/115,442 loci (56.24%)</title></rect>
+<text class="small" x="703.57" y="453" text-anchor="middle">50–&lt;100k</text>
+<rect x="664.14" y="410.33" width="25.29" height="24.67" fill="#355f8d"><title>All records: 5,032/132,404 loci (3.80%)</title></rect>
+<rect x="690.43" y="361.54" width="25.29" height="73.46" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 871/7,695 loci (11.32%)</title></rect>
+<rect x="716.71" y="406.78" width="25.29" height="28.22" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 5,020/115,442 loci (4.35%)</title></rect>
+<text class="small" x="817.86" y="453" text-anchor="middle">&gt;=100k</text>
+<rect x="778.43" y="434.44" width="25.29" height="0.56" fill="#355f8d"><title>All records: 115/132,404 loci (0.09%)</title></rect>
+<rect x="804.71" y="431.96" width="25.29" height="3.04" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 36/7,695 loci (0.47%)</title></rect>
+<rect x="831.00" y="434.36" width="25.29" height="0.64" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 114/115,442 loci (0.10%)</title></rect>
+<line class="axis" x1="75" y1="435" x2="875" y2="435"/>
+<line class="axis" x1="75" y1="70" x2="75" y2="435"/>
+<text x="475.0" y="485" text-anchor="middle">Inclusive locus length (bp bins)</text>
+<text transform="translate(18 252.5) rotate(-90)" text-anchor="middle">Percent of valid unique loci</text>
+<rect x="80" y="498" width="12" height="12" fill="#355f8d"/>
+<text class="legend" x="97" y="508">All records (N=132,404)</text>
+<rect x="365" y="498" width="12" height="12" fill="#d1495b"/>
+<text class="legend" x="382" y="508">Flag-positive (transposable = 1.0) (N=7,695)</text>
+<rect x="650" y="498" width="12" height="12" fill="#2a9d8f"/>
+<text class="legend" x="667" y="508">Taxonomy-assigned (taxonomy != Unknown) (N=115,442)</text>
+</svg>

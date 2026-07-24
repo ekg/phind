@@ -1,0 +1,307 @@
+scope	metric	value	unit	denominator	denominator_label	fraction	notes
+input	csv_sha256_before	6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996					taken before parsing
+input	csv_sha256_after_scan	6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996					taken after full input scan; reproduce.sh also verifies after all writes
+input	csv_sha256_before_after_equal	1	boolean				
+input	accession_sha256_before	1570cbe51da509445ba1536da0a8552202d6a87566db67305903ffcced15e8c5					taken before parsing
+input	accession_sha256_after_scan	1570cbe51da509445ba1536da0a8552202d6a87566db67305903ffcced15e8c5					taken after full input scan; reproduce.sh also verifies after all writes
+input	accession_sha256_before_after_equal	1	boolean				
+input	csv_bytes	12393209	bytes				
+input	accession_bytes	417239	bytes				
+input	csv_has_final_newline	1	boolean				
+input	accession_has_final_newline	1	boolean				
+reconciliation	csv_physical_lines	132405	lines				
+reconciliation	csv_records_including_header	132405	CSV records				
+reconciliation	csv_header_records	1	CSV records	132405	CSV records including header	7.552584872e-06	
+reconciliation	csv_source_data_records	132404	records	132404	source data records	1	
+reconciliation	csv_field_count_parse_failures	0	records	132404	source data records	0	
+reconciliation	normalization_failures	0	records	132404	source data records	0	
+reconciliation	normalized_records	132404	records	132404	source data records	1	seven fields; integer-like begin/end; binary integer-like transposable; nonmissing genome/scaffold/prophage_id
+reconciliation	source_row_balance_difference	0	records	132404	source data records		must equal zero: source - parse failures - normalization failures - normalized
+reconciliation	valid_coordinate_records	132404	records	132404	normalized records	1	
+reconciliation	invalid_coordinate_records	0	records	132404	normalized records	0	
+reconciliation	unique_loci	132404	loci	132404	normalized records	1	dedup key=(genome exact, scaffold exact, begin integer, end integer)
+reconciliation	duplicate_locus_groups	0	groups	132404	unique locus keys	0	
+reconciliation	duplicate_locus_extra_records	0	records	132404	normalized records	0	
+reconciliation	exact_duplicate_record_groups	0	groups	132404	unique exact record tuples	0	
+reconciliation	duplicate_prophage_id_groups	0	groups	132404	unique prophage_id values	0	
+denominator	accession_physical_lines	26078	lines				
+denominator	accession_nonblank_lines	26078	lines	26078	physical lines	1	
+denominator	accession_unique_exact_tokens	26078	tokens	26078	nonblank lines	1	
+denominator	accession_duplicate_extra_lines	0	lines	26078	nonblank lines	0	
+denominator	accession_valid_assembly_lines	26077	lines	26078	nonblank lines	0.9999616535	
+denominator	accession_invalid_tokens	1	tokens	26078	nonblank lines	3.834649896e-05	invalid tokens listed in report; excluded from normalized genome denominator
+denominator	normalized_unique_genomes	26077	genomes	26078	nonblank accession lines	0.9999616535	unique tokens matching ^GC[AF]_[0-9]+\.[0-9]+$
+denominator	version_stripped_collision_groups	0	base accessions	26077	version-stripped denominator keys	0	
+denominator	version_stripped_collapsed_accessions	0	accessions	26077	normalized unique genomes	0	
+join	csv_unique_genome_keys	26077	genome keys				
+join	exact_join_failure_genome_keys	0	genome keys	26077	CSV unique genome keys	0	
+join	exact_join_failure_records	0	records	132404	normalized records	0	
+join	versionless_join_failure_genome_keys	0	genome keys	26077	CSV unique genome keys	0	
+join	versionless_join_failure_records	0	records	132404	normalized records	0	
+join	version_only_match_genome_keys	0	genome keys	26077	CSV unique genome keys	0	exact join failed but version-stripped join succeeded; diagnostics only, never merged
+join	version_only_match_records	0	records	132404	normalized records	0	
+join	denominator_genomes_without_exact_csv_hit	0	genomes	26077	normalized denominator genomes	0	
+join	csv_genome_version_stripped_collision_groups	0	base accessions	26077	version-stripped CSV genome keys	0	
+join	scaffold_version_stripped_collision_groups	0	base accessions	105793	version-stripped scaffold keys	0	
+join	unique_exact_scaffold_keys	105793	scaffold keys				
+join	unique_exact_genome_scaffold_pairs	105793	pairs				
+join	exact_scaffold_keys_assigned_multiple_genomes	0	scaffold keys	105793	unique exact scaffold keys	0	
+all	source_records	132404	records	132404	all normalized records	1	
+all	unique_loci	132404	loci	132404	all source records	1	
+all	valid_coordinate_unique_loci	132404	loci	132404	all unique loci	1	
+all	total_bp_1based_closed	3262327228	bp	132404	valid unique loci		sum(end-begin+1)
+all	total_bp_end_minus_begin	3262194824	bp	132404	valid unique loci		coordinate-convention sensitivity sum(end-begin)
+all	genomes_zero_loci	0	genomes	26077	normalized denominator genomes	0	
+all	genomes_one_locus	1200	genomes	26077	normalized denominator genomes	0.04601756337	
+all	genomes_multiple_loci	24877	genomes	26077	normalized denominator genomes	0.9539824366	
+all	genomes_with_locus	26077	genomes	26077	normalized denominator genomes	1	
+all	per_genome_unique_locus_count_min	1	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_p01	1	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_p05	2	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_p25	3	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_median	5	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_p75	6	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_p95	10	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_p99	16	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_max	25	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_mean	5.07742455	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_unique_locus_count_population_sd	2.765805311	loci/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_min	533	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_p01	10626.52	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_p05	27758.2	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_p25	67157	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_median	106467	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_p75	158175	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_p95	275634	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_p99	542826.2	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_max	903677	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_mean	125103.625	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_1based_closed_population_sd	91255.31199	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_min	532	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_p01	10624.76	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_p05	27756	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_p25	67151	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_median	106460	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_p75	158167	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_p95	275627	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_p99	542810.2	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_max	903658	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_mean	125098.5475	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_total_bp_end_minus_begin_population_sd	91252.98677	bp/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_min	1	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_p01	1	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_p05	1	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_p25	2	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_median	4	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_p75	5	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_p95	8	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_p99	10	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_max	19	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_mean	4.056946735	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	per_genome_hit_scaffold_count_population_sd	2.217048935	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+all	unique_locus_length_1based_closed_min	261	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_p01	1601.06	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_p05	4434	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_p25	11907	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_median	21817.5	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_p75	35173.25	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_p95	47813	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_p99	86044.82	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_max	222284	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_mean	24639.18936	bp/locus	132404	valid unique loci		
+all	unique_locus_length_1based_closed_population_sd	15945.23887	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_min	260	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_p01	1600.06	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_p05	4433	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_p25	11906	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_median	21816.5	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_p75	35172.25	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_p95	47812	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_p99	86043.82	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_max	222283	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_mean	24638.18936	bp/locus	132404	valid unique loci		
+all	unique_locus_span_end_minus_begin_population_sd	15945.23887	bp/locus	132404	valid unique loci		
+all	overlap_pairs	0	locus pairs	132404	valid unique loci		
+all	overlap_participating_loci	0	loci	132404	valid unique loci	0	
+all	pairwise_overlap_bp	0	bp	0	overlapping locus pairs		
+all	one_bp_overlap_pairs	0	locus pairs	0	overlapping locus pairs		
+all	nested_pairs	0	locus pairs	132404	valid unique loci		
+all	nested_participating_loci	0	loci	132404	valid unique loci	0	
+all	begin_le_3	12279	loci	132404	valid unique loci	0.09273889006	diagnostic threshold; not proof of artifact
+all	length_lt_1000_bp	817	loci	132404	valid unique loci	0.006170508444	diagnostic threshold; not proof of artifact
+all	length_gt_200000_bp	1	loci	132404	valid unique loci	7.552641914e-06	diagnostic threshold; not proof of artifact
+transposable_flag_positive	source_records	7695	records	132404	all normalized records	0.05811757953	
+transposable_flag_positive	unique_loci	7695	loci	7695	transposable_flag_positive source records	1	
+transposable_flag_positive	valid_coordinate_unique_loci	7695	loci	7695	transposable_flag_positive unique loci	1	
+transposable_flag_positive	total_bp_1based_closed	230813644	bp	7695	valid unique loci		sum(end-begin+1)
+transposable_flag_positive	total_bp_end_minus_begin	230805949	bp	7695	valid unique loci		coordinate-convention sensitivity sum(end-begin)
+transposable_flag_positive	genomes_zero_loci	20435	genomes	26077	normalized denominator genomes	0.7836407562	
+transposable_flag_positive	genomes_one_locus	4446	genomes	26077	normalized denominator genomes	0.1704950723	
+transposable_flag_positive	genomes_multiple_loci	1196	genomes	26077	normalized denominator genomes	0.04586417149	
+transposable_flag_positive	genomes_with_locus	5642	genomes	26077	normalized denominator genomes	0.2163592438	
+transposable_flag_positive	per_genome_unique_locus_count_min	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_p01	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_p05	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_p25	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_median	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_p75	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_p95	1	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_p99	3	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_max	11	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_mean	0.2950876251	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_unique_locus_count_population_sd	0.7009463012	loci/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_min	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_p01	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_p05	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_p25	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_median	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_p75	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_p95	48392.2	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_p99	122129.24	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_max	442805	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_mean	8851.234575	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_1based_closed_population_sd	25422.49037	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_min	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_p01	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_p05	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_p25	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_median	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_p75	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_p95	48391.2	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_p99	122125.72	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_max	442794	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_mean	8850.939487	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_total_bp_end_minus_begin_population_sd	25421.86455	bp/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_min	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_p01	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_p05	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_p25	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_median	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_p75	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_p95	1	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_p99	2	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_max	6	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_mean	0.2428576907	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	per_genome_hit_scaffold_count_population_sd	0.4952116557	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+transposable_flag_positive	unique_locus_length_1based_closed_min	1570	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_p01	4100.94	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_p05	6787	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_p25	13728	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_median	25364	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_p75	41877	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_p95	67666.4	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_p99	95678.24	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_max	188573	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_mean	29995.27537	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_length_1based_closed_population_sd	20263.47673	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_min	1569	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_p01	4099.94	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_p05	6786	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_p25	13727	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_median	25363	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_p75	41876	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_p95	67665.4	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_p99	95677.24	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_max	188572	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_mean	29994.27537	bp/locus	7695	valid unique loci		
+transposable_flag_positive	unique_locus_span_end_minus_begin_population_sd	20263.47673	bp/locus	7695	valid unique loci		
+transposable_flag_positive	overlap_pairs	0	locus pairs	7695	valid unique loci		
+transposable_flag_positive	overlap_participating_loci	0	loci	7695	valid unique loci	0	
+transposable_flag_positive	pairwise_overlap_bp	0	bp	0	overlapping locus pairs		
+transposable_flag_positive	one_bp_overlap_pairs	0	locus pairs	0	overlapping locus pairs		
+transposable_flag_positive	nested_pairs	0	locus pairs	7695	valid unique loci		
+transposable_flag_positive	nested_participating_loci	0	loci	7695	valid unique loci	0	
+transposable_flag_positive	begin_le_3	365	loci	7695	valid unique loci	0.04743339831	diagnostic threshold; not proof of artifact
+transposable_flag_positive	length_lt_1000_bp	0	loci	7695	valid unique loci	0	diagnostic threshold; not proof of artifact
+transposable_flag_positive	length_gt_200000_bp	0	loci	7695	valid unique loci	0	diagnostic threshold; not proof of artifact
+taxonomy_assigned	source_records	115442	records	132404	all normalized records	0.8718920879	
+taxonomy_assigned	unique_loci	115442	loci	115442	taxonomy_assigned source records	1	
+taxonomy_assigned	valid_coordinate_unique_loci	115442	loci	115442	taxonomy_assigned unique loci	1	
+taxonomy_assigned	total_bp_1based_closed	3092341893	bp	115442	valid unique loci		sum(end-begin+1)
+taxonomy_assigned	total_bp_end_minus_begin	3092226451	bp	115442	valid unique loci		coordinate-convention sensitivity sum(end-begin)
+taxonomy_assigned	genomes_zero_loci	171	genomes	26077	normalized denominator genomes	0.00655750278	
+taxonomy_assigned	genomes_one_locus	1790	genomes	26077	normalized denominator genomes	0.06864286536	
+taxonomy_assigned	genomes_multiple_loci	24116	genomes	26077	normalized denominator genomes	0.9247996319	
+taxonomy_assigned	genomes_with_locus	25906	genomes	26077	normalized denominator genomes	0.9934424972	
+taxonomy_assigned	per_genome_unique_locus_count_min	0	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_p01	1	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_p05	1	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_p25	3	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_median	4	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_p75	6	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_p95	9	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_p99	14	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_max	23	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_mean	4.426966292	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_unique_locus_count_population_sd	2.525827453	loci/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_min	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_p01	6750.92	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_p05	22248.4	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_p25	60774	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_median	99992	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_p75	151485	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_p95	268494.2	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_p99	533791.28	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_max	892706	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_mean	118585.0325	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_1based_closed_population_sd	90354.51201	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_min	0	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_p01	6749.92	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_p05	22246.4	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_p25	60771	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_median	99990	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_p75	151479	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_p95	268485.8	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_p99	533777.52	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_max	892689	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_mean	118580.6056	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_total_bp_end_minus_begin_population_sd	90352.3255	bp/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_min	0	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_p01	1	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_p05	1	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_p25	2	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_median	3	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_p75	5	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_p95	7	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_p99	9	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_max	18	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_mean	3.581163477	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	per_genome_hit_scaffold_count_population_sd	2.010150523	scaffolds/genome	26077	normalized denominator genomes (zeros included)		
+taxonomy_assigned	unique_locus_length_1based_closed_min	461	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_p01	2964	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_p05	6192.2	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_p25	14272	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_median	25575	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_p75	36447	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_p95	48860.95	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_p99	87767	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_max	222284	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_mean	26786.97435	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_length_1based_closed_population_sd	15767.61211	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_min	460	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_p01	2963	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_p05	6191.2	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_p25	14271	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_median	25574	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_p75	36446	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_p95	48859.95	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_p99	87766	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_max	222283	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_mean	26785.97435	bp/locus	115442	valid unique loci		
+taxonomy_assigned	unique_locus_span_end_minus_begin_population_sd	15767.61211	bp/locus	115442	valid unique loci		
+taxonomy_assigned	overlap_pairs	0	locus pairs	115442	valid unique loci		
+taxonomy_assigned	overlap_participating_loci	0	loci	115442	valid unique loci	0	
+taxonomy_assigned	pairwise_overlap_bp	0	bp	0	overlapping locus pairs		
+taxonomy_assigned	one_bp_overlap_pairs	0	locus pairs	0	overlapping locus pairs		
+taxonomy_assigned	nested_pairs	0	locus pairs	115442	valid unique loci		
+taxonomy_assigned	nested_participating_loci	0	loci	115442	valid unique loci	0	
+taxonomy_assigned	begin_le_3	11897	loci	115442	valid unique loci	0.1030560801	diagnostic threshold; not proof of artifact
+taxonomy_assigned	length_lt_1000_bp	120	loci	115442	valid unique loci	0.00103948303	diagnostic threshold; not proof of artifact
+taxonomy_assigned	length_gt_200000_bp	1	loci	115442	valid unique loci	8.662358587e-06	diagnostic threshold; not proof of artifact
+schema	explicit_tag_columns	0	columns	7	CSV columns	0	no exact column with this name; do not infer unsupported stratification
+schema	explicit_status_columns	0	columns	7	CSV columns	0	no exact column with this name; do not infer unsupported stratification
+schema	explicit_quality_columns	0	columns	7	CSV columns	0	no exact column with this name; do not infer unsupported stratification
+schema	explicit_completeness_columns	0	columns	7	CSV columns	0	no exact column with this name; do not infer unsupported stratification
+schema	explicit_chromosome_role_columns	0	columns	7	CSV columns	0	no exact column with this name; do not infer unsupported stratification
+schema	class_like_columns	1	columns	7	CSV columns	0.1428571429	taxonomy
+schema	flag_like_columns	1	columns	7	CSV columns	0.1428571429	transposable

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<title id="title">Taxonomy exact-label distribution</title>
+<desc id="desc">Top exact taxonomy strings plus Other; denominator 132404 normalized all-record rows.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#222}.title{font-size:18px;font-weight:bold}.small{font-size:11px}.axis{stroke:#333;stroke-width:1}.grid{stroke:#ddd;stroke-width:1}.legend{font-size:12px}</style>
+<text class="title" x="450.0" y="25" text-anchor="middle">Taxonomy exact-label distribution</text>
+<text class="small" x="277" y="86.50" text-anchor="end">Myoviridae</text>
+<rect x="285" y="65.00" width="575.00" height="35.00" fill="#6c91bf"><title>Myoviridae: 49,342/132,404 records (37.27%)</title></rect>
+<text class="small" x="865.00" y="86.50">49,342 (37.3%)</text>
+<text class="small" x="277" y="131.50" text-anchor="end">Siphoviridae</text>
+<rect x="285" y="110.00" width="429.97" height="35.00" fill="#6c91bf"><title>Siphoviridae: 36,897/132,404 records (27.87%)</title></rect>
+<text class="small" x="719.97" y="131.50">36,897 (27.9%)</text>
+<text class="small" x="277" y="176.50" text-anchor="end">Podoviridae</text>
+<rect x="285" y="155.00" width="237.96" height="35.00" fill="#6c91bf"><title>Podoviridae: 20,420/132,404 records (15.42%)</title></rect>
+<text class="small" x="527.96" y="176.50">20,420 (15.4%)</text>
+<text class="small" x="277" y="221.50" text-anchor="end">Unknown</text>
+<rect x="285" y="200.00" width="197.66" height="35.00" fill="#6c91bf"><title>Unknown: 16,962/132,404 records (12.81%)</title></rect>
+<text class="small" x="487.66" y="221.50">16,962 (12.8%)</text>
+<text class="small" x="277" y="266.50" text-anchor="end">Siphoviridae / Podoviridae</text>
+<rect x="285" y="245.00" width="50.27" height="35.00" fill="#6c91bf"><title>Siphoviridae / Podoviridae: 4,314/132,404 records (3.26%)</title></rect>
+<text class="small" x="340.27" y="266.50">4,314 (3.3%)</text>
+<text class="small" x="277" y="311.50" text-anchor="end">Myoviridae / Podoviridae</text>
+<rect x="285" y="290.00" width="27.91" height="35.00" fill="#6c91bf"><title>Myoviridae / Podoviridae: 2,395/132,404 records (1.81%)</title></rect>
+<text class="small" x="317.91" y="311.50">2,395 (1.8%)</text>
+<text class="small" x="277" y="356.50" text-anchor="end">Myoviridae / Siphoviridae</text>
+<rect x="285" y="335.00" width="11.94" height="35.00" fill="#6c91bf"><title>Myoviridae / Siphoviridae: 1,025/132,404 records (0.77%)</title></rect>
+<text class="small" x="301.94" y="356.50">1,025 (0.8%)</text>
+<text class="small" x="277" y="401.50" text-anchor="end">Myoviridae / Siphoviridae / Podoviridae</text>
+<rect x="285" y="380.00" width="9.84" height="35.00" fill="#6c91bf"><title>Myoviridae / Siphoviridae / Podoviridae: 844/132,404 records (0.64%)</title></rect>
+<text class="small" x="299.84" y="401.50">844 (0.6%)</text>
+<text class="small" x="277" y="446.50" text-anchor="end">Other exact labels</text>
+<rect x="285" y="425.00" width="2.39" height="35.00" fill="#6c91bf"><title>Other exact labels: 205/132,404 records (0.15%)</title></rect>
+<text class="small" x="292.39" y="446.50">205 (0.2%)</text>
+<text x="572.5" y="502" text-anchor="middle">Records (N=132,404; categories are exact source strings)</text>
+</svg>

@@ -1,0 +1,157 @@
+scope	dimension	category	count	denominator	fraction	unit	denominator_label	notes
+all	transposable_exact	0.0	124709	132404	0.9418824205	records	all source records	exact source string
+all	transposable_exact	1.0	7695	132404	0.05811757953	records	all source records	exact source string
+all	taxonomy_exact	Myoviridae	49342	132404	0.3726624573	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Siphoviridae	36897	132404	0.2786698287	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Podoviridae	20420	132404	0.1542249479	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Unknown	16962	132404	0.1281079121	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Siphoviridae / Podoviridae	4314	132404	0.03258209722	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Podoviridae	2395	132404	0.01808857738	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Siphoviridae	1025	132404	0.007741457962	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae	844	132404	0.006374429776	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Siphoviridae / Podoviridae / Bicaudaviridae	150	132404	0.001132896287	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Siphoviridae / Bicaudaviridae	15	132404	0.0001132896287	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae / Fuselloviridae	13	132404	9.818434488e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Siphoviridae / Bicaudaviridae	7	132404	5.28684934e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Microviridae	5	132404	3.776320957e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Siphoviridae / Microviridae	4	132404	3.021056766e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Bicaudaviridae	3	132404	2.265792574e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Inoviridae	2	132404	1.510528383e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Bicaudaviridae	2	132404	1.510528383e-05	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Microviridae	1	132404	7.552641914e-06	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Siphoviridae / Microviridae	1	132404	7.552641914e-06	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae / Bicaudaviridae	1	132404	7.552641914e-06	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_exact	Podoviridae / Bicaudaviridae	1	132404	7.552641914e-06	records	all source records	exact source string; source semantics otherwise unknown
+all	taxonomy_assignment	assigned	115442	132404	0.8718920879	records	all source records	Unknown is treated as unassigned only for the competing subset
+all	taxonomy_assignment	Unknown/missing	16962	132404	0.1281079121	records	all source records	Unknown is treated as unassigned only for the competing subset
+all	scaffold_accession_prefix	NZ_	131957	132404	0.9966239691	records	all source records	identifier prefix only; not a chromosome/plasmid classification
+all	scaffold_accession_prefix	NC_	447	132404	0.003376030936	records	all source records	identifier prefix only; not a chromosome/plasmid classification
+all	coordinate_validity	valid_begin_ge_1_end_ge_begin	132404	132404	1	records	all source records	record-level
+all	length_qc_class	1000_to_200000_bp_inclusive	131586	132404	0.9938219389	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+all	length_qc_class	long_gt_200000_bp	1	132404	7.552641914e-06	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+all	length_qc_class	short_lt_1000_bp	817	132404	0.006170508444	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+all	field_missingness	end	0	132404	0	missing records	all source records	empty-string missingness
+all	field_missingness	genome	0	132404	0	missing records	all source records	empty-string missingness
+all	field_missingness	scaffold	0	132404	0	missing records	all source records	empty-string missingness
+all	field_missingness	begin	0	132404	0	missing records	all source records	empty-string missingness
+all	field_missingness	transposable	0	132404	0	missing records	all source records	empty-string missingness
+all	field_missingness	taxonomy	0	132404	0	missing records	all source records	empty-string missingness
+all	field_missingness	prophage_id	0	132404	0	missing records	all source records	empty-string missingness
+all	per_genome_locus_count_class	multiple	24877	26077	0.9539824366	genomes	normalized denominator genomes	unique loci; zero genomes included
+all	per_genome_locus_count_class	one	1200	26077	0.04601756337	genomes	normalized denominator genomes	unique loci; zero genomes included
+all	per_genome_hit_scaffold_count	1	3412	26077	0.1308432718	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	2	3588	26077	0.1375925145	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	3	4446	26077	0.1704950723	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	4	4673	26077	0.1792000614	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	5	3729	26077	0.1429995782	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	6	2756	26077	0.1056870039	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	7	1603	26077	0.06147179507	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	8	936	26077	0.03589369943	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	9	479	26077	0.01836867738	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	10	223	26077	0.008551597193	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	11	131	26077	0.005023584001	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	12	53	26077	0.002032442382	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	13	27	26077	0.001035395176	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	14	10	26077	0.0003834796948	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	15	4	26077	0.0001533918779	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	16	5	26077	0.0001917398474	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	17	1	26077	3.834796948e-05	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	per_genome_hit_scaffold_count	19	1	26077	3.834796948e-05	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	transposable_exact	1.0	7695	7695	1	records	transposable_flag_positive source records	exact source string
+transposable_flag_positive	taxonomy_exact	Myoviridae	2269	7695	0.2948667966	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Siphoviridae	2216	7695	0.2879792073	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Unknown	1553	7695	0.2018193632	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Podoviridae	862	7695	0.1120207927	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Siphoviridae / Podoviridae	506	7695	0.06575698506	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Myoviridae / Siphoviridae	124	7695	0.01611435997	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Myoviridae / Podoviridae	110	7695	0.01429499675	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae	48	7695	0.006237816764	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Inoviridae	2	7695	0.0002599090318	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Siphoviridae / Microviridae	2	7695	0.0002599090318	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Microviridae	1	7695	0.0001299545159	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae / Fuselloviridae	1	7695	0.0001299545159	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_exact	Siphoviridae / Podoviridae / Bicaudaviridae	1	7695	0.0001299545159	records	transposable_flag_positive source records	exact source string; source semantics otherwise unknown
+transposable_flag_positive	taxonomy_assignment	assigned	6142	7695	0.7981806368	records	transposable_flag_positive source records	Unknown is treated as unassigned only for the competing subset
+transposable_flag_positive	taxonomy_assignment	Unknown/missing	1553	7695	0.2018193632	records	transposable_flag_positive source records	Unknown is treated as unassigned only for the competing subset
+transposable_flag_positive	scaffold_accession_prefix	NZ_	7625	7695	0.9909031839	records	transposable_flag_positive source records	identifier prefix only; not a chromosome/plasmid classification
+transposable_flag_positive	scaffold_accession_prefix	NC_	70	7695	0.009096816114	records	transposable_flag_positive source records	identifier prefix only; not a chromosome/plasmid classification
+transposable_flag_positive	coordinate_validity	valid_begin_ge_1_end_ge_begin	7695	7695	1	records	transposable_flag_positive source records	record-level
+transposable_flag_positive	length_qc_class	1000_to_200000_bp_inclusive	7695	7695	1	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+transposable_flag_positive	field_missingness	end	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	field_missingness	genome	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	field_missingness	scaffold	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	field_missingness	begin	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	field_missingness	transposable	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	field_missingness	taxonomy	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	field_missingness	prophage_id	0	7695	0	missing records	transposable_flag_positive source records	empty-string missingness
+transposable_flag_positive	per_genome_locus_count_class	multiple	1196	26077	0.04586417149	genomes	normalized denominator genomes	unique loci; zero genomes included
+transposable_flag_positive	per_genome_locus_count_class	one	4446	26077	0.1704950723	genomes	normalized denominator genomes	unique loci; zero genomes included
+transposable_flag_positive	per_genome_locus_count_class	zero	20435	26077	0.7836407562	genomes	normalized denominator genomes	unique loci; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	0	20435	26077	0.7836407562	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	1	5028	26077	0.1928135905	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	2	557	26077	0.021359819	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	3	46	26077	0.001764006596	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	4	5	26077	0.0001917398474	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	5	3	26077	0.0001150439084	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+transposable_flag_positive	per_genome_hit_scaffold_count	6	3	26077	0.0001150439084	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	transposable_exact	0.0	109300	115442	0.9467957936	records	taxonomy_assigned source records	exact source string
+taxonomy_assigned	transposable_exact	1.0	6142	115442	0.05320420644	records	taxonomy_assigned source records	exact source string
+taxonomy_assigned	taxonomy_exact	Myoviridae	49342	115442	0.4274180974	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Siphoviridae	36897	115442	0.3196150448	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Podoviridae	20420	115442	0.1768853623	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Siphoviridae / Podoviridae	4314	115442	0.03736941494	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Podoviridae	2395	115442	0.02074634882	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Siphoviridae	1025	115442	0.008878917552	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae	844	115442	0.007311030647	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Siphoviridae / Podoviridae / Bicaudaviridae	150	115442	0.001299353788	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Siphoviridae / Bicaudaviridae	15	115442	0.0001299353788	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae / Fuselloviridae	13	115442	0.0001126106616	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Siphoviridae / Bicaudaviridae	7	115442	6.063651011e-05	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Microviridae	5	115442	4.331179293e-05	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Siphoviridae / Microviridae	4	115442	3.464943435e-05	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Bicaudaviridae	3	115442	2.598707576e-05	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Inoviridae	2	115442	1.732471717e-05	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Bicaudaviridae	2	115442	1.732471717e-05	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Microviridae	1	115442	8.662358587e-06	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Siphoviridae / Microviridae	1	115442	8.662358587e-06	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Myoviridae / Siphoviridae / Podoviridae / Bicaudaviridae	1	115442	8.662358587e-06	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_exact	Podoviridae / Bicaudaviridae	1	115442	8.662358587e-06	records	taxonomy_assigned source records	exact source string; source semantics otherwise unknown
+taxonomy_assigned	taxonomy_assignment	assigned	115442	115442	1	records	taxonomy_assigned source records	Unknown is treated as unassigned only for the competing subset
+taxonomy_assigned	scaffold_accession_prefix	NZ_	115040	115442	0.9965177318	records	taxonomy_assigned source records	identifier prefix only; not a chromosome/plasmid classification
+taxonomy_assigned	scaffold_accession_prefix	NC_	402	115442	0.003482268152	records	taxonomy_assigned source records	identifier prefix only; not a chromosome/plasmid classification
+taxonomy_assigned	coordinate_validity	valid_begin_ge_1_end_ge_begin	115442	115442	1	records	taxonomy_assigned source records	record-level
+taxonomy_assigned	length_qc_class	1000_to_200000_bp_inclusive	115321	115442	0.9989518546	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+taxonomy_assigned	length_qc_class	long_gt_200000_bp	1	115442	8.662358587e-06	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+taxonomy_assigned	length_qc_class	short_lt_1000_bp	120	115442	0.00103948303	unique loci	valid unique loci	diagnostic bins, not biological quality classes
+taxonomy_assigned	field_missingness	end	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	field_missingness	genome	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	field_missingness	scaffold	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	field_missingness	begin	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	field_missingness	transposable	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	field_missingness	taxonomy	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	field_missingness	prophage_id	0	115442	0	missing records	taxonomy_assigned source records	empty-string missingness
+taxonomy_assigned	per_genome_locus_count_class	multiple	24116	26077	0.9247996319	genomes	normalized denominator genomes	unique loci; zero genomes included
+taxonomy_assigned	per_genome_locus_count_class	one	1790	26077	0.06864286536	genomes	normalized denominator genomes	unique loci; zero genomes included
+taxonomy_assigned	per_genome_locus_count_class	zero	171	26077	0.00655750278	genomes	normalized denominator genomes	unique loci; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	0	171	26077	0.00655750278	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	1	4128	26077	0.158300418	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	2	4450	26077	0.1706484642	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	3	5029	26077	0.1928519385	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	4	4538	26077	0.1740230855	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	5	3438	26077	0.1318403191	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	6	2162	26077	0.08290831	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	7	1134	26077	0.04348659738	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	8	565	26077	0.02166660275	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	9	267	26077	0.01023890785	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	10	121	26077	0.004640104306	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	11	39	26077	0.00149557081	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	12	18	26077	0.0006902634506	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	13	9	26077	0.0003451317253	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	14	3	26077	0.0001150439084	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	16	4	26077	0.0001533918779	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+taxonomy_assigned	per_genome_hit_scaffold_count	18	1	26077	3.834796948e-05	genomes	normalized denominator genomes	exact original scaffold keys; zero genomes included
+all	records_per_original_scaffold_key	1	95516	105793	0.9028574669	scaffold keys	unique exact original scaffold keys	number of source records sharing the key
+all	records_per_original_scaffold_key	2-4	8034	105793	0.07594075222	scaffold keys	unique exact original scaffold keys	number of source records sharing the key
+all	records_per_original_scaffold_key	5-9	1731	105793	0.01636214116	scaffold keys	unique exact original scaffold keys	number of source records sharing the key
+all	records_per_original_scaffold_key	10+	512	105793	0.004839639674	scaffold keys	unique exact original scaffold keys	number of source records sharing the key
+denominator	invalid_accession_token	genome	1	26078	3.834649896e-05	tokens	nonblank accession lines	source line 26078

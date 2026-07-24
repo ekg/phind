@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="520" viewBox="0 0 940 520" role="img" aria-labelledby="title desc">
+<title id="title">Per-genome unique-locus counts</title>
+<desc id="desc">Histogram including zero-hit genomes; denominator is 26077 normalized accession genomes for every series.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#222}.title{font-size:18px;font-weight:bold}.small{font-size:11px}.axis{stroke:#333;stroke-width:1}.grid{stroke:#ddd;stroke-width:1}.legend{font-size:12px}</style>
+<text class="title" x="470.0" y="25" text-anchor="middle">Per-genome unique-locus counts</text>
+<line class="grid" x1="75" y1="435.00" x2="915" y2="435.00"/>
+<text class="small" x="67" y="439.00" text-anchor="end">0</text>
+<line class="grid" x1="75" y1="361.00" x2="915" y2="361.00"/>
+<text class="small" x="67" y="365.00" text-anchor="end">4,087</text>
+<line class="grid" x1="75" y1="287.00" x2="915" y2="287.00"/>
+<text class="small" x="67" y="291.00" text-anchor="end">8,174</text>
+<line class="grid" x1="75" y1="213.00" x2="915" y2="213.00"/>
+<text class="small" x="67" y="217.00" text-anchor="end">12,261</text>
+<line class="grid" x1="75" y1="139.00" x2="915" y2="139.00"/>
+<text class="small" x="67" y="143.00" text-anchor="end">16,348</text>
+<line class="grid" x1="75" y1="65.00" x2="915" y2="65.00"/>
+<text class="small" x="67" y="69.00" text-anchor="end">20,435</text>
+<text class="small" x="110.00" y="453" text-anchor="middle">0</text>
+<rect x="85.85" y="435.00" width="15.10" height="0.00" fill="#355f8d"><title>All records: 0 / 26,077 genomes</title></rect>
+<rect x="101.95" y="65.00" width="15.10" height="370.00" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 20,435 / 26,077 genomes</title></rect>
+<rect x="118.05" y="431.90" width="15.10" height="3.10" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 171 / 26,077 genomes</title></rect>
+<text class="small" x="180.00" y="453" text-anchor="middle">1</text>
+<rect x="155.85" y="413.27" width="15.10" height="21.73" fill="#355f8d"><title>All records: 1,200 / 26,077 genomes</title></rect>
+<rect x="171.95" y="354.50" width="15.10" height="80.50" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 4,446 / 26,077 genomes</title></rect>
+<rect x="188.05" y="402.59" width="15.10" height="32.41" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 1,790 / 26,077 genomes</title></rect>
+<text class="small" x="250.00" y="453" text-anchor="middle">2</text>
+<rect x="225.85" y="386.35" width="15.10" height="48.65" fill="#355f8d"><title>All records: 2,687 / 26,077 genomes</title></rect>
+<rect x="241.95" y="421.60" width="15.10" height="13.40" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 740 / 26,077 genomes</title></rect>
+<rect x="258.05" y="368.13" width="15.10" height="66.87" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 3,693 / 26,077 genomes</title></rect>
+<text class="small" x="320.00" y="453" text-anchor="middle">3</text>
+<rect x="295.85" y="363.82" width="15.10" height="71.18" fill="#355f8d"><title>All records: 3,931 / 26,077 genomes</title></rect>
+<rect x="311.95" y="430.47" width="15.10" height="4.53" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 250 / 26,077 genomes</title></rect>
+<rect x="328.05" y="347.15" width="15.10" height="87.85" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 4,852 / 26,077 genomes</title></rect>
+<text class="small" x="390.00" y="453" text-anchor="middle">4</text>
+<rect x="365.85" y="351.89" width="15.10" height="83.11" fill="#355f8d"><title>All records: 4,590 / 26,077 genomes</title></rect>
+<rect x="381.95" y="432.99" width="15.10" height="2.01" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 111 / 26,077 genomes</title></rect>
+<rect x="398.05" y="350.26" width="15.10" height="84.74" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 4,680 / 26,077 genomes</title></rect>
+<text class="small" x="460.00" y="453" text-anchor="middle">5</text>
+<rect x="435.85" y="360.89" width="15.10" height="74.11" fill="#355f8d"><title>All records: 4,093 / 26,077 genomes</title></rect>
+<rect x="451.95" y="434.20" width="15.10" height="0.80" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 44 / 26,077 genomes</title></rect>
+<rect x="468.05" y="365.44" width="15.10" height="69.56" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 3,842 / 26,077 genomes</title></rect>
+<text class="small" x="530.00" y="453" text-anchor="middle">6</text>
+<rect x="505.85" y="374.92" width="15.10" height="60.08" fill="#355f8d"><title>All records: 3,318 / 26,077 genomes</title></rect>
+<rect x="521.95" y="434.51" width="15.10" height="0.49" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 27 / 26,077 genomes</title></rect>
+<rect x="538.05" y="385.48" width="15.10" height="49.52" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 2,735 / 26,077 genomes</title></rect>
+<text class="small" x="600.00" y="453" text-anchor="middle">7</text>
+<rect x="575.85" y="392.11" width="15.10" height="42.89" fill="#355f8d"><title>All records: 2,369 / 26,077 genomes</title></rect>
+<rect x="591.95" y="434.86" width="15.10" height="0.14" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 8 / 26,077 genomes</title></rect>
+<rect x="608.05" y="402.34" width="15.10" height="32.66" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 1,804 / 26,077 genomes</title></rect>
+<text class="small" x="670.00" y="453" text-anchor="middle">8</text>
+<rect x="645.85" y="408.29" width="15.10" height="26.71" fill="#355f8d"><title>All records: 1,475 / 26,077 genomes</title></rect>
+<rect x="661.95" y="434.80" width="15.10" height="0.20" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 11 / 26,077 genomes</title></rect>
+<rect x="678.05" y="416.31" width="15.10" height="18.69" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 1,032 / 26,077 genomes</title></rect>
+<text class="small" x="740.00" y="453" text-anchor="middle">9</text>
+<rect x="715.85" y="418.70" width="15.10" height="16.30" fill="#355f8d"><title>All records: 900 / 26,077 genomes</title></rect>
+<rect x="731.95" y="434.96" width="15.10" height="0.04" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 2 / 26,077 genomes</title></rect>
+<rect x="748.05" y="424.99" width="15.10" height="10.01" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 553 / 26,077 genomes</title></rect>
+<text class="small" x="810.00" y="453" text-anchor="middle">10</text>
+<rect x="785.85" y="425.49" width="15.10" height="9.51" fill="#355f8d"><title>All records: 525 / 26,077 genomes</title></rect>
+<rect x="801.95" y="434.96" width="15.10" height="0.04" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 2 / 26,077 genomes</title></rect>
+<rect x="818.05" y="430.11" width="15.10" height="4.89" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 270 / 26,077 genomes</title></rect>
+<text class="small" x="880.00" y="453" text-anchor="middle">&gt;=11</text>
+<rect x="855.85" y="417.09" width="15.10" height="17.91" fill="#355f8d"><title>All records: 989 / 26,077 genomes</title></rect>
+<rect x="871.95" y="434.98" width="15.10" height="0.02" fill="#d1495b"><title>Flag-positive (transposable = 1.0): 1 / 26,077 genomes</title></rect>
+<rect x="888.05" y="423.14" width="15.10" height="11.86" fill="#2a9d8f"><title>Taxonomy-assigned (taxonomy != Unknown): 655 / 26,077 genomes</title></rect>
+<line class="axis" x1="75" y1="435" x2="915" y2="435"/>
+<line class="axis" x1="75" y1="65" x2="75" y2="435"/>
+<text x="495.0" y="485" text-anchor="middle">Unique loci per denominator genome (N=26,077)</text>
+<text transform="translate(18 250.0) rotate(-90)" text-anchor="middle">Genomes</text>
+<rect x="160" y="498" width="12" height="12" fill="#355f8d"/>
+<text class="legend" x="177" y="508">All records</text>
+<rect x="430" y="498" width="12" height="12" fill="#d1495b"/>
+<text class="legend" x="447" y="508">Flag-positive (transposable = 1.0)</text>
+<rect x="700" y="498" width="12" height="12" fill="#2a9d8f"/>
+<text class="legend" x="717" y="508">Taxonomy-assigned (taxonomy != Unknown)</text>
+</svg>
