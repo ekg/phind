@@ -1,0 +1,1 @@
+{"consumer_action":"REJECT","release_id":"prophage-semantics-v1-f5619e221ff272ae","release_verdict":"EXTRACTION_BLOCKED","schema":"prophage-extraction-consumer-gate-v1","stderr":"NO_GO: consumer rejected non-GO extraction policy","strict_validator_exit_code":2,"verdict":"PASS"}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://phind.local/schemas/prophage-source-semantics-v1.json",
+  "title": "Versioned prophage source semantics and coordinate policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "policy_id", "source_sha256", "source_rows",
+    "normalization", "scopes", "semantic_dimensions", "coordinate_candidates",
+    "extraction_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": "prophage-source-semantics-v1"},
+    "policy_id": {"type": "string", "pattern": "^prophage-coordinate-policy-v[0-9]+$"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_rows": {"type": "integer", "minimum": 0},
+    "normalization": {
+      "type": "object",
+      "required": ["lossless", "raw_row_identity", "raw_fields", "reversible"],
+      "properties": {
+        "lossless": {"const": true},
+        "raw_row_identity": {"type": "string"},
+        "raw_fields": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "reversible": {"const": true}
+      }
+    },
+    "scopes": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "rule", "source_defined", "rows", "generic_tagged_alias"],
+        "properties": {
+          "id": {"enum": ["all_records", "transposable_flag_positive", "taxonomy_assigned"]},
+          "rule": {"type": "string"},
+          "source_defined": {"type": "boolean"},
+          "rows": {"type": "integer", "minimum": 0},
+          "generic_tagged_alias": {"const": false}
+        }
+      }
+    },
+    "semantic_dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status", "confidence", "value", "evidence_ids", "extraction_critical"],
+        "properties": {
+          "name": {"type": "string"},
+          "status": {"enum": ["RESOLVED", "OBSERVED_ONLY", "ABSENT_UNKNOWN", "UNRESOLVED", "HYPOTHESIS_NOT_ATTRIBUTABLE"]},
+          "confidence": {"enum": ["HIGH", "MEDIUM", "LOW", "NONE"]},
+          "value": {},
+          "evidence_ids": {"type": "array", "items": {"type": "string"}},
+          "extraction_critical": {"type": "boolean"}
+        }
+      }
+    },
+    "coordinate_candidates": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "source_convention", "canonical_transform", "status", "test_plan"],
+        "properties": {
+          "id": {"type": "string"},
+          "source_convention": {"type": "string"},
+          "canonical_transform": {"type": "string"},
+          "status": {"enum": ["CANDIDATE", "REJECTED", "SELECTED"]},
+          "test_plan": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "extraction_gate": {
+      "type": "object",
+      "required": ["verdict", "consumer_action", "blocking_dimensions"],
+      "properties": {
+        "verdict": {"enum": ["EXTRACTION_GO", "EXTRACTION_BLOCKED"]},
+        "consumer_action": {"enum": ["ALLOW", "REJECT"]},
+        "blocking_dimensions": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

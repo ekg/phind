@@ -1,0 +1,16 @@
+test_interrupted_conversion_stage_is_discarded_then_committed (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_interrupted_conversion_stage_is_discarded_then_committed) ... ok
+test_interrupted_release_promotion_never_exposes_partial (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_interrupted_release_promotion_never_exposes_partial) ... ok
+test_invalid_source_gff_is_quarantined_without_alias_view (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_invalid_source_gff_is_quarantined_without_alias_view) ... ok
+test_manifest_checksum_mismatch_fails_closed (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_manifest_checksum_mismatch_fails_closed) ... ok
+test_nested_object_inventories_are_covered_by_release_inventory (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_nested_object_inventories_are_covered_by_release_inventory) ... ok
+test_package_archive_upstream_md5_and_exact_identity (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_package_archive_upstream_md5_and_exact_identity) ... ok
+test_payload_bound_rejects_eleventh_or_versionless_identity (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_payload_bound_rejects_eleventh_or_versionless_identity) ... ok
+test_resource_blank_disk_and_inode_refusal (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_resource_blank_disk_and_inode_refusal) ... ok
+test_safe_range_resume_requires_unchanged_strong_identity (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_safe_range_resume_requires_unchanged_strong_identity) ... ok
+test_streamed_rename_bgzf_indexes_and_alias_roundtrip (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_streamed_rename_bgzf_indexes_and_alias_roundtrip) ... ok
+test_unsafe_partial_identity_restarts_without_append (workflow.acquisition_canonicalization.test_pilot.PilotTests.test_unsafe_partial_identity_restarts_without_append) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.069s
+
+OK

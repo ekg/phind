@@ -1,0 +1,120 @@
+{
+  "schema": "prophage-semantics-evidence-inventory-v1",
+  "inventory_version": 1,
+  "evidence_priority": [
+    "source_provenance_or_documentation",
+    "version_matched_caller_docs_or_code",
+    "bounded_sentinel"
+  ],
+  "source_provenance_result": {
+    "status": "MISSING",
+    "searched_inputs": [
+      "26k_prophage1.csv header and all rows",
+      "reports/prophage_distribution.md",
+      "reports/phage_pangenome_project_plan.md",
+      "repository filenames and references"
+    ],
+    "missing_fields": [
+      "producer identity", "caller name", "caller version", "caller argv/config",
+      "output extension", "post-processing code/version", "coordinate declaration",
+      "strand", "topology/circularity handling", "edge/completeness policy",
+      "duplicate-locus policy", "definition of tagged"
+    ]
+  },
+  "items": [
+    {
+      "id": "SOURCE_CSV_IMMUTABLE",
+      "kind": "source_observation",
+      "locator": "26k_prophage1.csv",
+      "sha256": "6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996",
+      "claim": "The seven-column aggregate is the immutable source; it contains no caller/version/argv/strand/topology/completeness/tagged declaration."
+    },
+    {
+      "id": "SOURCE_AUDIT",
+      "kind": "project_report",
+      "locator": "reports/prophage_distribution.md",
+      "sha256": "feb9b687fb0722a4f073f7105088f19a2dabebcbc0378dbe5c4799b0b7f29fdc",
+      "claim": "132404 rows are losslessly parseable; the three scopes have 132404, 7695, and 115442 rows; there are no observed duplicate locus keys."
+    },
+    {
+      "id": "INTEGRATED_PLAN",
+      "kind": "project_plan",
+      "locator": "reports/phage_pangenome_project_plan.md",
+      "sha256": "fb58d25a6f4971137ab0dcb82dae09eac5d177e37ba34f857845ce2d7e0a6da8",
+      "claim": "D4/D5 and section 4.2 require distinct scopes, unresolved coordinates, unknown strand, explicit topology/edge state, and fail-closed extraction."
+    },
+    {
+      "id": "PHIGARO_230_HEADER_AND_COORDS",
+      "kind": "version_matched_candidate_code",
+      "candidate_only": true,
+      "version": "v2.3.0",
+      "commit": "aea9469d09cdbfbb528998ebc43232ee9f44decd",
+      "path": "phigaro/batch/task/run_phigaro.py",
+      "blob_sha256": "75a6d3da3bea290403095548337859c1e15d7f7fe7bedf559e61156fac2b0084",
+      "permalinks": [
+        "https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py#L88-L105",
+        "https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py#L139-L142",
+        "https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py#L227-L254"
+      ],
+      "claim": "Phigaro v2.3.0 TSV has exactly scaffold,begin,end,transposable,taxonomy (plus optional vog); it writes boundary gene coordinates without subtraction. This is a field fingerprint, not source attribution."
+    },
+    {
+      "id": "PHIGARO_230_TRANSPOSABLE",
+      "kind": "version_matched_candidate_code",
+      "candidate_only": true,
+      "version": "v2.3.0",
+      "commit": "aea9469d09cdbfbb528998ebc43232ee9f44decd",
+      "path": "phigaro/to_html/preprocess.py",
+      "blob_sha256": "be93524301883d4921127c602f0877f9dacf6cfa1938011341c590030914c901",
+      "permalink": "https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/to_html/preprocess.py#L223-L237",
+      "claim": "For this candidate caller, true means the ordered retained pVOG records contain two Integration-group hits without an intervening non-Integration/non-Other group; it is not a completeness or quality flag."
+    },
+    {
+      "id": "PHIGARO_230_TAXONOMY",
+      "kind": "version_matched_candidate_code",
+      "candidate_only": true,
+      "version": "v2.3.0",
+      "commit": "aea9469d09cdbfbb528998ebc43232ee9f44decd",
+      "path": "phigaro/data.py",
+      "blob_sha256": "4f3872ac2782bb7a1a13f2b0950ccbedffc40200fb11136ebae3e2b42f816a33",
+      "permalink": "https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/data.py#L256-L271",
+      "claim": "For this candidate caller, labels are the tied maximum-frequency taxonomy codes among mapped pVOGs; no mapped pVOG produces Unknown. Mixed slash labels represent ties."
+    },
+    {
+      "id": "PHIGARO_240_COORDINATE_CHANGE",
+      "kind": "caller_code_and_release_note",
+      "candidate_only": true,
+      "version": "v2.4.0",
+      "commit": "1ff5f85cee31e418bce24e4cd51c7528c43bc968",
+      "paths_and_sha256": {
+        "phigaro/batch/task/run_phigaro.py": "39ea55fa0db22eb522f72287858d729073751c5f44378b593a40a858de98217c",
+        "version_tracker.md": "462eaba6f58cbcf5cc3668b4b93a2301f901d2e897836e6caaf6075a9b6138d2"
+      },
+      "permalinks": [
+        "https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/version_tracker.md#L1-L8",
+        "https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py#L87-L102",
+        "https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py#L135-L139",
+        "https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py#L247-L256"
+      ],
+      "claim": "v2.4.0 added IDs and changed TSV boundary values to gene begin-1/end-1 while v2.3 wrote gene begin/end. The release note explicitly mentions a <=2.3 GFF3/BED shift, demonstrating version sensitivity."
+    },
+    {
+      "id": "CANONICAL_COHORT_010",
+      "kind": "pinned_predecessor_release",
+      "locator": "manifests/canonical-cohort-010-v1/release.json",
+      "sha256": "4cf1e5f7abb11d13dbae886543a343b0a57a389b46aa3df4ebc4fb14d280ff23",
+      "release_id": "canonical-cohort-010-v1-e71484de9994fc28",
+      "claim": "Exactly ten digest-pinned assembly revisions are available read-only; no new assembly download is needed or allowed."
+    },
+    {
+      "id": "N10_ANNOTATION_BOUNDARY_DIAGNOSTIC",
+      "kind": "bounded_diagnostic",
+      "candidate_only": true,
+      "locator": "generated sentinel_summary.json",
+      "claim": "The N=10 source/GFF boundary diagnostic compares raw and +1 boundaries. It is indirect annotation congruence, not producer provenance and not a known-base oracle."
+    }
+  ],
+  "known_base_sentinels_used": false,
+  "known_base_reason": "The frozen cohort supplies sequences but no independently declared expected boundary bases from the source producer. Hashing two candidate slices would distinguish slices, not identify the correct one.",
+  "conclusion": "The source resembles transformed Phigaro <=2.3 output, but the source has no attributable producer/caller version or transformation provenance; candidate-code semantics must not be promoted to source facts."
+}
