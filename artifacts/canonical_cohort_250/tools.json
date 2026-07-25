@@ -1,0 +1,1 @@
+{"bgzip":{"name":"bgzip","path":"/usr/bin/bgzip","sha256":"e1ca105c4785d70fa8ee21d3a3278605f44d1670585e3c271a835dab29ba5dc9","version_exit":0,"version_first_line":"bgzip (htslib) 1.19"},"samtools":{"name":"samtools","path":"/usr/bin/samtools","sha256":"e795122c091f1795179a57904087dbacc3106c90e8b2f65ec86c6714586b6861","version_exit":0,"version_first_line":"samtools 1.19.2"}}
