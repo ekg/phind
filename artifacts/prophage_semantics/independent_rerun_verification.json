@@ -1,0 +1,52 @@
+{
+  "all_fields_exact_count": 56,
+  "all_fields_exact_equals_csv_total": true,
+  "boundary_signature": {
+    "begin_delta_v23_minus_v24_dist": {
+      "1": 56
+    },
+    "end_delta_v23_minus_v24_dist": {
+      "1": 56
+    },
+    "matched": 56,
+    "mismatches": []
+  },
+  "cohort_order": [
+    "GCF_000005845.2",
+    "GCF_000812325.1",
+    "GCF_002302315.1",
+    "GCF_004664255.1",
+    "GCF_015644385.1",
+    "GCF_020829045.1",
+    "GCF_921380995.1",
+    "GCF_000167895.3",
+    "GCF_001881595.4",
+    "GCF_000498835.2"
+  ],
+  "coordinate_convention_from_saved_fasta": {
+    "v2.3.0": {
+      "consistent_0based_halfopen": 0,
+      "consistent_0based_inclusive": 56,
+      "consistent_1based_inclusive": 56,
+      "total_records_checked": 56
+    },
+    "v2.4.0": {
+      "consistent_0based_halfopen": 0,
+      "consistent_0based_inclusive": 56,
+      "consistent_1based_inclusive": 56,
+      "total_records_checked": 56
+    }
+  },
+  "csv_rows_for_cohort": 56,
+  "csv_unmatched": [],
+  "csv_unmatched_count": 0,
+  "decisive_evidence_independently_sound": true,
+  "exact_coordinate_count": 56,
+  "native_surplus_v23": [],
+  "native_surplus_v23_count": 0,
+  "native_v23_prophage_total": 56,
+  "native_v24_prophage_total": 56,
+  "pairs_evaluated": 56,
+  "release_id": "phigaro-version-comparison-v1-e7cfa43b9231aee5",
+  "schema": "independent-prophage-rerun-verification-v1"
+}

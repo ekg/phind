@@ -4,7 +4,9 @@
 This program never downloads or extracts biological sequence.  Its only biological
 look-up is a read-only, ten-assembly annotation-boundary diagnostic against the
 exact predecessor package objects.  Coordinate candidates are not applied to
-sequence and the published extraction verdict remains BLOCKED.
+sequence and the published extraction verdict is derived from the independently
+verified pinned-caller consumption gate (EXTRACTION_GO only when the historical
+CSV attribution is DECISIVE and independently re-verified as sound).
 """
 from __future__ import annotations
 
@@ -45,6 +47,28 @@ COHORT_ORDER = [
 ]
 EXPECTED_HEADER = ["end", "genome", "scaffold", "begin", "transposable", "taxonomy", "prophage_id"]
 PASS_OR_NA = {"PASS", "NOT_APPLICABLE_STAGE_B_NON_SCALE_BEARING"}
+
+# Versioned policy / release wiring.  The v1 BLOCKED release
+# (``prophage-semantics-v1-f5619e221ff272ae``) is already published and immutable
+# and remains the historical record.  The v2 release reflects the now-decisive
+# pinned-caller evidence and derives its verdict from the consumption gate.
+POLICY_VERSION = "v2"
+POLICY_FILE = f"artifacts/prophage_semantics/semantics_policy_{POLICY_VERSION}.json"
+POLICY_STAGE_NAME = f"semantics_policy_{POLICY_VERSION}.json"
+RELEASE_PREFIX = f"prophage-semantics-{POLICY_VERSION}"
+PINNED_CALLER_GATE_FILE = "artifacts/prophage_semantics/pinned_caller_input_gate.json"
+PREDECESSOR_PHIGARO_RELEASE_ID = "phigaro-version-comparison-v1-e7cfa43b9231aee5"
+PREDECESSOR_PHIGARO_EXTERNAL_ROOT = Path(
+    "/home/erikg/phind-data/ecoli26k/v1/releases/rerun-phigaro-version-comparison"
+)
+REQUIRED_DIMENSIONS = {
+    "producer_and_caller_version", "tagged", "transposable", "taxonomy_labels",
+    "coordinate_base_and_end_inclusivity", "strand_orientation",
+    "topology_and_circularity", "contig_edge_behavior", "completeness",
+    "duplicate_locus_rules",
+}
+SCOPE_IDS = ["all_records", "transposable_flag_positive", "taxonomy_assigned"]
+COORDINATE_CANDIDATE_IDS = {"C1_RAW_1_BASED_CLOSED", "C2_RAW_0_BASED_INCLUSIVE"}
 
 
 class GateError(RuntimeError):
@@ -100,6 +124,35 @@ def append_jsonl(path: Path, obj: dict[str, Any]) -> None:
         handle.write(canonical_bytes(obj))
         handle.flush()
         os.fsync(handle.fileno())
+
+
+def derive_extraction_from_gate(repo: Path) -> tuple[str, str, dict[str, Any]]:
+    """Read the pinned-caller consumption gate and derive the extraction verdict.
+
+    Fail-closed by construction: any missing/non-PASS gate, any failure to keep
+    the modern-v2.4 pilot separate, any non-DECISIVE attribution, or any
+    independent re-verification that is not sound raises ``GateError`` and no
+    release is published.
+    """
+    path = repo / PINNED_CALLER_GATE_FILE
+    if not path.is_file():
+        raise GateError("pinned-caller consumption gate result is absent; extraction must fail closed")
+    gate = json.loads(path.read_text())
+    if gate.get("schema") != "pinned-phigaro-consumption-gate-v1":
+        raise GateError("pinned-caller consumption gate schema mismatch")
+    if gate.get("verdict") != "PASS":
+        raise GateError("pinned-caller consumption gate is not PASS")
+    if gate.get("release_id") != PREDECESSOR_PHIGARO_RELEASE_ID:
+        raise GateError("pinned-caller release identity mismatch")
+    if gate.get("modern_v2_4_pilot_separate") is not True:
+        raise GateError("modern v2.4 pilot must remain strictly separate")
+    if gate.get("historical_csv_attribution") != "DECISIVE":
+        raise GateError("historical attribution is not DECISIVE")
+    if gate.get("decisive_evidence_independently_sound") is not True:
+        raise GateError("decisive attribution evidence was not independently re-verified as sound")
+    if gate.get("historical_csv_extraction") != "EXTRACTION_GO":
+        raise GateError("pinned-caller gate did not authorize historical extraction")
+    return "EXTRACTION_GO", "ALLOW", gate
 
 
 def verify_exact(path: Path, expected: str, label: str) -> None:
@@ -240,38 +293,59 @@ def preflight(durable_path: Path, scratch_path: Path, allocations: Allocations, 
 
 
 def validate_policy(policy: dict[str, Any]) -> None:
-    required_dimensions = {
-        "producer_and_caller_version", "tagged", "transposable", "taxonomy_labels",
-        "coordinate_base_and_end_inclusivity", "strand_orientation", "topology_and_circularity",
-        "contig_edge_behavior", "completeness", "duplicate_locus_rules",
-    }
     if policy.get("schema_version") != "prophage-source-semantics-v1":
         raise GateError("policy schema mismatch")
     if policy.get("source_sha256") != SOURCE_SHA or not policy.get("normalization", {}).get("lossless"):
         raise GateError("policy is not pinned and lossless")
     dims = {d.get("name"): d for d in policy.get("semantic_dimensions", [])}
-    if set(dims) != required_dimensions:
+    if set(dims) != REQUIRED_DIMENSIONS:
         raise GateError("policy semantic dimensions are incomplete")
     for dim in dims.values():
         if not {"status", "confidence", "value", "evidence_ids", "extraction_critical"} <= set(dim):
             raise GateError("semantic dimension lacks status/confidence/evidence")
     scopes = policy.get("scopes", [])
-    if [s.get("id") for s in scopes] != ["all_records", "transposable_flag_positive", "taxonomy_assigned"]:
+    if [s.get("id") for s in scopes] != SCOPE_IDS:
         raise GateError("scope order/identity mismatch")
     if any(s.get("generic_tagged_alias") is not False for s in scopes):
         raise GateError("a scope was silently relabeled tagged")
     candidates = policy.get("coordinate_candidates", [])
-    if {c.get("id") for c in candidates} != {"C1_RAW_1_BASED_CLOSED", "C2_RAW_0_BASED_INCLUSIVE"}:
+    if {c.get("id") for c in candidates} != COORDINATE_CANDIDATE_IDS:
         raise GateError("explicit dual coordinate policy is required")
     gate = policy.get("extraction_gate", {})
-    if gate.get("verdict") != "EXTRACTION_BLOCKED" or gate.get("consumer_action") != "REJECT":
-        raise GateError("unresolved policy must fail closed")
-    unresolved_critical = {
-        name for name, dim in dims.items()
-        if dim["extraction_critical"] and dim["status"] != "RESOLVED"
-    }
-    if set(gate.get("blocking_dimensions", [])) != unresolved_critical:
-        raise GateError("every unresolved extraction-critical dimension must block")
+    policy_id = policy.get("policy_id", "")
+    is_go = policy_id.endswith("-v2")
+    if is_go:
+        # v2: decisive evidence uniquely resolves caller/version/coordinates.
+        if gate.get("verdict") != "EXTRACTION_GO" or gate.get("consumer_action") != "ALLOW":
+            raise GateError("decisive v2 policy must authorize extraction")
+        if gate.get("blocking_dimensions") != []:
+            raise GateError("a GO policy may not carry blocking dimensions")
+        if gate.get("selected_coordinate_candidate") != "C1_RAW_1_BASED_CLOSED":
+            raise GateError("GO policy must select the resolved 1-based closed candidate")
+        statuses = {c.get("id"): c.get("status") for c in candidates}
+        if statuses.get("C1_RAW_1_BASED_CLOSED") != "SELECTED" or statuses.get("C2_RAW_0_BASED_INCLUSIVE") != "REJECTED":
+            raise GateError("GO policy coordinate candidate selection is inconsistent")
+        if "tagged" in dims and dims["tagged"]["extraction_critical"]:
+            raise GateError("'tagged' is not extraction-critical and must not gate extraction")
+        # every extraction-critical dimension must be resolved under a GO policy
+        unresolved_critical = {
+            name for name, dim in dims.items()
+            if dim["extraction_critical"] and not str(dim["status"]).startswith("RESOLVED")
+        }
+        if unresolved_critical:
+            raise GateError("a GO policy has unresolved extraction-critical dimensions: " + ", ".join(sorted(unresolved_critical)))
+    else:
+        # v1 historical record: an unresolved policy must fail closed.
+        if gate.get("verdict") != "EXTRACTION_BLOCKED" or gate.get("consumer_action") != "REJECT":
+            raise GateError("unresolved policy must fail closed")
+        if {c.get("status") for c in candidates} != {"CANDIDATE"}:
+            raise GateError("a blocked policy must keep both coordinate candidates open")
+        unresolved_critical = {
+            name for name, dim in dims.items()
+            if dim["extraction_critical"] and dim["status"] != "RESOLVED"
+        }
+        if set(gate.get("blocking_dimensions", [])) != unresolved_critical:
+            raise GateError("every unresolved extraction-critical dimension must block")
 
 
 def source_profile(csv_path: Path) -> tuple[dict[str, Any], list[dict[str, str]]]:
@@ -454,7 +528,7 @@ def dir_usage(path: Path) -> tuple[int, int]:
     return total, files
 
 
-def expected_inputs(repo: Path, predecessor: dict[str, Any], external: Path) -> dict[str, Any]:
+def expected_inputs(repo: Path, predecessor: dict[str, Any], external: Path, gate: dict[str, Any]) -> dict[str, Any]:
     files = {
         "26k_ecoli_accession.txt": ACCESSIONS_SHA,
         "26k_prophage1.csv": SOURCE_SHA,
@@ -462,16 +536,26 @@ def expected_inputs(repo: Path, predecessor: dict[str, Any], external: Path) -> 
         "reports/prophage_distribution.md": AUDIT_SHA,
         "manifests/canonical-cohort-010-v1/release.json": COHORT_RELEASE_JSON_SHA,
         "artifacts/prophage_semantics/evidence_inventory.json": sha_file(repo / "artifacts/prophage_semantics/evidence_inventory.json"),
-        "artifacts/prophage_semantics/semantics_policy_v1.json": sha_file(repo / "artifacts/prophage_semantics/semantics_policy_v1.json"),
+        POLICY_FILE: sha_file(repo / POLICY_FILE),
         "workflow/prophage_semantics/semantics-policy-v1.schema.json": sha_file(repo / "workflow/prophage_semantics/semantics-policy-v1.schema.json"),
         "workflow/prophage_semantics/release.py": sha_file(repo / "workflow/prophage_semantics/release.py"),
+        "workflow/prophage_semantics/independent_rerun_verification.py": sha_file(repo / "workflow/prophage_semantics/independent_rerun_verification.py"),
+        "workflow/prophage_semantics/pinned_caller_gate.py": sha_file(repo / "workflow/prophage_semantics/pinned_caller_gate.py"),
+        PINNED_CALLER_GATE_FILE: sha_file(repo / PINNED_CALLER_GATE_FILE),
     }
     return {
         "schema": "prophage-semantics-input-manifest-v1", "immutable": True,
+        "policy_version": POLICY_VERSION,
         "files": files, "predecessor_release_id": COHORT_RELEASE_ID,
         "predecessor_external_release": str(external),
         "predecessor_external_sha256sums_sha256": sha_file(external / "SHA256SUMS"),
         "cohort_order": COHORT_ORDER, "cohort_rows": 10,
+        "pinned_caller_release_id": PREDECESSOR_PHIGARO_RELEASE_ID,
+        "pinned_caller_external_release": str(PREDECESSOR_PHIGARO_EXTERNAL_ROOT / PREDECESSOR_PHIGARO_RELEASE_ID),
+        "pinned_caller_complete_sha256": gate.get("complete_sha256"),
+        "pinned_caller_sha256sums_sha256": gate.get("sha256sums_sha256"),
+        "pinned_caller_historical_csv_attribution": gate.get("historical_csv_attribution"),
+        "pinned_caller_modern_v2_4_pilot": gate.get("modern_v2_4_pilot"),
         "global_distinct_exact_assembly_revisions": 10, "global_cap": 1000,
         "new_assembly_downloads": 0,
     }
@@ -504,27 +588,35 @@ def validate_release(path: Path, require_go: bool = False) -> dict[str, Any]:
         raise GateError("release is incomplete (COMPLETE absent)")
     inventory_rows = verify_inventory(path, path / "SHA256SUMS")
     release = json.loads((path / "release.json").read_text())
-    policy = json.loads((path / "semantics_policy_v1.json").read_text())
+    policy_version = release.get("policy_version", "v1")
+    policy_path = path / f"semantics_policy_{policy_version}.json"
+    policy = json.loads(policy_path.read_text())
     validate_policy(policy)
-    if release.get("release_id") != path.name or release.get("verdict") != "EXTRACTION_BLOCKED":
+    expected_verdict = policy["extraction_gate"]["verdict"]
+    expected_consumer = policy["extraction_gate"]["consumer_action"]
+    if release.get("release_id") != path.name or release.get("verdict") != expected_verdict:
         raise GateError("release identity/verdict mismatch")
+    if release.get("consumer_action") != expected_consumer:
+        raise GateError("release consumer action mismatch")
     required_pass_gates = {
         "root_input_sha256", "integrated_plan_sha256", "producer_caller_evidence_inventory",
         "predecessor_release_id_manifest_inventory", "accession_version_identity",
         "upstream_local_checksum", "row_accounting", "bgzf_index_name_roundtrip",
         "global_distinct_assembly_cap", "resource", "injected_restart", "atomic_promotion",
         "source_coordinate_policy", "pinned_consumer_compatibility",
+        "pinned_caller_consumption_gate",
     }
     gates = release.get("gates", {})
     if any(gates.get(name) != "PASS" for name in required_pass_gates):
         raise GateError("applicable release gate is not unqualified PASS")
-    if gates.get("extraction_eligibility") != "EXTRACTION_BLOCKED":
-        raise GateError("unresolved extraction eligibility must be BLOCKED")
-    if require_go and policy["extraction_gate"]["verdict"] != "EXTRACTION_GO":
+    if gates.get("extraction_eligibility") != expected_verdict:
+        raise GateError("extraction eligibility must equal the policy verdict")
+    if require_go and expected_verdict != "EXTRACTION_GO":
         raise GateError("consumer rejected non-GO extraction policy")
     return {
         "schema": "prophage-semantics-validation-v1", "verdict": "PASS",
         "release_id": path.name, "release_verdict": release["verdict"],
+        "policy_version": policy_version,
         "extraction_consumer_gate": "REJECT" if release["verdict"] != "EXTRACTION_GO" else "ALLOW",
         "inventory_rows": inventory_rows, "source_rows": release["counts"]["source_rows"],
         "cohort_rows": release["counts"]["bounded_sentinel_assemblies"],
@@ -542,7 +634,9 @@ def publish_artifacts(repo: Path, final: Path, validation: dict[str, Any]) -> No
         "schema": "prophage-semantics-release-reference-v1", "release_id": final.name,
         "external_path": str(final), "complete_sha256": sha_file(final / "COMPLETE"),
         "sha256sums_sha256": sha_file(final / "SHA256SUMS"),
-        "verdict": "EXTRACTION_BLOCKED", "consumer_action": "REJECT",
+        "verdict": validation["release_verdict"],
+        "consumer_action": validation["extraction_consumer_gate"],
+        "policy_version": validation["policy_version"],
     }
     atomic_write(out / "release_reference.json", canonical_bytes(reference))
 
@@ -554,17 +648,24 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     verify_exact(repo / "26k_prophage1.csv", SOURCE_SHA, "root prophage input")
     verify_exact(repo / "reports/phage_pangenome_project_plan.md", PLAN_SHA, "integrated plan")
     verify_exact(repo / "reports/prophage_distribution.md", AUDIT_SHA, "source audit")
-    policy = json.loads((repo / "artifacts/prophage_semantics/semantics_policy_v1.json").read_text())
+    policy = json.loads((repo / POLICY_FILE).read_text())
     validate_policy(policy)
+    # Derive the extraction verdict from the pinned-caller consumption gate.
+    # This is fail-closed: a missing/non-PASS/non-DECISIVE/non-independently-
+    # sound gate raises GateError and no release is published (the historical
+    # v1 BLOCKED release then remains the active record).
+    verdict, consumer_action, gate = derive_extraction_from_gate(repo)
     evidence = json.loads((repo / "artifacts/prophage_semantics/evidence_inventory.json").read_text())
     if evidence.get("conclusion") is None or evidence.get("known_base_sentinels_used") is not False:
         raise GateError("evidence inventory contract mismatch")
     predecessor, external, assemblies, predecessor_inventory_rows = validate_predecessor(repo)
-    input_manifest = expected_inputs(repo, predecessor, external)
+    input_manifest = expected_inputs(repo, predecessor, external, gate)
     for rel, expected in input_manifest["files"].items():
         verify_exact(repo / rel, expected, rel)
-    release_key = sha_bytes(canonical_bytes(input_manifest))[:16]
-    release_id = f"prophage-semantics-v1-{release_key}"
+    release_key = sha_bytes(
+        canonical_bytes(input_manifest) + canonical_bytes(policy) + gate["release_id"].encode()
+    )[:16]
+    release_id = f"{RELEASE_PREFIX}-{release_key}"
     durable_root = Path(args.durable_root).resolve()
     scratch = Path(args.scratch_root).resolve() / args.run_id
     final = durable_root / release_id
@@ -596,7 +697,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         profile, source_rows = source_profile(repo / "26k_prophage1.csv")
         sentinel = annotation_boundary_diagnostic(repo, external, assemblies, source_rows)
         write_static_unit(stage, "input_manifest.json", canonical_bytes(input_manifest))
-        write_static_unit(stage, "semantics_policy_v1.json", canonical_bytes(policy))
+        write_static_unit(stage, POLICY_STAGE_NAME, canonical_bytes(policy))
         write_static_unit(stage, "evidence_inventory.json", canonical_bytes(evidence))
         write_static_unit(stage, "source_profile.json", canonical_bytes(profile))
         write_static_unit(stage, "sentinel_summary.json", canonical_bytes(sentinel))
@@ -612,6 +713,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             "cwd": str(Path.cwd()), "repo": str(repo), "run_id": args.run_id,
             "source_code": "workflow/prophage_semantics/release.py",
             "source_code_sha256": sha_file(Path(__file__)), "predecessor_release_id": COHORT_RELEASE_ID,
+            "pinned_caller_release_id": PREDECESSOR_PHIGARO_RELEASE_ID,
+            "pinned_caller_external_release": str(PREDECESSOR_PHIGARO_EXTERNAL_ROOT / PREDECESSOR_PHIGARO_RELEASE_ID),
             "predecessor_external_inventory_rows": predecessor_inventory_rows,
             "authorization": {"new_assembly_downloads": 0, "max_distinct_assemblies": 10, "production_extraction": False},
         }
@@ -657,9 +760,15 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         release = {
             "schema": SCHEMA, "release_id": release_id, "immutable": True,
             "created_at_utc": utc_now(), "source_task_id": "resolve-prophage-source",
-            "verdict": "EXTRACTION_BLOCKED", "consumer_action": "REJECT",
-            "policy_id": policy["policy_id"], "input_manifest_sha256": sha_bytes(canonical_bytes(input_manifest)),
+            "verdict": verdict, "consumer_action": consumer_action,
+            "policy_id": policy["policy_id"], "policy_version": POLICY_VERSION,
+            "input_manifest_sha256": sha_bytes(canonical_bytes(input_manifest)),
             "predecessor_release_id": COHORT_RELEASE_ID,
+            "pinned_caller_release_id": PREDECESSOR_PHIGARO_RELEASE_ID,
+            "pinned_caller_historical_csv_attribution": gate["historical_csv_attribution"],
+            "pinned_caller_modern_v2_4_pilot": gate["modern_v2_4_pilot"],
+            "pinned_caller_decisive_evidence_independently_sound": gate["decisive_evidence_independently_sound"],
+            "selected_coordinate_candidate": policy["extraction_gate"].get("selected_coordinate_candidate"),
             "counts": {
                 "source_rows": profile["data_rows"], "all_records": 132404,
                 "transposable_flag_positive": 7695, "taxonomy_assigned": 115442,
@@ -677,7 +786,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
                 "injected_restart": "PASS", "atomic_promotion": "PASS",
                 "source_coordinate_policy": "PASS",
                 "pinned_consumer_compatibility": "PASS",
-                "extraction_eligibility": "EXTRACTION_BLOCKED",
+                "pinned_caller_consumption_gate": "PASS",
+                "extraction_eligibility": verdict,
                 "scale_trend": "NOT_APPLICABLE_NON_SCALE_BEARING",
             },
             "blocking_dimensions": policy["extraction_gate"]["blocking_dimensions"],
@@ -689,7 +799,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         fsync_dir(stage)
         complete = {
             "schema": "prophage-semantics-complete-v1", "release_id": release_id,
-            "sha256sums_sha256": sha_file(stage / "SHA256SUMS"), "verdict": "EXTRACTION_BLOCKED",
+            "sha256sums_sha256": sha_file(stage / "SHA256SUMS"), "verdict": verdict,
         }
         atomic_write(stage / "COMPLETE", canonical_bytes(complete))
         fsync_dir(stage)

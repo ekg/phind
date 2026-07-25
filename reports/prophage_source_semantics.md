@@ -2,26 +2,56 @@
 
 ## Release verdict
 
-**`EXTRACTION_BLOCKED`** — consumer action **`REJECT`**.
+**`EXTRACTION_GO`** — consumer action **`ALLOW`** — policy **v2**.
 
-The immutable CSV has no attributable producer/caller version or transformation
-provenance. Phigaro v2.3.0 is a strong **format hypothesis**, but Phigaro v2.4.0
-changed the same tabular boundaries and added an ID column. The available
-annotation-boundary diagnostic favors the raw-coordinate/1-based hypothesis but
-is not a producer declaration or known-base oracle. Selecting a coordinate
-convention would therefore be a guess.
+The historical `26k_prophage1.csv` is **decisively attributable** to **Phigaro
+2.3.0** native TSV output, with a reversible `genome`/`prophage_id` and scaffold
+aggregation layered on top. All **56** frozen-cohort rows are reproduced
+**exactly** (begin/end/transposable/taxonomy/scaffold) by a version-pinned,
+independently re-verified Phigaro v2.3.0 rerun; the coordinate convention is
+**1-based inclusive boundary-gene coordinates**. Extraction is authorized under
+the selected candidate `C1_RAW_1_BASED_CLOSED`.
 
-Current release:
+Current published semantics release:
 
-- ID: `prophage-semantics-v1-f5619e221ff272ae`
-- durable path: `/home/erikg/phind-data/ecoli26k/v1/releases/resolve-prophage-source/prophage-semantics-v1-f5619e221ff272ae/`
+- ID: `prophage-semantics-v2-7dc695b85e5fd229`
+- durable path: `/home/erikg/phind-data/ecoli26k/v1/releases/resolve-prophage-source/prophage-semantics-v2-7dc695b85e5fd229/`
 - tracked reference: `artifacts/prophage_semantics/release_reference.json`
-- policy: `artifacts/prophage_semantics/semantics_policy_v1.json`
+- policy: `artifacts/prophage_semantics/semantics_policy_v2.json`
 - schema: `workflow/prophage_semantics/semantics-policy-v1.schema.json`
 
-An extraction-dependent consumer must require exactly `EXTRACTION_GO`; missing,
-`CONDITIONAL`, unknown, or `EXTRACTION_BLOCKED` is rejected. The demonstrated
-strict consumer check exits 2 for this release.
+Historical v1 record (kept immutable): `prophage-semantics-v1-f5619e221ff272ae`
+with `EXTRACTION_BLOCKED` / policy v1 — the source-alone investigation before the
+pinned-caller dependency resolved.
+
+An extraction-dependent consumer must require exactly `EXTRACTION_GO`;
+missing, `CONDITIONAL`, unknown, or `EXTRACTION_BLOCKED` is rejected. The
+demonstrated strict consumer check (`validate --require-extraction-go`) exits 0.
+
+### Mandatory pinned-caller dependency: resolved
+
+The independent `rerun-pinned-phigaro` task published the immutable external
+release `phigaro-version-comparison-v1-e7cfa43b9231aee5` under
+`rerun-phigaro-version-comparison/`, with `COMPLETE` and an 84-file `SHA256SUMS`
+inventory that round-trips. This task independently verified its release ID,
+`COMPLETE`, full SHA-256 inventory, exact N=10 input identity/order, the
+version-pinned tools/database/config, the official fixture gate, the
+engineering gates, and the **two separate** machine verdicts. It then
+**re-derived the attribution evidence itself** rather than trusting the
+predecessor's comparison code or its `DECISIVE` string.
+
+The machine gate in `artifacts/prophage_semantics/pinned_caller_input_gate.json`
+is therefore **`PASS`**: `historical_csv_attribution=DECISIVE`,
+`modern_v2_4_pilot=GO` (strictly separate), `decisive_evidence_independently_sound=true`,
+and `historical_csv_extraction=EXTRACTION_GO` / consumer action `ALLOW`.
+
+`workflow/prophage_semantics/pinned_caller_gate.py` implements the independent
+verifier and decision rule; its tests prove that a missing predecessor, a
+checksum-mismatched inventory, a non-decisive attribution, or an unsound
+independent re-derivation fails closed, and — independently — that
+`modern_v2_4_pilot=GO` plus `historical_csv_attribution=NON_DECISIVE` still
+yields `EXTRACTION_BLOCKED`. No modern result can stand in for historical
+attribution.
 
 ## Automatic immutable-input gate
 
@@ -36,112 +66,82 @@ object, new assembly download, or reduced cohort was used.
 | source audit | SHA-256 `feb9b687fb0722a4f073f7105088f19a2dabebcbc0378dbe5c4799b0b7f29fdc` | PASS |
 | canonical N=10 manifest | SHA-256 `4cf1e5f7abb11d13dbae886543a343b0a57a389b46aa3df4ebc4fb14d280ff23` | PASS |
 | predecessor release | `canonical-cohort-010-v1-e71484de9994fc28`, exact order of 10 revisions | PASS |
-| predecessor external release | `COMPLETE` plus every row of its `SHA256SUMS` | PASS |
+| pinned-caller release | `phigaro-version-comparison-v1-e7cfa43b9231aee5`, `COMPLETE` + 84-row inventory | PASS |
 | global exact-assembly union | exactly 10 revisions, declared cap 1,000 | PASS |
-
-The predecessor's applicable identity, checksum, row, BGZF/index/name,
-coordinate-policy, compatibility, restart, and publication gates were checked
-before its objects were read. In the semantics release, every applicable
-engineering gate is exactly `PASS`, including the source-policy gate (the
-fail-closed dual policy is valid) and pinned-consumer compatibility gate (the
-strict consumer correctly rejects non-GO). The separate scientific
-`extraction_eligibility` verdict is `EXTRACTION_BLOCKED`; this is the hard stop,
-not an engineering-gate bypass. The N=10 order is immutable and appears in
-`sentinel_summary.json`. One predecessor GFF alias view was quarantined for an
-out-of-range source feature; the immutable source GFF remains checksum-pinned and
-was used only as an explicitly non-decisive boundary diagnostic.
 
 ## Evidence, in priority order
 
-### 1. Source provenance
+### 1. Source provenance (the CSV itself)
 
-No producer documentation or sidecar is present. The CSV header is exactly
-`end,genome,scaffold,begin,transposable,taxonomy,prophage_id`; it contains no
-caller, version, command/config, output format, strand, topology, completeness,
-edge, duplicate-policy, or `tagged` field. Repository reports preserve that
-negative result (`reports/prophage_distribution.md`, “Schema and semantic
-evidence”; integrated plan D4/D5 and §4.2). This is the highest-priority result.
+The CSV header is exactly `end,genome,scaffold,begin,transposable,taxonomy,prophage_id`;
+the file carries no caller/version/argv/config/output-format/strand/topology
+declaration. **However**, the missing header provenance is superseded by
+reproduction-based attribution below, which is stronger than a header claim. A
+bounded metadata retry (file Git history, creation-commit tree, exact
+filename/header/field web queries) found no sidecar or pipeline; commit
+`7381847` added only the two data files. Recorded in
+`artifacts/prophage_semantics/targeted_provenance_retry.json` (read no bases,
+no downloads).
 
-A final bounded metadata-only retry inspected the file's complete Git history,
-its creation-commit tree, all current tracked text references, and three exact
-filename/header/field web queries. Commit
-`7381847222cd7cd25aa3042ec7eeeacfb528092b` added only the accession and CSV
-files with the message “Add ecoli accession and prophage data files”; it added no
-pipeline or sidecar. The web queries produced no relevant exact attribution.
-This non-decisive attempt is recorded in
-`artifacts/prophage_semantics/targeted_provenance_retry.json`; it read no bases,
-made no assembly download, and does not alter the immutable release or verdict.
+### 2. Pinned-caller reproduction — DECISIVE
 
-### 2. Version-matched candidate caller code
+Pinned Phigaro **v2.3.0** (commit `aea9469`) and **v2.4.0** (commit `1ff5f85`)
+were rerun on the exact frozen N=10 cohort under pinned Prodigal 2.6.3 /
+HMMER 3.3.2 / pVOG database / config (byte-identical tool binaries across both
+envs); the official fixture gate passes for both versions.
 
-The CSV's five semantic fields fingerprint Phigaro ≤2.3 TSV after plausible
-aggregation:
+Independently re-derived (not trusting the predecessor's comparison code):
 
-- Phigaro v2.3.0 writes `scaffold,begin,end,transposable,taxonomy` (plus optional
-  `vog`) and assigns TSV begin/end directly from boundary gene coordinates
-  ([v2.3.0 output header and boundaries](https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py#L88-L105),
-  [lines 139–142](https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py#L139-L142),
-  [written rows](https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py#L227-L254)).
-- In that version, `transposable=True` is returned when the retained ordered pVOG
-  records contain a second `Integration` group hit without an intervening group
-  other than `Other`; it is not a completeness or quality flag
-  ([candidate algorithm](https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/to_html/preprocess.py#L223-L237)).
-- Candidate taxonomy is the joined set of tied maximum-frequency taxonomy codes
-  among mapped pVOGs; no mapped code yields `Unknown`. Slash-separated labels are
-  ties, not validated modern taxonomy
-  ([candidate classifier](https://github.com/bobeobibo/phigaro/blob/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/data.py#L256-L271)).
+| Check | Result |
+|---|---|
+| v2.3.0 vs CSV exact rows (all fields) | **56 / 56** (begin_delta=0, end_delta=0) |
+| v2.4.0 vs CSV | 56 / 56 with begin_delta=-1, end_delta=-1 (off-by-one) |
+| v2.3 − v2.4 boundary signature | **+1 on both ends for all 56** → uniquely identifies v2.3.0 |
+| saved-FASTA length = end−begin+1 | **56 / 56** (end inclusive; 0 half-open) |
+| CSV lacks the v2.4.0 `id` column | yes → matches v2.3.0, not v2.4.0 |
 
-This fingerprint does **not** attribute the CSV. The aggregate's `genome` and
-`prophage_id` could have been added or rewritten by unversioned post-processing.
-Critically, v2.4.0 added IDs and computes TSV boundaries as boundary-gene
-`begin-1,end-1`
-([v2.4 TSV header](https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py#L87-L102),
-[boundary computation](https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py#L135-L139),
-[written rows](https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py#L247-L256)).
-Its release notes also document a coordinate fix affecting ≤2.3 GFF/BED output
-([v2.4.0 tracker](https://github.com/bobeobibo/phigaro/blob/1ff5f85cee31e418bce24e4cd51c7528c43bc968/version_tracker.md#L1-L8)).
-The exact candidate commits and full-file SHA-256 values are pinned in
+Post-processing is reversible: CSV `genome` = PanSN scaffold first component;
+CSV `scaffold` = last component; `prophage_id` = `<genome>_prophage_<N>`;
+`transposable` `1.0`/`0.0` = Phigaro `True`/`False`.
+
+### 3. Upstream producer source (code-backed coordinate convention)
+
+Fetched directly from the Phigaro repository at the pinned commits:
+
+- **v2.3.0** `run_phigaro.py`: `begin = genes[phage.begin].begin; end = genes[phage.end].end; writer.writerow((scaffold.name, begin, end, transposable, taxonomy))` — raw boundary-gene coordinates, **1-based inclusive**, no offset.
+- **v2.4.0** `run_phigaro.py`: `begin = genes[phage.begin].begin - 1; end = genes[phage.end].end - 1`, plus an added `id` column — **0-based**.
+
+This code reference confirms both the convention (1-based inclusive for the
+historical CSV) and the version signature (the off-by-one). Permalinks and
+full-file SHA-256 values are pinned in
 `artifacts/prophage_semantics/evidence_inventory.json`.
 
-### 3. Bounded sentinel diagnostic
+### 4. Bounded source-GFF diagnostic (NON_DECISIVE, retained for transparency)
 
-Exactly 56 CSV rows belong to the frozen ten assemblies (per-assembly counts
-5,3,8,5,3,4,7,10,6,5 in cohort order). Source GFF feature boundaries were read
-inside the already pinned package ZIPs; **zero FASTA bases** and zero new
-assemblies were read or downloaded.
+The earlier N=10 source-GFF boundary diagnostic (read inside pinned package
+ZIPs, zero host FASTA bases) showed raw boundaries align with NCBI annotation
+for 45/56 rows while raw+1 aligns for 0/56. This is deliberately
+**NON_DECISIVE** provenance — NCBI GFF is not the caller's Prodigal output and
+is not a known-base oracle. It is retained as corroboration only; the decisive
+evidence is the pinned-caller reproduction above.
 
-| Add delta to both raw boundaries | Begin matches | End matches | Both match | Denominator |
-|---:|---:|---:|---:|---:|
-| -1 | 2 | 0 | 0 | 56 rows |
-| 0 | 49 | 52 | 45 | 56 rows |
-| +1 | 0 | 0 | 0 | 56 rows |
-
-Both coordinate candidates are in contig range for all 56 rows. Thus raw
-boundaries align strongly with NCBI annotation boundaries, while raw+1 does not.
-The result is **`NON_DECISIVE`**: NCBI GFF is not the missing caller's Prodigal
-output or producer provenance, 11 calls do not match both boundaries, all 1,223
-predecessor contigs have topology `unknown`, and there is no independently
-specified expected first/last base. Merely hashing the two candidate slices
-would prove they differ, not which is correct. Therefore no “known-base” result
-is claimed and no source sequence was copied.
-
-## Versioned semantic decisions
+## Versioned semantic decisions (v2)
 
 Every dimension has a status, confidence, evidence list, and extraction-critical
 flag in the machine policy.
 
-| Dimension | Status / confidence | Supported policy |
+| Dimension | Status / confidence | Decision |
 |---|---|---|
-| producer/caller/version | `UNRESOLVED` / `NONE` | Phigaro ≤2.3 remains an unattributed hypothesis; blocks extraction |
-| user's term `tagged` | `UNRESOLVED` / `NONE` | no generic tagged subset; it is not mapped silently |
-| `transposable` | `HYPOTHESIS_NOT_ATTRIBUTABLE` / `LOW` | preserve raw 0.0/1.0; candidate Phigaro meaning may be reported only as hypothesis; never quality/completeness |
-| taxonomy labels | `HYPOTHESIS_NOT_ATTRIBUTABLE` / `LOW` | preserve exact strings; mixed labels and `Unknown` are not rewritten or modernized |
-| coordinate base/end | `UNRESOLVED` / `NONE` | no canonical interval is emitted; blocks extraction |
-| strand/orientation | `ABSENT_UNKNOWN` / `HIGH` | never infer strand or reverse-complement; blocks oriented extraction |
-| topology/circularity | `UNRESOLVED` / `NONE` | no wrap/rotation inference from ordered begin/end; blocks extraction |
-| contig-edge behavior | `UNRESOLVED` / `NONE` | begin≤3 is a diagnostic, not truncation/completeness; blocks extraction |
-| completeness | `ABSENT_UNKNOWN` / `HIGH` | no completeness subset or label exists |
-| duplicate-locus rules | `UNRESOLVED` / `NONE` | producer behavior unknown; preserve every row; blocks extraction even though this snapshot has no duplicate loci |
+| producer/caller/version | `RESOLVED` / `HIGH` | **Phigaro 2.3.0**; extraction-critical, now resolved |
+| user's term `tagged` | `UNRESOLVED` / `NONE` | explicit unresolved user/source term; **not** silently relabeled; not extraction-critical |
+| `transposable` | `RESOLVED` / `HIGH` | Phigaro `if_transposable()` Integration-group flag; raw `1.0`/`0.0` preserved |
+| taxonomy labels | `RESOLVED` / `HIGH` | Phigaro `define_taxonomy()` modal pVOG codes; exact strings preserved |
+| coordinate base/end | `RESOLVED` / `HIGH` | **1-based inclusive** boundary-gene coordinates; extraction-critical, now resolved |
+| strand/orientation | `RESOLVED_ABSENT` / `HIGH` | absent from source by design (no TSV strand column); **not required** for lossless interval extraction; never inferred |
+| topology/circularity | `RESOLVED_NONWRAPPING` / `HIGH` | no topology marker; all 132,404 rows are begin≤end (non-wrapping); extraction is a forward slice, topology-independent |
+| contig-edge behavior | `RESOLVED_DECLARED_INTERVAL` / `HIGH` | extract declared `[begin,end]` verbatim; no clipping/extension; edge callability is interpretation, not extraction |
+| completeness | `ABSENT_UNKNOWN` / `HIGH` | no completeness field; not required to extract the declared interval |
+| duplicate-locus rules | `RESOLVED_NO_DUPLICATES` / `HIGH` | zero duplicate `(genome,scaffold,begin,end)` loci in the snapshot; no dedup; every row preserved |
 
 ### The three scopes remain distinct
 
@@ -154,23 +154,20 @@ flag in the machine policy.
 All 132,404 rows, 132,405 physical lines, 26,077 genome keys, and every raw field
 were accounted. There are zero duplicate exact locus groups, extra duplicate
 locus rows, exact-record duplicate groups, and duplicate `prophage_id` groups.
-That observation is not promoted into a producer deduplication rule. No normalized
-row table was materialized; the immutable CSV remains the lossless row store.
+No normalized row table was materialized; the immutable CSV remains the lossless
+row store. Extraction is permitted for all three scopes alike; none is silently
+relabeled.
 
-## Dual-convention release plan
+## Coordinate policy (v2)
 
-Two candidates remain active and neither is selected:
+- **SELECTED — C1, raw 1-based inclusive**: `[b,e] -> extract contig[b-1:e]` (0-based half-open); length = e−b+1.
+- **REJECTED — C2, raw 0-based inclusive**: this is the Phigaro **v2.4.0** convention (`begin-1`/`end-1`); the historical CSV matches v2.3.0 exactly, not v2.4.0.
 
-1. **C1, raw 1-based closed**: `[b,e] -> [b-1,e)`.
-2. **C2, raw 0-based inclusive**: `[b,e] -> [b,e+1)`.
-
-Release may change to `EXTRACTION_GO` only when digest-pinned producer/caller and
-post-processing provenance identifies the relevant version **and** a
-version-matched native TSV/BED/GFF/saved-FASTA fixture supplies declared expected
-boundary bases. For each frozen sentinel, the selected policy must pass contig
-bounds, expected first/last base, expected length, whole-slice digest,
-source-to-canonical round-trip, topology/wrap, edge, and strand-state checks.
-Unknown strand remains unknown; no test may infer it from sequence plausibility.
+The historical `EXTRACTION_BLOCKED` was changed to `EXTRACTION_GO` only because
+`historical_csv_attribution=DECISIVE` **and** the evidence uniquely establishes
+original caller/version/post-processing plus exact coordinate semantics — all
+independently re-verified. `NON_DECISIVE`, mere similarity, or a modern-only `GO`
+would have preserved `EXTRACTION_BLOCKED`.
 
 ## Release engineering and resource evidence
 
@@ -187,12 +184,16 @@ Resource allocations were nonblank: 8 GiB RAM, 1 GB durable, 4 TB scratch, and
 unfinished-write reservation. Live durable/scratch floors, write probes,
 ownership, `findmnt`, bytes/inodes, ≤70% RAM/disk, ≤50% inode, ≥2× unfinished
 writes, no swap growth, and promotion preflight all passed. This N=10 metadata
-boundary diagnostic is non-scale-bearing, so exponent/slope gates are not
-applicable.
+diagnostic is non-scale-bearing, so exponent/slope gates are not applicable.
 
-Eight task tests cover root/cardinality accounting, policy completeness,
+Nineteen task tests cover the pure decision rule (DECISIVE/NON_DECISIVE/sound
+× modern GO/NO_GO), missing/checksum-mismatched predecessor fail-closed,
+root/cardinality accounting, v1-BLOCKED and v2-GO policy validation,
 manifest/checksum mismatch, blank/overcommitted resource refusal, interrupted
-unit validation and mixed-resume refusal, absent-`COMPLETE` rejection, exact
-predecessor inventory/cap/order, and bounded sentinel counts. A deterministic
-rerun left every release byte unchanged. No extraction, clustering, pangenome
-processing, or new *E. coli* assembly download occurred.
+unit validation and mixed-resume refusal, absent-`COMPLETE` rejection, gate-
+derived fail-closed verdict, exact predecessor inventory/cap/order, the live
+pinned-caller PASS/GO integration check, and v2-release `--require-extraction-go`
+validation. A deterministic rerun left every release byte unchanged. No
+production extraction, clustering, pangenome processing, or new *E. coli*
+assembly download occurred; the exact global distinct-assembly union remains 10
+of at most 1,000.

@@ -1,6 +1,6 @@
 {
   "schema": "prophage-semantics-evidence-inventory-v1",
-  "inventory_version": 1,
+  "inventory_version": 2,
   "evidence_priority": [
     "source_provenance_or_documentation",
     "version_matched_caller_docs_or_code",
@@ -19,7 +19,22 @@
       "output extension", "post-processing code/version", "coordinate declaration",
       "strand", "topology/circularity handling", "edge/completeness policy",
       "duplicate-locus policy", "definition of tagged"
-    ]
+    ],
+    "note": "The source CSV itself carries no caller/version/provenance. Attribution was instead established DECISIVELY by exact reproduction under a pinned caller (see reproduction_attribution_result), which is stronger than header provenance."
+  },
+  "reproduction_attribution_result": {
+    "status": "DECISIVE",
+    "basis": "independent pinned-caller rerun (rerun-pinned-phigaro) re-verified without trusting the predecessor's comparison code",
+    "predecessor_release_id": "phigaro-version-comparison-v1-e7cfa43b9231aee5",
+    "caller": "Phigaro",
+    "version": "2.3.0",
+    "evidence": [
+      "all 56 cohort CSV rows reproduced exactly by pinned Phigaro v2.3.0 native TSV (begin_delta=0, end_delta=0, transposable/taxonomy/scaffold/genome/prophage_id all match)",
+      "v2.3-vs-v2.4 boundary signature +1 on both ends for all 56 rows uniquely identifies v2.3.0",
+      "saved-FASTA sequence length = end-begin+1 for all 56 (end inclusive; 0 half-open)",
+      "upstream run_phigaro.py confirms v2.3.0 writes raw boundary-gene coords, v2.4.0 writes -1 and adds an id column"
+    ],
+    "modern_v2_4_pilot": "GO (strictly separate; concerns only a new v2.4 callset and is NOT the basis of the historical GO)"
   },
   "items": [
     {
@@ -112,9 +127,39 @@
       "candidate_only": true,
       "locator": "generated sentinel_summary.json",
       "claim": "The N=10 source/GFF boundary diagnostic compares raw and +1 boundaries. It is indirect annotation congruence, not producer provenance and not a known-base oracle."
+    },
+    {
+      "id": "PINNED_CALLER_RERUN",
+      "kind": "pinned_predecessor_release",
+      "locator": "external release phigaro-version-comparison-v1-e7cfa43b9231aee5",
+      "release_id": "phigaro-version-comparison-v1-e7cfa43b9231aee5",
+      "source_task": "rerun-pinned-phigaro",
+      "claim": "Pinned Phigaro v2.3.0 (commit aea9469) and v2.4.0 (commit 1ff5f85) rerun on the exact frozen N=10 cohort under pinned Prodigal 2.6.3 / HMMER 3.3.2 / pVOG database / config; fixture gate passes for both versions; 84-file SHA-256 inventory round-trips; COMPLETE present."
+    },
+    {
+      "id": "INDEPENDENT_REVERIFICATION",
+      "kind": "independent_reverification",
+      "locator": "workflow/prophage_semantics/independent_rerun_verification.py",
+      "claim": "Independent re-derivation (not trusting the predecessor's comparison code) of: 56/56 v2.3-vs-CSV exact field reproduction, the v2.3-v2.4 +1 boundary signature, and inclusive saved-FASTA lengths (end-begin+1, 0 half-open). decisive_evidence_independently_sound = true."
+    },
+    {
+      "id": "UPSTREAM_SOURCE_V230_RUN_PHIGARO",
+      "kind": "upstream_producer_source",
+      "version": "v2.3.0",
+      "commit": "aea9469d09cdbfbb528998ebc43232ee9f44decd",
+      "permalink": "https://raw.githubusercontent.com/bobeobibo/Phigaro/aea9469d09cdbfbb528998ebc43232ee9f44decd/phigaro/batch/task/run_phigaro.py",
+      "claim": "v2.3.0 run_phigaro.py: begin = genes[phage.begin].begin; end = genes[phage.end].end; writer.writerow((scaffold.name, begin, end, transposable, taxonomy)). Confirms raw 1-based inclusive boundary-gene coordinates, no offset."
+    },
+    {
+      "id": "UPSTREAM_SOURCE_V240_RUN_PHIGARO",
+      "kind": "upstream_producer_source",
+      "version": "v2.4.0",
+      "commit": "1ff5f85cee31e418bce24e4cd51c7528c43bc968",
+      "permalink": "https://raw.githubusercontent.com/bobeobibo/Phigaro/1ff5f85cee31e418bce24e4cd51c7528c43bc968/phigaro/batch/task/run_phigaro.py",
+      "claim": "v2.4.0 run_phigaro.py: begin = genes[phage.begin].begin - 1; end = genes[phage.end].end - 1; adds an id column. Confirms the off-by-one version signature and that the historical CSV (no id column) matches v2.3.0 not v2.4.0."
     }
   ],
   "known_base_sentinels_used": false,
-  "known_base_reason": "The frozen cohort supplies sequences but no independently declared expected boundary bases from the source producer. Hashing two candidate slices would distinguish slices, not identify the correct one.",
-  "conclusion": "The source resembles transformed Phigaro <=2.3 output, but the source has no attributable producer/caller version or transformation provenance; candidate-code semantics must not be promoted to source facts."
+  "known_base_reason": "Decisive attribution rests on exact reproduction under a pinned caller and upstream producer source, not on a known-base oracle. Saved-FASTA length checks are a self-consistency check on the predecessor's released artifacts (length = end-begin+1), not an independent expected-base oracle; no new assembly sequence is read or extracted.",
+  "conclusion": "The historical 26k_prophage1.csv is attributable DECISIVELY to Phigaro 2.3.0 native TSV output (with a reversible genome/prophage_id + scaffold aggregation): all 56 frozen-cohort rows reproduce exactly under a pinned caller, independently re-verified, and the coordinate convention is 1-based inclusive boundary-gene coordinates confirmed by upstream source. Extraction is authorized as EXTRACTION_GO under the resolved C1_RAW_1_BASED_CLOSED policy; strand/topology/edge remain source-absent and are treated as such (never inferred)."
 }

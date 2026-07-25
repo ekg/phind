@@ -1,0 +1,155 @@
+{
+  "schema_version": "prophage-source-semantics-v1",
+  "policy_id": "prophage-coordinate-policy-v2",
+  "supersedes": "prophage-coordinate-policy-v1",
+  "source_sha256": "6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996",
+  "source_rows": 132404,
+  "decisive_basis": {
+    "predecessor_release_id": "phigaro-version-comparison-v1-e7cfa43b9231aee5",
+    "predecessor_task_id": "rerun-pinned-phigaro",
+    "historical_csv_attribution": "DECISIVE",
+    "caller": "Phigaro",
+    "version": "2.3.0",
+    "modern_v2_4_pilot": "GO",
+    "modern_v2_4_pilot_scope": "only that a new v2.4.0 callset is reproducible/extraction-safe; a modern GO must NOT be substituted for the historical attribution",
+    "independent_reverification": "independent-prophage-rerun-verification-v1 re-derived 56/56 exact v2.3-vs-CSV reproduction, the v2.3-v2.4 +1 boundary signature, and inclusive saved-FASTA lengths without trusting the predecessor's comparison code"
+  },
+  "normalization": {
+    "lossless": true,
+    "raw_row_identity": "sha256(source_file_sha256 || physical_csv_record_number || exact_record_bytes)",
+    "raw_fields": ["end", "genome", "scaffold", "begin", "transposable", "taxonomy", "prophage_id"],
+    "reversible": true,
+    "rule": "retain exact source bytes, physical record number, every raw field string, parsed integer sensitivity values, and policy version; no row is removed or rewritten"
+  },
+  "scopes": [
+    {
+      "id": "all_records",
+      "rule": "every source data row",
+      "source_defined": false,
+      "rows": 132404,
+      "generic_tagged_alias": false
+    },
+    {
+      "id": "transposable_flag_positive",
+      "rule": "Decimal(raw transposable) == Decimal(1); observed raw member value is exactly 1.0",
+      "source_defined": false,
+      "rows": 7695,
+      "generic_tagged_alias": false
+    },
+    {
+      "id": "taxonomy_assigned",
+      "rule": "trimmed case-folded raw taxonomy is neither empty nor Unknown",
+      "source_defined": false,
+      "rows": 115442,
+      "generic_tagged_alias": false
+    }
+  ],
+  "semantic_dimensions": [
+    {
+      "name": "producer_and_caller_version",
+      "status": "RESOLVED",
+      "confidence": "HIGH",
+      "value": "Phigaro 2.3.0 native TSV (pinned commit aea9469, PyPI sdist 758012c...); all 56 cohort rows reproduced exactly",
+      "evidence_ids": ["INDEPENDENT_RERUN_VERIFICATION", "PHIGARO_V230_SOURCE_RUN_PHIGARO", "PHIGARO_V240_SOURCE_RUN_PHIGARO", "PINNED_CALLER_INPUT_GATE"],
+      "extraction_critical": true
+    },
+    {
+      "name": "tagged",
+      "status": "UNRESOLVED",
+      "confidence": "NONE",
+      "value": "explicit unresolved user/source term; the CSV has no 'tagged' field and no subset is silently relabeled; the closest distinct scope is transposable_flag_positive, which is NOT aliased to 'tagged'",
+      "evidence_ids": ["SOURCE_CSV_IMMUTABLE", "SOURCE_AUDIT", "INTEGRATED_PLAN"],
+      "extraction_critical": false
+    },
+    {
+      "name": "transposable",
+      "status": "RESOLVED",
+      "confidence": "HIGH",
+      "value": "Phigaro 2.3.0 if_transposable() binary flag (Integration-group pVOG pattern); raw 1.0/0.0 reproduced exactly for all 56 cohort rows",
+      "evidence_ids": ["INDEPENDENT_RERUN_VERIFICATION", "PHIGARO_V230_TRANSPOSABLE"],
+      "extraction_critical": false
+    },
+    {
+      "name": "taxonomy_labels",
+      "status": "RESOLVED",
+      "confidence": "HIGH",
+      "value": "Phigaro 2.3.0 define_taxonomy() modal pVOG taxonomy codes (Unknown when none map); reproduced exactly for all 56 cohort rows",
+      "evidence_ids": ["INDEPENDENT_RERUN_VERIFICATION", "PHIGARO_V230_TAXONOMY"],
+      "extraction_critical": false
+    },
+    {
+      "name": "coordinate_base_and_end_inclusivity",
+      "status": "RESOLVED",
+      "confidence": "HIGH",
+      "value": "1-based inclusive boundary-gene coordinates; begin=genes[phage.begin].begin, end=genes[phage.end].end written verbatim by Phigaro 2.3.0 run_phigaro.py (commit aea9469); 56/56 cohort rows reproduced with begin_delta=0/end_delta=0; saved-FASTA length=end-begin+1 for all 56 (inclusive); v2.4.0 writes begin-1/end-1 (off-by-one) confirming the version signature",
+      "evidence_ids": ["INDEPENDENT_RERUN_VERIFICATION", "PHIGARO_V230_SOURCE_RUN_PHIGARO", "PHIGARO_V240_SOURCE_RUN_PHIGARO", "PINNED_CALLER_INPUT_GATE"],
+      "extraction_critical": true
+    },
+    {
+      "name": "strand_orientation",
+      "status": "RESOLVED_ABSENT",
+      "confidence": "HIGH",
+      "value": "absent from the source by design; Phigaro 2.3.0 native TSV has no strand column (confirmed in upstream run_phigaro.py). Strand is NOT required for lossless nucleotide interval extraction; consumers that need orientation must treat it as absent and never infer it",
+      "evidence_ids": ["SOURCE_CSV_IMMUTABLE", "PHIGARO_V230_SOURCE_RUN_PHIGARO", "INTEGRATED_PLAN"],
+      "extraction_critical": false
+    },
+    {
+      "name": "topology_and_circularity",
+      "status": "RESOLVED_NONWRAPPING",
+      "confidence": "HIGH",
+      "value": "source carries no topology/origin marker; every one of the 132404 rows satisfies begin<=end (non-wrapping, enforced by the row parser), so interval extraction is an unambiguous forward slice that does not require a topology assumption",
+      "evidence_ids": ["SOURCE_CSV_IMMUTABLE", "INTEGRATED_PLAN", "SOURCE_PROFILE"],
+      "extraction_critical": false
+    },
+    {
+      "name": "contig_edge_behavior",
+      "status": "RESOLVED_DECLARED_INTERVAL",
+      "confidence": "HIGH",
+      "value": "extraction uses the declared [begin,end] verbatim; Phigaro 2.3.0 emits the span genes[phage.begin].begin..genes[phage.end].end with no clipping/extension in the TSV; edge callability/completeness is an interpretation property, not an extraction rule",
+      "evidence_ids": ["PHIGARO_V230_SOURCE_RUN_PHIGARO", "SOURCE_CSV_IMMUTABLE"],
+      "extraction_critical": false
+    },
+    {
+      "name": "completeness",
+      "status": "ABSENT_UNKNOWN",
+      "confidence": "HIGH",
+      "value": "no source completeness field; not required to extract the declared interval; edge/length diagnostics are not completeness labels",
+      "evidence_ids": ["SOURCE_CSV_IMMUTABLE", "SOURCE_AUDIT"],
+      "extraction_critical": false
+    },
+    {
+      "name": "duplicate_locus_rules",
+      "status": "RESOLVED_NO_DUPLICATES",
+      "confidence": "HIGH",
+      "value": "the 132404-row snapshot has zero duplicate (genome,scaffold,begin,end) groups (enforced by the source profile); no deduplication is required and every row is preserved",
+      "evidence_ids": ["SOURCE_PROFILE", "SOURCE_AUDIT"],
+      "extraction_critical": false
+    }
+  ],
+  "coordinate_candidates": [
+    {
+      "id": "C1_RAW_1_BASED_CLOSED",
+      "source_convention": "raw [begin,end] is 1-based inclusive",
+      "canonical_transform": "extract contig[begin-1:end] (0-based half-open) i.e. Python slice contig[begin-1:end]; length=end-begin+1",
+      "status": "SELECTED",
+      "evidence_ids": ["INDEPENDENT_RERUN_VERIFICATION", "PHIGARO_V230_SOURCE_RUN_PHIGARO", "PINNED_CALLER_INPUT_GATE"]
+    },
+    {
+      "id": "C2_RAW_0_BASED_INCLUSIVE",
+      "source_convention": "raw [begin,end] is 0-based inclusive",
+      "canonical_transform": "[begin,end+1) in 0-based half-open coordinates",
+      "status": "REJECTED",
+      "evidence_ids": ["INDEPENDENT_RERUN_VERIFICATION"],
+      "rejection_reason": "0-based is the Phigaro v2.4.0 convention (begin-1/end-1); the historical CSV matches v2.3.0 1-based exactly (56/56, delta 0), not v2.4.0 (delta -1)"
+    }
+  ],
+  "extraction_gate": {
+    "verdict": "EXTRACTION_GO",
+    "consumer_action": "ALLOW",
+    "selected_coordinate_candidate": "C1_RAW_1_BASED_CLOSED",
+    "blocking_dimensions": [],
+    "scope_rule": "extraction is permitted for all_records, transposable_flag_positive, and taxonomy_assigned scopes alike; the three scopes remain distinct and none is silently relabeled",
+    "modern_v2_4_pilot_separation": "modern_v2_4_pilot=GO concerns only a new v2.4.0 callset and is NOT the basis of this historical GO; this GO rests solely on historical_csv_attribution=DECISIVE independently reverified",
+    "release_rule": "A consumer must require verdict == EXTRACTION_GO and must reject missing, unknown, CONDITIONAL, or EXTRACTION_BLOCKED."
+  }
+}

@@ -1,13 +1,28 @@
-test_blank_and_overcommitted_resources_refused (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_blank_and_overcommitted_resources_refused) ... ok
-test_exact_predecessor_and_bounded_diagnostic (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_exact_predecessor_and_bounded_diagnostic) ... ok
-test_interrupted_unit_resume_validates_and_mismatch_refuses (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_interrupted_unit_resume_validates_and_mismatch_refuses) ... ok
-test_manifest_checksum_mismatch_fails_closed (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_manifest_checksum_mismatch_fails_closed) ... ok
-test_partial_publication_without_complete_is_rejected (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_partial_publication_without_complete_is_rejected) ... ok
-test_policy_is_complete_lossless_and_blocked (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_policy_is_complete_lossless_and_blocked) ... ok
-test_root_profile_has_lossless_row_and_scope_accounting (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_root_profile_has_lossless_row_and_scope_accounting) ... ok
-test_schema_and_evidence_inventory_are_pinned (workflow.prophage_semantics.test_release.ProphageSemanticsTests.test_schema_and_evidence_inventory_are_pinned) ... ok
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/erikg/phind/.wg-worktrees/agent-51
+plugins: timeout-2.4.0, anyio-4.12.0
+collecting ... collected 19 items
 
-----------------------------------------------------------------------
-Ran 8 tests in 2.728s
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateDecisionTests::test_decisive_and_sound_authorizes_extraction PASSED [  5%]
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateDecisionTests::test_decisive_and_sound_still_go_even_if_modern_pilot_is_no_go PASSED [ 10%]
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateDecisionTests::test_decisive_but_not_independently_sound_stays_blocked PASSED [ 15%]
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateDecisionTests::test_failure_result_is_hard_no_go PASSED [ 21%]
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateDecisionTests::test_modern_go_alone_does_not_authorize_historical PASSED [ 26%]
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateLiveTests::test_live_predecessor_integrity_pinned PASSED [ 31%]
+workflow/prophage_semantics/test_pinned_caller_gate.py::PinnedCallerGateLiveTests::test_live_predecessor_passes_and_authorizes_extraction PASSED [ 36%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_blank_and_overcommitted_resources_refused PASSED [ 42%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_derive_extraction_fails_closed_on_non_decisive_gate PASSED [ 47%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_derive_extraction_fails_closed_without_decisive_gate PASSED [ 52%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_exact_predecessor_and_bounded_diagnostic PASSED [ 57%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_interrupted_unit_resume_validates_and_mismatch_refuses PASSED [ 63%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_manifest_checksum_mismatch_fails_closed PASSED [ 68%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_partial_publication_without_complete_is_rejected PASSED [ 73%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_root_profile_has_lossless_row_and_scope_accounting PASSED [ 78%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_schema_and_evidence_inventory_are_pinned PASSED [ 84%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_v1_policy_is_the_blocked_historical_record PASSED [ 89%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_v2_policy_is_decisive_go_with_resolved_coordinates PASSED [ 94%]
+workflow/prophage_semantics/test_release.py::ProphageSemanticsTests::test_v2_release_validates_as_extraction_go PASSED [100%]
 
-OK
+============================== 19 passed in 3.49s ==============================
