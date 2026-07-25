@@ -1,0 +1,16 @@
+test_alternative_partitions_and_near_duplicate_units_are_deterministic (workflow.host_structure.test_host_structure.HostStructureContractTests.test_alternative_partitions_and_near_duplicate_units_are_deterministic) ... ok
+test_directed_distance_exact_symmetry_and_mismatch (workflow.host_structure.test_host_structure.HostStructureContractTests.test_directed_distance_exact_symmetry_and_mismatch) ... ok
+test_host_only_contract_rejects_phage_trait_or_artifact (workflow.host_structure.test_host_structure.HostStructureContractTests.test_host_only_contract_rejects_phage_trait_or_artifact) ... ok
+test_interrupted_promotion_has_no_complete_or_final (workflow.host_structure.test_host_structure.HostStructureContractTests.test_interrupted_promotion_has_no_complete_or_final) ... ok
+test_manifest_checksum_mismatch_fails_closed (workflow.host_structure.test_host_structure.HostStructureContractTests.test_manifest_checksum_mismatch_fails_closed) ... ok
+test_neighbor_joining_bootstrap_core_and_recombination_mask (workflow.host_structure.test_host_structure.HostStructureContractTests.test_neighbor_joining_bootstrap_core_and_recombination_mask) ... ok
+test_newick_tip_splits_support_and_collapse (workflow.host_structure.test_host_structure.HostStructureContractTests.test_newick_tip_splits_support_and_collapse) ... ok
+test_paf_reference_call_roundtrip_forward_and_reverse (workflow.host_structure.test_host_structure.HostStructureContractTests.test_paf_reference_call_roundtrip_forward_and_reverse) ... ok
+test_real_frozen_inputs_are_exact_1000_and_host_tools_pass (workflow.host_structure.test_host_structure.HostStructureContractTests.test_real_frozen_inputs_are_exact_1000_and_host_tools_pass) ... ok
+test_release_id_is_order_parameter_and_pin_deterministic (workflow.host_structure.test_host_structure.HostStructureContractTests.test_release_id_is_order_parameter_and_pin_deterministic) ... ok
+test_resource_blank_overallocation_and_low_live_floor_refuse (workflow.host_structure.test_host_structure.HostStructureContractTests.test_resource_blank_overallocation_and_low_live_floor_refuse) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.918s
+
+OK

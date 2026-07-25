@@ -1,0 +1,1 @@
+{"files_before_inventory_refresh":93,"files_over_10mib":[],"largest_file_bytes":452426,"owned_paths":["workflow/host_structure","manifests/host-structure-1000-v1","artifacts/host_structure_1000","reports/host_structure_1000.md"],"root_input_git_diffs":false,"schema":"host-structure-git-payload-audit-v1","sequence_sketch_alignment_payloads":[],"verdict":"PASS"}
