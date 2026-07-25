@@ -1,0 +1,11 @@
+test_inventory_rejects_digest_mismatch (__main__.AuditContractTests.test_inventory_rejects_digest_mismatch) ... ok
+test_inventory_rejects_uninventoried_extra_file (__main__.AuditContractTests.test_inventory_rejects_uninventoried_extra_file) ... ok
+test_machine_verdict_cannot_be_misread_as_integrated_go (__main__.AuditContractTests.test_machine_verdict_cannot_be_misread_as_integrated_go) ... ok
+test_pansn_percent_encoding_is_reversible (__main__.AuditContractTests.test_pansn_percent_encoding_is_reversible) ... ok
+test_recursive_nesting_ignores_only_rung_and_row_digest (__main__.AuditContractTests.test_recursive_nesting_ignores_only_rung_and_row_digest) ... ok
+test_row_hash_is_ordered_and_fail_closed (__main__.AuditContractTests.test_row_hash_is_ordered_and_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK
