@@ -1,0 +1,23 @@
+	Command being timed: "python -m artifacts.canonical_cohort_1000.validate_release --external-release /home/erikg/phind-data/ecoli26k/v1/releases/prepare-canonical-cohort-1000/canonical-cohort-1000-v1-4bc3e029e6e0be44 --output artifacts/canonical_cohort_1000/validation_rerun.json"
+	User time (seconds): 826.41
+	System time (seconds): 312.95
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:35.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 545536
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 30
+	Minor (reclaiming a frame) page faults: 34130019
+	Voluntary context switches: 686024
+	Involuntary context switches: 16097
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

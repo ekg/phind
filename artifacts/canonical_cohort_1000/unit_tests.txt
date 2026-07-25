@@ -1,0 +1,19 @@
+test_canonical_scale_projection_checksum_inventory_mismatch_fails_closed (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_canonical_scale_projection_checksum_inventory_mismatch_fails_closed) ... ok
+test_chunked_http_incomplete_read_is_bounded_and_reenters_pinned_resume (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_chunked_http_incomplete_read_is_bounded_and_reenters_pinned_resume) ... ok
+test_conditional_or_failed_applicable_gate_is_never_waived (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_conditional_or_failed_applicable_gate_is_never_waived) ... ok
+test_global_union_of_1001_exact_revisions_fails_closed (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_global_union_of_1001_exact_revisions_fails_closed) ... ok
+test_interrupted_promotion_never_exposes_partial_release (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_interrupted_promotion_never_exposes_partial_release) ... ok
+test_invalid_checksum_complete_new_object_is_discarded_for_recompute (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_invalid_checksum_complete_new_object_is_discarded_for_recompute) ... ok
+test_live_resource_floor_refuses_before_write (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_live_resource_floor_refuses_before_write) ... ok
+test_manifest_row_checksum_mismatch_fails_closed (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_manifest_row_checksum_mismatch_fails_closed) ... ok
+test_pinned_real_inputs_are_exact_nested_1000_and_all_required_gates_pass (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_pinned_real_inputs_are_exact_nested_1000_and_all_required_gates_pass) ... ok
+test_release_identity_is_order_and_pin_deterministic (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_release_identity_is_order_and_pin_deterministic) ... ok
+test_resource_blank_disk_and_inode_refusal (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_resource_blank_disk_and_inode_refusal) ... ok
+test_scale_thresholds_refuse_exponent_or_slope_regression (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_scale_thresholds_refuse_exponent_or_slope_regression) ... ok
+test_tracked_inventory_checksum_mismatch_fails_closed (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_tracked_inventory_checksum_mismatch_fails_closed) ... ok
+test_url_constructor_is_bounded_to_exact_frozen_1000 (artifacts.canonical_cohort_1000.test_runner.CanonicalCohort1000Tests.test_url_constructor_is_bounded_to_exact_frozen_1000) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 7.859s
+
+OK
