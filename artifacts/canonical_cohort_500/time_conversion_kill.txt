@@ -1,0 +1,24 @@
+Command terminated by signal 9
+	Command being timed: "python3 -m artifacts.canonical_cohort_500.runner --durable-task-root /home/erikg/phind-data/ecoli26k/v1/releases/prepare-canonical-cohort-500 --scratch-root /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/prepare-canonical-cohort-500/canonical-500-v1-run --run-id canonical-500-v1-run --assigned-ram-bytes 34359738368 --durable-allocation-bytes 10000000000 --scratch-allocation-bytes 4000000000000 --inode-allocation 400000 --predicted-durable-peak-bytes 3000000000 --predicted-scratch-peak-bytes 3000000000 --predicted-files 12000 --unfinished-write-bytes 2000000000 --n1000-time-allocation-seconds 7200 --batch-size 10 --retries 8 --rate-delay 0.5 --inject-kill conversion --inject-accession GCF_003337025.1"
+	User time (seconds): 3.53
+	System time (seconds): 3.73
+	Percent of CPU this job got: 86%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 698649
+	Voluntary context switches: 1944
+	Involuntary context switches: 57
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8936
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
