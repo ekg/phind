@@ -1,0 +1,802 @@
+[
+  {
+    "accession": "GCF_000005845.2",
+    "assembly_id": "asm-v1-0ff7aa363314edb290d72eab",
+    "cohort_order": 1,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000812325.1",
+    "assembly_id": "asm-v1-59248433db4b9fdb21544d3a",
+    "cohort_order": 2,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002302315.1",
+    "assembly_id": "asm-v1-41a502eb976b3e61574ad8c6",
+    "cohort_order": 3,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_004664255.1",
+    "assembly_id": "asm-v1-f82a0d4920abbc2d92dcaada",
+    "cohort_order": 4,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_015644385.1",
+    "assembly_id": "asm-v1-7d223c403273bacb796a6439",
+    "cohort_order": 5,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_020829045.1",
+    "assembly_id": "asm-v1-7f371c333ee496e64e13e7df",
+    "cohort_order": 6,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_921380995.1",
+    "assembly_id": "asm-v1-f12f2846b4339fa21373d4d3",
+    "cohort_order": 7,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000167895.3",
+    "assembly_id": "asm-v1-2509fb2e423fed91316b5243",
+    "cohort_order": 8,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001881595.4",
+    "assembly_id": "asm-v1-f932ca427ea3912c33759383",
+    "cohort_order": 9,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000498835.2",
+    "assembly_id": "asm-v1-02150e6b828e27945ab71fa9",
+    "cohort_order": 10,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_015548345.1",
+    "assembly_id": "asm-v1-32657c3828727c905b63ff98",
+    "cohort_order": 11,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_019926545.1",
+    "assembly_id": "asm-v1-4ece359b58a18776b323b359",
+    "cohort_order": 12,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001614385.1",
+    "assembly_id": "asm-v1-3747cc3492718981db97affc",
+    "cohort_order": 13,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_015551035.1",
+    "assembly_id": "asm-v1-719530b887dfd205060a628f",
+    "cohort_order": 14,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_021354235.1",
+    "assembly_id": "asm-v1-c27bf914b89e27d0dc27992c",
+    "cohort_order": 15,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002485085.1",
+    "assembly_id": "asm-v1-929d3c84ca2e4a11e790b999",
+    "cohort_order": 16,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_014712315.1",
+    "assembly_id": "asm-v1-331be33613f5ee0144844f5c",
+    "cohort_order": 17,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_019120745.1",
+    "assembly_id": "asm-v1-f36d786b0ab3775223cf3d16",
+    "cohort_order": 18,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_006350715.1",
+    "assembly_id": "asm-v1-b7796a1fc230ab9bd7633b94",
+    "cohort_order": 19,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002522525.1",
+    "assembly_id": "asm-v1-97a929e91ce540241ff20371",
+    "cohort_order": 20,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_018790115.1",
+    "assembly_id": "asm-v1-0bdf5b05c650023990a68d2d",
+    "cohort_order": 21,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002442365.1",
+    "assembly_id": "asm-v1-1e2c548ce4eee4bbd7812d4a",
+    "cohort_order": 22,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005885955.1",
+    "assembly_id": "asm-v1-faddf0606460939e473ac2c5",
+    "cohort_order": 23,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002513075.1",
+    "assembly_id": "asm-v1-90293848c2351417f7baaa74",
+    "cohort_order": 24,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_902810185.1",
+    "assembly_id": "asm-v1-3b4342f24d54b3c1a9b84d48",
+    "cohort_order": 25,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005043025.1",
+    "assembly_id": "asm-v1-0beedef08535e20c4790e6bb",
+    "cohort_order": 26,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_017595115.1",
+    "assembly_id": "asm-v1-48766683d6315460b4013353",
+    "cohort_order": 27,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_014528625.1",
+    "assembly_id": "asm-v1-b71c4a8ef90f7c49f5f8d546",
+    "cohort_order": 28,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_008041205.1",
+    "assembly_id": "asm-v1-31cd9173370fa4123f9ea13b",
+    "cohort_order": 29,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_009820795.1",
+    "assembly_id": "asm-v1-b419079f0ccf7758946a758e",
+    "cohort_order": 30,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_900479385.1",
+    "assembly_id": "asm-v1-9416d74da50a26741c416d3a",
+    "cohort_order": 31,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_004767475.1",
+    "assembly_id": "asm-v1-b269b6f553a373270f84ba18",
+    "cohort_order": 32,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002519245.1",
+    "assembly_id": "asm-v1-996e1b56b7867eb75e7abe84",
+    "cohort_order": 33,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_015644305.1",
+    "assembly_id": "asm-v1-9f93da8d24e49c1bd9dc1bfb",
+    "cohort_order": 34,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001616285.1",
+    "assembly_id": "asm-v1-9bf79301d532e473a6d4d15e",
+    "cohort_order": 35,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001614645.1",
+    "assembly_id": "asm-v1-7f24d9da61537a483a8edeb9",
+    "cohort_order": 36,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_013370625.1",
+    "assembly_id": "asm-v1-27d405b112a56b6388ddbef4",
+    "cohort_order": 37,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_013608825.1",
+    "assembly_id": "asm-v1-1373daf306e4c70962bf7651",
+    "cohort_order": 38,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005043625.1",
+    "assembly_id": "asm-v1-566c3eb2b8feeeb03a029d05",
+    "cohort_order": 39,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_902163565.1",
+    "assembly_id": "asm-v1-d8e1422596935b944b73500f",
+    "cohort_order": 40,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_006351505.1",
+    "assembly_id": "asm-v1-62a4d2082d3f90d6cb5304ca",
+    "cohort_order": 41,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005039315.1",
+    "assembly_id": "asm-v1-4fad43b6b8ac2a5931873b95",
+    "cohort_order": 42,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005384385.1",
+    "assembly_id": "asm-v1-ef21b6ec0b8c832cbedc2d93",
+    "cohort_order": 43,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_016530465.1",
+    "assembly_id": "asm-v1-dcfffc170c5656770532cfc6",
+    "cohort_order": 44,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002152015.1",
+    "assembly_id": "asm-v1-9791d16f22febb6a4da01cdc",
+    "cohort_order": 45,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_018344735.1",
+    "assembly_id": "asm-v1-0e401af1329ee20675b75db8",
+    "cohort_order": 46,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002513625.1",
+    "assembly_id": "asm-v1-f8561f5b15e76623fe00d768",
+    "cohort_order": 47,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002229025.1",
+    "assembly_id": "asm-v1-9f5f3eeb65f0f80afca90db7",
+    "cohort_order": 48,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000778685.1",
+    "assembly_id": "asm-v1-143198d8a00e3d1908061cae",
+    "cohort_order": 49,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_020037245.1",
+    "assembly_id": "asm-v1-26091108e767413baee190a2",
+    "cohort_order": 50,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003731035.1",
+    "assembly_id": "asm-v1-1009a57e9d5acb3b90d6791b",
+    "cohort_order": 51,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000326585.1",
+    "assembly_id": "asm-v1-c5fbc3318d26f8606d4ee374",
+    "cohort_order": 52,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000780535.1",
+    "assembly_id": "asm-v1-076733fb9cacde0985dcd995",
+    "cohort_order": 53,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003570445.1",
+    "assembly_id": "asm-v1-9577d304b0441e1eebff2e03",
+    "cohort_order": 54,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000447005.2",
+    "assembly_id": "asm-v1-0d112d76668f2ca96d2d62e5",
+    "cohort_order": 55,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_013073765.1",
+    "assembly_id": "asm-v1-651bbd15909672553530f486",
+    "cohort_order": 56,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005041275.1",
+    "assembly_id": "asm-v1-d23ad41de9f39edda98054bf",
+    "cohort_order": 57,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_014862465.1",
+    "assembly_id": "asm-v1-78de2c22a7d89d63d5d4271a",
+    "cohort_order": 58,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_900195795.1",
+    "assembly_id": "asm-v1-1ed2c2f97484422a21c26931",
+    "cohort_order": 59,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_014878375.1",
+    "assembly_id": "asm-v1-18ed471aa5e0a0b0ce6eaac3",
+    "cohort_order": 60,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_921293415.1",
+    "assembly_id": "asm-v1-336f2acfbe62b7b1a4830ea5",
+    "cohort_order": 61,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_006229985.1",
+    "assembly_id": "asm-v1-bddc1aaccbace0b2820ff83b",
+    "cohort_order": 62,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_005045505.1",
+    "assembly_id": "asm-v1-933e0d1ae268d9a3995122ec",
+    "cohort_order": 63,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001660345.1",
+    "assembly_id": "asm-v1-522935574c5d69942f6c3e15",
+    "cohort_order": 64,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_020162695.1",
+    "assembly_id": "asm-v1-2140f13568d46984b220b119",
+    "cohort_order": 65,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003981675.1",
+    "assembly_id": "asm-v1-8cc38f4de03fef066edb312e",
+    "cohort_order": 66,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_905330275.1",
+    "assembly_id": "asm-v1-744a78fc7ef5643c50983785",
+    "cohort_order": 67,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001617565.1",
+    "assembly_id": "asm-v1-89345e76194e6b4fe931f0cf",
+    "cohort_order": 68,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003983415.1",
+    "assembly_id": "asm-v1-d5b07e7950fe930d28259eae",
+    "cohort_order": 69,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_009899475.1",
+    "assembly_id": "asm-v1-2298b23611278b990e0debe1",
+    "cohort_order": 70,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002511115.1",
+    "assembly_id": "asm-v1-b3f32cbb29e6bab46510769a",
+    "cohort_order": 71,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001521595.1",
+    "assembly_id": "asm-v1-6cc2cc6a6bd4874236c4e0b6",
+    "cohort_order": 72,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_019351215.1",
+    "assembly_id": "asm-v1-0483ccd2aa538f10924521f5",
+    "cohort_order": 73,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_020731765.1",
+    "assembly_id": "asm-v1-4b6dd2bf16ed7e1796c82446",
+    "cohort_order": 74,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001577325.1",
+    "assembly_id": "asm-v1-60267ac131a09d147996f037",
+    "cohort_order": 75,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000777675.1",
+    "assembly_id": "asm-v1-9b414d6deaabea3bbef2838b",
+    "cohort_order": 76,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002109645.1",
+    "assembly_id": "asm-v1-131b25c56fa7a53a20f6acce",
+    "cohort_order": 77,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003076715.1",
+    "assembly_id": "asm-v1-0811187b1ba0a0a2fd7ee853",
+    "cohort_order": 78,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002518465.1",
+    "assembly_id": "asm-v1-a6066364915f685488e5a06f",
+    "cohort_order": 79,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000459215.1",
+    "assembly_id": "asm-v1-1a6db70587c81767a83b4c01",
+    "cohort_order": 80,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_900010055.1",
+    "assembly_id": "asm-v1-015b60cbe04a23c843a53259",
+    "cohort_order": 81,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_002769075.1",
+    "assembly_id": "asm-v1-55b63d52e2d0b4376986fde8",
+    "cohort_order": 82,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_009910015.1",
+    "assembly_id": "asm-v1-2aca3a21673be9b7cfae16ad",
+    "cohort_order": 83,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_013370905.1",
+    "assembly_id": "asm-v1-1493b2edb2f619df308b1b43",
+    "cohort_order": 84,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000619025.1",
+    "assembly_id": "asm-v1-9a6a8d1e4c43782a00230ed8",
+    "cohort_order": 85,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_016404105.1",
+    "assembly_id": "asm-v1-8febe80f14fecbdbe5f94fbd",
+    "cohort_order": 86,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_902859475.1",
+    "assembly_id": "asm-v1-3264637aa0d7b8419b615ab5",
+    "cohort_order": 87,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_019282095.1",
+    "assembly_id": "asm-v1-1f4252164a42759fdfc774db",
+    "cohort_order": 88,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_000326905.1",
+    "assembly_id": "asm-v1-a0b27b0dc780b0d8f3e2142a",
+    "cohort_order": 89,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003357545.1",
+    "assembly_id": "asm-v1-cd4e5c61e9671ce18f9f184d",
+    "cohort_order": 90,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001753505.1",
+    "assembly_id": "asm-v1-40fdb64d006bb69fa2b33709",
+    "cohort_order": 91,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003292995.1",
+    "assembly_id": "asm-v1-70c46b43f8d5689ac4ca9d32",
+    "cohort_order": 92,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_001713625.1",
+    "assembly_id": "asm-v1-7b2d5205d47da07d2bdc3aca",
+    "cohort_order": 93,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_010592655.1",
+    "assembly_id": "asm-v1-7c7447d252747c1af5aa3549",
+    "cohort_order": 94,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003322245.1",
+    "assembly_id": "asm-v1-e44fa2d14858e37a359ef330",
+    "cohort_order": 95,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_900490675.1",
+    "assembly_id": "asm-v1-5e08d24b5750d124934c0884",
+    "cohort_order": 96,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_017896545.1",
+    "assembly_id": "asm-v1-c3800f63c8daf18e6af0aaa1",
+    "cohort_order": 97,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_900499395.1",
+    "assembly_id": "asm-v1-75786090079b909933a0de52",
+    "cohort_order": 98,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_019957265.1",
+    "assembly_id": "asm-v1-2064c286be6c3369f0dcc118",
+    "cohort_order": 99,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  },
+  {
+    "accession": "GCF_003730815.1",
+    "assembly_id": "asm-v1-1ee856b1dec60d00372c00c8",
+    "cohort_order": 100,
+    "has_complete": true,
+    "manifest": {},
+    "terminal_state": "VALIDATED"
+  }
+]

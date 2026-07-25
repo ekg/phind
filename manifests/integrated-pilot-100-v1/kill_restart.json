@@ -1,0 +1,1 @@
+{"schema":"integrated-pilot-kill-restart-v1","tests":["build_kill_restart","query_batch_kill_restart","deterministic_rerun"],"verdict":"STUB"}
