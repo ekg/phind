@@ -1,0 +1,35 @@
+COMMAND: python3 workflow/phigaro_v2_4_pilot/validate_release.py --repo-root .
+EXIT_STATUS: 2
+STDOUT:
+STDERR:
+python3: can't open file '/home/erikg/phind/.wg-worktrees/agent-94/workflow/phigaro_v2_4_pilot/validate_release.py': [Errno 2] No such file or directory
+
+
+
+COMMAND: /usr/bin/time -v python3 workflow/phigaro_v2_4_certification/certify.py --repo-root . --output artifacts/phigaro_v2_4_certification/certification.json
+{"audit_mode":"READ_ONLY_FAIL_CLOSED","bounded_discovery":{"expected_release_parent_exists":false,"phigaro_named_release_candidates_max_depth_2":[],"producer_validator_exists":false,"producer_validator_git_tracked":false,"producer_validator_relpath":"workflow/phigaro_v2_4_pilot/validate_release.py"},"canonical_n10":{"manifest_relpath":"manifests/pilot-cohorts-v1/cohort-0010.tsv","manifest_sha256":"83f8925eb261ea915192e3923fe8d858f09abfa6791a27dbda20530da44ec146","matches_frozen_identity_and_order":true,"ordered_accessions":["GCF_000005845.2","GCF_000812325.1","GCF_002302315.1","GCF_004664255.1","GCF_015644385.1","GCF_020829045.1","GCF_921380995.1","GCF_000167895.3","GCF_001881595.4","GCF_000498835.2"],"row_count":10},"checks":{"absolute_external_release_path":"NOT_EVALUATED_NO_TRACKED_REFERENCE","deterministic_and_restart_evidence":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","exact_ordered_n10_release_manifest":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","expected_external_release_parent_present":"FAIL","external_release_directory":"NOT_EVALUATED_NO_TRACKED_REFERENCE","independent_canonical_n10_basis":"PASS","interval_and_base_round_trips":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","native_tsv_bed_gff_saved_fasta_outputs":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","phigaro_2_4_0_dependency_database_config_pins":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","producer_strict_validator_available":"FAIL","published_root_digest_evidence":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","real_argv_and_process_logs_for_ten_genomes":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","release_complete_and_inventory_digests":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","resource_evidence":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","root_inputs_unchanged_during_independent_audit":"PASS","ten_outcomes_and_call_count_reconciliation":"NOT_EVALUATED_NO_DIGEST_VALID_RELEASE","tracked_release_reference":"FAIL"},"expected_release_parent":"/home/erikg/phind-data/ecoli26k/v1/releases/complete-phigaro-v2-4-n10-pilot","failures":[{"code":"MISSING_PRODUCER_STRICT_VALIDATOR","detail":"missing tracked workflow/phigaro_v2_4_pilot/validate_release.py"},{"code":"MISSING_EXPECTED_RELEASE_PARENT","detail":"/home/erikg/phind-data/ecoli26k/v1/releases/complete-phigaro-v2-4-n10-pilot"},{"code":"MISSING_TRACKED_RELEASE_REFERENCE","detail":"missing artifacts/phigaro_v2_4_pilot/release_reference.json"}],"qualified_for_scaling":false,"reference":{"exists":false,"git_tracked":false,"relpath":"artifacts/phigaro_v2_4_pilot/release_reference.json"},"root_inputs":{"finish_sha256":{"26k_ecoli_accession.txt":"1570cbe51da509445ba1536da0a8552202d6a87566db67305903ffcced15e8c5","26k_prophage1.csv":"6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996"},"head_sha256":{"26k_ecoli_accession.txt":"1570cbe51da509445ba1536da0a8552202d6a87566db67305903ffcced15e8c5","26k_prophage1.csv":"6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996"},"start_sha256":{"26k_ecoli_accession.txt":"1570cbe51da509445ba1536da0a8552202d6a87566db67305903ffcced15e8c5","26k_prophage1.csv":"6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996"}},"schema":"phigaro-v2.4-n10-independent-certification-v1","side_effects":{"historical_csv_semantics_interpreted":false,"host_assembly_downloads":0,"larger_cohorts_executed":0,"release_writes":0},"source_task_id":"complete-real-phigaro","verdict":"REJECTED"}
+Command exited with non-zero status 2
+	Command being timed: "python3 workflow/phigaro_v2_4_certification/certify.py --repo-root . --output artifacts/phigaro_v2_4_certification/certification.json"
+	User time (seconds): 0.09
+	System time (seconds): 0.05
+	Percent of CPU this job got: 107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32768
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 10857
+	Voluntary context switches: 30
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2
+EXIT_STATUS: 2

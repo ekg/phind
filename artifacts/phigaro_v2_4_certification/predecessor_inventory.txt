@@ -1,0 +1,33 @@
+BOUNDED INDEPENDENT DISCOVERY (read-only)
+COMMAND: git ls-files -- artifacts/phigaro_v2_4_pilot workflow/phigaro_v2_4_pilot reports/phigaro_v2_4_pilot.md
+EXIT_STATUS: 0
+
+COMMAND: test -d /home/erikg/phind-data/ecoli26k/v1/releases/complete-phigaro-v2-4-n10-pilot
+EXIT_STATUS: 1
+
+COMMAND: find /home/erikg/phind-data/ecoli26k/v1/releases -mindepth 1 -maxdepth 2 -type d -iname *phigaro* -print
+EXIT_STATUS: 0
+
+COMMAND: git log --oneline main..wg/agent-91/complete-real-phigaro
+EXIT_STATUS: 0
+
+COMMAND: git -C /home/erikg/phind/.wg-worktrees/agent-91 status --short --branch
+## wg/agent-91/complete-real-phigaro
+?? .wg
+?? .wg-cleanup-pending
+EXIT_STATUS: 0
+
+COMMAND: wg show complete-real-phigaro | grep selected status/evaluation/worktree/log lines
+Status: done
+  Commits ahead:     0
+  Uncommitted files: 2
+  [iter 0] Score: 0.12  Source: llm  2026-07-25T07:38:06.052501500+00:00
+  [iter 0] Score: 0.64  Source: flip  2026-07-25T07:37:38.921934084+00:00
+  2026-07-25T07:34:51.454748729+00:00 Starting implementation: inspect prior WIP, canonical release, Phigaro prerequisites, then execute and validate the pinned real N=10 pilot.
+  2026-07-25T07:36:58.173888513+00:00 Task pending eval (agent reported done; awaiting `.evaluate-*` to score) [agent-91]
+  2026-07-25T07:38:08.102428758+00:00 Consumed durable verdict verdict-evalp-cc6b4fef8d1a138212a3e359-evaluate-852216e9e0ca0247 exactly once: score=0.12, outcome=done [eval-lifecycle-reconcile]
+
+COMMAND: wg context independently-certify-phigaro
+Context for: independently-certify-phigaro - Independently certify Phigaro v2.4 N=10 pilot
+
+No artifacts available from dependencies yet.

@@ -1,0 +1,1 @@
+{"byte_identical":true,"expected_fail_closed_exit_status":2,"first_exit_status":2,"first_sha256":"0e5c393ab8267fda74e646d92eac77ee3c20ad1f2ff452b4df25cbba2a1d06e3","result":"PASS","schema":"phigaro-v2.4-n10-certification-rerun-v1","second_exit_status":2,"second_sha256":"0e5c393ab8267fda74e646d92eac77ee3c20ad1f2ff452b4df25cbba2a1d06e3"}

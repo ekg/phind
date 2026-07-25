@@ -1,0 +1,86 @@
+test_interrupted_conversion_stage_is_discarded_then_committed (acquisition_canonicalization.test_pilot.PilotTests.test_interrupted_conversion_stage_is_discarded_then_committed) ... ok
+test_interrupted_release_promotion_never_exposes_partial (acquisition_canonicalization.test_pilot.PilotTests.test_interrupted_release_promotion_never_exposes_partial) ... ok
+test_invalid_source_gff_is_quarantined_without_alias_view (acquisition_canonicalization.test_pilot.PilotTests.test_invalid_source_gff_is_quarantined_without_alias_view) ... ok
+test_manifest_checksum_mismatch_fails_closed (acquisition_canonicalization.test_pilot.PilotTests.test_manifest_checksum_mismatch_fails_closed) ... ok
+test_nested_object_inventories_are_covered_by_release_inventory (acquisition_canonicalization.test_pilot.PilotTests.test_nested_object_inventories_are_covered_by_release_inventory) ... ok
+test_package_archive_upstream_md5_and_exact_identity (acquisition_canonicalization.test_pilot.PilotTests.test_package_archive_upstream_md5_and_exact_identity) ... ok
+test_payload_bound_rejects_eleventh_or_versionless_identity (acquisition_canonicalization.test_pilot.PilotTests.test_payload_bound_rejects_eleventh_or_versionless_identity) ... ok
+test_resource_blank_disk_and_inode_refusal (acquisition_canonicalization.test_pilot.PilotTests.test_resource_blank_disk_and_inode_refusal) ... ok
+test_safe_range_resume_requires_unchanged_strong_identity (acquisition_canonicalization.test_pilot.PilotTests.test_safe_range_resume_requires_unchanged_strong_identity) ... ok
+test_streamed_rename_bgzf_indexes_and_alias_roundtrip (acquisition_canonicalization.test_pilot.PilotTests.test_streamed_rename_bgzf_indexes_and_alias_roundtrip) ... ok
+test_unsafe_partial_identity_restarts_without_append (acquisition_canonicalization.test_pilot.PilotTests.test_unsafe_partial_identity_restarts_without_append) ... ok
+test_checksum_mismatch_fails_closed (collection_release.test_resolver.ResolverTests.test_checksum_mismatch_fails_closed) ... ok
+test_exact_version_identity_rejects_unrequested_report (collection_release.test_resolver.ResolverTests.test_exact_version_identity_rejects_unrequested_report) ... ok
+test_external_inventory_mismatch_refused (collection_release.test_resolver.ResolverTests.test_external_inventory_mismatch_refused) ... ok
+test_interrupted_promotion_stage_is_cleanly_restarted (collection_release.test_resolver.ResolverTests.test_interrupted_promotion_stage_is_cleanly_restarted) ... ok
+test_lossless_freeze_and_atomic_resume (collection_release.test_resolver.ResolverTests.test_lossless_freeze_and_atomic_resume) ... ok
+test_resource_blank_and_overallocation_refused (collection_release.test_resolver.ResolverTests.test_resource_blank_and_overallocation_refused) ... ok
+test_checksum_mismatch_and_path_traversal_fail_closed (compatibility.test_compatibility.InventoryTests.test_checksum_mismatch_and_path_traversal_fail_closed) ... ok
+test_manifest_checksum_mutation_rejected_before_consumption (compatibility.test_compatibility.InventoryTests.test_manifest_checksum_mutation_rejected_before_consumption) ... ok
+test_mash_lower_to_rapidnj_full_matrix_and_malformed_refusal (compatibility.test_compatibility.InventoryTests.test_mash_lower_to_rapidnj_full_matrix_and_malformed_refusal) ... ok
+test_package_locks_have_matching_sha256_inventories (compatibility.test_compatibility.InventoryTests.test_package_locks_have_matching_sha256_inventories) ... ok
+test_gff_semantic_alias_preserves_coordinates_and_rejects_orphan (compatibility.test_compatibility.NamingTests.test_gff_semantic_alias_preserves_coordinates_and_rejects_orphan) ... ok
+test_noncanonical_lowercase_escape_rejected (compatibility.test_compatibility.NamingTests.test_noncanonical_lowercase_escape_rejected) ... ok
+test_unsafe_pansn_and_gff_layers_round_trip (compatibility.test_compatibility.NamingTests.test_unsafe_pansn_and_gff_layers_round_trip) ... ok
+test_exact_predecessor_all_objects_and_rows_pass (compatibility.test_compatibility.PredecessorRegressionTests.test_exact_predecessor_all_objects_and_rows_pass) ... ok
+test_actual_sigkill_worker_leaves_only_unpublished_partial (compatibility.test_compatibility.ResourceAndPromotionTests.test_actual_sigkill_worker_leaves_only_unpublished_partial) ... ok
+test_blank_and_overallocation_refused (compatibility.test_compatibility.ResourceAndPromotionTests.test_blank_and_overallocation_refused) ... ok
+test_interrupted_promotion_never_publishes_and_clean_restart_does (compatibility.test_compatibility.ResourceAndPromotionTests.test_interrupted_promotion_never_publishes_and_clean_restart_does) ... ok
+test_alternative_partitions_and_near_duplicate_units_are_deterministic (host_structure.test_host_structure.HostStructureContractTests.test_alternative_partitions_and_near_duplicate_units_are_deterministic) ... ok
+test_directed_distance_exact_symmetry_and_mismatch (host_structure.test_host_structure.HostStructureContractTests.test_directed_distance_exact_symmetry_and_mismatch) ... ok
+test_host_only_contract_rejects_phage_trait_or_artifact (host_structure.test_host_structure.HostStructureContractTests.test_host_only_contract_rejects_phage_trait_or_artifact) ... ok
+test_interrupted_promotion_has_no_complete_or_final (host_structure.test_host_structure.HostStructureContractTests.test_interrupted_promotion_has_no_complete_or_final) ... ok
+test_manifest_checksum_mismatch_fails_closed (host_structure.test_host_structure.HostStructureContractTests.test_manifest_checksum_mismatch_fails_closed) ... ok
+test_neighbor_joining_bootstrap_core_and_recombination_mask (host_structure.test_host_structure.HostStructureContractTests.test_neighbor_joining_bootstrap_core_and_recombination_mask) ... ok
+test_newick_tip_splits_support_and_collapse (host_structure.test_host_structure.HostStructureContractTests.test_newick_tip_splits_support_and_collapse) ... ok
+test_paf_reference_call_roundtrip_forward_and_reverse (host_structure.test_host_structure.HostStructureContractTests.test_paf_reference_call_roundtrip_forward_and_reverse) ... ok
+test_real_frozen_inputs_are_exact_1000_and_host_tools_pass (host_structure.test_host_structure.HostStructureContractTests.test_real_frozen_inputs_are_exact_1000_and_host_tools_pass) ... ok
+test_release_id_is_order_parameter_and_pin_deterministic (host_structure.test_host_structure.HostStructureContractTests.test_release_id_is_order_parameter_and_pin_deterministic) ... ok
+test_resource_blank_overallocation_and_low_live_floor_refuse (host_structure.test_host_structure.HostStructureContractTests.test_resource_blank_overallocation_and_low_live_floor_refuse) ... ok
+test_missing_reference_rejects_without_release_writes (phigaro_v2_4_certification.test_certify.CertificationTests.test_missing_reference_rejects_without_release_writes) ... ok
+test_sha256_inventory_parser_rejects_escape_and_duplicates (phigaro_v2_4_certification.test_certify.CertificationTests.test_sha256_inventory_parser_rejects_escape_and_duplicates) ... ok
+test_tracked_reference_to_missing_release_rejects (phigaro_v2_4_certification.test_certify.CertificationTests.test_tracked_reference_to_missing_release_rejects) ... ok
+test_engineering_controls_do_not_add_or_reorder_assemblies (pilot_selection.test_selection.SelectionTests.test_engineering_controls_do_not_add_or_reorder_assemblies) ... ok
+test_exact_nested_prefixes_and_suppressed_full_frame_mapping (pilot_selection.test_selection.SelectionTests.test_exact_nested_prefixes_and_suppressed_full_frame_mapping) ... ok
+test_exact_version_mismatch_and_stage_b_drift_fail_closed (pilot_selection.test_selection.SelectionTests.test_exact_version_mismatch_and_stage_b_drift_fail_closed) ... ok
+test_inclusion_probabilities_are_exact_design_fractions (pilot_selection.test_selection.SelectionTests.test_inclusion_probabilities_are_exact_design_fractions) ... ok
+test_interrupted_promotion_is_never_visible_and_restart_discards_stage (pilot_selection.test_selection.SelectionTests.test_interrupted_promotion_is_never_visible_and_restart_discards_stage) ... ok
+test_manifest_checksum_mismatch_fails_closed (pilot_selection.test_selection.SelectionTests.test_manifest_checksum_mismatch_fails_closed) ... ok
+test_resource_blank_disk_inode_and_unfinished_write_refusal (pilot_selection.test_selection.SelectionTests.test_resource_blank_disk_inode_and_unfinished_write_refusal) ... ok
+test_selection_is_phage_blind_and_seed_deterministic (pilot_selection.test_selection.SelectionTests.test_selection_is_phage_blind_and_seed_deterministic) ... ok
+test_blank_and_overcommitted_resources_refused (prophage_semantics.test_release.ProphageSemanticsTests.test_blank_and_overcommitted_resources_refused) ... ok
+test_exact_predecessor_and_bounded_diagnostic (prophage_semantics.test_release.ProphageSemanticsTests.test_exact_predecessor_and_bounded_diagnostic) ... ok
+test_interrupted_unit_resume_validates_and_mismatch_refuses (prophage_semantics.test_release.ProphageSemanticsTests.test_interrupted_unit_resume_validates_and_mismatch_refuses) ... ok
+test_manifest_checksum_mismatch_fails_closed (prophage_semantics.test_release.ProphageSemanticsTests.test_manifest_checksum_mismatch_fails_closed) ... ok
+test_partial_publication_without_complete_is_rejected (prophage_semantics.test_release.ProphageSemanticsTests.test_partial_publication_without_complete_is_rejected) ... ok
+test_policy_is_complete_lossless_and_blocked (prophage_semantics.test_release.ProphageSemanticsTests.test_policy_is_complete_lossless_and_blocked) ... ok
+test_root_profile_has_lossless_row_and_scope_accounting (prophage_semantics.test_release.ProphageSemanticsTests.test_root_profile_has_lossless_row_and_scope_accounting) ... ok
+test_schema_and_evidence_inventory_are_pinned (prophage_semantics.test_release.ProphageSemanticsTests.test_schema_and_evidence_inventory_are_pinned) ... ok
+
+----------------------------------------------------------------------
+Ran 58 tests in 5.666s
+
+OK
+	Command being timed: "python3 -m unittest discover -s workflow -p test*.py -v"
+	User time (seconds): 4.62
+	System time (seconds): 1.16
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 171644
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 125532
+	Voluntary context switches: 445
+	Involuntary context switches: 21
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 3512
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
