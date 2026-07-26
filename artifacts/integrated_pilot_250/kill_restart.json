@@ -1,0 +1,1 @@
+{"injected_interruption_at_new_build_query_stage":false,"partial_complete_never_present":true,"resume_policy":"existing static units independently SHA-256 validated; mismatch refuses mixed publication","schema":"integrated-pilot-250-kill-restart-v1","tests":["build_kill_restart","query_batch_kill_restart","deterministic_rerun"],"verdict":"PASS"}

@@ -1,0 +1,1 @@
+{"analysis_units":250,"callable_denominator_rule":"explicit per cluster","format":"long-form","includes_copy_count":true,"includes_evidence_ids":true,"input_clusters":1249,"schema":"integrated-pilot-250-matrix-v1","separate_source_scopes":true,"states":["present","absent","uncallable","ambiguous"],"verdict":"PASS"}
