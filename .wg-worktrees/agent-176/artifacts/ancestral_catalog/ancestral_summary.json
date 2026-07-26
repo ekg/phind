@@ -1,0 +1,35 @@
+{
+  "HC001": {
+    "n_prophages": 1761,
+    "n_core_modules": 0,
+    "n_accessory_modules": 4,
+    "total_ancestral_length": 49530,
+    "core_genome_fraction": 0.0,
+    "core_segments": 1,
+    "total_segments": 1315090,
+    "bubbles_found": 0,
+    "bubbles_resolved": 0
+  },
+  "HC002": {
+    "n_prophages": 390,
+    "n_core_modules": 0,
+    "n_accessory_modules": 4,
+    "total_ancestral_length": 10565,
+    "core_genome_fraction": 0.0,
+    "core_segments": 1,
+    "total_segments": 185412,
+    "bubbles_found": 0,
+    "bubbles_resolved": 0
+  },
+  "HC004": {
+    "n_prophages": 187,
+    "n_core_modules": 0,
+    "n_accessory_modules": 4,
+    "total_ancestral_length": 33213,
+    "core_genome_fraction": 0.0,
+    "core_segments": 1,
+    "total_segments": 198017,
+    "bubbles_found": 0,
+    "bubbles_resolved": 0
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "true_ancestral_length": 2000,
+  "msa_accuracy": 0.689,
+  "n_descendants": 20,
+  "mutation_rate": 0.02,
+  "indel_rate": 0.002,
+  "graph_method_note": "Requires building syng graph from simulated data - not implemented in this run",
+  "msa_method": "Majority consensus on simulated MSA"
+}

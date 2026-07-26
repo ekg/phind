@@ -1,0 +1,5 @@
+clade	module_id	module_type	start	end	length	confidence	traversal_fraction	n_alleles	is_core	method
+HC004	HC004_integration	integration	0	6642	6642	0.016	0.016	3	False	graph
+HC004	HC004_replication	replication	6642	13285	6643	0.011	0.011	2	False	graph
+HC004	HC004_structural	structural	13285	23249	9964	0.011	0.011	2	False	graph
+HC004	HC004_lysis	lysis	23249	33213	9964	0.027	0.027	5	False	graph

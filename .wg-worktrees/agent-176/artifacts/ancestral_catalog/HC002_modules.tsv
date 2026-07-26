@@ -1,0 +1,5 @@
+clade	module_id	module_type	start	end	length	confidence	traversal_fraction	n_alleles	is_core	method
+HC002	HC002_integration	integration	0	2113	2113	0.018	0.018	7	False	graph
+HC002	HC002_replication	replication	2113	4226	2113	0.057	0.057	22	False	graph
+HC002	HC002_structural	structural	4226	7395	3169	0.059	0.059	23	False	graph
+HC002	HC002_lysis	lysis	7395	10565	3170	0.028	0.028	11	False	graph
