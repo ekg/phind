@@ -1,0 +1,14 @@
+Extraction log for 132404 prophage records
+Started: Wed Jul 29 12:52:30 2026
+============================================================
+FAIL: GCF_001291365.1_prophage_1 | GCF_001291365.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001291365.1/GCF_001291365.1.pansn.fa.gz
+FAIL: GCF_001291365.1_prophage_2 | GCF_001291365.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001291365.1/GCF_001291365.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_1 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_2 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_3 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_4 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_5 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_6 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_003886435.1_prophage_7 | GCF_003886435.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_003886435.1/GCF_003886435.1.pansn.fa.gz
+FAIL: GCF_012029685.1_prophage_1 | GCF_012029685.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_012029685.1/GCF_012029685.1.pansn.fa.gz
+FAIL: GCF_012029685.1_prophage_2 | GCF_012029685.1 | FASTA not found: /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_012029685.1/GCF_012029685.1.pansn.fa.gz
