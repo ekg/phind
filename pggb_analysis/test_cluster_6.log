@@ -1,0 +1,91 @@
+============================================================
+pggb per cluster + ML Ancestral Genome Inference Pipeline
+============================================================
+Output: pggb_analysis
+Tool env: /home/erikg/micromamba/envs/pggb_env
+Core threshold: 0.9
+pggb identity: 85%
+pggb segment: 2000 bp
+UFBoot: 1000 reps
+Checking required tools...
+  All 8 tools verified.
+
+Loading clusters...
+  20 clusters
+
+Clusters to process (1):
+  Cluster 6: 53 seqs
+
+============================================================
+Cluster 6: 53 sequences
+============================================================
+
+[1a] Extracting sequences...
+  Extracted 53 sequences
+
+[1b] Building pggb graph...
+
+  Building pggb graph for cluster 6 (53 seqs)...
+
+  [index 6]
+    /usr/bin/samtools faidx pggb_analysis/cluster_6/cluster_6.fa
+
+  [wfmash map 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/wfmash -p 85 -n 5 -k 19 -l 2000 -X -m -t 128 pggb_analysis/cluster_6/cluster_6.fa pggb_analysis/cluster_6/cluster_6.fa
+    Output: 281382 bytes
+
+  [wfmash align 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/wfmash -p 85 -n 5 -k 19 -l 2000 -X -t 128 pggb_analysis/cluster_6/cluster_6.fa -i pggb_analysis/cluster_6/cluster_6.mappings.paf
+    Output: 1221559 bytes
+
+  [seqwish 6]
+    /home/erikg/.cargo/bin/seqwish -s pggb_analysis/cluster_6/cluster_6.fa -p pggb_analysis/cluster_6/cluster_6.alignments.paf -k 19 -t 128 -g pggb_analysis/cluster_6/cluster_6.seqwish.gfa
+    seqwish graph: 7691 segments, 53 paths
+
+  [smoothxg 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/smoothxg -g pggb_analysis/cluster_6/cluster_6.seqwish.gfa -o pggb_analysis/cluster_6/cluster_6.smooth.gfa -X 100 -r 53 -t 128
+
+  [gfaffix 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/gfaffix pggb_analysis/cluster_6/cluster_6.smooth.gfa
+    Output: 1771361 bytes
+    Final graph: 19299 segments, 121 paths
+
+[1c] Extracting core alignment...
+
+  Extracting core alignment from graph...
+
+  [odgi paths 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/odgi paths -i pggb_analysis/cluster_6/cluster_6.fixed.gfa -f
+    Output: 1201423 bytes
+    Extracted 121 paths from graph
+    Prophage paths: 53
+    Unique lengths: {18690, 59780, 12166, 16391, 14600, 26890, 23182, 21392, 24337, 16151, 14104, 12825, 15899, 13595, 20253, 16929, 15525, 7334, 11943, 6184, 71081, 15272, 20012, 16436, 16309, 9151, 16447, 21825, 16963, 32581, 37836, 15822, 19667, 20182, 45922, 19045, 12518, 23015, 14568, 24935, 14053, 14573, 11374, 8047, 21233, 23410, 16754, 3829, 16247, 16250}
+    Variable lengths: {18690, 59780, 12166, 16391, 14600, 26890, 23182, 21392, 24337, 16151, 14104, 12825, 15899, 13595, 20253, 16929, 15525, 7334, 11943, 6184, 71081, 15272, 20012, 16436, 16309, 9151, 16447, 21825, 16963, 32581, 37836, 15822, 19667, 20182, 45922, 19045, 12518, 23015, 14568, 24935, 14053, 14573, 11374, 8047, 21233, 23410, 16754, 3829, 16247, 16250} - writing FASTA
+
+[2] Reconstructing ancestral genome...
+
+  Reconstructing ancestral genome...
+
+  [odgi list paths 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/odgi paths -i pggb_analysis/cluster_6/cluster_6.fixed.gfa -L
+    | Consensus_65
+    | Consensus_66
+    | Consensus_67
+    Paths in graph: 121
+
+  [odgi paths FASTA 6]
+    /home/erikg/micromamba/envs/pggb_env/bin/odgi paths -i pggb_analysis/cluster_6/cluster_6.fixed.gfa -f
+    Output: 1201423 bytes
+    Prophage sequences: 53
+    Consensus length: 71081 bp, confidence: 0.562
+
+============================================================
+Pipeline Complete!
+============================================================
+  Cluster 6 (53 seqs): COMPLETE
+    gfa: cluster_6.fixed.gfa
+    alignment: cluster_6.paths.fa
+    ancestral: 71081 bp
+
+1 complete, 0 failed, 0 skipped / 1 total
+Results: pggb_analysis/pipeline_results.json
