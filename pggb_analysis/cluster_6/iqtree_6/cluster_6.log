@@ -1,0 +1,229 @@
+IQ-TREE version 3.1.3 for Linux x86 64-bit built Jul 26 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    lambda01 (AVX2, FMA3, 1007 GB RAM)
+Command: /home/erikg/micromamba/envs/pggb_env/bin/iqtree -s pggb_analysis/cluster_6/cluster_6.aln.phy -m MFP -B 1000 -T 64 --prefix pggb_analysis/cluster_6/iqtree_6/cluster_6 --quiet --redo
+Seed:    570444 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Jul 29 18:05:03 2026
+Kernel:  AVX+FMA - 64 threads (256 CPU cores detected)
+
+Reading alignment file pggb_analysis/cluster_6/cluster_6.aln.phy ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.505564 secs using 1649% CPU
+WARNING: 64 sites contain only gaps or ambiguous characters.
+Alignment has 53 sequences with 157426 columns, 48795 distinct patterns
+32964 parsimony-informative, 24903 singleton sites, 99559 constant sites
+                      Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.00339699 secs using 4709% CPU
+   1  GCF_000700465.1_prop   89.90%    failed      0.00%
+   2  GCF_000752195.1_prop   86.49%    failed      0.00%
+   3  GCF_000781695.1_prop   89.58%    failed      0.00%
+   4  GCF_000797715.1_prop   94.17%    failed      0.04%
+   5  GCF_000951915.1_prop   84.64%    failed      0.00%
+   6  GCF_001266405.1_prop   85.13%    failed      0.00%
+   7  GCF_001285305.1_prop   92.07%    failed      0.20%
+   8  GCF_001575465.1_prop   86.16%    failed      0.00%
+   9  GCF_001660195.1_prop   90.75%    failed      0.00%
+  10  GCF_002075175.1_prop   92.27%    failed      0.00%
+  11  GCF_002075265.1_prop   91.05%    failed      0.29%
+  12  GCF_002133665.1_prop   89.78%    failed      0.00%
+  13  GCF_002190865.1_prop   86.52%    failed      0.00%
+  14  GCF_002228955.1_prop   87.12%    failed      0.00%
+  15  GCF_002379295.1_prop   89.27%    failed      0.00%
+  16  GCF_002459545.1_prop   85.51%    failed      0.00%
+  17  GCF_002460155.1_prop   88.82%    failed      0.00%
+  18  GCF_002460805.1_prop   88.62%    failed      0.00%
+  19  GCF_002461305.1_prop   87.75%    failed      0.00%
+  20  GCF_002462995.1_prop   90.16%    failed      0.00%
+  21  GCF_002548925.1_prop   92.76%    failed      0.00%
+  22  GCF_002764255.1_prop   97.58%    failed      0.00%
+  23  GCF_003306695.1_prop   90.74%    failed      0.00%
+  24  GCF_003730825.1_prop   90.74%    failed      0.00%
+  25  GCF_004568675.1_prop   87.47%    failed      0.92%
+  26  GCF_005043105.1_prop   92.42%    failed      0.00%
+  27  GCF_005044775.1_prop   96.08%    failed      0.00%
+  28  GCF_005046555.1_prop   94.90%    failed      0.00%
+  29  GCF_005388385.1_prop   84.16%    failed      0.00%
+  30  GCF_005390725.1_prop   89.57%    failed      0.00%
+  31  GCF_005391985.1_prop   89.56%    failed      0.00%
+  32  GCF_005393945.1_prop   87.61%    failed      0.00%
+  33  GCF_005502265.1_prop   89.21%    failed      0.00%
+  34  GCF_006230715.1_prop   89.36%    failed      0.00%
+  35  GCF_006335105.1_prop   95.35%    passed      5.74%
+  36  GCF_007109465.1_prop   56.07%    failed      0.00%
+  37  GCF_009790715.1_prop   90.17%    failed      0.00%
+  38  GCF_010598165.1_prop   90.74%    failed      0.85%
+  39  GCF_011250605.1_prop   89.67%    failed      0.04%
+  40  GCF_012056855.1_prop   80.72%    failed      0.00%
+  41  GCF_013073655.1_prop   90.32%    failed      0.00%
+  42  GCF_013074045.1_prop   86.38%    failed      0.00%
+  43  GCF_013368355.1_prop   77.32%    failed      0.00%
+  44  GCF_013413135.1_prop   89.96%    failed      0.00%
+  45  GCF_014325365.1_prop   91.36%    failed      0.00%
+  46  GCF_014878375.1_prop   90.74%    failed      0.00%
+  47  GCF_015693765.1_prop   90.74%    failed      0.00%
+  48  GCF_017164395.1_prop   70.59%    failed      0.00%
+  49  GCF_020085235.1_prop   62.04%    failed      0.00%
+  50  GCF_021342965.1_prop   89.44%    failed      0.00%
+  51  GCF_900195615.1_prop   92.49%    failed      0.00%
+  52  GCF_900479075.1_prop   82.91%    failed      0.00%
+  53  GCF_921293415.1_prop   91.11%    failed      0.01%
+WARNING: 53 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                  87.85%  52 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: minimal branch length is reduced to 0.000000635219 for long alignment
+NOTE: GCF_003730825.1_prop is identical to GCF_003306695.1_prop but kept for subsequent analysis
+Checking for duplicate sequences: done in 0.0108061 secs using 4661% CPU
+Identifying sites to remove: done in 0.123837 secs using 4720% CPU
+NOTE: 2 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: GCF_014878375.1_prop (identical to GCF_003306695.1_prop) is ignored but added at the end
+NOTE: GCF_015693765.1_prop (identical to GCF_003306695.1_prop) is ignored but added at the end
+Alignment was printed to pggb_analysis/cluster_6/iqtree_6/cluster_6.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to pggb_analysis/cluster_6/iqtree_6/cluster_6.uniqueseq.phy
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.221 seconds
+Perform fast likelihood tree search using GTR+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -747807.490
+2. Current log-likelihood: -747790.678
+3. Current log-likelihood: -747786.124
+4. Current log-likelihood: -747782.679
+5. Current log-likelihood: -747779.856
+6. Current log-likelihood: -747777.413
+7. Current log-likelihood: -747775.285
+8. Current log-likelihood: -747773.408
+9. Current log-likelihood: -747771.740
+10. Current log-likelihood: -747770.265
+11. Current log-likelihood: -747768.937
+12. Current log-likelihood: -747767.758
+13. Current log-likelihood: -747766.691
+Optimal log-likelihood: -747765.736
+Rate parameters:  A-C: 1.01448  A-G: 2.66838  A-T: 1.04011  C-G: 0.92368  C-T: 2.65581  G-T: 1.00000
+Base frequencies:  A: 0.255  C: 0.245  G: 0.245  T: 0.255
+Proportion of invariable sites: 0.006
+Gamma shape alpha: 4.156
+Parameters optimization took 13 rounds (5.788 sec)
+Time for fast ML tree search: 21.263 seconds
+
+NOTE: ModelFinder requires 993 MB RAM!
+ModelFinder will test up to 968 DNA models (sample size: 157426 epsilon: 0.100) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+Akaike Information Criterion:           TVM+F+R4
+Corrected Akaike Information Criterion: TVM+F+R4
+Bayesian Information Criterion:         TVM+F+R4
+Best-fit model: TVM+F+R4 chosen according to BIC
+
+All model information printed to pggb_analysis/cluster_6/iqtree_6/cluster_6.model.gz
+CPU time for ModelFinder: 15825.462 seconds (4h:23m:45s)
+Wall-clock time for ModelFinder: 256.364 seconds (0h:4m:16s)
+Generating 1000 samples for ultrafast bootstrap (seed: 570444)...
+
+NOTE: 508 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -747710.098
+Optimal log-likelihood: -747710.030
+Rate parameters:  A-C: 1.01488  A-G: 2.66758  A-T: 1.03899  C-G: 0.92313  C-T: 2.66758  G-T: 1.00000
+Base frequencies:  A: 0.255  C: 0.245  G: 0.245  T: 0.255
+Site proportion and rates:  (0.207,0.397) (0.341,0.909) (0.281,0.955) (0.170,1.992)
+Parameters optimization took 1 rounds (0.619 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00640297 secs using 6082% CPU
+Computing ML distances took 0.009540 sec (of wall-clock time) 0.560972 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000589848 secs using 6059% CPU
+Constructing RapidNJ tree: done in 0.0260072 secs using 6402% CPU
+Computing RapidNJ tree took 0.026669 sec (of wall-clock time) 1.708588 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -751881.447
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 23.305 second
+Computing log-likelihood of 98 initial trees ... 14.513 seconds
+Current best score: -747710.030
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -747710.001
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 3: -747640.934
+Iteration 10 / LogL: -747668.855 / Time: 0h:5m:27s
+Iteration 20 / LogL: -748617.442 / Time: 0h:5m:56s
+Finish initializing candidate tree set (7)
+Current best tree score: -747640.934 / CPU time: 95.415
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -748384.267 / Time: 0h:6m:23s (0h:5m:20s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 32: -747469.923
+Iteration 40 / LogL: -747646.818 / Time: 0h:6m:50s (0h:6m:2s left)
+Iteration 50 / LogL: -747576.738 / Time: 0h:7m:12s (0h:4m:53s left)
+Log-likelihood cutoff on original alignment: -747749.128
+Iteration 60 / LogL: -747558.696 / Time: 0h:7m:35s (0h:4m:3s left)
+Iteration 70 / LogL: -747473.377 / Time: 0h:7m:58s (0h:3m:19s left)
+Iteration 80 / LogL: -747473.946 / Time: 0h:8m:21s (0h:2m:41s left)
+Iteration 90 / LogL: -747598.916 / Time: 0h:8m:45s (0h:2m:6s left)
+Iteration 100 / LogL: -747501.676 / Time: 0h:9m:11s (0h:1m:35s left)
+Log-likelihood cutoff on original alignment: -747749.128
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.997
+Iteration 110 / LogL: -747476.480 / Time: 0h:9m:36s (0h:4m:24s left)
+Iteration 120 / LogL: -747478.401 / Time: 0h:9m:59s (0h:3m:50s left)
+Iteration 130 / LogL: -747473.431 / Time: 0h:10m:25s (0h:3m:20s left)
+TREE SEARCH COMPLETED AFTER 133 ITERATIONS / Time: 0h:10m:32s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -747469.923
+2. Current log-likelihood: -747469.863
+3. Current log-likelihood: -747469.829
+4. Current log-likelihood: -747469.809
+5. Current log-likelihood: -747469.795
+6. Current log-likelihood: -747469.784
+7. Current log-likelihood: -747469.772
+8. Current log-likelihood: -747469.762
+9. Current log-likelihood: -747469.739
+10. Current log-likelihood: -747469.727
+11. Current log-likelihood: -747469.716
+Optimal log-likelihood: -747469.706
+Rate parameters:  A-C: 1.01690  A-G: 2.66785  A-T: 1.03962  C-G: 0.92282  C-T: 2.66785  G-T: 1.00000
+Base frequencies:  A: 0.255  C: 0.245  G: 0.245  T: 0.255
+Site proportion and rates:  (0.208,0.391) (0.343,0.912) (0.283,0.957) (0.166,2.018)
+Parameters optimization took 11 rounds (3.513 sec)
+BEST SCORE FOUND : -747469.706
+Creating bootstrap support values...
+Split supports printed to NEXUS file pggb_analysis/cluster_6/iqtree_6/cluster_6.splits.nex
+Total tree length: 10.293
+
+Total number of iterations: 133
+CPU time used for tree search: 23213.860 sec (6h:26m:53s)
+Wall-clock time used for tree search: 370.893 sec (0h:6m:10s)
+Total CPU time used: 39399.013 sec (10h:56m:39s)
+Total wall-clock time used: 635.868 sec (0h:10m:35s)
+
+Computing bootstrap consensus tree...
+Reading input file pggb_analysis/cluster_6/iqtree_6/cluster_6.splits.nex...
+51 taxa and 130 splits.
+Consensus tree written to pggb_analysis/cluster_6/iqtree_6/cluster_6.contree
+Reading input trees file pggb_analysis/cluster_6/iqtree_6/cluster_6.contree
+Log-likelihood of consensus tree: -747470.145
+
+Analysis results written to: 
+  IQ-TREE report:                pggb_analysis/cluster_6/iqtree_6/cluster_6.iqtree
+  Maximum-likelihood tree:       pggb_analysis/cluster_6/iqtree_6/cluster_6.treefile
+  Likelihood distances:          pggb_analysis/cluster_6/iqtree_6/cluster_6.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          pggb_analysis/cluster_6/iqtree_6/cluster_6.splits.nex
+  Consensus tree:                pggb_analysis/cluster_6/iqtree_6/cluster_6.contree
+  Screen log file:               pggb_analysis/cluster_6/iqtree_6/cluster_6.log
+
+Date and Time: Wed Jul 29 18:15:42 2026
