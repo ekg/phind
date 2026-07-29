@@ -1,0 +1,25 @@
+{
+  "6": {
+    "cluster_id": "6",
+    "n_sequences": 53,
+    "status": "COMPLETE",
+    "steps": {
+      "gfa": "pggb_analysis/cluster_6/cluster_6.fixed.gfa",
+      "alignment": "pggb_analysis/cluster_6/cluster_6.aln.phy",
+      "ml_tree": "pggb_analysis/cluster_6/iqtree_6/cluster_6.treefile",
+      "splits_network": "pggb_analysis/cluster_6/cluster_6.dist.tsv"
+    },
+    "n_extracted": 53,
+    "ancestral": {
+      "cluster_id": "6",
+      "n_paths": 130,
+      "n_prophage_seqs": 53,
+      "consensus_length": 69153,
+      "confidence": 0.5523,
+      "n_modules": 8,
+      "ancestral_fasta": "pggb_analysis/cluster_6/ancestral/6_ancestral.fa",
+      "module_file": "pggb_analysis/cluster_6/ancestral/6_modules.json",
+      "confidence_file": "pggb_analysis/cluster_6/ancestral/6_position_confidence.tsv"
+    }
+  }
+}
