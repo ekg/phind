@@ -1,0 +1,10 @@
+{
+  "n_maf_files": 502,
+  "n_prophages": 973,
+  "core_path_length": 1,
+  "n_accessory": 272,
+  "core_genome_length": 53886,
+  "ancestral_length": 113502,
+  "accessory_threshold": 0.5,
+  "coverage_threshold": 0.0
+}
