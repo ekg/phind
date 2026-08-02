@@ -1,0 +1,58 @@
+general:
+  input-fasta:        /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa
+  output-dir:         /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry
+  temp-dir:           /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry
+  resume:             false
+  compress:           false
+  threads:            64
+  poa_threads:        64
+  respect_pansn:      
+wfmash:
+  version:            v0.13.0-0-gd7b6960
+  segment-length:     250
+  block-length:       500
+  map-pct-id:         75
+  n-mappings:         5
+  no-splits:          false
+  sparse-map:         false
+  mash-kmer:          19
+  mash-kmer-thres:    0.001
+  hg-filter-ani-diff: 80
+  exclude-delim:      #
+  no-merge-segments:  false
+seqwish:
+  version:            v0.7.10-0-g75e807c
+  min-match-len:      11
+  sparse-factor:      0
+  transclose-batch:   10M
+smoothxg:
+  version:            v0.7.4-0-ge91d6b3
+  skip-normalization: false
+  n-haplotypes:       53
+  path-jump-max:      0
+  edge-jump-max:      0
+  poa-length-target:  700,900,1100
+  poa-params:         1,19,39,3,81,1
+  poa_padding:        0.001
+  run_abpoa:          false
+  run_global_poa:     false
+  pad-max-depth:      100
+  write-maf:          false
+  consensus-spec:     false
+  consensus-prefix:   Consensus_
+  block-id-min:       .7500
+  block-ratio-min:    0
+odgi:
+  version:            v0.8.6-0-ge647844f
+  viz:                false
+  layout:             false
+  stats:              false
+gfaffix:
+  version:            v0.1.5b
+  reduce-redundancy:  true
+vg:
+  version:            v1.40.0
+  deconstruct:        false
+reporting:
+  version:            v1.19
+  multiqc:            false

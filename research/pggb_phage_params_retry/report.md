@@ -43,9 +43,11 @@ Directory: `pggb_analysis/phage_params_retry/`
   per-step timings)
 - `paths.fa` — all 53 prophage graph paths as FASTA (odgi paths -f)
 - `aln.fa` — MAFFT alignment of the 53 prophage paths (mirrors historical
-  `cluster_6.aln.fa`)
+  `cluster_6.aln.fa`; 93,741 columns)
 - `consensus.fa` + `consensus_confidence.tsv` — majority-rule consensus from the
-  alignment with per-position confidence (pipeline-style ancestral/consensus)
+  MAFFT alignment (0.8456 mean confidence)
+- `ancestral.fa` + `ancestral_confidence.tsv` — majority-rule consensus from raw
+  graph paths, mirroring the old pipeline's `reconstruct_ancestral_genome`
 - `pilot_stats.json` — machine-readable stats for both runs
 - `comparison_table.md` — the table below
 
@@ -70,9 +72,11 @@ Directory: `pggb_analysis/phage_params_retry/`
 | Min query coverage | 0.4025 | 0.4084 | one divergent outlier in both |
 | Queries with any hit | 52/53 | 52/53 | same one query unmapped in both |
 | PAF records | 1,347 | 2,128 | old self-map PAF had ~1.6× more redundant records |
-| Alignment columns | ~157 k (MAFFT of paths) | 157,426 | comparable column count |
-| Consensus length (bp, MAFFT-majority) | — | 69,153 | see §4 caveat |
-| Consensus confidence | — | 0.5523 | see §4 caveat |
+| Alignment columns (MAFFT of paths) | 93,741 | 157,426 | new alignment tighter; old inflated by artifact path |
+| Ancestral consensus len (raw paths, bp) | 51,439 | 69,153 | like-for-like with old pipeline ancestral (mirrors `reconstruct_ancestral_genome`) |
+| Ancestral confidence (raw paths) | 0.6041 | 0.5523 | new higher — artifact-free paths give better majority support |
+| Consensus len (MAFFT-majority, bp) | 93,741 | — | new-only (alignment-based, §4.5) |
+| Consensus confidence (MAFFT-majority) | 0.8456 | — | new-only |
 
 ## 4. Interpretation
 
@@ -93,6 +97,13 @@ Directory: `pggb_analysis/phage_params_retry/`
    divergence that was previously collapsed.
 4. **Same single unmapped outlier** (one divergent prophage at ~40 % coverage) in both
    runs — not a parameter artifact.
+5. **Consensus is cleaner and better supported under the corrected params.** The
+   raw-path majority consensus (mirroring the old pipeline's
+   `reconstruct_ancestral_genome`) drops from an inflated 69,153 bp (old, built on the
+   artifact path) to 51,439 bp (new, equal to the longest real prophage), with higher
+   per-position confidence (0.6041 vs 0.5523). The alignment-based (MAFFT-majority)
+   consensus, available only for the new run, spans all 93,741 alignment columns at
+   0.8456 mean confidence — the more defensible ancestral approximation.
 
 **Caveats / differences between the runs (not controlled):**
 - The old run used the individual-tool chain (wfmash v0.24.1 + seqwish + smoothxg +
@@ -102,10 +113,11 @@ Directory: `pggb_analysis/phage_params_retry/`
   A/B.
 - pggb 0.6.0 emits no `Consensus_*` paths by default (consensus-spec off), so the
   "consensus sequence" for the new run is the pipeline-style majority-rule consensus
-  from the MAFFT alignment (`consensus.fa`), not a graph-native consensus. The old
-  run's 69,153 bp "ancestral" consensus was built from the inflated old paths
-  (including the artifact path) and is not directly comparable; the alignment-based
-  consensus of the new run is the more defensible ancestral approximation.
+  (`consensus.fa` from the MAFFT alignment; `ancestral.fa` from raw graph paths),
+  not a graph-native consensus. The old run's 69,153 bp "ancestral" consensus was
+  built from the inflated old paths (including the artifact path) and is only
+  comparable at the method level (raw paths); the alignment-based consensus of the
+  new run is the more defensible ancestral approximation.
 
 ## 5. Recommendation
 

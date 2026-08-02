@@ -1,0 +1,136 @@
+{
+  "params_corrected": {
+    "p": 75,
+    "s": 250,
+    "l": 500,
+    "k": 11,
+    "ani-diff": 80,
+    "c": 5,
+    "n": 53
+  },
+  "params_historical": {
+    "note": "scripts/pggb_per_cluster_pipeline.py log (pggb_analysis/pipeline.log)",
+    "wfmash": "-p 85 -n 5 -k 19 -l 2000 -X",
+    "seqwish": "-k 19",
+    "smoothxg": "-X 100 -r 53",
+    "gfaffix": true
+  },
+  "tool_versions": {
+    "pggb": "pggb 0.6.0",
+    "odgi": "[odgi] error: command '--version' not found.",
+    "mafft": "v7.526 (2024/Apr/26)",
+    "pigz": "pigz 2.8"
+  },
+  "new_run": {
+    "dir": "/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry",
+    "final_gfa": "/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.final.gfa",
+    "graph": {
+      "segments": 17313,
+      "edges": 23869,
+      "paths": 53,
+      "total_bp": 75459,
+      "segment_n50": 4,
+      "segment_l50": 7604
+    },
+    "seqwish": {
+      "segments": 10422,
+      "edges": 23014,
+      "paths": 53,
+      "total_bp": 41004,
+      "segment_n50": 4,
+      "segment_l50": 5020
+    },
+    "paths": {
+      "n_paths": 53,
+      "n_prophage_paths": 53,
+      "n_consensus_paths": 0,
+      "prophage_total_bp": 817520,
+      "prophage_n50": 14752,
+      "prophage_l50": 19,
+      "prophage_mean_len": 15424.9,
+      "prophage_min_len": 2426,
+      "prophage_max_len": 51439,
+      "consensus_total_bp": 0,
+      "consensus_n50": 0
+    },
+    "alignment_rate": {
+      "n_paf_records": 1347,
+      "n_queries_with_hits": 52,
+      "mean_query_coverage": 0.9234,
+      "median_query_coverage": 1.0,
+      "min_query_coverage": 0.4025,
+      "max_query_coverage": 1.0,
+      "total_aligned_span_bp": 10677376
+    },
+    "alignment": {
+      "n_seqs": 53,
+      "columns": 93741,
+      "method": "mafft"
+    },
+    "consensus": {
+      "method": "majority-rule (MAFFT-aligned paths)"
+    },
+    "ancestral": {
+      "length": 93741,
+      "confidence": 0.8456,
+      "n_seqs": 53,
+      "columns": 93741
+    },
+    "ancestral_raw_paths": {
+      "length": 51439,
+      "confidence": 0.6041,
+      "n_seqs": 53
+    }
+  },
+  "old_run": {
+    "dir": "/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6",
+    "graph": {
+      "segments": 17663,
+      "edges": 24456,
+      "paths": 130,
+      "total_bp": 77304,
+      "segment_n50": 5,
+      "segment_l50": 7731
+    },
+    "seqwish": {
+      "segments": 7689,
+      "edges": 16802,
+      "paths": 53,
+      "total_bp": 29649,
+      "segment_n50": 4,
+      "segment_l50": 3707
+    },
+    "paths": {
+      "n_paths": 53,
+      "n_prophage_paths": 53,
+      "n_consensus_paths": 0,
+      "prophage_total_bp": 1014303,
+      "prophage_n50": 19512,
+      "prophage_l50": 17,
+      "prophage_mean_len": 19137.8,
+      "prophage_min_len": 3807,
+      "prophage_max_len": 69153,
+      "consensus_total_bp": 0,
+      "consensus_n50": 0
+    },
+    "alignment_rate": {
+      "n_paf_records": 2128,
+      "n_queries_with_hits": 52,
+      "mean_query_coverage": 0.9138,
+      "median_query_coverage": 0.9542,
+      "min_query_coverage": 0.4084,
+      "max_query_coverage": 1.0,
+      "total_aligned_span_bp": 6576692
+    },
+    "alignment": {
+      "n_seqs": 53,
+      "columns": 157426,
+      "method": "mafft-or-paths"
+    },
+    "ancestral": {
+      "length": 69153,
+      "confidence": null,
+      "n_seqs": null
+    }
+  }
+}

@@ -1,0 +1,281 @@
+Starting pggb on 08-02-2026_08:48:37
+
+Command: /home/erikg/micromamba/envs/pggb-env/bin/pggb -i /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa -o /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry -p 75 -s 250 -l 500 -k 11 -g 80 -c 5 -n 53 -t 64 -A --skip-viz
+
+PARAMETERS
+
+general:
+  input-fasta:        /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa
+  output-dir:         /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry
+  temp-dir:           /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry
+  resume:             false
+  compress:           false
+  threads:            64
+  poa_threads:        64
+  respect_pansn:      
+wfmash:
+  version:            v0.13.0-0-gd7b6960
+  segment-length:     250
+  block-length:       500
+  map-pct-id:         75
+  n-mappings:         5
+  no-splits:          false
+  sparse-map:         false
+  mash-kmer:          19
+  mash-kmer-thres:    0.001
+  hg-filter-ani-diff: 80
+  exclude-delim:      #
+  no-merge-segments:  false
+seqwish:
+  version:            v0.7.10-0-g75e807c
+  min-match-len:      11
+  sparse-factor:      0
+  transclose-batch:   10M
+smoothxg:
+  version:            v0.7.4-0-ge91d6b3
+  skip-normalization: false
+  n-haplotypes:       53
+  path-jump-max:      0
+  edge-jump-max:      0
+  poa-length-target:  700,900,1100
+  poa-params:         1,19,39,3,81,1
+  poa_padding:        0.001
+  run_abpoa:          false
+  run_global_poa:     false
+  pad-max-depth:      100
+  write-maf:          false
+  consensus-spec:     false
+  consensus-prefix:   Consensus_
+  block-id-min:       .7500
+  block-ratio-min:    0
+odgi:
+  version:            v0.8.6-0-ge647844f
+  viz:                false
+  layout:             false
+  stats:              false
+gfaffix:
+  version:            v0.1.5b
+  reduce-redundancy:  true
+vg:
+  version:            v1.40.0
+  deconstruct:        false
+reporting:
+  version:            v1.19
+  multiqc:            false
+
+Running pggb
+
+[mashmap] Skipping self mappings for single file all-vs-all mapping.
+[mashmap] MashMap v3.1.1
+[mashmap] Reference = [/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa]
+[mashmap] Query = [/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa]
+[mashmap] Kmer size = 19
+[mashmap] Sketch size = 27
+[mashmap] Segment length = 250 (read split allowed)
+[mashmap] Block length min = 500
+[mashmap] Chaining gap max = 20000
+[mashmap] Mappings per segment = 5
+[mashmap] Percentage identity threshold = 75%
+[mashmap] Skip self mappings
+[mashmap] Skipping sequences containing the same prefix based on the delimiter "#"
+[mashmap] Hypergeometric filter w/ delta = 0.8 and confidence 0.999
+[mashmap] Mapping output file = /dev/stdout
+[mashmap] Filter mode = 1 (1 = map, 2 = one-to-one, 3 = none)
+[mashmap] Execution threads  = 64
+[mashmap::skch::Sketch::build] minmer windows picked from reference = 178953
+[mashmap::skch::Sketch::index] unique minmers = 35025
+[mashmap::skch::Sketch::computeFreqHist] Frequency histogram of minmer interval points = (2, 15911) ... (390, 1)
+[mashmap::skch::Sketch::computeFreqHist] With threshold 0.001%, consider all minmers during lookup.
+[wfmash::map] time spent computing the reference index: 0.114543 sec
+[mashmap::skch::Map::mapQuery] mapped  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[mashmap::skch::Map::mapQuery] mapped 100.00% @ 1.63e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[mashmap::skch::Map::mapQuery] count of mapped reads = 52, reads qualified for mapping = 53, total input reads = 53, total input bp = 817520
+[wfmash::map] time spent mapping the query: 5.11e-01 sec
+[wfmash::map] mapping results saved in: /dev/stdout
+wfmash -s 250 -l 500 -p 75 -n 5 -k 19 -H 0.001 -Y # -t 64 --tmp-base /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa --lower-triangular --hg-filter-ani-diff 80 --approx-map
+18.03s user 0.19s system 2790% cpu 0.65s total 47088Kb max memory
+[mashmap] Skipping self mappings for single file all-vs-all mapping.
+[wfmash::align] Reference = [/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa]
+[wfmash::align] Query = [/home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa]
+[wfmash::align] Mapping file = /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/wfmash-oLrE78
+[wfmash::align] Alignment identity cutoff = 60.00%
+[wfmash::align] Alignment output file = /dev/stdout
+[wfmash::align] time spent loading the reference index: 0.03 sec
+[wfmash::align::computeAlignments] aligned  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[wfmash::align::computeAlignments] aligned  1.57% @ 3.94e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:31[wfmash::align::computeAlignments] aligned  3.34% @ 4.20e+05 bp/s elapsed: 00:00:00:01 remain: 00:00:00:28[wfmash::align::computeAlignments] aligned  5.09% @ 4.27e+05 bp/s elapsed: 00:00:00:01 remain: 00:00:00:27[wfmash::align::computeAlignments] aligned  6.81% @ 4.28e+05 bp/s elapsed: 00:00:00:02 remain: 00:00:00:27[wfmash::align::computeAlignments] aligned  9.30% @ 4.68e+05 bp/s elapsed: 00:00:00:02 remain: 00:00:00:24[wfmash::align::computeAlignments] aligned 11.45% @ 4.79e+05 bp/s elapsed: 00:00:00:03 remain: 00:00:00:23[wfmash::align::computeAlignments] aligned 14.94% @ 5.36e+05 bp/s elapsed: 00:00:00:03 remain: 00:00:00:19[wfmash::align::computeAlignments] aligned 17.24% @ 5.42e+05 bp/s elapsed: 00:00:00:04 remain: 00:00:00:19[wfmash::align::computeAlignments] aligned 20.26% @ 5.66e+05 bp/s elapsed: 00:00:00:04 remain: 00:00:00:17[wfmash::align::computeAlignments] aligned 22.87% @ 5.75e+05 bp/s elapsed: 00:00:00:05 remain: 00:00:00:16[wfmash::align::computeAlignments] aligned 25.60% @ 5.85e+05 bp/s elapsed: 00:00:00:05 remain: 00:00:00:15[wfmash::align::computeAlignments] aligned 28.62% @ 5.99e+05 bp/s elapsed: 00:00:00:06 remain: 00:00:00:14[wfmash::align::computeAlignments] aligned 31.45% @ 6.08e+05 bp/s elapsed: 00:00:00:06 remain: 00:00:00:14[wfmash::align::computeAlignments] aligned 33.30% @ 5.98e+05 bp/s elapsed: 00:00:00:07 remain: 00:00:00:14[wfmash::align::computeAlignments] aligned 36.07% @ 6.04e+05 bp/s elapsed: 00:00:00:07 remain: 00:00:00:13[wfmash::align::computeAlignments] aligned 38.51% @ 6.05e+05 bp/s elapsed: 00:00:00:08 remain: 00:00:00:12[wfmash::align::computeAlignments] aligned 40.91% @ 6.05e+05 bp/s elapsed: 00:00:00:08 remain: 00:00:00:12[wfmash::align::computeAlignments] aligned 45.10% @ 6.30e+05 bp/s elapsed: 00:00:00:09 remain: 00:00:00:10[wfmash::align::computeAlignments] aligned 49.92% @ 6.60e+05 bp/s elapsed: 00:00:00:09 remain: 00:00:00:09[wfmash::align::computeAlignments] aligned 52.74% @ 6.63e+05 bp/s elapsed: 00:00:00:10 remain: 00:00:00:08[wfmash::align::computeAlignments] aligned 55.30% @ 6.62e+05 bp/s elapsed: 00:00:00:10 remain: 00:00:00:08[wfmash::align::computeAlignments] aligned 58.57% @ 6.69e+05 bp/s elapsed: 00:00:00:11 remain: 00:00:00:07[wfmash::align::computeAlignments] aligned 62.18% @ 6.79e+05 bp/s elapsed: 00:00:00:11 remain: 00:00:00:06[wfmash::align::computeAlignments] aligned 65.54% @ 6.86e+05 bp/s elapsed: 00:00:00:12 remain: 00:00:00:06[wfmash::align::computeAlignments] aligned 66.99% @ 6.74e+05 bp/s elapsed: 00:00:00:12 remain: 00:00:00:06[wfmash::align::computeAlignments] aligned 69.52% @ 6.72e+05 bp/s elapsed: 00:00:00:13 remain: 00:00:00:05[wfmash::align::computeAlignments] aligned 71.78% @ 6.68e+05 bp/s elapsed: 00:00:00:13 remain: 00:00:00:05[wfmash::align::computeAlignments] aligned 74.67% @ 6.70e+05 bp/s elapsed: 00:00:00:14 remain: 00:00:00:04[wfmash::align::computeAlignments] aligned 76.58% @ 6.64e+05 bp/s elapsed: 00:00:00:14 remain: 00:00:00:04[wfmash::align::computeAlignments] aligned 79.35% @ 6.65e+05 bp/s elapsed: 00:00:00:15 remain: 00:00:00:03[wfmash::align::computeAlignments] aligned 82.51% @ 6.69e+05 bp/s elapsed: 00:00:00:15 remain: 00:00:00:03[wfmash::align::computeAlignments] aligned 86.48% @ 6.79e+05 bp/s elapsed: 00:00:00:16 remain: 00:00:00:02[wfmash::align::computeAlignments] aligned 88.03% @ 6.70e+05 bp/s elapsed: 00:00:00:16 remain: 00:00:00:02[wfmash::align::computeAlignments] aligned 89.97% @ 6.65e+05 bp/s elapsed: 00:00:00:17 remain: 00:00:00:01[wfmash::align::computeAlignments] aligned 91.71% @ 6.59e+05 bp/s elapsed: 00:00:00:17 remain: 00:00:00:01[wfmash::align::computeAlignments] aligned 93.49% @ 6.53e+05 bp/s elapsed: 00:00:00:18 remain: 00:00:00:01[wfmash::align::computeAlignments] aligned 96.23% @ 6.54e+05 bp/s elapsed: 00:00:00:18 remain: 00:00:00:00[wfmash::align::computeAlignments] aligned 98.15% @ 6.49e+05 bp/s elapsed: 00:00:00:19 remain: 00:00:00:00[wfmash::align::computeAlignments] aligned 99.35% @ 6.40e+05 bp/s elapsed: 00:00:00:19 remain: 00:00:00:00[wfmash::align::computeAlignments] aligned 99.72% @ 6.27e+05 bp/s elapsed: 00:00:00:20 remain: 00:00:00:00[wfmash::align::computeAlignments] aligned 100.00% @ 5.46e+05 bp/s elapsed: 00:00:00:23 remain: 00:00:00:00
+[wfmash::align::computeAlignments] count of mapped reads = 53, total aligned bp = 12572262
+[wfmash::align] time spent computing the alignment: 2.30e+01 sec
+[wfmash::align] alignment results saved in: /dev/stdout
+wfmash -s 250 -l 500 -p 75 -n 5 -k 19 -H 0.001 -Y # -t 64 --tmp-base /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa --lower-triangular --hg-filter-ani-diff 80 -i /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.mappings.wfmash.paf --invert-filtering
+1157.32s user 67.11s system 5301% cpu 23.09s total 4167892Kb max memory
+[seqwish::seqidx] 0.000 indexing sequences
+[seqwish::seqidx] 0.017 index built
+[seqwish::alignments] 0.017 processing alignments
+[seqwish::alignments] 0.049 indexing
+[seqwish::alignments] 0.085 index built
+[seqwish::transclosure] 0.090 computing transitive closures
+[seqwish::transclosure] 0.096 0.00% 0-817520 overlap_collect
+[seqwish::transclosure] 0.295 0.00% 0-817520 rank_build
+[seqwish::transclosure] 0.318 0.00% 0-817520 parallel_union_find
+[seqwish::transclosure] 0.339 0.00% 0-817520 dset_write
+[seqwish::transclosure] 0.352 0.00% 0-817520 dset_compression
+[seqwish::transclosure] 0.463 0.00% 0-817520 dset_sort
+[seqwish::transclosure] 0.522 0.00% 0-817520 dset_invert
+[seqwish::transclosure] 0.593 0.00% 0-817520 graph_emission
+[seqwish::transclosure] 0.701 100.00% building node_iitree and path_iitree indexes
+[seqwish::transclosure] 0.734 100.00% done
+[seqwish::transclosure] 0.734 done with transitive closures
+[seqwish::compact] 0.734 compacting nodes
+[seqwish::compact] 0.750 done compacting
+[seqwish::compact] 0.750 built node index
+[seqwish::links] 0.750 finding graph links
+[seqwish::links] 0.853 links derived
+[seqwish::gfa] 0.853 writing graph
+[seqwish::gfa] 0.936 done
+seqwish -s /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/cluster_6/cluster_6.fa -p /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.alignments.wfmash.paf -k 11 -f 0 -g /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa -B 10M -t 64 --temp-dir /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry -P
+46.46s user 2.11s system 5081% cpu 0.95s total 53332Kb max memory
+[smoothxg::(1-3)::main] loading graph
+[smoothxg::(1-3)::main] prepping graph for smoothing
+[odgi::gfa_to_handle] building nodes:  0.38% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes:  1.23% @ 7.41e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building edges:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building edges: 100.00% @ 4.60e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::prep] building path index
+[smoothxg::(1-3)::prep] path_sgd_zipf_space_max: 100
+[smoothxg::(1-3)::prep] path_sgd_zipf_max_number_of_distributions: 101
+[smoothxg::(1-3)::prep] sorting graph
+[odgi::path_linear_sgd] 1D path-guided SGD:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::path_linear_sgd] calculating linear SGD schedule (7.66e-08 1.00e+00 100 0 1.00e-02)
+[odgi::path_linear_sgd] calculating zetas for 102 zipf distributions
+[odgi::path_linear_sgd] 1D path-guided SGD: 100.00% @ 2.44e+07 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] grooming:  1.14% @ 4.41e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming:  2.01% @ 1.13e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] organizing handles:  4.91% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 17.27% @ 9.17e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] flipped 3102 handles
+[odgi::topological_order] sorting nodes:  0.12% @ 3.89e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes:  0.22% @ 1.10e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::prep] chopping graph to 100
+[odgi::chop] 161 node(s) to chop.
+[smoothxg::(1-3)::prep] writing graph /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa.prep.0.gfa
+[smoothxg::(1-3)::main] building xg index
+[smoothxg::(1-3)::smoothable_blocks] computing blocks for 11475 handles:  0.15% @ 1.31e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smoothable_blocks] computing blocks for 11475 handles:  0.48% @ 3.83e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smoothable_blocks] computing blocks for 11475 handles: 100.00% @ 2.29e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::break_and_split_blocks] cutting blocks that contain sequences longer than max-poa-length (1400) and depth >= 0
+[smoothxg::(1-3)::break_and_split_blocks] splitting 284 blocks at identity 0.750 (WFA-based clustering) and at estimated-identity 0.750 (mash-based clustering)
+[smoothxg::(1-3)::break_and_split_blocks] cutting and splitting 284 blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::break_and_split_blocks] cutting and splitting 284 blocks: 100.00% @ 5.68e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::break_and_split_blocks] cut 0 blocks of which 0 had repeats
+[smoothxg::(1-3)::break_and_split_blocks] split 0 blocks
+[smoothxg::(1-3)::smooth_and_lace] applying local SPOA to 284 blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] applying local SPOA to 284 blocks: 42.96% @ 2.44e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] applying local SPOA to 284 blocks: 97.54% @ 2.77e+02 bp/s elapsed: 00:00:00:01 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] applying local SPOA to 284 blocks: 99.65% @ 1.89e+02 bp/s elapsed: 00:00:00:01 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] applying local SPOA to 284 blocks: 100.00% @ 8.11e+01 bp/s elapsed: 00:00:00:03 remain: 00:00:00:00
+[smoothxg::(1-3)::smooth_and_lace] flipping 0 block graphs
+[smoothxg::(1-3)::smooth_and_lace] indexing sequences
+[smoothxg::(1-3)::smooth_and_lace] sorting path fragments
+[smoothxg::(1-3)::smooth_and_lace] sorted 2669 path fragments
+[smoothxg::(1-3)::smooth_and_lace] loading 284 graph blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] loading 284 graph blocks: 100.00% @ 5.67e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::smooth_and_lace] adding nodes and edges from 284 graphs:  1.06% @ 4.98e+03 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] adding nodes and edges from 284 graphs:  2.46% @ 2.44e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] adding nodes and edges from 284 graphs: 100.00% @ 5.67e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::smooth_and_lace] embedding 2669 path fragments:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] embedding 2669 path fragments: 100.00% @ 5.33e+03 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::smooth_and_lace] validating 53 path sequences:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] validating 53 path sequences: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::smooth_and_lace] walking edges in 53 paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(1-3)::smooth_and_lace] walking edges in 53 paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(1-3)::main] unchopping smoothed graph
+[odgi::unchop] unchopped 338 nodes into 107 new nodes.
+[smoothxg::(1-3)::main] smoothed graph length 183789bp in 17513 nodes
+[smoothxg::(1-3)::main] writing smoothed graph to /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa.smooth.0.gfa
+[smoothxg::(2-3)::main] loading graph
+[smoothxg::(2-3)::main] prepping graph for smoothing
+[odgi::gfa_to_handle] building nodes:  0.04% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes:  0.41% @ 2.56e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building edges:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building edges: 100.00% @ 4.60e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::prep] building path index
+[smoothxg::(2-3)::prep] path_sgd_zipf_space_max: 100
+[smoothxg::(2-3)::prep] path_sgd_zipf_max_number_of_distributions: 101
+[smoothxg::(2-3)::prep] sorting graph
+[odgi::path_linear_sgd] 1D path-guided SGD:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::path_linear_sgd] calculating linear SGD schedule (7.66e-08 1.00e+00 100 0 1.00e-02)
+[odgi::path_linear_sgd] calculating zetas for 102 zipf distributions
+[odgi::path_linear_sgd] 1D path-guided SGD: 100.00% @ 2.44e+07 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] grooming:  1.14% @ 3.60e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming:  2.25% @ 1.00e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] organizing handles:  6.62% @ 1.90e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 17.18% @ 8.93e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] flipped 3102 handles
+[odgi::topological_order] sorting nodes:  0.09% @ 4.72e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes:  0.20% @ 1.08e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::prep] chopping graph to 100
+[odgi::chop] 161 node(s) to chop.
+[smoothxg::(2-3)::prep] writing graph /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa.smooth.0.gfa.prep.1.gfa
+[smoothxg::(2-3)::main] building xg index
+[smoothxg::(2-3)::smoothable_blocks] computing blocks for 11475 handles:  0.08% @ 2.59e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smoothable_blocks] computing blocks for 11475 handles:  0.32% @ 9.14e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smoothable_blocks] computing blocks for 11475 handles: 100.00% @ 2.29e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::break_and_split_blocks] cutting blocks that contain sequences longer than max-poa-length (1800) and depth >= 0
+[smoothxg::(2-3)::break_and_split_blocks] splitting 207 blocks at identity 0.750 (WFA-based clustering) and at estimated-identity 0.750 (mash-based clustering)
+[smoothxg::(2-3)::break_and_split_blocks] cutting and splitting 207 blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::break_and_split_blocks] cutting and splitting 207 blocks: 100.00% @ 4.14e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::break_and_split_blocks] cut 0 blocks of which 0 had repeats
+[smoothxg::(2-3)::break_and_split_blocks] split 0 blocks
+[smoothxg::(2-3)::smooth_and_lace] applying local SPOA to 207 blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] applying local SPOA to 207 blocks: 44.93% @ 1.86e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] applying local SPOA to 207 blocks: 96.62% @ 2.00e+02 bp/s elapsed: 00:00:00:01 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] applying local SPOA to 207 blocks: 99.03% @ 1.37e+02 bp/s elapsed: 00:00:00:01 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] applying local SPOA to 207 blocks: 99.52% @ 8.24e+01 bp/s elapsed: 00:00:00:02 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] applying local SPOA to 207 blocks: 100.00% @ 5.91e+01 bp/s elapsed: 00:00:00:03 remain: 00:00:00:00
+[smoothxg::(2-3)::smooth_and_lace] flipping 0 block graphs
+[smoothxg::(2-3)::smooth_and_lace] indexing sequences
+[smoothxg::(2-3)::smooth_and_lace] sorting path fragments
+[smoothxg::(2-3)::smooth_and_lace] sorted 2046 path fragments
+[smoothxg::(2-3)::smooth_and_lace] loading 207 graph blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] loading 207 graph blocks: 100.00% @ 4.14e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::smooth_and_lace] adding nodes and edges from 207 graphs:  4.35% @ 2.71e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] adding nodes and edges from 207 graphs:  4.35% @ 5.11e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] adding nodes and edges from 207 graphs: 100.00% @ 4.14e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::smooth_and_lace] embedding 2046 path fragments:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] embedding 2046 path fragments:  0.05% @ 5.90e+03 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] embedding 2046 path fragments: 100.00% @ 4.09e+03 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::smooth_and_lace] validating 53 path sequences:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] validating 53 path sequences: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::smooth_and_lace] walking edges in 53 paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(2-3)::smooth_and_lace] walking edges in 53 paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(2-3)::main] unchopping smoothed graph
+[odgi::unchop] unchopped 254 nodes into 83 new nodes.
+[smoothxg::(2-3)::main] smoothed graph length 182781bp in 17866 nodes
+[smoothxg::(2-3)::main] writing smoothed graph to /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa.smooth.1.gfa
+[smoothxg::(3-3)::main] loading graph
+[smoothxg::(3-3)::main] prepping graph for smoothing
+[odgi::gfa_to_handle] building nodes:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes:  0.26% @ 1.89e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building edges:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building edges: 100.00% @ 4.60e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::prep] building path index
+[smoothxg::(3-3)::prep] path_sgd_zipf_space_max: 100
+[smoothxg::(3-3)::prep] path_sgd_zipf_max_number_of_distributions: 101
+[smoothxg::(3-3)::prep] sorting graph
+[odgi::path_linear_sgd] 1D path-guided SGD:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::path_linear_sgd] calculating linear SGD schedule (7.66e-08 1.00e+00 100 0 1.00e-02)
+[odgi::path_linear_sgd] calculating zetas for 102 zipf distributions
+[odgi::path_linear_sgd] 1D path-guided SGD: 100.00% @ 2.44e+07 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] grooming:  2.12% @ 5.31e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming:  3.43% @ 1.18e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] organizing handles:  8.47% @ 3.70e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 14.66% @ 8.37e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] flipped 3102 handles
+[odgi::topological_order] sorting nodes:  0.12% @ 4.90e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes:  0.22% @ 1.15e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes: 100.00% @ 2.08e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::prep] chopping graph to 100
+[odgi::chop] 161 node(s) to chop.
+[smoothxg::(3-3)::prep] writing graph /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa.smooth.1.gfa.prep.2.gfa
+[smoothxg::(3-3)::main] building xg index
+[smoothxg::(3-3)::smoothable_blocks] computing blocks for 11475 handles:  0.10% @ 1.88e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smoothable_blocks] computing blocks for 11475 handles:  0.34% @ 3.34e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smoothable_blocks] computing blocks for 11475 handles: 100.00% @ 2.29e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::break_and_split_blocks] cutting blocks that contain sequences longer than max-poa-length (2200) and depth >= 0
+[smoothxg::(3-3)::break_and_split_blocks] splitting 170 blocks at identity 0.750 (WFA-based clustering) and at estimated-identity 0.750 (mash-based clustering)
+[smoothxg::(3-3)::break_and_split_blocks] cutting and splitting 170 blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::break_and_split_blocks] cutting and splitting 170 blocks: 100.00% @ 3.40e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::break_and_split_blocks] cut 0 blocks of which 0 had repeats
+[smoothxg::(3-3)::break_and_split_blocks] split 0 blocks
+[smoothxg::(3-3)::smooth_and_lace] applying local SPOA to 170 blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] applying local SPOA to 170 blocks: 67.06% @ 2.28e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] applying local SPOA to 170 blocks: 95.88% @ 1.63e+02 bp/s elapsed: 00:00:00:01 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] applying local SPOA to 170 blocks: 98.82% @ 1.12e+02 bp/s elapsed: 00:00:00:01 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] applying local SPOA to 170 blocks: 99.41% @ 6.76e+01 bp/s elapsed: 00:00:00:02 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] applying local SPOA to 170 blocks: 100.00% @ 5.66e+01 bp/s elapsed: 00:00:00:03 remain: 00:00:00:00
+[smoothxg::(3-3)::smooth_and_lace] flipping 0 block graphs
+[smoothxg::(3-3)::smooth_and_lace] indexing sequences
+[smoothxg::(3-3)::smooth_and_lace] sorting path fragments
+[smoothxg::(3-3)::smooth_and_lace] sorted 1699 path fragments
+[smoothxg::(3-3)::smooth_and_lace] loading 170 graph blocks:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] loading 170 graph blocks: 100.00% @ 3.40e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::smooth_and_lace] adding nodes and edges from 170 graphs:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] adding nodes and edges from 170 graphs:  0.59% @ 5.13e+03 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] adding nodes and edges from 170 graphs: 100.00% @ 3.40e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::smooth_and_lace] embedding 1699 path fragments:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] embedding 1699 path fragments: 100.00% @ 3.39e+03 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::smooth_and_lace] validating 53 path sequences:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] validating 53 path sequences: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::smooth_and_lace] walking edges in 53 paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[smoothxg::(3-3)::smooth_and_lace] walking edges in 53 paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[smoothxg::(3-3)::main] unchopping smoothed graph
+[odgi::unchop] unchopped 215 nodes into 72 new nodes.
+[smoothxg::(3-3)::main] smoothed graph length 181843bp in 17422 nodes
+[smoothxg::(3-3)::main] writing smoothed graph to /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.gfa
+smoothxg -t 64 -T 64 -g /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.seqwish.gfa -r 53 --base /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry -K --chop-to 100 -I .7500 -R 0 -j 0 -e 0 -l 700,900,1100 -P 1,19,39,3,81,1 -O 0.001 -Y 5300 -d 0 -D 0 -Q Consensus_ -V -o /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.gfa
+120.30s user 38.14s system 466% cpu 33.99s total 2754632Kb max memory
+gfaffix /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.gfa -o /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.fix.gfa
+0.10s user 0.01s system 99% cpu 0.12s total 20480Kb max memory
+pigz
+0.00s user 0.00s system 1% cpu 0.12s total 0Kb max memory
+[odgi::gfa_to_handle] building nodes:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building nodes: 100.00% @ 3.46e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building edges:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building edges: 100.00% @ 4.77e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::gfa_to_handle] building paths:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::gfa_to_handle] building paths: 100.00% @ 1.06e+02 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+odgi build -t 64 -P -g /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.fix.gfa -o - -O
+0.29s user 0.17s system 29% cpu 1.55s total 18432Kb max memory
+[odgi::unchop] unchopped 39 nodes into 18 new nodes.
+odgi unchop -P -t 64 -i - -o -
+5.41s user 0.76s system 338% cpu 1.82s total 18416Kb max memory
+path_sgd_zipf_space_max: 100
+path_sgd_zipf_max_number_of_distributions: 101
+[odgi::path_linear_sgd] 1D path-guided SGD:  0.00% @ 0.00e+00 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::path_linear_sgd] calculating linear SGD schedule (2.80e-08 1.00e+00 100 0 1.00e-02)
+[odgi::path_linear_sgd] calculating zetas for 102 zipf distributions
+[odgi::path_linear_sgd] 1D path-guided SGD: 100.00% @ 3.79e+07 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] grooming:  0.65% @ 3.92e+05 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming:  1.20% @ 1.07e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] grooming: 100.00% @ 3.46e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] organizing handles:  6.84% @ 3.06e+06 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 15.55% @ 1.14e+07 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::groom] organizing handles: 100.00% @ 3.46e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+[odgi::groom] flipped 0 handles
+[odgi::topological_order] sorting nodes:  0.06% @ 3.54e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes:  0.08% @ 6.31e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00[odgi::topological_order] sorting nodes: 100.00% @ 3.46e+04 bp/s elapsed: 00:00:00:00 remain: 00:00:00:00
+odgi sort -P -p Ygs --temp-dir /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry -t 64 -i - -o /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.final.og
+21.63s user 0.45s system 548% cpu 4.02s total 30720Kb max memory
+odgi view -i /home/erikg/phind/.wg-worktrees/agent-9/pggb_analysis/phage_params_retry/cluster_6.fa.7a957cc.bb87cbe.5772f4f.smooth.final.og -g
+0.07s user 0.04s system 100% cpu 0.12s total 12288Kb max memory

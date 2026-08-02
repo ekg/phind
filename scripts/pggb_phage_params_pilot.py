@@ -438,7 +438,13 @@ def main():
     lens_set = {len(v) for v in prophage_seqs.values()}
     aln_fa = OUT_DIR / 'aln.fa'
     new_aln = {}
-    if len(lens_set) <= 1:
+    if aln_fa.exists() and aln_fa.stat().st_size > 0:
+        aln_seqs = read_fasta(aln_fa)
+        new_aln = {'n_seqs': len(aln_seqs),
+                   'columns': len(next(iter(aln_seqs.values()))) if aln_seqs else 0,
+                   'method': 'mafft'}
+        print(f'  aln.fa exists ({aln_fa.stat().st_size} B), reusing MAFFT alignment.')
+    elif len(lens_set) <= 1:
         aln_len = next(iter(lens_set)) if lens_set else 0
         with open(aln_fa, 'w') as f:
             for name, seq in prophage_seqs.items():
@@ -453,19 +459,20 @@ def main():
 
     # 4. Consensus / ancestral sequence
     #    pggb 0.6.0 default run does not emit Consensus_* paths (consensus-spec
-    #    is off), so the consensus is the majority-rule sequence computed from
-    #    the MAFFT alignment (preferred) or raw graph paths (fallback).
+    #    is off), so two pipeline-style consensuses are produced:
+    #    consensus.fa        majority-rule over the MAFFT-aligned paths
+    #    ancestral.fa        majority-rule over the raw graph paths (mirrors
+    #                        scripts/pggb_per_cluster_pipeline.py
+    #                        reconstruct_ancestral_genome)
     consensus = {}
     anc = None
     if aln_fa.exists() and aln_fa.stat().st_size > 0:
-        aln_seqs = read_fasta(aln_fa)
         anc = alignment_consensus(aln_fa, OUT_DIR / 'consensus.fa',
                                   OUT_DIR / 'consensus_confidence.tsv')
-    if anc is None:
-        anc = majority_consensus(seqs_all, OUT_DIR / 'consensus.fa',
-                                 OUT_DIR / 'consensus_confidence.tsv')
-    consensus = {'method': 'majority-rule (MAFFT-aligned paths)' if anc and 'columns' in anc
-                 else 'majority-rule (raw paths)'}
+    if anc is not None:
+        consensus = {'method': 'majority-rule (MAFFT-aligned paths)'}
+    anc_raw = majority_consensus(seqs_all, OUT_DIR / 'ancestral.fa',
+                                 OUT_DIR / 'ancestral_confidence.tsv')
 
     # 5. Stats for NEW run
     new_gfa_stats = parse_gfa_stats(files['final_gfa'])
@@ -518,7 +525,8 @@ def main():
             'alignment_rate': new_aln_rate,
             'alignment': new_aln,
             'consensus': consensus,
-            'ancestral': anc,
+            'ancestral': anc,          # majority-rule over MAFFT alignment
+            'ancestral_raw_paths': anc_raw,  # majority-rule over raw graph paths
         },
         'old_run': {
             'dir': str(CLUSTER_DIR),
@@ -568,10 +576,12 @@ def main():
          g(stats['old_run']['alignment_rate'], 'n_paf_records'), None),
         ('Alignment columns', g(stats['new_run'].get('alignment') or {}, 'columns'),
          g(stats['old_run'].get('alignment') or {}, 'columns'), None),
-        ('Consensus length (bp, MAFFT-majority)', g(stats['new_run'].get('ancestral') or {}, 'length'),
-         g(stats['old_run'].get('ancestral') or {}, 'length'), None),
-        ('Consensus confidence', g(stats['new_run'].get('ancestral') or {}, 'confidence'),
+        ('Ancestral consensus len (raw paths, bp)', g(stats['new_run'].get('ancestral_raw_paths') or {}, 'length'),
+         g(stats['old_run'].get('ancestral') or {}, 'length'), 'like-for-like with old pipeline ancestral'),
+        ('Ancestral confidence (raw paths)', g(stats['new_run'].get('ancestral_raw_paths') or {}, 'confidence'),
          g(stats['old_run'].get('ancestral') or {}, 'confidence'), None),
+        ('Consensus len (MAFFT-majority, bp)', g(stats['new_run'].get('ancestral') or {}, 'length'),
+         g(stats['old_run'].get('ancestral') or {}, 'length'), 'new-only (alignment-based)'),
         ('Consensus method', g(stats['new_run'].get('consensus') or {}, 'method'),
          'pipeline majority-rule (raw paths)', None),
     ]
