@@ -1,0 +1,5 @@
+# Bulky NCBI assembly-summary intermediates (re-downloadable; see build_ecor_manifest.py)
+asm_summary_*_raw.txt
+ecori_genbank.tsv
+ecori_refseq.tsv
+header.txt
