@@ -1,0 +1,32 @@
+{
+  "schema": "ecor-manifest-reconciliation-v1",
+  "canonical_ecor_strains": 72,
+  "reference": {
+    "paper": "Patel et al. 2018, Microbiol Resour Announc 7:e01133-18 (Draft Genome Sequences of the Escherichia coli Reference (ECOR) Collection)",
+    "bioproject": "PRJNA230969",
+    "wgs_range": "QOWM00000000.1..QOZE00000000.1 (ECOR-59 = QOZF00000000.1)",
+    "strain_number_source": "NCBI assembly_summary infraspecific_name 'strain=MOD1-ECOR<n>'"
+  },
+  "strain_status_counts": {
+    "matched": 72
+  },
+  "coverage": {
+    "strains_with_gcf": 72,
+    "strains_gcf_in_cohort": 72,
+    "strains_gcf_not_in_cohort": 0,
+    "fraction_gcf_in_cohort": 1.0
+  },
+  "ambiguity": {
+    "strains_with_alternate_ecor_labeled_assemblies_in_cohort": 64,
+    "alternate_assembly_count": 66,
+    "note": "alternates are BioProject PRJNA224116 (Messerer et al. 2017) and a few others; the 2018 reference paper flags ~half of PRJNA224116 assemblies as potentially contaminated; canonical mapping uses PRJNA230969."
+  },
+  "elements": {
+    "total_ecor_prophage_records": 300,
+    "records_in_full_prophages_fa": 300,
+    "tag_merge_rate": 1.0,
+    "total_manifest_rows": 300,
+    "sum_element_bp": 6879652
+  },
+  "problems": []
+}
