@@ -11,9 +11,30 @@ Algorithm:
 3. Build a directed graph weighted by adjacency counts
 4. Find the maximum likelihood path through the graph
 5. Compute consensus sequences for each partition (with coverage threshold)
-6. Merge overlapping partitions in the path
-7. Generate the mean genome
-8. Handle accessories: partitions appearing in <50% of prophages are excluded
+6. Merge overlapping partitions in the path (or concatenate with gap separators)
+7. Generate the stitched core-region path (pangenome path)
+8. Handle accessories: partitions appearing in <threshold fraction of prophages
+   are excluded from the core path
+
+THRESHOLD SEMANTICS (--accessory-threshold, default 0.5):
+  A partition is "core" iff it appears in >= threshold fraction of the
+  prophages that have partition assignments in the BED file.  0.5 = strict
+  majority core genome; lower values relax the definition toward a
+  pan-genome-style union of regions.  The choice is a biological parameter,
+  not a universal constant: pick it from the occurrence distribution (e.g. an
+  elbow/knee) or from the intended definition of "core" for the analysis.
+
+CONSENSUS SEMANTICS (--coverage-threshold, default 0.25; committed runs used
+0.0):
+  Column of the partition alignment is emitted iff >= coverage_threshold
+  fraction of aligned sequences carry a non-gap base there (majority base
+  wins).  coverage_threshold=0.0 means "any column with >=1 non-gap base is
+  emitted" -- for partition bundles whose segments are STAGGERED across the
+  block (typical of impg partition output), this yields the union-mosaic
+  consensus spanning all segment positions, which can be much longer than any
+  single genome.  The script prints column-depth diagnostics so the user can
+  judge whether a block is a true MSA (mean depth ~ n_seqs) or a staggered
+  bundle (mean depth << n_seqs).
 
 Usage:
     python3 stitch_algorithm.py --partition-dir <dir> --bed <bed> --output <output.fa>
@@ -74,11 +95,18 @@ def get_partition_id(path):
 
 # ─── Consensus computation ──────────────────────────────────────────────────
 
-def compute_partition_consensus(records, coverage_threshold=0.25):
+def compute_partition_consensus(records, coverage_threshold=0.25, diagnostics=None):
     """Compute majority-rule consensus from aligned sequences.
     
     Only includes positions where at least `coverage_threshold` fraction of
     sequences have a non-gap base.
+    
+    If `diagnostics` (a dict) is given, column-depth statistics are recorded:
+      n_seqs, aln_len, mean_depth, max_depth, frac_covered (columns with
+      >=1 non-gap base), frac_ge_threshold (columns passing the coverage
+      threshold).  These let callers detect whether the block is a true MSA
+      (mean_depth ~= n_seqs) or a staggered segment bundle (mean_depth
+      << n_seqs, consensus is a union mosaic).
     
     Returns consensus string or None if no records.
     """
@@ -89,6 +117,8 @@ def compute_partition_consensus(records, coverage_threshold=0.25):
     aln_len = len(records[0]['seq'])
     min_coverage = max(1, int(n_seqs * coverage_threshold))
     
+    if diagnostics is not None:
+        depth = [0] * aln_len
     consensus = []
     for i in range(aln_len):
         counts = Counter()
@@ -98,8 +128,27 @@ def compute_partition_consensus(records, coverage_threshold=0.25):
             if base in 'ACGT':
                 counts[base] += 1
                 total += 1
+        if diagnostics is not None:
+            depth[i] = total
         if total >= min_coverage and counts:
             consensus.append(counts.most_common(1)[0][0])
+    
+    if diagnostics is not None:
+        if aln_len > 0:
+            mean_depth = sum(depth) / aln_len
+            max_depth = max(depth)
+            covered = sum(1 for d in depth if d > 0)
+            ge_thr = sum(1 for d in depth if d >= min_coverage)
+        else:
+            mean_depth = max_depth = covered = ge_thr = 0
+        diagnostics.update({
+            'n_seqs': n_seqs,
+            'aln_len': aln_len,
+            'mean_depth': round(mean_depth, 2),
+            'max_depth': max_depth,
+            'frac_covered': round(covered / aln_len, 4) if aln_len else 0.0,
+            'frac_ge_threshold': round(ge_thr / aln_len, 4) if aln_len else 0.0,
+        })
     
     return ''.join(consensus)
 
@@ -276,10 +325,16 @@ def find_overlap(seq_a, seq_b, min_overlap=50, max_overlap_check=5000):
     return 0, None
 
 
-def stitch_and_merge(path, partition_consensi, min_overlap=50):
+def stitch_and_merge(path, partition_consensi, min_overlap=50, gap_size=10):
     """Stitch partition consensus sequences in order, merging overlaps.
     
-    Returns the merged genome sequence.
+    For impg partition blocks, adjacent core partitions are sequential
+    (non-overlapping, exactly contiguous) alignment blocks, so no overlap is
+    expected and concatenation is correct.  When no suffix/prefix overlap is
+    found, `gap_size` N's are inserted as an explicit join marker between
+    independent consensus blocks (set gap_size=0 for a plain concatenation).
+    
+    Returns the stitched sequence.
     """
     if not path:
         return ""
@@ -288,6 +343,8 @@ def stitch_and_merge(path, partition_consensi, min_overlap=50):
     if not result:
         return ""
     
+    n_joins_with_overlap = 0
+    n_joins_with_gap = 0
     for i in range(1, len(path)):
         pid = path[i]
         next_seq = partition_consensi.get(pid, "")
@@ -298,11 +355,13 @@ def stitch_and_merge(path, partition_consensi, min_overlap=50):
         overlap_len, merged = find_overlap(result, next_seq, min_overlap)
         if merged:
             result = merged
+            n_joins_with_overlap += 1
         else:
-            # No overlap: concatenate with a small gap (N's)
-            result += 'N' * 10 + next_seq
+            # No overlap: concatenate with gap_size N's as join marker
+            result += 'N' * gap_size + next_seq
+            n_joins_with_gap += 1
     
-    return result
+    return result, n_joins_with_overlap, n_joins_with_gap
 
 
 # ─── Validation ─────────────────────────────────────────────────────────────
@@ -341,8 +400,8 @@ def compute_mash_identity(fasta_path, ancestral_path, mash_cmd='mash'):
 # ─── Main pipeline ──────────────────────────────────────────────────────────
 
 def run_stitching(partition_dir, bed_path, output_path, ancestral_path=None,
-                  mash_cmd='mash', accessory_threshold=0.5, 
-                  coverage_threshold=0.25, min_overlap=50):
+                  mash_cmd='mash', accessory_threshold=0.5,
+                  coverage_threshold=0.25, min_overlap=50, gap_size=10):
     """Run the full stitching pipeline."""
     print("=" * 60)
     print("PARTITION STITCHING ALGORITHM v2")
@@ -381,21 +440,35 @@ def run_stitching(partition_dir, bed_path, output_path, ancestral_path=None,
     # Step 5: Compute consensus for each partition
     print("\n[5] Computing partition consensus sequences...")
     partition_consensi = {}
+    consensus_stats = {}
     for pid in set(core_path) | set(accessory):
         maf_path = os.path.join(partition_dir, f'partition{pid}.maf')
         if not os.path.exists(maf_path):
             continue
         records = parse_partition_maf(maf_path)
-        consensus = compute_partition_consensus(records, coverage_threshold)
+        diag = {}
+        consensus = compute_partition_consensus(records, coverage_threshold, diagnostics=diag)
         if consensus:
             partition_consensi[pid] = consensus
+            consensus_stats[pid] = diag
     
     print(f"    Computed consensus for {len(partition_consensi)} partitions")
+    if core_path:
+        print("\n    Column-depth diagnostics for core partitions (detect staggered bundles):")
+        for pid in core_path:
+            d = consensus_stats.get(pid)
+            if d:
+                flag = " <-- staggered bundle?" if d['mean_depth'] < 0.5 * d['n_seqs'] else ""
+                print(f"      partition {pid}: n={d['n_seqs']} width={d['aln_len']} "
+                      f"mean_depth={d['mean_depth']} max_depth={d['max_depth']} "
+                      f"frac_covered={d['frac_covered']} frac_ge_thr={d['frac_ge_threshold']}{flag}")
     
     # Step 6: Stitch and merge
     print("\n[6] Stitching and merging...")
-    core_genome = stitch_and_merge(core_path, partition_consensi, min_overlap)
+    core_genome, n_overlap_joins, n_gap_joins = stitch_and_merge(
+        core_path, partition_consensi, min_overlap, gap_size=gap_size)
     print(f"    Core genome: {len(core_genome):,} bp")
+    print(f"    Joins: {n_overlap_joins} with overlap, {n_gap_joins} with {gap_size}-N gap marker")
     
     # Step 7: Write output
     print("\n[7] Writing output...")
@@ -408,6 +481,7 @@ def run_stitching(partition_dir, bed_path, output_path, ancestral_path=None,
     print(f"    Written to {output_path}")
     
     # Step 8: Compare to ancestral genome
+    mash_identity = None
     if ancestral_path and os.path.exists(ancestral_path):
         print("\n[8] Comparing to ancestral genome...")
         anc_records = list(SeqIO.parse(ancestral_path, 'fasta'))
@@ -428,6 +502,7 @@ def run_stitching(partition_dir, bed_path, output_path, ancestral_path=None,
                 print(f"    MASH identity vs ancestral: {identity:.4f} ({identity*100:.2f}%)")
             else:
                 print(f"    MASH identity: could not compute")
+            mash_identity = identity
             
             os.unlink(temp.name)
             for f in [temp.name + '.msh', ancestral_path + '.msh']:
@@ -442,17 +517,23 @@ def run_stitching(partition_dir, bed_path, output_path, ancestral_path=None,
     print(f"Completed in {t1-t0:.1f}s")
     print(f"{'='*60}")
     
-    return {
+    result = {
         'n_maf_files': len(maf_files),
         'n_prophages': n_prophages,
         'core_path_length': len(core_path),
+        'core_path': core_path,
         'n_accessory': len(accessory),
         'core_genome_length': len(core_genome),
+        'n_overlap_joins': n_overlap_joins,
+        'n_gap_joins': n_gap_joins,
         'ancestral_length': len(list(SeqIO.parse(ancestral_path, 'fasta'))[0].seq)
             if ancestral_path and os.path.exists(ancestral_path) else None,
+        'mash_identity_vs_ancestral': mash_identity if mash_identity is not None else None,
         'accessory_threshold': accessory_threshold,
         'coverage_threshold': coverage_threshold,
+        'consensus_stats': {str(k): v for k, v in consensus_stats.items()},
     }
+    return result
 
 
 def main():
@@ -474,6 +555,8 @@ def main():
                         help='Coverage threshold for consensus (default: 0.25)')
     parser.add_argument('--min-overlap', type=int, default=50,
                         help='Minimum overlap for merging (default: 50)')
+    parser.add_argument('--gap-size', type=int, default=10,
+                        help='N-run inserted between non-overlapping blocks as join marker (default: 10; 0 = plain concatenation)')
     parser.add_argument('--json', default=None,
                         help='Path to save results as JSON')
     
@@ -488,6 +571,7 @@ def main():
         accessory_threshold=args.accessory_threshold,
         coverage_threshold=args.coverage_threshold,
         min_overlap=args.min_overlap,
+        gap_size=args.gap_size,
     )
     
     if args.json:
