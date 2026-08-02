@@ -73,10 +73,12 @@ pan-genome-style union of regions.
 | 55 | 428 | 44.0 % |
 | …261 partitions | <20 % | long tail |
 
-**Decision.** There is a natural knee between 48.9 % and 76.7 %:
-- threshold ∈ (48.9 %, 76.7 %] → **only partition 51** (53,886 bp; 0.47× ancestral) — the strict majority core.
-- threshold ∈ (45.0 %, 48.9 %] → partitions **51, 239, 241**;
-- threshold ∈ (44.0 %, 45.0 %] → partitions **48, 51, 239, 241** (124,935 bp; the v1 "45 %" result);
+**Decision.** There is a natural knee between 48.9 % and 76.7 % (fractions are
+BED-occurrence / 973 prophages — the metric the algorithm uses):
+- threshold ∈ (48.9 %, 76.7 %] → **only partition 51** (53,886 bp; 0.47× ancestral) — the strict majority core;
+- threshold ∈ (48.1 %, 48.9 %] → partitions **51, 239**;
+- threshold ∈ (46.4 %, 48.1 %] → partitions **51, 239, 241**;
+- threshold ∈ (44.0 %, 46.4 %] → partitions **48, 51, 239, 241** (124,935 bp; the v1 "45 %" result);
 - threshold ≤ 44.0 % adds partition 55, then a long tail of low-occurrence partitions.
 
 **Correct use:** the threshold is a **parameter to be set from the biology or a
