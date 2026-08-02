@@ -18,7 +18,7 @@
 | Reproducible run from BED+MAF? | ✅ **YES** — end-to-end re-run is byte-identical (sha256) to the committed outputs at both thresholds (50% and 45%). Entry point: `research/stitching/run_community3_validation.sh`. |
 | Threshold semantics (50% vs 45%) | ✅ **Documented** — the threshold is a biological parameter (`accessory_threshold` = min fraction of prophages carrying a partition); the occurrence distribution has a natural knee at ~45–49%; **both** thresholds produce genomes far longer than the true community mean (9.6 kb) because partition-block consensi are union mosaics (see §4, §8). The 45% "fallback" was justified by a **wrong length target** (see §7). |
 | Overlap handling (no suffix/prefix merge) | ✅ **CORRECT for these partitions** — all adjacent core-partition intervals are exactly contiguous (0 bp overlap, 0 bp gap) in every co-occurring prophage (70/70, 52/52, 86/86 pairwise adjacencies). Partitions are sequential alignment blocks; concatenation is the right model. The 10-N join markers are cosmetic (see §5). |
-| Identity claim (78.05 % MASH) | ❌ **NOT SUPPORTED by direct alignment.** MASH 78.05 % is a uniform-divergence model extrapolation from a 0.5 % k-mer Jaccard. Direct alignment (minimap2/wfmash) finds only ~6–9.5 kb (5–8 % of the ancestral) at 30–44 % identity; partition 48 (33.5 kb of the stitched genome) shares **zero** detectable homology with the ancestral (see §6). |
+| Identity claim (78.05 % MASH) | ❌ **NOT SUPPORTED by direct alignment.** MASH 78.05 % is a uniform-divergence model extrapolation from a 0.5 % k-mer Jaccard. Direct alignment (minimap2/wfmash) finds only ~6–9.5 kb (5–8 % of the ancestral) at ~34–59 % identity on the aligned portion; partition 48 (33.5 kb of the stitched genome) shares **zero** detectable homology with the ancestral (see §6). |
 | Ancestral genome provenance | ✅ **Provenance confirmed; validity rejected.** `3_ancestral.fa` = pggb cluster-3 ancestral from `scripts/pggb_per_cluster_pipeline.py` (`5a22618`), built from the **same 1,234 sequences** as community 3 — but it is a naive index-position consensus padded to the maximum path length (502→113,456 bp paths), i.e. dominated by the single longest prophage (conf 0.484). It is **not** a valid community mean genome (see §7). |
 | Verdict | **REPAIRABLE** — algorithm code is deterministic, reproducible, and mechanically correct (REUSABLE as a pipeline); the **scientific claims** in v1 (mean genome ~111 kb, 78.05 % identity, 1.10× ancestral) are **not supported** and require repair: honest threshold/coverage semantics, alignment-based identity reporting, and a valid reference (see §10). |
 
@@ -174,7 +174,7 @@ reusable; the naive positional consensi are not.
 ## 7. Community-3 reality check — why the lengths are what they are
 
 - 1,234 prophages: **mean 9,550 bp, median 7,527 bp** (755 seqs < 10 kb,
-  413 in 10–20 kb, ~65 > 20 kb, max 113,456 bp). The "~111 kb" expectation
+  413 in 10–20 kb, 66 in 20–80 kb, max 113,456 bp). The "~111 kb" expectation
   matched only the single longest sequence.
 - 973/1,234 (78.8 %) have partition intervals in the BED; 261 prophages
   (21 %) are absent from the partition graph.
