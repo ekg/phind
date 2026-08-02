@@ -1,0 +1,17 @@
+{
+  "n": 132393,
+  "leaves": 132393,
+  "leaf_count_ok": true,
+  "names_unique": true,
+  "names_match_ids": true,
+  "ultrametric_tol_1e4": true,
+  "root_to_leaf_min": 0.4999979999999999,
+  "root_to_leaf_max": 0.5000039999999999,
+  "cophenetic_R2": -0.006,
+  "cophenetic_mean_abs_err": 0.189,
+  "community_purity_mean": 0.9918,
+  "community_purity_median": 1.0,
+  "community_purity_n": 19638,
+  "non_singleton_leaves": 19638,
+  "shared_communities": 12
+}

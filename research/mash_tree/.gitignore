@@ -1,0 +1,6 @@
+# Large derived data — regenerable via scripts/run_pairwise.py (see README.md)
+full_prophages.msh
+full_prophages_mash.dist
+data/
+scripts/part_writer
+scripts/triangle_writer

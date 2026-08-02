@@ -1,0 +1,13 @@
+{
+  "n_leaves": 132393,
+  "with_community": 132393,
+  "community_merge_rate": 1.0,
+  "with_cluster": 5000,
+  "cluster_merge_rate": 0.0378,
+  "with_mds": 5000,
+  "mds_merge_rate": 0.0378,
+  "total_communities": 112767,
+  "shared_communities": 12,
+  "singleton_communities": 112755,
+  "leaves_in_shared_communities": 19638
+}

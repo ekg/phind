@@ -1,0 +1,62 @@
+# Reproducible command log — all-prophage MASH tree
+# Generated 2026-08-02 by agent-7 (task all-prophage-mash)
+
+## Environment
+mash 2.3 (MurmurHash3_x64_128, seed 42)
+python 3.12.3 (numpy 1.26.4, scipy 1.11.4, ete3 3.1.3)
+g++ (part_writer, -O3 -march=native)
+rapidnj 2.3.3 (bioconda; used only for the NJ/UPGMA comparison, not the final tree)
+Machine: 256 cores, ~1 TB RAM, NVMe; shared (timings are wall-clock under load)
+
+## 1. Sketch (full_prophages.msh, 132,393 sketches, 0 dropped)
+mash sketch -i -k 21 -s 1000 -p 256 \
+  -o research/mash_tree/full_prophages.msh \
+  /home/erikg/phind/prophage_homology_survey/full_prophages.fa
+# 1 min 15 s wall; output 1,076,028,960 bytes
+# sanity: all 132,393 sequences >= 261 bp (min 261, max 222,284, mean 24,638.6)
+
+## 2. Pairwise triangle (378 chunk-pair jobs, 27 chunks of 5000)
+python3 research/mash_tree/scripts/run_pairwise.py \
+  --fasta /home/erikg/phind/prophage_homology_survey/full_prophages.fa \
+  --workdir research/mash_tree/data \
+  --out research/mash_tree/full_prophages_mash.dist \
+  --ids research/mash_tree/data/ids.txt \
+  --chunk-size 5000 --procs 8 --threads 32
+# per-job command shape (i<j, ref = later chunk so the stream is in triangle
+# row order):
+#   mash dist -p 32 chunk_j.msh chunk_i.msh \
+#     | part_writer data/ids.txt offdiag 0 0 > data/parts/part_i_j.bin
+# diagonal:
+#   mash dist -p 32 chunk_i.msh chunk_i.msh \
+#     | part_writer data/ids.txt diag <start> <size> > data/parts/part_i_i.bin
+# then:
+#   python3 research/mash_tree/scripts/merge_parts.py \
+#     --workdir data --out full_prophages_mash.dist --ids data/ids.txt \
+#     --chunk-size 5000
+# Triangle: little-endian float32, n*(n-1)/2 = 8,763,887,028 values (35.05 GB),
+# offset(a,b) = a*(2n-a-1)/2 + (b-a-1) for a<b, rows/cols in data/ids.txt order.
+
+## 3. Verify triangle
+python3 research/mash_tree/scripts/verify_triangle.py
+# -> triangle_verify.json (size, row0 range, zero-distance pairs, 50-pair
+#    spot check vs direct mash; pilot: 1,999,000/1,999,000 exact matches)
+
+## 4. UPGMA tree
+python3 research/mash_tree/scripts/build_tree.py
+# -> full_prophages_tree.nwk, tree_stats.json
+# scipy.cluster.hierarchy.linkage(method='average') on float64 condensed;
+# Newick branch lengths = (merge height difference)/2 so leaf-to-leaf path
+# length equals the UPGMA cophenetic distance.
+
+## 5. Labels
+python3 research/mash_tree/scripts/merge_labels.py
+# -> full_prophages_labels.csv, full_prophages_tree_labeled.nwk,
+#    label_merge_stats.json
+
+## Timing summary (final, wall clock)
+sketch:            1 min 15 s
+pairwise (378 jobs, 8 procs x 32 thr):  ~45 min
+part merge:        ~5 min
+scipy linkage:     ~20 min
+Newick + stats:    ~2 min
+label merge:       ~1 min
