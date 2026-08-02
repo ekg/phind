@@ -1,0 +1,1217 @@
+{
+ "schema": "ecor-inspection-index-v1",
+ "generated": "2026-08-02T13:39:04",
+ "tree": "/home/erikg/phind/research/mash_tree/full_prophages_tree.nwk",
+ "n_ecor_elements": 300,
+ "checks": {
+  "manifest_rows": 300,
+  "tags_covered": 300,
+  "in_tree": 300,
+  "missing_in_tree": [],
+  "neighborhood_max": 60,
+  "connected_component_ecor": 0,
+  "duplicate_prophage_ids": 0
+ },
+ "neighborhoods": {
+  "GCF_003333385.1_prophage_1": {
+   "clade_size": 56,
+   "members": null
+  },
+  "GCF_003333385.1_prophage_2": {
+   "clade_size": 57,
+   "members": null
+  },
+  "GCF_003333385.1_prophage_3": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003333385.1_prophage_4": {
+   "clade_size": 7,
+   "members": null
+  },
+  "GCF_003333385.1_prophage_5": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003333385.1_prophage_6": {
+   "clade_size": 47,
+   "members": null
+  },
+  "GCF_003333385.1_prophage_7": {
+   "clade_size": 47,
+   "members": null
+  },
+  "GCF_003333425.1_prophage_1": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003333425.1_prophage_2": {
+   "clade_size": 40,
+   "members": null
+  },
+  "GCF_003333425.1_prophage_3": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003333425.1_prophage_4": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003333425.1_prophage_5": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003333435.1_prophage_1": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003333435.1_prophage_2": {
+   "clade_size": 15,
+   "members": null
+  },
+  "GCF_003333475.1_prophage_1": {
+   "clade_size": 18,
+   "members": null
+  },
+  "GCF_003333475.1_prophage_2": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003333475.1_prophage_3": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003333475.1_prophage_4": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003333495.1_prophage_1": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003333495.1_prophage_2": {
+   "clade_size": 14,
+   "members": null
+  },
+  "GCF_003333495.1_prophage_3": {
+   "clade_size": 24,
+   "members": null
+  },
+  "GCF_003333505.1_prophage_1": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003333505.1_prophage_2": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003333505.1_prophage_3": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003333505.1_prophage_4": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003333545.1_prophage_1": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003333545.1_prophage_2": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003333545.1_prophage_3": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003333545.1_prophage_4": {
+   "clade_size": 33,
+   "members": null
+  },
+  "GCF_003333545.1_prophage_5": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003333545.1_prophage_6": {
+   "clade_size": 46,
+   "members": null
+  },
+  "GCF_003333565.1_prophage_1": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003333565.1_prophage_2": {
+   "clade_size": 46,
+   "members": null
+  },
+  "GCF_003333565.1_prophage_3": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003333565.1_prophage_4": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003333585.1_prophage_1": {
+   "clade_size": 57,
+   "members": null
+  },
+  "GCF_003333605.1_prophage_1": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333605.1_prophage_2": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003333605.1_prophage_3": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003333605.1_prophage_4": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333615.1_prophage_1": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003333615.1_prophage_2": {
+   "clade_size": 58,
+   "members": null
+  },
+  "GCF_003333615.1_prophage_3": {
+   "clade_size": 46,
+   "members": null
+  },
+  "GCF_003333615.1_prophage_4": {
+   "clade_size": 20,
+   "members": null
+  },
+  "GCF_003333645.1_prophage_1": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003333645.1_prophage_2": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003333645.1_prophage_3": {
+   "clade_size": 43,
+   "members": null
+  },
+  "GCF_003333645.1_prophage_4": {
+   "clade_size": 49,
+   "members": null
+  },
+  "GCF_003333655.1_prophage_1": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333655.1_prophage_2": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_1": {
+   "clade_size": 30,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_2": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_3": {
+   "clade_size": 9,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_4": {
+   "clade_size": 20,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_5": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_6": {
+   "clade_size": 53,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_7": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003333675.1_prophage_8": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003333685.1_prophage_1": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003333685.1_prophage_2": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003333685.1_prophage_3": {
+   "clade_size": 30,
+   "members": null
+  },
+  "GCF_003333715.1_prophage_1": {
+   "clade_size": 51,
+   "members": null
+  },
+  "GCF_003333715.1_prophage_2": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333715.1_prophage_3": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003333715.1_prophage_4": {
+   "clade_size": 40,
+   "members": null
+  },
+  "GCF_003333735.1_prophage_1": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_1": {
+   "clade_size": 18,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_2": {
+   "clade_size": 20,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_3": {
+   "clade_size": 34,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_4": {
+   "clade_size": 13,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_5": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_6": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003333765.1_prophage_7": {
+   "clade_size": 14,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_1": {
+   "clade_size": 58,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_2": {
+   "clade_size": 48,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_3": {
+   "clade_size": 48,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_4": {
+   "clade_size": 5,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_5": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_6": {
+   "clade_size": 41,
+   "members": null
+  },
+  "GCF_003333775.1_prophage_7": {
+   "clade_size": 34,
+   "members": null
+  },
+  "GCF_003333785.1_prophage_1": {
+   "clade_size": 3,
+   "members": null
+  },
+  "GCF_003333785.1_prophage_2": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003333785.1_prophage_3": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003333785.1_prophage_4": {
+   "clade_size": 2,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_1": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_2": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_3": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_4": {
+   "clade_size": 23,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_5": {
+   "clade_size": 35,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_6": {
+   "clade_size": 39,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_7": {
+   "clade_size": 51,
+   "members": null
+  },
+  "GCF_003333795.1_prophage_8": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_1": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_2": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_3": {
+   "clade_size": 54,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_4": {
+   "clade_size": 51,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_5": {
+   "clade_size": 53,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_6": {
+   "clade_size": 32,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_7": {
+   "clade_size": 39,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_8": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333845.1_prophage_9": {
+   "clade_size": 35,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_1": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_2": {
+   "clade_size": 35,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_3": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_4": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_5": {
+   "clade_size": 51,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_6": {
+   "clade_size": 54,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_7": {
+   "clade_size": 32,
+   "members": null
+  },
+  "GCF_003333855.1_prophage_8": {
+   "clade_size": 53,
+   "members": null
+  },
+  "GCF_003333865.1_prophage_1": {
+   "clade_size": 46,
+   "members": null
+  },
+  "GCF_003333865.1_prophage_2": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003333865.1_prophage_3": {
+   "clade_size": 7,
+   "members": null
+  },
+  "GCF_003333865.1_prophage_4": {
+   "clade_size": 48,
+   "members": null
+  },
+  "GCF_003333865.1_prophage_5": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003333865.1_prophage_6": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003333875.1_prophage_1": {
+   "clade_size": 39,
+   "members": null
+  },
+  "GCF_003333875.1_prophage_2": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003333875.1_prophage_3": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003333925.1_prophage_1": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003333925.1_prophage_2": {
+   "clade_size": 19,
+   "members": null
+  },
+  "GCF_003333925.1_prophage_3": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003333935.1_prophage_1": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003333935.1_prophage_2": {
+   "clade_size": 19,
+   "members": null
+  },
+  "GCF_003333935.1_prophage_3": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003333945.1_prophage_1": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003333945.1_prophage_2": {
+   "clade_size": 48,
+   "members": null
+  },
+  "GCF_003333945.1_prophage_3": {
+   "clade_size": 28,
+   "members": null
+  },
+  "GCF_003333945.1_prophage_4": {
+   "clade_size": 18,
+   "members": null
+  },
+  "GCF_003333975.1_prophage_1": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003333975.1_prophage_2": {
+   "clade_size": 27,
+   "members": null
+  },
+  "GCF_003334005.1_prophage_1": {
+   "clade_size": 56,
+   "members": null
+  },
+  "GCF_003334005.1_prophage_2": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334005.1_prophage_3": {
+   "clade_size": 49,
+   "members": null
+  },
+  "GCF_003334015.1_prophage_1": {
+   "clade_size": 2,
+   "members": null
+  },
+  "GCF_003334015.1_prophage_2": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003334015.1_prophage_3": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003334035.1_prophage_1": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003334035.1_prophage_2": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334035.1_prophage_3": {
+   "clade_size": 28,
+   "members": null
+  },
+  "GCF_003334035.1_prophage_4": {
+   "clade_size": 43,
+   "members": null
+  },
+  "GCF_003334065.1_prophage_1": {
+   "clade_size": 49,
+   "members": null
+  },
+  "GCF_003334065.1_prophage_2": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334085.1_prophage_1": {
+   "clade_size": 27,
+   "members": null
+  },
+  "GCF_003334085.1_prophage_2": {
+   "clade_size": 8,
+   "members": null
+  },
+  "GCF_003334085.1_prophage_3": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003334085.1_prophage_4": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003334085.1_prophage_5": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334095.1_prophage_1": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334095.1_prophage_2": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003334095.1_prophage_3": {
+   "clade_size": 7,
+   "members": null
+  },
+  "GCF_003334095.1_prophage_4": {
+   "clade_size": 58,
+   "members": null
+  },
+  "GCF_003334095.1_prophage_5": {
+   "clade_size": 20,
+   "members": null
+  },
+  "GCF_003334115.1_prophage_1": {
+   "clade_size": 25,
+   "members": null
+  },
+  "GCF_003334115.1_prophage_2": {
+   "clade_size": 3,
+   "members": null
+  },
+  "GCF_003334115.1_prophage_3": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003334145.1_prophage_1": {
+   "clade_size": 34,
+   "members": null
+  },
+  "GCF_003334145.1_prophage_2": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003334145.1_prophage_3": {
+   "clade_size": 22,
+   "members": null
+  },
+  "GCF_003334145.1_prophage_4": {
+   "clade_size": 10,
+   "members": null
+  },
+  "GCF_003334145.1_prophage_5": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003334145.1_prophage_6": {
+   "clade_size": 6,
+   "members": null
+  },
+  "GCF_003334155.1_prophage_1": {
+   "clade_size": 6,
+   "members": null
+  },
+  "GCF_003334155.1_prophage_2": {
+   "clade_size": 22,
+   "members": null
+  },
+  "GCF_003334155.1_prophage_3": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003334165.1_prophage_1": {
+   "clade_size": 19,
+   "members": null
+  },
+  "GCF_003334175.1_prophage_1": {
+   "clade_size": 46,
+   "members": null
+  },
+  "GCF_003334175.1_prophage_2": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003334175.1_prophage_3": {
+   "clade_size": 2,
+   "members": null
+  },
+  "GCF_003334175.1_prophage_4": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003334225.1_prophage_1": {
+   "clade_size": 3,
+   "members": null
+  },
+  "GCF_003334225.1_prophage_2": {
+   "clade_size": 56,
+   "members": null
+  },
+  "GCF_003334225.1_prophage_3": {
+   "clade_size": 33,
+   "members": null
+  },
+  "GCF_003334225.1_prophage_4": {
+   "clade_size": 6,
+   "members": null
+  },
+  "GCF_003334225.1_prophage_5": {
+   "clade_size": 9,
+   "members": null
+  },
+  "GCF_003334225.1_prophage_6": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003334235.1_prophage_1": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003334235.1_prophage_2": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003334235.1_prophage_3": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003334245.1_prophage_1": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003334245.1_prophage_2": {
+   "clade_size": 37,
+   "members": null
+  },
+  "GCF_003334245.1_prophage_3": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003334245.1_prophage_4": {
+   "clade_size": 30,
+   "members": null
+  },
+  "GCF_003334245.1_prophage_5": {
+   "clade_size": 37,
+   "members": null
+  },
+  "GCF_003334255.1_prophage_1": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003334255.1_prophage_2": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003334255.1_prophage_3": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003334305.1_prophage_1": {
+   "clade_size": 14,
+   "members": null
+  },
+  "GCF_003334305.1_prophage_2": {
+   "clade_size": 58,
+   "members": null
+  },
+  "GCF_003334305.1_prophage_3": {
+   "clade_size": 5,
+   "members": null
+  },
+  "GCF_003334315.1_prophage_1": {
+   "clade_size": 45,
+   "members": null
+  },
+  "GCF_003334315.1_prophage_2": {
+   "clade_size": 15,
+   "members": null
+  },
+  "GCF_003334335.1_prophage_1": {
+   "clade_size": 35,
+   "members": null
+  },
+  "GCF_003334335.1_prophage_2": {
+   "clade_size": 8,
+   "members": null
+  },
+  "GCF_003334335.1_prophage_3": {
+   "clade_size": 48,
+   "members": null
+  },
+  "GCF_003334335.1_prophage_4": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003334335.1_prophage_5": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003334355.1_prophage_1": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003334355.1_prophage_2": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_1": {
+   "clade_size": 7,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_2": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_3": {
+   "clade_size": 5,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_4": {
+   "clade_size": 18,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_5": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_6": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_7": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_8": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003334385.1_prophage_9": {
+   "clade_size": 13,
+   "members": null
+  },
+  "GCF_003334405.1_prophage_1": {
+   "clade_size": 19,
+   "members": null
+  },
+  "GCF_003334405.1_prophage_2": {
+   "clade_size": 7,
+   "members": null
+  },
+  "GCF_003334405.1_prophage_3": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334425.1_prophage_1": {
+   "clade_size": 39,
+   "members": null
+  },
+  "GCF_003334425.1_prophage_2": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003334425.1_prophage_3": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334425.1_prophage_4": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003334425.1_prophage_5": {
+   "clade_size": 26,
+   "members": null
+  },
+  "GCF_003334425.1_prophage_6": {
+   "clade_size": 28,
+   "members": null
+  },
+  "GCF_003334435.1_prophage_1": {
+   "clade_size": 33,
+   "members": null
+  },
+  "GCF_003334435.1_prophage_2": {
+   "clade_size": 46,
+   "members": null
+  },
+  "GCF_003334435.1_prophage_3": {
+   "clade_size": 57,
+   "members": null
+  },
+  "GCF_003334465.1_prophage_1": {
+   "clade_size": 45,
+   "members": null
+  },
+  "GCF_003334465.1_prophage_2": {
+   "clade_size": 47,
+   "members": null
+  },
+  "GCF_003334465.1_prophage_3": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003334465.1_prophage_4": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334485.1_prophage_1": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003334495.1_prophage_1": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334495.1_prophage_2": {
+   "clade_size": 47,
+   "members": null
+  },
+  "GCF_003334495.1_prophage_3": {
+   "clade_size": 7,
+   "members": null
+  },
+  "GCF_003334495.1_prophage_4": {
+   "clade_size": 58,
+   "members": null
+  },
+  "GCF_003334495.1_prophage_5": {
+   "clade_size": 20,
+   "members": null
+  },
+  "GCF_003334525.1_prophage_1": {
+   "clade_size": 2,
+   "members": null
+  },
+  "GCF_003334525.1_prophage_2": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334535.1_prophage_1": {
+   "clade_size": 45,
+   "members": null
+  },
+  "GCF_003334535.1_prophage_2": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003334535.1_prophage_3": {
+   "clade_size": 9,
+   "members": null
+  },
+  "GCF_003334535.1_prophage_4": {
+   "clade_size": 16,
+   "members": null
+  },
+  "GCF_003334535.1_prophage_5": {
+   "clade_size": 1,
+   "members": null
+  },
+  "GCF_003334535.1_prophage_6": {
+   "clade_size": 57,
+   "members": null
+  },
+  "GCF_003334555.1_prophage_1": {
+   "clade_size": 5,
+   "members": null
+  },
+  "GCF_003334555.1_prophage_2": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003334555.1_prophage_3": {
+   "clade_size": 52,
+   "members": null
+  },
+  "GCF_003334555.1_prophage_4": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334555.1_prophage_5": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003334555.1_prophage_6": {
+   "clade_size": 58,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_1": {
+   "clade_size": 54,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_2": {
+   "clade_size": 1,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_3": {
+   "clade_size": 45,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_4": {
+   "clade_size": 43,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_5": {
+   "clade_size": 35,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_6": {
+   "clade_size": 11,
+   "members": null
+  },
+  "GCF_003334585.1_prophage_7": {
+   "clade_size": 45,
+   "members": null
+  },
+  "GCF_003334605.1_prophage_1": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003334605.1_prophage_2": {
+   "clade_size": 35,
+   "members": null
+  },
+  "GCF_003334605.1_prophage_3": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003334605.1_prophage_4": {
+   "clade_size": 51,
+   "members": null
+  },
+  "GCF_003334605.1_prophage_5": {
+   "clade_size": 54,
+   "members": null
+  },
+  "GCF_003334605.1_prophage_6": {
+   "clade_size": 32,
+   "members": null
+  },
+  "GCF_003334615.1_prophage_1": {
+   "clade_size": 44,
+   "members": null
+  },
+  "GCF_003334615.1_prophage_2": {
+   "clade_size": 60,
+   "members": null
+  },
+  "GCF_003334615.1_prophage_3": {
+   "clade_size": 33,
+   "members": null
+  },
+  "GCF_003334615.1_prophage_4": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334625.1_prophage_1": {
+   "clade_size": 40,
+   "members": null
+  },
+  "GCF_003334625.1_prophage_2": {
+   "clade_size": 11,
+   "members": null
+  },
+  "GCF_003334625.1_prophage_3": {
+   "clade_size": 13,
+   "members": null
+  },
+  "GCF_003334665.1_prophage_1": {
+   "clade_size": 12,
+   "members": null
+  },
+  "GCF_003334665.1_prophage_2": {
+   "clade_size": 56,
+   "members": null
+  },
+  "GCF_003334665.1_prophage_3": {
+   "clade_size": 6,
+   "members": null
+  },
+  "GCF_003334665.1_prophage_4": {
+   "clade_size": 4,
+   "members": null
+  },
+  "GCF_003334675.1_prophage_1": {
+   "clade_size": 15,
+   "members": null
+  },
+  "GCF_003334675.1_prophage_2": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334675.1_prophage_3": {
+   "clade_size": 48,
+   "members": null
+  },
+  "GCF_003334705.1_prophage_1": {
+   "clade_size": 55,
+   "members": null
+  },
+  "GCF_003334705.1_prophage_2": {
+   "clade_size": 39,
+   "members": null
+  },
+  "GCF_003334705.1_prophage_3": {
+   "clade_size": 22,
+   "members": null
+  },
+  "GCF_003334705.1_prophage_4": {
+   "clade_size": 9,
+   "members": null
+  },
+  "GCF_003334715.1_prophage_1": {
+   "clade_size": 39,
+   "members": null
+  },
+  "GCF_003334715.1_prophage_2": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003334735.1_prophage_1": {
+   "clade_size": 29,
+   "members": null
+  },
+  "GCF_003334735.1_prophage_2": {
+   "clade_size": 59,
+   "members": null
+  },
+  "GCF_003334735.1_prophage_3": {
+   "clade_size": 5,
+   "members": null
+  },
+  "GCF_003334735.1_prophage_4": {
+   "clade_size": 54,
+   "members": null
+  },
+  "GCF_003334765.1_prophage_1": {
+   "clade_size": 18,
+   "members": null
+  },
+  "GCF_003334765.1_prophage_2": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003334765.1_prophage_3": {
+   "clade_size": 11,
+   "members": null
+  },
+  "GCF_003334765.1_prophage_4": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003334765.1_prophage_5": {
+   "clade_size": 28,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_1": {
+   "clade_size": 27,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_2": {
+   "clade_size": 21,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_3": {
+   "clade_size": 17,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_4": {
+   "clade_size": 40,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_5": {
+   "clade_size": 11,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_6": {
+   "clade_size": 42,
+   "members": null
+  },
+  "GCF_003334775.1_prophage_7": {
+   "clade_size": 9,
+   "members": null
+  },
+  "GCF_003334785.1_prophage_1": {
+   "clade_size": 50,
+   "members": null
+  },
+  "GCF_003334785.1_prophage_2": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003334785.1_prophage_3": {
+   "clade_size": 30,
+   "members": null
+  },
+  "GCF_003334815.1_prophage_1": {
+   "clade_size": 40,
+   "members": null
+  },
+  "GCF_003334815.1_prophage_2": {
+   "clade_size": 36,
+   "members": null
+  },
+  "GCF_003334815.1_prophage_3": {
+   "clade_size": 2,
+   "members": null
+  },
+  "GCF_003335465.1_prophage_1": {
+   "clade_size": 38,
+   "members": null
+  },
+  "GCF_003335465.1_prophage_2": {
+   "clade_size": 6,
+   "members": null
+  }
+ }
+}
