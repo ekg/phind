@@ -1,0 +1,16 @@
+# Per-clade pipeline outputs — large derived data, regenerable via
+# scripts/per_clade_alignment_pipeline.py + scripts/run_all_clade_pipelines.sh
+# (commands recorded in per-clade commands.log and manifest.json)
+full_prophages.idx.json
+*/sequences.fa
+*/allwave.paf
+*/allwave.paf.impg
+*/allwave.segmented.paf
+*/allwave.segmented.paf.impg
+*/partitions.bed
+*/partitions/
+*/pipeline_run.log
+pipeline_driver.log
+pipeline_results.json
+*/distances.npz
+*/pipeline_run.log
