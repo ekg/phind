@@ -50,8 +50,11 @@ SEGMENT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "segment_paf.
 WINDOW = 500
 GAP = 1
 MAX_SPAN = 2 * WINDOW
-ALL_PAIRS_MAX_N = 50
-TREE_STRAT = "tree:5:0:0.05"
+ALL_PAIRS_MAX_N = 30
+TREE_STRAT = "tree:5:0:0.0"      # k-nearest only, k-farthest=0
+BIG_TREE_STRAT = "tree:10:0:0.0"  # k-nearest=10 for large clades (linear 10n pairs,
+                                   # better connectivity than k=5; still k-farthest=0)
+BIG_CLADE_N = 200
 PARTITION_FLAGS = ["-w", str(WINDOW), "-d", "0",
                    "--min-boundary-distance", "0", "--min-missing-size", "0",
                    "--no-rehome-singletons"]
@@ -171,6 +174,17 @@ def process_clade(args, cid, members):
     outdir = os.path.join(args.outdir, cid)
     os.makedirs(outdir, exist_ok=True)
     log_path = os.path.join(outdir, "commands.log")
+
+    # resume: skip clades whose outputs are already complete
+    manifest_path = os.path.join(outdir, "manifest.json")
+    if os.path.exists(manifest_path):
+        try:
+            existing = json.load(open(manifest_path))
+        except Exception:
+            existing = None
+        if existing and existing.get("pipeline", {}).get("total_runtime_s") is not None:
+            return cid, existing
+
     start = time.time()
     manifest = {
         "clade_id": cid,
@@ -206,13 +220,19 @@ def process_clade(args, cid, members):
     else:
         if n <= ALL_PAIRS_MAX_N:
             strat = "none"
-        else:
+        elif n <= BIG_CLADE_N:
             strat = TREE_STRAT
+        else:
+            strat = BIG_TREE_STRAT
+        k_nearest = 5 if strat == TREE_STRAT else (10 if strat == BIG_TREE_STRAT else None)
         manifest["strategy"] = strat
         manifest["params"]["allwave"] = {
-            "sparsification": strat, "k_nearest": 5, "k_farthest": 0,
-            "random_fraction": 0.05 if strat.startswith("tree") else None,
+            "sparsification": strat, "k_nearest": k_nearest, "k_farthest": 0,
+            "random_fraction": None,
             "threads": args.threads, "scores": "0,5,8,2,24,1",
+            "note": "k-nearest only, k-farthest=0 (no stranger-joining); "
+                    "k=10 for n>200 to keep the k-nearest graph connected at "
+                    "linear pair count (10n)",
         }
         cmd = [ALLWAVE, "-i", fasta, "-o", paf, "-p", strat,
                "-t", str(args.threads), "--no-progress"]
