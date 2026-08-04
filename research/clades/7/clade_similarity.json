@@ -1,0 +1,49 @@
+{
+ "report": {
+  "community": 7,
+  "n_members": 31,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 2,
+  "n_singletons": 1,
+  "max_clade_size": 30,
+  "clade_size_median": 15.5,
+  "clade_size_distribution": {
+   "1": 1,
+   "2-10": 0,
+   "11-50": 1,
+   "51-200": 0,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.026819000020623207,
+   "min_median": 0.026819000020623207,
+   "max_median": 0.026819000020623207,
+   "clades_with_median_le_threshold": 1,
+   "clades_with_max_le_threshold": 0
+  },
+  "time_read_triangle_s": 0.0
+ },
+ "per_clade": {
+  "7_0000": {
+   "n": 30,
+   "pairs": 435,
+   "median": 0.026819000020623207,
+   "min": 0.0,
+   "max": 0.12213999778032303,
+   "frac_le_threshold": 0.9517241379310345,
+   "rep_index": 0
+  },
+  "7_0001": {
+   "n": 1,
+   "pairs": 0,
+   "median": null,
+   "min": null,
+   "max": null,
+   "frac_le_threshold": null,
+   "rep_index": 0
+  }
+ }
+}

@@ -1,0 +1,326 @@
+{
+ "0": {
+  "community": 0,
+  "n_members": 4999,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 297,
+  "n_singletons": 105,
+  "max_clade_size": 800,
+  "clade_size_median": 3.0,
+  "clade_size_distribution": {
+   "1": 105,
+   "2-10": 122,
+   "11-50": 50,
+   "51-200": 16,
+   "201-500": 3,
+   "501-800": 1,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.04675145074725151,
+   "min_median": 0.0,
+   "max_median": 0.09946980327367783,
+   "clades_with_median_le_threshold": 192,
+   "clades_with_max_le_threshold": 127
+  },
+  "time_read_triangle_s": 3.3
+ },
+ "1": {
+  "community": 1,
+  "n_members": 2128,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 123,
+  "n_singletons": 53,
+  "max_clade_size": 262,
+  "clade_size_median": 3.0,
+  "clade_size_distribution": {
+   "1": 53,
+   "2-10": 41,
+   "11-50": 19,
+   "51-200": 7,
+   "201-500": 3,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.04790922440588474,
+   "min_median": 0.0,
+   "max_median": 0.09590449929237366,
+   "clades_with_median_le_threshold": 70,
+   "clades_with_max_le_threshold": 50
+  },
+  "time_read_triangle_s": 0.6
+ },
+ "2": {
+  "community": 2,
+  "n_members": 2826,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 125,
+  "n_singletons": 41,
+  "max_clade_size": 717,
+  "clade_size_median": 3.0,
+  "clade_size_distribution": {
+   "1": 41,
+   "2-10": 57,
+   "11-50": 17,
+   "51-200": 8,
+   "201-500": 0,
+   "501-800": 2,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.046169400215148926,
+   "min_median": 0.0,
+   "max_median": 0.09265419840812683,
+   "clades_with_median_le_threshold": 84,
+   "clades_with_max_le_threshold": 56
+  },
+  "time_read_triangle_s": 1.0
+ },
+ "3": {
+  "community": 3,
+  "n_members": 1234,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 59,
+  "n_singletons": 18,
+  "max_clade_size": 208,
+  "clade_size_median": 4.0,
+  "clade_size_distribution": {
+   "1": 18,
+   "2-10": 23,
+   "11-50": 9,
+   "51-200": 8,
+   "201-500": 1,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.035184700042009354,
+   "min_median": 0.0,
+   "max_median": 0.08944270014762878,
+   "clades_with_median_le_threshold": 41,
+   "clades_with_max_le_threshold": 25
+  },
+  "time_read_triangle_s": 0.2
+ },
+ "4": {
+  "community": 4,
+  "n_members": 3030,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 166,
+  "n_singletons": 69,
+  "max_clade_size": 646,
+  "clade_size_median": 2.0,
+  "clade_size_distribution": {
+   "1": 69,
+   "2-10": 58,
+   "11-50": 25,
+   "51-200": 10,
+   "201-500": 3,
+   "501-800": 1,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.039749350398778915,
+   "min_median": 0.0,
+   "max_median": 0.094377800822258,
+   "clades_with_median_le_threshold": 97,
+   "clades_with_max_le_threshold": 64
+  },
+  "time_read_triangle_s": 1.2
+ },
+ "5": {
+  "community": 5,
+  "n_members": 34,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 3,
+  "n_singletons": 1,
+  "max_clade_size": 31,
+  "clade_size_median": 2.0,
+  "clade_size_distribution": {
+   "1": 1,
+   "2-10": 1,
+   "11-50": 1,
+   "51-200": 0,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.08435485139489174,
+   "min_median": 0.08294890075922012,
+   "max_median": 0.08576080203056335,
+   "clades_with_median_le_threshold": 2,
+   "clades_with_max_le_threshold": 1
+  },
+  "time_read_triangle_s": 0.0
+ },
+ "6": {
+  "community": 6,
+  "n_members": 51,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 7,
+  "n_singletons": 5,
+  "max_clade_size": 44,
+  "clade_size_median": 1.0,
+  "clade_size_distribution": {
+   "1": 5,
+   "2-10": 1,
+   "11-50": 1,
+   "51-200": 0,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.06803054921329021,
+   "min_median": 0.04567800089716911,
+   "max_median": 0.09038309752941132,
+   "clades_with_median_le_threshold": 2,
+   "clades_with_max_le_threshold": 1
+  },
+  "time_read_triangle_s": 0.0
+ },
+ "7": {
+  "community": 7,
+  "n_members": 31,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 2,
+  "n_singletons": 1,
+  "max_clade_size": 30,
+  "clade_size_median": 15.5,
+  "clade_size_distribution": {
+   "1": 1,
+   "2-10": 0,
+   "11-50": 1,
+   "51-200": 0,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.026819000020623207,
+   "min_median": 0.026819000020623207,
+   "max_median": 0.026819000020623207,
+   "clades_with_median_le_threshold": 1,
+   "clades_with_max_le_threshold": 0
+  },
+  "time_read_triangle_s": 0.0
+ },
+ "8": {
+  "community": 8,
+  "n_members": 5,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 2,
+  "n_singletons": 1,
+  "max_clade_size": 4,
+  "clade_size_median": 2.5,
+  "clade_size_distribution": {
+   "1": 1,
+   "2-10": 1,
+   "11-50": 0,
+   "51-200": 0,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.028803300112485886,
+   "min_median": 0.028803300112485886,
+   "max_median": 0.028803300112485886,
+   "clades_with_median_le_threshold": 1,
+   "clades_with_max_le_threshold": 1
+  },
+  "time_read_triangle_s": 0.0
+ },
+ "9": {
+  "community": 9,
+  "n_members": 27,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 1,
+  "n_singletons": 0,
+  "max_clade_size": 27,
+  "clade_size_median": 27.0,
+  "clade_size_distribution": {
+   "1": 0,
+   "2-10": 0,
+   "11-50": 1,
+   "51-200": 0,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.06236749887466431,
+   "min_median": 0.06236749887466431,
+   "max_median": 0.06236749887466431,
+   "clades_with_median_le_threshold": 1,
+   "clades_with_max_le_threshold": 0
+  },
+  "time_read_triangle_s": 0.0
+ },
+ "10": {
+  "community": 10,
+  "n_members": 5208,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 459,
+  "n_singletons": 175,
+  "max_clade_size": 486,
+  "clade_size_median": 2.0,
+  "clade_size_distribution": {
+   "1": 175,
+   "2-10": 198,
+   "11-50": 61,
+   "51-200": 22,
+   "201-500": 3,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.0456796009093523,
+   "min_median": 0.0,
+   "max_median": 0.09946980327367783,
+   "clades_with_median_le_threshold": 284,
+   "clades_with_max_le_threshold": 199
+  },
+  "time_read_triangle_s": 3.3
+ },
+ "11": {
+  "community": 11,
+  "n_members": 65,
+  "threshold": 0.1,
+  "max_size": 800,
+  "n_clades": 1,
+  "n_singletons": 0,
+  "max_clade_size": 65,
+  "clade_size_median": 65.0,
+  "clade_size_distribution": {
+   "1": 0,
+   "2-10": 0,
+   "11-50": 0,
+   "51-200": 1,
+   "201-500": 0,
+   "501-800": 0,
+   ">800": 0
+  },
+  "internal_similarity": {
+   "median_median": 0.029803099110722542,
+   "min_median": 0.029803099110722542,
+   "max_median": 0.029803099110722542,
+   "clades_with_median_le_threshold": 1,
+   "clades_with_max_le_threshold": 0
+  },
+  "time_read_triangle_s": 0.0
+ }
+}

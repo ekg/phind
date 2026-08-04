@@ -1,0 +1,32 @@
+{
+ "clade_id": "3_0032",
+ "community": "3",
+ "n_members": 1,
+ "created": "2026-08-03T22:48:15Z",
+ "strategy": "none (singleton, no alignment)",
+ "params": {
+  "segment": {
+   "window": 500,
+   "gap": 0,
+   "max_span": 1000,
+   "n_chunks": 0
+  }
+ },
+ "pipeline": {
+  "allwave": {
+   "pairs_aligned": 0,
+   "possible_pairs": 0,
+   "alignment_rate": null,
+   "sequences_in_paf": 0,
+   "runtime_s": 0.0
+  },
+  "partition": "skipped (singleton)",
+  "total_runtime_s": 0.0
+ },
+ "sequence_lengths": {
+  "min": 10534,
+  "median": 10534,
+  "max": 10534,
+  "total_bp": 10534
+ }
+}

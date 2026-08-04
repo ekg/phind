@@ -1,0 +1,30 @@
+== INFO ==
+  clades total: 1245 (469 singletons); members assigned: 19638
+  internal similarity: all non-singleton clades have median pairwise mash <= 0.10
+  manifests found: 1245
+  sparsification: 132 clades tree:k:0:r (k-farthest=0), 1113 clades none/singleton
+  alignment rate recorded in 776 manifests
+  intervals > 1000: 363 clades (344 justified, 19 flagged)
+== WARNINGS ==
+  0_0024: max interval 1765 > 1000 (11 intervals > 1000)
+  0_0052: max interval 1156 > 1000 (25 intervals > 1000)
+  0_0067: max interval 1590 > 1000 (6 intervals > 1000)
+  0_0184: max interval 1131 > 1000 (9 intervals > 1000)
+  0_0212: max interval 1200 > 1000 (14 intervals > 1000)
+  0_0214: max interval 1455 > 1000 (9 intervals > 1000)
+  0_0218: max interval 1272 > 1000 (11 intervals > 1000)
+  0_0269: max interval 1477 > 1000 (6 intervals > 1000)
+  1_0062: max interval 1382 > 1000 (11 intervals > 1000)
+  10_0008: max interval 1767 > 1000 (38 intervals > 1000)
+  10_0010: max interval 1721 > 1000 (22 intervals > 1000)
+  10_0041: max interval 1332 > 1000 (23 intervals > 1000)
+  10_0066: max interval 1256 > 1000 (10 intervals > 1000)
+  10_0229: max interval 1277 > 1000 (6 intervals > 1000)
+  10_0235: max interval 2010 > 1000 (23 intervals > 1000)
+  10_0251: max interval 1305 > 1000 (6 intervals > 1000)
+  10_0300: max interval 1602 > 1000 (14 intervals > 1000)
+  3_0049: max interval 1516 > 1000 (6 intervals > 1000)
+  4_0147: max interval 1216 > 1000 (7 intervals > 1000)
+== ERRORS ==
+
+RESULT: PASS (0 errors, 19 warnings)
