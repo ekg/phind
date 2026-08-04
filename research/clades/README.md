@@ -114,6 +114,20 @@ research/clades/<community>/<clade_id>/
 Large derived files (FASTA/PAF/MAF) are git-ignored and regenerable via
 `scripts/run_all_clade_pipelines.sh` (commands in each `commands.log`).
 
+## Data availability (large inputs/outputs are NOT in git)
+
+- `full_prophages.fa` (3.3 GB) lives in `prophage_homology_survey/` and is
+  symlinked into this checkout (`prophage_homology_survey/full_prophages.fa`,
+  ignored via `prophage_homology_survey/.gitignore`).
+- The 35 GB MASH triangle `research/mash_tree/full_prophages_mash.dist` +
+  `research/mash_tree/data/ids.txt` live in the main repo
+  (`/home/erikg/phind/...`); `build_tight_clades.py` reads them by absolute
+  path, so it works from any worktree.
+- Per-clade derived outputs (`sequences.fa`, `*.paf`, `partitions.bed`,
+  `partitions/*.maf`) are git-ignored; the last full run's outputs are on disk
+  under `research/clades/<c>/<clade_id>/` (validate with
+  `python3 scripts/validate_clades.py`).
+
 ## Reproduce
 
 ```bash
