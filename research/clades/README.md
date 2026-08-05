@@ -94,11 +94,12 @@ inter-chunk gaps).
 
 `-m 1` (max transitive depth 1) keeps partition intervals at ~500 bp
 (chunk-aligned) instead of letting transitive gathering merge long
-contiguous stretches. Partition intervals are typically 500 bp; the observed
-max is ~1.7–1.8 kb on conserved blocks shared by many sequences (two merged
-500 bp chunks) and on long private stretches in the most divergent clades
-(e.g. c9, max pairwise 0.167). Those are real homologous/private modules
-with no internal split evidence — documented per clade in `manifest.json` →
+contiguous stretches. Partition intervals are typically 500 bp (median 500
+across the 0.25/100 run); 0.26% of the 1.26M intervals exceed 1000 bp, on
+conserved blocks shared by many sequences (two merged 500 bp chunks) and on
+long private stretches in the most divergent clades (observed max 2877 bp,
+clade 10_0010). Those are real homologous/private modules with no internal
+split evidence — documented per clade in `manifest.json` →
 `partition_bed.interval_stats` (`n_gt_1000`).
 
 ## Outputs per clade
