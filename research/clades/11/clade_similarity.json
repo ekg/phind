@@ -2,8 +2,8 @@
  "report": {
   "community": 11,
   "n_members": 65,
-  "threshold": 0.1,
-  "max_size": 800,
+  "threshold": 0.25,
+  "max_size": 100,
   "n_clades": 1,
   "n_singletons": 0,
   "max_clade_size": 65,
@@ -33,7 +33,7 @@
    "median": 0.029803099110722542,
    "min": 0.0,
    "max": 1.0,
-   "frac_le_threshold": 0.9927884615384616,
+   "frac_le_threshold": 0.9961538461538462,
    "rep_index": 0
   }
  }

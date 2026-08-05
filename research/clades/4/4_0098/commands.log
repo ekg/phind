@@ -1,9 +1,9 @@
 $ /home/erikg/.cargo/bin/allwave -i /home/erikg/phind/research/clades/4/4_0098/sequences.fa -o /home/erikg/phind/research/clades/4/4_0098/allwave.paf -p none -t 8 --no-progress
-[62.2s]
+[24.5s]
 $ python3 /home/erikg/phind/scripts/segment_paf.py -i /home/erikg/phind/research/clades/4/4_0098/allwave.paf -o /home/erikg/phind/research/clades/4/4_0098/allwave.segmented.paf -w 500 --gap 0 --max-span 1000 --log /home/erikg/phind/research/clades/4/4_0098/commands.log
-# segment_paf.py -i /home/erikg/phind/research/clades/4/4_0098/allwave.paf -o /home/erikg/phind/research/clades/4/4_0098/allwave.segmented.paf -w 500 --max-span 1000  [72 blocks -> 2624 chunks]
-[0.2s]
+# segment_paf.py -i /home/erikg/phind/research/clades/4/4_0098/allwave.paf -o /home/erikg/phind/research/clades/4/4_0098/allwave.segmented.paf -w 500 --max-span 1000  [20 blocks -> 624 chunks]
+[0.5s]
 $ /home/erikg/.cargo/bin/impg partition -a /home/erikg/phind/research/clades/4/4_0098/allwave.segmented.paf -w 500 -d 0 --min-boundary-distance 0 --min-missing-size 0 -m 1 --no-rehome-singletons -o bed --output-folder /home/erikg/phind/research/clades/4/4_0098 --temp-dir /home/erikg/phind/research/clades/4/4_0098
-[0.1s]
+[0.0s]
 $ /home/erikg/.cargo/bin/impg partition -a /home/erikg/phind/research/clades/4/4_0098/allwave.segmented.paf -w 500 -d 0 --min-boundary-distance 0 --min-missing-size 0 -m 1 --no-rehome-singletons -o maf --separate-files --output-folder /home/erikg/phind/research/clades/4/4_0098/partitions --sequence-files /home/erikg/phind/research/clades/4/4_0098/sequences.fa --temp-dir /home/erikg/phind/research/clades/4/4_0098
-[0.9s]
+[0.3s]

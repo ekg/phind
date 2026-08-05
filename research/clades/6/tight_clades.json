@@ -1,67 +1,57 @@
 {
  "6_0000": [
+  "GCF_000164355.1_prophage_5",
+  "GCF_000350885.1_prophage_7",
+  "GCF_000350925.1_prophage_5",
+  "GCF_000351785.1_prophage_5",
   "GCF_000456385.1_prophage_7",
-  "GCF_000782635.1_prophage_2",
-  "GCF_000782655.1_prophage_1",
-  "GCF_000456365.1_prophage_3",
-  "GCF_000485695.1_prophage_7",
-  "GCF_000703725.1_prophage_5",
   "GCF_000456565.1_prophage_5",
-  "GCF_000459795.1_prophage_8",
-  "GCF_000951935.1_prophage_10",
-  "GCF_000456985.1_prophage_6",
-  "GCF_000459335.1_prophage_6",
-  "GCF_000780295.1_prophage_3",
   "GCF_000457005.1_prophage_7",
   "GCF_000457435.1_prophage_2",
+  "GCF_000457495.1_prophage_5",
+  "GCF_000457535.1_prophage_8",
   "GCF_000458475.1_prophage_2",
   "GCF_000458645.1_prophage_5",
   "GCF_000458745.1_prophage_4",
-  "GCF_000164355.1_prophage_5",
-  "GCF_000326505.1_prophage_4",
-  "GCF_000350925.1_prophage_5",
-  "GCF_000351785.1_prophage_5",
-  "GCF_000457535.1_prophage_8",
-  "GCF_000776775.1_prophage_3",
-  "GCF_001519365.2_prophage_8",
-  "GCF_000350885.1_prophage_7",
-  "GCF_000457495.1_prophage_5",
-  "GCF_000713615.1_prophage_5",
-  "GCF_000713675.1_prophage_3",
+  "GCF_000703725.1_prophage_5",
+  "GCF_000780295.1_prophage_3",
+  "GCF_000951935.1_prophage_10",
+  "GCF_001277555.1_prophage_1",
   "GCF_001284005.1_prophage_1",
+  "GCF_001284865.1_prophage_2",
   "GCF_001286225.1_prophage_1",
+  "GCF_000459795.1_prophage_8",
+  "GCF_000798435.1_prophage_2",
   "GCF_000778055.1_prophage_3",
   "GCF_000780575.1_prophage_3",
   "GCF_000781605.1_prophage_3",
   "GCF_000781635.1_prophage_1",
+  "GCF_000456365.1_prophage_3",
+  "GCF_000782635.1_prophage_2",
+  "GCF_000782655.1_prophage_1",
+  "GCF_000212715.2_prophage_6",
+  "GCF_000326505.1_prophage_4",
+  "GCF_000456985.1_prophage_6",
+  "GCF_000459335.1_prophage_6",
+  "GCF_000485695.1_prophage_7",
+  "GCF_000713615.1_prophage_5",
+  "GCF_000713675.1_prophage_3",
+  "GCF_000776775.1_prophage_3",
   "GCF_001277615.1_prophage_1",
   "GCF_001284945.1_prophage_4",
   "GCF_001285305.1_prophage_2",
   "GCF_001285385.1_prophage_3",
   "GCF_001285685.1_prophage_1",
   "GCF_001286645.1_prophage_7",
-  "GCF_000212715.2_prophage_6",
-  "GCF_001277555.1_prophage_1",
-  "GCF_001284865.1_prophage_2",
-  "GCF_000776775.1_prophage_4"
- ],
- "6_0001": [
-  "GCF_000798435.1_prophage_2"
- ],
- "6_0002": [
+  "GCF_001420135.1_prophage_4",
+  "GCF_001519365.2_prophage_8",
+  "GCF_000776775.1_prophage_4",
   "GCF_001519365.2_prophage_7",
-  "GCF_000713615.1_prophage_6"
- ],
- "6_0003": [
-  "GCF_000212715.2_prophage_7"
- ],
- "6_0004": [
-  "GCF_000614405.2_prophage_1"
- ],
- "6_0005": [
+  "GCF_000212715.2_prophage_7",
+  "GCF_000713615.1_prophage_6",
   "GCF_001420135.1_prophage_3"
  ],
- "6_0006": [
-  "GCF_001420135.1_prophage_4"
+ "6_0001": [
+  "GCF_000614405.2_prophage_1"
  ]
 }
