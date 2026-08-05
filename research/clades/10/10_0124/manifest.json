@@ -2,7 +2,7 @@
  "clade_id": "10_0124",
  "community": "10",
  "n_members": 1,
- "created": "2026-08-03T23:20:46Z",
+ "created": "2026-08-05T08:25:31Z",
  "strategy": "none (singleton, no alignment)",
  "params": {
   "segment": {
@@ -24,9 +24,9 @@
   "total_runtime_s": 0.0
  },
  "sequence_lengths": {
-  "min": 1323,
-  "median": 1323,
-  "max": 1323,
-  "total_bp": 1323
+  "min": 8124,
+  "median": 8124,
+  "max": 8124,
+  "total_bp": 8124
  }
 }

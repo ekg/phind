@@ -48,7 +48,7 @@ IMPG = "/home/erikg/.cargo/bin/impg"
 SEGMENT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "segment_paf.py")
 
 WINDOW = 500
-GAP = 1
+GAP = 0          # contiguous chunks (matches validated run + README: no inter-chunk gaps)
 MAX_SPAN = 2 * WINDOW
 ALL_PAIRS_MAX_N = 30
 TREE_STRAT = "tree:5:0:0.0"      # k-nearest only, k-farthest=0
@@ -57,6 +57,7 @@ BIG_TREE_STRAT = "tree:10:0:0.0"  # k-nearest=10 for large clades (linear 10n pa
 BIG_CLADE_N = 200
 PARTITION_FLAGS = ["-w", str(WINDOW), "-d", "0",
                    "--min-boundary-distance", "0", "--min-missing-size", "0",
+                   "-m", "1",   # max transitive depth 1: keeps intervals ~500 bp
                    "--no-rehome-singletons"]
 
 

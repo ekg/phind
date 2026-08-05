@@ -12,7 +12,7 @@ IDX="$ROOT/research/clades/full_prophages.idx.json"
 mkdir -p "$ROOT/research/clades"
 [ -f "$IDX" ] || "$PY" "$PIPE" --build-index --fasta "$FASTA" --index "$IDX"
 
-declare -A JOBS=( [0]=6 [1]=2 [2]=2 [3]=2 [4]=3 [5]=1 [6]=1 [7]=1 [8]=1 [9]=1 [10]=6 [11]=1 )
+declare -A JOBS=( [0]=6 [1]=3 [2]=4 [3]=2 [4]=5 [5]=1 [6]=1 [7]=1 [8]=1 [9]=1 [10]=6 [11]=1 )
 THREADS=8
 PIDS=()
 for c in 0 1 2 3 4 5 6 7 8 9 10 11; do

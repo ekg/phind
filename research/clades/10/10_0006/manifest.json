@@ -1,13 +1,13 @@
 {
  "clade_id": "10_0006",
  "community": "10",
- "n_members": 16,
- "created": "2026-08-03T22:35:29Z",
- "strategy": "none",
+ "n_members": 100,
+ "created": "2026-08-05T07:01:17Z",
+ "strategy": "tree:5:0:0.0",
  "params": {
   "allwave": {
-   "sparsification": "none",
-   "k_nearest": null,
+   "sparsification": "tree:5:0:0.0",
+   "k_nearest": 5,
    "k_farthest": 0,
    "random_fraction": null,
    "threads": 8,
@@ -18,41 +18,41 @@
    "window": 500,
    "gap": 0,
    "max_span": 1000,
-   "n_chunks": 3014,
-   "runtime_s": 0.8
+   "n_chunks": 21987,
+   "runtime_s": 1.7
   }
  },
  "pipeline": {
   "allwave": {
-   "pairs_aligned": 120,
-   "directed_records": 240,
-   "possible_pairs": 120,
-   "alignment_rate": 1.0,
-   "sequences_in_paf": 16,
-   "runtime_s": 155.7
+   "pairs_aligned": 354,
+   "directed_records": 500,
+   "possible_pairs": 4950,
+   "alignment_rate": 0.071515,
+   "sequences_in_paf": 100,
+   "runtime_s": 570.5
   },
   "partition_bed": {
-   "runtime_s": 0.1,
+   "runtime_s": 0.9,
    "interval_stats": {
-    "n_intervals": 711,
-    "n_partitions": 98,
+    "n_intervals": 6394,
+    "n_partitions": 1620,
     "min": 1,
-    "median": 248,
-    "max": 1310,
-    "n_gt_1000": 3,
-    "n_lt_100": 173
+    "median": 500.0,
+    "max": 1900,
+    "n_gt_1000": 28,
+    "n_lt_100": 818
    }
   },
   "partition_maf": {
-   "runtime_s": 1.0,
-   "n_maf_partitions": 98
+   "runtime_s": 7.3,
+   "n_maf_partitions": 1620
   },
-  "total_runtime_s": 157.6
+  "total_runtime_s": 580.6
  },
  "sequence_lengths": {
-  "min": 1322,
-  "median": 12900.0,
-  "max": 21409,
-  "total_bp": 199031
+  "min": 13587,
+  "median": 21255.0,
+  "max": 71667,
+  "total_bp": 2453370
  }
 }

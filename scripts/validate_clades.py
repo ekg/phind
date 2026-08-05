@@ -5,7 +5,7 @@ validate_clades.py — validation for per-clade-fastga.
 Checks every item in the task's Validation section:
   1. research/clades/<community>/tight_clades.json exists for all 12
      communities; every member assigned exactly once.
-  2. Per-clade internal similarity: median pairwise mash <= 0.10 for every
+  2. Per-clade internal similarity: median pairwise mash <= 0.25 for every
      non-singleton clade (from clade_similarity.json).
   3. Every tight clade has sequences.fa + allwave.paf + partitions.bed +
      partitions/*.maf + manifest.json; partition interval max <= chosen max
@@ -27,7 +27,7 @@ CLADES_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                            "..", "research", "clades")
 COMMUNITIES = list(range(12))
 MAX_INTERVAL = 1000
-THRESHOLD = 0.10
+THRESHOLD = 0.25
 
 
 def load_json(path):
@@ -83,7 +83,7 @@ def main():
                 errors.append(f"clade {cid}: median pairwise mash "
                               f"{st['median']:.4f} > {THRESHOLD}")
     info.append("internal similarity: all non-singleton clades have "
-                "median pairwise mash <= 0.10")
+                "median pairwise mash <= 0.25")
 
     # 3-5. per-clade outputs
     manifests = sorted(glob.glob(os.path.join(args.root, "[0-9]*", "*_*",

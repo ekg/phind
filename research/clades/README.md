@@ -33,13 +33,14 @@ the 12 communities:
 
 - **greedy leader clustering**: members processed in decreasing
   within-community neighbor count; each member joins the nearest leader
-  within `--threshold` (default **0.10** mash ≈ ~90% ANI), else becomes a
-  new leader (singleton clade if nothing is close).
-- **size cap** `--max-size 800` — clades that fill up split.
+  within `--threshold` (FINAL user-approved **0.25** mash ≈ ~75%+ ANI), else
+  becomes a new leader (singleton clade if nothing is close).
+- **size cap** `--max-size 100` (FINAL user-approved) — clades that fill up
+  split.
 - **tightening pass**: any clade whose internal **median pairwise** mash
   distance still exceeds the threshold is split (tighter leader threshold
   `0.6×` with a distance-to-representative half-split fallback), so every
-  non-singleton clade has median pairwise mash ≤ 0.10.
+  non-singleton clade has median pairwise mash ≤ 0.25.
 
 Result (`research/clades/<community>/`):
 
@@ -50,10 +51,13 @@ Result (`research/clades/<community>/`):
 | `members.json` | community members in triangle row order |
 | `commands.log` | reproducible commands |
 
-Summary: **1245 clades** over 19,638 community members (469 singletons),
-max clade size 800. All 776 non-singleton clades have median pairwise
-mash ≤ 0.10 (max observed median 0.0995); every member is within 0.10 of
-its clade representative.
+Summary: **585 clades** over 19,638 community members (106 singletons), max
+clade size 100. All 479 non-singleton clades have median pairwise mash
+≤ 0.25 (max observed median 0.244); every member is within 0.25 of its
+clade representative. (The earlier 0.10/800 run produced 1,245 mostly-tiny
+clades — median size 3, 38% singletons — and was rejected by the user as
+too small for ML/ancestral reconstruction; the 0.25/100 clades are the final
+definition.)
 
 ## Alignment (step 3)
 
@@ -90,11 +94,12 @@ inter-chunk gaps).
 
 `-m 1` (max transitive depth 1) keeps partition intervals at ~500 bp
 (chunk-aligned) instead of letting transitive gathering merge long
-contiguous stretches. Partition intervals are typically 500 bp; the observed
-max is ~1.7–1.8 kb on conserved blocks shared by many sequences (two merged
-500 bp chunks) and on long private stretches in the most divergent clades
-(e.g. c9, max pairwise 0.167). Those are real homologous/private modules
-with no internal split evidence — documented per clade in `manifest.json` →
+contiguous stretches. Partition intervals are typically 500 bp (median 500
+across the 0.25/100 run); 0.26% of the 1.26M intervals exceed 1000 bp, on
+conserved blocks shared by many sequences (two merged 500 bp chunks) and on
+long private stretches in the most divergent clades (observed max 2877 bp,
+clade 10_0010). Those are real homologous/private modules with no internal
+split evidence — documented per clade in `manifest.json` →
 `partition_bed.interval_stats` (`n_gt_1000`).
 
 ## Outputs per clade
@@ -132,10 +137,15 @@ Large derived files (FASTA/PAF/MAF) are git-ignored and regenerable via
 
 ```bash
 # 1. clade definitions (reads the 35 GB triangle; ~25 s)
-python3 scripts/build_tight_clades.py --communities 0,1,2,3,4,5,6,7,8,9,10,11
+python3 scripts/build_tight_clades.py --threshold 0.25 --max-size 100 \
+    --communities 0,1,2,3,4,5,6,7,8,9,10,11
 
 # 2. offset index + per-clade pipeline (extract → allwave → segment → partition)
 bash scripts/run_all_clade_pipelines.sh
+
+# 3. validate every clade (manifest presence, internal similarity,
+#    sparsification, partition size distribution, alignment rate)
+python3 scripts/validate_clades.py
 ```
 
 ## References

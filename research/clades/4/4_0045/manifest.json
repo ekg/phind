@@ -2,7 +2,7 @@
  "clade_id": "4_0045",
  "community": "4",
  "n_members": 2,
- "created": "2026-08-03T23:07:15Z",
+ "created": "2026-08-05T07:16:46Z",
  "strategy": "none",
  "params": {
   "allwave": {
@@ -44,10 +44,10 @@
    }
   },
   "partition_maf": {
-   "runtime_s": 0.2,
+   "runtime_s": 0.1,
    "n_maf_partitions": 9
   },
-  "total_runtime_s": 0.7
+  "total_runtime_s": 0.6
  },
  "sequence_lengths": {
   "min": 4615,

@@ -1,32 +1,58 @@
 {
  "clade_id": "10_0145",
  "community": "10",
- "n_members": 1,
- "created": "2026-08-03T23:31:16Z",
- "strategy": "none (singleton, no alignment)",
+ "n_members": 42,
+ "created": "2026-08-05T08:31:39Z",
+ "strategy": "tree:5:0:0.0",
  "params": {
+  "allwave": {
+   "sparsification": "tree:5:0:0.0",
+   "k_nearest": 5,
+   "k_farthest": 0,
+   "random_fraction": null,
+   "threads": 8,
+   "scores": "0,5,8,2,24,1",
+   "note": "k-nearest only, k-farthest=0 (no stranger-joining); k=10 for n>200 to keep the k-nearest graph connected at linear pair count (10n)"
+  },
   "segment": {
    "window": 500,
    "gap": 0,
    "max_span": 1000,
-   "n_chunks": 0
+   "n_chunks": 11702,
+   "runtime_s": 0.2
   }
  },
  "pipeline": {
   "allwave": {
-   "pairs_aligned": 0,
-   "possible_pairs": 0,
-   "alignment_rate": null,
-   "sequences_in_paf": 0,
-   "runtime_s": 0.0
+   "pairs_aligned": 149,
+   "directed_records": 210,
+   "possible_pairs": 861,
+   "alignment_rate": 0.173055,
+   "sequences_in_paf": 42,
+   "runtime_s": 149.4
   },
-  "partition": "skipped (singleton)",
-  "total_runtime_s": 0.0
+  "partition_bed": {
+   "runtime_s": 0.1,
+   "interval_stats": {
+    "n_intervals": 3444,
+    "n_partitions": 790,
+    "min": 1,
+    "median": 500.0,
+    "max": 1322,
+    "n_gt_1000": 2,
+    "n_lt_100": 438
+   }
+  },
+  "partition_maf": {
+   "runtime_s": 0.7,
+   "n_maf_partitions": 790
+  },
+  "total_runtime_s": 150.4
  },
  "sequence_lengths": {
-  "min": 22819,
-  "median": 22819,
-  "max": 22819,
-  "total_bp": 22819
+  "min": 7461,
+  "median": 30016.0,
+  "max": 55577,
+  "total_bp": 1315645
  }
 }
