@@ -1,0 +1,58 @@
+# Reproducible command log — full 26k E. coli host MASH tree
+# Generated 2026-08-06 by task build-full-26k
+
+## Environment
+mash 2.3 (MurmurHash3_x64_128, seed 42)
+python 3.12.3 (numpy 1.26.4, scipy 1.11.4, ete3 3.1.3)
+g++ (part_writer, -O3 -march=native)
+Machine: 256 cores, ~1 TB RAM, NVMe; shared (timings are wall-clock under load)
+
+## 1. Build chunk fastas + ids.txt (one concatenated genome per record, ACC header)
+python3 scripts/build_chunks.py \
+  --src /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects \
+  --workdir data --ids ids.txt --chunk-size 5000
+# 26,074 unique accessions (GCF_/GCA_), concatenated per-genome; ids.txt line
+# index = triangle row/col index.
+
+## 2. Sketch chunks + pairwise triangle + merge + full hosts.msh
+python3 scripts/host_pipeline.py \
+  --workdir data --out host_mash.dist --ids ids.txt --msh hosts.msh \
+  --chunk-size 5000 --threads 32 --procs 8 \
+  --mash /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/run-host-structure-1000/host-structure-1000-v1-run/tool-env/bin/mash
+# chunk sketch: mash sketch -i -k 21 -s 10000 -p 32 chunk_NNN.fa
+# pairwise: mash dist -p 32 chunk_j.msh chunk_i.msh | part_writer (offdiag/diag)
+#   -> data/parts/part_i_j.bin ; merged via merge_parts.py
+# full hosts.msh = mash paste of the 6 chunk sketches.
+# Triangle: little-endian float32, n*(n-1)/2 = 339,913,701 values (1.36 GB),
+# offset(a,b) = a*(2n-a-1)/2 + (b-a-1) for a<b, rows/cols in ids.txt order.
+
+## 3. Verify triangle
+python3 scripts/verify_triangle.py --ids ids.txt --dist host_mash.dist \
+  --msh hosts.msh --src /mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects \
+  --mash <mash> --out triangle_verify.json
+# -> triangle_verify.json: exact size; 50-pair spot check vs direct mash = 0
+#    mismatches.
+
+## 4. UPGMA tree
+python3 scripts/build_tree.py --ids ids.txt --dist host_mash.dist --out host_tree
+# -> host_tree.nwk, host_tree_stats.json
+# scipy.cluster.hierarchy.linkage(method='average') on float64 condensed;
+# Newick branch lengths = (merge height difference)/2 so leaf-to-leaf path
+# length equals the UPGMA cophenetic distance.
+
+## 5. Validate tree
+python3 scripts/validate_tree.py --ids ids.txt --dist host_mash.dist \
+  --nwk host_tree.nwk --out tree_verify.json
+# -> tree_verify.json: 26,074 leaves == sketch count, ultrametric, leaf names
+#    are GCF_/GCA_ accessions matching ids.txt and the prophage->host prefix
+#    mapping (26074/26074 host accessions found among prophage host prefixes).
+
+## Timing summary (final, wall clock under load)
+chunk build (26k genomes concatenated):  ~22 min
+chunk sketch (k=21, s=10000):            ~10 min
+pairwise (21 jobs, 8 procs x 32 thr):    ~1 min
+part merge:                              <1 min
+mash paste (full hosts.msh):             <1 min
+triangle verify:                         ~2 min
+scipy linkage (26,074 leaves):           ~1 min
+tree validate + stats:                   ~1 min

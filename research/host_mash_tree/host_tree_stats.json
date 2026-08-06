@@ -1,0 +1,13 @@
+{
+  "n_leaves": 26074,
+  "n_internal": 26073,
+  "method": "UPGMA (scipy average linkage)",
+  "tree_height": 0.26046623778689315,
+  "branch_length_mean": 0.0012231808438206073,
+  "branch_length_median": 0.00048438307421747593,
+  "branch_length_min": 0.0,
+  "branch_length_max": 0.26046623778689315,
+  "branch_length_zero_count": 369,
+  "newick_bytes": 938644,
+  "elapsed_s": 0.0
+}

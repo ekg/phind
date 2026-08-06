@@ -1,0 +1,14 @@
+{
+  "n": 26074,
+  "tri_len": 339913701,
+  "size_bytes": 1359654804,
+  "size_ok": true,
+  "row0_min": 0.0,
+  "row0_max": 0.25849300622940063,
+  "zero_distance_pairs": 346,
+  "sample_mean": 0.023784328252077103,
+  "sample_median": 0.024643700569868088,
+  "sample_frac_one": 0.0,
+  "spot_check_pairs": 50,
+  "spot_check_mismatches": 0
+}

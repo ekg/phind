@@ -1,0 +1,15 @@
+{
+  "n": 26074,
+  "leaves": 26074,
+  "leaf_count_ok": true,
+  "names_unique": true,
+  "names_match_ids": true,
+  "accession_names_ok": true,
+  "ultrametric_tol_1e4": true,
+  "root_to_leaf_min": 0.130229,
+  "root_to_leaf_max": 0.130241,
+  "cophenetic_R2": 0.9606,
+  "cophenetic_mean_abs_err": 0.0012,
+  "cophenetic_max_abs_err": 0.0074,
+  "n_pairs_cophenetic": 300
+}

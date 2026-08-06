@@ -1,0 +1,5 @@
+# Large derived data — regenerable via scripts (see README.md)
+hosts.msh
+host_mash.dist
+data/
+scripts/part_writer
