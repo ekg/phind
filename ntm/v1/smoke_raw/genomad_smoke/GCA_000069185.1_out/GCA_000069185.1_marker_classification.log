@@ -1,0 +1,47 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad marker-classification (v1.12.0). This will classify the   │
+│  input sequences into chromosome, plasmid, or virus based on the presence    │
+│  of geNomad markers and other gene-related features.                         │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000069185.1_out/GCA_000069185.1_marker_classification                 │
+│    ├── GCA_000069185.1_marker_classification.json (execution parameters)     │
+│    ├── GCA_000069185.1_features.tsv (sequence feature data: tabular format)  │
+│    ├── GCA_000069185.1_features.npz (sequence feature data: binary format)   │
+│    ├── GCA_000069185.1_marker_classification.tsv (sequence classification:   │
+│    │   tabular format)                                                       │
+│    ├── GCA_000069185.1_marker_classification.npz (sequence classification:   │
+│    │   binary format)                                                        │
+│    ├── GCA_000069185.1_provirus_features.tsv (provirus feature data:         │
+│    │   tabular format)                                                       │
+│    ├── GCA_000069185.1_provirus_features.npz (provirus feature data: binary  │
+│    │   format)                                                               │
+│    ├── GCA_000069185.1_provirus_marker_classification.tsv (provirus          │
+│    │   classification: tabular format)                                       │
+│    └── GCA_000069185.1_provirus_marker_classification.npz (provirus          │
+│        classification: binary format)                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:03:43] Executing genomad marker-classification.                             
+[17:03:43] Creating the                                                         
+           GCA_000069185.1_out/GCA_000069185.1_marker_classification directory. 
+[17:03:43] Sequence features computed.                                          
+[17:03:43] Sequence features in binary format written to                        
+           GCA_000069185.1_features.npz.                                        
+[17:03:43] Sequence features in tabular format written to                       
+           GCA_000069185.1_features.tsv.                                        
+[17:03:44] Provirus features computed.                                          
+[17:03:44] Provirus features in binary format written to                        
+           GCA_000069185.1_provirus_features.npz.                               
+[17:03:44] Provirus features in tabular format written to                       
+           GCA_000069185.1_provirus_features.tsv.                               
+[17:03:44] Sequences classified.                                                
+[17:03:44] Sequence classification in binary format written to                  
+           GCA_000069185.1_marker_classification.npz.                           
+[17:03:44] Sequence classification in tabular format written to                 
+           GCA_000069185.1_marker_classification.tsv.                           
+[17:03:44] Proviruses classified.                                               
+[17:03:44] Provirus classification in binary format written to                  
+           GCA_000069185.1_provirus_marker_classification.npz.                  
+[17:03:44] Provirus classification in tabular format written to                 
+           GCA_000069185.1_provirus_marker_classification.tsv.                  
+[17:03:44] geNomad marker-classification finished!                              

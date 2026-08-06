@@ -1,0 +1,288 @@
+createdb GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2_input.faa GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db 
+
+MMseqs Version:                    	18.8cc5c
+Database type                      	0
+Shuffle input database             	true
+Createdb mode                      	0
+Write lookup file                  	1
+Offset of numeric ids              	0
+Threads                            	256
+Compressed                         	0
+Mask residues                      	0
+Mask residues probability          	0.9
+Mask lower case residues           	0
+Mask lower letter repeating N times	0
+Use GPU                            	0
+Verbosity                          	3
+
+Converting sequences
+[
+Time for merging to query_db_h: 0h 0m 0s 4ms
+Time for merging to query_db: 0h 0m 0s 4ms
+Database type: Aminoacid
+Time for processing: 0h 0m 0s 126ms
+prefilter GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db /mnt/nvme3n1/erikg/phind-genome-work/ntm/v1/geomad_db/genomad_db/genomad_integrase_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/prefilter_db --threads 8 -s 8.2 --split 0 --split-mode 0 --max-seqs 10000000 --min-ungapped-score 25 -k 5 
+
+MMseqs Version:                    	18.8cc5c
+Substitution matrix                	aa:blosum62.out,nucl:nucleotide.out
+Seed substitution matrix           	aa:VTML80.out,nucl:nucleotide.out
+Sensitivity                        	8.2
+k-mer length                       	5
+Target search mode                 	0
+k-score                            	seq:2147483647,prof:2147483647
+Alphabet size                      	aa:21,nucl:5
+Max sequence length                	65535
+Max results per query              	10000000
+Split database                     	0
+Split mode                         	0
+Split memory limit                 	0
+Coverage threshold                 	0
+Coverage mode                      	0
+Compositional bias                 	1
+Compositional bias scale           	1
+Diagonal scoring                   	true
+Exact k-mer matching               	0
+Mask residues                      	1
+Mask residues probability          	0.9
+Mask lower case residues           	0
+Mask lower letter repeating N times	0
+Minimum diagonal score             	25
+Selected taxa                      	
+Include identical seq. id.         	false
+Spaced k-mers                      	1
+Preload mode                       	0
+Pseudo count a                     	substitution:1.100,context:1.400
+Pseudo count b                     	substitution:4.100,context:5.800
+Spaced k-mer pattern               	
+Local temporary path               	
+Threads                            	8
+Compressed                         	0
+Verbosity                          	3
+
+Query database size: 4910 type: Aminoacid
+Estimated memory consumption: 513M
+Target database size: 16 type: Profile
+Process prefiltering step 1 of 1
+
+Index table k-mer threshold: 70 at k-mer size 5 
+Index table: counting k-mers
+[=================================================================] 16 0s 147ms
+Index table: Masked residues: 0
+Index table: fill
+[=================================================================] 16 0s 258ms
+Index statistics
+Entries:          2208923
+DB size:          43 MB
+Avg k-mer size:   0.540859
+Top 10 k-mers
+    AILGR	15
+    CILGR	15
+    TILGR	15
+    IMLGR	15
+    LMLGR	15
+    QGPHF	14
+    RHAEG	14
+    FMLGR	14
+    PHRTC	13
+    PHRTF	13
+Time for index table init: 0h 0m 0s 508ms
+k-mer similarity threshold: 70
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 4910
+Target db start 1 to 16
+[=================================================================] 4.91K 0s 61ms
+
+0.948553 k-mers per position
+171 DB matches per sequence
+0 overflows
+0 sequences passed prefiltering per query sequence
+0 median result list length
+3057 sequences with 0 size result lists
+Time for merging to prefilter_db: 0h 0m 0s 1ms
+Time for processing: 0h 0m 0s 862ms
+swapresults GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db /mnt/nvme3n1/erikg/phind-genome-work/ntm/v1/geomad_db/genomad_db/genomad_integrase_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/prefilter_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/swapresults_1_db --threads 8 
+
+MMseqs Version:    	18.8cc5c
+Substitution matrix	aa:blosum62.out,nucl:nucleotide.out
+E-value threshold  	0.001
+Split memory limit 	0
+Gap open cost      	aa:11,nucl:5
+Gap extension cost 	aa:1,nucl:2
+Threads            	8
+Compressed         	0
+Preload mode       	0
+Verbosity          	3
+
+Computing offsets.
+[=================================================================] 4.91K 0s 0ms
+
+Reading results.
+[=================================================================] 4.91K 0s 0ms
+
+Output database: GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/swapresults_1_db
+[=================================================================] 16 0s 1ms
+
+Time for merging to swapresults_1_db: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 5ms
+align /mnt/nvme3n1/erikg/phind-genome-work/ntm/v1/geomad_db/genomad_db/genomad_integrase_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/swapresults_1_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/align_1_db --threads 8 --alignment-mode 1 -e 0.001 --max-rejected 280 
+
+MMseqs Version:           	18.8cc5c
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace             	false
+Alignment mode            	1
+Alignment mode            	0
+Allow wrapped scoring     	false
+E-value threshold         	0.001
+Seq. id. threshold        	0
+Min alignment length      	0
+Seq. id. mode             	0
+Alternative alignments    	0
+Coverage threshold        	0
+Coverage mode             	0
+Max sequence length       	65535
+Compositional bias        	1
+Compositional bias scale  	1
+Max reject                	280
+Max accept                	2147483647
+Include identical seq. id.	false
+Preload mode              	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Score bias                	0
+Realign hits              	false
+Realign score bias        	-0.2
+Realign max seqs          	2147483647
+Correlation score weight  	0
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Zdrop                     	40
+Threads                   	8
+Compressed                	0
+Verbosity                 	3
+
+Compute score only
+Query database size: 16 type: Profile
+Target database size: 4910 type: Aminoacid
+Calculation of alignments
+[=================================================================] 16 0s 27ms
+Time for merging to align_1_db: 0h 0m 0s 0ms
+2820 alignments calculated
+69 sequence pairs passed the thresholds (0.024468 of overall calculated)
+4.312500 hits per query sequence
+Time for processing: 0h 0m 0s 48ms
+align /mnt/nvme3n1/erikg/phind-genome-work/ntm/v1/geomad_db/genomad_db/genomad_integrase_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/align_1_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/align_2_db --threads 8 --alignment-mode 2 -e 0.001 --cov-mode 2 -c 0.2 
+
+MMseqs Version:           	18.8cc5c
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace             	false
+Alignment mode            	2
+Alignment mode            	0
+Allow wrapped scoring     	false
+E-value threshold         	0.001
+Seq. id. threshold        	0
+Min alignment length      	0
+Seq. id. mode             	0
+Alternative alignments    	0
+Coverage threshold        	0.2
+Coverage mode             	2
+Max sequence length       	65535
+Compositional bias        	1
+Compositional bias scale  	1
+Max reject                	2147483647
+Max accept                	2147483647
+Include identical seq. id.	false
+Preload mode              	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Score bias                	0
+Realign hits              	false
+Realign score bias        	-0.2
+Realign max seqs          	2147483647
+Correlation score weight  	0
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Zdrop                     	40
+Threads                   	8
+Compressed                	0
+Verbosity                 	3
+
+Compute score and coverage
+Query database size: 16 type: Profile
+Target database size: 4910 type: Aminoacid
+Calculation of alignments
+[=================================================================] 16 0s 11ms
+Time for merging to align_2_db: 0h 0m 0s 0ms
+69 alignments calculated
+63 sequence pairs passed the thresholds (0.913043 of overall calculated)
+3.937500 hits per query sequence
+Time for processing: 0h 0m 0s 25ms
+swapresults /mnt/nvme3n1/erikg/phind-genome-work/ntm/v1/geomad_db/genomad_db/genomad_integrase_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/align_2_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/swapresults_2_db --threads 8 
+
+MMseqs Version:    	18.8cc5c
+Substitution matrix	aa:blosum62.out,nucl:nucleotide.out
+E-value threshold  	0.001
+Split memory limit 	0
+Gap open cost      	aa:11,nucl:5
+Gap extension cost 	aa:1,nucl:2
+Threads            	8
+Compressed         	0
+Preload mode       	0
+Verbosity          	3
+
+Computing offsets.
+[=================================================================] 16 0s 0ms
+
+Reading results.
+[=================================================================] 16 0s 0ms
+
+Output database: GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/swapresults_2_db
+[=================================================================] 4.91K 0s 1ms
+
+Time for merging to swapresults_2_db: 0h 0m 0s 1ms
+Time for processing: 0h 0m 0s 5ms
+filterdb GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/search_db/swapresults_2_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/besthit_db/besthit_db --extract-lines 1 
+
+MMseqs Version:              	18.8cc5c
+Filter expression            	
+Filter column                	1
+Column to take               	-1
+Filter regex                 	^.*$
+Positive filter              	true
+Filter file                  	
+Beats first                  	false
+Mapping file                 	
+Weight file name             	
+Trim to one column           	false
+Extract N lines              	1
+Numerical comparison operator	
+Numerical comparison value   	0
+Sort entries                 	0
+Include identical seq. id.   	false
+join to DB                   	
+Threads                      	256
+Compressed                   	0
+Verbosity                    	3
+
+Filtering by extracting the first 1 lines
+[=================================================================] 4.91K 0s 29ms
+Time for merging to besthit_db: 0h 0m 0s 20ms
+Time for processing: 0h 0m 0s 206ms
+convertalis GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/query_db/query_db /mnt/nvme3n1/erikg/phind-genome-work/ntm/v1/geomad_db/genomad_db/genomad_integrase_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2/besthit_db/besthit_db GCA_000069185.1_out2/GCA_000069185.1_find_proviruses/GCA_000069185.1_provirus_mmseqs2.tsv --format-output qheader,target,evalue,bits --threads 8 
+
+MMseqs Version:        	18.8cc5c
+Substitution matrix    	aa:blosum62.out,nucl:nucleotide.out
+Alignment format       	0
+Format alignment output	qheader,target,evalue,bits
+Translation table      	1
+Gap open cost          	aa:11,nucl:5
+Gap extension cost     	aa:1,nucl:2
+Database output        	false
+Preload mode           	0
+Search type            	0
+Threads                	8
+Compressed             	0
+Verbosity              	3
+
+[=================================================================] 4.91K 0s 0ms
+Time for merging to GCA_000069185.1_provirus_mmseqs2.tsv: 0h 0m 0s 1ms
+Time for processing: 0h 0m 0s 8ms

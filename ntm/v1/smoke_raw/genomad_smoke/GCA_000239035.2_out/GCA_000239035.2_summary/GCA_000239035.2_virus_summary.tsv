@@ -1,0 +1,2 @@
+seq_name	length	topology	coordinates	n_genes	genetic_code	virus_score	fdr	n_hallmarks	marker_enrichment	taxonomy
+GCA_000239035.2#1#AHAS01000017	65208	DTR	NA	91	11	0.9687	NA	10	100.2841	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;

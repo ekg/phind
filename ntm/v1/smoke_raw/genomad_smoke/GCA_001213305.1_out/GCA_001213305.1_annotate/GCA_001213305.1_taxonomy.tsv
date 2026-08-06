@@ -1,0 +1,6 @@
+seq_name	n_genes_with_taxonomy	agreement	taxid	lineage
+GCA_001213305.1#1#CSUC01000001	82	0.9660	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;
+GCA_001213305.1#1#CSUC01000002	101	0.9733	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;
+GCA_001213305.1#1#CSUC01000003	15	1.0000	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;
+GCA_001213305.1#1#CSUC01000004	2	1.0000	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;
+GCA_001213305.1#1#CSUC01000005	8	1.0000	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;

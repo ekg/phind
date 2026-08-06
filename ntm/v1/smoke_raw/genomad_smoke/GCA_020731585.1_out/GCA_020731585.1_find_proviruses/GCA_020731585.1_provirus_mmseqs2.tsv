@@ -1,0 +1,6 @@
+GCA_020731585.1#1#JAJFOG010000001_4061 # 4273296 # 4274198 # 1 # ID=1_4061;partial=00;start_type=ATG;rbs_motif=GGxGG;rbs_spacer=3-4bp;genetic_code=11;gc_cont=0.709	PRK00236	1.193E-105	332
+GCA_020731585.1#1#JAJFOG010000001_5636 # 5914034 # 5916259 # 1 # ID=1_5636;partial=00;start_type=GTG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.658	PF00589.RP35	2.388E-19	83
+GCA_020731585.1#1#JAJFOG010000001_2231 # 2360507 # 2362015 # 1 # ID=1_2231;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.620	PRK00236	1.849E-06	40
+GCA_020731585.1#1#JAJFOG010000001_3083 # 3235517 # 3236731 # -1 # ID=1_3083;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.667	PF00589.RP35	3.580E-22	90
+GCA_020731585.1#1#JAJFOG010000001_5635 # 5912928 # 5914037 # 1 # ID=1_5635;partial=00;start_type=GTG;rbs_motif=GGAGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.639	PRK00236	1.872E-38	139
+GCA_020731585.1#1#JAJFOG010000001_5244 # 5483246 # 5484202 # -1 # ID=1_5244;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.726	COG4974	1.514E-111	350

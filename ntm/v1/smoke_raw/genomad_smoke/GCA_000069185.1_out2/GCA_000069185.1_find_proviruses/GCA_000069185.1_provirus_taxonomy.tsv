@@ -1,0 +1,3 @@
+seq_name	n_genes_with_taxonomy	agreement	taxid	lineage
+GCA_000069185.1#1#CU458896|provirus_768994_795428	8	1.0000	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;
+GCA_000069185.1#1#CU458896|provirus_1755798_1833098	52	1.0000	1246	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;
