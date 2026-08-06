@@ -22,6 +22,8 @@ dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 
 clade_dir <- file.path(RES, "cophylogeny", "clade_resolution")
 
+coalesce <- function(x, y) if (is.null(x)) y else x
+
 # ---- 1. host x clade 0/1 matrix ----
 hcm  <- read.table(file.path(clade_dir, "host_clade_matrix.tsv"),
                    header = TRUE, sep = "\t", row.names = 1, check.names = FALSE)
@@ -77,7 +79,7 @@ cat("Mantel r =", mant$statistic, "p =", mant$signif, "\n")
 # ---- 6. Matched subset for PACo / ParaFit ----
 # select the N most clade-rich hosts and only those clades
 rich  <- rowSums(hcm)
-topN  <- min(250, length(hosts))
+topN  <- min(200, length(hosts))
 subhosts <- names(sort(rich, decreasing = TRUE))[seq_len(topN)]
 subclades <- colnames(hcm)[colSums(hcm[subhosts, , drop = FALSE]) > 0]
 sht <- keep.tip(hsub, subhosts)
@@ -90,13 +92,15 @@ Dclade_sub <- cophenetic(sct)
 cat("PACo on", Ntip(sht), "hosts x", Ntip(sct), "clades ...\n")
 pco <- paco::prepare_paco_data(Dhost_sub, Dclade_sub, HP01)
 pco <- paco::add_pcoord(pco, correction = "cailliez")
-pco <- paco::PACo(pco, nperm = 999, seed = 1, method = "r0")
+pco <- paco::PACo(pco, nperm = 499, seed = 1, method = "r0")
 pco_gof <- pco$gof   # ss + p
+cat("PACo done", format(Sys.time()), "\n")
 
 # ParaFit: D1 = host dist, D2 = clade dist, HP01 = host x clade
 cat("ParaFit ...\n")
 prf <- ape::parafit(Dhost_sub, Dclade_sub, HP01, nperm = 999,
                     test.links = FALSE, correction = "cailliez")
+cat("ParaFit done", format(Sys.time()), "\n")
 
 # ---- 7. Write stats json ----
 stats <- list(
@@ -115,9 +119,9 @@ stats <- list(
   ),
   paco = list(
     method = "PACo (Procrustes sum of squared residuals, cailliez correction, r0 perm)",
-    n_perm = 999,
-    ss_obs = unname(pco_gof$ss %||% NA),
-    p_value = unname(pco_gof$p %||% NA),
+    n_perm = 499,
+    ss_obs = unname(coalesce(pco_gof$ss, NA)),
+    p_value = unname(coalesce(pco_gof$p, NA)),
     gof = pco_gof
   ),
   parafit = list(

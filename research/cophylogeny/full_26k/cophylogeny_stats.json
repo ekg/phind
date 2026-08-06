@@ -1,0 +1,34 @@
+{
+  "scope": {
+    "n_hosts_total": 3766,
+    "n_clades_total": 585,
+    "n_prophages_in_clades": 19439,
+    "matched_subset_size": 200,
+    "paco_hosts": 200,
+    "paco_clades": 377
+  },
+  "mantel": {
+    "method": "pearson",
+    "permutations": 999,
+    "statistic": 0.0279,
+    "p_value": 0.001
+  },
+  "paco": {
+    "method": "PACo (Procrustes sum of squared residuals, cailliez correction, r0 perm)",
+    "n_perm": 499,
+    "ss_obs": 0.6851,
+    "p_value": 0,
+    "gof": {
+      "p": 0,
+      "ss": 0.6851,
+      "n": 499
+    }
+  },
+  "parafit": {
+    "method": "ParaFitGlobal (D1 host, D2 clade, HP01 host x clade, cailliez)",
+    "n_perm": 999,
+    "ParaFitGlobal": 0.9101,
+    "p_ParaFitGlobal": 0.001,
+    "ParaFitLink": "not computed (test.links=FALSE)"
+  }
+}
