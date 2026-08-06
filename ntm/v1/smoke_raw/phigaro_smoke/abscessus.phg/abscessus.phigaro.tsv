@@ -1,0 +1,9 @@
+scaffold	id	begin	end	transposable	taxonomy
+NZ_CP065284.1	NZ_CP065284.1_prophage1	501928	531746	False	Siphoviridae
+NZ_CP065284.1	NZ_CP065284.1_prophage2	1813623	1823591	False	Siphoviridae
+NZ_CP065284.1	NZ_CP065284.1_prophage3	1829836	1864453	False	Siphoviridae
+NZ_CP065284.1	NZ_CP065284.1_prophage4	2549065	2578601	False	Siphoviridae
+NZ_CP065284.1	NZ_CP065284.1_prophage5	2590215	2598954	False	Siphoviridae
+NZ_CP065284.1	NZ_CP065284.1_prophage6	3615447	3643864	False	Siphoviridae
+NZ_CP065286.1	NZ_CP065286.1_prophage1	52883	61214	True	Unknown
+NZ_CP065286.1	NZ_CP065286.1_prophage2	105712	116387	True	Unknown

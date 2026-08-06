@@ -1,0 +1,2 @@
+seq_name	length	topology	coordinates	n_genes	genetic_code	virus_score	fdr	n_hallmarks	marker_enrichment	taxonomy
+GCA_001213305.1#1#CSUC01000002|provirus_1260809_1311818	51010	Provirus	1260809-1311818	69	11	0.9763	NA	7	75.7284	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;

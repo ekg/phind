@@ -1,0 +1,6 @@
+scaffold	id	begin	end	transposable	taxonomy
+NZ_CM149605.1	NZ_CM149605.1_prophage1	545873	562187	True	Unknown
+NZ_CM149605.1	NZ_CM149605.1_prophage2	4461073	4491296	True	Unknown
+NZ_CM149605.1	NZ_CM149605.1_prophage3	4719288	4736340	True	Siphoviridae
+NZ_CM149605.1	NZ_CM149605.1_prophage4	4778654	4796075	True	Siphoviridae
+NZ_CM149605.1	NZ_CM149605.1_prophage5	5833910	5839958	True	Unknown

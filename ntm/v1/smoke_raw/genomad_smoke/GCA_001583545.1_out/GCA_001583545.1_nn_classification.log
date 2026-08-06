@@ -1,0 +1,28 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad nn-classification (v1.12.0). This will classify the       │
+│  input sequences into chromosome, plasmid, or virus based on the nucleotide  │
+│  sequence.                                                                   │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_001583545.1_out/GCA_001583545.1_nn_classification                     │
+│    ├── GCA_001583545.1_nn_classification.json (execution parameters)         │
+│    ├── GCA_001583545.1_encoded_sequences (directory containing encoded       │
+│    │   sequence data)                                                        │
+│    ├── GCA_001583545.1_nn_classification.tsv (contig classification:         │
+│    │   tabular format)                                                       │
+│    └── GCA_001583545.1_nn_classification.npz (contig classification: binary  │
+│        format)                                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:42:23] Executing genomad nn-classification.                                 
+[17:42:23] Creating the GCA_001583545.1_out/GCA_001583545.1_nn_classification   
+           directory.                                                           
+[17:42:23] Creating the                                                         
+           GCA_001583545.1_out/GCA_001583545.1_nn_classification/GCA_001583545.1
+           _encoded_sequences directory.                                        
+[17:42:24] Encoded sequence data written to GCA_001583545.1_encoded_sequences.  
+[17:42:46] Sequences classified.                                                
+[17:42:46] Sequence classification in binary format written to                  
+           GCA_001583545.1_nn_classification.npz.                               
+[17:42:46] Sequence classification in tabular format written to                 
+           GCA_001583545.1_nn_classification.tsv.                               
+[17:42:46] geNomad nn-classification finished!                                  

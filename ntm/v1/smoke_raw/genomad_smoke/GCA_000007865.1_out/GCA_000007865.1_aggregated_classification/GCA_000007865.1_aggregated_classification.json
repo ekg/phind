@@ -1,0 +1,7 @@
+{
+    "module": "aggregated_classification",
+    "input": "GCA_000007865.1.fa",
+    "input_md5": "734ec5e1cd1b8bb7719303e92b620f14",
+    "start_time": "2026-08-06T17:40:17.209672+00:00",
+    "parameters": {}
+}

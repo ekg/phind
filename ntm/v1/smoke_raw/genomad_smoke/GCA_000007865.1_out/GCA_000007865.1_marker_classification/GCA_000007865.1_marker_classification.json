@@ -1,0 +1,7 @@
+{
+    "module": "marker_classification",
+    "input": "GCA_000007865.1.fa",
+    "input_md5": "734ec5e1cd1b8bb7719303e92b620f14",
+    "start_time": "2026-08-06T17:39:53.942418+00:00",
+    "parameters": {}
+}

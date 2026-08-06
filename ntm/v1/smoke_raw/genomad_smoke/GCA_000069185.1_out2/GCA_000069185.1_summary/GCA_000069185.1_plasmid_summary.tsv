@@ -1,0 +1,2 @@
+seq_name	length	topology	n_genes	genetic_code	plasmid_score	fdr	n_hallmarks	marker_enrichment	conjugation_genes	amr_genes
+GCA_000069185.1#1#CU458745	23319	No terminal repeats	28	11	0.9944	NA	0	24.0028	NA	NA

@@ -1,0 +1,174 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad annotate (v1.12.0). This will perform gene calling in     │
+│  the input sequences and annotate the predicted proteins with geNomad's      │
+│  markers.                                                                    │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_annotate                              │
+│    ├── GCA_000015005.1_annotate.json (execution parameters)                  │
+│    ├── GCA_000015005.1_genes.tsv (gene annotation data)                      │
+│    ├── GCA_000015005.1_taxonomy.tsv (taxonomic assignment)                   │
+│    ├── GCA_000015005.1_mmseqs2.tsv (MMseqs2 output file)                     │
+│    └── GCA_000015005.1_proteins.faa (protein FASTA file)                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:42:48] Executing genomad annotate.                                          
+[17:42:48] Creating the GCA_000015005.1_out/GCA_000015005.1_annotate directory. 
+[17:43:03] Proteins predicted with pyrodigal-gv were written to                 
+           GCA_000015005.1_proteins.faa.                                        
+[17:45:01] Proteins annotated with MMseqs2 and geNomad database (v1.9) were     
+           written to GCA_000015005.1_mmseqs2.tsv.                              
+[17:45:02] Gene data was written to GCA_000015005.1_genes.tsv.                  
+[17:45:02] Taxonomic assignment data was written to                             
+           GCA_000015005.1_taxonomy.tsv.                                        
+[17:45:02] geNomad annotate finished!                                           
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad find-proviruses (v1.12.0). This will find putative        │
+│  proviral regions within the input sequences.                                │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_find_proviruses                       │
+│    ├── GCA_000015005.1_find_proviruses.json (execution parameters)           │
+│    ├── GCA_000015005.1_provirus.tsv (provirus data)                          │
+│    ├── GCA_000015005.1_provirus.fna (provirus nucleotide sequences)          │
+│    ├── GCA_000015005.1_provirus_proteins.faa (provirus protein sequences)    │
+│    ├── GCA_000015005.1_provirus_genes.tsv (provirus gene annotation data)    │
+│    ├── GCA_000015005.1_provirus_taxonomy.tsv (provirus taxonomic             │
+│    │   assignment)                                                           │
+│    ├── GCA_000015005.1_provirus_mmseqs2.tsv (MMseqs2 output file)            │
+│    └── GCA_000015005.1_provirus_aragorn.tsv (Aragorn output file)            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:45:02] Executing genomad find-proviruses.                                   
+[17:45:02] Creating the GCA_000015005.1_out/GCA_000015005.1_find_proviruses     
+           directory.                                                           
+[17:45:04] Integrases identified with MMseqs2 and geNomad database (v1.9) were  
+           written to GCA_000015005.1_provirus_mmseqs2.tsv.                     
+[17:45:23] tRNAs identified with Aragorn were written to                        
+           GCA_000015005.1_provirus_aragorn.tsv.                                
+[17:45:24] Provirus regions identified.                                         
+[17:45:24] Provirus data was written to GCA_000015005.1_provirus.tsv.           
+[17:45:24] Provirus nucleotide sequences were written to                        
+           GCA_000015005.1_provirus.fna.                                        
+[17:45:24] Provirus protein sequences were written to                           
+           GCA_000015005.1_provirus_proteins.faa.                               
+[17:45:24] Provirus gene data was written to GCA_000015005.1_provirus_genes.tsv.
+[17:45:24] Taxonomic assignment data was written to                             
+           GCA_000015005.1_provirus_taxonomy.tsv.                               
+[17:45:24] geNomad find-proviruses finished!                                    
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad marker-classification (v1.12.0). This will classify the   │
+│  input sequences into chromosome, plasmid, or virus based on the presence    │
+│  of geNomad markers and other gene-related features.                         │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_marker_classification                 │
+│    ├── GCA_000015005.1_marker_classification.json (execution parameters)     │
+│    ├── GCA_000015005.1_features.tsv (sequence feature data: tabular format)  │
+│    ├── GCA_000015005.1_features.npz (sequence feature data: binary format)   │
+│    ├── GCA_000015005.1_marker_classification.tsv (sequence classification:   │
+│    │   tabular format)                                                       │
+│    └── GCA_000015005.1_marker_classification.npz (sequence classification:   │
+│        binary format)                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:45:24] Executing genomad marker-classification.                             
+[17:45:24] Creating the                                                         
+           GCA_000015005.1_out/GCA_000015005.1_marker_classification directory. 
+[17:45:25] Sequence features computed.                                          
+[17:45:25] Sequence features in binary format written to                        
+           GCA_000015005.1_features.npz.                                        
+[17:45:25] Sequence features in tabular format written to                       
+           GCA_000015005.1_features.tsv.                                        
+[17:45:25] Sequences classified.                                                
+[17:45:25] Sequence classification in binary format written to                  
+           GCA_000015005.1_marker_classification.npz.                           
+[17:45:25] Sequence classification in tabular format written to                 
+           GCA_000015005.1_marker_classification.tsv.                           
+[17:45:25] geNomad marker-classification finished!                              
+2026-08-06 17:45:25.673086: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1786038325.683212 1884316 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1786038325.687822 1884316 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad nn-classification (v1.12.0). This will classify the       │
+│  input sequences into chromosome, plasmid, or virus based on the nucleotide  │
+│  sequence.                                                                   │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_nn_classification                     │
+│    ├── GCA_000015005.1_nn_classification.json (execution parameters)         │
+│    ├── GCA_000015005.1_encoded_sequences (directory containing encoded       │
+│    │   sequence data)                                                        │
+│    ├── GCA_000015005.1_nn_classification.tsv (contig classification:         │
+│    │   tabular format)                                                       │
+│    └── GCA_000015005.1_nn_classification.npz (contig classification: binary  │
+│        format)                                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:45:27] Executing genomad nn-classification.                                 
+[17:45:27] Creating the GCA_000015005.1_out/GCA_000015005.1_nn_classification   
+           directory.                                                           
+[17:45:27] Creating the                                                         
+           GCA_000015005.1_out/GCA_000015005.1_nn_classification/GCA_000015005.1
+           _encoded_sequences directory.                                        
+[17:45:29] Encoded sequence data written to GCA_000015005.1_encoded_sequences.  
+2026-08-06 17:45:29.894645: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+
+[17:45:56] Sequences classified.                                                
+[17:45:56] Sequence classification in binary format written to                  
+           GCA_000015005.1_nn_classification.npz.                               
+[17:45:56] Sequence classification in tabular format written to                 
+           GCA_000015005.1_nn_classification.tsv.                               
+[17:45:56] geNomad nn-classification finished!                                  
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad aggregated-classification (v1.12.0). This will aggregate  │
+│  the results of the marker-classification and nn-classification modules to   │
+│  classify the input sequences into chromosome, plasmid, or virus.            │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_aggregated_classification             │
+│    ├── GCA_000015005.1_aggregated_classification.json (execution             │
+│    │   parameters)                                                           │
+│    ├── GCA_000015005.1_aggregated_classification.tsv (sequence               │
+│    │   classification: tabular format)                                       │
+│    └── GCA_000015005.1_aggregated_classification.npz (sequence               │
+│        classification: binary format)                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:45:56] Executing genomad aggregated-classification.                         
+[17:45:56] Creating the                                                         
+           GCA_000015005.1_out/GCA_000015005.1_aggregated_classification        
+           directory.                                                           
+[17:45:56] The total marker frequencies of the input sequences were computed.   
+[17:45:56] Sequences classified.                                                
+[17:45:56] Sequence classification in binary format written to                  
+           GCA_000015005.1_aggregated_classification.npz.                       
+[17:45:56] Sequence classification in tabular format written to                 
+           GCA_000015005.1_aggregated_classification.tsv.                       
+[17:45:56] geNomad aggregated-classification finished!                          
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad summary (v1.12.0). This will summarize the results        │
+│  across modules into a classification report.                                │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_summary                               │
+│    ├── GCA_000015005.1_summary.json (execution parameters)                   │
+│    ├── GCA_000015005.1_virus_summary.tsv (virus classification summary)      │
+│    ├── GCA_000015005.1_plasmid_summary.tsv (plasmid classification summary)  │
+│    ├── GCA_000015005.1_virus.fna (virus nucleotide FASTA file)               │
+│    ├── GCA_000015005.1_plasmid.fna (plasmid nucleotide FASTA file)           │
+│    ├── GCA_000015005.1_virus_proteins.faa (virus protein FASTA file)         │
+│    ├── GCA_000015005.1_plasmid_proteins.faa (plasmid protein FASTA file)     │
+│    ├── GCA_000015005.1_virus_genes.tsv (virus gene annotation data)          │
+│    └── GCA_000015005.1_plasmid_genes.tsv (plasmid gene annotation data)      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:45:56] Executing genomad summary.                                           
+[17:45:56] Creating the GCA_000015005.1_out/GCA_000015005.1_summary directory.  
+[17:45:56] Using scores from aggregated-classification.                         
+[17:45:56] 0 plasmid(s) and 0 virus(es) were identified.                        
+[17:45:56] Nucleotide sequences were written to GCA_000015005.1_plasmid.fna and 
+           GCA_000015005.1_virus.fna.                                           
+[17:45:56] Protein sequences were written to                                    
+           GCA_000015005.1_plasmid_proteins.faa and                             
+           GCA_000015005.1_virus_proteins.faa.                                  
+[17:45:56] Gene annotation data was written to GCA_000015005.1_plasmid_genes.tsv
+           and GCA_000015005.1_virus_genes.tsv.                                 
+[17:45:56] Summary files were written to GCA_000015005.1_plasmid_summary.tsv and
+           GCA_000015005.1_virus_summary.tsv.                                   
+[17:45:56] geNomad summary finished!                                            
