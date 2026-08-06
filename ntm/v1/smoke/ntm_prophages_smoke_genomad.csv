@@ -1,0 +1,4 @@
+genome,scaffold,begin,end,length,n_genes,v_vs_c_score,taxonomy,prophage_id
+GCA_000069185.1,GCA_000069185.1#1#CU458896,768994,795428,26435,32,12.8894,Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;,GCA_000069185.1_prophage_1
+GCA_000069185.1,GCA_000069185.1#1#CU458896,1755798,1833098,77301,109,95.0212,Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;,GCA_000069185.1_prophage_2
+GCA_001213305.1,GCA_001213305.1#1#CSUC01000002,1260809,1311818,51010,69,83.5411,Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;;,GCA_001213305.1_prophage_1
