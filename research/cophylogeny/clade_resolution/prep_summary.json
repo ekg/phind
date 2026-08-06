@@ -1,0 +1,18 @@
+{
+  "n_tight_clades": 585,
+  "n_prophages_in_clades": 19638,
+  "n_unique_hosts_with_clades": 3766,
+  "n_phylogroups": 10,
+  "phylogroups": [
+    "A",
+    "B1",
+    "B2",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "clade",
+    "Other"
+  ]
+}

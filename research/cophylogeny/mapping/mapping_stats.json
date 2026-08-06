@@ -1,0 +1,11 @@
+{
+  "n_prophage_leaves": 132393,
+  "n_mapping_covered": 132393,
+  "coverage_pct": 100.0,
+  "n_missing_host_in_tree": 0,
+  "missing_sample": [],
+  "n_unique_hosts_mapped": 26074,
+  "host_multiplicity_min": 1,
+  "host_multiplicity_max": 25,
+  "host_multiplicity_median": 5
+}
