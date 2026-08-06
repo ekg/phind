@@ -1,0 +1,9 @@
+{
+    "module": "nn_classification",
+    "input": "GCA_000015005.1.fa",
+    "input_md5": "13547815ca4da31758b248eacad69706",
+    "start_time": "2026-08-06T17:45:27.159469+00:00",
+    "parameters": {
+        "single_window": false
+    }
+}

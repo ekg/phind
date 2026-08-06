@@ -1,0 +1,34 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad aggregated-classification (v1.12.0). This will aggregate  │
+│  the results of the marker-classification and nn-classification modules to   │
+│  classify the input sequences into chromosome, plasmid, or virus.            │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000069185.1_out2/GCA_000069185.1_aggregated_classification            │
+│    ├── GCA_000069185.1_aggregated_classification.json (execution             │
+│    │   parameters)                                                           │
+│    ├── GCA_000069185.1_aggregated_classification.tsv (sequence               │
+│    │   classification: tabular format)                                       │
+│    ├── GCA_000069185.1_aggregated_classification.npz (sequence               │
+│    │   classification: binary format)                                        │
+│    ├── GCA_000069185.1_provirus_aggregated_classification.tsv (provirus      │
+│    │   classification: tabular format)                                       │
+│    └── GCA_000069185.1_provirus_aggregated_classification.npz (provirus      │
+│        classification: binary format)                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:07:29] Executing genomad aggregated-classification.                         
+[17:07:29] Creating the                                                         
+           GCA_000069185.1_out2/GCA_000069185.1_aggregated_classification       
+           directory.                                                           
+[17:07:29] The total marker frequencies of the input sequences were computed.   
+[17:07:29] Sequences classified.                                                
+[17:07:29] Sequence classification in binary format written to                  
+           GCA_000069185.1_aggregated_classification.npz.                       
+[17:07:29] Sequence classification in tabular format written to                 
+           GCA_000069185.1_aggregated_classification.tsv.                       
+[17:07:29] Proviruses classified.                                               
+[17:07:29] Provirus classification in binary format written to                  
+           GCA_000069185.1_provirus_aggregated_classification.npz.              
+[17:07:29] Provirus classification in tabular format written to                 
+           GCA_000069185.1_provirus_aggregated_classification.tsv.              
+[17:07:29] geNomad aggregated-classification finished!                          

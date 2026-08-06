@@ -1,0 +1,30 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad summary (v1.12.0). This will summarize the results        │
+│  across modules into a classification report.                                │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000239035.2_out/GCA_000239035.2_summary                               │
+│    ├── GCA_000239035.2_summary.json (execution parameters)                   │
+│    ├── GCA_000239035.2_virus_summary.tsv (virus classification summary)      │
+│    ├── GCA_000239035.2_plasmid_summary.tsv (plasmid classification summary)  │
+│    ├── GCA_000239035.2_virus.fna (virus nucleotide FASTA file)               │
+│    ├── GCA_000239035.2_plasmid.fna (plasmid nucleotide FASTA file)           │
+│    ├── GCA_000239035.2_virus_proteins.faa (virus protein FASTA file)         │
+│    ├── GCA_000239035.2_plasmid_proteins.faa (plasmid protein FASTA file)     │
+│    ├── GCA_000239035.2_virus_genes.tsv (virus gene annotation data)          │
+│    └── GCA_000239035.2_plasmid_genes.tsv (plasmid gene annotation data)      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:37:33] Executing genomad summary.                                           
+[17:37:33] Creating the GCA_000239035.2_out/GCA_000239035.2_summary directory.  
+[17:37:33] Using scores from aggregated-classification.                         
+[17:37:33] 2 plasmid(s) and 1 virus(es) were identified.                        
+[17:37:33] Nucleotide sequences were written to GCA_000239035.2_plasmid.fna and 
+           GCA_000239035.2_virus.fna.                                           
+[17:37:33] Protein sequences were written to                                    
+           GCA_000239035.2_plasmid_proteins.faa and                             
+           GCA_000239035.2_virus_proteins.faa.                                  
+[17:37:33] Gene annotation data was written to GCA_000239035.2_plasmid_genes.tsv
+           and GCA_000239035.2_virus_genes.tsv.                                 
+[17:37:33] Summary files were written to GCA_000239035.2_plasmid_summary.tsv and
+           GCA_000239035.2_virus_summary.tsv.                                   
+[17:37:33] geNomad summary finished!                                            

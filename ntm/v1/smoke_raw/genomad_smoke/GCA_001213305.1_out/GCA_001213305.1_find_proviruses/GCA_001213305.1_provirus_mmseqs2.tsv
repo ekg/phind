@@ -1,0 +1,6 @@
+GCA_001213305.1#1#CSUC01000001_1384 # 1427032 # 1428246 # 1 # ID=1_1384;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.630	PF00589.RP35	2.531E-19	81
+GCA_001213305.1#1#CSUC01000001_7 # 4122 # 5036 # 1 # ID=1_7;partial=00;start_type=GTG;rbs_motif=4Base/6BMM;rbs_spacer=13-15bp;genetic_code=11;gc_cont=0.669	PRK00236	4.063E-102	322
+GCA_001213305.1#1#CSUC01000001_638 # 635579 # 636697 # -1 # ID=1_638;partial=00;start_type=GTG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.591	PF00589.RP35	1.706E-18	78
+GCA_001213305.1#1#CSUC01000002_1195 # 1260809 # 1261705 # 1 # ID=2_1195;partial=00;start_type=ATG;rbs_motif=AGGA/GGAG/GAGG;rbs_spacer=11-12bp;genetic_code=11;gc_cont=0.594	TIGR02224	1.728E-31	116
+GCA_001213305.1#1#CSUC01000001_273 # 263683 # 264804 # 1 # ID=1_273;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=3-4bp;genetic_code=11;gc_cont=0.612	PF00589.RP35	2.338E-21	87
+GCA_001213305.1#1#CSUC01000001_861 # 843653 # 844600 # -1 # ID=1_861;partial=00;start_type=GTG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;genetic_code=11;gc_cont=0.682	COG4974	9.277E-107	336

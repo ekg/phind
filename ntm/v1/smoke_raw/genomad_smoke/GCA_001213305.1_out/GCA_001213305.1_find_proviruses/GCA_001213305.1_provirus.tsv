@@ -1,0 +1,2 @@
+seq_name	source_seq	start	end	length	n_genes	v_vs_c_score	in_seq_edge	integrases
+GCA_001213305.1#1#CSUC01000002|provirus_1260809_1311818	GCA_001213305.1#1#CSUC01000002	1260809	1311818	51010	69	83.5411	False	GCA_001213305.1#1#CSUC01000002|provirus_1260809_1311818_1195

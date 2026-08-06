@@ -1,0 +1,33 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  Executing geNomad find-proviruses (v1.12.0). This will find putative        │
+│  proviral regions within the input sequences.                                │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Outputs:                                                                    │
+│    GCA_000015005.1_out/GCA_000015005.1_find_proviruses                       │
+│    ├── GCA_000015005.1_find_proviruses.json (execution parameters)           │
+│    ├── GCA_000015005.1_provirus.tsv (provirus data)                          │
+│    ├── GCA_000015005.1_provirus.fna (provirus nucleotide sequences)          │
+│    ├── GCA_000015005.1_provirus_proteins.faa (provirus protein sequences)    │
+│    ├── GCA_000015005.1_provirus_genes.tsv (provirus gene annotation data)    │
+│    ├── GCA_000015005.1_provirus_taxonomy.tsv (provirus taxonomic             │
+│    │   assignment)                                                           │
+│    ├── GCA_000015005.1_provirus_mmseqs2.tsv (MMseqs2 output file)            │
+│    └── GCA_000015005.1_provirus_aragorn.tsv (Aragorn output file)            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+[17:45:02] Executing genomad find-proviruses.                                   
+[17:45:02] Creating the GCA_000015005.1_out/GCA_000015005.1_find_proviruses     
+           directory.                                                           
+[17:45:04] Integrases identified with MMseqs2 and geNomad database (v1.9) were  
+           written to GCA_000015005.1_provirus_mmseqs2.tsv.                     
+[17:45:23] tRNAs identified with Aragorn were written to                        
+           GCA_000015005.1_provirus_aragorn.tsv.                                
+[17:45:24] Provirus regions identified.                                         
+[17:45:24] Provirus data was written to GCA_000015005.1_provirus.tsv.           
+[17:45:24] Provirus nucleotide sequences were written to                        
+           GCA_000015005.1_provirus.fna.                                        
+[17:45:24] Provirus protein sequences were written to                           
+           GCA_000015005.1_provirus_proteins.faa.                               
+[17:45:24] Provirus gene data was written to GCA_000015005.1_provirus_genes.tsv.
+[17:45:24] Taxonomic assignment data was written to                             
+           GCA_000015005.1_provirus_taxonomy.tsv.                               
+[17:45:24] geNomad find-proviruses finished!                                    
