@@ -59,14 +59,14 @@ IDS_FILE = os.path.join(REPO, "research/mash_tree/data/ids.txt")
 LABELS_CSV = os.path.join(REPO, "research/mash_tree/full_prophages_labels.csv")
 
 
-def load_ids():
-    ids = [l.strip() for l in open(IDS_FILE)]
+def load_ids(path=IDS_FILE):
+    ids = [l.strip() for l in open(path)]
     return ids, {s: i for i, s in enumerate(ids)}
 
 
-def load_communities():
+def load_communities(path=LABELS_CSV):
     comm = defaultdict(list)
-    with open(LABELS_CSV) as f:
+    with open(path) as f:
         for row in csv.DictReader(f):
             c = row["community"]
             if c.isdigit() and int(c) < 12:
@@ -250,9 +250,9 @@ def main():
     threshold = args.threshold
 
     communities = [int(x) for x in args.communities.split(",")]
-    ids, idx = load_ids()
+    ids, idx = load_ids(args.ids_file)
     n = len(ids)
-    comm = load_communities()
+    comm = load_communities(args.labels_csv)
 
     print(f"triangle rows: {n}; communities: {communities}", flush=True)
     mm = np.memmap(args.triangle, dtype="<f4", mode="r",
