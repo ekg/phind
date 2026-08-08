@@ -25,7 +25,7 @@ Flags (implausible):
 
 Usage:
   python3 scripts/qc_ml_phage_genomes.py \
-      --fasta research/ml_phage_genomes/all_ml_phage_genomes.fa \
+      --fasta research/ml_phage_genomes/all_ml_phage_genomes.fa.gz \
       --manifest research/ml_phage_genomes/release_manifest.tsv \
       --clades-root /home/erikg/phind/research/clades \
       --out research/ml_phage_genomes/qc_table.tsv \

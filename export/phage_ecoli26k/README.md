@@ -4,7 +4,7 @@
 26,232 *E. coli* genome assemblies (132,393 prophage elements total).
 
 Companion files:
-- `phage_ml_genomes.fa` — one ML phage genome per clade (585 entries)
+- `phage_ml_genomes.fa.gz` — one ML phage genome per clade (585 entries, bgzipped + faidx-indexed)
 - `phage_ml_genomes.tsv` — metadata table describing each genome
 
 ## What these genomes are

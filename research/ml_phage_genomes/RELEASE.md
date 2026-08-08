@@ -9,7 +9,7 @@ collaborator evaluation and potential use in a phage therapy trial.
 
 | File | Description |
 |---|---|
-| `all_ml_phage_genomes.fa` | 585 ML phage genomes, one per tight clade |
+| `all_ml_phage_genomes.fa.gz` | 585 ML phage genomes, one per tight clade (bgzipped, faidx-indexed) |
 | `release_manifest.tsv` | Per-genome metadata: clade, community, n_members, n_partitions, length, status, source genomes |
 | `clade_genomes.json` | clade_id → list of source *E. coli* genomes carrying the clade's prophages |
 
