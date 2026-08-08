@@ -1,0 +1,4 @@
+source	n_genomes	median_genes	median_key_proteins	pct_with_terminase	pct_with_capsid	pct_missing_core	pct_low_completeness	pct_contaminated	median_truncated_frac	median_hypothetical_frac
+ecoli_ml	585	83	5	62.2	56.6	31.1	28.2	4.1	0.014	0.568
+ntm_anc	472	129	3.0	41.7	35.8	41.5	33.1	1.7	0.011	0.858
+ntm_ml	913	55	3	41.5	34.8	41.9	51.6	5.6	0.018	0.824
