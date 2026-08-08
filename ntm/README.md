@@ -142,8 +142,8 @@ Reused scripts (parametrized for NTM paths): `scripts/build_tight_clades.py`,
 | Extract full prophage FASTA | ⏳ to run | `ntm/v1/full_prophages.fa` |
 | Prophage MASH sketch+triangle+tree | ⏳ to run | `ntm/v1/mash_tree/` |
 | Host-genome MASH dist → NTM host clades | ✅ done | `ntm/v1/host_clades/` |
-| Tight prophage clades (`build_tight_clades`) | ⏳ to run | `ntm/v1/clades/` |
-| Per-clade allwave + partition | ⏳ to run | `ntm/v1/clades/<c>/` |
+| Tight prophage clades (`build_tight_clades`) | ✅ done | `ntm/v1/clades/` (913 clades, `ntm/v1/mash_clades/clades/`) |
+| Per-clade allwave + partition | ✅ done | `ntm/v1/clades/<c>/` (913 manifests, `pipeline_results.json`) |
 | ML + ancestral traversal | ⏳ to run | prophage-clade genomes |
 | Join by host clade → genomes per NTM clade | ⏳ to run | `ntm/v1/release/` |
 | QC + release manifest | ⏳ to run | `ntm/v1/release/RELEASE.md` |
