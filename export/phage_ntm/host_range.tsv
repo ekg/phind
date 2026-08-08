@@ -1,0 +1,914 @@
+clade_id	n_members	host_clade_ids	species
+0_0000	100	host_clade_0001	Mycobacteroides abscessus
+0_0001	100	host_clade_0001	Mycobacteroides abscessus
+0_0002	100	host_clade_0001	Mycobacteroides abscessus
+0_0003	100	host_clade_0001	Mycobacteroides abscessus
+0_0004	100	host_clade_0001	Mycobacteroides abscessus
+0_0005	100	host_clade_0001	Mycobacteroides abscessus
+0_0006	100	host_clade_0001	Mycobacteroides abscessus
+0_0007	100	host_clade_0001	Mycobacteroides abscessus
+0_0008	100	host_clade_0001	Mycobacteroides abscessus
+0_0009	100	host_clade_0001	Mycobacteroides abscessus
+0_0010	100	host_clade_0001	Mycobacteroides abscessus
+0_0011	100	host_clade_0001	Mycobacteroides abscessus
+0_0012	100	host_clade_0001	Mycobacteroides abscessus
+0_0013	100	host_clade_0001	Mycobacteroides abscessus
+0_0014	100	host_clade_0001	Mycobacteroides abscessus
+0_0015	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0016	100	host_clade_0001	Mycobacteroides abscessus
+0_0017	100	host_clade_0001,host_clade_0019,host_clade_0179	Mycobacterium sp.,Mycobacterium sp. D16Q16,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0018	66	host_clade_0001,host_clade_0019,host_clade_0059,host_clade_0097	Mycobacteriaceae bacterium NPDC060252,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum,Mycobacteroides salmoniphilum
+0_0019	100	host_clade_0001	Mycobacteroides abscessus
+0_0020	100	host_clade_0001	Mycobacteroides abscessus
+0_0021	100	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0022	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0023	59	host_clade_0001,host_clade_0038	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii
+0_0024	100	host_clade_0001,host_clade_0019,host_clade_0097,host_clade_0179	Mycobacterium sp. D16Q16,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum,Mycobacteroides salmoniphilum
+0_0025	100	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides immunogenum
+0_0026	100	host_clade_0001	Mycobacteroides abscessus
+0_0027	100	host_clade_0001	Mycobacteroides abscessus
+0_0028	100	host_clade_0001	Mycobacteroides abscessus
+0_0029	100	host_clade_0001	Mycobacteroides abscessus
+0_0030	100	host_clade_0001	Mycobacteroides abscessus
+0_0031	34	host_clade_0001,host_clade_0003,host_clade_0006,host_clade_0013,host_clade_0015,host_clade_0020	Mycobacterium avium,Mycobacterium farcinogenes,Mycobacterium sp. 20-525,Mycobacteroides abscessus,Mycolicibacterium fortuitum,Mycolicibacterium peregrinum,Mycolicibacterium senegalense,Mycolicibacterium vulneris
+0_0032	100	host_clade_0001,host_clade_0147	Mycobacteroides abscessus,Mycobacteroides saopaulense
+0_0033	100	host_clade_0001	Mycobacteroides abscessus
+0_0034	8	host_clade_0030,host_clade_0084,host_clade_0127,host_clade_0430	Mycobacterium hackensackense,Mycobacterium sp. NGS35,Mycolicibacterium canariasense,Mycolicibacterium komossense
+0_0035	100	host_clade_0001	Mycobacteroides abscessus
+0_0036	100	host_clade_0001	Mycobacteroides abscessus
+0_0037	100	host_clade_0001,host_clade_0108	Mycobacterium sp. D16Q20,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0038	93	host_clade_0001,host_clade_0038,host_clade_0059	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii,Mycobacteroides salmoniphilum
+0_0039	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides sp. H003,Mycobacteroides sp. H063,Mycobacteroides sp. H079,Mycobacteroides sp. H092,Mycobacteroides sp. H101,Mycobacteroides sp. H110,Mycobacteroides sp. HXVII,Mycobacteroides sp. HXXIII
+0_0040	100	host_clade_0001	Mycobacteroides abscessus
+0_0041	100	host_clade_0001,host_clade_0019,host_clade_0313	Mycobacterium sp. NPDC050853,Mycobacteroides abscessus,Mycobacteroides immunogenum
+0_0042	100	host_clade_0001	Mycobacteroides abscessus
+0_0043	48	host_clade_0001	Mycobacteroides abscessus
+0_0044	55	host_clade_0001,host_clade_0038,host_clade_0059	Mycobacterium sp.,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii,Mycobacteroides sp. H063,Mycobacteroides sp. H101,Mycobacteroides sp. HXVII,Mycobacteroides sp. PCS013
+0_0045	100	host_clade_0001	Mycobacteroides abscessus
+0_0046	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0047	4	host_clade_0001,host_clade_0057,host_clade_0432	Mycobacterium marseillense,Mycobacterium sp. WMMD1722,Mycobacteroides abscessus
+0_0048	46	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0049	100	host_clade_0001	Mycobacteroides abscessus
+0_0050	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0051	100	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides immunogenum
+0_0052	100	host_clade_0001	Mycobacteroides abscessus
+0_0053	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides sp. HXVII
+0_0054	65	host_clade_0001,host_clade_0038,host_clade_0059,host_clade_0072,host_clade_0097,host_clade_0108,host_clade_0147,host_clade_0226,host_clade_0798	Mycobacterium adipatum,Mycobacterium sp.,Mycobacterium sp. D16Q14,Mycobacterium sp. D16R12,Mycobacterium sp. D16R24,Mycobacterium sp. D17A2,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii,Mycobacteroides salmoniphilum,Mycobacteroides saopaulense,Mycobacteroides sp. H001,Mycobacteroides sp. H002,Mycobacteroides sp. H054,Mycobacteroides sp. H072,Mycolicibacterium insubricum
+0_0055	100	host_clade_0001,host_clade_0019,host_clade_0038,host_clade_0281	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii,Mycobacteroides immunogenum,Mycobacteroides stephanolepidis
+0_0056	100	host_clade_0001	Mycobacteroides abscessus
+0_0057	81	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0058	20	host_clade_0001,host_clade_0019,host_clade_0313	Mycobacteroides abscessus,Mycobacteroides immunogenum,Mycobacteroides sp. LB1
+0_0059	100	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0060	100	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0061	3	host_clade_0001,host_clade_0006	Mycobacteroides abscessus,Mycolicibacterium fortuitum
+0_0062	82	host_clade_0001,host_clade_0019,host_clade_0038,host_clade_0097,host_clade_0530	Mycobacterium sp.,Mycobacterium sp. NGS15,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii,Mycobacteroides immunogenum,Mycobacteroides salmoniphilum
+0_0063	21	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides sp. H001,Mycobacteroides sp. H002,Mycobacteroides sp. H054,Mycobacteroides sp. H072
+0_0064	100	host_clade_0001,host_clade_0179	Mycobacterium sp. 96-892,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0065	100	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides immunogenum,Mycobacteroides sp. H003,Mycobacteroides sp. H063,Mycobacteroides sp. H079,Mycobacteroides sp. H092,Mycobacteroides sp. H101,Mycobacteroides sp. H110,Mycobacteroides sp. HXVII
+0_0066	25	host_clade_0001,host_clade_0038	Mycobacteroides abscessus,Mycobacteroides franklinii
+0_0067	1	host_clade_0108	Mycobacterium sp. D16Q14
+0_0068	100	host_clade_0001,host_clade_0002,host_clade_0005,host_clade_0006	Mycobacterium intracellulare,Mycobacterium marinum,Mycobacterium sp. H4Y,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycolicibacterium fortuitum
+0_0069	55	host_clade_0001,host_clade_0108	Mycobacterium sp. D16Q14,Mycobacteroides abscessus
+0_0070	77	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0071	70	host_clade_0001	Mycobacteroides abscessus
+0_0072	47	host_clade_0001,host_clade_0313	Mycobacterium sp. NPDC050853,Mycobacteroides abscessus
+0_0073	63	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0074	100	host_clade_0001	Mycobacteroides abscessus
+0_0075	100	host_clade_0001,host_clade_0003,host_clade_0005,host_clade_0006,host_clade_0015,host_clade_0022,host_clade_0023,host_clade_0030,host_clade_0031,host_clade_0032,host_clade_0056,host_clade_0069,host_clade_0079,host_clade_0083,host_clade_0084,host_clade_0104,host_clade_0105,host_clade_0120,host_clade_0133,host_clade_0162,host_clade_0166,host_clade_0170,host_clade_0208,host_clade_0229,host_clade_0290,host_clade_0327,host_clade_0330,host_clade_0335,host_clade_0409,host_clade_0626,host_clade_0673	Mycobacterium avium,Mycobacterium colombiense,Mycobacterium gordonae,Mycobacterium intermedium,Mycobacterium intracellulare,Mycobacterium kiyosense,Mycobacterium mantenii,Mycobacterium paraffinicum,Mycobacterium riyadhense,Mycobacterium scrofulaceum,Mycobacterium shigaense,Mycobacterium simulans,Mycobacterium sp.,Mycobacterium sp. 1165196.3,Mycobacterium sp. 20-525,Mycobacterium sp. 20KCMC460,Mycobacterium sp. 4D054,Mycobacterium sp. E2479,Mycobacterium sp. ENV421,Mycobacterium sp. IS-3022,Mycobacterium sp. NGS18,Mycobacterium sp. NGS39,Mycobacterium sp. NGS53,Mycobacterium sp. NGS63,Mycobacterium sp. UM_NYF,Mycobacterium sp. ZZG,Mycobacterium sp. smrl_JER01,Mycobacteroides abscessus,Mycolicibacterium agri,Mycolicibacterium chitae,Mycolicibacterium fluoranthenivorans,Mycolicibacterium fortuitum,Mycolicibacterium gilvum
+0_0076	33	host_clade_0001,host_clade_0097	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides salmoniphilum,Mycobacteroides sp. PCS013
+0_0077	100	host_clade_0001	Mycobacteroides abscessus
+0_0078	78	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides sp. H092
+0_0079	12	host_clade_0001,host_clade_0038	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii
+0_0080	9	host_clade_0001,host_clade_0179	Mycobacterium sp. D16Q16,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0081	1	host_clade_0001	Mycobacteroides abscessus
+0_0082	10	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides sp. H079,Mycobacteroides sp. H092,Mycobacteroides sp. HXXIII
+0_0083	49	host_clade_0001	Mycobacteroides abscessus
+0_0084	100	host_clade_0001	Mycobacteroides abscessus
+0_0085	6	host_clade_0001	Mycobacteroides chelonae,Mycobacteroides sp. H063,Mycobacteroides sp. H092,Mycobacteroides sp. H101,Mycobacteroides sp. HXVII,Mycobacteroides sp. HXXIII
+0_0086	100	host_clade_0004	Mycobacterium kansasii
+0_0087	80	host_clade_0004	Mycobacterium kansasii
+0_0088	16	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides immunogenum
+0_0089	40	host_clade_0001,host_clade_0038	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii
+0_0090	44	host_clade_0001,host_clade_0042	Mycobacteroides abscessus,Mycolicibacterium obuense
+0_0091	9	host_clade_0001	Mycobacteroides abscessus
+0_0092	21	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0093	36	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0094	38	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides immunogenum
+0_0095	9	host_clade_0022,host_clade_0031,host_clade_0032,host_clade_0049,host_clade_0196,host_clade_0441,host_clade_0443	Mycobacterium conspicuum,Mycobacterium gordonae,Mycobacterium kiyosense,Mycobacterium paragordonae,Mycobacterium riyadhense,Mycobacterium sp.,Mycobacterium sp. 20KCMC460,Mycolicibacter acidiphilus
+0_0096	4	host_clade_0001,host_clade_0850	Mycobacteroides chelonae
+0_0097	29	host_clade_0001	Mycobacteroides abscessus
+0_0098	27	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0099	6	host_clade_0032,host_clade_0049,host_clade_0060	Mycobacterium gordonae,Mycobacterium sp.,Mycolicibacterium chlorophenolicum
+0_0100	7	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0101	12	host_clade_0001,host_clade_0097	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides salmoniphilum
+0_0102	65	host_clade_0001,host_clade_0692	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycolicibacterium sp. XJ1819
+0_0103	43	host_clade_0001,host_clade_0097	Mycobacteroides abscessus,Mycobacteroides salmoniphilum
+0_0104	1	host_clade_0001	Mycobacteroides chelonae
+0_0105	19	host_clade_0001,host_clade_0059,host_clade_0097	Mycobacterium sp.,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides salmoniphilum
+0_0106	1	host_clade_0001	Mycobacteroides abscessus
+0_0107	11	host_clade_0001	Mycobacteroides abscessus
+0_0108	3	host_clade_0047,host_clade_0496	Mycobacterium sp.,Mycolicibacter virginiensis
+0_0109	21	host_clade_0001,host_clade_0003,host_clade_0007,host_clade_0048,host_clade_0112,host_clade_0167	Mycobacterium avium,Mycolicibacter kumamotonensis,Mycolicibacterium houstonense,Mycolicibacterium mucogenicum,Mycolicibacterium neoaurum,Mycolicibacterium smegmatis
+0_0110	10	host_clade_0001,host_clade_0006,host_clade_0013	Mycobacteroides abscessus,Mycolicibacterium fortuitum,Mycolicibacterium senegalense
+0_0111	4	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0112	5	host_clade_0027,host_clade_0079,host_clade_0326	Mycobacterium polyniensis,Mycolicibacter algericus,[Mycobacterium] crassicus
+0_0113	12	host_clade_0001	Mycobacteroides abscessus
+0_0114	42	host_clade_0001,host_clade_0108	Mycobacterium sp. D16Q20,Mycobacterium sp. D16R24,Mycobacterium sp. D17A2,Mycobacteroides abscessus
+0_0115	67	host_clade_0006,host_clade_0008,host_clade_0013,host_clade_0020,host_clade_0026,host_clade_0058,host_clade_0127,host_clade_0294,host_clade_0437,host_clade_0602	Mycobacterium dioxanotrophicus,Mycobacterium sp. 48b,Mycobacterium syngnathidarum,Mycolicibacterium canariasense,Mycolicibacterium fortuitum,Mycolicibacterium lutetiense,Mycolicibacterium mageritense,Mycolicibacterium nivoides,Mycolicibacterium porcinum,Mycolicibacterium senegalense
+0_0116	1	host_clade_0001	Mycobacteroides abscessus
+0_0117	20	host_clade_0006,host_clade_0008,host_clade_0013,host_clade_0058,host_clade_0217,host_clade_0408,host_clade_0437,host_clade_0627,host_clade_0846	Mycobacterium aquaticum,Mycobacterium dioxanotrophicus,Mycobacterium sp. 852013-50091_SCH5140682,Mycobacterium sp. DL440,Mycobacterium syngnathidarum,Mycobacterium venezuelense,Mycolicibacterium boenickei,Mycolicibacterium fortuitum,Mycolicibacterium senegalense
+0_0118	12	host_clade_0001,host_clade_0798,host_clade_0850	Mycobacterium sp.,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0119	20	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0120	2	host_clade_0108	Mycobacterium sp. D16R24,Mycobacterium sp. D17A2
+0_0121	35	host_clade_0006,host_clade_0008,host_clade_0013,host_clade_0020,host_clade_0602	Mycobacterium sp. 48b,Mycolicibacterium fortuitum,Mycolicibacterium nivoides,Mycolicibacterium senegalense,Mycolicibacterium sp.,Mycolicibacterium vulneris
+0_0122	52	host_clade_0001,host_clade_0003,host_clade_0005,host_clade_0010,host_clade_0104,host_clade_0117,host_clade_0155,host_clade_0163,host_clade_0263,host_clade_0514	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium saskatchewanense,Mycobacterium servetii,Mycobacterium sp. 050272,Mycobacterium sp. UM_WWY,Mycobacteroides abscessus,Mycolicibacterium cosmeticum,Mycolicibacterium sp.,Mycolicibacterium tusciae
+0_0123	51	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0124	48	host_clade_0002,host_clade_0003,host_clade_0004,host_clade_0005,host_clade_0015,host_clade_0023,host_clade_0030,host_clade_0063,host_clade_0066,host_clade_0076,host_clade_0136,host_clade_0202,host_clade_0759	Mycobacterium avium,Mycobacterium colombiense,Mycobacterium marinum,Mycobacterium paragordonae,Mycobacterium paraintracellulare,Mycobacterium persicum,Mycobacterium sp. IDUB_39,Mycobacterium sp. NGS12,Mycobacterium sp. NGS42,Mycobacterium sp. TY813,Mycolicibacterium monacense,Mycolicibacterium peregrinum,Mycolicibacterium sp.,Mycolicibacterium sp. HK-90,Mycolicibacterium wolinskyi
+0_0125	32	host_clade_0005,host_clade_0010,host_clade_0056,host_clade_0057,host_clade_0069,host_clade_0109,host_clade_0163,host_clade_0358,host_clade_0480	Mycobacterium gallinarum,Mycobacterium intracellulare,Mycobacterium malmoense,Mycobacterium marseillense,Mycobacterium paraffinicum,Mycobacterium paraintracellulare,Mycobacterium parascrofulaceum,Mycobacterium saskatchewanense,Mycobacterium sp. NGS40,Mycobacterium sp. NGS64,Mycobacterium sp. pR1184
+0_0126	20	host_clade_0001	Mycobacteroides abscessus
+0_0127	15	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0128	31	host_clade_0001	Mycobacterium sp. MHSD3,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides sp. H001,Mycobacteroides sp. H002,Mycobacteroides sp. H054,Mycobacteroides sp. H072,Mycolicibacterium phlei
+0_0129	45	host_clade_0001,host_clade_0006,host_clade_0008,host_clade_0013,host_clade_0015,host_clade_0020,host_clade_0289	Mycobacterium sp. RTGN6,Mycobacteroides abscessus,Mycolicibacterium fortuitum,Mycolicibacterium nivoides,Mycolicibacterium senegalense,Mycolicibacterium vulneris,uncultured Mycobacteriaceae bacterium
+0_0130	19	host_clade_0003,host_clade_0005,host_clade_0092,host_clade_0121,host_clade_0174,host_clade_0233,host_clade_0317	Mycobacterium avium,Mycobacterium branderi,Mycobacterium celatum,Mycobacterium europaeum,Mycobacterium heckeshornense,Mycobacterium interjectum,Mycobacterium intracellulare
+0_0131	7	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0132	14	host_clade_0013,host_clade_0015,host_clade_0020,host_clade_0058,host_clade_0437,host_clade_0602	Mycobacterium dioxanotrophicus,Mycobacterium sp. 48b,Mycobacterium syngnathidarum,Mycolicibacterium peregrinum,Mycolicibacterium porcinum,Mycolicibacterium senegalense
+0_0133	4	host_clade_0001,host_clade_0081,host_clade_0170	Mycobacterium sp. TY815,Mycobacteroides abscessus,Mycolicibacterium gilvum
+0_0134	26	host_clade_0006,host_clade_0008,host_clade_0013,host_clade_0015,host_clade_0602	Mycobacterium sp. 48b,Mycobacterium sp. NPDC049093,Mycolicibacterium arcueilense,Mycolicibacterium boenickei,Mycolicibacterium fortuitum,Mycolicibacterium peregrinum,Mycolicibacterium senegalense,Mycolicibacterium sp.,uncultured Mycobacteriaceae bacterium
+0_0135	4	host_clade_0001	Mycobacteroides abscessus
+0_0136	21	host_clade_0003,host_clade_0005,host_clade_0010,host_clade_0121,host_clade_0714	Mycobacterium avium,Mycobacterium europaeum,Mycobacterium paraintracellulare,Mycobacterium saskatchewanense,Mycobacterium sp. SMC-2
+0_0137	38	host_clade_0001,host_clade_0004	Mycobacterium kansasii,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0138	2	host_clade_0015,host_clade_0026	Mycobacterium sp. NPDC051198,Mycolicibacterium mageritense
+0_0139	31	host_clade_0007,host_clade_0008,host_clade_0029,host_clade_0165,host_clade_0194	Mycobacterium lentiflavum,Mycobacterium sp.,Mycolicibacterium nivoides,Mycolicibacterium pallens,Mycolicibacterium smegmatis
+0_0140	2	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides immunogenum
+0_0141	1	host_clade_0001	Mycobacteroides abscessus
+0_0142	3	host_clade_0015,host_clade_0063	Mycolicibacterium peregrinum,Mycolicibacterium wolinskyi
+0_0143	38	host_clade_0006,host_clade_0107,host_clade_0126,host_clade_0145,host_clade_0229	Mycobacterium sp. SMC-8,Mycolicibacterium boenickei,Mycolicibacterium fortuitum,Mycolicibacterium holsaticum,Mycolicibacterium parafortuitum
+0_0144	11	host_clade_0054,host_clade_0092,host_clade_0754	Mycobacterium botniense,Mycobacterium heckeshornense,Mycobacterium xenopi
+0_0145	26	host_clade_0001	Mycobacterium sp.,Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides sp. PCS013
+0_0146	13	host_clade_0001,host_clade_0006,host_clade_0020,host_clade_0026,host_clade_0038	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides franklinii,Mycolicibacterium fortuitum,Mycolicibacterium mageritense,Mycolicibacterium porcinum
+0_0147	8	host_clade_0001	Mycobacteroides abscessus
+0_0148	2	host_clade_0179,host_clade_0313	Mycobacterium sp. D16Q16,Mycobacterium sp. NPDC050853
+0_0149	7	host_clade_0001	Mycobacteroides abscessus
+0_0150	31	host_clade_0003,host_clade_0004,host_clade_0005,host_clade_0022,host_clade_0050,host_clade_0066,host_clade_0070,host_clade_0080	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium kansasii,Mycobacterium kubicae,Mycobacterium sp. 20KCMC460,Mycobacterium sp. 23,Mycobacterium sp. NGS06,Mycobacterium sp. NGS21,Mycobacterium sp. NGS36
+0_0151	8	host_clade_0002	Mycobacterium marinum
+0_0152	26	host_clade_0006,host_clade_0008,host_clade_0020,host_clade_0103,host_clade_0759	Mycolicibacterium fortuitum,Mycolicibacterium porcinum,Mycolicibacterium septicum,Mycolicibacterium setense,Mycolicibacterium sp. HK-90
+0_0153	5	host_clade_0141,host_clade_0260	Mycolicibacterium arabiense,[Mycobacterium] bulgaricum
+0_0154	3	host_clade_0001	Mycobacteroides abscessus
+0_0155	5	host_clade_0022,host_clade_0049,host_clade_0183,host_clade_0204	Mycobacterium gordonae,Mycobacterium kiyosense,Mycobacterium sp.,Mycobacterium sp. NGS67
+0_0156	15	host_clade_0003,host_clade_0004,host_clade_0005,host_clade_0054,host_clade_0056,host_clade_0070,host_clade_0167,host_clade_0335	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium kansasii,Mycobacterium kubicae,Mycobacterium paraintracellulare,Mycobacterium parascrofulaceum,Mycobacterium persicum,Mycobacterium sp. NGS56,Mycobacterium xenopi,Mycolicibacter kumamotonensis
+0_0157	29	host_clade_0003,host_clade_0008,host_clade_0027,host_clade_0274,host_clade_0299,host_clade_0326	Mycobacterium avium,Mycolicibacter longobardus,Mycolicibacter senuensis,Mycolicibacterium nivoides,[Mycobacterium] crassicus,[Mycobacterium] nativiensis
+0_0158	2	host_clade_0001	Mycobacteroides abscessus
+0_0159	19	host_clade_0002	Mycobacterium marinum
+0_0160	16	host_clade_0032,host_clade_0049,host_clade_0066,host_clade_0170,host_clade_0361	Mycobacterium asiaticum,Mycobacterium gordonae,Mycobacterium paragordonae,Mycobacterium sp.,Mycobacterium sp. 23,Mycobacterium sp. TY813,Mycobacterium sp. TY814,Mycobacterium sp. TY815
+0_0161	1	host_clade_0036	Mycobacterium colombiense
+0_0162	18	host_clade_0005	Mycobacterium intracellulare
+0_0163	12	host_clade_0003,host_clade_0004,host_clade_0005,host_clade_0033,host_clade_0042,host_clade_0162,host_clade_0361	Mycobacterium asiaticum,Mycobacterium avium,Mycobacterium kansasii,Mycobacterium lehmannii,Mycobacterium paraintracellulare,Mycobacterium sp. IS-1556,Mycolicibacterium obuense
+0_0164	1	host_clade_0771	[Mycobacterium] burgundiense
+0_0165	19	host_clade_0027,host_clade_0065,host_clade_0134,host_clade_0215	Mycobacterium novum,Mycolicibacter algericus,Mycolicibacter arupensis,Mycolicibacter icosiumassiliensis,Mycolicibacter sinensis,Mycolicibacterium brumae
+0_0166	1	host_clade_0001	Mycobacteroides abscessus
+0_0167	15	host_clade_0003,host_clade_0022,host_clade_0087,host_clade_0432	Mycobacterium avium,Mycobacterium kiyosense,Mycobacterium sp. WMMD1722,Mycolicibacterium novocastrense
+0_0168	8	host_clade_0013,host_clade_0020,host_clade_0026	Mycobacterium sp. SWH-M3,Mycolicibacterium mageritense,Mycolicibacterium porcinum,Mycolicibacterium senegalense
+0_0169	19	host_clade_0003,host_clade_0005,host_clade_0229	Mycobacterium avium,Mycobacterium bouchedurhonense,Mycobacterium intracellulare,Mycobacterium sp. SMC-8,Mycobacterium timonense
+0_0170	1	host_clade_0033	Mycolicibacterium acapulense
+0_0171	9	host_clade_0001,host_clade_0013,host_clade_0108	Mycobacterium farcinogenes,Mycobacterium sp. D16R24,Mycobacterium sp. D17A2,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0172	12	host_clade_0001,host_clade_0003,host_clade_0005,host_clade_0117,host_clade_0155,host_clade_0163	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium servetii,Mycobacterium sp. 050272,Mycobacterium sp. UM_WWY,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0173	2	host_clade_0026,host_clade_0103	Mycolicibacterium mageritense,Mycolicibacterium setense
+0_0174	12	host_clade_0001,host_clade_0003,host_clade_0005,host_clade_0064,host_clade_0066,host_clade_0081,host_clade_0195,host_clade_0229,host_clade_0301,host_clade_0677	Mycobacterium avium,Mycobacterium gordonae,Mycobacterium paraintracellulare,Mycobacterium sp. 4D054,Mycobacterium sp. AT1,Mycobacterium sp. IDR2000157661,Mycobacterium sp. PYR10,Mycobacterium toneyamaense,Mycolicibacterium iranicum,Mycolicibacterium psychrotolerans
+0_0175	20	host_clade_0008	Mycolicibacterium septicum
+0_0176	20	host_clade_0006,host_clade_0015,host_clade_0152	Mycolicibacterium alvei,Mycolicibacterium fortuitum,Mycolicibacterium peregrinum
+0_0177	19	host_clade_0019	Mycobacterium sp.,Mycobacteroides immunogenum
+0_0178	18	host_clade_0003,host_clade_0005,host_clade_0069,host_clade_0654	Mycobacterium avium,Mycobacterium colombiense,Mycobacterium intracellulare,Mycobacterium sp. 852014-52450_SCH5900713
+0_0179	4	host_clade_0055	Mycolicibacterium goodii
+0_0180	3	host_clade_0020,host_clade_0177	Mycobacterium sp. NPDC004974,Mycolicibacterium vulneris
+0_0181	1	host_clade_0155	Mycolicibacterium brisbanense
+0_0182	6	host_clade_0001,host_clade_0097	Mycobacteroides abscessus,Mycobacteroides salmoniphilum
+0_0183	13	host_clade_0003,host_clade_0036,host_clade_0575	Mycobacterium avium,Mycobacterium colombiense,Mycobacterium sp. MUNTM1
+0_0184	6	host_clade_0041,host_clade_0285	Mycolicibacterium llatzerense,Mycolicibacterium mucogenicum
+0_0185	16	host_clade_0007,host_clade_0066	Mycobacterium sp. TY813,Mycolicibacterium smegmatis
+0_0186	10	host_clade_0001,host_clade_0003,host_clade_0041,host_clade_0130	Mycobacterium avium,Mycobacterium sp. UNC280MFTsu5.1,Mycolicibacterium aubagnense,Mycolicibacterium phocaicum,Mycolicibacterium sp. TY66,Mycolicibacterium sp. TY81
+0_0187	6	host_clade_0006,host_clade_0013,host_clade_0026,host_clade_0058	Mycobacterium sp. DBP42,Mycolicibacterium fortuitum,Mycolicibacterium mageritense,Mycolicibacterium senegalense
+0_0188	9	host_clade_0001,host_clade_0003,host_clade_0005	Mycobacterium avium,Mycobacterium intracellulare,Mycobacteroides abscessus
+0_0189	14	host_clade_0003,host_clade_0006,host_clade_0009,host_clade_0060,host_clade_0081,host_clade_0129,host_clade_0235,host_clade_0260,host_clade_0514	Mycobacterium avium,Mycobacterium sp. BK558,Mycobacterium sp. PYR10,Mycolicibacterium gilvum,Mycolicibacterium hippocampi,Mycolicibacterium poriferae,Mycolicibacterium pyrenivorans,Mycolicibacterium sp.,Mycolicibacterium tusciae,[Mycobacterium] bulgaricum
+0_0190	1	host_clade_0001	Mycobacteroides chelonae
+0_0191	7	host_clade_0001,host_clade_0015,host_clade_0613	Mycobacterium sp.,Mycobacterium toneyamaense,Mycobacteroides abscessus,Mycolicibacterium peregrinum,Mycolicibacterium sp. Dal123E01,Mycolicibacterium sp. TY66,Mycolicibacterium sp. TY81
+0_0192	1	host_clade_0042	Mycolicibacterium obuense
+0_0193	13	host_clade_0004,host_clade_0032,host_clade_0128	Mycobacterium gordonae,Mycobacterium kansasii,Mycobacterium ostraviense,Mycobacterium persicum
+0_0194	4	host_clade_0058,host_clade_0103	Mycobacterium sp. CnD-18-1,Mycolicibacterium setense,Mycolicibacterium sp. (ex Dasyatis americana)
+0_0195	3	host_clade_0001	Mycobacteroides abscessus
+0_0196	5	host_clade_0001,host_clade_0059	Mycobacterium sp.,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0197	2	host_clade_0026,host_clade_0695	Mycolicibacterium frederiksbergense,Mycolicibacterium mageritense
+0_0198	7	host_clade_0003,host_clade_0006,host_clade_0013,host_clade_0049,host_clade_0055,host_clade_0299,host_clade_0326	Mycobacterium avium,Mycobacterium paragordonae,Mycolicibacterium fortuitum,Mycolicibacterium goodii,Mycolicibacterium senegalense,[Mycobacterium] crassicus,[Mycobacterium] nativiensis
+0_0199	9	host_clade_0030	Mycobacterium sp. NGS12,Mycobacterium sp. NGS13,Mycobacterium sp. NGS19,Mycobacterium sp. NGS25,Mycobacterium sp. NGS28,Mycobacterium sp. NGS31,Mycobacterium sp. NGS32,Mycobacterium sp. NGS42,Mycobacterium sp. NGS60
+0_0200	14	host_clade_0022,host_clade_0135	Mycobacterium asiaticum,Mycobacterium kiyosense
+0_0201	14	host_clade_0001,host_clade_0006,host_clade_0020	Mycobacteroides abscessus,Mycolicibacterium fortuitum,Mycolicibacterium vulneris
+0_0202	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0203	7	host_clade_0005,host_clade_0056	Mycobacterium intracellulare,Mycobacterium malmoense,Mycobacterium paraintracellulare,Mycobacterium parascrofulaceum
+0_0204	8	host_clade_0001,host_clade_0064,host_clade_0081,host_clade_0229	Mycobacterium sp. PYR10,Mycobacterium sp. SMC-8,Mycobacteroides abscessus,Mycolicibacterium iranicum,Mycolicibacterium sp. PAM1
+0_0205	2	host_clade_0064	Mycolicibacterium iranicum
+0_0206	5	host_clade_0001	Mycobacteroides abscessus
+0_0207	13	host_clade_0054,host_clade_0092	Mycobacterium heckeshornense,Mycobacterium xenopi
+0_0208	13	host_clade_0003	Mycobacterium avium
+0_0209	1	host_clade_0005	Mycobacterium intracellulare
+0_0210	2	host_clade_0333,host_clade_0574	Mycobacterium sp. SMC-4,Mycolicibacterium vaccae
+0_0211	12	host_clade_0001,host_clade_0285	Mycobacteroides abscessus,Mycolicibacterium sp. TY66,Mycolicibacterium sp. TY81,Mycolicibacterium sp. lyk4-40-TYG-92
+0_0212	10	host_clade_0006	Mycolicibacterium fortuitum,Mycolicibacterium sp.
+0_0213	1	host_clade_0002	Mycobacterium marinum
+0_0214	9	host_clade_0007,host_clade_0033,host_clade_0074,host_clade_0218,host_clade_0295	Mycobacterium kansasii,Mycobacterium kyorinense,Mycobacterium szulgai,Mycolicibacterium acapulense,Mycolicibacterium smegmatis
+0_0215	12	host_clade_0003,host_clade_0036,host_clade_0042,host_clade_0071,host_clade_0087,host_clade_0185,host_clade_0396,host_clade_0629,host_clade_0721,host_clade_0772	Mycobacterium avium,Mycobacterium colombiense,Mycobacterium sp. MS1601,Mycobacterium sp. NPDC006124,Mycobacterium sp. TJFP1,Mycolicibacterium hodleri,Mycolicibacterium moriokaense,Mycolicibacterium novocastrense,Mycolicibacterium obuense,Mycolicibacterium palauense
+0_0216	8	host_clade_0003,host_clade_0004,host_clade_0017,host_clade_0087,host_clade_0364	Mycobacterium avium,Mycobacterium kansasii,Mycobacterium sp. pV006,Mycolicibacterium elephantis,Mycolicibacterium novocastrense
+0_0217	10	host_clade_0005,host_clade_0050,host_clade_0204,host_clade_0354	Mycobacterium intracellulare,Mycobacterium paraintracellulare,Mycobacterium senriense,Mycobacterium sp. NGS24,Mycobacterium sp. NGS46,Mycobacterium sp. NGS47,Mycobacterium sp. NGS67
+0_0218	6	host_clade_0047,host_clade_0065,host_clade_0104,host_clade_0855	Mycobacterium sp. TH-M25,Mycolicibacter arupensis,Mycolicibacter virginiensis,Mycolicibacterium cosmeticum
+0_0219	2	host_clade_0001	Mycobacteroides abscessus
+0_0220	2	host_clade_0080,host_clade_0112	Mycobacterium farcinogenes,Mycobacterium sp. NGS44
+0_0221	8	host_clade_0023,host_clade_0056,host_clade_0169,host_clade_0774	Mycobacterium colombiense,Mycobacterium hainanense,Mycobacterium malmoense,Mycobacterium scrofulaceum
+0_0222	9	host_clade_0001,host_clade_0530	Mycobacterium sp. NGS15,Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0223	9	host_clade_0040,host_clade_0069,host_clade_0121,host_clade_0317,host_clade_0714	Mycobacterium europaeum,Mycobacterium interjectum,Mycobacterium seoulense,Mycobacterium sp. 852014-50255_SCH5639931,Mycobacterium sp. SMC-2
+0_0224	1	host_clade_0002	Mycobacterium marinum
+0_0225	2	host_clade_0001,host_clade_0006	Mycobacteroides abscessus,Mycolicibacterium fortuitum
+0_0226	11	host_clade_0006	Mycolicibacterium fortuitum
+0_0227	2	host_clade_0004,host_clade_0170	Mycobacterium kansasii,Mycobacterium sp. MS3
+0_0228	1	host_clade_0175	Mycobacterium shimoidei
+0_0229	3	host_clade_0029,host_clade_0514	Mycobacterium sp. WY10,Mycolicibacterium tusciae
+0_0230	2	host_clade_0226,host_clade_0301	Mycobacterium adipatum,Mycobacterium sp. AT1
+0_0231	5	host_clade_0141,host_clade_0325	Mycolicibacterium arabiense,Mycolicibacterium grossiae
+0_0232	6	host_clade_0067,host_clade_0686	Mycobacterium sp. HM-7,Mycolicibacterium sp. CBMA 213,Mycolicibacterium sp. CBMA 230,Mycolicibacterium sp. CBMA 293,Mycolicibacterium sp. CBMA 335,Mycolicibacterium sp. CBMA 360
+0_0233	10	host_clade_0068,host_clade_0214,host_clade_0254,host_clade_0261	Mycobacterium sp. Root265,Mycolicibacterium aichiense,Mycolicibacterium hassiacum,Mycolicibacterium rhodesiae
+0_0234	5	host_clade_0006,host_clade_0030,host_clade_0069,host_clade_0358	Mycobacterium sp. 29Ha,Mycobacterium sp. 852014-52450_SCH5900713,Mycobacterium sp. NGS39,Mycobacterium sp. NGS53,Mycolicibacterium fortuitum
+0_0235	4	host_clade_0005,host_clade_0069,host_clade_0110,host_clade_0796	Mycobacterium paraense,Mycobacterium sp. 2-64,Mycobacterium sp. 852014-52450_SCH5900713,Mycobacterium vicinigordonae
+0_0236	3	host_clade_0006	Mycolicibacterium fortuitum
+0_0237	3	host_clade_0032,host_clade_0066	Mycobacterium gordonae,Mycobacterium paragordonae
+0_0238	3	host_clade_0006,host_clade_0013,host_clade_0294	Mycolicibacterium fortuitum,Mycolicibacterium lutetiense,Mycolicibacterium senegalense
+0_0239	9	host_clade_0006	Mycolicibacterium fortuitum,Mycolicibacterium sp.
+0_0240	4	host_clade_0013,host_clade_0015	Mycobacterium sp. NPDC051198,Mycolicibacterium senegalense
+0_0241	2	host_clade_0004	Mycobacterium kansasii,Mycobacterium persicum
+0_0242	9	host_clade_0013,host_clade_0067	Mycolicibacterium senegalense,Mycolicibacterium sp. CBMA 213,Mycolicibacterium sp. CBMA 230,Mycolicibacterium sp. CBMA 293,Mycolicibacterium sp. CBMA 311,Mycolicibacterium sp. CBMA 335,Mycolicibacterium sp. CBMA 360
+0_0243	5	host_clade_0006,host_clade_0058,host_clade_0063	Mycobacterium sp. DBP42,Mycolicibacterium fortuitum,Mycolicibacterium goodii,Mycolicibacterium wolinskyi
+0_0244	7	host_clade_0001	Mycobacteroides abscessus
+0_0245	9	host_clade_0017,host_clade_0271,host_clade_0286	Mycolicibacterium elephantis,Mycolicibacterium pulveris
+0_0246	6	host_clade_0049,host_clade_0070	Mycobacterium kubicae,Mycobacterium paragordonae
+0_0247	2	host_clade_0296,host_clade_0473	Mycobacterium sp. DL592,Mycobacterium sp. Panama NTM2
+0_0248	2	host_clade_0131	Mycobacterium sp. DL,Mycolicibacterium hippocampi
+0_0249	1	host_clade_0277	Mycobacterium barrassiae
+0_0250	7	host_clade_0006	Mycolicibacterium fortuitum
+0_0251	3	host_clade_0006	Mycolicibacterium fortuitum
+0_0252	9	host_clade_0044,host_clade_0084,host_clade_0399	Mycobacterium sp. VKM Ac-1816D,Mycolicibacterium neoaurum,Mycolicibacterium sp. Y3
+0_0253	5	host_clade_0028,host_clade_0127	Mycobacterium sp.,Mycolicibacterium canariasense
+0_0254	6	host_clade_0030	Mycobacterium sp. NGS13,Mycobacterium sp. NGS19,Mycobacterium sp. NGS25,Mycobacterium sp. NGS28,Mycobacterium sp. NGS31,Mycobacterium sp. NGS32
+0_0255	8	host_clade_0111,host_clade_0213,host_clade_0356,host_clade_0358	Mycobacterium sp. 29Ha,Mycobacterium sp. NPDC050041,Mycolicibacter hiberniae,Mycolicibacterium aurum
+0_0256	1	host_clade_0005	Mycobacterium intracellulare
+0_0257	2	host_clade_0046	Mycolicibacterium tokaiense
+0_0258	5	host_clade_0009,host_clade_0210,host_clade_0358,host_clade_0623	Mycobacterium gallinarum,Mycolicibacterium aurum,Mycolicibacterium baixiangningiae,Mycolicibacterium sp. OfavD-34-C
+0_0259	3	host_clade_0006,host_clade_0015,host_clade_0112	Mycolicibacterium houstonense,Mycolicibacterium peregrinum,Mycolicibacterium sp.
+0_0260	6	host_clade_0080,host_clade_0170,host_clade_0204,host_clade_0252	Mycobacterium sp. NGS36,Mycobacterium sp. NGS66,Mycobacterium sp. NGS67,Mycobacterium sp. TY815,Mycolicibacterium sp. F2034L
+0_0261	4	host_clade_0001,host_clade_0071,host_clade_0277	Mycobacterium barrassiae,Mycobacterium sp. NGS30,Mycobacterium sp. TJFP1,Mycolicibacterium mucogenicum
+0_0262	6	host_clade_0003,host_clade_0005,host_clade_0055,host_clade_0277	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium sp. NGS30,Mycolicibacterium goodii
+0_0263	6	host_clade_0055,host_clade_0087,host_clade_0166,host_clade_0261,host_clade_0514	Mycolicibacterium goodii,Mycolicibacterium novocastrense,Mycolicibacterium sp.,Mycolicibacterium tusciae,Mycolicibacterium vinylchloridicum
+0_0264	7	host_clade_0026,host_clade_0127	Mycolicibacterium canariasense,Mycolicibacterium mageritense
+0_0265	4	host_clade_0003,host_clade_0005	Mycobacterium avium,Mycobacterium intracellulare
+0_0266	3	host_clade_0216	Mycolicibacter minnesotensis
+0_0267	2	host_clade_0001	Mycobacteroides abscessus
+0_0268	2	host_clade_0001	Mycobacteroides abscessus
+0_0269	6	host_clade_0001,host_clade_0089	Mycobacterium intracellulare,Mycobacterium toneyamaense,Mycobacteroides chelonae,Mycolicibacterium sp. TY66,Mycolicibacterium sp. TY81
+0_0270	1	host_clade_0092	Mycobacterium heckeshornense
+0_0271	1	host_clade_0002	Mycobacterium marinum
+0_0272	1	host_clade_0229	Mycobacterium sp. 4D054
+0_0273	1	host_clade_0186	Mycolicibacterium sp. XJ2546
+0_0274	1	host_clade_0003	Mycobacterium avium
+0_0275	5	host_clade_0001	Mycobacteroides abscessus
+0_0276	4	host_clade_0009,host_clade_0221,host_clade_0829	Mycolicibacterium mengxianglii,Mycolicibacterium poriferae,uncultured Mycobacterium sp.,uncultured Mycolicibacterium sp.
+0_0277	6	host_clade_0060,host_clade_0095	Mycolicibacterium chlorophenolicum,Mycolicibacterium rufum
+0_0278	6	host_clade_0050	Mycobacterium simiae,Mycobacterium sp. IDUB_28,Mycobacterium sp. NGS46,Mycobacterium sp. NGS47,Mycobacterium sp. NGS61,Mycobacterium sp. NGS65
+0_0279	2	host_clade_0183	Mycobacterium sp.,uncultured Mycobacterium sp.
+0_0280	5	host_clade_0047,host_clade_0065	Mycobacterium sp. UM_Kg17,Mycobacterium sp. UM_NZ2,Mycolicibacter arupensis,Mycolicibacter virginiensis
+0_0281	1	host_clade_0020	Mycolicibacterium vulneris
+0_0282	3	host_clade_0244	Mycolicibacterium doricum
+0_0283	1	host_clade_0003	Mycobacterium avium
+0_0284	2	host_clade_0296,host_clade_0566	Mycobacterium neglectum,Mycobacterium sp. Panama NTM2
+0_0285	5	host_clade_0107,host_clade_0301	Mycolicibacterium hodleri,Mycolicibacterium holsaticum
+0_0286	6	host_clade_0094	Mycolicibacterium sp. CBMA 247,Mycolicibacterium sp. CBMA 294,Mycolicibacterium sp. CBMA 295,Mycolicibacterium sp. CBMA 329,Mycolicibacterium sp. CBMA 331,Mycolicibacterium sp. CBMA 334
+0_0287	5	host_clade_0072	Mycolicibacterium insubricum
+0_0288	5	host_clade_0001	Mycobacterium sp.,Mycobacterium toneyamaense,Mycobacteroides abscessus,Mycolicibacterium mucogenicum
+0_0289	3	host_clade_0170,host_clade_0406	Mycobacterium camsae,Mycobacterium sp. MS3,Mycobacterium sp. TY815
+0_0290	6	host_clade_0003,host_clade_0005	Mycobacterium avium,Mycobacterium intracellulare
+0_0291	4	host_clade_0048,host_clade_0104,host_clade_0399,host_clade_0814	Mycobacterium sp. UM_RHS,Mycolicibacterium iranicum,Mycolicibacterium neoaurum
+0_0292	4	host_clade_0015	Mycolicibacterium peregrinum
+0_0293	6	host_clade_0127	Mycolicibacterium canariasense
+0_0294	1	host_clade_0696	Mycobacterium sp.
+0_0295	1	host_clade_0444	Mycobacterium sp. NGS68
+0_0296	4	host_clade_0077	Mycolicibacterium thermoresistibile
+0_0297	2	host_clade_0009,host_clade_0787	Mycolicibacterium aurantiacum,Mycolicibacterium chubuense
+0_0298	4	host_clade_0003,host_clade_0514,host_clade_0830	Mycobacterium avium,Mycobacterium sp. JS623,Mycolicibacterium tusciae
+0_0299	3	host_clade_0044	Mycobacterium sp. VKM Ac-1816D,Mycolicibacterium neoaurum
+0_0300	4	host_clade_0003,host_clade_0092,host_clade_0218	Mycobacterium bouchedurhonense,Mycobacterium heckeshornense,Mycobacterium kyorinense
+0_0301	4	host_clade_0073	Mycolicibacterium mucogenicum
+0_0302	3	host_clade_0175	Mycobacterium shimoidei
+0_0303	1	host_clade_0772	Mycobacterium sp. MS1601
+0_0304	5	host_clade_0070	Mycobacterium kubicae
+0_0305	5	host_clade_0005,host_clade_0117,host_clade_0258,host_clade_0575	Candidatus Mycobacterium methanotrophicum,Mycobacterium intracellulare,Mycobacterium servetii,Mycobacterium sp. MUNTM1
+0_0306	3	host_clade_0029,host_clade_0126,host_clade_0208	Mycobacterium sp. PYR15,Mycobacterium sp. SA01,Mycolicibacterium parafortuitum
+0_0307	1	host_clade_0001	Mycolicibacterium sp. NCC-Tsukiji
+0_0308	1	host_clade_0864	Mycolicibacterium sp. CR10
+0_0309	4	host_clade_0001,host_clade_0041,host_clade_0728	Mycobacterium sp. SMC-18,Mycobacterium sp. SMC-21,Mycolicibacterium llatzerense,Mycolicibacterium sphagni
+0_0310	1	host_clade_0237	Mycolicibacterium litorale
+0_0311	2	host_clade_0001	Mycobacteroides abscessus
+0_0312	1	host_clade_0081	Mycolicibacterium sp. PAM1
+0_0313	3	host_clade_0041	Mycolicibacterium llatzerense
+0_0314	1	host_clade_0170	Mycobacterium sp. TY814
+0_0315	1	host_clade_0774	Mycobacterium hainanense
+0_0316	4	host_clade_0090	Mycolicibacillus trivialis
+0_0317	2	host_clade_0001	Mycobacteroides abscessus
+0_0318	1	host_clade_0330	Mycobacterium simulans
+0_0319	2	host_clade_0064,host_clade_0203	Mycolicibacterium bacteremicum,Mycolicibacterium iranicum
+0_0320	4	host_clade_0051	Mycobacterium sp.
+0_0321	4	host_clade_0053,host_clade_0072	Mycobacterium sp.,Mycolicibacterium fallax
+0_0322	4	host_clade_0072	Mycobacterium sp.,Mycolicibacterium insubricum,Mycolicibacterium sp.
+0_0323	4	host_clade_0041	Mycolicibacterium llatzerense
+0_0324	3	host_clade_0009,host_clade_0071,host_clade_0446	Mycobacterium sp. NAZ190054,Mycobacterium sp. TJFP1,Mycolicibacterium poriferae
+0_0325	3	host_clade_0080,host_clade_0819	Mycobacterium sp. NGS36,Mycobacterium sp. NGS41,Mycobacterium sp. NGS66
+0_0326	1	host_clade_0223	Mycobacterium sp. NGS17
+0_0327	1	host_clade_0573	uncultured Mycobacterium sp.
+0_0328	4	host_clade_0071	Mycolicibacterium austroafricanum,Mycolicibacterium sp. jd,Mycolicibacterium sp. yt
+0_0329	4	host_clade_0060,host_clade_0084,host_clade_0830	Mycobacterium hackensackense,Mycobacterium sp. JS623,Mycolicibacterium chlorophenolicum
+0_0330	4	host_clade_0098,host_clade_0249,host_clade_0722	Mycobacterium sp. SVM_VP21,Mycolicibacter heraklionensis,[Mycobacterium] zoologicum
+0_0331	4	host_clade_0073	Mycolicibacterium mucogenicum
+0_0332	4	host_clade_0160,host_clade_0162	Mycobacterium sp. IS-1556,Mycolicibacterium celeriflavum
+0_0333	3	host_clade_0036,host_clade_0105	Mycobacterium colombiense,Mycobacterium sp. 1165196.3
+0_0334	4	host_clade_0029,host_clade_0272	Mycobacterium sp. WY10,Mycolicibacterium rhodesiae
+0_0335	1	host_clade_0001	Mycobacteroides chelonae
+0_0336	2	host_clade_0027	Mycolicibacter algericus
+0_0337	3	host_clade_0003,host_clade_0124	Mycobacterium avium,Mycobacterium nebraskense
+0_0338	4	host_clade_0029,host_clade_0350	Mycobacterium sp. PYR15,Mycolicibacterium pallens,Mycolicibacterium sp. HS_4_1
+0_0339	1	host_clade_0281	Mycobacteroides stephanolepidis
+0_0340	1	host_clade_0396	Mycolicibacterium palauense
+0_0341	1	host_clade_0081	Mycobacterium sp. PYR10
+0_0342	1	host_clade_0055	Mycolicibacterium goodii
+0_0343	4	host_clade_0002,host_clade_0170	Mycobacterium marinum,Mycobacterium sp. MS3,Mycobacterium sp. TY814
+0_0344	4	host_clade_0067	Mycolicibacterium sp. CBMA 213,Mycolicibacterium sp. CBMA 293,Mycolicibacterium sp. CBMA 335,Mycolicibacterium sp. CBMA 360
+0_0345	1	host_clade_0441	Mycolicibacter acidiphilus
+0_0346	2	host_clade_0055	Mycolicibacterium goodii
+0_0347	1	host_clade_0009	Mycolicibacterium aurantiacum
+0_0348	4	host_clade_0027,host_clade_0299,host_clade_0430	Mycobacterium novum,Mycolicibacterium komossense,[Mycobacterium] nativiensis
+0_0349	4	host_clade_0044,host_clade_0084,host_clade_0127	Mycobacterium hackensackense,Mycolicibacterium canariasense,Mycolicibacterium sp. A43C
+0_0350	2	host_clade_0133	Mycobacterium shigaense
+0_0351	1	host_clade_0313	Mycobacterium sp. NPDC050853
+0_0352	2	host_clade_0006,host_clade_0008	Mycobacterium sp. 134,Mycolicibacterium fortuitum
+0_0353	1	host_clade_0001	Mycobacteroides abscessus
+0_0354	2	host_clade_0314,host_clade_0845	Mycobacterium sp. IDUB_1,Mycolicibacterium litorale
+0_0355	1	host_clade_0296	Mycobacterium sp. Panama NTM2
+0_0356	1	host_clade_0314	Mycobacterium sp. IDUB_1
+0_0357	3	host_clade_0063	Mycolicibacterium wolinskyi
+0_0358	3	host_clade_0005	Mycobacterium intracellulare
+0_0359	3	host_clade_0004,host_clade_0142	Mycobacterium attenuatum,Mycobacterium kansasii
+0_0360	3	host_clade_0001	Mycobacteroides abscessus
+0_0361	2	host_clade_0084	Mycolicibacterium flavescens,Mycolicibacterium fluoranthenivorans
+0_0362	3	host_clade_0008,host_clade_0112	Mycobacterium farcinogenes,Mycobacterium sp. 455mf,Mycobacterium sp. 88mf
+0_0363	2	host_clade_0224,host_clade_0600	Mycobacterium sp.,Mycolicibacterium moriokaense
+0_0364	3	host_clade_0006	Mycolicibacterium fortuitum,Mycolicibacterium sp.
+0_0365	1	host_clade_0071	Mycobacterium sp. TJFP1
+0_0366	1	host_clade_0004	Mycobacterium kansasii
+0_0367	3	host_clade_0005,host_clade_0190	Mycobacterium intracellulare,Mycobacterium sp. NGS33
+0_0368	1	host_clade_0830	Mycobacterium sp. JS623
+0_0369	2	host_clade_0104	Mycobacterium sp. UM_NYF,Mycobacterium sp. UM_RHS
+0_0370	1	host_clade_0065	Mycolicibacter arupensis
+0_0371	1	host_clade_0104	Mycobacterium sp. UM_NYF
+0_0372	3	host_clade_0047,host_clade_0249	Mycolicibacter heraklionensis,Mycolicibacter virginiensis
+0_0373	3	host_clade_0217,host_clade_0341	Mycobacterium sp. 852013-50091_SCH5140682,Mycolicibacterium neworleansense
+0_0374	1	host_clade_0033	Mycobacterium lehmannii
+0_0375	3	host_clade_0127	Mycolicibacterium canariasense
+0_0376	2	host_clade_0033,host_clade_0239	Mycobacterium neumannii,Mycobacterium sp. 852002-51961_SCH5331710
+0_0377	3	host_clade_0033,host_clade_0195	Mycobacterium sp. 852014-52144_SCH5372336,Mycolicibacterium psychrotolerans
+0_0378	1	host_clade_0036	Mycobacterium colombiense
+0_0379	1	host_clade_0361	Mycobacterium asiaticum
+0_0380	3	host_clade_0047,host_clade_0065,host_clade_0466	Mycolicibacter arupensis,Mycolicibacter heraklionensis,[Mycobacterium] holstebronense
+0_0381	3	host_clade_0003,host_clade_0004,host_clade_0005	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium kansasii
+0_0382	3	host_clade_0107,host_clade_0286	Mycolicibacterium holsaticum,Mycolicibacterium pulveris
+0_0383	2	host_clade_0001	Mycobacteroides chelonae
+0_0384	2	host_clade_0001	Mycobacteroides chelonae
+0_0385	3	host_clade_0001,host_clade_0041	Mycobacterium toneyamaense,Mycolicibacterium llatzerense,Mycolicibacterium sp. 141076
+0_0386	3	host_clade_0169,host_clade_0317	Mycobacterium interjectum,Mycobacterium malmoense
+0_0387	1	host_clade_0169	Mycobacterium malmoense
+0_0388	3	host_clade_0224	Mycolicibacterium moriokaense
+0_0389	3	host_clade_0224	Mycolicibacterium moriokaense
+0_0390	3	host_clade_0216	Mycolicibacter minnesotensis
+0_0391	3	host_clade_0236	Mycobacterium noviomagense
+0_0392	1	host_clade_0027	Mycolicibacter algericus
+0_0393	3	host_clade_0053	Mycolicibacterium fallax
+0_0394	3	host_clade_0159	Mycolicibacillus koreensis
+0_0395	3	host_clade_0001,host_clade_0063	Mycobacteroides abscessus,Mycolicibacterium wolinskyi
+0_0396	3	host_clade_0228	Mycobacterium eburneum,Mycobacterium talmoniae
+0_0397	2	host_clade_0013,host_clade_0058	Mycobacterium sp. DBP42,Mycolicibacterium senegalense
+0_0398	3	host_clade_0129	Mycolicibacterium hippocampi
+0_0399	3	host_clade_0129	Mycolicibacterium hippocampi
+0_0400	3	host_clade_0286	Mycolicibacterium pulveris
+0_0401	3	host_clade_0046	Mycolicibacterium tokaiense
+0_0402	3	host_clade_0084	Mycolicibacterium fluoranthenivorans
+0_0403	3	host_clade_0084	Mycolicibacterium fluoranthenivorans
+0_0404	2	host_clade_0001	Mycobacterium sp. SMC-13,Mycolicibacterium phocaicum
+0_0405	3	host_clade_0139	Mycolicibacillus parakoreensis
+0_0406	3	host_clade_0139	Mycolicibacillus parakoreensis
+0_0407	3	host_clade_0048	Mycolicibacterium neoaurum,Mycolicibacterium sp. PDY-3
+0_0408	1	host_clade_0714	Mycobacterium sp. SMC-2
+0_0409	3	host_clade_0203	Mycolicibacterium bacteremicum
+0_0410	3	host_clade_0231	Mycobacterium pinniadriaticum,Mycobacterium sp. P3
+0_0411	3	host_clade_0231	Mycobacterium pinniadriaticum,Mycobacterium sp. P3
+0_0412	3	host_clade_0231	Mycobacterium pinniadriaticum,Mycobacterium sp. P3
+0_0413	3	host_clade_0002	Mycobacterium marinum
+0_0414	1	host_clade_0005	Mycobacterium intracellulare
+0_0415	3	host_clade_0047,host_clade_0065	Mycobacterium sp. SMC-11,Mycobacterium sp. UM_Kg17
+0_0416	1	host_clade_0229	Mycobacterium sp. 4D054
+0_0417	3	host_clade_0176	Mycolicibacterium sp. XJ647,Mycolicibacterium sp. XJ652,Mycolicibacterium sp. XJ662
+0_0418	2	host_clade_0058,host_clade_0177	Mycobacterium sp. IDUB_17,Mycobacterium syngnathidarum
+0_0419	2	host_clade_0064,host_clade_0296	Mycobacterium sp. PSTR-4-N,Mycolicibacterium iranicum
+0_0420	1	host_clade_0001	Mycobacteroides abscessus
+0_0421	2	host_clade_0063	Mycolicibacterium wolinskyi
+0_0422	2	host_clade_0112	Mycolicibacterium houstonense
+0_0423	3	host_clade_0001	Mycobacteroides abscessus
+0_0424	3	host_clade_0001	Mycobacteroides abscessus
+0_0425	2	host_clade_0146	Mycobacterium sp.
+0_0426	2	host_clade_0221	Mycolicibacterium mengxianglii
+0_0427	2	host_clade_0199	Mycobacterium sp.,Mycolicibacterium sp.
+0_0428	2	host_clade_0296,host_clade_0519	Mycobacterium sp.,Mycobacterium sp. PSTR-4-N
+0_0429	2	host_clade_0084	Mycolicibacterium sp. Y3
+0_0430	1	host_clade_0119	Mycobacterium sp. NGS62
+0_0431	2	host_clade_0030,host_clade_0116	Mycobacterium simiae,Mycobacterium sp. NGS60
+0_0432	2	host_clade_0050	Mycobacterium sp. NGS29,Mycobacterium sp. NGS37
+0_0433	2	host_clade_0001	Mycobacteroides abscessus
+0_0434	1	host_clade_0009	Mycolicibacterium poriferae
+0_0435	2	host_clade_0267	Mycobacterium sp.
+0_0436	2	host_clade_0009	Mycolicibacterium poriferae
+0_0437	1	host_clade_0056	Mycobacterium parascrofulaceum
+0_0438	2	host_clade_0037	Mycolicibacterium phlei
+0_0439	2	host_clade_0408,host_clade_0425	Mycobacterium sp. 155,Mycobacterium venezuelense
+0_0440	2	host_clade_0064	Mycolicibacterium iranicum
+0_0441	2	host_clade_0048	Mycobacterium sp. UNCCL9,Mycolicibacterium neoaurum
+0_0442	2	host_clade_0213	Mycolicibacterium aurum
+0_0443	2	host_clade_0092,host_clade_0861	Mycobacterium heckeshornense,Mycobacterium sp. MFM001
+0_0444	1	host_clade_0121	Mycobacterium europaeum
+0_0445	2	host_clade_0015	Mycolicibacterium peregrinum
+0_0446	2	host_clade_0155	Mycolicibacterium brisbanense
+0_0447	2	host_clade_0246	Mycobacterium sp. E1214,Mycobacterium sp. E1319
+0_0448	2	host_clade_0246	Mycobacterium sp. E1214,Mycobacterium sp. E1319
+0_0449	2	host_clade_0047,host_clade_0167	Mycolicibacter heraklionensis,Mycolicibacter kumamotonensis
+0_0450	2	host_clade_0153,host_clade_0442	Mycobacterium alsense,Mycobacterium sp.
+0_0451	1	host_clade_0056	Mycobacterium malmoense
+0_0452	2	host_clade_0020,host_clade_0412	Mycolicibacterium psychrotolerans,Mycolicibacterium vulneris
+0_0453	2	host_clade_0005	Mycobacterium intracellulare
+0_0454	2	host_clade_0340	Mycobacterium angelicum
+0_0455	2	host_clade_0233	Mycobacterium celatum
+0_0456	2	host_clade_0027,host_clade_0274	Mycolicibacter longobardus,Mycolicibacter senuensis
+0_0457	2	host_clade_0110	Mycobacterium paraense
+0_0458	2	host_clade_0008,host_clade_0332	Mycolicibacterium nivoides,Mycolicibacterium sphagni
+0_0459	1	host_clade_0190	Mycobacterium colombiense
+0_0460	1	host_clade_0049	Mycobacterium paragordonae
+0_0461	1	host_clade_0097	Mycobacteroides salmoniphilum
+0_0462	1	host_clade_0130	Mycolicibacterium aubagnense
+0_0463	2	host_clade_0360	Mycobacterium sp. KBS0706
+0_0464	2	host_clade_0360	Mycobacterium sp. KBS0706
+0_0465	2	host_clade_0360	Mycobacterium sp. KBS0706
+0_0466	2	host_clade_0360	Mycobacterium sp. KBS0706
+0_0467	2	host_clade_0067	Mycolicibacterium sp. CBMA 213,Mycolicibacterium sp. CBMA 335
+0_0468	1	host_clade_0049	Mycobacterium paragordonae
+0_0469	2	host_clade_0046	Mycolicibacterium tokaiense
+0_0470	2	host_clade_0064,host_clade_0126	Mycolicibacterium iranicum,Mycolicibacterium parafortuitum
+0_0471	2	host_clade_0159	Mycolicibacillus koreensis
+0_0472	1	host_clade_0380	Mycolicibacterium iranicum
+0_0473	2	host_clade_0210	Mycolicibacterium baixiangningiae
+0_0474	2	host_clade_0005	Mycobacterium intracellulare
+0_0475	2	host_clade_0006,host_clade_0007	Mycolicibacterium fortuitum,Mycolicibacterium smegmatis
+0_0476	1	host_clade_0026	Mycolicibacterium mageritense
+0_0477	2	host_clade_0048	Mycolicibacterium neoaurum
+0_0478	2	host_clade_0063	Mycolicibacterium goodii,Mycolicibacterium wolinskyi
+0_0479	1	host_clade_0017	Mycolicibacterium elephantis
+0_0480	2	host_clade_0064	Mycolicibacterium iranicum
+0_0481	1	host_clade_0002	Mycobacterium marinum
+0_0482	1	host_clade_0189	Mycobacterium antarcticum
+0_0483	1	host_clade_0049	Mycobacterium paragordonae
+0_0484	1	host_clade_0831	[Mycobacterium] appelbergii
+0_0485	2	host_clade_0234,host_clade_0504	Mycobacterium sp. BMJ-28,Mycolicibacterium chengduense
+0_0486	2	host_clade_0001	Mycobacterium sp. SM3041,Mycobacterium toneyamaense
+0_0487	2	host_clade_0029	Mycolicibacterium sp.
+0_0488	1	host_clade_0063	Mycolicibacterium wolinskyi
+0_0489	2	host_clade_0008,host_clade_0013	Mycobacterium sp. 134,Mycolicibacterium senegalense
+0_0490	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0491	1	host_clade_0027	Mycolicibacter algericus
+0_0492	1	host_clade_0044	Mycolicibacterium sp. A43C
+0_0493	2	host_clade_0191,host_clade_0504	Mycobacterium sp. BMJ-28,Mycobacterium sp. P2_H7
+0_0494	1	host_clade_0003	Mycobacterium avium
+0_0495	1	host_clade_0314	Mycobacterium sp. IDUB_1
+0_0496	1	host_clade_0636	Mycobacterium sp. ABE4_509
+0_0497	1	host_clade_0334	Mycobacterium sp. TH-M82
+0_0498	1	host_clade_0317	Mycobacterium terramassiliense
+0_0499	2	host_clade_0009	Mycolicibacterium poriferae,uncultured Mycolicibacterium sp.
+0_0500	1	host_clade_0797	Mycolicibacterium lutetiense
+0_0501	1	host_clade_0001	Mycobacteroides abscessus
+0_0502	1	host_clade_0001	Mycobacteroides abscessus
+0_0503	1	host_clade_0001	Mycobacteroides abscessus
+0_0504	1	host_clade_0049	Mycobacterium sp.
+0_0505	1	host_clade_0032	Mycobacterium sp.
+0_0506	1	host_clade_0004	Mycobacterium kansasii
+0_0507	1	host_clade_0496	Mycobacterium sp.
+0_0508	1	host_clade_0696	Mycobacterium sp.
+0_0509	1	host_clade_0014	Mycobacterium sp.
+0_0510	1	host_clade_0072	Mycolicibacterium sp.
+0_0511	1	host_clade_0255	Mycobacterium sp.
+0_0512	1	host_clade_0328	Mycobacterium sp.
+0_0513	1	host_clade_0811	Mycobacteriaceae bacterium
+0_0514	1	host_clade_0811	Mycobacteriaceae bacterium
+0_0515	1	host_clade_0811	Mycobacteriaceae bacterium
+0_0516	1	host_clade_0822	Mycobacterium sp.
+0_0517	1	host_clade_0053	Mycolicibacterium sp.
+0_0518	1	host_clade_0868	Mycobacteriaceae bacterium
+0_0519	1	host_clade_0355	Mycobacteriaceae bacterium
+0_0520	1	host_clade_0024	Mycobacteriaceae bacterium
+0_0521	1	host_clade_0799	Mycobacteriaceae bacterium
+0_0522	1	host_clade_0799	Mycobacteriaceae bacterium
+0_0523	1	host_clade_0002	Mycobacterium ulcerans
+0_0524	1	host_clade_0476	Mycobacterium sp.
+0_0525	1	host_clade_0612	Mycobacteriaceae bacterium
+0_0526	1	host_clade_0584	Mycobacterium sp.
+0_0527	1	host_clade_0014	Mycobacterium sp.
+0_0528	1	host_clade_0131	Mycobacterium sp.
+0_0529	1	host_clade_0519	Mycobacterium sp.
+0_0530	1	host_clade_0084	Mycolicibacterium sp. Y3
+0_0531	1	host_clade_0017	Mycolicibacterium elephantis
+0_0532	1	host_clade_0017	Mycolicibacterium elephantis
+0_0533	1	host_clade_0082	Mycobacterium sp.
+0_0534	1	host_clade_0293	Mycobacterium sp.
+0_0535	1	host_clade_0444	Mycobacterium sp. NGS68
+0_0536	1	host_clade_0030	Mycobacterium sp. NGS53
+0_0537	1	host_clade_0119	Mycobacterium sp. NGS52
+0_0538	1	host_clade_0639	Mycobacterium sp. NGS50
+0_0539	1	host_clade_0639	Mycobacterium sp. NGS50
+0_0540	1	host_clade_0639	Mycobacterium sp. NGS50
+0_0541	1	host_clade_0639	Mycobacterium sp. NGS50
+0_0542	1	host_clade_0050	Mycobacterium sp. NGS46
+0_0543	1	host_clade_0223	Mycobacterium sp. NGS27
+0_0544	1	host_clade_0204	Mycobacterium sp. NGS22
+0_0545	1	host_clade_0765	uncultured Mycobacterium sp.
+0_0546	1	host_clade_0001	Mycobacteroides abscessus
+0_0547	1	host_clade_0001	Mycobacteroides abscessus
+0_0548	1	host_clade_0001	Mycobacteroides abscessus
+0_0549	1	host_clade_0001	Mycobacteroides abscessus
+0_0550	1	host_clade_0001	Mycobacteroides abscessus
+0_0551	1	host_clade_0001	Mycobacteroides abscessus
+0_0552	1	host_clade_0001	Mycobacteroides abscessus
+0_0553	1	host_clade_0001	Mycobacteroides abscessus
+0_0554	1	host_clade_0001	Mycobacteroides abscessus
+0_0555	1	host_clade_0001	Mycobacteroides abscessus
+0_0556	1	host_clade_0001	Mycolicibacterium mucogenicum
+0_0557	1	host_clade_0866	Mycobacteriaceae bacterium
+0_0558	1	host_clade_0130	Mycolicibacterium aubagnense
+0_0559	1	host_clade_0130	Mycolicibacterium aubagnense
+0_0560	1	host_clade_0130	Mycolicibacterium aubagnense
+0_0561	1	host_clade_0410	uncultured Mycobacteriaceae bacterium
+0_0562	1	host_clade_0794	uncultured Mycobacteriaceae bacterium
+0_0563	1	host_clade_0552	uncultured Mycobacterium sp.
+0_0564	1	host_clade_0664	uncultured Mycobacterium sp.
+0_0565	1	host_clade_0449	uncultured Mycobacterium sp.
+0_0566	1	host_clade_0829	uncultured Mycobacterium sp.
+0_0567	1	host_clade_0630	uncultured Mycobacterium sp.
+0_0568	1	host_clade_0267	Mycobacterium sp.
+0_0569	1	host_clade_0024	Mycobacterium sp.
+0_0570	1	host_clade_0028	Mycobacterium sp.
+0_0571	1	host_clade_0535	Mycobacterium sp.
+0_0572	1	host_clade_0024	Mycobacteriaceae bacterium
+0_0573	1	host_clade_0647	Mycobacteriaceae bacterium
+0_0574	1	host_clade_0443	Mycobacterium sp.
+0_0575	1	host_clade_0443	Mycobacterium sp.
+0_0576	1	host_clade_0573	uncultured Mycobacterium sp.
+0_0577	1	host_clade_0573	uncultured Mycobacterium sp.
+0_0578	1	host_clade_0830	Mycobacterium sp. JS623
+0_0579	1	host_clade_0666	Mycobacterium sp. 141
+0_0580	1	host_clade_0155	Mycobacterium sp. UM_WWY
+0_0581	1	host_clade_0155	Mycobacterium sp. UM_WWY
+0_0582	1	host_clade_0116	Mycobacterium simiae
+0_0583	1	host_clade_0003	Mycobacterium avium
+0_0584	1	host_clade_0013	Mycolicibacterium senegalense
+0_0585	1	host_clade_0013	Mycolicibacterium senegalense
+0_0586	1	host_clade_0013	Mycolicibacterium senegalense
+0_0587	1	host_clade_0013	Mycolicibacterium senegalense
+0_0588	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0589	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0590	1	host_clade_0808	Mycobacterium sp. IS-1590
+0_0591	1	host_clade_0063	Mycolicibacterium wolinskyi
+0_0592	1	host_clade_0369	Mycobacterium sp. 1100029.7
+0_0593	1	host_clade_0093	Mycobacterium sp. E735
+0_0594	1	host_clade_0073	Mycolicibacterium mucogenicum
+0_0595	1	host_clade_0073	Mycolicibacterium mucogenicum
+0_0596	1	host_clade_0140	Mycolicibacter heraklionensis
+0_0597	1	host_clade_0140	Mycolicibacter heraklionensis
+0_0598	1	host_clade_0135	Mycobacterium asiaticum
+0_0599	1	host_clade_0135	Mycobacterium asiaticum
+0_0600	1	host_clade_0013	Mycolicibacterium senegalense
+0_0601	1	host_clade_0105	Mycobacterium sp. 1245499.0
+0_0602	1	host_clade_0167	Mycolicibacter kumamotonensis
+0_0603	1	host_clade_0056	Mycobacterium malmoense
+0_0604	1	host_clade_0020	Mycolicibacterium porcinum
+0_0605	1	host_clade_0020	Mycolicibacterium vulneris
+0_0606	1	host_clade_0159	Mycolicibacillus koreensis
+0_0607	1	host_clade_0001	Mycobacteroides chelonae
+0_0608	1	host_clade_0169	Mycobacterium malmoense
+0_0609	1	host_clade_0169	Mycobacterium malmoense
+0_0610	1	host_clade_0029	Mycobacterium sp. WY10
+0_0611	1	host_clade_0042	Mycobacterium sp. SWH-M1
+0_0612	1	host_clade_0026	Mycobacterium sp. SWH-M3
+0_0613	1	host_clade_0026	Mycobacterium sp. SWH-M3
+0_0614	1	host_clade_0140	Mycolicibacter heraklionensis
+0_0615	1	host_clade_0543	Mycolicibacterium litorale
+0_0616	1	host_clade_0543	Mycolicibacterium litorale
+0_0617	1	host_clade_0001	Mycobacteroides chelonae
+0_0618	1	host_clade_0301	Mycobacterium sp. AT1
+0_0619	1	host_clade_0676	Mycobacterium arosiense
+0_0620	1	host_clade_0167	Mycolicibacter kumamotonensis
+0_0621	1	host_clade_0627	Mycobacterium aquaticum
+0_0622	1	host_clade_0076	Mycolicibacterium monacense
+0_0623	1	host_clade_0126	Mycolicibacterium parafortuitum
+0_0624	1	host_clade_0264	Mycobacterium palustre
+0_0625	1	host_clade_0332	Mycolicibacterium sphagni
+0_0626	1	host_clade_0332	Mycolicibacterium sphagni
+0_0627	1	host_clade_0396	Mycolicibacterium palauense
+0_0628	1	host_clade_0396	Mycolicibacterium palauense
+0_0629	1	host_clade_0396	Mycolicibacterium palauense
+0_0630	1	host_clade_0396	Mycolicibacterium palauense
+0_0631	1	host_clade_0081	Mycobacterium sp. PYR10
+0_0632	1	host_clade_0081	Mycobacterium sp. PYR10
+0_0633	1	host_clade_0001	Mycobacteroides abscessus
+0_0634	1	host_clade_0001	Mycobacteroides abscessus
+0_0635	1	host_clade_0126	Mycobacterium sp. EPG1
+0_0636	1	host_clade_0316	Mycobacterium sp. ITM-2016-00318
+0_0637	1	host_clade_0042	Mycobacterium kyogaense
+0_0638	1	host_clade_0105	Mycobacterium colombiense
+0_0639	1	host_clade_0629	Mycolicibacterium moriokaense
+0_0640	1	host_clade_0001	Mycolicibacterium sp.
+0_0641	1	host_clade_0228	Mycobacterium eburneum
+0_0642	1	host_clade_0149	Mycobacterium sp. BK086
+0_0643	1	host_clade_0149	Mycobacterium sp. BK086
+0_0644	1	host_clade_0386	Mycolicibacterium sp. CH28
+0_0645	1	host_clade_0864	Mycolicibacterium sp. CR10
+0_0646	1	host_clade_0864	Mycolicibacterium sp. CR10
+0_0647	1	host_clade_0461	Mycolicibacterium sp. 018/SC-01/001
+0_0648	1	host_clade_0065	Mycolicibacter arupensis
+0_0649	1	host_clade_0663	Mycolicibacterium sp. P9-64
+0_0650	1	host_clade_0604	Mycobacterium sp.
+0_0651	1	host_clade_0009	Mycobacterium sp. THAF192
+0_0652	1	host_clade_0049	Mycobacterium paragordonae
+0_0653	1	host_clade_0261	Mycolicibacterium vinylchloridicum
+0_0654	1	host_clade_0076	Mycolicibacterium obuense
+0_0655	1	host_clade_0149	Mycolicibacterium sp. BK634
+0_0656	1	host_clade_0328	Mycobacterium sp. AZCC_0083
+0_0657	1	host_clade_0237	Mycolicibacterium litorale
+0_0658	1	host_clade_0070	Mycobacterium kubicae
+0_0659	1	host_clade_0005	Mycobacterium intracellulare
+0_0660	1	host_clade_0008	Mycolicibacterium septicum
+0_0661	1	host_clade_0537	Mycolicibacterium sp. S2-37
+0_0662	1	host_clade_0294	Mycolicibacterium lutetiense
+0_0663	1	host_clade_0582	Mycobacterium sp. SM1
+0_0664	1	host_clade_0582	Mycobacterium sp. SM1
+0_0665	1	host_clade_0048	Mycolicibacterium neoaurum
+0_0666	1	host_clade_0585	Mycobacterium sp.
+0_0667	1	host_clade_0055	Mycolicibacterium goodii
+0_0668	1	host_clade_0482	Mycobacterium sp. MBM
+0_0669	1	host_clade_0482	Mycobacterium sp. MBM
+0_0670	1	host_clade_0058	Mycobacterium sp. CnD-18-1
+0_0671	1	host_clade_0296	Mycobacterium sp. PSTR-4-N
+0_0672	1	host_clade_0788	Candidatus Mycolicibacterium alkanivorans
+0_0673	1	host_clade_0258	Candidatus Mycobacterium methanotrophicum
+0_0674	1	host_clade_0010	Mycobacterium saskatchewanense
+0_0675	1	host_clade_0332	Mycolicibacterium sphagni
+0_0676	1	host_clade_0332	Mycolicibacterium sphagni
+0_0677	1	host_clade_0332	Mycolicibacterium sphagni
+0_0678	1	host_clade_0242	Mycobacterium bohemicum
+0_0679	1	host_clade_0430	Mycolicibacterium komossense
+0_0680	1	host_clade_0688	Mycobacterium yunnanensis
+0_0681	1	host_clade_0153	Mycobacterium alsense
+0_0682	1	host_clade_0112	Mycolicibacterium houstonense
+0_0683	1	host_clade_0064	Mycolicibacterium iranicum
+0_0684	1	host_clade_0678	Mycolicibacterium sp. BiH015
+0_0685	1	host_clade_0581	Mycobacterium sp. OTB74
+0_0686	1	host_clade_0581	Mycobacterium sp. OTB74
+0_0687	1	host_clade_0189	Mycobacterium antarcticum
+0_0688	1	host_clade_0005	Mycobacterium intracellulare
+0_0689	1	host_clade_0116	Mycobacterium simiae
+0_0690	1	host_clade_0028	Mycolicibacterium frederiksbergense
+0_0691	1	host_clade_0001	Mycobacteroides abscessus
+0_0692	1	host_clade_0001	Mycobacteroides abscessus
+0_0693	1	host_clade_0049	Mycobacterium paragordonae
+0_0694	1	host_clade_0005	Mycobacterium intracellulare
+0_0695	1	host_clade_0028	Mycobacterium sp.
+0_0696	1	host_clade_0415	Mycobacterium sp. 94-17
+0_0697	1	host_clade_0078	Mycobacterium sherrisii
+0_0698	1	host_clade_0871	Mycolicibacterium sp. 050232
+0_0699	1	host_clade_0122	Mycolicibacterium gadium
+0_0700	1	host_clade_0399	Mycolicibacterium neoaurum
+0_0701	1	host_clade_0399	Mycolicibacterium neoaurum
+0_0702	1	host_clade_0755	Mycobacterium kyogaense
+0_0703	1	host_clade_0048	Mycolicibacterium neoaurum
+0_0704	1	host_clade_0226	Mycobacterium adipatum
+0_0705	1	host_clade_0226	Mycobacterium adipatum
+0_0706	1	host_clade_0226	Mycobacterium adipatum
+0_0707	1	host_clade_0418	Mycobacterium sp. pUA109
+0_0708	1	host_clade_0166	Mycolicibacterium sp.
+0_0709	1	host_clade_0009	Mycobacterium sp. G7A2
+0_0710	1	host_clade_0001	Mycobacterium sp. SMC-17
+0_0711	1	host_clade_0170	Mycobacterium sp. MS3
+0_0712	1	host_clade_0008	Mycobacterium sp. 134
+0_0713	1	host_clade_0008	Mycobacterium sp. 134
+0_0714	1	host_clade_0015	Mycolicibacterium peregrinum
+0_0715	1	host_clade_0432	Mycobacterium sp. WMMD1722
+0_0716	1	host_clade_0027	Mycolicibacter algericus
+0_0717	1	host_clade_0271	Mycolicibacterium pulveris
+0_0718	1	host_clade_0208	Mycolicibacterium aichiense
+0_0719	1	host_clade_0338	Mycobacterium sp.
+0_0720	1	host_clade_0323	Mycolicibacterium sp. 22603
+0_0721	1	host_clade_0043	Mycobacterium sp.
+0_0722	1	host_clade_0613	Mycolicibacterium sp. Dal123E01
+0_0723	1	host_clade_0081	Mycolicibacterium gilvum
+0_0724	1	host_clade_0656	Mycobacterium sp. C31M
+0_0725	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0726	1	host_clade_0460	Mycolicibacter minnesotensis
+0_0727	1	host_clade_0033	Mycolicibacterium sp. XJ1904
+0_0728	1	host_clade_0027	Mycolicibacter sinensis
+0_0729	1	host_clade_0826	Mycolicibacterium boenickei
+0_0730	1	host_clade_0017	Mycolicibacterium elephantis
+0_0731	1	host_clade_0742	Mycobacterium sp. NPDC003323
+0_0732	1	host_clade_0494	Mycobacterium sp. URHB0021
+0_0733	1	host_clade_0494	Mycobacterium sp. URHB0021
+0_0734	1	host_clade_0504	Mycobacterium sp. BMJ-28
+0_0735	1	host_clade_0185	Mycolicibacterium hodleri
+0_0736	1	host_clade_0229	Mycobacterium sp. ZZG
+0_0737	1	host_clade_0064	Mycolicibacterium iranicum
+0_0738	1	host_clade_0042	Mycolicibacterium obuense
+0_0739	1	host_clade_0775	Mycobacterium sp. IDUB_36
+0_0740	1	host_clade_0775	Mycobacterium sp. IDUB_36
+0_0741	1	host_clade_0032	Mycobacterium gordonae
+0_0742	1	host_clade_0032	Mycobacterium gordonae
+0_0743	1	host_clade_0064	Mycolicibacterium iranicum
+0_0744	1	host_clade_0314	Mycobacterium sp. IDUB_5
+0_0745	1	host_clade_0294	Mycolicibacterium lutetiense
+0_0746	1	host_clade_0314	Mycobacterium sp. IDUB_1
+0_0747	1	host_clade_0314	Mycobacterium sp. IDUB_1
+0_0748	1	host_clade_0001	Mycobacterium toneyamaense
+0_0749	1	host_clade_0165	Mycobacterium lentiflavum
+0_0750	1	host_clade_0165	Mycobacterium lentiflavum
+0_0751	1	host_clade_0001	Mycobacteroides chelonae
+0_0752	1	host_clade_0005	Mycobacterium paraintracellulare
+0_0753	1	host_clade_0063	Mycolicibacterium wolinskyi
+0_0754	1	host_clade_0046	Mycolicibacterium tokaiense
+0_0755	1	host_clade_0046	Mycolicibacterium tokaiense
+0_0756	1	host_clade_0468	Mycobacterium sp.
+0_0757	1	host_clade_0806	Mycobacterium sp. TH-M15
+0_0758	1	host_clade_0350	Mycobacterium sp. FW102-FHT13B02
+0_0759	1	host_clade_0023	Mycobacterium colombiense
+0_0760	1	host_clade_0001	Mycobacteroides abscessus
+0_0761	1	host_clade_0001	Mycobacteroides abscessus
+0_0762	1	host_clade_0001	Mycobacteroides abscessus
+0_0763	1	host_clade_0001	Mycobacteroides abscessus
+0_0764	1	host_clade_0317	Mycobacterium terramassiliense
+0_0765	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0766	1	host_clade_0004	Mycobacterium persicum
+0_0767	1	host_clade_0042	Mycolicibacterium obuense
+0_0768	1	host_clade_0116	Mycobacterium simiae
+0_0769	1	host_clade_0009	Mycolicibacterium poriferae
+0_0770	1	host_clade_0072	Mycolicibacterium insubricum
+0_0771	27	host_clade_0001,host_clade_0019	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides immunogenum
+0_0772	20	host_clade_0008	Mycolicibacterium septicum
+0_0773	11	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae,Mycobacteroides sp. H001,Mycobacteroides sp. H002,Mycobacteroides sp. H054
+0_0774	10	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0775	6	host_clade_0001	Mycobacteroides abscessus,Mycobacteroides chelonae
+0_0776	3	host_clade_0001	Mycobacteroides abscessus
+0_0777	2	host_clade_0001	Mycobacteroides abscessus
+0_0778	3	host_clade_0006	Mycolicibacterium fortuitum,Mycolicibacterium sp. GESEQ-9
+0_0779	3	host_clade_0006	Mycolicibacterium fortuitum
+0_0780	1	host_clade_0001	Mycobacteroides chelonae
+0_0781	1	host_clade_0001	Mycobacteroides abscessus
+0_0782	1	host_clade_0006	Mycolicibacterium sp.
+0_0783	2	host_clade_0104	Mycobacterium sp. UM_NYF,Mycobacterium sp. UM_RHS
+0_0784	2	host_clade_0063	Mycolicibacterium wolinskyi
+0_0785	1	host_clade_0055	Mycobacterium sp. SWH-M5
+0_0786	1	host_clade_0001	Mycobacteroides abscessus
+0_0787	1	host_clade_0177	Mycobacterium sp. DL99
+0_0788	1	host_clade_0191	Mycolicibacterium cosmeticum
+0_0789	48	host_clade_0003,host_clade_0005,host_clade_0714,host_clade_0754	Mycobacterium avium,Mycobacterium botniense,Mycobacterium intracellulare,Mycobacterium sp. SMC-2,Mycobacterium timonense
+0_0790	5	host_clade_0023	Mycobacterium colombiense
+0_0791	4	host_clade_0090	Mycolicibacillus trivialis
+0_0792	1	host_clade_0169	Mycobacterium malmoense
+0_0793	2	host_clade_0027	Mycolicibacter algericus
+0_0794	1	host_clade_0630	uncultured Mycobacterium sp.
+0_0795	1	host_clade_0441	Mycolicibacter acidiphilus
+0_0796	1	host_clade_0277	Mycobacterium barrassiae
+0_0797	1	host_clade_0705	Mycobacterium sp. MYCO198283
+0_0798	1	host_clade_0692	Mycolicibacterium sp. XJ1819
+0_0799	1	host_clade_0066	Mycobacterium paragordonae
+0_0800	1	host_clade_0119	Mycobacterium sp. NGS52
+0_0801	1	host_clade_0317	Mycobacterium interjectum
+0_0802	13	host_clade_0022	Mycobacterium kiyosense
+0_0803	11	host_clade_0006,host_clade_0013	Mycobacterium sp. VKM Ac-1817D,Mycolicibacterium fortuitum,Mycolicibacterium senegalense
+0_0804	7	host_clade_0001,host_clade_0020	Mycobacteroides abscessus,Mycolicibacterium mucogenicum,Mycolicibacterium porcinum,Mycolicibacterium sp.
+0_0805	1	host_clade_0001	Mycobacterium sp. SMC-13
+0_0806	3	host_clade_0001	Mycobacterium sp. SMC-16,Mycobacterium toneyamaense,Mycolicibacterium mucogenicum
+0_0807	3	host_clade_0152	Mycolicibacterium alvei
+0_0808	3	host_clade_0073	Mycolicibacterium mucogenicum
+0_0809	2	host_clade_0048	Mycobacterium sp. UNCCL9,Mycolicibacterium neoaurum
+0_0810	2	host_clade_0013	Mycolicibacterium senegalense
+0_0811	1	host_clade_0261	Mycolicibacterium rhodesiae
+0_0812	1	host_clade_0229	Mycobacterium sp. ZZG
+0_0813	1	host_clade_0437	Mycobacterium dioxanotrophicus
+0_0814	1	host_clade_0077	Mycolicibacterium thermoresistibile
+0_0815	1	host_clade_0042	Mycolicibacterium obuense
+0_0816	1	host_clade_0432	Mycobacterium sp. WMMD1722
+0_0817	1	host_clade_0350	Mycolicibacterium sp. HS_4_1
+0_0818	29	host_clade_0003,host_clade_0005,host_clade_0056	Mycobacterium avium,Mycobacterium intracellulare,Mycobacterium malmoense,Mycobacterium sp. MAC_080597_8934
+0_0819	3	host_clade_0056,host_clade_0069	Mycobacterium paraffinicum,Mycobacterium parascrofulaceum
+0_0820	4	host_clade_0005	Mycobacterium intracellulare
+0_0821	1	host_clade_0003	Mycobacterium avium
+0_0822	3	host_clade_0003	Mycobacterium avium
+0_0823	3	host_clade_0049,host_clade_0066	Mycobacterium gordonae,Mycobacterium paragordonae
+0_0824	3	host_clade_0003	Mycobacterium avium
+0_0825	1	host_clade_0054	Mycobacterium xenopi
+0_0826	1	host_clade_0003	Mycobacterium avium
+0_0827	1	host_clade_0435	Mycobacterium simiae
+0_0828	1	host_clade_0004	Mycobacterium kansasii
+0_0829	1	host_clade_0031	Mycobacterium riyadhense
+0_0830	1	host_clade_0430	Mycolicibacterium komossense
+0_0831	1	host_clade_0089	Mycobacterium sp. NTMscope_Eco_3
+0_0832	9	host_clade_0061	Mycobacterium shinjukuense
+0_0833	4	host_clade_0006,host_clade_0103,host_clade_0294	Mycolicibacterium fortuitum,Mycolicibacterium lutetiense,Mycolicibacterium setense
+0_0834	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0835	1	host_clade_0533	Mycobacterium sp. ST-F2
+0_0836	1	host_clade_0003	Mycobacterium avium
+0_0837	1	host_clade_0026	Mycolicibacterium mageritense
+0_0838	1	host_clade_0716	Mycobacterium sp. 236(2023)
+0_0839	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0840	1	host_clade_0001	Mycobacteroides abscessus
+0_0841	1	host_clade_0006	Mycolicibacterium sp.
+0_0842	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0843	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0844	21	host_clade_0002	Mycobacterium marinum
+0_0845	10	host_clade_0002	Mycobacterium marinum
+0_0846	10	host_clade_0002	Mycobacterium marinum
+0_0847	4	host_clade_0032,host_clade_0049	Mycobacterium gordonae,Mycobacterium paragordonae
+0_0848	3	host_clade_0002	Mycobacterium marinum
+0_0849	1	host_clade_0002	Mycobacterium marinum
+0_0850	1	host_clade_0144	Mycobacterium kansasii
+0_0851	16	host_clade_0003,host_clade_0006,host_clade_0008,host_clade_0015,host_clade_0020,host_clade_0130	Mycobacterium avium,Mycolicibacterium aubagnense,Mycolicibacterium fortuitum,Mycolicibacterium nivoides,Mycolicibacterium porcinum,uncultured Mycobacteriaceae bacterium
+0_0852	12	host_clade_0006,host_clade_0013	Mycolicibacterium fortuitum,Mycolicibacterium senegalense
+0_0853	3	host_clade_0013	Mycolicibacterium senegalense
+0_0854	1	host_clade_0026	Mycolicibacterium mageritense
+0_0855	2	host_clade_0006	Mycolicibacterium fortuitum
+0_0856	1	host_clade_0006	Mycolicibacterium fortuitum
+0_0857	1	host_clade_0155	Mycolicibacterium brisbanense
+0_0858	1	host_clade_0015	uncultured Mycobacteriaceae bacterium
+0_0859	1	host_clade_0055	Mycolicibacterium goodii
+0_0860	1	host_clade_0020	Mycolicibacterium porcinum
+0_0861	3	host_clade_0081,host_clade_0191	Mycolicibacterium cosmeticum,Mycolicibacterium gilvum
+0_0862	2	host_clade_0277	Mycobacterium barrassiae,Mycobacterium sp. NGS30
+0_0863	2	host_clade_0071,host_clade_0574	Mycobacterium sp. SMC-4,Mycobacterium sp. TJFP1
+0_0864	2	host_clade_0221	Mycolicibacterium mengxianglii
+0_0865	1	host_clade_0028	Mycolicibacterium frederiksbergense
+0_0866	1	host_clade_0237	Mycolicibacterium litorale
+0_0867	1	host_clade_0009	Mycolicibacterium sp. SCSIO 43805
+0_0868	1	host_clade_0028	Mycolicibacterium frederiksbergense
+0_0869	1	host_clade_0142	Mycobacterium attenuatum
+0_0870	4	host_clade_0013	Mycolicibacterium senegalense
+0_0871	3	host_clade_0015	Mycolicibacterium peregrinum
+0_0872	3	host_clade_0015	Mycolicibacterium peregrinum
+0_0873	1	host_clade_0217	Mycobacterium sp. 852013-50091_SCH5140682
+0_0874	1	host_clade_0046	Mycobacterium sp. djl-10
+0_0875	1	host_clade_0636	Mycobacterium sp. ABE4_509
+0_0876	6	host_clade_0049,host_clade_0125	Mycobacterium gordonae,Mycobacterium sp. ML1,Mycobacterium sp. ML2,Mycobacterium sp. ML3,Mycobacterium sp. ML4,Mycobacterium sp. ML5
+0_0877	5	host_clade_0056,host_clade_0057,host_clade_0120	Mycobacterium intermedium,Mycobacterium marseillense,Mycobacterium parascrofulaceum
+0_0878	2	host_clade_0248	Mycolicibacterium helvum
+0_0879	1	host_clade_0003	Mycobacterium avium
+0_0880	1	host_clade_0538	Mycobacterium sp.
+0_0881	1	host_clade_0049	Mycobacterium gordonae
+0_0882	1	host_clade_0677	Mycobacterium sp. IDR2000157661
+0_0883	3	host_clade_0030	Mycobacterium sp. NGS14,Mycobacterium sp. NGS35,Mycobacterium sp. NGS43
+0_0884	2	host_clade_0210	Mycolicibacterium baixiangningiae
+0_0885	1	host_clade_0237	Mycolicibacterium litorale
+0_0886	1	host_clade_0004	Mycobacterium kansasii
+0_0887	1	host_clade_0028	Mycolicibacterium frederiksbergense
+0_0888	1	host_clade_0009	Mycobacterium sp. G7A2
+0_0889	1	host_clade_0017	Mycolicibacterium elephantis
+0_0890	1	host_clade_0673	Mycolicibacterium gilvum
+0_0891	5	host_clade_0013	Mycolicibacterium senegalense
+0_0892	5	host_clade_0065	Mycolicibacter arupensis
+0_0893	2	host_clade_0167,host_clade_0722	Mycobacterium sp. SVM_VP21,Mycolicibacter kumamotonensis
+0_0894	1	host_clade_0078	Mycobacterium sherrisii
+0_0895	1	host_clade_0722	Mycobacterium sp. SVM_VP21
+0_0896	1	host_clade_0119	Mycobacterium sp. NGS51
+0_0897	3	host_clade_0006,host_clade_0015,host_clade_0026	Mycobacterium sp. NPDC049093,Mycobacterium sp. SWH-M3,Mycolicibacterium fortuitum
+0_0898	3	host_clade_0006,host_clade_0013	Mycolicibacterium fortuitum,Mycolicibacterium senegalense
+0_0899	1	host_clade_0514	Mycolicibacterium tusciae
+0_0900	1	host_clade_0001	Mycobacterium sp. SMC-13
+0_0901	2	host_clade_0284	Mycolicibacter senuensis
+0_0902	1	host_clade_0172	Mycolicibacter sinensis
+0_0903	1	host_clade_0079	Mycolicibacter sinensis
+0_0904	1	host_clade_0167	Mycolicibacter kumamotonensis
+0_0905	1	host_clade_0079	Mycobacterium polyniensis
+0_0906	1	host_clade_0027	Mycobacterium sp. pW045
+0_0907	2	host_clade_0131,host_clade_0325	Mycobacterium sp.,Mycolicibacterium grossiae
+0_0908	2	host_clade_0064,host_clade_0742	Mycobacterium sp. NPDC003323,Mycolicibacterium iranicum
+0_0909	1	host_clade_0050	Mycobacterium sp. NGS24
+0_0910	2	host_clade_0015,host_clade_0294	Mycobacterium sp. NPDC049093,Mycolicibacterium lutetiense
+0_0911	2	host_clade_0003	Mycobacterium sp. MAC_011194_8550,Mycobacterium sp. MAC_080597_8934
+0_0912	1	host_clade_0015	Mycobacterium sp. 20-525
