@@ -1,0 +1,47 @@
+metric	value	detail
+accession_list_rows	33082	excl header
+accession_list_sha256	da26584badaa4fca7cd8434abaf0bdf70116152012a1e9217991bf20092241ce	
+manifest_rows	51004	excl header
+manifest_sha256	c88686661928c66ab9638da77dd0d615e87bc70975ad859a81e7644142c83386	
+manifest_true_rows	30165	has_prophage=True
+manifest_false_rows	20839	has_prophage=False
+unique_numeric_assemblies	13122	GCA+GCF by numeric part
+numeric_with_twins	10417	both GCA+GCF present
+numeric_gca_only	2373	
+numeric_gcf_only	332	
+unique_run_ids	9543	ERR/SRR/DRR
+unique_genome_ids_total	22665	numeric + runs
+v1_local_genomes	7352	canonical_objects dirs
+v1_local_with_fasta	7303	
+v2_covered_local	1150	GCA-preferred exact-match (dir name == preferred accession)
+v2_missing_local	11972	need download (GCA-preferred semantics)
+v2_missing_gcf_only_numerics	219	of missing: numerics with only GCF row in v2
+v2_covered_prefix_agnostic	5423	numeric present locally under either GCA/GCF
+v2_missing_prefix_agnostic	7699	numeric absent locally under either prefix
+v1_not_in_v2	1902	
+host_clades_v1	7303	unique accessions in v1 host_clades.tsv
+host_clades_v2_overlap	5407	
+v1_prophage_rows	10438	ntm_prophages.csv
+v1_prophage_genomes	4064	
+v2_prophage_numeric_genomes	3527	after GCA/GCF dedup
+v2_prophage_run_genomes	5907	
+v2_prophage_rows_kept	23243	after dedup
+v2_prophage_rows_kept_gca	8183	GCA rows kept (preferred)
+v2_prophage_rows_kept_gcf	319	GCF rows kept (GCF-only numerics)
+v2_prophage_rows_kept_runs	14741	run-assembly rows kept
+v2_prophage_rows_dropped_gcf_twin	6922	
+v2_prophage_gcf_only_numerics	143	
+v2_prophage_id_unique	23243	unique prophage_ids
+v2_prophage_length_min	237	bp
+v2_prophage_length_median	20311	bp
+v2_prophage_length_mean	21933.0	bp
+v2_prophage_length_max	96653	bp
+v2_coord_bad	0	begin>end or unparseable
+v2_len_mismatch	0	length != end-start+1
+v2_prophage_genomes_overlap_v1	2866	v1∩v2 prophage-bearing numerics
+per_genome_count_compared	2867	v1 vs v2 per-genome prophage counts
+per_genome_count_agree	1021	
+per_genome_count_differ	1846	
+tb_complex_rows	13227	species contains 'tuberculosis'
+tb_complex_numeric	7377	
+tb_complex_runs	0	
