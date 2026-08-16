@@ -154,8 +154,9 @@ def main():
     sys.stderr.write("\n")
 
     results.sort(key=lambda r: r["run"])
-    with open(args.out, "w") as fh:
-        w = csv.DictWriter(fh, delimiter="\t", fieldnames=list(results[0].keys()))
+    with open(args.out, "w", newline="") as fh:
+        w = csv.DictWriter(fh, delimiter="\t", fieldnames=list(results[0].keys()),
+                           lineterminator="\n")
         w.writeheader()
         w.writerows(results)
 
