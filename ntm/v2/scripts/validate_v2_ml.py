@@ -234,10 +234,10 @@ def main():
         report.append("**Validation: PASS**")
     report.append("")
     txt = "\n".join(report)
-    print(txt)
+    print(txt.rstrip("\n"))
     if args.report:
         with open(args.report, "w") as f:
-            f.write(txt + "\n")
+            f.write(txt.rstrip("\n") + "\n")
     return 0 if ok else 1
 
 

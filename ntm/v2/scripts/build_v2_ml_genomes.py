@@ -353,7 +353,7 @@ def main():
 
     report_path = os.path.join(args.out, "ml_report.md")
     with open(report_path, "w") as f:
-        f.write(txt + "\n")
+        f.write(txt.rstrip("\n") + "\n")
 
     n_ml = sum(1 for r in ml_rows if r[2] == "ml")
     n_sing = sum(1 for r in ml_rows if r[2] == "singleton")
