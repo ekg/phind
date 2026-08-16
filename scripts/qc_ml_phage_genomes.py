@@ -72,11 +72,15 @@ def load_fasta(path):
 
 
 def load_members(clades_root, community, clade_id):
-    """Return {prophage_element_id: sequence} for a clade."""
-    path = os.path.join(clades_root, community, clade_id, "sequences.fa")
-    if not os.path.exists(path):
-        return None
-    return load_fasta(path)
+    """Return {prophage_element_id: sequence} for a clade.
+
+    Supports both research layout (<root>/<community>/<clade>/sequences.fa)
+    and the flat NTM mash-clades layout (<root>/<clade>/sequences.fa)."""
+    for path in (os.path.join(clades_root, community, clade_id, "sequences.fa"),
+                 os.path.join(clades_root, clade_id, "sequences.fa")):
+        if os.path.exists(path):
+            return load_fasta(path)
+    return None
 
 
 def gc_and_nrun(seq):
@@ -87,15 +91,21 @@ def gc_and_nrun(seq):
 
 
 def map_stats(query, members):
-    """Map ML genome to members; return (complete_frac, identities list)."""
+    """Map ML genome to members; return (complete_frac, identities list).
+
+    The ML genome is a per-partition mosaic, so a member aligns to it in
+    several blocks (partition-sized). We therefore index the ML genome once
+    and map every member as a query, unioning the query intervals (q_st, q_en)
+    to get the fraction of the member covered. Identity per member is
+    matched bases / alignment length (mappy hit.mlen == matches, NOT
+    mismatches; NM is the mismatch/gap count).
+    """
     if not members:
         return 0.0, []
     names = list(members.keys())
     seqs = list(members.values())
-    # build index over members via a temp FASTA (mappy file-based index)
     with tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False) as tf:
-        for name, mseq in zip(names, seqs):
-            tf.write(f">{name}\n{mseq}\n")
+        tf.write(f">ml\n{query}\n")
         tmp_path = tf.name
     try:
         a = mappy.Aligner(fn_idx_in=tmp_path, preset="asm5", best_n=1, n_threads=1)
@@ -106,28 +116,32 @@ def map_stats(query, members):
     member_covered = 0
     identities = []
     for name, mseq in zip(names, seqs):
-        best = None  # best (fraction_covered, identity)
-        for hit in a.map(query):
-            if hit.ctg == name:
-                qlen = hit.q_en - hit.q_st
-                frac = qlen / len(mseq) if len(mseq) else 0.0
-                if frac < COMPLETE_MEMBER_COV:
-                    continue
-                ident = 1.0 - hit.mlen / qlen if qlen else 0.0
-                if best is None or frac > best[0]:
-                    best = (frac, ident)
-        if best is not None:
+        hits = list(a.map(mseq))
+        iv = sorted((h.q_st, h.q_en) for h in hits)
+        merged = []
+        for s, e in iv:
+            if merged and s <= merged[-1][1]:
+                merged[-1][1] = max(merged[-1][1], e)
+            else:
+                merged.append([s, e])
+        cov = sum(e - s for s, e in merged)
+        frac = cov / len(mseq) if len(mseq) else 0.0
+        if frac >= COMPLETE_MEMBER_COV:
             member_covered += 1
-            identities.append(best[1])
+            matched = sum(h.mlen for h in hits)
+            blen = sum(h.blen for h in hits)
+            identities.append(matched / blen if blen else 0.0)
     complete_frac = member_covered / len(members)
     return complete_frac, identities
 
 
 def fasta_id_to_clade(fasta_id):
-    """clade_0_0000_ML -> 0_0000"""
+    """clade_0_0000_ML / ntm_0_0000_ML / ntm2_0_0000_ML -> 0_0000"""
     fid = fasta_id
-    if fid.startswith("clade_"):
-        fid = fid[len("clade_"):]
+    for prefix in ("clade_", "ntm2_", "ntm_"):
+        if fid.startswith(prefix):
+            fid = fid[len(prefix):]
+            break
     if fid.endswith("_ML"):
         fid = fid[: -len("_ML")]
     return fid
