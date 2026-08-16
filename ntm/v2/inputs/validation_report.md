@@ -141,7 +141,6 @@ Total distinct species strings: 274
 | | ERR | 9938 |
 | | SRR | 4789 |
 | | DRR | 14 |
-
 - total kept prophage rows: **23243**
 - GCF-only numeric assemblies contributing prophages: **143**
 - unique prophage-bearing genomes after dedup: **9434** (3527 NCBI numerics + 5907 run-assemblies)

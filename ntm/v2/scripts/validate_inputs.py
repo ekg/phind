@@ -288,7 +288,6 @@ def main():
     R("|---|---|---|")
     for s in ("GCA", "GCF", "ERR", "SRR", "DRR"):
         R(f"| | {s} | {kept_by_source.get(s, 0)} |")
-    R("")
     R(f"- total kept prophage rows: **{len(kept_rows)}**")
     R(f"- GCF-only numeric assemblies contributing prophages: **{len(gcf_only_numerics)}**")
     R(f"- unique prophage-bearing genomes after dedup: **{len(numeric_true) + len(run_true)}** "
