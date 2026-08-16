@@ -1,0 +1,9 @@
+{
+  "batch": 79,
+  "downloads_ok": 79,
+  "downloads_failed": 0,
+  "content_match": 0,
+  "content_mismatch": 79,
+  "prophage_in_batch": 49,
+  "prophage_mismatch": 49
+}
