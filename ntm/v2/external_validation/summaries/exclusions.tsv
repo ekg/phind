@@ -1,0 +1,557 @@
+source	identifier	reason	detail
+inphared	U46938	no_sequence_in_release_fasta	host=Mycobacterium; desc=Mycobacterium phage DS6A
+ncbi	AF065411.1	no_actinobacteriophage_evidence	title=Methanobacterium phage psiM2, complete genome; gb_host=Methanobacterium thermoautotrophicum Marburg
+ncbi	AF189021.1	no_actinobacteriophage_evidence	title=Roseobacter phage SIO1, complete genome; gb_host=Rosebacter SIO67
+ncbi	AJ550940.2	no_actinobacteriophage_evidence	title=Bacteriophage phi-BT1 complete genome; gb_host=
+ncbi	AP008983.1	no_actinobacteriophage_evidence	title=Clostridium phage c-st genomic DNA, complete genome; gb_host=Clostridium botulinum type C strain C-Stockholm
+ncbi	AY320035.2	no_actinobacteriophage_evidence	title=Bacteriophage VWB, complete genome; gb_host=
+ncbi	AY576273.1	no_actinobacteriophage_evidence	title=Alphaproteobacteria phage PhiJL001, complete genome; gb_host=
+ncbi	AY576796.1	no_actinobacteriophage_evidence	title=Actinoplanes phage phiAsp2, complete genome; gb_host=
+ncbi	AY682195.1	no_actinobacteriophage_evidence	title=Lactobacillus phage LP65, complete genome; gb_host=
+ncbi	DQ372923.1	no_actinobacteriophage_evidence	title=Bacteriophage mu1/6, complete genome; gb_host=
+ncbi	EF523948.1	no_actinobacteriophage_evidence	title=Burkholderia phage BcepGomr, complete genome; gb_host=Burkholderia cepacia
+ncbi	GU557055.1	no_actinobacteriophage_evidence	title=Puniceispirillum phage HMO-2011, complete genome; gb_host=Candidatus Puniceispirillum marinum IMCC1322
+ncbi	KR560069.1	no_actinobacteriophage_evidence	title=Stenotrophomonas phage IME-SM1, complete genome; gb_host=Stenotrophomonas sp.
+ncbi	KY979132.2	no_actinobacteriophage_evidence	title=Acidovorax phage ACP17, complete genome; gb_host=Acidovorax citrulli
+ncbi	LR796284.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796352.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796361.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796420.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796423.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796440.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796670.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796734.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR796916.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR797195.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR797210.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR797331.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR797824.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LR798294.1	no_actinobacteriophage_evidence	title=uncultured Caudovirales phage genome assembly; gb_host=
+ncbi	LT706986.1	no_actinobacteriophage_evidence	title=Pacmanvirus A23 genome assembly, complete genome: monopartite; gb_host=
+ncbi	MG592397.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.012.O._10N.261.48.C12, partial genome; gb_host=Vibrio lentus
+ncbi	MG592406.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.022.O._10N.286.45.A10, partial genome; gb_host=Vibrio splendidus
+ncbi	MG592407.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.023.O._10N.222.51.B4, partial genome; gb_host=Vibrio splendidus
+ncbi	MG592408.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.024.O._10N.261.45.F8, partial genome; gb_host=Vibrio lentus
+ncbi	MG592416.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.032.O._10N.261.54.F5, partial genome; gb_host=Vibrio splendidus
+ncbi	MG592456.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.081.O._10N.286.52.C2, partial genome; gb_host=Shewanella
+ncbi	MG592464.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.089.O._10N.261.51.F9, partial genome; gb_host=Vibrio lentus
+ncbi	MG592471.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.098.O._10N.286.51.B9, partial genome; gb_host=Vibrio lentus
+ncbi	MG592476.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.104.O._10N.286.49.A12, partial genome; gb_host=Vibrio lentus
+ncbi	MG592492.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.118.A._10N.261.49.F6, partial genome; gb_host=Vibrio lentus
+ncbi	MG592493.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.118.B._10N.261.49.F6, partial genome; gb_host=Vibrio lentus
+ncbi	MG592528.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.160.O._10N.261.48.B11, partial genome; gb_host=Vibrio lentus
+ncbi	MG592562.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.193.O._10N.286.52.C6, partial genome; gb_host=Vibrio splendidus
+ncbi	MG592601.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.237.A._10N.261.52.C5, partial genome; gb_host=Vibrio lentus
+ncbi	MG592602.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.237.B._10N.261.52.C5, partial genome; gb_host=Vibrio lentus
+ncbi	MG592617.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.250.O._10N.261.55.E11, partial genome; gb_host=Vibrio splendidus
+ncbi	MG592618.1	no_actinobacteriophage_evidence	title=Vibrio phage 1.251.O._10N.261.55.E5, partial genome; gb_host=Vibrio lentus
+ncbi	MH586730.1	no_actinobacteriophage_evidence	"title=Salmonella phage Solent, complete genome; gb_host=Salmonella enterica subsp. enterica serovar
+                     Kentucky"
+ncbi	MK061416.1	no_actinobacteriophage_evidence	title=Rothia phage Spartoi, complete genome; gb_host=
+ncbi	MK071980.1	no_actinobacteriophage_evidence	title=MAG: Terrestrivirus sp. clone Terrestrivirus_2 genomic sequence; gb_host=
+ncbi	MK580972.1	no_actinobacteriophage_evidence	title=Stenotrophomonas phage YB07, complete genome; gb_host=Stenotrophomonas maltophilia
+ncbi	MN304818.1	no_actinobacteriophage_evidence	title=MAG: Phage 71_18, complete genome; gb_host=
+ncbi	MZ127825.1	no_actinobacteriophage_evidence	"title=Salmonella phage S1, complete genome; gb_host=Salmonella enterica subsp enterica serovar
+                     Enteritidis SE PT13A"
+ncbi	MZ398248.1	no_actinobacteriophage_evidence	title=Stenotrophomonas phage BUCT608, complete genome; gb_host=Stenotrophomonas maltophilia
+ncbi	NC_001902.1	no_actinobacteriophage_evidence	title=Methanobacterium phage psiM2, complete genome; gb_host=
+ncbi	NC_002519.1	no_actinobacteriophage_evidence	title=Roseophage SIO1 complete genome; gb_host=
+ncbi	NC_004586.1	no_actinobacteriophage_evidence	title=Streptococcus pyogenes phage 315.3, complete genome; gb_host=Streptococcus pyogenes MGAS315
+ncbi	NC_005885.1	no_actinobacteriophage_evidence	title=Actinoplanes phage phiAsp2, complete genome; gb_host=
+ncbi	NC_006565.1	no_actinobacteriophage_evidence	title=Lactobacillus phage LP65, complete genome; gb_host=
+ncbi	NC_006938.1	no_actinobacteriophage_evidence	title=Alphaproteobacteria phage PhiJL001, complete genome; gb_host=
+ncbi	NC_007581.1	no_actinobacteriophage_evidence	title=Clostridium phage c-st, complete genome; gb_host=
+ncbi	NC_009447.1	no_actinobacteriophage_evidence	title=Burkholderia phage BcepGomr, complete genome; gb_host=
+ncbi	NC_021864.1	no_actinobacteriophage_evidence	title=Puniceispirillum phage HMO-2011, complete genome; gb_host=
+ncbi	NC_034383.1	no_actinobacteriophage_evidence	title=Pacmanvirus A23 genome assembly, complete genome: monopartite; gb_host=
+ncbi	NC_041997.1	no_actinobacteriophage_evidence	title=Acidovorax phage ACP17, complete genome; gb_host=
+ncbi	NC_048755.1	no_actinobacteriophage_evidence	title=Stenotrophomonas phage YB07, complete genome; gb_host=
+ncbi	NC_054952.1	no_actinobacteriophage_evidence	title=Stenotrophomonas phage IME-SM1, complete genome; gb_host=
+ncbi	OX241435.1	no_actinobacteriophage_evidence	title=Vibrio phage 464E53-1 genome assembly, chromosome: VP115E34_1; gb_host=
+ncbi	PQ571297.1	no_actinobacteriophage_evidence	title=Klebsiella phage KO-TP1, complete genome; gb_host=Klebsiella oxytoca BBCO_XO_1
+ncbi	PQ867843.1	no_actinobacteriophage_evidence	title=Phage T5S1-k141_18163, complete genome; gb_host=
+ncbi	PV661111.1	no_actinobacteriophage_evidence	title=Pseudomonas phage Banzai, complete genome; gb_host=Pseudomonas aeruginosa PAO1
+ncbi	7R6R_B	no_fasta_from_efetch	uid=2274192351; slen=21; Chain B, Crystal Structure of a Mycobacteriophage Cluster A2 Immunity Repressor:DNA Complex
+ncbi	7R6R_C	no_fasta_from_efetch	uid=2274192352; slen=21; Chain C, Crystal Structure of a Mycobacteriophage Cluster A2 Immunity Repressor:DNA Complex
+ncbi	7TZ1_B	no_fasta_from_efetch	uid=2274192527; slen=21; Chain B, Crystal Structure of a Mycobacteriophage Cluster A2 Immunity Repressor:DNA Complex
+ncbi	7TZ1_C	no_fasta_from_efetch	uid=2274192528; slen=21; Chain C, Crystal Structure of a Mycobacteriophage Cluster A2 Immunity Repressor:DNA Complex
+ncbi	AAVO02000016.1	non_phage_record_matched_search	title=Blautia obeum ATCC 29174 R_obeum-MSIQ_Cont28.1, whole genome shotgun sequence
+ncbi	ACRT01000077.1	non_phage_record_matched_search	title=Bacteroides sp. 3_1_40A cont1.77, whole genome shotgun sequence
+ncbi	AE004092.2	non_phage_record_matched_search	title=Streptococcus pyogenes M1 GAS, complete genome
+ncbi	AE005174.2	non_phage_record_matched_search	title=Escherichia coli O157:H7 str. EDL933 genome
+ncbi	AE005176.1	non_phage_record_matched_search	title=Lactococcus lactis subsp. lactis Il1403, complete genome
+ncbi	AE014074.1	non_phage_record_matched_search	title=Streptococcus pyogenes MGAS315, complete genome
+ncbi	AE014295.3	non_phage_record_matched_search	title=Bifidobacterium longum NCC2705, complete genome
+ncbi	AF025392.1	non_phage_record_matched_search	title=Cloning vector pUC-GM-INT, complete sequence
+ncbi	AF025746.1	non_phage_record_matched_search	title=Cloning vector pUC-HY-INT, positive selection mycobacterial cloning cassette, complete sequence
+ncbi	AF116907.2	non_phage_record_matched_search	title=Prescottella equi strain 103 plasmid unnamed
+ncbi	AGSW01000237.1	non_phage_record_matched_search	title=Streptomyces sp. W007 contig00253, whole genome shotgun sequence
+ncbi	AGVE01000042.1	non_phage_record_matched_search	title=Mycolicibacterium thermoresistibile ATCC 19527 contig42, whole genome shotgun sequence
+ncbi	AHKF01000025.1	non_phage_record_matched_search	title=Flavobacterium frigoris PS1 66_25, whole genome shotgun sequence
+ncbi	AHKF01000031.1	non_phage_record_matched_search	title=Flavobacterium frigoris PS1 66_31, whole genome shotgun sequence
+ncbi	AJ576039.1	non_phage_record_matched_search	title=Gordonia westfalica strain DSM44215T plasmid pKB1 complete genome
+ncbi	AJMR01000047.1	non_phage_record_matched_search	title=Metapseudomonas furukawaii strain KF707 ctg1698, whole genome shotgun sequence
+ncbi	AJSE01000001.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig01, whole genome shotgun sequence
+ncbi	AJSE01000002.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig02, whole genome shotgun sequence
+ncbi	AJSE01000003.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig03, whole genome shotgun sequence
+ncbi	AJSE01000004.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig04, whole genome shotgun sequence
+ncbi	AJSE01000005.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig05, whole genome shotgun sequence
+ncbi	AJSE01000006.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig06, whole genome shotgun sequence
+ncbi	AJSE01000007.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig07, whole genome shotgun sequence
+ncbi	AJSE01000008.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig08, whole genome shotgun sequence
+ncbi	AJSE01000009.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig09, whole genome shotgun sequence
+ncbi	AJSE01000010.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig10, whole genome shotgun sequence
+ncbi	AJSE01000011.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig11, whole genome shotgun sequence
+ncbi	AJSE01000012.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig12, whole genome shotgun sequence
+ncbi	AJSE01000013.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig13, whole genome shotgun sequence
+ncbi	AJSE01000014.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig14, whole genome shotgun sequence
+ncbi	AJSE01000015.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig15, whole genome shotgun sequence
+ncbi	AJSE01000016.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig16, whole genome shotgun sequence
+ncbi	AJSE01000017.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig17, whole genome shotgun sequence
+ncbi	AJSE01000018.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig18, whole genome shotgun sequence
+ncbi	AJSE01000019.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig19, whole genome shotgun sequence
+ncbi	AJSE01000020.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig20, whole genome shotgun sequence
+ncbi	AJSE01000021.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig21, whole genome shotgun sequence
+ncbi	AJSE01000022.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig22, whole genome shotgun sequence
+ncbi	AJSE01000023.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig23, whole genome shotgun sequence
+ncbi	AJSE01000024.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig24, whole genome shotgun sequence
+ncbi	AJSE01000025.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig25, whole genome shotgun sequence
+ncbi	AJSE01000026.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig26, whole genome shotgun sequence
+ncbi	AJSE01000027.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig27, whole genome shotgun sequence
+ncbi	AJSE01000028.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig28, whole genome shotgun sequence
+ncbi	AJSE01000029.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig29, whole genome shotgun sequence
+ncbi	AJSE01000030.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig30, whole genome shotgun sequence
+ncbi	AJSE01000031.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig31, whole genome shotgun sequence
+ncbi	AJSE01000032.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig32, whole genome shotgun sequence
+ncbi	AJSE01000033.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig33, whole genome shotgun sequence
+ncbi	AL035310.1	non_phage_record_matched_search	title=Mycobacterium leprae cosmid B2533
+ncbi	AL123456.3	non_phage_record_matched_search	title=Mycobacterium tuberculosis H37Rv complete genome
+ncbi	AL450380.1	non_phage_record_matched_search	title=Mycobacterium leprae TN, complete genome
+ncbi	AL513382.1	non_phage_record_matched_search	title=Salmonella enterica subsp. enterica serovar Typhi str. CT18, complete chromosome
+ncbi	AL583922.1	non_phage_record_matched_search	title=Mycobacterium leprae strain TN complete genome; segment 6/10
+ncbi	AL589148.1	non_phage_record_matched_search	title=Streptomyces coelicolor plasmid SCP1
+ncbi	AL645882.2	non_phage_record_matched_search	title=Streptomyces coelicolor A3(2) complete genome
+ncbi	AL939109.1	non_phage_record_matched_search	title=Streptomyces coelicolor A3(2) complete genome; segment 6/29
+ncbi	AL939118.1	non_phage_record_matched_search	title=Streptomyces coelicolor A3(2) complete genome; segment 15/29
+ncbi	AM711866.1	non_phage_record_matched_search	title=Clavibacter michiganensis subsp. michiganensis NCPPB 382, plasmid pCM2
+ncbi	AM711867.1	non_phage_record_matched_search	title=Clavibacter michiganensis subsp. michiganensis NCPPB 382 complete genome
+ncbi	AM743169.1	non_phage_record_matched_search	title=Stenotrophomonas maltophilia K279a complete genome, strain K279a
+ncbi	AM849034.1	non_phage_record_matched_search	title=Clavibacter michiganensis subsp. sepedonicus complete genome
+ncbi	AP001204.1	non_phage_record_matched_search	title=Rhodococcus equi plasmid pREAT701 DNA, complete sequence
+ncbi	AP014547.1	non_phage_record_matched_search	title=Mycobacteroides abscessus subsp. massiliense CCUG 48898 = JCM 15300 DNA, complete genome
+ncbi	AP014862.1	non_phage_record_matched_search	title=Pseudomonas furukawaii DNA, complete genome
+ncbi	AP017302.1	non_phage_record_matched_search	title=Pseudomonas aeruginosa DNA, complete genome, strain: IOMTU 133
+ncbi	AP018365.1	non_phage_record_matched_search	title=Streptomyces sp. SN-593 DNA, nearly complete genome
+ncbi	AP018823.1	non_phage_record_matched_search	title=Aquitalea magnusonii H3 DNA, complete genome
+ncbi	AP018824.1	non_phage_record_matched_search	title=Acinetobacter ursingii M3 DNA, chromosome 1, complete geonome
+ncbi	ASQG01000008.1	non_phage_record_matched_search	title=Acinetobacter guillouiae MSP4-18 contig8, whole genome shotgun sequence
+ncbi	ASQG01000013.1	non_phage_record_matched_search	title=Acinetobacter guillouiae MSP4-18 contig13, whole genome shotgun sequence
+ncbi	ASQG01000039.1	non_phage_record_matched_search	title=Acinetobacter guillouiae MSP4-18 contig39, whole genome shotgun sequence
+ncbi	ASQG01000057.1	non_phage_record_matched_search	title=Acinetobacter guillouiae MSP4-18 contig57, whole genome shotgun sequence
+ncbi	ASQH01000008.1	non_phage_record_matched_search	title=Acinetobacter gyllenbergii CIP 110306 = MTCC 11365 contig8, whole genome shotgun sequence
+ncbi	ASQH01000014.1	non_phage_record_matched_search	title=Acinetobacter gyllenbergii CIP 110306 = MTCC 11365 contig14, whole genome shotgun sequence
+ncbi	ASYX01000041.1	non_phage_record_matched_search	title=Acinetobacter haemolyticus CIP 64.3 = MTCC 9819 contig41, whole genome shotgun sequence
+ncbi	AUSW01000006.1	non_phage_record_matched_search	title=Psychrobacter aquaticus CMS 56 contig00007, whole genome shotgun sequence
+ncbi	AY130970.1	non_phage_record_matched_search	title=Mycobacterium avium strain A5 glycopeptidolipid biosynthesis gene cluster, partial sequence
+ncbi	AY151282.1	non_phage_record_matched_search	title=Escherichia coli strain Ec222 tRNA-Trp gene and pathogenicity island, complete sequence; YagU gene, 
+ncbi	AY223810.1	non_phage_record_matched_search	title=Rhodococcus erythropolis linear plasmid pBD2, complete sequence
+ncbi	BAWG01000004.1	non_phage_record_matched_search	title=Psychrobacter sp. JCM 18900 DNA, contig: JCM18900.contig00004, whole genome shotgun sequence
+ncbi	BAWG01000007.1	non_phage_record_matched_search	title=Psychrobacter sp. JCM 18900 DNA, contig: JCM18900.contig00007, whole genome shotgun sequence
+ncbi	BAWJ01000004.1	non_phage_record_matched_search	title=Psychrobacter sp. JCM 18903 DNA, contig: JCM18903.contig00004, whole genome shotgun sequence
+ncbi	BCAJ01000055.1	non_phage_record_matched_search	title=Stutzerimonas stutzeri NT-I NT-I DNA, contig: PSNT00055, whole genome shotgun sequence
+ncbi	BCTB01000042.1	non_phage_record_matched_search	title=Mycolicibacterium thermoresistibile DNA, contig: contig42, strain: JCM6362, whole genome shotgun seq
+ncbi	BHYM01000118.1	non_phage_record_matched_search	title=Rhodococcus wratislaviensis C31-06 DNA, contig_118, whole genome shotgun sequence
+ncbi	BK010586.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010587.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010588.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010589.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010590.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010591.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010592.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010593.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010594.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BK010605.1	non_phage_record_matched_search	title=TPA_exp: Elizabethkingia anophelis sequence
+ncbi	BM863786.2	non_phage_record_matched_search	title=mgcm007xF17f.b Magnaporthe grisea CM Uni-Zap XR Library Magnaporthe grisea cDNA clone mgcm007xF17 5'
+ncbi	BU639212.2	non_phage_record_matched_search	title=mgcw013xK13f.b RCW Lambda Zap Express Library Magnaporthe grisea cDNA clone mgcw013xK13 5', mRNA seq
+ncbi	BU639590.2	non_phage_record_matched_search	title=mgcw014xJ01f.b RCW Lambda Zap Express Library Magnaporthe grisea cDNA clone mgcw014xJ01 5', mRNA seq
+ncbi	BX248353.1	non_phage_record_matched_search	title=Corynebacterium diphtheriae NCTC 13129, complete genome
+ncbi	BX248354.1	non_phage_record_matched_search	title=Corynebacterium diphtheriae gravis NCTC13129, complete genome; segment 1/8
+ncbi	BX248359.1	non_phage_record_matched_search	title=Corynebacterium diphtheriae gravis NCTC13129, complete genome; segment 6/8
+ncbi	BX248360.1	non_phage_record_matched_search	title=Corynebacterium diphtheriae gravis NCTC13129, complete genome; segment 7/8
+ncbi	BX470248.1	non_phage_record_matched_search	title=Bordetella pertussis strain Tohama I, complete genome
+ncbi	BX571856.1	non_phage_record_matched_search	title=Staphylococcus aureus subsp. aureus strain MRSA252, complete genome
+ncbi	BX571857.1	non_phage_record_matched_search	title=Staphylococcus aureus strain MSSA476, complete genome
+ncbi	BX640412.1	non_phage_record_matched_search	title=Bordetella pertussis strain Tohama I, complete genome; segment 2/12
+ncbi	BX649209.1	non_phage_record_matched_search	title=Mycobacterium ulcerans plasmid pMUM001, complete plasmid genome
+ncbi	CAADHZ010000006.1	non_phage_record_matched_search	title=plant metagenome genome assembly, contig: contig6, whole genome shotgun sequence
+ncbi	CAADIB010000010.1	non_phage_record_matched_search	title=plant metagenome genome assembly, contig: contig10, whole genome shotgun sequence
+ncbi	CABFKD010000002.1	non_phage_record_matched_search	title=Gemmataceae bacterium isolate CJuql4 genome assembly, contig: SCAFFOLD2, whole genome shotgun sequen
+ncbi	CABWLD010000005.1	non_phage_record_matched_search	title=Enhydrobacter sp. AX1 isolate Enhydrobacter sp. AX1 genome assembly, contig: ENHYDAX1_Contig_13, who
+ncbi	CACVBA010000001.1	non_phage_record_matched_search	title=Acinetobacter baumannii ATCC 17978 isolate Acinetobacter baumannii ATCC17978 genome assembly, contig
+ncbi	CADCTY010001530.1	non_phage_record_matched_search	title=MAG: uncultured Leptolyngbya sp. isolate AVDCRST_MAG94 genome assembly, contig: k137_55391, whole ge
+ncbi	CADCWO010000083.1	non_phage_record_matched_search	title=MAG: uncultured Synechococcales cyanobacterium isolate AVDCRST_MAG81 genome assembly, contig: NODE17
+ncbi	CAIE01000005.1	non_phage_record_matched_search	title=Micromonospora lupini str. Lupac 08, WGS project CAIE01000000 data, contig: 7180000005561-1951, whol
+ncbi	CAJFDC010000007.1	non_phage_record_matched_search	title=Pseudomonas sp. FEN genome assembly, contig: scf7180000000086|quiver, whole genome shotgun sequence
+ncbi	CAJFEC010000029.1	non_phage_record_matched_search	title=Halomonas sp. I3 isolate Halomonas sp. I3 genome assembly, contig: HALOI3_Contig_6, whole genome sho
+ncbi	CAJHIU010000002.1	non_phage_record_matched_search	title=Methylomonas sp. EbB isolate ElbeB genome assembly, contig: scaffold2, whole genome shotgun sequence
+ncbi	CAJZAN010000090.1	non_phage_record_matched_search	title=Burkholderia vietnamiensis isolate BVIET434 genome assembly, contig: BVI434_Contig_18, whole genome 
+ncbi	CAJZAO010000381.1	non_phage_record_matched_search	title=Burkholderia vietnamiensis isolate BVI1335 genome assembly, contig: BVI1335_Contig_99, whole genome 
+ncbi	CAJZAQ010000232.1	non_phage_record_matched_search	title=Paraburkholderia caribensis isolate PCAR1334 genome assembly, contig: BCAR13_Contig_89, whole genome
+ncbi	CAJZAS010000011.1	non_phage_record_matched_search	title=Burkholderia diffusa isolate BDI447 genome assembly, contig: BDI4_Contig_108, whole genome shotgun s
+ncbi	CAJZAS010000213.1	non_phage_record_matched_search	title=Burkholderia diffusa isolate BDI447 genome assembly, contig: BDI4_Contig_57, whole genome shotgun se
+ncbi	CBES010000015.1	non_phage_record_matched_search	title=Clostridium sp. CAG:413 WGS project CBES01000000 data, contig, whole genome shotgun sequence
+ncbi	CD035964.1	non_phage_record_matched_search	title=mgmt019xD24f.b Mated culture Magnaporthe grisea cDNA clone mgmt019xD24 5', mRNA sequence
+ncbi	CP000386.1	non_phage_record_matched_search	title=Rubrobacter xylanophilus DSM 9941, complete genome
+ncbi	CP000434.1	non_phage_record_matched_search	title=Rhodococcus jostii RHA1 plasmid pRHL3, complete sequence
+ncbi	CP000854.1	non_phage_record_matched_search	title=Mycobacterium marinum M, complete genome
+ncbi	CP001095.1	non_phage_record_matched_search	title=Bifidobacterium longum subsp. infantis ATCC 15697, complete genome
+ncbi	CP001349.1	non_phage_record_matched_search	title=Methylobacterium nodulans ORS 2060, complete genome
+ncbi	CP002162.1	non_phage_record_matched_search	title=Micromonospora aurantiaca ATCC 27029, complete genome
+ncbi	CP002399.1	non_phage_record_matched_search	title=Micromonospora sp. L5, complete genome
+ncbi	CP003219.1	non_phage_record_matched_search	title=Streptomyces cattleya DSM 46488, complete genome
+ncbi	CP004012.1	non_phage_record_matched_search	title=Ralstonia solanacearum FQY_4, complete genome
+ncbi	CP007027.1	non_phage_record_matched_search	title=Mycobacterium tuberculosis H37RvSiena, complete genome
+ncbi	CP007547.1	non_phage_record_matched_search	title=Elizabethkingia anophelis NUHP1, complete genome
+ncbi	CP009962.1	non_phage_record_matched_search	title=Collimonas arenae strain Cal35, complete genome
+ncbi	CP010536.1	non_phage_record_matched_search	title=Cupriavidus basilensis strain 4G11 chromosome main, complete sequence
+ncbi	CP011117.2	non_phage_record_matched_search	title=Pseudomonas synxantha strain LBUM223 chromosome, complete genome
+ncbi	CP012952.1	non_phage_record_matched_search	title=Acinetobacter baumannii strain D36, complete genome
+ncbi	CP014945.1	non_phage_record_matched_search	title=Psychrobacter alimentarius strain PAMC 27889, complete sequence
+ncbi	CP015850.1	non_phage_record_matched_search	title=Ralstonia solanacearum strain YC40-M, complete sequence
+ncbi	CP021435.1	non_phage_record_matched_search	title=Halomonas beimenensis strain NTU-111 chromosome, complete genome
+ncbi	CP021654.1	non_phage_record_matched_search	title=Aeromonas salmonicida strain O23A chromosome, complete genome
+ncbi	CP027723.1	non_phage_record_matched_search	title=Pseudomonas orientalis strain 8B chromosome, complete genome
+ncbi	CP027732.1	non_phage_record_matched_search	title=Pseudomonas sp. R4-35-07 chromosome, complete genome
+ncbi	CP027738.1	non_phage_record_matched_search	title=Pseudomonas chlororaphis subsp. piscium strain ChPhzS135 chromosome, complete genome
+ncbi	CP027754.1	non_phage_record_matched_search	title=Pseudomonas synxantha strain 30B chromosome, complete genome
+ncbi	CP027755.1	non_phage_record_matched_search	title=Pseudomonas synxantha strain 2-79 chromosome, complete genome
+ncbi	CP027756.1	non_phage_record_matched_search	title=Pseudomonas synxantha strain R6-28-08 chromosome, complete genome
+ncbi	CP027761.1	non_phage_record_matched_search	title=Pseudomonas sp. R11-23-07 chromosome, complete genome
+ncbi	CP029488.1	non_phage_record_matched_search	title=Salinisphaera sp. LB1 chromosome
+ncbi	CP030865.1	non_phage_record_matched_search	title=Micromonospora sp. B006 chromosome, complete genome
+ncbi	CP080576.1	non_phage_record_matched_search	title=Acinetobacter lwoffii strain VS15 chromosome, complete genome
+ncbi	CP082143.1	non_phage_record_matched_search	title=Acinetobacter lwoffii strain ED23-35 chromosome, complete genome
+ncbi	CP083571.1	non_phage_record_matched_search	title=Acinetobacter lwoffii strain ED9-5a chromosome, complete genome
+ncbi	CP102342.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM15 chromosome, complete genome
+ncbi	CP102343.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM13 chromosome, complete genome
+ncbi	CP102344.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM12 chromosome, complete genome
+ncbi	CP102345.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM11 chromosome, complete genome
+ncbi	CP102346.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LMN chromosome, complete genome
+ncbi	CP102347.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM14 chromosome, complete genome
+ncbi	CP125227.1	non_phage_record_matched_search	title=Acinetobacter pittii strain SO1 chromosome, complete genome
+ncbi	CP172085.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN2 chromosome, complete genome
+ncbi	CP172086.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN2 plasmid pGD339-1, complete sequence
+ncbi	CP172087.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN1 chromosome, complete genome
+ncbi	CP172088.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN1 plasmid pGD339-1, complete sequence
+ncbi	CP172089.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM4-1 chromosome, complete genome
+ncbi	CP172090.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM4-1 plasmid pGD339-1, complete sequence
+ncbi	CP172091.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM1 chromosome, complete genome
+ncbi	CP172092.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM1 plasmid pGD339-1, complete sequence
+ncbi	CP172093.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339 chromosome, complete genome
+ncbi	CP172094.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339 plasmid pGD339-1, complete sequence
+ncbi	CT573213.2	non_phage_record_matched_search	title=Frankia alni str. ACN14A chromosome, complete sequence
+ncbi	CVLD01000035.1	non_phage_record_matched_search	title=Acinetobacter baumannii genome assembly A. baumannii CHI-34, scaffold 14_cov_39, whole genome shotgu
+ncbi	CVLF01000064.1	non_phage_record_matched_search	title=Acinetobacter baumannii genome assembly Acinetobacter baumannii CHI-32, scaffold 18_cov_26, whole ge
+ncbi	CYST01000081.1	non_phage_record_matched_search	title=Mycobacterium bovis BCG genome assembly S4, contig BCG_S4_contig81, whole genome shotgun sequence
+ncbi	CYST01000123.1	non_phage_record_matched_search	title=Mycobacterium bovis BCG genome assembly S4, contig BCG_S4_contig123, whole genome shotgun sequence
+ncbi	CZHF01000026.1	non_phage_record_matched_search	title=Alcanivorax xenomutans strain KS-293 genome assembly, contig: Contig-239-9, whole genome shotgun seq
+ncbi	CZHF01000031.1	non_phage_record_matched_search	title=Alcanivorax xenomutans strain KS-293 genome assembly, contig: Contig-239-12, whole genome shotgun se
+ncbi	DQ115377.1	non_phage_record_matched_search	title=Shuttle vector pMV3319-Edim6, complete sequence
+ncbi	DQ115378.1	non_phage_record_matched_search	title=Shuttle vector pMV33A-Edim6, complete sequence
+ncbi	DQ115379.1	non_phage_record_matched_search	title=Shuttle vector pMV361-Edim6, complete sequence
+ncbi	DQ115381.1	non_phage_record_matched_search	title=Shuttle vector pMV361-EO6, complete sequence
+ncbi	DQ191756.1	non_phage_record_matched_search	title=Integrative shuttle vector pCONINT, complete sequence
+ncbi	DQ813651.1	non_phage_record_matched_search	title=Cloning vector pCG6-attB, complete sequence
+ncbi	DQ813652.1	non_phage_record_matched_search	title=Cloning vector pBSD-GFP-INT-attP, complete sequence
+ncbi	DQ813653.3	non_phage_record_matched_search	title=Cloning vector pLN-ENR-GFP, complete sequence
+ncbi	DQ813654.3	non_phage_record_matched_search	title=Cloning vector pINT, complete sequence
+ncbi	DS264312.1	non_phage_record_matched_search	title=Ruminococcus obeum ATCC 29174 Scfld0223 genomic scaffold, whole genome shotgun sequence
+ncbi	FJMZ01000003.1	non_phage_record_matched_search	title=Trichococcus flocculiformis genome assembly, contig: TfloDRAFT_scaffold-3, whole genome shotgun sequ
+ncbi	FM211192.1	non_phage_record_matched_search	title=Mycobacterium leprae Br4923, complete genome sequence
+ncbi	FO082843.1	non_phage_record_matched_search	title=Nocardia cyriacigeorgica GUH-2 chromosome complete genome
+ncbi	FQ859185.1	non_phage_record_matched_search	title=Streptomyces cattleya str. NRRL 8057 main chromosome, complete genome
+ncbi	FUKN01000012.1	non_phage_record_matched_search	title=Psychrobacter sp. JB385 genome assembly, contig: Scaffold6, whole genome shotgun sequence
+ncbi	FUKN01000013.1	non_phage_record_matched_search	title=Psychrobacter sp. JB385 genome assembly, contig: Scaffold1, whole genome shotgun sequence
+ncbi	FUKU01000030.1	non_phage_record_matched_search	title=Sphingobacterium sp. JB170 genome assembly, contig: Scaffold5, whole genome shotgun sequence
+ncbi	FUKU01000038.1	non_phage_record_matched_search	title=Sphingobacterium sp. JB170 genome assembly, contig: Scaffold56, whole genome shotgun sequence
+ncbi	FUKU01000051.1	non_phage_record_matched_search	title=Sphingobacterium sp. JB170 genome assembly, contig: Scaffold49, whole genome shotgun sequence
+ncbi	FUKU01000075.1	non_phage_record_matched_search	title=Sphingobacterium sp. JB170 genome assembly, contig: Scaffold45, whole genome shotgun sequence
+ncbi	FUKX01000003.1	non_phage_record_matched_search	title=Sphingobacterium faecium PCAi_F2.5 genome assembly, contig: Scaffold14, whole genome shotgun sequenc
+ncbi	FUKX01000008.1	non_phage_record_matched_search	title=Sphingobacterium faecium PCAi_F2.5 genome assembly, contig: Scaffold17, whole genome shotgun sequenc
+ncbi	FUKX01000062.1	non_phage_record_matched_search	title=Sphingobacterium faecium PCAi_F2.5 genome assembly, contig: Scaffold20, whole genome shotgun sequenc
+ncbi	FXAN01000079.1	non_phage_record_matched_search	title=Burkholderia sp. LMG 28154 genome assembly, contig: contig48, whole genome shotgun sequence
+ncbi	GG774762.1	non_phage_record_matched_search	title=Bacteroides sp. 3_1_19 genomic scaffold supercont1.4, whole genome shotgun sequence
+ncbi	GL877172.1	non_phage_record_matched_search	title=Streptomyces griseus XylebKG-1 genomic scaffold scaffold_1, whole genome shotgun sequence
+ncbi	GT284743.1	non_phage_record_matched_search	title=NDTC004-E02 Taenia saginata adult full-length cDNA library Taenia saginata cDNA clone NDTC004-E02 5'
+ncbi	I16614.1	non_phage_record_matched_search	title=Sequence 1 from patent US 5476768
+ncbi	I16615.1	non_phage_record_matched_search	title=Sequence 2 from patent US 5476768
+ncbi	I16616.1	non_phage_record_matched_search	title=Sequence 3 from patent US 5476768
+ncbi	I31045.1	non_phage_record_matched_search	title=Sequence 1 from patent US 5582969
+ncbi	I31046.1	non_phage_record_matched_search	title=Sequence 2 from patent US 5582969
+ncbi	I31047.1	non_phage_record_matched_search	title=Sequence 3 from patent US 5582969
+ncbi	I36861.1	non_phage_record_matched_search	title=Sequence 1 from patent US 5612182
+ncbi	I36862.1	non_phage_record_matched_search	title=Sequence 2 from patent US 5612182
+ncbi	I36863.1	non_phage_record_matched_search	title=Sequence 3 from patent US 5612182
+ncbi	I43840.1	non_phage_record_matched_search	title=Sequence 1 from patent US 5633159
+ncbi	I43841.1	non_phage_record_matched_search	title=Sequence 2 from patent US 5633159
+ncbi	I43842.1	non_phage_record_matched_search	title=Sequence 3 from patent US 5633159
+ncbi	JH377142.1	non_phage_record_matched_search	title=Rhodococcus opacus PD630 genomic scaffold cont5.14, whole genome shotgun sequence
+ncbi	JX077110.1	non_phage_record_matched_search	title=Escherichia coli O25b:ST131 str. JIE186 plasmid pJIE186-2, complete sequence
+ncbi	JX993917.1	non_phage_record_matched_search	title=Cloning vector pDRIA, complete sequence
+ncbi	JX993918.1	non_phage_record_matched_search	title=Cloning vector pDRIB, complete sequence
+ncbi	JX993921.1	non_phage_record_matched_search	title=Cloning vector pIRIA, complete sequence
+ncbi	JX993922.1	non_phage_record_matched_search	title=Cloning vector pIRIB, complete sequence
+ncbi	LJCW01000033.1	non_phage_record_matched_search	title=Actinobacteria bacterium OV450 ctg12, whole genome shotgun sequence
+ncbi	LN850107.1	non_phage_record_matched_search	title=Alloactinosynnema sp. L-07 genome assembly Alloactinosynnema sp. L-07, chromosome : I
+ncbi	LNQE01000908.1	non_phage_record_matched_search	title=Hydrocarbon metagenome Contig_4010, whole genome shotgun sequence
+ncbi	LR027516.1	non_phage_record_matched_search	title=Mycobacterium tuberculosis strain DKC2 genome assembly, chromosome: 1
+ncbi	LR130779.2	non_phage_record_matched_search	title=Pseudomonas oleovorans strain T9AD genome assembly, chromosome: POT9AD
+ncbi	LR215729.2	non_phage_record_matched_search	title=Pseudomonas marincola strain YSy11 genome assembly, chromosome: PMYSY11
+ncbi	LR586051.1	non_phage_record_matched_search	title=Gemmata bacterium CJuql4 whole genome assembly and annotation
+ncbi	LR594584.1	non_phage_record_matched_search	title=Gemmataceae bacterium isolate CJuql4 genome assembly, scaffold: Scf2, whole genome shotgun sequence
+ncbi	LT708304.1	non_phage_record_matched_search	title=Mycobacterium bovis AF2122/97 genome assembly, chromosome: Mycobacterium_bovis_AF212297
+ncbi	LT883143.1	non_phage_record_matched_search	title=Pseudomonas aeruginosa C-NN2 isolate early isolate NN2 (clone C) genome assembly, chromosome: I
+ncbi	M65195.1	non_phage_record_matched_search	title=Mycobacterium smegmatis Pro- and Gly-tRNA
+ncbi	MN657021.1	non_phage_record_matched_search	title=Psychrobacter sp. strain ANT_P11B plasmid pA11BP5, complete sequence
+ncbi	MN657130.1	non_phage_record_matched_search	title=Psychrobacter sp. strain ANT_H61 plasmid pA61H3, complete sequence
+ncbi	MW151033.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECEAC_Bongo-L-PhaC, complete sequence
+ncbi	MW151034.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECD4C_D29-L-PhaC, complete sequence
+ncbi	MW151035.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECD7C_Dylan-L-PhaC, complete sequence
+ncbi	MW151036.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECEBC_Giles-L-PhaC, complete sequence
+ncbi	MW151037.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECD6C_Inca-L-PhaC, complete sequence
+ncbi	MW151038.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECD5C_JAWS-L-PhaC, complete sequence
+ncbi	MW151039.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECD3C_Pipsqueaks-L-PhaC, complete sequence
+ncbi	MW151040.1	non_phage_record_matched_search	title=Cloning vector pET14b_17AECD2C_StarStuff-L-PhaC, complete sequence
+ncbi	NIDE01000014.1	non_phage_record_matched_search	title=Fimbriiglobus ruber strain SP5 contig14, whole genome shotgun sequence
+ncbi	NIDE01000020.1	non_phage_record_matched_search	title=Fimbriiglobus ruber strain SP5 contig20, whole genome shotgun sequence
+ncbi	NZ_AJSE01000001.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig01, whole genome shotgun sequence
+ncbi	NZ_AJSE01000002.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig02, whole genome shotgun sequence
+ncbi	NZ_AJSE01000003.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig03, whole genome shotgun sequence
+ncbi	NZ_AJSE01000004.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig04, whole genome shotgun sequence
+ncbi	NZ_AJSE01000005.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig05, whole genome shotgun sequence
+ncbi	NZ_AJSE01000006.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig06, whole genome shotgun sequence
+ncbi	NZ_AJSE01000007.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig07, whole genome shotgun sequence
+ncbi	NZ_AJSE01000008.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig08, whole genome shotgun sequence
+ncbi	NZ_AJSE01000009.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig09, whole genome shotgun sequence
+ncbi	NZ_AJSE01000010.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig10, whole genome shotgun sequence
+ncbi	NZ_AJSE01000011.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig11, whole genome shotgun sequence
+ncbi	NZ_AJSE01000012.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig12, whole genome shotgun sequence
+ncbi	NZ_AJSE01000013.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig13, whole genome shotgun sequence
+ncbi	NZ_AJSE01000014.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig14, whole genome shotgun sequence
+ncbi	NZ_AJSE01000015.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig15, whole genome shotgun sequence
+ncbi	NZ_AJSE01000016.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig16, whole genome shotgun sequence
+ncbi	NZ_AJSE01000017.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig17, whole genome shotgun sequence
+ncbi	NZ_AJSE01000018.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig18, whole genome shotgun sequence
+ncbi	NZ_AJSE01000019.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig19, whole genome shotgun sequence
+ncbi	NZ_AJSE01000020.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig20, whole genome shotgun sequence
+ncbi	NZ_AJSE01000021.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig21, whole genome shotgun sequence
+ncbi	NZ_AJSE01000022.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig22, whole genome shotgun sequence
+ncbi	NZ_AJSE01000023.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig23, whole genome shotgun sequence
+ncbi	NZ_AJSE01000024.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig24, whole genome shotgun sequence
+ncbi	NZ_AJSE01000025.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig25, whole genome shotgun sequence
+ncbi	NZ_AJSE01000026.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig26, whole genome shotgun sequence
+ncbi	NZ_AJSE01000027.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig27, whole genome shotgun sequence
+ncbi	NZ_AJSE01000028.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig28, whole genome shotgun sequence
+ncbi	NZ_AJSE01000029.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig29, whole genome shotgun sequence
+ncbi	NZ_AJSE01000030.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig30, whole genome shotgun sequence
+ncbi	NZ_AJSE01000031.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig31, whole genome shotgun sequence
+ncbi	NZ_AJSE01000032.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig32, whole genome shotgun sequence
+ncbi	NZ_AJSE01000033.1	non_phage_record_matched_search	title=Mycobacteroides abscessus M172 Contig33, whole genome shotgun sequence
+ncbi	NZ_CP102342.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM15 chromosome, complete genome
+ncbi	NZ_CP102343.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM13 chromosome, complete genome
+ncbi	NZ_CP102344.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM12 chromosome, complete genome
+ncbi	NZ_CP102345.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM11 chromosome, complete genome
+ncbi	NZ_CP102346.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LMN chromosome, complete genome
+ncbi	NZ_CP102347.1	non_phage_record_matched_search	title=Mycolicibacterium smegmatis strain LM14 chromosome, complete genome
+ncbi	NZ_CP172085.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN2 chromosome, complete genome
+ncbi	NZ_CP172086.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN2 plasmid pGD339-1, complete sequence
+ncbi	NZ_CP172087.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN1 chromosome, complete genome
+ncbi	NZ_CP172088.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMMN1 plasmid pGD339-1, complete sequence
+ncbi	NZ_CP172089.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM4-1 chromosome, complete genome
+ncbi	NZ_CP172090.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM4-1 plasmid pGD339-1, complete sequence
+ncbi	NZ_CP172091.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM1 chromosome, complete genome
+ncbi	NZ_CP172092.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339_RMM1 plasmid pGD339-1, complete sequence
+ncbi	NZ_CP172093.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339 chromosome, complete genome
+ncbi	NZ_CP172094.1	non_phage_record_matched_search	title=Mycobacteroides abscessus strain GD339 plasmid pGD339-1, complete sequence
+ncbi	OV986001.1	non_phage_record_matched_search	title=Pseudomonas fluorescens SBW25 genome assembly, chromosome: 1
+ncbi	PF073300.1	non_phage_record_matched_search	title=KR 1020230074534-A/3: ATTB CELL LINE, TRANSGENIC CELL LINES DERIVED THEREFROM, AND METHODS OF MAKING
+ncbi	PH414911.1	non_phage_record_matched_search	title=JP 2023537505-A/1: SINGLE GENERATION TARGETED GENE INTEGRATION
+ncbi	PH414913.1	non_phage_record_matched_search	title=JP 2023537505-A/3: SINGLE GENERATION TARGETED GENE INTEGRATION
+ncbi	PH496314.1	non_phage_record_matched_search	title=JP 2023542535-A/3: ATTB CELL LINE, TRANSGENIC CELL LINES DERIVED THEREFROM, AND METHODS OF MAKING TH
+ncbi	PX994935.1	non_phage_record_matched_search	title=Synthetic construct clone pPv121_Bxb1-attB_HaloTag_attP_GFP other-genetic sequence
+ncbi	QS433565.1	non_phage_record_matched_search	title=JP 2025531410-A/1: Integration and selection system
+ncbi	QS433566.1	non_phage_record_matched_search	title=JP 2025531410-A/2: Integration and selection system
+ncbi	QS433577.1	non_phage_record_matched_search	title=JP 2025531410-A/13: Integration and selection system
+ncbi	RCOG02000007.1	non_phage_record_matched_search	title=Cupriavidus sp. U2 plasmid unnamed1 Pla01_contig_002, whole genome shotgun sequence
+ncbi	RCOG02000028.1	non_phage_record_matched_search	title=Cupriavidus sp. U2 plasmid unnamed1 Pla01_contig_004, whole genome shotgun sequence
+ncbi	RCOH02000028.1	non_phage_record_matched_search	title=Cupriavidus necator H850 chromosome 2 Chr02_contig_007, whole genome shotgun sequence
+ncbi	RPHH01000009.1	non_phage_record_matched_search	title=Paenibacillus xylanexedens strain EDO6 NODE_9, whole genome shotgun sequence
+ncbi	U75344.1	non_phage_record_matched_search	title=Mycobacterium smegmatis integration host factor (mIHF) gene, complete cds
+ncbi	VZIZ01000017.1	non_phage_record_matched_search	title=Psychrobacter nivimaris strain LAMA 639 contig17, whole genome shotgun sequence
+ncbi	VZIZ01000045.1	non_phage_record_matched_search	title=Psychrobacter nivimaris strain LAMA 639 contig45, whole genome shotgun sequence
+ncbi	WHZR01000004.1	non_phage_record_matched_search	title=Streptomyces sp. OM5714 A912_AS4_SC07, whole genome shotgun sequence
+ncbi	AF017141.1	short_fragment_not_genome_scale	len=840; title=Mycobacterium phage Ms6 attachment region attP sequence
+ncbi	AF030986.1	short_fragment_not_genome_scale	len=2404; title=Mycobacterium phage Ms6 integrase (int) gene, complete cds
+ncbi	AF319619.1	short_fragment_not_genome_scale	len=6173; title=Mycobacterium phage Ms6 gp1, gp2 (lysA), gp3 (lysB), gp4 (hol), gp5, and gp6 (re
+ncbi	AJ320537.1	short_fragment_not_genome_scale	len=882; title=Mycobacteriophage L1 g27 gene
+ncbi	AY266345.1	short_fragment_not_genome_scale	len=430; title=Mycobacteriophage L1 arginine-rich hypothetical protein gene, promoter and compl
+ncbi	AY303696.1	short_fragment_not_genome_scale	len=1403; title=Mycobacteriophage L1cIts391 temperature-sensitive repressor protein cIts gene, c
+ncbi	AY837572.1	short_fragment_not_genome_scale	len=1515; title=Mycobacterium phage Ms6 Pin (pin) gene, complete cds; and integrase gene, partia
+ncbi	CF943767.1	short_fragment_not_genome_scale	len=824; title=TrEST-A4137 TrEST-A Trichoderma reesei cDNA clone Tr-A4137 5' similar to gp25 [M
+ncbi	CF943847.1	short_fragment_not_genome_scale	len=717; title=TrEST-A1310 TrEST-A Trichoderma reesei cDNA clone Tr-A1310 5' similar to gp25 [M
+ncbi	CF944142.1	short_fragment_not_genome_scale	len=659; title=TrEST-A0934 TrEST-A Trichoderma reesei cDNA clone Tr-A0934 5' similar to gp25 [M
+ncbi	CO050284.1	short_fragment_not_genome_scale	len=187; title=Le_mx0_10h02_SP6 Little Skate Multiple Tissues, Normalized Leucoraja erinacea cD
+ncbi	CV031063.1	short_fragment_not_genome_scale	len=662; title=CS_gil_27C09_M13Reverse Blue crab gill, normalized Callinectes sapidus cDNA clon
+ncbi	CV161090.1	short_fragment_not_genome_scale	len=629; title=CS_gil_58G09_M13Reverse Blue crab gill, normalized Callinectes sapidus cDNA clon
+ncbi	DV499598.1	short_fragment_not_genome_scale	len=306; title=Sa_em0_12a12_5prime Dogfish Shark Embryo-derived Cell Line SAE, Normalized Squal
+ncbi	ES411129.1	short_fragment_not_genome_scale	len=738; title=HTAB-aaa58a12.b2 Heterorhabditis_bacteriophora_HTAB2_EST Heterorhabditis bacteri
+ncbi	FF143116.1	short_fragment_not_genome_scale	len=564; title=TMAB-aab72f03.g1 T.muris_TMAB_EST_pSMART Trichuris muris cDNA similar to ref|NP_
+ncbi	GD163492.1	short_fragment_not_genome_scale	len=623; title=OXAX-aaa17c12.g1 Oxytricha_pSMART_OXAX Sterkiella histriomuscorum cDNA similar t
+ncbi	GD165944.1	short_fragment_not_genome_scale	len=695; title=OXAY-aaa13e08.g1 Oxytricha_pSMART_OXAY Sterkiella histriomuscorum cDNA similar t
+ncbi	HG519100.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Catera tmRNA gene Mycob_phage_Catera
+ncbi	HG519101.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage LinStu tmRNA gene Mycob_phage_Catera
+ncbi	HG519102.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage MoMoMixon tmRNA gene Mycob_phage_Catera
+ncbi	HG519103.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Pleione tmRNA gene Mycob_phage_Catera
+ncbi	HG519104.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Rizal tmRNA gene Mycob_phage_Catera
+ncbi	HG519105.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Sebata tmRNA gene Mycob_phage_Catera
+ncbi	HG519106.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Wally tmRNA gene Mycob_phage_Catera
+ncbi	HG519107.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Ava3 tmRNA gene Mycob_phage_Catera
+ncbi	HG519108.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Ghost tmRNA gene Mycob_phage_Catera
+ncbi	HG519109.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Bxz1 tmRNA gene Mycob_phage_Bxz1
+ncbi	HG519110.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Pio tmRNA gene Mycob_phage_Bxz1
+ncbi	HG519111.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Astraea tmRNA gene Mycob_phage_Spud
+ncbi	HG519112.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Cali tmRNA gene Mycob_phage_Spud
+ncbi	HG519113.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage LRRHood tmRNA gene Mycob_phage_Spud
+ncbi	HG519114.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Dandelion tmRNA gene Mycob_phage_Spud
+ncbi	HG519115.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage ET08 tmRNA gene Mycob_phage_Spud
+ncbi	HG519116.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage ScottMcG tmRNA gene Mycob_phage_Spud
+ncbi	HG519117.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Spud tmRNA gene Mycob_phage_Spud
+ncbi	HG521910.1	short_fragment_not_genome_scale	len=83; title=TPA: Mycobacterium phage DS6A tmRNA gene Mycob_phage_DS6A
+ncbi	HG521911.1	short_fragment_not_genome_scale	len=83; title=TPA: Mycobacterium phage DS6A tmRNA gene Mycob_phage_DS6A
+ncbi	HG522256.1	short_fragment_not_genome_scale	len=418; title=TPA: Mycobacterium phage Wildcat tmRNA gene Mycob_phage_Wildca
+ncbi	HG780961.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Catera transfer-messenger mRNA Mycob_phage_Catera, sing
+ncbi	HG780962.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage LinStu transfer-messenger mRNA Mycob_phage_Catera, sing
+ncbi	HG780963.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage MoMoMixon transfer-messenger mRNA Mycob_phage_Catera, s
+ncbi	HG780964.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Pleione transfer-messenger mRNA Mycob_phage_Catera, sin
+ncbi	HG780965.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Rizal transfer-messenger mRNA Mycob_phage_Catera, singl
+ncbi	HG780966.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Sebata transfer-messenger mRNA Mycob_phage_Catera, sing
+ncbi	HG780967.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Wally transfer-messenger mRNA Mycob_phage_Catera, singl
+ncbi	HG780968.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Ava3 transfer-messenger mRNA Mycob_phage_Catera, single
+ncbi	HG780969.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Ghost transfer-messenger mRNA Mycob_phage_Catera, singl
+ncbi	HG780970.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Bxz1 transfer-messenger mRNA Mycob_phage_Bxz1, single c
+ncbi	HG780971.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Pio transfer-messenger mRNA Mycob_phage_Bxz1, single ch
+ncbi	HG780972.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Astraea transfer-messenger mRNA Mycob_phage_Spud, singl
+ncbi	HG780973.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Cali transfer-messenger mRNA Mycob_phage_Spud, single c
+ncbi	HG780974.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage LRRHood transfer-messenger mRNA Mycob_phage_Spud, singl
+ncbi	HG780975.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Dandelion transfer-messenger mRNA Mycob_phage_Spud, sin
+ncbi	HG780976.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage ET08 transfer-messenger mRNA Mycob_phage_Spud, single c
+ncbi	HG780977.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage ScottMcG transfer-messenger mRNA Mycob_phage_Spud, sing
+ncbi	HG780978.1	short_fragment_not_genome_scale	len=437; title=TPA: Mycobacterium phage Spud transfer-messenger mRNA Mycob_phage_Spud, single c
+ncbi	HG783771.1	short_fragment_not_genome_scale	len=83; title=TPA: Mycobacterium phage DS6A transfer-messenger mRNA Mycob_phage_DS6A, single c
+ncbi	HG783772.1	short_fragment_not_genome_scale	len=83; title=TPA: Mycobacterium phage DS6A transfer-messenger mRNA Mycob_phage_DS6A, single c
+ncbi	HG784117.1	short_fragment_not_genome_scale	len=418; title=TPA: Mycobacterium phage Wildcat transfer-messenger mRNA Mycob_phage_Wildca, sin
+ncbi	M65194.1	short_fragment_not_genome_scale	len=2089; title=Mycobacterium phage L5 integrase (int) gene, complete cds
+ncbi	U46936.1	short_fragment_not_genome_scale	len=1761; title=Mycobacterium phage DS6A, NheI N fragment sequence
+ncbi	U46937.1	short_fragment_not_genome_scale	len=6611; title=Mycobacterium phage DS6A, NheI D fragment sequence
+ncbi	U81553.1	short_fragment_not_genome_scale	len=2592; title=Mycobacteriophage D29 dCMP deaminase (g1) gene, partial cds, g2, excisase (xis) 
+ncbi	X63702.1	short_fragment_not_genome_scale	len=2244; title=Mycobacteriophage FRAT1 int gene for integrase
+ncbi	X68295.1	short_fragment_not_genome_scale	len=2317; title=Mycobacteriophage I3 gene for structural protein (70 KD)
+ncbi	X68296.1	short_fragment_not_genome_scale	len=1049; title=Mycobacteriophage I3 gene for structural protein (17 KD)
+ncbi	X68297.1	short_fragment_not_genome_scale	len=420; title=Mycobacteriophage I3 promoter region 3
+ncbi	X68298.1	short_fragment_not_genome_scale	len=365; title=Mycobacteriophage I3 promoter region 4
+ncbi	X68299.1	short_fragment_not_genome_scale	len=344; title=Mycobacteriophage I3 promoter region 5
+ncbi	X68300.1	short_fragment_not_genome_scale	len=469; title=Mycobacteriophage I3 promoter region 6
+ncbi	X70352.1	short_fragment_not_genome_scale	len=2590; title=Mycobacteriophage D29 DNA of integrase-like protein and the origin region
+ncbi	X70353.1	short_fragment_not_genome_scale	len=699; title=Mycobacteriophage D29 DNA for major coat protein
+ncbi	Z11930.1	short_fragment_not_genome_scale	len=33; title=Mycobacteriophage L5 cohesive ends DNA
+ncbi	AJSE00000000.1	wgs_master_or_placeholder_record	slen=33; Mycobacteroides abscessus M172, whole genome shotgun sequencing project
+ncbi	CFLFRK000000000.1	wgs_master_or_placeholder_record	slen=2; Mycobacterium phage Homines, whole genome shotgun sequencing project
+ncbi	NZ_AJSE00000000.1	wgs_master_or_placeholder_record	slen=5204460; Mycobacteroides abscessus M172, whole genome shotgun sequencing project
+phagesdb_fasta	Conditioner	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	DartGoblin	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	Gerri43	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	HomeFry	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	Jeilious	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	Park1214	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	Sweetums	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	Winchester007	exact_duplicate_in_bulk_fasta	second identical record in bulk FASTA
+phagesdb_fasta	Arthrobacter phage complete sequence, 113946 bp including 9-	malformed_header_missing_name	host_genus='Arthrobacter'; len=113946
+phagesdb_fasta	Gordonia phage complete sequence, 53541 bp including 11-base	malformed_header_missing_name	host_genus='Gordonia'; len=53541
+phagesdb_fasta	Actinoplanes	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	Gordoina	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	Gorgonia	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	Microbactrium	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	Mycobacteruim	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	Myobacterium	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	Rothia	no_metadata_row_and_host_genus_unresolvable	header_host_genus=''
+phagesdb_fasta	ColdPizza	retained_as_suffixed_variant	second record with different sequence kept as ColdPizza#2
+phagesdb_metadata	Acme	no_sequence_in_bulk_fasta	in_genbank=True; accession=MG812486
+phagesdb_metadata	Adzzy	no_sequence_in_bulk_fasta	in_genbank=True; accession=KF416344
+phagesdb_metadata	ArizonaGT	no_sequence_in_bulk_fasta	in_genbank=True; accession=PX985671
+phagesdb_metadata	ArtetaBall	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	BAKA	no_sequence_in_bulk_fasta	in_genbank=True; accession=JF937090
+phagesdb_metadata	Benczkowski14	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU963262
+phagesdb_metadata	Bennie	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU160640
+phagesdb_metadata	BetterKatz	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU963261
+phagesdb_metadata	BlacksBerry	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	CWormy	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	Cece	no_sequence_in_bulk_fasta	in_genbank=True; accession=OP068343
+phagesdb_metadata	Chuckly	no_sequence_in_bulk_fasta	in_genbank=True; accession=MN585995
+phagesdb_metadata	Coldpizza	no_sequence_in_bulk_fasta	in_genbank=True; accession=PV915803
+phagesdb_metadata	DirtJuice	no_sequence_in_bulk_fasta	in_genbank=True; accession=MT897903
+phagesdb_metadata	Dirtfootball	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	ELB20	no_sequence_in_bulk_fasta	in_genbank=True; accession=JX262376
+phagesdb_metadata	Emalyn	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU963260
+phagesdb_metadata	EverythinBagel	no_sequence_in_bulk_fasta	in_genbank=True; accession=PX071748
+phagesdb_metadata	Forge	no_sequence_in_bulk_fasta	in_genbank=True; accession=MZ622181
+phagesdb_metadata	GUmbie	no_sequence_in_bulk_fasta	in_genbank=True; accession=JN398368
+phagesdb_metadata	Gompeii16	no_sequence_in_bulk_fasta	in_genbank=True; accession=KX522943
+phagesdb_metadata	Guacamole	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU963259
+phagesdb_metadata	Harvey	no_sequence_in_bulk_fasta	in_genbank=True; accession=JF937095
+phagesdb_metadata	Hotorobo	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU963245
+phagesdb_metadata	IPhane7	no_sequence_in_bulk_fasta	in_genbank=True; accession=MH697587
+phagesdb_metadata	IronMan	no_sequence_in_bulk_fasta	in_genbank=True; accession=MK279857
+phagesdb_metadata	JeNeSaisPas	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	Kamiyu	no_sequence_in_bulk_fasta	in_genbank=True; accession=JN699018
+phagesdb_metadata	Katyusha	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU963258
+phagesdb_metadata	Kenzers	no_sequence_in_bulk_fasta	in_genbank=True; accession=OP172875
+phagesdb_metadata	KingVeVeVe	no_sequence_in_bulk_fasta	in_genbank=True; accession=KJ538723
+phagesdb_metadata	Lika	no_sequence_in_bulk_fasta	in_genbank=True; accession=KC700556
+phagesdb_metadata	Lucky2013	no_sequence_in_bulk_fasta	in_genbank=True; accession=MF133445
+phagesdb_metadata	MA5	no_sequence_in_bulk_fasta	in_genbank=True; accession=MT310879
+phagesdb_metadata	Minos	no_sequence_in_bulk_fasta	in_genbank=True; accession=OP434450
+phagesdb_metadata	Moonflower	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	MrMagoo	no_sequence_in_bulk_fasta	in_genbank=True; accession=KY223999
+phagesdb_metadata	MsGreen	no_sequence_in_bulk_fasta	in_genbank=True; accession=MK878900
+phagesdb_metadata	PantheRoc	no_sequence_in_bulk_fasta	in_genbank=True; accession=PQ184835
+phagesdb_metadata	PestoPenguin	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	PhatCats2014	no_sequence_in_bulk_fasta	in_genbank=True; accession=KX369585
+phagesdb_metadata	Purplicious	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	R4	no_sequence_in_bulk_fasta	in_genbank=True; accession=JX182370
+phagesdb_metadata	Rootkit7	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	SPB78	no_sequence_in_bulk_fasta	in_genbank=True; accession=
+phagesdb_metadata	Sharkboy	no_sequence_in_bulk_fasta	in_genbank=True; accession=MN062717
+phagesdb_metadata	Shyg	no_sequence_in_bulk_fasta	in_genbank=True; accession=
+phagesdb_metadata	Spartoi	no_sequence_in_bulk_fasta	in_genbank=True; accession=MK061416
+phagesdb_metadata	Sprinklemunch	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	Squibbles	no_sequence_in_bulk_fasta	in_genbank=True; accession=PX071742
+phagesdb_metadata	Srilaccoli3	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	Sros11	no_sequence_in_bulk_fasta	in_genbank=True; accession=
+phagesdb_metadata	Stephig9	no_sequence_in_bulk_fasta	in_genbank=True; accession=MK937605
+phagesdb_metadata	Sujidade	no_sequence_in_bulk_fasta	in_genbank=True; accession=KC700557
+phagesdb_metadata	TG1	no_sequence_in_bulk_fasta	in_genbank=True; accession=JX182372
+phagesdb_metadata	TNguyen7	no_sequence_in_bulk_fasta	in_genbank=True; accession=MH051259
+phagesdb_metadata	TheloniousMonk	no_sequence_in_bulk_fasta	in_genbank=True; accession=KT363731
+phagesdb_metadata	TruffulaTree	no_sequence_in_bulk_fasta	in_genbank=True; accession=OR253900
+phagesdb_metadata	VWB	no_sequence_in_bulk_fasta	in_genbank=True; accession=AY320035
+phagesdb_metadata	Wayne	no_sequence_in_bulk_fasta	in_genbank=True; accession=KU160672
+phagesdb_metadata	ZAYM	no_sequence_in_bulk_fasta	in_genbank=False; accession=
+phagesdb_metadata	Zemlya	no_sequence_in_bulk_fasta	in_genbank=True; accession=KC700558
+phagesdb_metadata	mu16	no_sequence_in_bulk_fasta	in_genbank=True; accession=DQ372923
+phagesdb_metadata	pZL12	no_sequence_in_bulk_fasta	in_genbank=True; accession=GQ919031
+phagesdb_metadata	phiAsp2	no_sequence_in_bulk_fasta	in_genbank=True; accession=AY576796
+phagesdb_metadata	phiBT1	no_sequence_in_bulk_fasta	in_genbank=True; accession=AJ550940
+phagesdb_metadata	phiCAM	no_sequence_in_bulk_fasta	in_genbank=True; accession=JX889246
+phagesdb_metadata	phiHau3	no_sequence_in_bulk_fasta	in_genbank=True; accession=JX182369
+phagesdb_metadata	phiSASD1	no_sequence_in_bulk_fasta	in_genbank=True; accession=GQ379227
+phagesdb_metadata	phiSAV	no_sequence_in_bulk_fasta	in_genbank=True; accession=BA000030.4
