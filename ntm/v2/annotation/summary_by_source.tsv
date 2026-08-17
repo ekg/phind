@@ -1,0 +1,3 @@
+group	n_genomes	median_genes	median_key_proteins	pct_with_terminase	pct_with_capsid	pct_with_tail	pct_with_lysis	pct_temperate	pct_missing_core	pct_low_completeness	pct_contaminated	median_truncated_frac	median_hypothetical_frac	pct_tier_A	pct_tier_B	pct_tier_C	pct_tier_D	pct_no_annotation
+ntm2_anc	1251	55	2	34.5	29.2	55.5	43.3	21.3	53.9	53.9	0.8	0.03	0.8	21.7	15.6	35.1	27.6	0.0
+ntm2_ml	2388	32	1.0	32.9	29.5	49.9	37.4	26.4	56.9	63.6	2.1	0.048	0.75	19.9	10.9	42.7	26.5	0.0

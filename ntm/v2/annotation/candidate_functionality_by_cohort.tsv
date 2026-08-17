@@ -1,0 +1,4 @@
+cohort	A_strong_candidate	B_moderate_candidate	C_partial_module_evidence	D_modules_not_detected	no_annotation	total
+ntm2_anc	272	195	439	345	0	1251
+ntm2_ml_reconstructed	269	199	437	346	0	1251
+ntm2_ml_singleton	207	61	583	286	0	1137
