@@ -444,6 +444,33 @@ class TestDryRun:
 
 
 # ---------------------------------------------------------------------------
+# real smoke fixture (present only after the bounded live smoke run; skipped
+# otherwise so tests never depend on network)
+# ---------------------------------------------------------------------------
+
+REAL_FIXTURE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "fixtures", "smoke_ecoli_k12.zip")
+
+
+class TestRealSmokeFixture:
+    @pytest.mark.skipif(not os.path.exists(REAL_FIXTURE),
+                        reason="live smoke response not yet cached")
+    def test_real_zip_parses_and_normalizes(self, tmp_path):
+        data = open(REAL_FIXTURE, "rb").read()
+        parsed = parse_results_zip(data, session="smoke-fixture")
+        assert parsed.hits_by_query, "real zip must contain at least one query tsv"
+        for qname, rows in parsed.hits_by_query.items():
+            covs = [r["kmer_coverage"] for r in rows]
+            assert covs == sorted(covs, reverse=True)
+            for r in rows:
+                assert r["acc"]
+        paths = write_normalized_tsv(parsed, str(tmp_path))
+        again = write_normalized_tsv(parse_results_zip(data), str(tmp_path / "2"))
+        for q in paths:
+            assert open(paths[q]).read() == open(again[q]).read()
+
+
+# ---------------------------------------------------------------------------
 # session id format
 # ---------------------------------------------------------------------------
 

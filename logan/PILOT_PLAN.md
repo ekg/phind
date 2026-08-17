@@ -93,6 +93,13 @@ endpoint → parse/normalize/cache/checksum all work; ledger reconciles.
 
 ## 5. Confirmation workflow (per bounded hit set)
 
+**Local toolchain status (2026-08-17):** `zstd`, `aws` CLI, `samtools`,
+`pyarrow` installed; `back_to_sequences` and `minimap2` NOT yet installed.
+Install before Stage-1 confirmation work:
+`micromamba install -c bioconda back_to_sequences minimap2` (or
+`cargo install --git https://github.com/pierrepeterlongo/back_to_sequences`
+for b2s). `micromamba` and `cargo` are present.
+
 For each bait with screen hits (≤ 5 accessions):
 
 1. **Retrieve** contigs from `https://s3.amazonaws.com/logan-pub/c/<acc>/<acc>.contigs.fa.zst`
