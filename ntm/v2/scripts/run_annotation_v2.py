@@ -249,15 +249,22 @@ def stage_prepare(root, force=False):
 
 # --- stage commands ----------------------------------------------------------
 
-def pharokka_cmd(root, threads):
-    return [PHAROKKA_BIN, "run", "-m", "--mmseqs2_only",
-            "--skip_extra_annotations", "--skip_mash", "-g", "prodigal-gv",
-            "-i", os.path.join(root, "input", "all_v2_phage_genomes.fa"),
-            "-o", os.path.join(root, "pharokka_out"),
-            "-d", PHAROKKA_DB, "-t", str(threads), "--locustag", "NTMV2"]
+def pharokka_cmd(root, threads, tool_force=False):
+    cmd = [PHAROKKA_BIN, "run", "-m", "--mmseqs2_only",
+           "--skip_extra_annotations", "--skip_mash", "-g", "prodigal-gv",
+           "-i", os.path.join(root, "input", "all_v2_phage_genomes.fa"),
+           "-o", os.path.join(root, "pharokka_out"),
+           "-d", PHAROKKA_DB, "-t", str(threads), "--locustag", "NTMV2"]
+    if tool_force:
+        # restart safety: outdir exists without a done-marker = stale partial
+        # run from a crashed attempt; pharokka refuses to overwrite without -f
+        cmd.insert(cmd.index("run") + 1, "-f")
+    return cmd
 
 
 def checkv_cmd(root, threads):
+    # checkv end_to_end resumes where it left off by default (--restart is
+    # the documented default), so no force flag is needed for stale outdirs
     return [CHECKV_BIN, "end_to_end",
             os.path.join(root, "input", "all_v2_phage_genomes.fa"),
             os.path.join(root, "checkv_out"),
@@ -272,23 +279,23 @@ def report_cmd(root):
 
 STAGE_SPECS = {
     "prepare": {
-        "cmd": lambda root, t: ["internal:stage_prepare"],
+        "cmd": lambda root, t, f=False: ["internal:stage_prepare"],
         "outputs": [os.path.join("{root}", "input", "all_v2_phage_genomes.fa"),
                     os.path.join("{root}", "input", "genome_index.tsv")],
     },
     "pharokka": {
-        "cmd": lambda root, t: pharokka_cmd(root, t),
+        "cmd": lambda root, t, f=False: pharokka_cmd(root, t, f),
         "outputs": [os.path.join("{root}", "pharokka_out",
                                  "pharokka_cds_final_merged_output.tsv"),
                     os.path.join("{root}", "pharokka_out",
                                  "pharokka_length_gc_cds_density.tsv")],
     },
     "checkv": {
-        "cmd": lambda root, t: checkv_cmd(root, t),
+        "cmd": lambda root, t, f=False: checkv_cmd(root, t),
         "outputs": [os.path.join("{root}", "checkv_out", "quality_summary.tsv")],
     },
     "report": {
-        "cmd": lambda root, t: report_cmd(root),
+        "cmd": lambda root, t, f=False: report_cmd(root),
         "outputs": [os.path.join("{root}", "report",
                                  "per_genome_functional_qc.tsv")],
     },
@@ -401,7 +408,14 @@ def run_stage(root, stage, threads, force):
             f"use --force to redo")
         return {"skipped": True}
 
-    cmd = STAGE_SPECS[stage]["cmd"](root, threads)
+    # restart safety: an existing outdir with no done-marker is a stale
+    # partial run — pharokka needs -f to overwrite it
+    tool_force = stage == "pharokka" and os.path.isdir(
+        os.path.join(root, "pharokka_out"))
+    cmd = STAGE_SPECS[stage]["cmd"](root, threads, tool_force)
+    if tool_force:
+        log(f"{stage}: stale output dir present without done-marker — "
+            f"forcing overwrite")
     log(f"{stage}: running: {' '.join(cmd)}")
     env_bin = {"pharokka": PHAROKKA_BIN, "checkv": CHECKV_BIN,
                "report": sys.executable}.get(stage)
