@@ -1,9 +1,9 @@
 2298	PROVENANCE.md
 5187	REPORT.md
 991502	crosswalk.tsv
-66619	exclusions.tsv
+66615	exclusions.tsv
 679	host_distribution.tsv
-4075726	manifest_panel.tsv
+4075725	manifest_panel.tsv
 387332615	panel.full.fasta
 207870927	panel.mycobacteriophage.fasta
 105927	panel.mycobacteriophage.fasta.fai

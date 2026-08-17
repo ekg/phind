@@ -153,7 +153,7 @@ ncbi	ASQH01000014.1	non_phage_record_matched_search	title=Acinetobacter gyllenbe
 ncbi	ASYX01000041.1	non_phage_record_matched_search	title=Acinetobacter haemolyticus CIP 64.3 = MTCC 9819 contig41, whole genome shotgun sequence
 ncbi	AUSW01000006.1	non_phage_record_matched_search	title=Psychrobacter aquaticus CMS 56 contig00007, whole genome shotgun sequence
 ncbi	AY130970.1	non_phage_record_matched_search	title=Mycobacterium avium strain A5 glycopeptidolipid biosynthesis gene cluster, partial sequence
-ncbi	AY151282.1	non_phage_record_matched_search	title=Escherichia coli strain Ec222 tRNA-Trp gene and pathogenicity island, complete sequence; YagU gene, 
+ncbi	AY151282.1	non_phage_record_matched_search	title=Escherichia coli strain Ec222 tRNA-Trp gene and pathogenicity island, complete sequence; YagU gene,
 ncbi	AY223810.1	non_phage_record_matched_search	title=Rhodococcus erythropolis linear plasmid pBD2, complete sequence
 ncbi	BAWG01000004.1	non_phage_record_matched_search	title=Psychrobacter sp. JCM 18900 DNA, contig: JCM18900.contig00004, whole genome shotgun sequence
 ncbi	BAWG01000007.1	non_phage_record_matched_search	title=Psychrobacter sp. JCM 18900 DNA, contig: JCM18900.contig00007, whole genome shotgun sequence
@@ -194,8 +194,8 @@ ncbi	CAIE01000005.1	non_phage_record_matched_search	title=Micromonospora lupini 
 ncbi	CAJFDC010000007.1	non_phage_record_matched_search	title=Pseudomonas sp. FEN genome assembly, contig: scf7180000000086|quiver, whole genome shotgun sequence
 ncbi	CAJFEC010000029.1	non_phage_record_matched_search	title=Halomonas sp. I3 isolate Halomonas sp. I3 genome assembly, contig: HALOI3_Contig_6, whole genome sho
 ncbi	CAJHIU010000002.1	non_phage_record_matched_search	title=Methylomonas sp. EbB isolate ElbeB genome assembly, contig: scaffold2, whole genome shotgun sequence
-ncbi	CAJZAN010000090.1	non_phage_record_matched_search	title=Burkholderia vietnamiensis isolate BVIET434 genome assembly, contig: BVI434_Contig_18, whole genome 
-ncbi	CAJZAO010000381.1	non_phage_record_matched_search	title=Burkholderia vietnamiensis isolate BVI1335 genome assembly, contig: BVI1335_Contig_99, whole genome 
+ncbi	CAJZAN010000090.1	non_phage_record_matched_search	title=Burkholderia vietnamiensis isolate BVIET434 genome assembly, contig: BVI434_Contig_18, whole genome
+ncbi	CAJZAO010000381.1	non_phage_record_matched_search	title=Burkholderia vietnamiensis isolate BVI1335 genome assembly, contig: BVI1335_Contig_99, whole genome
 ncbi	CAJZAQ010000232.1	non_phage_record_matched_search	title=Paraburkholderia caribensis isolate PCAR1334 genome assembly, contig: BCAR13_Contig_89, whole genome
 ncbi	CAJZAS010000011.1	non_phage_record_matched_search	title=Burkholderia diffusa isolate BDI447 genome assembly, contig: BDI4_Contig_108, whole genome shotgun s
 ncbi	CAJZAS010000213.1	non_phage_record_matched_search	title=Burkholderia diffusa isolate BDI447 genome assembly, contig: BDI4_Contig_57, whole genome shotgun se
@@ -453,7 +453,7 @@ ncbi	HG784117.1	short_fragment_not_genome_scale	len=418; title=TPA: Mycobacteriu
 ncbi	M65194.1	short_fragment_not_genome_scale	len=2089; title=Mycobacterium phage L5 integrase (int) gene, complete cds
 ncbi	U46936.1	short_fragment_not_genome_scale	len=1761; title=Mycobacterium phage DS6A, NheI N fragment sequence
 ncbi	U46937.1	short_fragment_not_genome_scale	len=6611; title=Mycobacterium phage DS6A, NheI D fragment sequence
-ncbi	U81553.1	short_fragment_not_genome_scale	len=2592; title=Mycobacteriophage D29 dCMP deaminase (g1) gene, partial cds, g2, excisase (xis) 
+ncbi	U81553.1	short_fragment_not_genome_scale	len=2592; title=Mycobacteriophage D29 dCMP deaminase (g1) gene, partial cds, g2, excisase (xis)
 ncbi	X63702.1	short_fragment_not_genome_scale	len=2244; title=Mycobacteriophage FRAT1 int gene for integrase
 ncbi	X68295.1	short_fragment_not_genome_scale	len=2317; title=Mycobacteriophage I3 gene for structural protein (70 KD)
 ncbi	X68296.1	short_fragment_not_genome_scale	len=1049; title=Mycobacteriophage I3 gene for structural protein (17 KD)

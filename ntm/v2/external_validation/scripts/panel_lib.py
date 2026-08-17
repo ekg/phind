@@ -924,7 +924,8 @@ def write_tsv(path: str, columns: list[str], rows: list[dict]) -> None:
                            extrasaction="ignore", lineterminator="\n")
         w.writeheader()
         for r in rows:
-            w.writerow(r)
+            w.writerow({k: (str(v).rstrip() if isinstance(v, str) else v)
+                        for k, v in r.items()})
 
 
 def write_panel_fasta(path: str, records: list[dict]) -> None:
