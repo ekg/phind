@@ -444,8 +444,9 @@ class TestDryRun:
 
 
 # ---------------------------------------------------------------------------
-# real smoke fixture (present only after the bounded live smoke run; skipped
-# otherwise so tests never depend on network)
+# real smoke fixture (appears only after a successful live retrieval; skipped
+# otherwise so tests never depend on network — see smoke/run-*/OUTCOME.md;
+# the 2026-08-17 smoke submission's session was never retrievable)
 # ---------------------------------------------------------------------------
 
 REAL_FIXTURE = os.path.join(os.path.dirname(os.path.abspath(__file__)),

@@ -19,7 +19,7 @@ fail, record NO-GO.
 | ~20-candidate bait panel (0.5–2.5 kb interior/module + junction baits) | `design-ntm-prophage` | FASTA + manifest (bait id, class, coordinates, 31-mer stats, checksum) |
 | Public mycobacteriophage references (positive controls) | `curate-public-mycobacteriophage` | reference FASTA slices ≤ 2.5 kb |
 | Negative controls | `design-ntm-prophage` (shuffled/low-complexity-masked) | FASTA |
-| Smoke (done) | this task | E. coli K-12 150 nt, GenBank_RefSeq, thr 0.5 |
+| Smoke (submitted 2026-08-17; retrieval BLOCKED — no live results) | this task | E. coli K-12 150 nt, GenBank_RefSeq, thr 0.5; see `smoke/run-2026-08-17/OUTCOME.md` |
 
 Every bait must pass `logan_search_client` validation (single sequence,
 ACGTN, 31–2500 nt) before submission; over-limit baits are rejected and
@@ -46,8 +46,10 @@ downloads only via the documented `GET /api/download/<session>` with
 **one month** — fetch within 24 h of submission.
 
 Time estimate: docs promise results "in a few minutes" per query; the smoke
-query (GenBank_RefSeq) was Pending > 6 min, so budget **5–15 min/query** ⇒
-Stage 1 ≈ 2–6 h wall clock (submission-paced), Stage 2+3 similar if triggered.
+session never became retrievable (400 unknown-session signature after >3 h;
+see `smoke/run-2026-08-17/OUTCOME.md`), so budget **5–15 min/query** with a
+**30-min give-up + one re-check after 24 h** rule per session, and always
+confirm the dashboard result page before recording a session id.
 
 ## 3. Download volume budget (S3 `logan-pub`)
 
@@ -68,8 +70,20 @@ Stage 1 ≈ 2–6 h wall clock (submission-paced), Stage 2+3 similar if triggere
 
 ## 4. Stop / Go gates (preregistered)
 
-**Smoke gate (already passed):** submission → session id → documented download
-endpoint → parse/normalize/cache/checksum all work; ledger reconciles.
+**Smoke gate — NOT yet passed live (Stage 0 below is mandatory).** The
+2026-08-17 smoke run proved submission, rate limiting, ledger/checksums,
+polling bounds and resume under live conditions, but the session never
+became retrievable (14 × HTTP 400 unknown-session signature; analysis in
+`smoke/run-2026-08-17/OUTCOME.md`), so the live 200 → parse/normalize leg is
+unproven (covered offline by tests only).
+
+**Stage 0 (smoke re-run, GO required before Stage 1):** one fresh
+non-sensitive query (same E. coli slice, `GenBank_RefSeq`, thr 0.5);
+record the session id ONLY after the dashboard result page shows results,
+verified character-by-character; `fetch --poll 6 --min-interval 60`; gate =
+HTTP 200 + parseable ZIP + cache/normalized TSV written + ledger reconciles.
+If a dashboard-verified session still 400s identically, escalate to the
+service maintainers — do not spend pilot budget diagnosing.
 
 **Stage 1 → Stage 2 GO requires ALL of:**
 1. ≥ 1 positive control (public mycobacteriophage reference slice) hits its

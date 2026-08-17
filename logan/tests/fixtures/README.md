@@ -1,10 +1,12 @@
 # Fixtures
 
-- `smoke_ecoli_k12.zip` — RAW response bytes of the bounded live smoke query
-  (E. coli K-12 MG1655 NC_000913.3:1000000-1000149, 150 nt; group
-  GenBank_RefSeq; threshold 0.5; session recorded in
-  ../../smoke/run-2026-08-17/manifest.json), fetched once via the documented
-  GET /api/download/<session> endpoint on 2026-08-17 and cached verbatim.
-  sha256 recorded in the run ledger and the .meta.json sidecar.
+- `smoke_ecoli_k12.zip` — **RESERVED, currently absent.** Intended: raw ZIP
+  bytes of the first successful live smoke retrieval via the documented
+  `GET /api/download/<session>` endpoint. The 2026-08-17 smoke submission's
+  session never became retrievable (14 bounded polls, all HTTP 400 with the
+  kmviz unknown-session error signature; see
+  `../../smoke/run-2026-08-17/OUTCOME.md`), so no live bytes exist and none
+  were fabricated. `TestRealSmokeFixture` in `tests/test_logan_client.py`
+  skips until this file appears (Stage 0 of `PILOT_PLAN.md`).
 - All other test responses are synthesized in-test (see make_zip in
-  tests/test_logan_client.py); no test ever contacts the network.
+  `tests/test_logan_client.py`); no test ever contacts the network.

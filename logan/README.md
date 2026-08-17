@@ -111,19 +111,33 @@ From docs.logan-search.org ("Submitting a query"), retrieved 2026-08-17:
   `kmviz-<uuid>` is recorded offline via `record`; only then does `fetch`
   use the documented download endpoint.
 
-## 5. Smoke query (executed 2026-08-17, single bounded submission)
+## 5. Smoke query (2026-08-17: submission OK, retrieval BLOCKED — no live results)
 
 * Query: 150 nt of *E. coli* K-12 MG1655 **NC_000913.3:1,000,000–1,000,149**
   (public BSL-1 reference; non-sensitive), retrieved from NCBI E-utilities
   2026-08-17; seq sha256 `ac58a6648da0ca4ac7f14728e50f3e110bc3e1c25cdc52b544650ec2b4c801ed`.
 * Parameters: group `GenBank_RefSeq`, threshold 0.5 (dashboard default),
   no email. Submitted once via the dashboard (browser-driven); session
-  `kmviz-9b877a85-62a8-46da-94d7-b056c3fda36d`.
-* Results: fetched via `GET /api/download/<session>` (rate-limited), cached,
-  parsed, normalized under `smoke/run-2026-08-17/`; raw ZIP + sha256 retained
-  as test fixture `tests/fixtures/smoke_ecoli_k12.zip`.
-* Expected sanity: hits in *E. coli* reference genomes at high k-mer coverage
-  (positive control behavior). No biological claims beyond parsing mechanics.
+  `kmviz-9b877a85-62a8-46da-94d7-b056c3fda36d` recorded offline.
+* **Outcome: retrieval blocked.** 14 bounded, rate-limited, checksummed
+  requests to `GET /api/download/<session>` over 17:08–20:17 UTC all
+  returned HTTP 400 with the byte-identical 46-byte kmviz generic error
+  body (sha256 `980998f5…`) — the same signature as a bogus session id.
+  Docs promise "a few minutes" latency and one-month retention, so this is
+  not expiry; most plausibly the recorded session id was not recognized
+  (mis-transcription) or the session never reached a retrievable state.
+  Full analysis and the Stage-0 re-run procedure for `execute-bounded-ntm`:
+  **`smoke/run-2026-08-17/OUTCOME.md`**. No results were invented; the
+  manifest row stays resumable (`submitted`).
+* What the smoke DID demonstrate live: dashboard-assisted submission path,
+  offline session recording, bounded polling with enforced cross-process
+  rate limiting (waits 48.4 s / 78.5 s in the ledger), full per-request
+  provenance (params, status, size, sha256, duration, wait), and resume.
+  Response parsing/caching/deterministic normalization are demonstrated
+  **offline** by the test suite (33 tests incl. CLI end-to-end vs a local
+  fake kmviz server; fixtures only, no network). A live 200 response has
+  NOT yet been obtained; `tests/fixtures/smoke_ecoli_k12.zip` is reserved
+  for it and its test skips until it exists.
 
 ## 6. Pilot execution plan (for `execute-bounded-ntm`)
 
@@ -139,8 +153,8 @@ workflow.
 | `logan_search_client.py` | library: validation, cache, rate limit, ledger, retries, parsing/normalization |
 | `run_pilot.py` | CLI: `dryrun`, `prep`, `record`, `fetch`, `status` |
 | `tests/test_logan_client.py` | unit tests (fixtures only; no network) |
-| `tests/fixtures/` | cached real smoke response + synthetic fixtures |
-| `smoke/run-2026-08-17/` | smoke run dir: manifest, ledger, cache, normalized results |
+| `tests/fixtures/` | synthetic fixtures; `smoke_ecoli_k12.zip` reserved for the first live 200 (absent — smoke retrieval blocked; see smoke OUTCOME.md) |
+| `smoke/run-2026-08-17/` | smoke run dir: manifest, ledger (14 checksummed requests), INSTRUCTIONS, OUTCOME.md (blocker analysis) |
 | `PILOT_PLAN.md` | bounded pilot execution plan with gates |
 
 ## 8. Reproduce
