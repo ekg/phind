@@ -141,3 +141,13 @@ required before any "module/junction present" statement.
 | `ntm/v2/pilot/stage1_panel.fa` + `stage1_selection.tsv` + `stage1_selection_meta.json` | frozen panel with per-bait sha256, roles, sources |
 | `ntm/v2/pilot/gen_submit_js.py` | dashboard submission driver (base64 mega-eval generator) |
 | `ntm/v2/pilot/confirm_hits.py` | bounded S3 + b2s + minimap2 confirmation pipeline (validated) |
+
+## 6. Final status entry (post-baseline, 2026-08-17T21:31Z)
+
+Elapsed 35.6 min since submission (20:55:30Z → 21:31:12Z). Final manual
+re-check of `GET /api/download/kmviz-c112ba44-…`: HTTP 400, 46 bytes,
+sha256 `980998f5…` (unchanged not-ready signature). Decision per
+PILOT_PLAN §4 service-degradation rule: **NO-GO pause ≥ 24 h**; smoke
+manifest row remains `submitted` for idempotent resume. Total dashboard
+submissions spent: 2 (both non-sensitive E. coli smoke); Stage-1 bait
+budget spent: 0 of 64.
