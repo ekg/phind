@@ -1,0 +1,35 @@
+{
+  "base_url": "https://logan-search.org",
+  "created_at": "2026-08-17T20:26:32.251+00:00",
+  "group": "GenBank_RefSeq",
+  "index_snapshot": {
+    "dataset_latest": "Logan v1.2 (SRA freeze 2025-12-31): 38.1M accessions with unitigs, 37.3M with contigs (IndexThePlanet/Logan Stats-v1.2.md)",
+    "search_index": "kmindex k=31 index over Logan unitigs (Bloom-filter based), SRA up until 2023, 23.4M accessions + GenBank/RefSeq references",
+    "sources": [
+      "https://docs.logan-search.org/",
+      "https://github.com/IndexThePlanet/Logan",
+      "https://github.com/IndexThePlanet/LoganSearch"
+    ],
+    "verified": "2026-08-17"
+  },
+  "max_requests_per_run": 40,
+  "results_retention": "one month (docs.logan-search.org)",
+  "rows": [
+    {
+      "bait_id": "ecoli_k12_mg1655_1000000_1000149_t50",
+      "engine": "kmindex/kmviz dashboard submission + /api/download retrieval",
+      "error": null,
+      "group": "GenBank_RefSeq",
+      "k": 31,
+      "kmers_total": 120,
+      "kmers_without_n": 120,
+      "seq_len": 150,
+      "seq_sha256": "ac58a6648da0ca4ac7f14728e50f3e110bc3e1c25cdc52b544650ec2b4c801ed",
+      "sequence": "GTGTCAGCTTTCGTGGTGTGCAGCTGGCGTCAGATGACAACATGCTGCCAGACAGCCTGAAAGGGTTTGCGCCTGTGGTGCGTGGTATCGCCAAAAGCAATGCCCAGATAACGATTAAGCAAAATGGTTACACCATTTACCAAACTTATG",
+      "session_id": "kmviz-c112ba44-680f-4682-b2f5-696c9264e934",
+      "status": "submitted",
+      "threshold": 0.5
+    }
+  ],
+  "run_id": "stage0-smoke"
+}
