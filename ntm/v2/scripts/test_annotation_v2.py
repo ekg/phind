@@ -384,6 +384,24 @@ class TestDriverPrepare:
         assert cohorts["ntm2_0_0002_ML"] == "ntm2_ml_singleton"
         assert cohorts["ntm2_0_0001_ML"] == "ntm2_ml_reconstructed"
 
+    def test_prepare_stage_resumes_with_marker(self, tmp_path, monkeypatch):
+        """Regression: run_stage('prepare') with an existing done-marker must
+        take the cheap re-validation path, not KeyError on STAGE_SPECS."""
+        ml, anc = make_release(tmp_path)
+        monkeypatch.setattr(drv, "RELEASE_DIR", str(tmp_path))
+        monkeypatch.setattr(drv, "ML_FA", str(ml))
+        monkeypatch.setattr(drv, "ANC_FA", str(anc))
+        monkeypatch.setattr(drv, "EXPECT_ML", 2)
+        monkeypatch.setattr(drv, "EXPECT_ANC", 1)
+        monkeypatch.setattr(drv, "EXPECT_TOTAL", 3)
+        out = tmp_path / "root"
+        info1 = drv.run_stage(str(out), "prepare", threads=4, force=False)
+        assert info1["n_total"] == 3
+        # second invocation: marker + outputs present -> resume path, no crash
+        info2 = drv.run_stage(str(out), "prepare", threads=4, force=False)
+        assert info2["n_total"] == 3
+        assert drv.stage_done(str(out), "prepare") is True
+
     def test_duplicate_ids_abort(self, tmp_path, monkeypatch):
         ml, anc = make_release(tmp_path)
         with open(ml, "a", newline="\n") as f:  # duplicate of an ancestral ID

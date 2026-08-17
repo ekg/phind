@@ -199,10 +199,6 @@ def stage_prepare(root, force=False):
         raise RuntimeError(f"duplicate genome IDs across release FASTAs: {dupes[:5]} "
                            f"({len(dupes)} total)")
 
-    if dupes:
-        raise RuntimeError(f"duplicate genome IDs across release FASTAs: {dupes[:5]} "
-                           f"({len(dupes)} total)")
-
     # ---- round-trip validation: FASTA <-> index, exact and duplicate-free ---
     n_ml = sum(1 for r in index_rows if r["source"] == "ntm2_ml")
     n_anc = sum(1 for r in index_rows if r["source"] == "ntm2_anc")
@@ -275,6 +271,11 @@ def report_cmd(root):
 
 
 STAGE_SPECS = {
+    "prepare": {
+        "cmd": lambda root, t: ["internal:stage_prepare"],
+        "outputs": [os.path.join("{root}", "input", "all_v2_phage_genomes.fa"),
+                    os.path.join("{root}", "input", "genome_index.tsv")],
+    },
     "pharokka": {
         "cmd": lambda root, t: pharokka_cmd(root, t),
         "outputs": [os.path.join("{root}", "pharokka_out",
