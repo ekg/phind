@@ -295,6 +295,16 @@ STAGE_SPECS = {
 }
 
 
+def stage_env(bin_path):
+    """subprocess env with the tool's own env bin prepended to PATH.
+
+    Pharokka shells out to phanotate.py / other env binaries by name, so the
+    pinned binary's env must be on PATH even when invoked by absolute path."""
+    env = os.environ.copy()
+    env["PATH"] = os.path.dirname(bin_path) + os.pathsep + env.get("PATH", "")
+    return env
+
+
 # --- restart safety ----------------------------------------------------------
 
 def marker_path(root, stage):
@@ -393,7 +403,10 @@ def run_stage(root, stage, threads, force):
 
     cmd = STAGE_SPECS[stage]["cmd"](root, threads)
     log(f"{stage}: running: {' '.join(cmd)}")
-    proc = subprocess.run(cmd)
+    env_bin = {"pharokka": PHAROKKA_BIN, "checkv": CHECKV_BIN,
+               "report": sys.executable}.get(stage)
+    env = stage_env(env_bin) if env_bin else None
+    proc = subprocess.run(cmd, env=env)
     write_marker(root, stage, cmd, threads, proc.returncode)
     if proc.returncode != 0:
         raise RuntimeError(f"stage {stage} failed with exit code {proc.returncode}")
