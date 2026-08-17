@@ -512,7 +512,7 @@
   "reserved_control_class": {
     "control_public_reference": "deferred to task curate-public-mycobacteriophage; the panel schema accepts these rows without redesign"
   },
-  "run_id": "8ce8665a44053e73",
-  "script_sha256": "87a3603cd7451c9c9ce7036dfb95787377d5955e5a949698f3be65919a945f83",
+  "run_id": "018918c2f9e0d158",
+  "script_sha256": "c13edb595c2f58d624020756886402728c47993c10c1262554181c6c974d6580",
   "task": "design-ntm-prophage"
 }

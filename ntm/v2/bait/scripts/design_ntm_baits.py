@@ -77,7 +77,8 @@ def write_tsv(path: str, rows: List[dict], cols: List[str]) -> None:
                            lineterminator="\n", extrasaction="ignore")
         w.writeheader()
         for r in rows:
-            w.writerow(r)
+            line = "\t".join(str(r.get(c, "")) for c in cols).rstrip("\t")
+            fh.write(line + "\n")  # no trailing whitespace anywhere
 
 
 def iter_fasta(path: str):
