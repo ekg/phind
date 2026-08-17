@@ -1,0 +1,518 @@
+{
+  "counts": {
+    "baits_accepted": 102,
+    "baits_rejected": 64,
+    "eligibility_ledger_rows": 3639,
+    "host_panel_genomes": 60,
+    "member_reps": 40,
+    "selected_genomes": 20
+  },
+  "design": "ntm/v2/bait/DESIGN.md",
+  "environment": {
+    "numpy": "1.26.4",
+    "python": "3.12.3"
+  },
+  "host_panel": [
+    {
+      "accession": "GCA_900138355.1",
+      "clade_id": "0_0000",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900138355.1/GCA_900138355.1.pansn.fa.gz",
+      "fasta_sha256": "8314f1d346cb33c92f7e7deb9143c8051030ae557a761f8724fb7d264a922ce4",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_900141045.1",
+      "clade_id": "0_0000",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900141045.1/GCA_900141045.1.pansn.fa.gz",
+      "fasta_sha256": "6627eaae555f18c8c52d3c59b6e6a4e8e147ed9b7351e4f4ccbc357a95727402",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_003580145.1",
+      "clade_id": "0_0000",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_003580145.1/GCA_003580145.1.pansn.fa.gz",
+      "fasta_sha256": "2b7ec7cf4f37dbd1ca4c791cf331ead5956026fe0021067a609fa687e66e3478",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_003582745.1",
+      "clade_id": "0_0000",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_003582745.1/GCA_003582745.1.pansn.fa.gz",
+      "fasta_sha256": "27807175726012037abab9890368a6ec8fb3bf3085e11929ee0a86703adca431",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_900132875.1",
+      "clade_id": "0_0006",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900132875.1/GCA_900132875.1.pansn.fa.gz",
+      "fasta_sha256": "b90bfae28450121b061ed1b66591aec73de90f9fd01350ce2ff203507bd00095",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_900141075.1",
+      "clade_id": "0_0006",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900141075.1/GCA_900141075.1.pansn.fa.gz",
+      "fasta_sha256": "1ee288d39a94d0e5845531efabe26600eb7ac982ecbb4daf7984c064cfdd80af",
+      "prophage_intervals_masked": 1
+    },
+    {
+      "accession": "GCA_030514675.1",
+      "clade_id": "0_0006",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_030514675.1/GCA_030514675.1.pansn.fa.gz",
+      "fasta_sha256": "9e1013c9b78801ade2e5ae3713385af2305f3ce9f808c377a393f52e3df5dd8c",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_030514925.1",
+      "clade_id": "0_0006",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_030514925.1/GCA_030514925.1.pansn.fa.gz",
+      "fasta_sha256": "9eaff8adac82416482a22a7eaa3709fe3ab82c9afb50ef96a4e37a3da722e857",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_035967875.1",
+      "clade_id": "0_0019",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_035967875.1/GCA_035967875.1.pansn.fa.gz",
+      "fasta_sha256": "4f60016302cedaf78b176a1bbb3d6301736b69b597152e59ef64cd8c1daae241",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_001853965.1",
+      "clade_id": "0_0019",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001853965.1/GCA_001853965.1.pansn.fa.gz",
+      "fasta_sha256": "d6faa92c47c0ac92e6e98e087c0add16648fcaa7ea8b602b9a9c99150dda3105",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_001853865.1",
+      "clade_id": "0_0019",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001853865.1/GCA_001853865.1.pansn.fa.gz",
+      "fasta_sha256": "e351def69bb4505478b94f72c0ea9c338b7eae037f74544657e77839c2428ad3",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCA_002013855.1",
+      "clade_id": "0_0019",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013855.1/GCA_002013855.1.pansn.fa.gz",
+      "fasta_sha256": "52a4bd4759d1d365782d3638c9b0277425970a06e2d25a8c7df10584ecb9a9a9",
+      "prophage_intervals_masked": 8
+    },
+    {
+      "accession": "GCA_900140805.1",
+      "clade_id": "0_0021",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900140805.1/GCA_900140805.1.pansn.fa.gz",
+      "fasta_sha256": "90dcd6daa8482c8d5f0df99db47b0d706853f0f2ef8282dada80896d4ef918ab",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_900136475.1",
+      "clade_id": "0_0021",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900136475.1/GCA_900136475.1.pansn.fa.gz",
+      "fasta_sha256": "e791085ebfabf53871d2a82462ce82c7b47efb7a4d6982a8cbfe4f8e7b181da8",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCA_002801345.1",
+      "clade_id": "0_0021",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002801345.1/GCA_002801345.1.pansn.fa.gz",
+      "fasta_sha256": "cdfa743ee308263762a361cad8aa33e7bd227502276dcbcf1655453a6ec98b7a",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_900133455.1",
+      "clade_id": "0_0021",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900133455.1/GCA_900133455.1.pansn.fa.gz",
+      "fasta_sha256": "5023018fe66b24584e7ead4be116297df6574d7f31e72fc9fbf890373a29acd3",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_001853945.1",
+      "clade_id": "0_0023",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001853945.1/GCA_001853945.1.pansn.fa.gz",
+      "fasta_sha256": "957892524890503ad455a5a1719e139b451f85ba44c6995c15f97bba9303cebf",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_016446375.1",
+      "clade_id": "0_0023",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_016446375.1/GCA_016446375.1.pansn.fa.gz",
+      "fasta_sha256": "4d74fd59ffb4856f9b592ed9a79753e3bc365899511587857c800aa7ad52e5e9",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_002013895.1",
+      "clade_id": "0_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013895.1/GCA_002013895.1.pansn.fa.gz",
+      "fasta_sha256": "3429cd1e25823917452b41d362fd7afa794f0d3fc3f9767b55a29b6b12747134",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_002086225.1",
+      "clade_id": "0_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002086225.1/GCA_002086225.1.pansn.fa.gz",
+      "fasta_sha256": "ff3a52894020741eb4fc99b25bb22380f3afd679dbca7138ba01691b9b56a487",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_004355025.1",
+      "clade_id": "0_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_004355025.1/GCA_004355025.1.pansn.fa.gz",
+      "fasta_sha256": "bb5c06a8ed45d8a34678df730d4fc3be76537d3a44d71a77dcfe68ccf37cd9d9",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCF_000270965.1",
+      "clade_id": "0_0049",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCF_000270965.1/GCF_000270965.1.pansn.fa.gz",
+      "fasta_sha256": "92c0a30cc8b52eb451b501000a4d21662224c32c38cd86fc563a900e53376eaa",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCF_000271005.1",
+      "clade_id": "0_0049",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCF_000271005.1/GCF_000271005.1.pansn.fa.gz",
+      "fasta_sha256": "ff1a86d183040f25431a39a1ba6ba156098d4a83d832ab2b7e8d80b3cc641b6f",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCF_000271025.1",
+      "clade_id": "0_0049",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCF_000271025.1/GCF_000271025.1.pansn.fa.gz",
+      "fasta_sha256": "679773ac96ea476224b6136cdc29233b5614adb382215ff9e7eb4213aa2cd218",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCF_000271045.1",
+      "clade_id": "0_0049",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCF_000271045.1/GCF_000271045.1.pansn.fa.gz",
+      "fasta_sha256": "c1678746ee1da622618f474c5c7aa5eb35f698dc317986bf5a9674d10e2bd61f",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCA_900131525.1",
+      "clade_id": "0_0063",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900131525.1/GCA_900131525.1.pansn.fa.gz",
+      "fasta_sha256": "eef30814850cd48aa904adb6e475483f380d4dfd7407f042b0ee2d0ce4df5baa",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCA_900131535.1",
+      "clade_id": "0_0063",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900131535.1/GCA_900131535.1.pansn.fa.gz",
+      "fasta_sha256": "955e5c2c70caaf823ef288e48411b96192d18517ccd34d7f606750f07e6d7f94",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCA_900132265.1",
+      "clade_id": "0_0063",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900132265.1/GCA_900132265.1.pansn.fa.gz",
+      "fasta_sha256": "fdddebb927775f16339f2b6d38eb3c1eacec86fdfdad72b53590cbabb2a48d39",
+      "prophage_intervals_masked": 3
+    },
+    {
+      "accession": "GCA_900132635.1",
+      "clade_id": "0_0063",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900132635.1/GCA_900132635.1.pansn.fa.gz",
+      "fasta_sha256": "e7df78ed32fa2834a8312186cfb680944bc86733613f1c1733084c1d246bf68c",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_046269265.1",
+      "clade_id": "0_0066",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_046269265.1/GCA_046269265.1.pansn.fa.gz",
+      "fasta_sha256": "2205002499f5158acff8c0825a8fe3fc09dbdb7a2cdec9d33c1f874720ffb03a",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_049241375.1",
+      "clade_id": "0_0066",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_049241375.1/GCA_049241375.1.pansn.fa.gz",
+      "fasta_sha256": "33405bd8bf6b1b442136b341619e236c15d2dae0462df087880de4ba40449511",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_001296325.1",
+      "clade_id": "0_0073",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001296325.1/GCA_001296325.1.pansn.fa.gz",
+      "fasta_sha256": "d902c5e38f351bd0e07e43e875e8116aec75f0f963c36f9a157d528aaa6c3b4c",
+      "prophage_intervals_masked": 8
+    },
+    {
+      "accession": "GCA_001677135.1",
+      "clade_id": "0_0073",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001677135.1/GCA_001677135.1.pansn.fa.gz",
+      "fasta_sha256": "66c12c8f6dc7a2ce3a878065b3a6d356a0e37d636e9e5321e3f24fbda50f3ee0",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_001296335.1",
+      "clade_id": "0_0073",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001296335.1/GCA_001296335.1.pansn.fa.gz",
+      "fasta_sha256": "3f869c109f2ca6faa0a2c9330ab68e17f84d0fb314a5873f64a226537c725c0b",
+      "prophage_intervals_masked": 8
+    },
+    {
+      "accession": "GCA_001296345.1",
+      "clade_id": "0_0073",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001296345.1/GCA_001296345.1.pansn.fa.gz",
+      "fasta_sha256": "2e1362dfc49c83923fa7a16d4d00962dad104edf4887d4a27e89cf05fb119373",
+      "prophage_intervals_masked": 7
+    },
+    {
+      "accession": "GCA_002013385.1",
+      "clade_id": "0_0077",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013385.1/GCA_002013385.1.pansn.fa.gz",
+      "fasta_sha256": "4ff45b8839b4251941e548b96d0f5c872471521c1a8d5bd5105c5f8febd74d3e",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_002013425.1",
+      "clade_id": "0_0077",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013425.1/GCA_002013425.1.pansn.fa.gz",
+      "fasta_sha256": "3adbb76cdfb652c71fc10b36de3f5f424a7e2e723117943920d8f99ed627f86d",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_900133475.1",
+      "clade_id": "0_0085",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900133475.1/GCA_900133475.1.pansn.fa.gz",
+      "fasta_sha256": "0927bbd45dd28934d7156fa47f74e2e3d0a256f7f6d656ab5be62b453885fae4",
+      "prophage_intervals_masked": 7
+    },
+    {
+      "accession": "GCA_900133725.1",
+      "clade_id": "0_0085",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900133725.1/GCA_900133725.1.pansn.fa.gz",
+      "fasta_sha256": "b7df78d08229e9a6555d725dcf3407df2e72b6e62ebb49dbc7a747def4e56e38",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_900133695.1",
+      "clade_id": "0_0085",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900133695.1/GCA_900133695.1.pansn.fa.gz",
+      "fasta_sha256": "ce3a256e760ea640cb0b43d036571a3ec804b496ae2653d2293f0fcf2740df75",
+      "prophage_intervals_masked": 8
+    },
+    {
+      "accession": "GCA_900133745.1",
+      "clade_id": "0_0085",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900133745.1/GCA_900133745.1.pansn.fa.gz",
+      "fasta_sha256": "895960c258d93e4a07b58b19de1ed6b6f7b1c0c27bbac59f70e9fd0989089560",
+      "prophage_intervals_masked": 8
+    },
+    {
+      "accession": "GCA_002013825.1",
+      "clade_id": "0_0169",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013825.1/GCA_002013825.1.pansn.fa.gz",
+      "fasta_sha256": "5ba33152cad70e09e3ddd02c14cfbf3bf3a01dc8b5e26abffd7b0849c88afb80",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_002013815.1",
+      "clade_id": "0_0169",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013815.1/GCA_002013815.1.pansn.fa.gz",
+      "fasta_sha256": "ea46fc739d76c867e72711b4a70b34ebcbd300d3ef30d27ada937098135c929f",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_002013455.1",
+      "clade_id": "0_0169",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_002013455.1/GCA_002013455.1.pansn.fa.gz",
+      "fasta_sha256": "47d830d2719b47a43a282864f7a7d0a76854f9662410e2984131f1c1eac10b15",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_046643285.1",
+      "clade_id": "0_0218",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_046643285.1/GCA_046643285.1.pansn.fa.gz",
+      "fasta_sha256": "d438d2756c6054430b4e31968066463e00a979fba07fb33077d2054ea6c0a1ea",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_048287075.1",
+      "clade_id": "0_0218",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_048287075.1/GCA_048287075.1.pansn.fa.gz",
+      "fasta_sha256": "fcc3985e41986be1af43c07f4e6c92afb9dd1feb46fe866b375eb7e0bac367e6",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_053483515.1",
+      "clade_id": "0_0219",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_053483515.1/GCA_053483515.1.pansn.fa.gz",
+      "fasta_sha256": "64559f69a521235b6deae5b1cabf54a323c6b169b1d56141321344779de07381",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_053483535.1",
+      "clade_id": "0_0219",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_053483535.1/GCA_053483535.1.pansn.fa.gz",
+      "fasta_sha256": "09f25b02354646e53ed662d572fe9dc2cde4b429b8dd24a0beabffb6b7839958",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_053483555.1",
+      "clade_id": "0_0219",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_053483555.1/GCA_053483555.1.pansn.fa.gz",
+      "fasta_sha256": "ec506730fed7ec8c043cb4dcf5371cec1decea40c449f74e7eca71fbc17e0f1e",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_053483595.1",
+      "clade_id": "0_0219",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_053483595.1/GCA_053483595.1.pansn.fa.gz",
+      "fasta_sha256": "f3017b684e52a89e35f857bea79613285818b15ebd73abb39494eed28df5fef2",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCA_015023815.1",
+      "clade_id": "0_0001",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_015023815.1/GCA_015023815.1.pansn.fa.gz",
+      "fasta_sha256": "b8f65f96629e6bffaf7b1ee6d87fdda804185519ff7d3a017bad8a0a2b9635b7",
+      "prophage_intervals_masked": 1
+    },
+    {
+      "accession": "GCA_030341955.1",
+      "clade_id": "0_0001",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_030341955.1/GCA_030341955.1.pansn.fa.gz",
+      "fasta_sha256": "0c3724ec0973ffac663d89ee29b1930bfb83b547ca8a788283739a180015bbbe",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_024390195.1",
+      "clade_id": "0_0001",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_024390195.1/GCA_024390195.1.pansn.fa.gz",
+      "fasta_sha256": "642d15ea3b1889524d0b26f7952dcbfe4db5a4bad1a80e00005fae92c2715404",
+      "prophage_intervals_masked": 6
+    },
+    {
+      "accession": "GCA_024390645.1",
+      "clade_id": "0_0001",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_024390645.1/GCA_024390645.1.pansn.fa.gz",
+      "fasta_sha256": "860c5337844cd76c3bdc20417cdc8a2cb9362899e78d0715e92e254ed6357533",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_900453225.1",
+      "clade_id": "0_0004",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_900453225.1/GCA_900453225.1.pansn.fa.gz",
+      "fasta_sha256": "645ce66f3a6983f6e6742f615ed2ba85ef0ff965dbadc54c38170817f4b4cb8d",
+      "prophage_intervals_masked": 2
+    },
+    {
+      "accession": "GCF_000270985.1",
+      "clade_id": "0_0004",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCF_000270985.1/GCF_000270985.1.pansn.fa.gz",
+      "fasta_sha256": "6fb4409685796f3bb71be4a2ee7d5e538d6c81f2687ccf195473a2ec838588fa",
+      "prophage_intervals_masked": 4
+    },
+    {
+      "accession": "GCA_001296425.1",
+      "clade_id": "0_0024",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001296425.1/GCA_001296425.1.pansn.fa.gz",
+      "fasta_sha256": "f67221a2d0f782099b7577566013af82963046cf08ee6b0fae54460e51a3d17f",
+      "prophage_intervals_masked": 7
+    },
+    {
+      "accession": "GCA_001212845.1",
+      "clade_id": "0_0024",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001212845.1/GCA_001212845.1.pansn.fa.gz",
+      "fasta_sha256": "6ecac779703422fec3231e2533d89855cd81c25b542cc63aa57557448135f8b4",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_001213205.1",
+      "clade_id": "0_0024",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_001213205.1/GCA_001213205.1.pansn.fa.gz",
+      "fasta_sha256": "9e7f96508fd235b76f840d76a8258ca172b85e5527fc9fa8aafefe3c2e938d96",
+      "prophage_intervals_masked": 5
+    },
+    {
+      "accession": "GCA_049066685.1",
+      "clade_id": "0_0025",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/genomes/canonical_objects/GCA_049066685.1/GCA_049066685.1.pansn.fa.gz",
+      "fasta_sha256": "310861a66864ff2a28d1a3751b13bbe3544113955788b4875ffd544672d0922b",
+      "prophage_intervals_masked": 3
+    }
+  ],
+  "inputs_sha256": {
+    "clades/0_0000/ml.traversal.json": "aeef82192c47c1f9ef74e01bd0c1f16ef8a7860a2e09818f80ce5fc072fdc9fa",
+    "clades/0_0000/partitions.bed": "a04ab55f24fe8c65c877f16af88141957e8767cbbdb36fe6bf4e761a9ace9100",
+    "clades/0_0001/ml.traversal.json": "ced19e1f30b26e4dcc7c3bfd94d29125338ec527c2968ca142165b24dd082bb5",
+    "clades/0_0001/partitions.bed": "02b4cc00ed22478d05d1a2a8c7b9a83d5f2c01ce93fe9612c1b2a89447af63b0",
+    "clades/0_0004/ml.traversal.json": "66a4fd5239106aae70b5fd611ef9d90191b2127575403bab80acd9dc5bd60207",
+    "clades/0_0004/partitions.bed": "e8af5d4b96f160c43e01e0e7da30103fef3678852a3d9940eb71be30f8bbfe14",
+    "clades/0_0006/ml.traversal.json": "2851d83bf04bb516e5d295ab446fab5a0f3965e881f67873ebff467690d9ee7a",
+    "clades/0_0006/partitions.bed": "e387f06b7f8c83e685c5c029e8ec246aa7ce5a3c326802c4ae5ad8e8c93c53ed",
+    "clades/0_0019/ml.traversal.json": "e330a8ea73a8e4b1d1f01dd1257bb2547ca9deb3dc35e523007465260ee4487d",
+    "clades/0_0019/partitions.bed": "c6e87476d5e8a147d64f348acfd1bf56219cf11f9c227e4b3b8d27f3c5967eee",
+    "clades/0_0021/ml.traversal.json": "9a967df75407301ab26cb079eba6017f3a29dbf3d83157ef9a7763dba37f78aa",
+    "clades/0_0021/partitions.bed": "bc0494607203a4fe806f3871b99769c5e66cb7d6601dfab33331d72108c2afcb",
+    "clades/0_0023/ml.traversal.json": "02d4c96a07977d4c0bb203532871a039a29337b48052924615b05f951f7f1570",
+    "clades/0_0023/partitions.bed": "59605a293dca785bbbbd1480b8a3df2dffac5accd242e82ff1d5399411e86829",
+    "clades/0_0024/ml.traversal.json": "40bf57f17122bedf87b6accddde75de73138713fa227a308a29019531bfb323d",
+    "clades/0_0024/partitions.bed": "d95b1706f4ea5bd03ffdfc70f3974dc7b53d0fb93b8e411ff3b5dbbabb8c7706",
+    "clades/0_0025/ml.traversal.json": "b27e6991b26ba054f7a7847304962f61613d68a72ccb977e9c474877dc1fdc5b",
+    "clades/0_0025/partitions.bed": "e9cd828d50ec1e48e69a7bac250a8ccd51745a62ebc2a7c8990ab65ecd5dde57",
+    "clades/0_0032/ml.traversal.json": "5ac439038c8236494c00b9abf1c63785d1e8ebbc430c79ad30df4bf58b8bda4b",
+    "clades/0_0032/partitions.bed": "19ec0872614ee85b2a304a295e6626757e774e4d3ca5638d568a992d93d78813",
+    "clades/0_0038/ml.traversal.json": "22dc8af272d35541635536d050f0d3f729fde7588e01b050956113b50da38b0b",
+    "clades/0_0038/partitions.bed": "d2589e237fda7591d944d53fe479992ce8a4591852609ad3e9b6642400e75039",
+    "clades/0_0049/ml.traversal.json": "3e716c7cb533293bc362b6e8074c8d2dd5bdb960de637f3842be5f6bb5995ac9",
+    "clades/0_0049/partitions.bed": "d9eb19987b21715f700dc820452697f50487490d8923cf37cfe931e6994b304c",
+    "clades/0_0063/ml.traversal.json": "4199f0054b44e41e71a5794b2715204afbedd492d18c361166a1108c6327b750",
+    "clades/0_0063/partitions.bed": "91392ab3fe1c38125e4b739d7d3138fd0b17d03cd39960af8007c28aee1ce5fe",
+    "clades/0_0066/ml.traversal.json": "29c5c94fcdde1c6c5d0eedbb44516558affd4f6ea1b24df4f498730c14b34b87",
+    "clades/0_0066/partitions.bed": "70a5e4b23899458ec3cec946cf36c920d39c9c28b3e3c8b8f6176f0ed5894dc9",
+    "clades/0_0073/ml.traversal.json": "f7639736c722ebee925adac66867e0bf28e57d23a11ccf63cab3d420a270e83c",
+    "clades/0_0073/partitions.bed": "0e00f0f77b5c7b5e98b3e3c8a76e032fcb35f4fbf4b40dd0d59d775f31f5e49d",
+    "clades/0_0077/ml.traversal.json": "13486e0c49a313fe74e7b667385cb96441939fc369e10801251d388b2e077986",
+    "clades/0_0077/partitions.bed": "97fbff853c158496bfd600677217389752262ce34c75aabacf2f4a43292d3e50",
+    "clades/0_0085/ml.traversal.json": "9e48ef00757ee80a9557471a71f55986a0ef52662e4f058bd1f281530f1739c3",
+    "clades/0_0085/partitions.bed": "04107470561117d00b46ae81fd16d6ced526926bdbb11d2b15026c447fbfc171",
+    "clades/0_0169/ml.traversal.json": "282c1c4e3858a59922a9c9115bcd29ec288ed3c839ef2170d6fba6a05d419c43",
+    "clades/0_0169/partitions.bed": "5b45525d72d43bb4fd4e7b973841c9f0ae0855b18d1309303c7b992d98797a09",
+    "clades/0_0218/ml.traversal.json": "f6e2415ab7697d089abf9e5944eef75d119c03d1f850983f018f250fa8d96270",
+    "clades/0_0218/partitions.bed": "333c5568782dfe8867b6e0acfba07329092757aea9d78990e1b7283f70a7cb65",
+    "clades/0_0219/ml.traversal.json": "6e23aa251ad518f5d3a71db1df30e349dbbcacf6e9a2e4aef4a543a83126a2e5",
+    "clades/0_0219/partitions.bed": "36ad71814c2a2559cf7d00d73b726ac35c9dbe7e3b02cc381e30a3a7bca889bc",
+    "distances": "3ef74e5c3fe0608c4c7386a356d3f3de19171613b23fa87bbb6286406ab446e8",
+    "functional_qc": "301b8addb5ba9d91b373fa2c6314c4a7e88401e2152b363068834850b46efa2b",
+    "host_clades": "58010e5e7b9ae2565c5a490464de299709cfb8a55c50ae8340c5e0674d4c0905",
+    "master_manifest": "c88686661928c66ab9638da77dd0d615e87bc70975ad859a81e7644142c83386",
+    "members_json": "b60f4a1bd3106fa34cbf2239130d3e002bec4e638fcf8a6a8b21d9618138bfd8",
+    "ml_fasta": "5d315783c7a78d19c6c4eb3e23fb93fd3d7bca3ff5b415fb441e87dd8446f557",
+    "pharokka_cds": "fedc63a2aab0f9804303e43a0b7c80966d0b516b1dfd3af053b725187b03a3f6",
+    "prophages_fa": "ac45508321ec356551ae4e146b217a0777068523f92d9f0172286f3185caed5b",
+    "release_manifest": "cc2cd855d264f0c8298f4f3a5ee64f2b7b1cf68f50a415d19ee9917e29bf0a34",
+    "tight_clades": "bf5d6bc0d62a85c19d229e464b1745660c02171f9647d087359f6d71371a3cf7"
+  },
+  "params": {
+    "HOSTCTL_W": 1000,
+    "JUNCTION_CAP": 3,
+    "JUNCTION_W": 1000,
+    "K": 31,
+    "MEMBER_MIN_BP": 600,
+    "MEMBER_W": 1200,
+    "MIN_GENOME_BP": 5000,
+    "MODULE_CAP": 3,
+    "MODULE_W": 1200,
+    "N_HOST_CONTROLS": 3,
+    "N_SHUFFLED_CONTROLS": 3,
+    "SELECT_N_A": 15,
+    "SELECT_N_B": 5,
+    "SHUFFLED_SEED": 42,
+    "ambig_frac_max": 0.1,
+    "cross_bait_dup_frac": 0.5,
+    "entropy_min_bits": 1.2,
+    "homopolymer_run": 7,
+    "hostlike_frac_max": 0.1,
+    "lowcx_frac_max": 0.3,
+    "usable_kmer_min": 200
+  },
+  "reserved_control_class": {
+    "control_public_reference": "deferred to task curate-public-mycobacteriophage; the panel schema accepts these rows without redesign"
+  },
+  "run_id": "018918c2f9e0d158",
+  "script_sha256": "c13edb595c2f58d624020756886402728c47993c10c1262554181c6c974d6580",
+  "task": "design-ntm-prophage"
+}

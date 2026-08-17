@@ -1,0 +1,7 @@
+bait_class	n_baits	median_usable_kmers	min_usable_kmers	median_host_like_frac	max_host_like_frac
+interior_module	43	1170	934	0.0	0.0838
+interior_generic	1	1170	1170	0.0	0.0
+junction	30	970	873	0.0	0.1
+member_interior	22	1170	1092	0.0	0.0667
+control_shuffled_negative	3	1170	1170	0.0	0.0
+control_host_negative	3	970	970	1.0	1.0
