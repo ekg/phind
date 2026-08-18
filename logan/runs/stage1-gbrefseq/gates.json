@@ -1,0 +1,206 @@
+{
+  "gates": {
+    "G1": {
+      "detail": [
+        "not evaluable yet: control rows not all complete"
+      ],
+      "evaluable": false,
+      "name": "positive controls hit own reference >= 0.7",
+      "pass": null
+    },
+    "G2": {
+      "detail": [
+        "not evaluable yet: control rows not all complete"
+      ],
+      "evaluable": false,
+      "name": "negative controls: 0 hits at 0.9",
+      "pass": null
+    },
+    "G3": {
+      "complete": 0,
+      "evaluable": false,
+      "malformed": 0,
+      "name": ">= 90% sessions fetched+parsed, no malformed",
+      "pass": null,
+      "rate": 0.0,
+      "submitted": 0
+    },
+    "G4": {
+      "name": "ledger/manifest reconcile",
+      "pass": true,
+      "problems": []
+    }
+  },
+  "rows": [
+    {
+      "bait_id": "NTMBAIT_0_0000_INTERIOR_MODULE_02_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0006_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0019_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0023_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0038_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0049_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0063_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0066_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0073_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0077_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0085_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0169_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0218_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0219_INTERIOR_MODULE_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0021_MEMBER_INTERIOR_02_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0024_JUNCTION_02_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0073_JUNCTION_01_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0000_JUNCTION_02_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0032_JUNCTION_02_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_0_0032_JUNCTION_03_t70",
+      "n_hits": null,
+      "role": "ntm_bait",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "POSCON_D29_AF022214_2_MID1200_t70",
+      "n_hits": null,
+      "role": "positive_control",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "POSCON_L5_NC_001335_1_MID1200_t70",
+      "n_hits": null,
+      "role": "positive_control",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_SHUF_CONTROL_01_t70",
+      "n_hits": null,
+      "role": "negative_control",
+      "session": null,
+      "status": "pending"
+    },
+    {
+      "bait_id": "NTMBAIT_SHUF_CONTROL_02_t70",
+      "n_hits": null,
+      "role": "negative_control",
+      "session": null,
+      "status": "pending"
+    }
+  ],
+  "run_id": "stage1-gbrefseq-t70",
+  "verdict": "INCOMPLETE"
+}
