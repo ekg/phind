@@ -1,0 +1,21 @@
+{
+ "downloads": {
+  "n": 17428,
+  "total_bytes": 33841541784
+ },
+ "event_counts": {
+  "b2s_error": 6,
+  "download": 17428,
+  "screen": 17596,
+  "sha256": 17428
+ },
+ "note": "compact in-repo receipt; FULL append-only ledger + availability.tsv live on NVMe (paths below), sha256-pinned",
+ "nvme_availability_path": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/external_validation/local_screen/downloads/availability.tsv",
+ "nvme_availability_sha256": "75144f638354389021cc3e19db491b1f8d577349802c59fd9220339ec84cba95",
+ "nvme_ledger_path": "/mnt/nvme3n1/erikg/phind-genome-work/ntm/v2/external_validation/local_screen/downloads/download_ledger.jsonl",
+ "nvme_ledger_sha256": "2a41c30c4e2cc380015eb371a80a501ad75bf3741bc2759c2d43b4dcac4d805e",
+ "per_hit_file_sha256": "see results/confirmed_hits_full_provenance.tsv (zst_sha256 column)",
+ "screens": {
+  "n": 17596
+ }
+}

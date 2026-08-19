@@ -65,9 +65,13 @@ honored below.
 - Disk preflight (500-sample, seed 20260819): 91.6 % in logan-pub, median
   1.48 MB, projected 31.6 GB → GO within budgets.
 - Executed: 17,254 downloaded (1,706 × 404 `not_in_logan` = 8.9 %),
-  17,424 screened (incl. 168 Tier A overlap), **33.24 GB**, 59 min, 0
-  download errors, ledger reconciles (34,856 status-200 rows = 2 per
-  checksummed download + 1,706 404s).
+  17,424 screened (17,252 screenable downloads + 172 accessions already
+  downloaded in Tier A), **33.24 GB**, 59 min, 0 network failures, ledger
+  reconciles (34,856 status-200 rows = 2 per checksummed download + 1,706
+  404s). 4 downloaded accessions have empty S3 objects (55-byte zst → empty
+  FASTA; b2s failed, logged as `b2s_error`, no screen row — excluded from
+  all counts): SRR4047103, SRR4047106 (Tier A), ERR5412855, SRR6388772
+  (Tier B).
 
 ### Hit rates
 
@@ -166,14 +170,17 @@ sha256 + query strings + freeze receipts. Bulky artifacts (33 GB downloads,
 3. **Tier A composition**: 75 % RNA-Seq — weak evidential value; the
    intended mitomycin-C induction WGS runs are mostly absent from SRA as
    assemblies (26 of 200 not in logan-pub at all).
-4. **8.9 % of Tier B runs 404** on logan-pub (logged, never retried) —
+4. **Empty assemblies**: 4 downloaded accessions carry empty S3 objects
+   (above) — indistinguishable from "not in logan-pub" for screening
+   purposes.
+5. **8.9 % of Tier B runs 404** on logan-pub (logged, never retried) —
    coverage of the frozen manifest is 91.6 % of runs, not 100 %.
-5. **Bait granularity**: 1–2 baits per clade; kmer coverage 0.7 threshold
+6. **Bait granularity**: 1–2 baits per clade; kmer coverage 0.7 threshold
    fixed a priori; near-complete-analogue claims structurally need ≥2 baits
    ≥0.7 in one accession and none occurred.
-6. **Non-independence** of hit accessions (multiple runs per isolate;
+7. **Non-independence** of hit accessions (multiple runs per isolate;
    ERP001039 dominance) — see §4.
-7. Junction baits are reconstructions: a full-length, 100 %-identity match
+8. Junction baits are reconstructions: a full-length, 100 %-identity match
    means the reconstructed sequence exists in that assembly exactly; it does
    not by itself demonstrate an infectious cycle or active prophage.
 
