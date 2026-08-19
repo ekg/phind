@@ -84,13 +84,14 @@ def parse_pos_positions(txt):
 
 
 def minimap2_ladder(minimap2, target_fa, query_fa, ladder=("sr", "asm5", "asm20")):
+    """PAF: col0=query(bait) name, 2-3=query span, 4=strand, 5=target(contig)
+    name, 7-8=target span. qcov = UNION of query intervals / query length."""
     for preset in ladder:
         r = subprocess.run([minimap2, "-c", "--eqx", "-x", preset, target_fa, query_fa],
                            capture_output=True, text=True)
         if r.returncode != 0:
             continue
-        matches, qspan, mlen = 0, 0, 0
-        best = None
+        alns = []
         for line in r.stdout.splitlines():
             if line.startswith("@") or not line.strip():
                 continue
@@ -98,25 +99,36 @@ def minimap2_ladder(minimap2, target_fa, query_fa, ladder=("sr", "asm5", "asm20"
             cg = [x for x in f if x.startswith("cg:Z:")]
             if len(f) < 12 or not cg:
                 continue
-            matches += 1
-            m, span, mm = 0, 0, 0
+            m, mm = 0, 0
             for n, op in re.findall(r"(\d+)([MIDNSH=X])", cg[0][5:]):
                 if op in "M=X":
-                    span += int(n)
+                    m += int(n)
                     if op == "X":
                         mm += int(n)
                 elif op in "ID":
                     mm += int(n)
-            if best is None or span > best["aln_span"]:
-                best = {"contig": f[0], "r_start": int(f[2]), "r_end": int(f[3]),
-                        "strand": f[1], "aln_span": span,
-                        "aln_span_str": cg[0][5:]}
-            qspan += span
-            mlen += mm
-        if matches:
-            return {"preset": preset, "n_matches": matches,
-                    "qcov_span": qspan, "identity_summed": round(1 - mlen / qspan, 4) if qspan else None,
-                    "best": best}
+            alns.append({"query": f[0], "q_start": int(f[2]), "q_end": int(f[3]),
+                         "strand": f[4], "target": f[5],
+                         "t_start": int(f[7]), "t_end": int(f[8]),
+                         "aln_len": m, "identity": round(1 - mm / m, 4) if m else None,
+                         "cigar": cg[0][5:]})
+        if alns:
+            best = max(alns, key=lambda a: a["aln_len"])
+            # union of query intervals
+            ivs = sorted((a["q_start"], a["q_end"]) for a in alns)
+            union = []
+            for s, e in ivs:
+                if union and s <= union[-1][1]:
+                    union[-1][1] = max(union[-1][1], e)
+                else:
+                    union.append([s, e])
+            qcov_span = sum(e - s for s, e in union)
+            return {"preset": preset, "n_alignments": len(alns),
+                    "qcov_union_span": qcov_span, "n_alns": alns,
+                    "best": {"target": best["target"],
+                             "t_start": best["t_start"], "t_end": best["t_end"],
+                             "identity": best["identity"],
+                             "aln_len": best["aln_len"], "strand": best["strand"]}}
     return None
 
 
@@ -169,10 +181,10 @@ def main():
                 "kmer_cov": cov[b],
                 "matched_contigs": {c: m for c, m in matched.items()},
                 "minimap2": aln,
-                "qcov": round(aln["qcov_span"] / qlen, 4) if aln else 0.0,
-                "identity": aln["identity_summed"] if aln else None,
-                "best_contig": aln["best"]["contig"] if aln else None,
-                "contig_len": lens.get(aln["best"]["contig"]) if aln else None,
+                "qcov": round(aln["qcov_union_span"] / qlen, 4) if aln else 0.0,
+                "identity": aln["best"]["identity"] if aln else None,
+                "best_contig": aln["best"]["target"] if aln else None,
+                "contig_len": lens.get(aln["best"]["target"]) if aln else None,
             }
         # classification (frozen ladder)
         modules = [b for b in hit_baits if "INTERIOR" in b]
