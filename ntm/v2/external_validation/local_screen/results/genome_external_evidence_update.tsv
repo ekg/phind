@@ -1,18 +1,18 @@
 genome_id	clade_id	member_species	pilot_sra_category	new_sra_category	n_hit_accessions	module_baits_with_hits	junction_baits_with_hits	confirm_categories	representative_hit_accessions
-ntm2_0_0000_ML	0_0000	M. abscessus ssp. massiliense	no_SRA_evidence_screen_not_executed	SRA_screen_hit_junction_supported	18		NTMBAIT_0_0000_JUNCTION_02	junction/synteny supported	ERR330837;ERR330841;ERR330846;ERR330898;ERR330900;ERR330910
-ntm2_0_0006_ML	0_0006	M. abscessus ssp. abscessus	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	16	NTMBAIT_0_0006_INTERIOR_MODULE_01		module-only homology	DRR245273;DRR317602;DRR444210;DRR444218;DRR493673;ERR2524349
-ntm2_0_0019_ML	0_0019	M. chelonae	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0021_ML	0_0021	M. abscessus ssp. abscessus	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	2	NTMBAIT_0_0021_MEMBER_INTERIOR_02		module-only homology	ERR340560;ERR374190
-ntm2_0_0023_ML	0_0023	M. chelonae	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0024_ML	0_0024	M. immunogenum	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0032_ML	0_0032	M. abscessus (abs/mas)	no_SRA_evidence_screen_not_executed	SRA_screen_hit_junction_supported	6		NTMBAIT_0_0032_JUNCTION_03	junction/synteny supported	ERR459803;ERR459805;ERR459806;ERR459808;ERR459809;ERR459810
-ntm2_0_0038_ML	0_0038	M. franklinii	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0049_ML	0_0049	M. abscessus	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	24	NTMBAIT_0_0049_INTERIOR_MODULE_01		module-only homology	ERR1764513;ERR373972;ERR7253785;SRR12051736;SRR15713778;SRR25404843
-ntm2_0_0063_ML	0_0063	M. abscessus ssp. massiliense	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	11	NTMBAIT_0_0063_INTERIOR_MODULE_01		module-only homology	ERR459960;ERR459961;ERR459962;ERR459963;ERR459964;ERR494943
-ntm2_0_0066_ML	0_0066	M. wolinskyi	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0073_ML	0_0073	M. immunogenum	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0077_ML	0_0077	Mycobacteroides sp.	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0085_ML	0_0085	M. abscessus ssp. massiliense	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	6	NTMBAIT_0_0085_INTERIOR_MODULE_01		module-only homology	ERR330826;ERR363312;ERR490677;ERR490678;ERR490679;ERR490687
-ntm2_0_0169_ML	0_0169	M. chelonae	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	14	NTMBAIT_0_0169_INTERIOR_MODULE_01		module-only homology	ERR330830;ERR3468903;ERR4339045;ERR459978;ERR459985;ERR490674
-ntm2_0_0218_ML	0_0218	M. paragordonae / M. pumcae	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
-ntm2_0_0219_ML	0_0219	M. trivialis	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0				
+ntm2_0_0000_ML	0_0000	M. abscessus ssp. massiliense	no_SRA_evidence_screen_not_executed	SRA_screen_hit_junction_supported	18	-	NTMBAIT_0_0000_JUNCTION_02	junction/synteny supported	ERR330837;ERR330841;ERR330846;ERR330898;ERR330900;ERR330910
+ntm2_0_0006_ML	0_0006	M. abscessus ssp. abscessus	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	16	NTMBAIT_0_0006_INTERIOR_MODULE_01	-	module-only homology	DRR245273;DRR317602;DRR444210;DRR444218;DRR493673;ERR2524349
+ntm2_0_0019_ML	0_0019	M. chelonae	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0021_ML	0_0021	M. abscessus ssp. abscessus	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	2	NTMBAIT_0_0021_MEMBER_INTERIOR_02	-	module-only homology	ERR340560;ERR374190
+ntm2_0_0023_ML	0_0023	M. chelonae	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0024_ML	0_0024	M. immunogenum	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0032_ML	0_0032	M. abscessus (abs/mas)	no_SRA_evidence_screen_not_executed	SRA_screen_hit_junction_supported	6	-	NTMBAIT_0_0032_JUNCTION_03	junction/synteny supported	ERR459803;ERR459805;ERR459806;ERR459808;ERR459809;ERR459810
+ntm2_0_0038_ML	0_0038	M. franklinii	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0049_ML	0_0049	M. abscessus	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	24	NTMBAIT_0_0049_INTERIOR_MODULE_01	-	module-only homology	ERR1764513;ERR373972;ERR7253785;SRR12051736;SRR15713778;SRR25404843
+ntm2_0_0063_ML	0_0063	M. abscessus ssp. massiliense	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	11	NTMBAIT_0_0063_INTERIOR_MODULE_01	-	module-only homology	ERR459960;ERR459961;ERR459962;ERR459963;ERR459964;ERR494943
+ntm2_0_0066_ML	0_0066	M. wolinskyi	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0073_ML	0_0073	M. immunogenum	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0077_ML	0_0077	Mycobacteroides sp.	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0085_ML	0_0085	M. abscessus ssp. massiliense	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	6	NTMBAIT_0_0085_INTERIOR_MODULE_01	-	module-only homology	ERR330826;ERR363312;ERR490677;ERR490678;ERR490679;ERR490687
+ntm2_0_0169_ML	0_0169	M. chelonae	no_SRA_evidence_screen_not_executed	SRA_screen_hit_module_only	14	NTMBAIT_0_0169_INTERIOR_MODULE_01	-	module-only homology	ERR330830;ERR3468903;ERR4339045;ERR459978;ERR459985;ERR490674
+ntm2_0_0218_ML	0_0218	M. paragordonae / M. pumcae	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-
+ntm2_0_0219_ML	0_0219	M. trivialis	no_SRA_evidence_screen_not_executed	not_detected_in_screened_subset (subset != all SRA; assembly-only evidence)	0	-	-	-	-

@@ -70,10 +70,10 @@ def main():
                     "best_accession", "top5_accessions_cov"])
         for b in sorted(agg, key=lambda x: -agg[x]["n_cov_ge_thr"]):
             a = agg[b]
-            w.writerow([b, a["role"], a["n_accessions"], a["n_cov_gt_0"],
+            w.writerow([x for x in [b, a["role"], a["n_accessions"], a["n_cov_gt_0"],
                         a["n_cov_ge_0.5"], a["n_cov_ge_thr"], f"{a['max_cov']:.4f}",
                         a["best_accession"],
-                        ";".join(f"{x[1]}:{x[0]:.3f}" for x in a["top5"])])
+                        ";".join(f"{x[1]}:{x[0]:.3f}" for x in a["top5"]) if a["top5"] else "-"]])
 
     # merge with pilot bait external evidence (SRA axis)
     pilot = {}
@@ -107,8 +107,8 @@ def main():
                 "best_accession": a["best_accession"],
                 "best_kmer_cov": f"{a['max_cov']:.4f}",
                 "sra_evidence_category": cat,
-                "pilot_public_axis_best_ref": f"{p.get('best_public_ref','')}|{p.get('best_public_acc','')}",
-                "pilot_public_axis_cov_identity": f"{p.get('cov_frac','')}/{p.get('identity','')}",
+                "pilot_public_axis_best_ref": f"{p.get('best_public_ref','')}|{p.get('best_public_acc','')}" or "-",
+                "pilot_public_axis_cov_identity": f"{p.get('cov_frac','')}/{p.get('identity','')}" if p else "-",
             })
 
     # per-accession hit list
