@@ -120,17 +120,17 @@ def screen_one(acc, zst, b2s, scratch_dir, sets, index, log):
     kmers_out = os.path.join(scratch_dir, f"{acc}.kmers.txt")
     t0 = time.time()
     cmd = [b2s, "--in-kmers", PANEL_PATH, "--in-sequences", zst,
-           "--out-kmers", kmers_out]
+           "--out-kmers", kmers_out, "--output-kmer-positions"]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         log({"event": "b2s_error", "accession": acc,
              "err": (r.stderr or r.stdout)[-300:]})
         return None
     found = {}
-    parens = re.compile(r"\(")
     with open(kmers_out) as fh:
         for line in fh:
-            # found kmers carry "(read_id,pos,strand)" annotations
+            # found kmers carry "(read_id,pos,strand)" annotations; zero-count
+            # kmers are written bare (verified on DRR000016 probe + D29/L5 refs)
             if "(" in line:
                 k = canon(line.split()[0])
                 bids = index.get(k)
