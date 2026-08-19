@@ -1,0 +1,62 @@
+{
+ "generated_utc": "2026-08-19T14:15:26Z",
+ "rows": [
+  {
+   "bait": "POSCON_D29_AF022214_2_MID1200",
+   "reference": "D29_AF022214.2.fa",
+   "kmer_coverage": 1.0,
+   "minimap2": {
+    "preset": "sr",
+    "qcov": 1.0,
+    "identity": 1.0,
+    "n_matches": 1
+   },
+   "pass": true
+  },
+  {
+   "bait": "POSCON_L5_NC_001335_1_MID1200",
+   "reference": "L5_NC_001335.1.fa",
+   "kmer_coverage": 1.0,
+   "minimap2": {
+    "preset": "sr",
+    "qcov": 1.0,
+    "identity": 1.0,
+    "n_matches": 1
+   },
+   "pass": true
+  },
+  {
+   "bait": "NTMBAIT_SHUF_CONTROL_01",
+   "reference": "D29_AF022214.2.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "NTMBAIT_SHUF_CONTROL_02",
+   "reference": "D29_AF022214.2.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "NTMBAIT_SHUF_CONTROL_01",
+   "reference": "L5_NC_001335.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "NTMBAIT_SHUF_CONTROL_02",
+   "reference": "L5_NC_001335.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  }
+ ],
+ "gates": {
+  "positive_controls": "PASS",
+  "negative_controls_refs": "PASS",
+  "overall": "PASS"
+ }
+}

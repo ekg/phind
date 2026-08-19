@@ -27,6 +27,16 @@ TIER_A = [
     ("A3", '"Mycobacterium smegmatis"[Organism] AND temperate[All Fields]'),
     ("A4", '"Mycobacterium"[Organism] AND mitomycin[All Fields]'),
 ]
+# Amendment A1 (AMENDMENTS.md): compound prophage x organism queries currently
+# return 0 on EUtils; A2 is executed as the bare term + LOCAL smegmatis filter.
+TIER_A_BARE = [("A2bare", "prophage[All Fields]")]
+# Amendment A3 (AMENDMENTS.md): stable induction terms completing Tier A
+TIER_A_AMEND3 = [
+    ("A5", '"Mycobacterium smegmatis"[Organism] AND ciprofloxacin[All Fields]'),
+    ("A6", '"Mycobacterium smegmatis"[Organism] AND induction[All Fields]'),
+    ("A7", '"Mycobacterium smegmatis"[Organism] AND induced[All Fields]'),
+    ("A8", '"Mycobacterium smegmatis"[Organism] AND phage[All Fields]'),
+]
 TIER_B = [
     ("B1", '"Mycobacterium abscessus"[Organism]'),
     ("B2", '"Mycobacterium avium"[Organism]'),
@@ -73,6 +83,8 @@ def main():
     args = ap.parse_args()
 
     queries = TIER_A if args.tier == "A" else TIER_B
+    if args.tier == "A":
+        queries = queries + TIER_A_BARE + TIER_A_AMEND3  # Amendments A1 + A3
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     manifest = {
         "tier": args.tier,
@@ -90,6 +102,7 @@ def main():
             manifest["queries"].append({
                 "id": qid, "term": term, "reported_count": count,
                 "returned_uids": len(uids), "uid_list_sha256": sha256_bytes(uid_bytes),
+                "status": "amended_see_AMENDMENTS_A1" if qid == "A2" else "ok",
             })
             for u in uids:
                 union.setdefault(u, []).append(qid)

@@ -1,0 +1,8 @@
+panel: 24 baits, 27019 distinct canonical 31-mers
+200 runs (0 already screened), 200 to do
+  50/200 processed (50 screened, 0 hit-accessions) 12s budget=0.1GB
+  100/200 processed (100 screened, 0 hit-accessions) 26s budget=0.5GB
+  150/200 processed (150 screened, 0 hit-accessions) 36s budget=0.6GB
+  200/200 processed (172 screened, 0 hit-accessions) 42s budget=0.6GB
+{"processed": 172, "hit_accessions": 0, "budget": {"bytes": 600563639, "accessions": 174}, "stopped": null}
+EXIT=0
