@@ -1,0 +1,6 @@
+installed_utc=2026-08-19T14:11:22Z
+micromamba=1.5.9
+minimap2=2.31-r1302
+back_to_sequences=back_to_sequences 0.8.4
+zstd=*** Zstandard CLI (64-bit) v1.5.5, by Yann Collet ***
+python3=Python 3.12.3

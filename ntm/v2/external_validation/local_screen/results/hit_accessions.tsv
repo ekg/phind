@@ -1,0 +1,98 @@
+accession	tier	scientific_name	n_baits_ge_0.7	baits_ge_0.7
+DRR245273	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+DRR317602	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+DRR444210	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+DRR444218	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+DRR493673	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+ERR1764513	B	Mycobacteroides abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+ERR2524349	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+ERR330826	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0085_INTERIOR_MODULE_01:0.899
+ERR330830	B	Mycobacteroides abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR330837	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR330841	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR330846	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR330898	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR330900	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR330910	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR330920	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR337825	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR340560	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0021_MEMBER_INTERIOR_02:1.000
+ERR3468903	B	Mycobacterium avium 05-4293	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR363312	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0085_INTERIOR_MODULE_01:0.899
+ERR369146	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.821
+ERR369172	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369176	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369181	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369233	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369235	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369245	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369255	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR369264	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR373972	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.785
+ERR374190	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0021_MEMBER_INTERIOR_02:1.000
+ERR4339045	B	Mycobacterium avium 05-4293	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR459803	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0032_JUNCTION_03:0.813
+ERR459805	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0032_JUNCTION_03:0.813
+ERR459806	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0032_JUNCTION_03:0.813
+ERR459808	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0032_JUNCTION_03:0.813
+ERR459809	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0032_JUNCTION_03:0.813
+ERR459810	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0032_JUNCTION_03:0.813
+ERR459829	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+ERR459830	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+ERR459960	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR459962	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR459961	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR459963	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR459964	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR459978	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR459985	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR490674	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR490677	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0085_INTERIOR_MODULE_01:0.899
+ERR490678	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0085_INTERIOR_MODULE_01:0.899
+ERR490679	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0085_INTERIOR_MODULE_01:0.899
+ERR490687	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0085_INTERIOR_MODULE_01:0.899
+ERR490699	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR494943	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR494944	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR494946	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR494960	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+ERR516502	B	Mycobacteroides abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR5412057	B	Mycobacteroides abscessus ATCC 19977	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.821
+ERR5412556	B	Mycobacteroides abscessus ATCC 19977	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+ERR5413952	B	Mycobacteroides abscessus ATCC 19977	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR5414235	B	Mycobacteroides abscessus ATCC 19977	1	NTMBAIT_0_0000_JUNCTION_02:0.887
+ERR7253781	B	Mycobacteroides abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.816
+ERR7253785	B	Mycobacteroides abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+ERR7253819	B	Mycobacteroides abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+SRR12051736	B	Mycobacteroides abscessus subsp. massiliense	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR14719124	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+SRR15713778	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.785
+SRR23701776	B	Mycobacteroides abscessus	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+SRR23701798	B	Mycobacteroides abscessus	1	NTMBAIT_0_0063_INTERIOR_MODULE_01:0.950
+SRR25361517	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+SRR25361521	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+SRR25361531	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+SRR25361560	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0169_INTERIOR_MODULE_01:0.843
+SRR25361562	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+SRR25404843	B	Mycobacteroides abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.785
+SRR26033568	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.785
+SRR30795470	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.841
+SRR30795511	B	Mycobacteroides abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.785
+SRR315378	B	Mycobacteroides abscessus 5S-0422	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315377	B	Mycobacteroides abscessus 5S-0422	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315379	B	Mycobacteroides abscessus 5S-0817	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315380	B	Mycobacteroides abscessus 5S-0817	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315383	B	Mycobacteroides abscessus 5S-1212	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315384	B	Mycobacteroides abscessus 5S-1212	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315387	B	Mycobacteroides abscessus 5S-1215	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315388	B	Mycobacteroides abscessus 5S-1215	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315391	B	Mycobacteroides abscessus 5S-0921	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR315392	B	Mycobacteroides abscessus 5S-0921	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR33968450	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.817
+SRR350462	B	Mycobacteroides abscessus 5S-0304	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR350464	B	Mycobacteroides abscessus 5S-0421	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR350465	B	Mycobacteroides abscessus 5S-0421	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR350466	B	Mycobacteroides abscessus 5S-0708	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949
+SRR6388763	B	Mycobacteroides abscessus	1	NTMBAIT_0_0006_INTERIOR_MODULE_01:0.821
+SRR7800593	B	Mycobacteroides abscessus subsp. abscessus	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.785
+SRR901247	B	Mycobacteroides abscessus subsp. bolletii 1513	1	NTMBAIT_0_0049_INTERIOR_MODULE_01:0.949

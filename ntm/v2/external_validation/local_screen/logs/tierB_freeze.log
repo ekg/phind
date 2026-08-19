@@ -1,0 +1,2 @@
+{"freeze_utc": "2026-08-19T14:26:31Z", "n_runs_runinfo": 21468, "n_runs_kept": 19108, "n_runs_dropped_filter": 2360, "frozen_tsv_sha256": "e54c471c2e81b9d09609b6d9f8033bc8dca487332fdbfafb49770c5750ad6708", "filters": "NTM: scientific_name genus in Mycobacterium|Mycolicibacterium|Mycobacteroides|Mycolicibacillus and not match tuberculos|bovis|africanum|canettii|leprae|caprae|pinnipedii|mungi|orycis"}
+EXIT=0

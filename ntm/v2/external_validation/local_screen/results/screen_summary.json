@@ -1,0 +1,224 @@
+{
+ "n_screened": 17596,
+ "n_hit_accessions": 97,
+ "negative_gate_violations": [],
+ "per_bait": {
+  "NTMBAIT_0_0000_INTERIOR_MODULE_02": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 1892,
+   "n_cov_ge_0.5": 351,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6444,
+   "best_accession": "SRR29263911"
+  },
+  "NTMBAIT_0_0000_JUNCTION_02": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 3487,
+   "n_cov_ge_0.5": 24,
+   "n_cov_ge_thr": 18,
+   "max_cov": 0.8866,
+   "best_accession": "ERR5414235"
+  },
+  "NTMBAIT_0_0006_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 1302,
+   "n_cov_ge_0.5": 195,
+   "n_cov_ge_thr": 16,
+   "max_cov": 0.841,
+   "best_accession": "SRR30795470"
+  },
+  "NTMBAIT_0_0019_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 1251,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0453,
+   "best_accession": "SRR8291531"
+  },
+  "NTMBAIT_0_0021_MEMBER_INTERIOR_02": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 107,
+   "n_cov_ge_0.5": 2,
+   "n_cov_ge_thr": 2,
+   "max_cov": 1.0,
+   "best_accession": "ERR374190"
+  },
+  "NTMBAIT_0_0023_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 1147,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3333,
+   "best_accession": "SRR7800601"
+  },
+  "NTMBAIT_0_0024_JUNCTION_02": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 2490,
+   "n_cov_ge_0.5": 1,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5227,
+   "best_accession": "DRR317567"
+  },
+  "NTMBAIT_0_0032_JUNCTION_02": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 2001,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.4979,
+   "best_accession": "SRR18969534"
+  },
+  "NTMBAIT_0_0032_JUNCTION_03": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 2195,
+   "n_cov_ge_0.5": 9,
+   "n_cov_ge_thr": 6,
+   "max_cov": 0.8134,
+   "best_accession": "ERR459810"
+  },
+  "NTMBAIT_0_0038_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 1766,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.094,
+   "best_accession": "ERR7253712"
+  },
+  "NTMBAIT_0_0049_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 483,
+   "n_cov_ge_0.5": 45,
+   "n_cov_ge_thr": 24,
+   "max_cov": 0.9487,
+   "best_accession": "SRR901247"
+  },
+  "NTMBAIT_0_0063_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 63,
+   "n_cov_ge_0.5": 11,
+   "n_cov_ge_thr": 11,
+   "max_cov": 0.9496,
+   "best_accession": "SRR23701798"
+  },
+  "NTMBAIT_0_0066_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 11,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0197,
+   "best_accession": "ERR5412977"
+  },
+  "NTMBAIT_0_0073_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 473,
+   "n_cov_ge_0.5": 8,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6291,
+   "best_accession": "SRR13083202"
+  },
+  "NTMBAIT_0_0073_JUNCTION_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 409,
+   "n_cov_ge_0.5": 2,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6979,
+   "best_accession": "SRR3666120"
+  },
+  "NTMBAIT_0_0077_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 13,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.1675,
+   "best_accession": "SRR33432466"
+  },
+  "NTMBAIT_0_0085_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 340,
+   "n_cov_ge_0.5": 7,
+   "n_cov_ge_thr": 6,
+   "max_cov": 0.8991,
+   "best_accession": "ERR490687"
+  },
+  "NTMBAIT_0_0169_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 25,
+   "n_cov_ge_0.5": 15,
+   "n_cov_ge_thr": 14,
+   "max_cov": 0.8427,
+   "best_accession": "SRR25361560"
+  },
+  "NTMBAIT_0_0218_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR9953664"
+  },
+  "NTMBAIT_0_0219_INTERIOR_MODULE_01": {
+   "role": "ntm_bait",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR9953664"
+  },
+  "NTMBAIT_SHUF_CONTROL_01": {
+   "role": "negative_control",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR9953664"
+  },
+  "NTMBAIT_SHUF_CONTROL_02": {
+   "role": "negative_control",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR9953664"
+  },
+  "POSCON_D29_AF022214_2_MID1200": {
+   "role": "positive_control",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR9953664"
+  },
+  "POSCON_L5_NC_001335_1_MID1200": {
+   "role": "positive_control",
+   "n_accessions": 17596,
+   "n_cov_gt_0": 5003,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3051,
+   "best_accession": "SRR24761602"
+  }
+ },
+ "generated_utc": "2026-08-19T15:35:32Z"
+}
