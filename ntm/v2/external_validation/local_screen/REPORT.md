@@ -202,13 +202,13 @@ sha256 + query strings + freeze receipts. Bulky artifacts (33 GB downloads,
 
 | Deliverable | Path |
 |---|---|
-| preregistered tier manifests (queries + date + sha256) | `manifests/tier{A,B}_manifest.json`, `manifests/tier{A,B}_frozen.tsv` (+ uids, runinfo) |
+| preregistered tier manifests (queries + date + sha256) | `manifests/tier{A,B}_manifest.json`, `manifests/tier{A,B}_frozen.tsv` (+ uids, runinfo; Tier B tables gzip-compressed to keep the review bundle small — originals on NVMe, identical after `gunzip`) |
 | download ledger + availability | NVMe `downloads/download_ledger.jsonl`, `downloads/availability.tsv` (repo copy of availability) |
 | per-bait hit tables | `results/tierA_hits.tsv`, `results/screen_hits_by_bait.tsv`, `results/hit_accessions.tsv` |
 | alignment summaries | `results/confirm_B.jsonl`, `results/confirmed_hits_full_provenance.tsv` |
 | per-genome external-evidence update | `results/genome_external_evidence_update.tsv` |
 | control-gate receipts | `results/controls_gate.json`, `logs/controls_gate.log` |
-| bulky artifacts | NVMe run root, receipted in `NVMe_MANIFEST.tsv` |
+| bulky artifacts | NVMe run root, receipted in `NVMe_MANIFEST.tsv` (17,578 rows, gzip-compressed in-repo) |
 
 ### Methods notes (for reproducing the neighborhood probe)
 
