@@ -151,3 +151,25 @@ PILOT_PLAN §4 service-degradation rule: **NO-GO pause ≥ 24 h**; smoke
 manifest row remains `submitted` for idempotent resume. Total dashboard
 submissions spent: 2 (both non-sensitive E. coli smoke); Stage-1 bait
 budget spent: 0 of 64.
+
+## 7. Post-cooldown Stage-0 recheck (2026-08-19T09:19–09:25Z) — gate FAILED
+
+Cooldown timing was amended by the project owner (logged 2026-08-18T13:40Z);
+three WG worker attempts then died on provider rate-limits before executing
+anything (ledger unchanged). At 09:19:25Z the bounded recheck was executed
+directly (`run_pilot.py fetch --poll 6 --min-interval 60`, session
+`kmviz-c112ba44-…`, elapsed 36.4 h / 130,935 s since submission):
+
+* 6 polls 09:19:25Z→09:24:25Z (60 s spacing), **all HTTP 400**, 46 bytes,
+  sha256 `980998f5…` — byte-identical to every poll since 20:56Z on
+  2026-08-17.
+* `final_status` entry appended to `runs/stage0-smoke/ledger.jsonl` at
+  09:25:26Z.
+
+**Decision: Stage-0 gate FAILED at 36+ hours.** This is no longer
+"still running" latency; the documented "a few minutes"/one-month-retention
+behavior is contradicted. Per preregistered step 3: escalate to
+logan-search.org maintainers (`ESCALATION_DRAFT.md`, placeholders now
+filled); **zero Stage-1 submissions**; bait budget preserved (0 of 64);
+no threshold fishing. Resume-from-manifest remains possible if
+maintainers restore retrieval.

@@ -28,8 +28,8 @@ README's request to include the session id.
   (sha256 `980998f54f89f6f8d5b1ac0f2cedbe79a1c494d3abb529e288f96e6dbd31b04a`)
   on every bounded poll from 2026-08-17 20:56 UTC through 21:31 UTC
   (21 polls, >= 60 s apart), and again on
-  **[RECHECK_TS — fill from ledger final_status entry]** after the
-  recommended wait.
+  **2026-08-19 09:19–09:24 UTC (6 polls, 60 s apart, 36.4 h post-submission,
+  elapsed 130,935 s)** — same 400/46-byte/identical-sha256 response.
 - **Dashboard session loader** (Load session by id), checked 2026-08-17
   21:03 and 21:24 UTC: *"Session not found. Invalid session id, query still
   running, or results erased."*
@@ -52,8 +52,8 @@ Happy to run any additional read-only check you suggest. Thanks!
 
 ## Poster checklist (do not post before the recheck)
 
-- [ ] Re-check executed at >= 2026-08-18T21:00Z (`logan/resume_stage0_recheck.sh`)
-- [ ] Fill `[RECHECK_TS]` and the recheck outcome line from
+- [x] Re-check executed after the cooldown window (`logan/resume_stage0_recheck.sh` / `run_pilot.py fetch`, recorded in `logan/runs/stage0-smoke/ledger.jsonl` final_status 2026-08-19T09:25Z)
+- [x] Fill `[RECHECK_TS]` and the recheck outcome line from
       `logan/runs/stage0-smoke/ledger.jsonl` (`final_status` entry)
 - [ ] If the recheck returned HTTP 200 instead: do NOT post; proceed to
       Stage-1 per `ntm/v2/pilot/REPORT.md` section 4.
