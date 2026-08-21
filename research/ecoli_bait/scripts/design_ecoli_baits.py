@@ -447,6 +447,26 @@ def traversal_budget(staged_dir: str) -> int:
     return max(TRAV_MIN_BUDGET, int(TRAV_MEMBER_MULT * mx))
 
 
+def canonical_traversal_sha256(trav_json: str, community_clade: str) -> str:
+    """Prefix- and path-independent checksum of a traversal JSON.
+
+    `traverse_partitions.py` embeds (a) the output prefix basename as
+    `community` and (b) the absolute `bed` / `partitions_dir` input paths.
+    All three are staging artifacts, not results: we hash the JSON with
+    `community` replaced by the canonical `<community>_<clade>` id and the
+    two input paths reduced to their basenames, so run_id is stable across
+    staging directories (byte-determinism of committed outputs).
+    """
+    d = json.load(open(trav_json))
+    d["community"] = community_clade
+    if isinstance(d.get("inputs"), dict):
+        for key in ("bed", "partitions_dir"):
+            if key in d["inputs"]:
+                d["inputs"][key] = os.path.basename(d["inputs"][key])
+    blob = json.dumps(d, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(blob.encode()).hexdigest()
+
+
 def regenerate_traversal(inp: Inputs, community: str, clade: str,
                          staged_dir: str) -> str:
     """Run the seeded traversal; returns the traversal.json path.
@@ -1288,7 +1308,8 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
                 "clade_id": clade, "status": "verified" if ok else
                 "traversal_regeneration_mismatch",
                 "budget_bp": budget,
-                "traversal_json_sha256": sha256_file(tjson) if ok else "",
+                "traversal_json_sha256": canonical_traversal_sha256(
+                    tjson, f"{comm}_{clade}") if ok else "",
                 "partitions_bed_sha256": sha256_file(
                     os.path.join(sdir, "partitions.bed")),
                 "regenerated_len_bp": rlen if ok else "",
