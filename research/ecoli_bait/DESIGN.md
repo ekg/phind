@@ -109,6 +109,18 @@ both requiring ≥ 600 bp. Deterministic tie-breaks by prophage id.
 eligibility ledger (external `work/eligibility_ledger.tsv`) giving every
 clade an explicit include/exclude reason.
 
+### Panel sizes (both frozen before any screening)
+
+- **Pilot panel** — 24 genomes (18 tier-A + 6 tier-B), the selection above;
+  this is the bait set screened first (mirrors NTM stage-1).
+- **Full panel** — ~100 genomes (60 tier-A + 40 tier-B) selected by the
+  **identical** farthest-point rule over the identical eligible pools,
+  extended to the larger quota; emitted as `full_panel_selection.tsv` and
+  frozen with the same run id. Bait generation for the full panel reuses
+  the same rules, budgets and gates; neither panel changes after screening
+  begins.
+- Pools at preregistration: A = 70, B = 279 eligible clades.
+
 ## Stage 2 — Bait classes and coordinates
 
 All baits are **500–2,500 bp**, 1-based inclusive coordinates on the named
@@ -157,6 +169,32 @@ rank, then accession). Host sequences are scanned **with every called
 prophage interval on that accession masked out** (from `26k_prophage1.csv`),
 so prophage-derived 31-mers are not spuriously host-like. Panel composition
 + per-file SHA-256 recorded in `provenance.json`.
+
+### Amendment A1 (host-like definition; adopted during panel QC, before any
+### screening)
+
+Unlike the NTM hosts (mycobacteria, which share almost no sequence with
+their prophages), *E. coli* genomes carry large amounts of prophage-family
+DNA that the collaborator's prophage caller only partially calls. First
+panel QC (2026-08-21, before any screening) showed the NTM-style gate
+rejecting 79/126 real baits at a raw host-like median of 0.62, with hit
+clusters located in host contigs with **no called prophage** or far from
+called intervals — i.e. uncalled prophage DNA, not host-core sequence.
+
+**Amended definition:** a canonical 31-mer is `host_like` iff it occurs in a
+panel host assembly outside called prophage intervals **AND is absent from
+every called prophage** in `prophage_homology_survey/full_prophages.fa`
+(132,393 called prophages; the same frozen universe the clades were built
+from; checksummed in provenance). The subtraction set is computed by
+streaming the universe once per run against the panel's k-mer union.
+
+Semantics: prophage-family DNA shared across E. coli genomes (the thing the
+screen wants to detect) is no longer counted as host contamination; genuine
+host-core / non-phage mobile DNA still is. Both fractions are reported per
+bait (`n_host_like` gated; `n_host_like_raw` diagnostic). Host-negative
+controls — prophage-free stretches of host contigs — are expected to remain
+host-like under the amended rule (they validate the amended mask). All
+gates, thresholds and other classes unchanged.
 
 **Region-level rejection** (NTM rule): a window is *dominated* by
 non-phage markers when ≥ 50% of its CDS-covered bases (≥ 30% CDS coverage
@@ -216,9 +254,11 @@ staging, host-panel staging + scan log, run log.
   `NC_001416.1` and HK97 `NC_002167.1` with reference sha256s; shuffled
   negatives composition-matched (mono/dinucleotide L1 reported) and gated
   on ≤ 5 shared canonical 31-mers with the panel.
-- Host-masked: no bait exceeds 10% host-like 31-mer fraction (gate), host
-  panel checksummed; residual risk documented (bounded 60-genome panel,
-  not all 26k hosts).
+- Host-masked: no bait exceeds 10% host-like 31-mer fraction (gate, amended
+  definition A1: outside called prophages in panel hosts AND absent from
+  the called-prophage universe), host panel + universe checksummed;
+  residual risk documented (bounded 61-genome panel, not all 26,074 hosts).
+  Raw host-like fractions reported per bait as diagnostic.
 - Deterministic rerun byte-identical (`--verify-determinism`); pytest
   passes (`scripts/test_ecoli_bait_design.py` + the shared
   `ntm/v2/bait/scripts/test_bait_design.py`).

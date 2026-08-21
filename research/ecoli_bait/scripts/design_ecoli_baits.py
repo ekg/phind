@@ -46,6 +46,8 @@ import baitlib as bl  # noqa: E402
 
 SELECT_N_A = 18
 SELECT_N_B = 6
+FULL_N_A = 60      # full-panel tier (DESIGN.md "Panel sizes")
+FULL_N_B = 40
 MIN_GENOME_BP = 5000
 MEMBER_MIN_BP = 600
 MODULE_W = 1200
@@ -72,6 +74,7 @@ TRAV_N_SAMPLES = 5
 TRAV_SEED = 42
 TRAV_MIN_BUDGET = 30000
 TRAV_MEMBER_MULT = 1.6
+PROPHAGE_UNIVERSE_COUNT = 132393   # records in full_prophages.fa (frozen)
 INVALID = np.uint64(1) << np.uint64(62)
 
 BAIT_CLASSES = (
@@ -137,7 +140,8 @@ def gzip_open(path: str, mode: str = "rt"):
 
 class Inputs:
     def __init__(self, repo: str, clades_source: str, prophages_fa: str,
-                 external_root: str, host_genomes_dir: str, pharokka_cds: str):
+                 external_root: str, host_genomes_dir: str, pharokka_cds: str,
+                 mash_dir: str = ""):
         self.repo = repo
         self.clades_source = clades_source          # main-tree research/clades
         self.prophages_fa = prophages_fa            # main-tree full_prophages.fa
@@ -149,7 +153,7 @@ class Inputs:
         self.functional_qc = os.path.join(repo, "research", "phage_annotation",
                                           "per_genome_annotation_qc.tsv")
         self.clade_genomes = os.path.join(self.ml_dir, "clade_genomes.json")
-        self.mash_dir = os.path.join(repo, "research", "mash_tree")
+        self.mash_dir = mash_dir or os.path.join(repo, "research", "mash_tree")
         self.triangle = os.path.join(self.mash_dir, "full_prophages_mash.dist")
         self.triangle_ids = os.path.join(self.mash_dir, "data", "ids.txt")
         self.prophage_calls = os.path.join(repo, "26k_prophage1.csv")
@@ -168,7 +172,10 @@ class Inputs:
 
     def community_tight_clades(self) -> Dict[str, Dict[str, List[str]]]:
         out: Dict[str, List[str]] = {}
+        # prefer the (untracked, complete) main-tree copy; fall back to repo
         root = os.path.join(self.repo, "research", "clades")
+        if not os.path.isdir(os.path.join(root, "0", "tight_clades.json")):
+            root = self.clades_source
         for comm in sorted(os.listdir(root)):
             p = os.path.join(root, comm, "tight_clades.json")
             if os.path.isfile(p):
@@ -236,9 +243,10 @@ class Triangle:
         for r in range(k - 1):
             i = int(arr[r])
             j_rest = arr[r + 1:]
-            base = self.cond_index(i, int(j_rest[0]))
+            # row i is contiguous from j = i+1; slice the whole span
+            base = self.cond_index(i, i + 1)
             end = self.cond_index(i, int(j_rest[-1])) + 1
-            offs = j_rest - i - 1
+            offs = j_rest - (i + 1)          # relative to row start
             vals = np.asarray(self.tri[base:end], dtype=np.float64)[offs]
             vals[np.isnan(vals)] = 1.0
             D[r, r + 1:] = vals
@@ -257,9 +265,11 @@ class Triangle:
         return 1.0 if np.isnan(v) else v
 
 
-def select_pilot(inp: Inputs, tri: Triangle
-                 ) -> Tuple[List[dict], List[dict], List[dict], Dict[str, str]]:
-    """Returns (selected genomes, member reps, eligibility ledger, medoids)."""
+def select_pilot(inp: Inputs, tri: Triangle) -> Tuple[
+        List[dict], List[dict], List[dict], Dict[str, str],
+        Dict[str, List[str]], Dict[str, str], Dict[str, dict]]:
+    """Returns (selected rows, member reps, ledger, medoids, pools,
+    tier_by_clade, release manifest rows)."""
     qc = {r["clade_id"]: r for r in read_tsv(inp.functional_qc)
           if r["source"] == "ecoli_ml"}
     rel = {r["clade_id"]: r for r in read_tsv(inp.release_manifest)}
@@ -370,7 +380,33 @@ def select_pilot(inp: Inputs, tri: Triangle
     write_tsv(os.path.join(inp.work, "eligibility_ledger.tsv"), ledger,
               ["genome_id", "clade_id", "functional_qc_flag", "tier",
                "eligible", "reason"])
-    return selected_rows, member_reps, ledger, medoids
+    return selected_rows, member_reps, ledger, medoids, pools, \
+        tier_by_clade, rel
+
+
+def _full_panel_selection(pools: Dict[str, List[str]],
+                          medoids: Dict[str, str],
+                          tri: Triangle) -> List[str]:
+    """Full (~100-genome) panel: same farthest-point rule, 60A + 40B.
+
+    Deterministic, host-blind, measured against ALL already-selected
+    representatives (A picks first). Ties -> smaller clade id (baitlib).
+    """
+    cand = sorted(set(pools.get("A", [])) | set(pools.get("B", [])))
+    dist = {(a, b): tri.dist(medoids[a], medoids[b])
+            for a in cand for b in cand if a != b}
+    out: List[str] = []
+    a_pool = sorted(pools.get("A", []))
+    b_pool = sorted(pools.get("B", []))
+    if a_pool:
+        out += bl.greedy_farthest_point(a_pool, dist, a_pool[0], FULL_N_A)
+    quota = FULL_N_A + FULL_N_B - len(out)
+    if quota > 0 and b_pool:
+        out += bl.greedy_farthest_point(b_pool, dist, b_pool[0], quota)
+    if len(out) < FULL_N_A + FULL_N_B:
+        rest = [c for c in a_pool + b_pool if c not in out]
+        out += rest[:FULL_N_A + FULL_N_B - len(out)]
+    return out
 
 
 def genome_of(clade: str) -> str:
@@ -866,8 +902,17 @@ def compute_masks(b: Bait) -> None:
 
 def host_scan(inp: Inputs, baits: List[Bait], panel: List[dict],
               intervals: Dict[str, Dict[str, List[Tuple[int, int]]]],
-              log_path: str) -> np.ndarray:
-    """Single host pass marking host-like canonical 31-mers per bait."""
+              log_path: str,
+              prophage_supported: Optional[np.ndarray] = None) -> np.ndarray:
+    """Single host pass marking host-like canonical 31-mers per bait.
+
+    Amendment A1: `prophage_supported` (sorted canonical kmers present in the
+    called-prophage universe, restricted to the bait union) is subtracted
+    from the host-like set: a k-mer is host-like only if it occurs in a host
+    assembly outside called prophages AND is absent from every called
+    prophage. This keeps prophage-family DNA shared across E. coli genomes
+    from masquerading as host contamination.
+    """
     if baits:
         union = np.unique(np.concatenate(
             [b.stats["_canon"][b.stats["_valid_pos"]] for b in baits]))
@@ -895,18 +940,54 @@ def host_scan(inp: Inputs, baits: List[Bait], panel: List[dict],
             lf.write(f"{acc}\t{ncontigs}\t"
                      f"{sum(len(v) for v in iv.values())}\t"
                      f"{found_all.size}\n")
+    n_raw = int(host_like_union.size)
+    if prophage_supported is not None and prophage_supported.size:
+        host_like_union = np.setdiff1d(host_like_union, prophage_supported,
+                                       assume_unique=False)
+    log(f"  host-like kmers: {host_like_union.size} "
+        f"({n_raw} raw, {n_raw - int(host_like_union.size)} prophage-"
+        f"supported subtracted per amendment A1)")
     for b in baits:
         m = b.stats["_hostmask"]
         vals = b.stats["_canon"][b.stats["_valid_pos"]]
+        n_hit = 0
         if vals.size and host_like_union.size:
             idx = np.clip(np.searchsorted(host_like_union, vals), 0,
                           host_like_union.size - 1)
             hit = host_like_union[idx] == vals
             m[b.stats["_valid_pos"][hit]] = True
-            b.stats["n_host_like"] = int(hit.sum())
-        else:
-            b.stats["n_host_like"] = 0
+            n_hit = int(hit.sum())
+        b.stats["n_host_like"] = n_hit
     return host_like_union
+
+
+def prophage_supported_kmers(inp: Inputs, query: np.ndarray,
+                             log_every: int = 20000) -> np.ndarray:
+    """Canonical kmers of `query` present in the called-prophage universe.
+
+    Streams full_prophages.fa (132,393 called prophages) and intersects each
+    record's canonical kmers with the sorted unique `query` set. Returns the
+    sorted subset of `query` found in at least one called prophage.
+    Amendment A1 (see DESIGN.md).
+    """
+    if query.size == 0:
+        return np.empty(0, dtype=np.uint64)
+    query = np.unique(query)
+    found = np.empty(0, dtype=np.uint64)
+    n = 0
+    for _hid, seq in iter_fasta(inp.prophages_fa):
+        n += 1
+        canon = bl.canonical_codes(seq)
+        if canon.size:
+            hit = canon[np.isin(canon, query, assume_unique=False)]
+            if hit.size:
+                found = np.union1d(found, np.unique(hit))
+        if log_every and n % log_every == 0:
+            log(f"  prophage-universe scan: {n} records, "
+                f"{found.size} supported kmers")
+    log(f"  prophage-universe scan done: {n} records, {found.size} "
+        f"supported of {query.size} query kmers")
+    return found
 
 
 def apply_gates(baits: List[Bait]) -> Tuple[List[Bait], List[dict]]:
@@ -972,6 +1053,7 @@ def _ledger_row(b: Bait, reason: Optional[str]) -> dict:
         "n_ambiguous": st.get("n_ambiguous", 0),
         "n_low_complexity": st.get("n_low_complexity", 0),
         "n_host_like": st.get("n_host_like", 0),
+        "n_host_like_raw": st.get("n_host_like_raw", ""),
         "n_internal_dup": st.get("n_internal_dup", 0),
         "n_usable_kmers": st.get("n_usable_kmers", ""),
         "seq_sha256": bl.sha256_seq(b.seq) if b.seq else "",
@@ -1034,15 +1116,15 @@ MANIFEST_COLS = [
     "occurrence_b", "co_occurrence_count", "observed_adjacency_count",
     "adjacency_observed", "partition_a_coords", "partition_b_coords",
     "seq_sha256", "n_kmers_total", "n_kmers_unique_canonical",
-    "n_ambiguous", "n_low_complexity", "n_host_like", "n_internal_dup",
-    "cross_bait_max_shared_frac", "n_usable_kmers", "gc_frac",
+    "n_ambiguous", "n_low_complexity", "n_host_like", "n_host_like_raw",
+    "n_internal_dup", "cross_bait_max_shared_frac", "n_usable_kmers", "gc_frac",
     "expected_behavior", "notes",
 ]
 
 LEDGER_COLS = ["bait_id", "bait_class", "clade_id", "genome_id",
                "member_prophage_id", "contig", "start", "end", "length_bp",
                "n_kmers_total", "n_ambiguous", "n_low_complexity",
-               "n_host_like", "n_internal_dup", "n_usable_kmers",
+               "n_host_like", "n_host_like_raw", "n_internal_dup", "n_usable_kmers",
                "seq_sha256", "status", "reason"]
 
 
@@ -1083,6 +1165,7 @@ def manifest_rows(accepted: List[Bait], selected: List[dict],
             "n_ambiguous": st["n_ambiguous"],
             "n_low_complexity": st["n_low_complexity"],
             "n_host_like": st.get("n_host_like", 0),
+            "n_host_like_raw": st.get("n_host_like_raw", ""),
             "n_internal_dup": st["n_internal_dup"],
             "cross_bait_max_shared_frac": st.get(
                 "cross_bait_max_shared_frac", ""),
@@ -1149,13 +1232,15 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
                  os.path.abspath(args.prophages_fa),
                  os.path.abspath(args.external_root),
                  os.path.abspath(args.host_genomes_dir),
-                 os.path.abspath(args.pharokka_cds))
+                 os.path.abspath(args.pharokka_cds),
+                 os.path.abspath(args.mash_dir) if args.mash_dir else "")
     os.makedirs(inp.work, exist_ok=True)
     os.makedirs(args.out_dir, exist_ok=True)
 
     log("[select] pilot selection (host-blind, mash-triangle medoids)")
     tri = Triangle(inp.triangle, inp.triangle_ids)
-    selected, member_reps, ledger, medoids = select_pilot(inp, tri)
+    selected, member_reps, ledger, medoids, pools_for_full, tier_by_clade, \
+        rel_manifest = select_pilot(inp, tri)
     log(f"  {len(selected)} genomes, {len(member_reps)} member reps, "
         f"{sum(1 for r in ledger if r['eligible'] == 'yes')} eligible "
         f"(A={sum(1 for r in selected if r['tier'] == 'A')}, "
@@ -1265,8 +1350,25 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
     panel = choose_host_panel(inp, selected, member_reps, prophage_calls)
     log(f"[host-panel] {len(panel)} host assemblies (prophages masked), "
         f"K-12 first")
+    # Amendment A1: prophage-universe subtraction set (streamed once)
+    bait_union = np.unique(np.concatenate(
+        [b.stats["_canon"][b.stats["_valid_pos"]] for b in baits])) \
+        if baits else np.empty(0, dtype=np.uint64)
+    prophage_supported = prophage_supported_kmers(inp, bait_union)
+    prophage_universe_records = PROPHAGE_UNIVERSE_COUNT
     host_like_union = host_scan(inp, baits, panel, host_intervals,
-                                os.path.join(inp.work, "host_scan.log"))
+                                os.path.join(inp.work, "host_scan.log"),
+                                prophage_supported=prophage_supported)
+    # raw host-like fraction (diagnostic, before A1 subtraction)
+    if prophage_supported.size:
+        raw_union = np.union1d(host_like_union, prophage_supported)
+        for b in baits:
+            vals = b.stats["_canon"][b.stats["_valid_pos"]]
+            b.stats["n_host_like_raw"] = int(np.isin(vals, raw_union).sum())
+    else:
+        for b in baits:
+            b.stats.setdefault("n_host_like_raw",
+                               b.stats.get("n_host_like", 0))
     accepted, rej_ledger = apply_gates(baits)
     log(f"[gates] {len(accepted)} accepted, "
         f"{len(rej_ledger) - len(accepted)} rejected")
@@ -1323,6 +1425,23 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
                "min_usable_kmers", "median_host_like_frac",
                "max_host_like_frac"])
 
+    # Diversity audit + full-panel selection (DESIGN.md "Panel sizes"):
+    # the same farthest-point procedure extended to 60A+40B over the same
+    # pools, emitted as full_panel_selection.tsv (frozen alongside).
+    full_sel_ids = _full_panel_selection(pools_for_full, medoids, tri)
+    write_tsv(
+        os.path.join(args.out_dir, "full_panel_selection.tsv"),
+        [dict(selection_rank=i, clade_id=c, genome_id=genome_of(c),
+              tier=tier_by_clade[c], n_members=rel_manifest[c]["n_members"],
+              n_partitions=rel_manifest[c]["n_partitions"],
+              length_bp=rel_manifest[c]["length_bp"],
+              medoid_member=medoids.get(c, ""),
+              selection_basis=("greedy_farthest_point_prophage_mash_space_"
+                               "host_blind_full_panel"))
+         for i, c in enumerate(full_sel_ids, 1)],
+        ["selection_rank", "clade_id", "genome_id", "tier", "n_members",
+         "n_partitions", "length_bp", "medoid_member", "selection_basis"])
+
     # provenance — deterministic run id over input checksums + params
     driver = os.path.abspath(__file__)
     checksums = {
@@ -1334,6 +1453,7 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
         "triangle_ids": sha256_file(inp.triangle_ids),
         "prophage_calls": sha256_file(inp.prophage_calls),
         "pharokka_cds": sha256_file(inp.pharokka_cds),
+        "prophages_fa": sha256_file(inp.prophages_fa),
         "baitlib": sha256_file(os.path.join(
             _HERE, "..", "..", "..", "ntm", "v2", "bait", "scripts",
             "baitlib.py")),
@@ -1344,6 +1464,9 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
     for comm_file in sorted(inp.community_tight_clades().keys()):
         p = os.path.join(repo, "research", "clades", comm_file,
                          "tight_clades.json")
+        if not os.path.isfile(p):
+            p = os.path.join(inp.clades_source, comm_file,
+                             "tight_clades.json")
         checksums[f"tight_clades_{comm_file}"] = sha256_file(p)
     for prov in trav_prov:
         if prov["partitions_bed_sha256"]:
@@ -1407,6 +1530,13 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
             "eligibility_ledger_rows": len(ledger),
             "host_panel_genomes": len(panel),
             "traversal_verified_clades": n_ok,
+            "full_panel_genomes": len(full_sel_ids),
+        },
+        "panel_sizes": {
+            "pilot": {"n": SELECT_N_A + SELECT_N_B,
+                      "by_tier": {"A": SELECT_N_A, "B": SELECT_N_B}},
+            "full": {"n": FULL_N_A + FULL_N_B,
+                     "by_tier": {"A": FULL_N_A, "B": FULL_N_B}},
         },
         "environment": {"python": sys.version.split()[0],
                         "numpy": np.__version__},
@@ -1415,6 +1545,22 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
                           "verified byte-identical to the frozen release "
                           "per clade; unverified clades contribute zero "
                           "junction baits"),
+        "amendment_A1": {
+            "change": "host-like excludes the called-prophage universe",
+            "reason": ("panel QC (before any screening) found the NTM-style "
+                       "host-like gate rejects prophage-family DNA shared "
+                       "across E. coli hosts: raw host-like median 0.62 with "
+                       "hit clusters located in host contigs with no called "
+                       "prophage or distant from called intervals (uncalled "
+                       "prophage DNA), not host-core sequence"),
+            "definition": ("a canonical 31-mer is host-like iff it occurs "
+                           "in a panel host assembly outside called prophage "
+                           "intervals AND is absent from every called "
+                           "prophage in full_prophages.fa"),
+            "prophage_universe_records": int(prophage_universe_records),
+            "prophage_supported_kmers": int(prophage_supported.size),
+            "raw_host_like_reported": "n_host_like_raw column",
+        },
     }
     with open(os.path.join(args.out_dir, "provenance.json"), "w") as fh:
         json.dump(provenance, fh, indent=2, sort_keys=True)
@@ -1425,7 +1571,7 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
         tier_counts[r["tier"]] = tier_counts.get(r["tier"], 0) + 1
     cls_counts: Dict[str, int] = {}
     for r in mrows:
-        cls_counts[r["bait_class"]] = cls_counts[r["bait_class"]] + 1
+        cls_counts[r["bait_class"]] = cls_counts.get(r["bait_class"], 0) + 1
     n_recon = sum(1 for r in mrows if r["bait_class"] == "junction")
     with open(os.path.join(args.out_dir, "README.md"), "w") as fh:
         fh.write(f"""# E. coli prophage bait & junction panel
@@ -1436,6 +1582,8 @@ run id: `{run_id}`.
 
 - Pilot selection: {len(selected)} ML genomes (tiers: {tier_counts});
   host/phylogroup labels are provenance only, never selection features.
+  Full panel ({len(full_sel_ids)} genomes, same rule at 60A+40B) frozen in
+  `full_panel_selection.tsv` for the later broader run.
 - Baits accepted: {len(mrows)} by class: {cls_counts}.
 - Junction baits are **purely reconstructed** (observed_adjacency_count == 0)
   with co-occurrence ranking; traversal provenance regenerated deterministically
@@ -1448,9 +1596,10 @@ run id: `{run_id}`.
   {cls_counts.get('control_host_negative', 0)} E. coli host-derived controls
   (expected host-like; validates the host mask).
 
-Files: `baits.fa`, `pilot_selection.tsv`, `bait_manifest.tsv`,
-`rejection_ledger.tsv`, `filter_stats.tsv`, `provenance.json`,
-`public_refs/`. Reruns are byte-identical (`--verify-determinism`).
+Files: `baits.fa`, `pilot_selection.tsv`, `full_panel_selection.tsv`,
+`bait_manifest.tsv`, `rejection_ledger.tsv`, `filter_stats.tsv`,
+`provenance.json`, `public_refs/`. Reruns are byte-identical
+(`--verify-determinism`).
 """)
     with open(os.path.join(inp.work, "host_panel.json"), "w") as fh:
         json.dump(host_panel_prov, fh, indent=2, sort_keys=True)
@@ -1488,6 +1637,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     here = os.path.dirname(os.path.abspath(__file__))
     default_repo = os.path.abspath(os.path.join(here, "..", "..", ".."))
     ap.add_argument("--repo-root", default=default_repo)
+    ap.add_argument("--mash-dir", default="/home/erikg/phind/research/mash_tree",
+                    help="mash triangle + ids (untracked main-tree copy)")
     ap.add_argument("--clades-source",
                     default="/home/erikg/phind/research/clades",
                     help="main-tree research/clades (untracked partition data)")
