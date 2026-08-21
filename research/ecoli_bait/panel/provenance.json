@@ -1,0 +1,880 @@
+{
+  "amendment_A1": {
+    "change": "host-like excludes the called-prophage universe",
+    "definition": "a canonical 31-mer is host-like iff it occurs in a panel host assembly outside called prophage intervals AND is absent from every called prophage in full_prophages.fa",
+    "prophage_supported_kmers": 109238,
+    "prophage_universe_records": 132393,
+    "raw_host_like_reported": "n_host_like_raw column",
+    "reason": "panel QC (before any screening) found the NTM-style host-like gate rejects prophage-family DNA shared across E. coli hosts: raw host-like median 0.62 with hit clusters located in host contigs with no called prophage or distant from called intervals (uncalled prophage DNA), not host-core sequence"
+  },
+  "counts": {
+    "baits_accepted": 113,
+    "baits_rejected": 13,
+    "eligibility_ledger_rows": 585,
+    "full_panel_genomes": 100,
+    "host_panel_genomes": 61,
+    "member_reps": 48,
+    "selected_genomes": 24,
+    "traversal_verified_clades": 24
+  },
+  "design": "research/ecoli_bait/DESIGN.md",
+  "environment": {
+    "numpy": "1.26.4",
+    "python": "3.12.3"
+  },
+  "host_panel": [
+    {
+      "accession": "GCF_000005845.2",
+      "clade_id": "",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000005845.2/GCF_000005845.2.pansn.fa.gz",
+      "fasta_sha256": "29caafdd0a8f06088fd2ae1688d304f4dbd4d7e4cca5b544734c8be2d7698ca5",
+      "prophage_intervals_masked": 5,
+      "role": "k12_reference"
+    },
+    {
+      "accession": "GCF_000776235.1",
+      "clade_id": "0_0014",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000776235.1/GCF_000776235.1.pansn.fa.gz",
+      "fasta_sha256": "3e3f920b51f614601ed887827f29848561ed049caafbfd5b08f4baa1d677d90a",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000155125.1",
+      "clade_id": "0_0014",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000155125.1/GCF_000155125.1.pansn.fa.gz",
+      "fasta_sha256": "fd9daa1f5204580fa6eea45f0b225bc97b6ab9d783409e3ef10c5809c9d6fc17",
+      "prophage_intervals_masked": 18,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000014845.1",
+      "clade_id": "0_0014",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000014845.1/GCF_000014845.1.pansn.fa.gz",
+      "fasta_sha256": "6edd1be18112d0c2e36edbfe4d812e52f3fcec6fad28ba4c02dff80d9682d7ea",
+      "prophage_intervals_masked": 10,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000026285.1",
+      "clade_id": "0_0014",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000026285.1/GCF_000026285.1.pansn.fa.gz",
+      "fasta_sha256": "1133534a04418233dbd50efe54081d959d391716e743add6a32160ed4ab1b9ba",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000692395.1",
+      "clade_id": "0_0051",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000692395.1/GCF_000692395.1.pansn.fa.gz",
+      "fasta_sha256": "5273e151d9040267ad26b8b757b25601b0d6b8e2305c696c98161586f773b03f",
+      "prophage_intervals_masked": 4,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000503395.1",
+      "clade_id": "0_0051",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000503395.1/GCF_000503395.1.pansn.fa.gz",
+      "fasta_sha256": "272818d87dbccdbabfeeeb2dea8ad71185dcaef5aedf57f1df39a141192fe4eb",
+      "prophage_intervals_masked": 4,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000354795.2",
+      "clade_id": "0_0051",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000354795.2/GCF_000354795.2.pansn.fa.gz",
+      "fasta_sha256": "a8b2a5d1a4874962862819f8b334b015f03959f620ad0442b2c4e95a160bd9cb",
+      "prophage_intervals_masked": 3,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000753115.1",
+      "clade_id": "0_0051",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000753115.1/GCF_000753115.1.pansn.fa.gz",
+      "fasta_sha256": "d0d632177e4009e56895b9156f6322b6d93c745dc317c030be6cb5eb7ca7d9fe",
+      "prophage_intervals_masked": 9,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000622535.2",
+      "clade_id": "0_0052",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000622535.2/GCF_000622535.2.pansn.fa.gz",
+      "fasta_sha256": "4ef934420a9629efc1744bb84d3c8fb1b82e4bf8f80946ef9aa5b5841b43033c",
+      "prophage_intervals_masked": 9,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000691085.1",
+      "clade_id": "0_0052",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000691085.1/GCF_000691085.1.pansn.fa.gz",
+      "fasta_sha256": "86bc227d6786d56b6a27a3bbbcee8109881142ec5e65ca0c9e75182adb0c8fa4",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000164575.1",
+      "clade_id": "0_0052",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000164575.1/GCF_000164575.1.pansn.fa.gz",
+      "fasta_sha256": "2139bc637adea20923b36062f5f52f990386e644b92f281a039f0ff40b63af90",
+      "prophage_intervals_masked": 4,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000176555.2",
+      "clade_id": "0_0052",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000176555.2/GCF_000176555.2.pansn.fa.gz",
+      "fasta_sha256": "d32a23f15c3e79794ac841e45e66849e2350ad96d26235f5f6f37880cb552ca3",
+      "prophage_intervals_masked": 12,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001265315.1",
+      "clade_id": "0_0059",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001265315.1/GCF_001265315.1.pansn.fa.gz",
+      "fasta_sha256": "2ee7dd2d3f07f8da22467b45942ded46c9dcad9f070e8954de7fb35dd7ce99b5",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000754845.1",
+      "clade_id": "0_0059",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000754845.1/GCF_000754845.1.pansn.fa.gz",
+      "fasta_sha256": "399836f0ffcab9f8f16ab35980cb44d46f2d1af40e32b2fe4a0cff8af8843270",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001265765.1",
+      "clade_id": "0_0059",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001265765.1/GCF_001265765.1.pansn.fa.gz",
+      "fasta_sha256": "888cf9add2130d72d4544a41e97fa1c7529f9a4771142c79918638e6dd7551e1",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000780535.1",
+      "clade_id": "0_0071",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000780535.1/GCF_000780535.1.pansn.fa.gz",
+      "fasta_sha256": "3f9b831d8829feeb3d6356c170ac6b74f056c7e5344f57702481236c519827a9",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000780555.1",
+      "clade_id": "0_0071",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000780555.1/GCF_000780555.1.pansn.fa.gz",
+      "fasta_sha256": "7c7e3725ba7cd7d350b0033b3d45864d361232d1cf711a690961fb64ded94cb4",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000597845.1",
+      "clade_id": "0_0091",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000597845.1/GCF_000597845.1.pansn.fa.gz",
+      "fasta_sha256": "f082c5263804927d9606a42a2aae27ff3d7c5961de39130850e0eaa9bf5f1d94",
+      "prophage_intervals_masked": 5,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000987535.1",
+      "clade_id": "0_0091",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000987535.1/GCF_000987535.1.pansn.fa.gz",
+      "fasta_sha256": "506230824176884dc3ca2e852f10a797acc213e42b02d62a691aeaa44754850e",
+      "prophage_intervals_masked": 4,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000599625.1",
+      "clade_id": "0_0091",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000599625.1/GCF_000599625.1.pansn.fa.gz",
+      "fasta_sha256": "b01d280687c455ad10353fca9d91d1b368a4c823f147da5355e741436974511e",
+      "prophage_intervals_masked": 5,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000599645.1",
+      "clade_id": "0_0091",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000599645.1/GCF_000599645.1.pansn.fa.gz",
+      "fasta_sha256": "5f5ec031ab2deff085d02f794c2060ec4c23e262b3cc30a7e31cbc0cd886ff4d",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000164235.1",
+      "clade_id": "0_0094",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000164235.1/GCF_000164235.1.pansn.fa.gz",
+      "fasta_sha256": "0d14ce76b37bda6fe1e92887329eed69640d6aee769b94fd7751d6a054b75eda",
+      "prophage_intervals_masked": 5,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001309485.1",
+      "clade_id": "0_0094",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001309485.1/GCF_001309485.1.pansn.fa.gz",
+      "fasta_sha256": "6d4ed59b9d64f65d268fef221986f84a5f29d06094bc18be0ddf2dee7774174b",
+      "prophage_intervals_masked": 10,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001265465.1",
+      "clade_id": "10_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001265465.1/GCF_001265465.1.pansn.fa.gz",
+      "fasta_sha256": "a593736e7697c1ecae37b1e4c256f66997cf86df9688f39f03efc56fa488a2cd",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000268205.1",
+      "clade_id": "10_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000268205.1/GCF_000268205.1.pansn.fa.gz",
+      "fasta_sha256": "f131c9924e7be5038000ca553e700c515fdff1c8bd3163d5864b6a0bb8746a67",
+      "prophage_intervals_masked": 5,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000220005.1",
+      "clade_id": "10_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000220005.1/GCF_000220005.1.pansn.fa.gz",
+      "fasta_sha256": "03fecaa64c7507c5f82e28a9fc9b775983a89911fb9c84d636da5ca865294d1b",
+      "prophage_intervals_masked": 20,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000619105.1",
+      "clade_id": "10_0038",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000619105.1/GCF_000619105.1.pansn.fa.gz",
+      "fasta_sha256": "4bc6c79e203fb42987c17613be7693b852c2d727c6ba6959184505473ec0b472",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000618185.1",
+      "clade_id": "10_0044",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000618185.1/GCF_000618185.1.pansn.fa.gz",
+      "fasta_sha256": "1b1fe85a044d115b631b09406c8c7c6676d48532907b0e12c114c976bef84087",
+      "prophage_intervals_masked": 4,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000617485.2",
+      "clade_id": "10_0044",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000617485.2/GCF_000617485.2.pansn.fa.gz",
+      "fasta_sha256": "dde445eae76e884ae42b1594e5715abefb720a9d3f7254f04084dd8db28fa796",
+      "prophage_intervals_masked": 3,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000948605.1",
+      "clade_id": "10_0044",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000948605.1/GCF_000948605.1.pansn.fa.gz",
+      "fasta_sha256": "51deb981a8fab3f83b693deca0cc532dd59534245f1afc7a26e32ac79ad8386a",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000157115.2",
+      "clade_id": "10_0057",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000157115.2/GCF_000157115.2.pansn.fa.gz",
+      "fasta_sha256": "ff7ee8cdbd03155ed492b8102ef95dd5422b1b85045cbc49f603c588b9bdc3b0",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001420055.1",
+      "clade_id": "10_0057",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001420055.1/GCF_001420055.1.pansn.fa.gz",
+      "fasta_sha256": "1417757a56b1b3e5a19f3ac0b4c861e3f1bd99ce7d119c116999c812f1eb4da7",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000781915.1",
+      "clade_id": "10_0070",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000781915.1/GCF_000781915.1.pansn.fa.gz",
+      "fasta_sha256": "ad8547594df390538a10121390db26a75d8734d9f968947a52cbf6a46d0b9aec",
+      "prophage_intervals_masked": 2,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001562335.1",
+      "clade_id": "10_0070",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001562335.1/GCF_001562335.1.pansn.fa.gz",
+      "fasta_sha256": "fa0b451604b037fcd6e333839d19a725aaf6c55085717c2f07763b28c2b73400",
+      "prophage_intervals_masked": 2,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000781355.1",
+      "clade_id": "10_0151",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000781355.1/GCF_000781355.1.pansn.fa.gz",
+      "fasta_sha256": "33d23c290dda3ae4000e806fc1769532f510181c1be07cc74b3bab3c1ded3127",
+      "prophage_intervals_masked": 3,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000617085.1",
+      "clade_id": "10_0151",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000617085.1/GCF_000617085.1.pansn.fa.gz",
+      "fasta_sha256": "e61ef2ca749a7b36d6677267514d2c614c2b6fa51ae01db3c1d6933a579d2c32",
+      "prophage_intervals_masked": 14,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000194175.1",
+      "clade_id": "10_0151",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000194175.1/GCF_000194175.1.pansn.fa.gz",
+      "fasta_sha256": "4ebb02527c1e98ee97f60d38f99ae1cd5e0bc7faa92346530122b2702d20ba8d",
+      "prophage_intervals_masked": 14,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000249115.1",
+      "clade_id": "10_0151",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000249115.1/GCF_000249115.1.pansn.fa.gz",
+      "fasta_sha256": "5de179d9f2e3f0e0ad9861e62695acb66118b97028765e112f601c3721179a21",
+      "prophage_intervals_masked": 13,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000713235.1",
+      "clade_id": "10_0172",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000713235.1/GCF_000713235.1.pansn.fa.gz",
+      "fasta_sha256": "8046249c5d814910d847a24f4cc5e423c6bdaddf08968571d13092cd1fae6f28",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000703345.1",
+      "clade_id": "10_0172",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000703345.1/GCF_000703345.1.pansn.fa.gz",
+      "fasta_sha256": "dec02f401e72fe085c3113d6aba6dad6239d66192fbb1c3bfa6276c79e4b476d",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001012025.1",
+      "clade_id": "10_0172",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001012025.1/GCF_001012025.1.pansn.fa.gz",
+      "fasta_sha256": "983811d3415404a0d16143c38cf3a64bce1b9f3928b2a1453fb744f26b58131f",
+      "prophage_intervals_masked": 3,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000752815.1",
+      "clade_id": "10_0178",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000752815.1/GCF_000752815.1.pansn.fa.gz",
+      "fasta_sha256": "7561e03fdf7f88a3b6271f0d1c1bcbdfd42c942032ad5883ac21e11f8f05af1b",
+      "prophage_intervals_masked": 9,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000615265.1",
+      "clade_id": "10_0178",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000615265.1/GCF_000615265.1.pansn.fa.gz",
+      "fasta_sha256": "9e4e45aeb92b678081c569ddb41fd468b35442b9969a4530d931370c5945d250",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000703285.1",
+      "clade_id": "10_0178",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000703285.1/GCF_000703285.1.pansn.fa.gz",
+      "fasta_sha256": "f7f4e13919318d27724f391c18fa729ba45e26c66424338be047ee5da58cf0d3",
+      "prophage_intervals_masked": 12,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000753135.1",
+      "clade_id": "10_0178",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000753135.1/GCF_000753135.1.pansn.fa.gz",
+      "fasta_sha256": "6de42a63ffb8fead20066319222d2c7cfb85c117d1f1ed8a57807fc5ce34e4e0",
+      "prophage_intervals_masked": 11,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000778335.1",
+      "clade_id": "1_0004",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000778335.1/GCF_000778335.1.pansn.fa.gz",
+      "fasta_sha256": "0463c6f3fad25bd20485156a0b1b49fd55f861f9e10994d5e41f201cd697938e",
+      "prophage_intervals_masked": 3,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000215145.1",
+      "clade_id": "1_0004",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000215145.1/GCF_000215145.1.pansn.fa.gz",
+      "fasta_sha256": "9c6d5db3fc5b2bc333dc997383cff7eba86555ed16c999cf98a4f6f518b9dd97",
+      "prophage_intervals_masked": 5,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000026305.1",
+      "clade_id": "1_0004",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000026305.1/GCF_000026305.1.pansn.fa.gz",
+      "fasta_sha256": "a58a931b5e56f133d7f0738202f93610c74edb51ec038424172de65154321c66",
+      "prophage_intervals_masked": 10,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000167895.3",
+      "clade_id": "1_0004",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000167895.3/GCF_000167895.3.pansn.fa.gz",
+      "fasta_sha256": "c40b787b6cb6ca7ca44c7f90700b4dfc33094f1e2132f6071d5243aaa6911bb1",
+      "prophage_intervals_masked": 10,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001062415.1",
+      "clade_id": "1_0022",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001062415.1/GCF_001062415.1.pansn.fa.gz",
+      "fasta_sha256": "ac94ba3808ebd93c799f4f1ec965575d58d13b969654a40bf2ddebe5b4a32032",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001055155.1",
+      "clade_id": "1_0022",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001055155.1/GCF_001055155.1.pansn.fa.gz",
+      "fasta_sha256": "3d926c277ecc4f35bb5a8ce6692180de7a6b6034a898bd70f440424a85a1bb35",
+      "prophage_intervals_masked": 1,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000700245.1",
+      "clade_id": "1_0022",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000700245.1/GCF_000700245.1.pansn.fa.gz",
+      "fasta_sha256": "f36574735a5ce18d1db785a3202b53bea187b0e31967aefd77874be625c605ef",
+      "prophage_intervals_masked": 4,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000798315.1",
+      "clade_id": "1_0022",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000798315.1/GCF_000798315.1.pansn.fa.gz",
+      "fasta_sha256": "7e77ab7d7d1edee47e3f44073c0875952460c3152e693992b0582535649396fd",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_001285125.1",
+      "clade_id": "1_0026",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_001285125.1/GCF_001285125.1.pansn.fa.gz",
+      "fasta_sha256": "69a5b9f5f4598b133e2b6e72e11409fa5b7d46a34aa51119de8c94d2c8217fdb",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000696835.1",
+      "clade_id": "1_0026",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000696835.1/GCF_000696835.1.pansn.fa.gz",
+      "fasta_sha256": "adf54e7d48166c7824b24a1380c659adf9c07749e2fd2aa8d3d7302a31428648",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000212715.2",
+      "clade_id": "1_0026",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000212715.2/GCF_000212715.2.pansn.fa.gz",
+      "fasta_sha256": "feb667952377e3a89a333b92657bd71140f9fb258faeafa18c6db4b0a43c88ee",
+      "prophage_intervals_masked": 12,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000446365.2",
+      "clade_id": "1_0026",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000446365.2/GCF_000446365.2.pansn.fa.gz",
+      "fasta_sha256": "c426410d91e2fda70c8a690a9a260e10c876806b3b50b5278b035024f405b76f",
+      "prophage_intervals_masked": 8,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000936455.1",
+      "clade_id": "1_0032",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000936455.1/GCF_000936455.1.pansn.fa.gz",
+      "fasta_sha256": "2c519e94126109e4cf2d1dc3ecaa81b93b98df7a350d0f4c105cc66793646a0a",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000304135.2",
+      "clade_id": "1_0032",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000304135.2/GCF_000304135.2.pansn.fa.gz",
+      "fasta_sha256": "ba0816daf273201bc8c55fe96d9ddae195ec0535486079c71494168248276c6c",
+      "prophage_intervals_masked": 7,
+      "role": "source_host"
+    },
+    {
+      "accession": "GCF_000948905.1",
+      "clade_id": "1_0032",
+      "fasta": "/mnt/nvme3n1/erikg/phind-genome-work/ecoli26k/v1/26k/canonical_objects/GCF_000948905.1/GCF_000948905.1.pansn.fa.gz",
+      "fasta_sha256": "f3fc085f8e1045481712fc891e672343a7d7d082d91c41e6512decbc61c88f88",
+      "prophage_intervals_masked": 6,
+      "role": "source_host"
+    }
+  ],
+  "inputs_sha256": {
+    "baitlib": "8cca209db97f85188982c05677de018fbf7dbd7223da0608f431453f93de5037",
+    "clade_genomes": "6b7e0d54d760a29789eda832b6cac157177975a6db5745d3790199369339e54f",
+    "functional_qc": "f7ba42c6456f4ded5d9d52888ceaebbf2c37762f3a7ed1a37a1b22f917de85fd",
+    "ml_fasta": "3b43040aa57ae77ef7780f66f79928090ba30d45d8ba82ff064d961a0f3d1980",
+    "pharokka_cds": "89739e16057654f3c4ba04449472c30de3c88f1887f539e9781c421b59f39d1f",
+    "prophage_calls": "6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996",
+    "prophages_fa": "ed85b2fb549be18bc638d8485f5b5add7c2d394f3822efe66a90ca6d979758d3",
+    "public_ref_NC_001416.1": "78a78913d3585570fa28b7cec05e4fcf067c1aaa3740d37a377f2babda70618c",
+    "public_ref_NC_002167.1": "95eb0b2a70cf58ec55848a8b2aeb7acd28d55edd8143d787c2bcb7d5395d80b5",
+    "release_manifest": "639a2548db42240fcf96fbbcd0ec2e5d6d1a1747a7e8085411268990e701f57f",
+    "release_qc": "22435f1122bfbe38d9324e93852986799389b13362a0eea69e4075f8c7399d26",
+    "staged_0_0000/partitions.bed": "bdea380da839e6a804b622a2eb3be8aa79a6e460a4f4b74ca8a079ec15470932",
+    "staged_0_0014/partitions.bed": "2c854fbcfd19f2156b83a97cb0903f99a80c46bfba791fb7f57c0a9e26f94dea",
+    "staged_0_0046/partitions.bed": "bed5eaa0c238aaeac93ef774e12b6984d667576bfacaec53d43c14be73a058a9",
+    "staged_0_0051/partitions.bed": "a0795c6a0bfe29a9985b3ce24e2924d796d9fe8fc70d67cd3da349e756c58cc8",
+    "staged_0_0052/partitions.bed": "43fb1da063072647dc9e93d2b4b6bc7e0564b0824f960fac5043acb018cb50d5",
+    "staged_0_0054/partitions.bed": "4be2b0c14c2a4115245b056517b02c0f3a6122c80fce4867e0da171fff2e1b46",
+    "staged_0_0059/partitions.bed": "294ae0a4f9528fe770ca37ddf2cb771109860a85e0afe3834143e79812901df2",
+    "staged_0_0067/partitions.bed": "98db1626da5693843fa9a16dba8e4e86af359112ec6f75e3e96db17ddcbf34de",
+    "staged_0_0068/partitions.bed": "66a775c50b28272f804b0128a152a4251321eedd76975c721d940d534899f3b5",
+    "staged_0_0071/partitions.bed": "69a32783533be1f1a1172079d6ec8be07b8f586f5bf7f82e51698b1cdc2c604b",
+    "staged_0_0091/partitions.bed": "583c4484e8da21c016b0b2ff53dc0a97267e10fd16019fcd10a0b4af2f029c1f",
+    "staged_0_0094/partitions.bed": "ed1f6f7d02fba2e91fd2498a9faba0dba17322ce4e37d8f8d7ce5499753568b3",
+    "staged_10_0002/partitions.bed": "2b660fadf5f8cf0a174f7d7f53ef33be90f9e9e76cf31666f73fb21591832f0e",
+    "staged_10_0038/partitions.bed": "30066f73757b50955841a0d1d4837b6192b2814699e785fce75bd98ecf64f228",
+    "staged_10_0044/partitions.bed": "4bb4ff9dd862b16c919e4eeca9310c762782961835f4e7cfc1c305564679fc20",
+    "staged_10_0057/partitions.bed": "ef9bf6c842398c17fa64dae862d4f16265a09f89d8428a51c63a534dfb115cbd",
+    "staged_10_0070/partitions.bed": "8d75871a71f8f12c99cfc13ab46616bc52c679def6b4a6e4ffb1fbafffc9391a",
+    "staged_10_0151/partitions.bed": "a68e0d4428397faf8a0a0cdd44a9599803834cb71b967bea4834c69f2397846d",
+    "staged_10_0172/partitions.bed": "192d529e3d76841b8b7d1e3740ff57f89f905997ace31405b0ec87e4e923d0dd",
+    "staged_10_0178/partitions.bed": "b6f7ebcb43ae7594fc1dc7620cf9a638f377ad6ac12bf8275dbeba0a2f3c2bb6",
+    "staged_1_0004/partitions.bed": "8acfc02c74fc34b0357f2d56cca558752c99560ddf10e57fe9b913a8120b85c1",
+    "staged_1_0022/partitions.bed": "0416a60855c960763df9a7b9b0a4b98ec0677a05139731deed044b851001d3d1",
+    "staged_1_0026/partitions.bed": "b74f848767cbea08ca0d3a07895e83bc687d765915657fdb0c74343797618323",
+    "staged_1_0032/partitions.bed": "a1481ed7dcdb0e77a472cc46f41378cec0c49f9e0f31958349157f2466217815",
+    "tight_clades_0": "7d6cdcb9e7b85802c7cdbdf4e12ec2098fb06298961cda3e6fb2f010d050dae4",
+    "tight_clades_1": "c031bac8d3c45b13e55e0f7bfd26019f4b551f6d2a48730db26f6e89462157b3",
+    "tight_clades_10": "3928e54803ab7eb349a440ca69782aa92085ae13b4ba28b35c2ee50ab877ffd7",
+    "tight_clades_11": "7218ace8a9e688daa4c779e721e7e7cd030670b2fc4f97b416c3be442081a573",
+    "tight_clades_2": "9d754732e8d94605f1c30b0b930fff9770435340e46db5a0e2fe347bee6cdea4",
+    "tight_clades_3": "fcd74c350151c888d7f1b0a61a8b8eb4b5b4ea22f5bf94180af0b8a781e2bfef",
+    "tight_clades_4": "910fd8f1e293dbf50595364ad48069ddec47b7732ff7bd726376c8f78a645b2a",
+    "tight_clades_5": "43af5e1510d724822878a26829900d95a4334dfd3c19af02f97bc85a9ac0f70f",
+    "tight_clades_6": "a9dc9fb2ea4dc3bdf620c11e828ebba26754562fda545030f0cc6a1c5851d737",
+    "tight_clades_7": "82f7269c1cd6d7b97cea2360125723ed5796613755619188a659cf3fb427b6ec",
+    "tight_clades_8": "68fbbad2e110287e10485b734b5e5540df52aa0c121b22bda8b2dd1938e98322",
+    "tight_clades_9": "de8759ba0bd79e1a23b4df1e8c9468bf6da30b9234dd891daf3b73dae4816062",
+    "traversal_0_0000": "4b9c17517a32b52ae2181a45dc0d8842336ac7fe2470be81428e0baa39ba8a83",
+    "traversal_0_0014": "21da61e7949faa2f4301a8d21bb61007f8e005b6662ff5bf539e32211cf9acf6",
+    "traversal_0_0046": "b136343b2171c6340d27208aa19cb3787d47ebfc335036b752d7a0736cdc1db9",
+    "traversal_0_0051": "da4e22278f442c03671838197b00bda846d8979e874313f7d8c332c497953f47",
+    "traversal_0_0052": "e2b3398f9d07b16f39375ef1f1ab5b97232d8d7524d75da2147e5c4925aad662",
+    "traversal_0_0054": "d713402e411f98c860b731a2456cab61e60545e27882d0029532186d6e90d485",
+    "traversal_0_0059": "11a128d2de6d5f8d3074d15c4d40b20066f3988554a212ae12118a771991c2b9",
+    "traversal_0_0067": "b053cf091c34bd1264d8571b8e14739d9bc3bb3a3f89ff7d3095a9fed2bf16b5",
+    "traversal_0_0068": "6ea8baa8cbd4dd137155931e75451fa3e9c858a7d4cf42f78057b33e8ed53ad0",
+    "traversal_0_0071": "e0b897dd9260a85c2c01986e9dd65f9b8b539ee01fde6ed46beb806522a7bc23",
+    "traversal_0_0091": "591ea9ff3e0b9e7c70686558e36b1da7199a681afe73a7aad1b37e07f6d9fd8e",
+    "traversal_0_0094": "6222df18d25b7a5c8611cec02e6a6687e618ad08400370dddb07756d7aed1f51",
+    "traversal_10_0002": "cf99471b4379a197c4e4b7b963523d9158dcafd7edd521c2e365348135638240",
+    "traversal_10_0038": "2cce5926d7f4f7d3315621461a3f6f17b5bcbf85622b432e673719dbf9027bf6",
+    "traversal_10_0044": "d5840363acb8b4b8a808e9117860ec48a2610c7c30637145cb9c4747c3e38ca1",
+    "traversal_10_0057": "426f5388a0680452495f0981689f3e9dd4653168f68737c2e12d49981fb0d925",
+    "traversal_10_0070": "d7ecfd891037e9e531e6e3153970a5aac7fd059d43885cbaa3f4347455c4d12d",
+    "traversal_10_0151": "6a606cd010e245dcb3360a192b18d8287a2e7d3260fbc0e4e71129373c4253b6",
+    "traversal_10_0172": "a0968b5c83a2ca2cac6180171f58f4f185d1f4db0e9dbe2a34c3b1c2a3568dea",
+    "traversal_10_0178": "52bfe9090d4cf516516241e83efc66aee0cc4aaf9fc245b531ea2dfc14be6fcf",
+    "traversal_1_0004": "8c3709de8367ac06b886cb9ca2c0cc4343b9b7e43d8edcc15d66611e33513935",
+    "traversal_1_0022": "09c7dbb14ec2b41c6085e0d23ef87f9b2e2446cc885ba61b6f03aafd7a5c8ca1",
+    "traversal_1_0026": "2e49d577fdc20abe52565ab4f8fa70ee707638184f4d253dfab68296174a460b",
+    "traversal_1_0032": "631612e22a6b264909f88155f1551cb0d4f4dfe69ea608df92d23d8c3b7c43a4",
+    "traverse_script": "b1b004e3e109a8efd3e628687a37161c08bba8f19fccc16b38ed46b88a9bc640",
+    "triangle_ids": "96f88f99166b073c73ca56045d0636066aff4191bcd1235d435f4ef64338ea69"
+  },
+  "junction_rule": "purely-reconstructed joins only (observed_adjacency_count == 0); regeneration verified byte-identical to the frozen release per clade; unverified clades contribute zero junction baits",
+  "panel_sizes": {
+    "full": {
+      "by_tier": {
+        "A": 60,
+        "B": 40
+      },
+      "n": 100
+    },
+    "pilot": {
+      "by_tier": {
+        "A": 18,
+        "B": 6
+      },
+      "n": 24
+    }
+  },
+  "params": {
+    "HOSTCTL_W": 1000,
+    "JUNCTION_CAP": 3,
+    "JUNCTION_W": 1000,
+    "K": 31,
+    "MEMBER_MIN_BP": 600,
+    "MEMBER_W": 1200,
+    "MIN_GENOME_BP": 5000,
+    "MODULE_CAP": 1,
+    "MODULE_W": 1200,
+    "N_HOST_CONTROLS": 2,
+    "N_SHUFFLED_CONTROLS": 2,
+    "POSCON_W": 1200,
+    "SELECT_N_A": 18,
+    "SELECT_N_B": 6,
+    "SHUFFLED_SEED": 42,
+    "TRAV_MEMBER_MULT": 1.6,
+    "TRAV_MIN_BUDGET": 30000,
+    "TRAV_N_SAMPLES": 5,
+    "TRAV_SEED": 42,
+    "ambig_frac_max": 0.1,
+    "cross_bait_dup_frac": 0.5,
+    "entropy_min_bits": 1.2,
+    "homopolymer_run": 7,
+    "host_panel_max": 60,
+    "hostlike_frac_max": 0.1,
+    "k12_accession": "GCF_000005845.2",
+    "lowcx_frac_max": 0.3,
+    "release_flag_exclude": [
+      "too_short",
+      "long_n_run"
+    ],
+    "tier_B_allowed_flags": [
+      "host_genes",
+      "low_completeness"
+    ],
+    "usable_kmer_min": 200
+  },
+  "public_references": [
+    {
+      "accession": "NC_001416.1",
+      "label": "LAMBDA",
+      "length_bp": 48502,
+      "sha256": "78a78913d3585570fa28b7cec05e4fcf067c1aaa3740d37a377f2babda70618c"
+    },
+    {
+      "accession": "NC_002167.1",
+      "label": "HK97",
+      "length_bp": 39732,
+      "sha256": "95eb0b2a70cf58ec55848a8b2aeb7acd28d55edd8143d787c2bcb7d5395d80b5"
+    }
+  ],
+  "run_id": "be85df8be36e1c9b",
+  "script_sha256": "b57d73ef4ed028b4a74f94855eb73846515651e60ef1cc4ea077bdc9ef75242a",
+  "task": "design-e-coli",
+  "traversal_regeneration": [
+    {
+      "budget_bp": 102563,
+      "clade_id": "0_0014",
+      "partitions_bed_sha256": "2c854fbcfd19f2156b83a97cb0903f99a80c46bfba791fb7f57c0a9e26f94dea",
+      "regenerated_len_bp": 102563,
+      "released_len_bp": 102563,
+      "status": "verified",
+      "traversal_json_sha256": "21da61e7949faa2f4301a8d21bb61007f8e005b6662ff5bf539e32211cf9acf6"
+    },
+    {
+      "budget_bp": 69038,
+      "clade_id": "0_0051",
+      "partitions_bed_sha256": "a0795c6a0bfe29a9985b3ce24e2924d796d9fe8fc70d67cd3da349e756c58cc8",
+      "regenerated_len_bp": 68856,
+      "released_len_bp": 68856,
+      "status": "verified",
+      "traversal_json_sha256": "da4e22278f442c03671838197b00bda846d8979e874313f7d8c332c497953f47"
+    },
+    {
+      "budget_bp": 68376,
+      "clade_id": "0_0052",
+      "partitions_bed_sha256": "43fb1da063072647dc9e93d2b4b6bc7e0564b0824f960fac5043acb018cb50d5",
+      "regenerated_len_bp": 68376,
+      "released_len_bp": 68376,
+      "status": "verified",
+      "traversal_json_sha256": "e2b3398f9d07b16f39375ef1f1ab5b97232d8d7524d75da2147e5c4925aad662"
+    },
+    {
+      "budget_bp": 43553,
+      "clade_id": "0_0059",
+      "partitions_bed_sha256": "294ae0a4f9528fe770ca37ddf2cb771109860a85e0afe3834143e79812901df2",
+      "regenerated_len_bp": 32436,
+      "released_len_bp": 32436,
+      "status": "verified",
+      "traversal_json_sha256": "11a128d2de6d5f8d3074d15c4d40b20066f3988554a212ae12118a771991c2b9"
+    },
+    {
+      "budget_bp": 42065,
+      "clade_id": "0_0071",
+      "partitions_bed_sha256": "69a32783533be1f1a1172079d6ec8be07b8f586f5bf7f82e51698b1cdc2c604b",
+      "regenerated_len_bp": 26291,
+      "released_len_bp": 26291,
+      "status": "verified",
+      "traversal_json_sha256": "e0b897dd9260a85c2c01986e9dd65f9b8b539ee01fde6ed46beb806522a7bc23"
+    },
+    {
+      "budget_bp": 60180,
+      "clade_id": "0_0091",
+      "partitions_bed_sha256": "583c4484e8da21c016b0b2ff53dc0a97267e10fd16019fcd10a0b4af2f029c1f",
+      "regenerated_len_bp": 41044,
+      "released_len_bp": 41044,
+      "status": "verified",
+      "traversal_json_sha256": "591ea9ff3e0b9e7c70686558e36b1da7199a681afe73a7aad1b37e07f6d9fd8e"
+    },
+    {
+      "budget_bp": 30820,
+      "clade_id": "0_0094",
+      "partitions_bed_sha256": "ed1f6f7d02fba2e91fd2498a9faba0dba17322ce4e37d8f8d7ce5499753568b3",
+      "regenerated_len_bp": 30416,
+      "released_len_bp": 30416,
+      "status": "verified",
+      "traversal_json_sha256": "6222df18d25b7a5c8611cec02e6a6687e618ad08400370dddb07756d7aed1f51"
+    },
+    {
+      "budget_bp": 52104,
+      "clade_id": "10_0038",
+      "partitions_bed_sha256": "30066f73757b50955841a0d1d4837b6192b2814699e785fce75bd98ecf64f228",
+      "regenerated_len_bp": 52104,
+      "released_len_bp": 52104,
+      "status": "verified",
+      "traversal_json_sha256": "2cce5926d7f4f7d3315621461a3f6f17b5bcbf85622b432e673719dbf9027bf6"
+    },
+    {
+      "budget_bp": 37732,
+      "clade_id": "10_0044",
+      "partitions_bed_sha256": "4bb4ff9dd862b16c919e4eeca9310c762782961835f4e7cfc1c305564679fc20",
+      "regenerated_len_bp": 37488,
+      "released_len_bp": 37488,
+      "status": "verified",
+      "traversal_json_sha256": "d5840363acb8b4b8a808e9117860ec48a2610c7c30637145cb9c4747c3e38ca1"
+    },
+    {
+      "budget_bp": 36632,
+      "clade_id": "10_0057",
+      "partitions_bed_sha256": "ef9bf6c842398c17fa64dae862d4f16265a09f89d8428a51c63a534dfb115cbd",
+      "regenerated_len_bp": 26452,
+      "released_len_bp": 26452,
+      "status": "verified",
+      "traversal_json_sha256": "426f5388a0680452495f0981689f3e9dd4653168f68737c2e12d49981fb0d925"
+    },
+    {
+      "budget_bp": 59313,
+      "clade_id": "10_0070",
+      "partitions_bed_sha256": "8d75871a71f8f12c99cfc13ab46616bc52c679def6b4a6e4ffb1fbafffc9391a",
+      "regenerated_len_bp": 55002,
+      "released_len_bp": 55002,
+      "status": "verified",
+      "traversal_json_sha256": "d7ecfd891037e9e531e6e3153970a5aac7fd059d43885cbaa3f4347455c4d12d"
+    },
+    {
+      "budget_bp": 60504,
+      "clade_id": "10_0151",
+      "partitions_bed_sha256": "a68e0d4428397faf8a0a0cdd44a9599803834cb71b967bea4834c69f2397846d",
+      "regenerated_len_bp": 60479,
+      "released_len_bp": 60479,
+      "status": "verified",
+      "traversal_json_sha256": "6a606cd010e245dcb3360a192b18d8287a2e7d3260fbc0e4e71129373c4253b6"
+    },
+    {
+      "budget_bp": 57281,
+      "clade_id": "10_0172",
+      "partitions_bed_sha256": "192d529e3d76841b8b7d1e3740ff57f89f905997ace31405b0ec87e4e923d0dd",
+      "regenerated_len_bp": 44050,
+      "released_len_bp": 44050,
+      "status": "verified",
+      "traversal_json_sha256": "a0968b5c83a2ca2cac6180171f58f4f185d1f4db0e9dbe2a34c3b1c2a3568dea"
+    },
+    {
+      "budget_bp": 75825,
+      "clade_id": "10_0178",
+      "partitions_bed_sha256": "b6f7ebcb43ae7594fc1dc7620cf9a638f377ad6ac12bf8275dbeba0a2f3c2bb6",
+      "regenerated_len_bp": 62058,
+      "released_len_bp": 62058,
+      "status": "verified",
+      "traversal_json_sha256": "52bfe9090d4cf516516241e83efc66aee0cc4aaf9fc245b531ea2dfc14be6fcf"
+    },
+    {
+      "budget_bp": 84238,
+      "clade_id": "1_0004",
+      "partitions_bed_sha256": "8acfc02c74fc34b0357f2d56cca558752c99560ddf10e57fe9b913a8120b85c1",
+      "regenerated_len_bp": 84238,
+      "released_len_bp": 84238,
+      "status": "verified",
+      "traversal_json_sha256": "8c3709de8367ac06b886cb9ca2c0cc4343b9b7e43d8edcc15d66611e33513935"
+    },
+    {
+      "budget_bp": 43220,
+      "clade_id": "1_0022",
+      "partitions_bed_sha256": "0416a60855c960763df9a7b9b0a4b98ec0677a05139731deed044b851001d3d1",
+      "regenerated_len_bp": 43137,
+      "released_len_bp": 43137,
+      "status": "verified",
+      "traversal_json_sha256": "09c7dbb14ec2b41c6085e0d23ef87f9b2e2446cc885ba61b6f03aafd7a5c8ca1"
+    },
+    {
+      "budget_bp": 52878,
+      "clade_id": "1_0026",
+      "partitions_bed_sha256": "b74f848767cbea08ca0d3a07895e83bc687d765915657fdb0c74343797618323",
+      "regenerated_len_bp": 51736,
+      "released_len_bp": 51736,
+      "status": "verified",
+      "traversal_json_sha256": "2e49d577fdc20abe52565ab4f8fa70ee707638184f4d253dfab68296174a460b"
+    },
+    {
+      "budget_bp": 51992,
+      "clade_id": "1_0032",
+      "partitions_bed_sha256": "a1481ed7dcdb0e77a472cc46f41378cec0c49f9e0f31958349157f2466217815",
+      "regenerated_len_bp": 51860,
+      "released_len_bp": 51860,
+      "status": "verified",
+      "traversal_json_sha256": "631612e22a6b264909f88155f1551cb0d4f4dfe69ea608df92d23d8c3b7c43a4"
+    },
+    {
+      "budget_bp": 106697,
+      "clade_id": "0_0000",
+      "partitions_bed_sha256": "bdea380da839e6a804b622a2eb3be8aa79a6e460a4f4b74ca8a079ec15470932",
+      "regenerated_len_bp": 106696,
+      "released_len_bp": 106696,
+      "status": "verified",
+      "traversal_json_sha256": "4b9c17517a32b52ae2181a45dc0d8842336ac7fe2470be81428e0baa39ba8a83"
+    },
+    {
+      "budget_bp": 67176,
+      "clade_id": "0_0046",
+      "partitions_bed_sha256": "bed5eaa0c238aaeac93ef774e12b6984d667576bfacaec53d43c14be73a058a9",
+      "regenerated_len_bp": 67176,
+      "released_len_bp": 67176,
+      "status": "verified",
+      "traversal_json_sha256": "b136343b2171c6340d27208aa19cb3787d47ebfc335036b752d7a0736cdc1db9"
+    },
+    {
+      "budget_bp": 66065,
+      "clade_id": "0_0054",
+      "partitions_bed_sha256": "4be2b0c14c2a4115245b056517b02c0f3a6122c80fce4867e0da171fff2e1b46",
+      "regenerated_len_bp": 66064,
+      "released_len_bp": 66064,
+      "status": "verified",
+      "traversal_json_sha256": "d713402e411f98c860b731a2456cab61e60545e27882d0029532186d6e90d485"
+    },
+    {
+      "budget_bp": 71870,
+      "clade_id": "0_0067",
+      "partitions_bed_sha256": "98db1626da5693843fa9a16dba8e4e86af359112ec6f75e3e96db17ddcbf34de",
+      "regenerated_len_bp": 46334,
+      "released_len_bp": 46334,
+      "status": "verified",
+      "traversal_json_sha256": "b053cf091c34bd1264d8571b8e14739d9bc3bb3a3f89ff7d3095a9fed2bf16b5"
+    },
+    {
+      "budget_bp": 62350,
+      "clade_id": "0_0068",
+      "partitions_bed_sha256": "66a775c50b28272f804b0128a152a4251321eedd76975c721d940d534899f3b5",
+      "regenerated_len_bp": 45005,
+      "released_len_bp": 45005,
+      "status": "verified",
+      "traversal_json_sha256": "6ea8baa8cbd4dd137155931e75451fa3e9c858a7d4cf42f78057b33e8ed53ad0"
+    },
+    {
+      "budget_bp": 155150,
+      "clade_id": "10_0002",
+      "partitions_bed_sha256": "2b660fadf5f8cf0a174f7d7f53ef33be90f9e9e76cf31666f73fb21591832f0e",
+      "regenerated_len_bp": 155150,
+      "released_len_bp": 155150,
+      "status": "verified",
+      "traversal_json_sha256": "cf99471b4379a197c4e4b7b963523d9158dcafd7edd521c2e365348135638240"
+    }
+  ]
+}
