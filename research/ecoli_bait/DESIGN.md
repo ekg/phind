@@ -122,7 +122,7 @@ source molecule, forward orientation (masking is strand-symmetric).
 | `member_interior` | observed member prophage (medoid representative) | 1,200 bp centred at prophage midpoint (width = min(1200, len); skipped if < 500) | 1 / clade |
 | `control_public_reference` | λ `NC_001416.1`, HK97 `NC_002167.1` | 1,200 bp mid-genome slice (centered window at `L//2+1`); exact accessions, slice coordinates and reference sha256 recorded | **2 total** |
 | `control_shuffled_negative` | derived | fixed-seed (42) first-order Markov sequence fitted to the first accepted `interior_module` baits of 2 distinct genomes; length + mono-/dinucleotide composition matched; ≤ 5 canonical 31-mers shared with the whole panel (deterministic redraws ≤ 10); composition deviation reported | **2 total** |
-| `control_host_negative` | source host assembly | 1,000 bp centred in the largest prophage-free stretch of the prophage-bearing contig; one from **K-12 MG1655 (`GCF_000005845.2`)** and one from a selected clade's source host; expected host-like (filter validation) | **2 total** |
+| `control_host_negative` | source host assembly | 1,000 bp centred in the largest prophage-free stretch of any contig (deterministic tie-breaks); one from **K-12 MG1655 (`GCF_000005845.2`)** and one from a selected clade's source host; expected host-like (filter validation) | **2 total** |
 
 **Junction selection (E. coli-specific).** Candidate joins are consecutive
 partition pairs in the regenerated traversal genome; both partitions must
