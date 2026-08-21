@@ -329,6 +329,125 @@ def test_markov_control_gc_tracks_source():
 
 
 # ---------------------------------------------------------------------------
+# Panel self-audit (driver gate — the run must FAIL on any violation)
+# ---------------------------------------------------------------------------
+
+import design_ntm_baits as dz  # noqa: E402  (driver; import has no side effects)
+
+
+def _audit_row(bait_id, cls, seq, contig="g1", start=1, **kw):
+    return {
+        "bait_id": bait_id, "bait_class": cls, "contig": contig,
+        "start": start, "end": start + len(seq) - 1,
+        "length_bp": len(seq), "seq_sha256": bl.sha256_seq(seq),
+        "partition_a": kw.get("partition_a", ""),
+        "partition_b": kw.get("partition_b", ""),
+        "breakpoint": kw.get("breakpoint", ""),
+        "n_kmers_total": kw.get("n_kmers_total", 1000),
+        "n_usable_kmers": kw.get("n_usable_kmers", 900),
+        "gc_frac": kw.get("gc_frac", 0.5),
+    }
+
+
+def _ml_genome(n=3000, seed=99):
+    rng = np.random.default_rng(seed)
+    return "".join("ACGT"[i] for i in rng.integers(0, 4, n))
+
+
+def test_self_audit_accepts_consistent_panel():
+    g = _ml_genome()
+    seq = g[:1200]
+    dz.self_audit([("b1", seq)], [_audit_row("b1", "interior_generic", seq)],
+                  {"g1": g}, {})
+
+
+def test_self_audit_member_bait_checked_against_prophage_source():
+    g = _ml_genome(2000)
+    seq = g[:1200]
+    dz.self_audit([("b1", seq)],
+                  [_audit_row("b1", "member_interior", seq, contig="p1")],
+                  {}, {"p1": g})
+
+
+def test_self_audit_rejects_short_bait():
+    seq = _ml_genome(499)  # 499 bp < BAIT_MIN_BP
+    with pytest.raises(AssertionError, match="length"):
+        dz.self_audit([("b1", seq)],
+                      [_audit_row("b1", "interior_generic", seq)], {}, {})
+
+
+def test_self_audit_rejects_overlong_bait():
+    seq = _ml_genome(2501)  # 2501 bp > BAIT_MAX_BP
+    with pytest.raises(AssertionError, match="length"):
+        dz.self_audit([("b1", seq)],
+                      [_audit_row("b1", "interior_generic", seq)], {}, {})
+
+
+def test_self_audit_rejects_duplicate_ids():
+    g = _ml_genome()
+    seq = g[:1200]
+    rows = [_audit_row("b1", "interior_generic", seq),
+            _audit_row("b1", "interior_generic", seq)]
+    with pytest.raises(AssertionError, match="duplicate bait ids"):
+        dz.self_audit([("b1", seq), ("b1", seq)], rows, {"g1": g}, {})
+
+
+def test_self_audit_rejects_duplicate_sequences():
+    g = _ml_genome()
+    seq = g[:1200]
+    rows = [_audit_row("b1", "interior_generic", seq),
+            _audit_row("b2", "interior_generic", seq, start=1201)]
+    with pytest.raises(AssertionError, match="duplicate bait sequences"):
+        dz.self_audit([("b1", seq), ("b2", seq)], rows, {"g1": g}, {})
+
+
+def test_self_audit_rejects_sha_mismatch():
+    g = _ml_genome()
+    seq = g[:1200]
+    row = _audit_row("b1", "interior_generic", seq)
+    row["seq_sha256"] = "0" * 64
+    with pytest.raises(AssertionError, match="sha mismatch"):
+        dz.self_audit([("b1", seq)], [row], {"g1": g}, {})
+
+
+def test_self_audit_rejects_sequence_source_mismatch():
+    g = _ml_genome()
+    other = g[100:1300]
+    # manifest sha matches the record, but the record does not equal the
+    # genome slice the start/end coordinates claim
+    row = _audit_row("b1", "interior_generic", other)
+    with pytest.raises(AssertionError, match="does not match source"):
+        dz.self_audit([("b1", other)], [row], {"g1": g}, {})
+
+
+def test_self_audit_rejects_junction_not_spanning_breakpoint():
+    g = _ml_genome()
+    seq = g[:1200]
+    row = _audit_row("b1", "junction", seq, start=1,
+                     partition_a=1, partition_b=2, breakpoint=2000)
+    with pytest.raises(AssertionError, match="does not span"):
+        dz.self_audit([("b1", seq)], [row], {"g1": g}, {})
+
+
+def test_self_audit_rejects_junction_missing_partition_fields():
+    g = _ml_genome()
+    seq = g[:1200]
+    row = _audit_row("b1", "junction", seq, breakpoint=600)
+    row["partition_a"] = ""  # junction without both partitions
+    with pytest.raises(AssertionError):
+        dz.self_audit([("b1", seq)], [row], {"g1": g}, {})
+
+
+def test_self_audit_rejects_missing_kmer_stats():
+    g = _ml_genome()
+    seq = g[:1200]
+    row = _audit_row("b1", "interior_generic", seq)
+    row["n_usable_kmers"] = ""
+    with pytest.raises(AssertionError, match="missing n_usable_kmers"):
+        dz.self_audit([("b1", seq)], [row], {"g1": g}, {})
+
+
+# ---------------------------------------------------------------------------
 # FASTA round-trip and checksums
 # ---------------------------------------------------------------------------
 
