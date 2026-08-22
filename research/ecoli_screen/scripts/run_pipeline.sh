@@ -10,7 +10,7 @@ PANEL="$REPO_ROOT/research/ecoli_bait/panel/baits.fa"
 B2S="$NVME/env/bin/back_to_sequences"
 MM2="$NVME/env/bin/minimap2"
 RUN_START_FILE="$NVME/RUN_START.txt"
-cd "$HERE"
+cd "$(dirname "$HERE")"
 
 if [ ! -f "$RUN_START_FILE" ]; then
   date -u +%Y-%m-%dT%H:%M:%SZ > "$RUN_START_FILE"
