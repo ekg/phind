@@ -228,5 +228,5 @@ Justification from this run's receipts:
 | per-clade external-evidence update | `results/genome_external_evidence_update.tsv` |
 | known-phage calibration | `results/known_phage_calibration.tsv`, `.json` |
 | run summary + independence audit | `results/screen_summary.json` |
-| NVMe artifact receipt | `NVMe_MANIFEST.tsv` (25,509 rows; `.gz` in-repo) |
+| NVMe artifact receipt | `NVMe_MANIFEST.tsv.gz` (25,509 rows; uncompressed original on NVMe) |
 | screen logs | `logs/` (eutils, esummary, controls, screen, confirm) |
