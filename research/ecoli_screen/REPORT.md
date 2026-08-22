@@ -223,10 +223,10 @@ Justification from this run's receipts:
 | control-gate receipts | `results/controls_gate.json`, `logs/controls_gate.log` |
 | disk preflights | `results/E1_preflight.json`, `E2_preflight.json` |
 | download ledger + availability | NVMe `downloads/download_ledger.jsonl`, `downloads/availability.tsv` |
-| per-bait hit tables | `results/screen_hits_by_bait.tsv`, `results/hit_accessions.tsv` |
-| alignment summaries (full provenance) | `results/confirmed_hits_full_provenance.tsv` (22,625 rows), NVMe `confirm/confirm_E1E2.jsonl` |
+| per-bait hit tables | `results/screen_hits_by_bait.tsv`, `results/hit_accessions.tsv.gz` (uncompressed on NVMe) |
+| alignment summaries (full provenance) | `results/confirmed_hits_full_provenance.tsv.gz` (22,625 rows; uncompressed on NVMe), NVMe `confirm/confirm_E1E2.jsonl` |
 | per-clade external-evidence update | `results/genome_external_evidence_update.tsv` |
-| known-phage calibration | `results/known_phage_calibration.tsv`, `.json` |
+| known-phage calibration | `results/known_phage_calibration.tsv.gz` + `.json` (uncompressed on NVMe) |
 | run summary + independence audit | `results/screen_summary.json` |
 | NVMe artifact receipt | `NVMe_MANIFEST.tsv.gz` (25,509 rows; uncompressed original on NVMe) |
 | screen logs | `logs/` (eutils, esummary, controls, screen, confirm) |
