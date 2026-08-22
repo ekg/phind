@@ -1,0 +1,13 @@
+{
+ "n_confirmed_pairs": 22625,
+ "n_known_phage_matched": 1748,
+ "n_novel_no_known_match": 20877,
+ "novelty_frac": 0.9227,
+ "rule": "known-phage-matched iff bait aligns to lambda/HK97/P2 with qcov >= 0.5 AND identity >= 0.7 (RUN_PLAN \u00a710.6)",
+ "references": {
+  "lambda_NC_001416.1": "NC_001416.1.fa",
+  "HK97_NC_002167.1": "NC_002167.1.fa",
+  "P2_NC_001895.1": "NC_001895.1.fa"
+ },
+ "generated_utc": "2026-08-22T05:14:40Z"
+}

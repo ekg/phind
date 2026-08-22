@@ -44,3 +44,21 @@ recorded alongside. The archetype match strings, thresholds, tier rules,
 and budgets are unchanged; the stratification key remains the study
 accession recorded at sweep time (mapped to its BioProject accession in
 `bioproject_titles.tsv` for auditability).
+
+## A3 — 2026-08-22T05:2xZ — pipeline relative-output-path fix (files moved, not regenerated)
+
+**Observed:** `run_pipeline.sh` computed its working directory as
+`scripts/` (the `cd "$HERE"` line), so relative outputs (`../manifests`,
+`../results`, `../NVMe_MANIFEST.tsv`) landed one level above the intended
+`research/ecoli_screen/` tree (e.g. `research/results/…`). The tier
+manifests from the standalone invocation landed in `research/manifests/`.
+
+**Remediation:** fixed the script's `cd` to the package root; affected
+files were **moved bit-identical** into `research/ecoli_screen/` —
+sha256 receipts unchanged (`tierE1_frozen.tsv` `ca768d6e…`,
+`tierE2_frozen.tsv` `95f83b41…`; screen/confirm outputs untouched on
+NVMe). A per-clade merge join bug found during report assembly (bait
+`clade_id` `0_0014` vs functional-QC `clade_0_0014_ML`) was fixed in
+`summarize_screen_ecoli.py` and the summary + merge **re-run from the
+frozen NVMe screen JSONLs** (deterministic; screen/confirm outputs
+untouched). No thresholds, tiers, gates, or hit definitions affected.

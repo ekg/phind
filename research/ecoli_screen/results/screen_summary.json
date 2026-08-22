@@ -1,0 +1,1095 @@
+{
+ "n_screened": 15105,
+ "n_hit_accessions": 10389,
+ "negative_gate_violations": [],
+ "effective_independence": {
+  "n_hit_accessions": 10389,
+  "n_distinct_bioprojects": 510,
+  "top_bioprojects": [
+   [
+    "SRP456113",
+    748
+   ],
+   [
+    "SRP362296",
+    471
+   ],
+   [
+    "SRP068615",
+    414
+   ],
+   [
+    "ERP165651",
+    361
+   ],
+   [
+    "SRP254876",
+    344
+   ],
+   [
+    "SRP567947",
+    338
+   ],
+   [
+    "ERP126161",
+    197
+   ],
+   [
+    "SRP255560",
+    187
+   ],
+   [
+    "SRP066943",
+    137
+   ],
+   [
+    "ERP105430",
+    135
+   ],
+   [
+    "ERP021173",
+    123
+   ],
+   [
+    "SRP546246",
+    118
+   ],
+   [
+    "SRP434545",
+    111
+   ],
+   [
+    "SRP027327",
+    104
+   ],
+   [
+    "ERP002086",
+    101
+   ]
+  ],
+  "n_distinct_download_sha256": 10389,
+  "n_sha256_groups_with_multiple_runs": 0,
+  "identical_assembly_groups": {},
+  "note": "per-clade/per-bait 'n accessions' is an upper bound on independent observations (clone complexes + re-sequenced isolates collapse; identical zst sha256 = identical file)"
+ },
+ "per_bait": {
+  "ECBAIT_0_0000_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 10699,
+   "n_cov_ge_0.5": 915,
+   "n_cov_ge_thr": 415,
+   "max_cov": 0.735,
+   "best_accession": "ERR3580750"
+  },
+  "ECBAIT_0_0000_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 2479,
+   "n_cov_ge_0.5": 170,
+   "n_cov_ge_thr": 153,
+   "max_cov": 0.9701,
+   "best_accession": "SRR957869"
+  },
+  "ECBAIT_0_0000_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 11652,
+   "n_cov_ge_0.5": 2390,
+   "n_cov_ge_thr": 1505,
+   "max_cov": 0.9649,
+   "best_accession": "SRR9697014"
+  },
+  "ECBAIT_0_0000_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 3500,
+   "n_cov_ge_0.5": 1499,
+   "n_cov_ge_thr": 1147,
+   "max_cov": 1.0,
+   "best_accession": "SRR9984633"
+  },
+  "ECBAIT_0_0014_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 6629,
+   "n_cov_ge_0.5": 152,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.653,
+   "best_accession": "SRR958315"
+  },
+  "ECBAIT_0_0014_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 3446,
+   "n_cov_ge_0.5": 23,
+   "n_cov_ge_thr": 22,
+   "max_cov": 0.9691,
+   "best_accession": "SRR34854872"
+  },
+  "ECBAIT_0_0014_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1995,
+   "n_cov_ge_0.5": 305,
+   "n_cov_ge_thr": 75,
+   "max_cov": 0.9711,
+   "best_accession": "SRR958316"
+  },
+  "ECBAIT_0_0014_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 6052,
+   "n_cov_ge_0.5": 268,
+   "n_cov_ge_thr": 172,
+   "max_cov": 1.0,
+   "best_accession": "SRR8871838"
+  },
+  "ECBAIT_0_0046_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 767,
+   "n_cov_ge_0.5": 30,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6239,
+   "best_accession": "ERR4467746"
+  },
+  "ECBAIT_0_0046_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 501,
+   "n_cov_ge_0.5": 336,
+   "n_cov_ge_thr": 26,
+   "max_cov": 0.9691,
+   "best_accession": "SRR8723272"
+  },
+  "ECBAIT_0_0046_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 904,
+   "n_cov_ge_0.5": 348,
+   "n_cov_ge_thr": 117,
+   "max_cov": 0.9598,
+   "best_accession": "SRR8869644"
+  },
+  "ECBAIT_0_0046_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 6291,
+   "n_cov_ge_0.5": 362,
+   "n_cov_ge_thr": 329,
+   "max_cov": 1.0,
+   "best_accession": "SRR8723272"
+  },
+  "ECBAIT_0_0051_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 45,
+   "n_cov_ge_0.5": 6,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6068,
+   "best_accession": "SRR15686321"
+  },
+  "ECBAIT_0_0051_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 225,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3103,
+   "best_accession": "SRR15686333"
+  },
+  "ECBAIT_0_0051_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 510,
+   "n_cov_ge_0.5": 6,
+   "n_cov_ge_thr": 5,
+   "max_cov": 1.0,
+   "best_accession": "SRR21990375"
+  },
+  "ECBAIT_0_0052_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1665,
+   "n_cov_ge_0.5": 824,
+   "n_cov_ge_thr": 6,
+   "max_cov": 0.7564,
+   "best_accession": "SRR19633185"
+  },
+  "ECBAIT_0_0052_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1660,
+   "n_cov_ge_0.5": 435,
+   "n_cov_ge_thr": 84,
+   "max_cov": 0.7856,
+   "best_accession": "SRR32363298"
+  },
+  "ECBAIT_0_0052_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1641,
+   "n_cov_ge_0.5": 1232,
+   "n_cov_ge_thr": 240,
+   "max_cov": 0.8701,
+   "best_accession": "SRR29636634"
+  },
+  "ECBAIT_0_0052_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1635,
+   "n_cov_ge_0.5": 1065,
+   "n_cov_ge_thr": 19,
+   "max_cov": 1.0,
+   "best_accession": "SRR25360082"
+  },
+  "ECBAIT_0_0054_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 7738,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.4009,
+   "best_accession": "SRR8871749"
+  },
+  "ECBAIT_0_0054_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1689,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3546,
+   "best_accession": "SRR15686326"
+  },
+  "ECBAIT_0_0054_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 14562,
+   "n_cov_ge_0.5": 60,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6381,
+   "best_accession": "SRR25710468"
+  },
+  "ECBAIT_0_0054_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 14531,
+   "n_cov_ge_0.5": 5,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5144,
+   "best_accession": "SRR31768884"
+  },
+  "ECBAIT_0_0054_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1367,
+   "n_cov_ge_0.5": 580,
+   "n_cov_ge_thr": 250,
+   "max_cov": 1.0,
+   "best_accession": "SRR30408859"
+  },
+  "ECBAIT_0_0059_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 158,
+   "n_cov_ge_0.5": 50,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5773,
+   "best_accession": "SRR30993007"
+  },
+  "ECBAIT_0_0059_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 963,
+   "n_cov_ge_0.5": 67,
+   "n_cov_ge_thr": 40,
+   "max_cov": 0.8722,
+   "best_accession": "SRR15102997"
+  },
+  "ECBAIT_0_0059_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 167,
+   "n_cov_ge_0.5": 60,
+   "n_cov_ge_thr": 39,
+   "max_cov": 0.8526,
+   "best_accession": "SRR13848130"
+  },
+  "ECBAIT_0_0059_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 157,
+   "n_cov_ge_0.5": 40,
+   "n_cov_ge_thr": 35,
+   "max_cov": 0.8546,
+   "best_accession": "SRR31768884"
+  },
+  "ECBAIT_0_0059_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 154,
+   "n_cov_ge_0.5": 96,
+   "n_cov_ge_thr": 32,
+   "max_cov": 1.0,
+   "best_accession": "SRR9663526"
+  },
+  "ECBAIT_0_0067_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 14599,
+   "n_cov_ge_0.5": 15,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5863,
+   "best_accession": "ERR12019255"
+  },
+  "ECBAIT_0_0067_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 85,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.4619,
+   "best_accession": "SRR641909"
+  },
+  "ECBAIT_0_0067_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 204,
+   "n_cov_ge_0.5": 16,
+   "n_cov_ge_thr": 8,
+   "max_cov": 0.8433,
+   "best_accession": "SRR641909"
+  },
+  "ECBAIT_0_0067_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 493,
+   "n_cov_ge_0.5": 78,
+   "n_cov_ge_thr": 73,
+   "max_cov": 1.0,
+   "best_accession": "SRR641909"
+  },
+  "ECBAIT_0_0068_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 86,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.1726,
+   "best_accession": "SRR23867151"
+  },
+  "ECBAIT_0_0068_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 67,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3711,
+   "best_accession": "SRR23867151"
+  },
+  "ECBAIT_0_0068_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 64,
+   "n_cov_ge_0.5": 9,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5515,
+   "best_accession": "SRR23867151"
+  },
+  "ECBAIT_0_0068_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 65,
+   "n_cov_ge_0.5": 10,
+   "n_cov_ge_thr": 9,
+   "max_cov": 0.8186,
+   "best_accession": "SRR23867151"
+  },
+  "ECBAIT_0_0068_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 38,
+   "n_cov_ge_0.5": 10,
+   "n_cov_ge_thr": 10,
+   "max_cov": 1.0,
+   "best_accession": "SRR23867151"
+  },
+  "ECBAIT_0_0071_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 88,
+   "n_cov_ge_0.5": 25,
+   "n_cov_ge_thr": 24,
+   "max_cov": 0.9496,
+   "best_accession": "SRR18212291"
+  },
+  "ECBAIT_0_0071_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 34,
+   "n_cov_ge_0.5": 7,
+   "n_cov_ge_thr": 7,
+   "max_cov": 0.9711,
+   "best_accession": "SRR18212291"
+  },
+  "ECBAIT_0_0071_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 21,
+   "n_cov_ge_0.5": 7,
+   "n_cov_ge_thr": 7,
+   "max_cov": 0.9691,
+   "best_accession": "SRR18212291"
+  },
+  "ECBAIT_0_0071_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 33,
+   "n_cov_ge_0.5": 7,
+   "n_cov_ge_thr": 7,
+   "max_cov": 0.9691,
+   "best_accession": "ERR12331461"
+  },
+  "ECBAIT_0_0071_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 1838,
+   "n_cov_ge_0.5": 10,
+   "n_cov_ge_thr": 10,
+   "max_cov": 1.0,
+   "best_accession": "SRR18212291"
+  },
+  "ECBAIT_0_0091_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 113,
+   "n_cov_ge_0.5": 28,
+   "n_cov_ge_thr": 8,
+   "max_cov": 0.9222,
+   "best_accession": "SRR25710365"
+  },
+  "ECBAIT_0_0091_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 444,
+   "n_cov_ge_0.5": 27,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6649,
+   "best_accession": "SRR25710388"
+  },
+  "ECBAIT_0_0091_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 143,
+   "n_cov_ge_0.5": 18,
+   "n_cov_ge_thr": 15,
+   "max_cov": 0.8722,
+   "best_accession": "SRR25710365"
+  },
+  "ECBAIT_0_0091_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 108,
+   "n_cov_ge_0.5": 30,
+   "n_cov_ge_thr": 20,
+   "max_cov": 0.8495,
+   "best_accession": "SRR25710230"
+  },
+  "ECBAIT_0_0091_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 339,
+   "n_cov_ge_0.5": 39,
+   "n_cov_ge_thr": 34,
+   "max_cov": 1.0,
+   "best_accession": "SRR25710230"
+  },
+  "ECBAIT_0_0094_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 167,
+   "n_cov_ge_0.5": 3,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5641,
+   "best_accession": "SRR15686331"
+  },
+  "ECBAIT_0_0094_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 233,
+   "n_cov_ge_0.5": 13,
+   "n_cov_ge_thr": 6,
+   "max_cov": 0.7526,
+   "best_accession": "ERR12331458"
+  },
+  "ECBAIT_0_0094_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 893,
+   "n_cov_ge_0.5": 8,
+   "n_cov_ge_thr": 1,
+   "max_cov": 0.7,
+   "best_accession": "SRR23873582"
+  },
+  "ECBAIT_0_0094_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 820,
+   "n_cov_ge_0.5": 4,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6433,
+   "best_accession": "SRR15686331"
+  },
+  "ECBAIT_0_0094_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 243,
+   "n_cov_ge_0.5": 80,
+   "n_cov_ge_thr": 65,
+   "max_cov": 0.9111,
+   "best_accession": "SRR15686331"
+  },
+  "ECBAIT_10_0002_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 13020,
+   "n_cov_ge_0.5": 2895,
+   "n_cov_ge_thr": 4,
+   "max_cov": 0.7103,
+   "best_accession": "ERR10640052"
+  },
+  "ECBAIT_10_0002_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 2677,
+   "n_cov_ge_0.5": 2015,
+   "n_cov_ge_thr": 1086,
+   "max_cov": 0.8691,
+   "best_accession": "SRR30178795"
+  },
+  "ECBAIT_10_0002_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 10963,
+   "n_cov_ge_0.5": 1222,
+   "n_cov_ge_thr": 907,
+   "max_cov": 0.9052,
+   "best_accession": "SRR8723275"
+  },
+  "ECBAIT_10_0002_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 13283,
+   "n_cov_ge_0.5": 703,
+   "n_cov_ge_thr": 7,
+   "max_cov": 0.7155,
+   "best_accession": "ERR1937877"
+  },
+  "ECBAIT_10_0002_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 4392,
+   "n_cov_ge_0.5": 3532,
+   "n_cov_ge_thr": 3328,
+   "max_cov": 1.0,
+   "best_accession": "SRR9696922"
+  },
+  "ECBAIT_10_0038_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 5542,
+   "n_cov_ge_0.5": 49,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6966,
+   "best_accession": "SRR15686325"
+  },
+  "ECBAIT_10_0038_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 2918,
+   "n_cov_ge_0.5": 29,
+   "n_cov_ge_thr": 11,
+   "max_cov": 0.8608,
+   "best_accession": "SRR35332982"
+  },
+  "ECBAIT_10_0038_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 2719,
+   "n_cov_ge_0.5": 10,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6691,
+   "best_accession": "SRR15686320"
+  },
+  "ECBAIT_10_0038_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 147,
+   "n_cov_ge_0.5": 50,
+   "n_cov_ge_thr": 47,
+   "max_cov": 1.0,
+   "best_accession": "SRR35332975"
+  },
+  "ECBAIT_10_0044_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 675,
+   "n_cov_ge_0.5": 407,
+   "n_cov_ge_thr": 234,
+   "max_cov": 0.8915,
+   "best_accession": "DRR275248"
+  },
+  "ECBAIT_10_0044_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 12111,
+   "n_cov_ge_0.5": 68,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6278,
+   "best_accession": "SRR34748689"
+  },
+  "ECBAIT_10_0044_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 669,
+   "n_cov_ge_0.5": 345,
+   "n_cov_ge_thr": 23,
+   "max_cov": 0.8423,
+   "best_accession": "ERR12186908"
+  },
+  "ECBAIT_10_0044_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 675,
+   "n_cov_ge_0.5": 173,
+   "n_cov_ge_thr": 5,
+   "max_cov": 0.9,
+   "best_accession": "SRR063740"
+  },
+  "ECBAIT_10_0044_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 675,
+   "n_cov_ge_0.5": 508,
+   "n_cov_ge_thr": 412,
+   "max_cov": 1.0,
+   "best_accession": "SRR8292234"
+  },
+  "ECBAIT_10_0057_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 52,
+   "n_cov_ge_0.5": 25,
+   "n_cov_ge_thr": 24,
+   "max_cov": 0.9496,
+   "best_accession": "SRR32476178"
+  },
+  "ECBAIT_10_0057_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 62,
+   "n_cov_ge_0.5": 24,
+   "n_cov_ge_thr": 23,
+   "max_cov": 0.9722,
+   "best_accession": "SRR30992947"
+  },
+  "ECBAIT_10_0057_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 9335,
+   "n_cov_ge_0.5": 8907,
+   "n_cov_ge_thr": 8271,
+   "max_cov": 1.0,
+   "best_accession": "SRR9696922"
+  },
+  "ECBAIT_10_0070_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 109,
+   "n_cov_ge_0.5": 1,
+   "n_cov_ge_thr": 1,
+   "max_cov": 0.7316,
+   "best_accession": "SRR30408952"
+  },
+  "ECBAIT_10_0070_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 114,
+   "n_cov_ge_0.5": 1,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.532,
+   "best_accession": "ERR2019148"
+  },
+  "ECBAIT_10_0070_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 132,
+   "n_cov_ge_0.5": 1,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5,
+   "best_accession": "ERR2632223"
+  },
+  "ECBAIT_10_0070_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 127,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3897,
+   "best_accession": "SRR11148639"
+  },
+  "ECBAIT_10_0070_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 71,
+   "n_cov_ge_0.5": 6,
+   "n_cov_ge_thr": 4,
+   "max_cov": 1.0,
+   "best_accession": "SRR11148639"
+  },
+  "ECBAIT_10_0151_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 12429,
+   "n_cov_ge_0.5": 522,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6538,
+   "best_accession": "SRR14681369"
+  },
+  "ECBAIT_10_0151_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 12293,
+   "n_cov_ge_0.5": 427,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6722,
+   "best_accession": "SRR15686322"
+  },
+  "ECBAIT_10_0151_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 14057,
+   "n_cov_ge_0.5": 210,
+   "n_cov_ge_thr": 3,
+   "max_cov": 0.7588,
+   "best_accession": "SRR15927318"
+  },
+  "ECBAIT_10_0151_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 12322,
+   "n_cov_ge_0.5": 1270,
+   "n_cov_ge_thr": 243,
+   "max_cov": 0.9526,
+   "best_accession": "SRR7879894"
+  },
+  "ECBAIT_10_0151_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 12309,
+   "n_cov_ge_0.5": 910,
+   "n_cov_ge_thr": 132,
+   "max_cov": 0.947,
+   "best_accession": "SRR18212064"
+  },
+  "ECBAIT_10_0172_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 10711,
+   "n_cov_ge_0.5": 324,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6726,
+   "best_accession": "ERR10712167"
+  },
+  "ECBAIT_10_0172_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 12137,
+   "n_cov_ge_0.5": 9,
+   "n_cov_ge_thr": 1,
+   "max_cov": 0.7474,
+   "best_accession": "ERR3317681"
+  },
+  "ECBAIT_10_0172_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 11931,
+   "n_cov_ge_0.5": 156,
+   "n_cov_ge_thr": 21,
+   "max_cov": 0.7979,
+   "best_accession": "SRR14514769"
+  },
+  "ECBAIT_10_0172_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 13798,
+   "n_cov_ge_0.5": 152,
+   "n_cov_ge_thr": 33,
+   "max_cov": 0.7928,
+   "best_accession": "ERR12186909"
+  },
+  "ECBAIT_10_0172_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 5696,
+   "n_cov_ge_0.5": 3371,
+   "n_cov_ge_thr": 1537,
+   "max_cov": 0.9077,
+   "best_accession": "DRR415722"
+  },
+  "ECBAIT_10_0178_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 684,
+   "n_cov_ge_0.5": 116,
+   "n_cov_ge_thr": 62,
+   "max_cov": 0.7111,
+   "best_accession": "DRR275248"
+  },
+  "ECBAIT_10_0178_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 647,
+   "n_cov_ge_0.5": 283,
+   "n_cov_ge_thr": 88,
+   "max_cov": 0.8021,
+   "best_accession": "DRR275248"
+  },
+  "ECBAIT_10_0178_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 5208,
+   "n_cov_ge_0.5": 79,
+   "n_cov_ge_thr": 15,
+   "max_cov": 0.8784,
+   "best_accession": "ERR10712046"
+  },
+  "ECBAIT_10_0178_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 11942,
+   "n_cov_ge_0.5": 92,
+   "n_cov_ge_thr": 68,
+   "max_cov": 0.9387,
+   "best_accession": "SRR17529613"
+  },
+  "ECBAIT_1_0004_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 11249,
+   "n_cov_ge_0.5": 87,
+   "n_cov_ge_thr": 10,
+   "max_cov": 0.7957,
+   "best_accession": "ERR9845674"
+  },
+  "ECBAIT_1_0004_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 8311,
+   "n_cov_ge_0.5": 2475,
+   "n_cov_ge_thr": 283,
+   "max_cov": 0.8278,
+   "best_accession": "ERR3712911"
+  },
+  "ECBAIT_1_0004_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 7955,
+   "n_cov_ge_0.5": 879,
+   "n_cov_ge_thr": 223,
+   "max_cov": 0.8907,
+   "best_accession": "SRR7879899"
+  },
+  "ECBAIT_1_0004_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 13518,
+   "n_cov_ge_0.5": 418,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6649,
+   "best_accession": "SRR933513"
+  },
+  "ECBAIT_1_0004_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 3825,
+   "n_cov_ge_0.5": 740,
+   "n_cov_ge_thr": 79,
+   "max_cov": 1.0,
+   "best_accession": "SRR958780"
+  },
+  "ECBAIT_1_0022_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 3244,
+   "n_cov_ge_0.5": 3,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5171,
+   "best_accession": "ERR11812672"
+  },
+  "ECBAIT_1_0022_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 435,
+   "n_cov_ge_0.5": 105,
+   "n_cov_ge_thr": 68,
+   "max_cov": 0.9392,
+   "best_accession": "SRR7879935"
+  },
+  "ECBAIT_1_0022_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 521,
+   "n_cov_ge_0.5": 255,
+   "n_cov_ge_thr": 217,
+   "max_cov": 0.9691,
+   "best_accession": "SRR8871766"
+  },
+  "ECBAIT_1_0022_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 485,
+   "n_cov_ge_0.5": 140,
+   "n_cov_ge_thr": 58,
+   "max_cov": 1.0,
+   "best_accession": "SRR7879935"
+  },
+  "ECBAIT_1_0026_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 71,
+   "n_cov_ge_0.5": 5,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.5838,
+   "best_accession": "SRR11046878"
+  },
+  "ECBAIT_1_0026_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 301,
+   "n_cov_ge_0.5": 168,
+   "n_cov_ge_thr": 55,
+   "max_cov": 0.832,
+   "best_accession": "SRR32571211"
+  },
+  "ECBAIT_1_0026_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 374,
+   "n_cov_ge_0.5": 10,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.6711,
+   "best_accession": "SRR34504574"
+  },
+  "ECBAIT_1_0026_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 72,
+   "n_cov_ge_0.5": 32,
+   "n_cov_ge_thr": 26,
+   "max_cov": 0.9282,
+   "best_accession": "DRR129837"
+  },
+  "ECBAIT_1_0032_INTERIOR_MODULE_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 85,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.1368,
+   "best_accession": "SRR18212042"
+  },
+  "ECBAIT_1_0032_JUNCTION_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 505,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.234,
+   "best_accession": "ERR4843458"
+  },
+  "ECBAIT_1_0032_JUNCTION_02": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 186,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.4221,
+   "best_accession": "ERR4843458"
+  },
+  "ECBAIT_1_0032_JUNCTION_03": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 54,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.3876,
+   "best_accession": "ERR4843458"
+  },
+  "ECBAIT_1_0032_MEMBER_INTERIOR_01": {
+   "role": "ecoli_bait",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 4,
+   "n_cov_ge_0.5": 1,
+   "n_cov_ge_thr": 1,
+   "max_cov": 0.7538,
+   "best_accession": "ERR4843458"
+  },
+  "ECBAIT_HOST_CONTROL_01": {
+   "role": "host_control_diagnostic",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 10711,
+   "n_cov_ge_0.5": 6192,
+   "n_cov_ge_thr": 4252,
+   "max_cov": 1.0,
+   "best_accession": "SRR9723040"
+  },
+  "ECBAIT_HOST_CONTROL_02": {
+   "role": "host_control_diagnostic",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 14636,
+   "n_cov_ge_0.5": 8895,
+   "n_cov_ge_thr": 1757,
+   "max_cov": 1.0,
+   "best_accession": "SRR999495"
+  },
+  "ECBAIT_POSCON_HK97_02": {
+   "role": "positive_control",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 4939,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.4838,
+   "best_accession": "SRR14994018"
+  },
+  "ECBAIT_POSCON_LAMBDA_01": {
+   "role": "positive_control",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 4509,
+   "n_cov_ge_0.5": 112,
+   "n_cov_ge_thr": 97,
+   "max_cov": 1.0,
+   "best_accession": "SRR7812251"
+  },
+  "ECBAIT_SHUF_CONTROL_01": {
+   "role": "negative_control",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR999495"
+  },
+  "ECBAIT_SHUF_CONTROL_02": {
+   "role": "negative_control",
+   "n_accessions": 15105,
+   "n_cov_gt_0": 0,
+   "n_cov_ge_0.5": 0,
+   "n_cov_ge_thr": 0,
+   "max_cov": 0.0,
+   "best_accession": "SRR999495"
+  }
+ },
+ "generated_utc": "2026-08-22T05:17:07Z"
+}

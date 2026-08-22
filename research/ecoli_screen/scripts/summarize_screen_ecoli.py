@@ -166,7 +166,8 @@ def main():
             cid = m.get("clade_id", "")
             if not cid:
                 continue
-            ca = clade_agg[cid]
+            qc_id = f"clade_{cid}_ML"  # functional-QC genome_id / clade_id form
+            ca = clade_agg[qc_id]
             ca["n_hits"] += a["n_cov_ge_thr"]
             if a["n_cov_ge_thr"]:
                 ca["baits"].add(b)

@@ -1,0 +1,94 @@
+{
+ "generated_utc": "2026-08-22T00:30:07Z",
+ "rows": [
+  {
+   "bait": "ECBAIT_POSCON_LAMBDA_01",
+   "reference": "NC_001416.1.fa",
+   "kmer_coverage": 1.0,
+   "minimap2": {
+    "preset": "sr",
+    "qcov": 1.0,
+    "identity": 1.0,
+    "n_matches": 1
+   },
+   "pass": true
+  },
+  {
+   "bait": "ECBAIT_POSCON_HK97_02",
+   "reference": "NC_002167.1.fa",
+   "kmer_coverage": 1.0,
+   "minimap2": {
+    "preset": "sr",
+    "qcov": 1.0,
+    "identity": 1.0,
+    "n_matches": 1
+   },
+   "pass": true
+  },
+  {
+   "bait": "ECBAIT_SHUF_CONTROL_01",
+   "reference": "NC_001416.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "ECBAIT_SHUF_CONTROL_02",
+   "reference": "NC_001416.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "ECBAIT_HOST_CONTROL_01",
+   "reference": "NC_001416.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": null,
+   "diagnostic": "host_control_expected_host_like"
+  },
+  {
+   "bait": "ECBAIT_HOST_CONTROL_02",
+   "reference": "NC_001416.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": null,
+   "diagnostic": "host_control_expected_host_like"
+  },
+  {
+   "bait": "ECBAIT_SHUF_CONTROL_01",
+   "reference": "NC_002167.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "ECBAIT_SHUF_CONTROL_02",
+   "reference": "NC_002167.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": true
+  },
+  {
+   "bait": "ECBAIT_HOST_CONTROL_01",
+   "reference": "NC_002167.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": null,
+   "diagnostic": "host_control_expected_host_like"
+  },
+  {
+   "bait": "ECBAIT_HOST_CONTROL_02",
+   "reference": "NC_002167.1.fa",
+   "kmer_coverage": 0.0,
+   "minimap2": null,
+   "pass": null,
+   "diagnostic": "host_control_expected_host_like"
+  }
+ ],
+ "gates": {
+  "positive_controls": "PASS",
+  "negative_controls_refs": "PASS",
+  "overall": "PASS"
+ }
+}

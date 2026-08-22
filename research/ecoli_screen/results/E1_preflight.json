@@ -1,0 +1,21 @@
+{
+ "tier": "E1",
+ "n_runs_frozen": 11975,
+ "n_sampled": 500,
+ "seed": 20260822,
+ "n_ok": 186,
+ "n_404": 314,
+ "n_err": 0,
+ "frac_in_logan": 0.372,
+ "size_mb": {
+  "min": 1.328,
+  "median": 1.504,
+  "mean": 1.528,
+  "p90": 1.593,
+  "max": 2.649
+ },
+ "projected_total_gb": 6.8,
+ "max_bytes_gb": 429.5,
+ "within_budget": true,
+ "generated_utc": "2026-08-22T02:02:26Z"
+}
