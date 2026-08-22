@@ -219,7 +219,7 @@ Justification from this run's receipts:
 | Deliverable | Path |
 |---|---|
 | preregistered plan + amendments | `RUN_PLAN.md`, `AMENDMENTS.md` |
-| universe + tier manifests (queries, seed, strata, sha256, justification) | `manifests/tierE1_manifest.json`, `tierE2_manifest.json`, frozen TSVs (NVMe originals + `ecoli_universe_manifest.json`) |
+| universe + tier manifests (queries, seed, strata, sha256, justification) | `manifests/tierE1_manifest.json`, `tierE2_manifest.json`, `manifests/tierE{1,2}_frozen.tsv.gz` (gzip-compressed, byte-identical after gunzip — sha256 recorded per manifest; originals on NVMe) |
 | control-gate receipts | `results/controls_gate.json`, `logs/controls_gate.log` |
 | disk preflights | `results/E1_preflight.json`, `E2_preflight.json` |
 | download ledger + availability | NVMe `downloads/download_ledger.jsonl`, `downloads/availability.tsv` |

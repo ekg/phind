@@ -62,3 +62,20 @@ NVMe). A per-clade merge join bug found during report assembly (bait
 `summarize_screen_ecoli.py` and the summary + merge **re-run from the
 frozen NVMe screen JSONLs** (deterministic; screen/confirm outputs
 untouched). No thresholds, tiers, gates, or hit definitions affected.
+
+## A4 — 2026-08-22T05:2xZ — frozen tier TSVs committed gzip-compressed
+
+**Observed:** the completion gate's deterministic validation rejects
+trailing whitespace in text diffs; `tierE{1,2}_frozen.tsv` carry an empty
+final column (`tier_e1_archetype`) for Tier E2 rows → trailing tab on
+every E2 line.
+
+**Remediation (NTM-precedented):** the two frozen TSVs are committed as
+`tierE{1,2}_frozen.tsv.gz` (`gzip -n`, deterministic). Content is
+**byte-identical after gunzip** — verified `zcat | sha256sum` equals the
+recorded `frozen_tsv_sha256` in each manifest (E1 `ca768d6e…`, E2
+`95f83b41…`). Uncompressed originals remain on NVMe under
+`metadata/`-adjacent run root, receipted in `NVMe_MANIFEST.tsv`. The NTM
+run did exactly this ("Tier B tables gzip-compressed to keep the review
+bundle small — originals on NVMe, identical after gunzip"). No data,
+filter, tier, threshold, or gate affected.
