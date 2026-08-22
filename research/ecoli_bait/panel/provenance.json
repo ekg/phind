@@ -520,8 +520,8 @@
     "pharokka_cds": "89739e16057654f3c4ba04449472c30de3c88f1887f539e9781c421b59f39d1f",
     "prophage_calls": "6c8e3df4fce6bfa1119a594f83b758bd4ce097a22d9ee25289fdf2fbcb362996",
     "prophages_fa": "ed85b2fb549be18bc638d8485f5b5add7c2d394f3822efe66a90ca6d979758d3",
-    "public_ref_NC_001416.1": "78a78913d3585570fa28b7cec05e4fcf067c1aaa3740d37a377f2babda70618c",
-    "public_ref_NC_002167.1": "95eb0b2a70cf58ec55848a8b2aeb7acd28d55edd8143d787c2bcb7d5395d80b5",
+    "public_ref_NC_001416.1": "80897a7ee6b8aaffbab5442e0daad292592ac74701dbdf35af4b400ae0770ef3",
+    "public_ref_NC_002167.1": "7996539385b22a6442ecf7a4682b22791682e84af084813198ef9e3238339080",
     "release_manifest": "639a2548db42240fcf96fbbcd0ec2e5d6d1a1747a7e8085411268990e701f57f",
     "release_qc": "22435f1122bfbe38d9324e93852986799389b13362a0eea69e4075f8c7399d26",
     "staged_0_0000/partitions.bed": "bdea380da839e6a804b622a2eb3be8aa79a6e460a4f4b74ca8a079ec15470932",
@@ -647,16 +647,16 @@
       "accession": "NC_001416.1",
       "label": "LAMBDA",
       "length_bp": 48502,
-      "sha256": "78a78913d3585570fa28b7cec05e4fcf067c1aaa3740d37a377f2babda70618c"
+      "sha256": "80897a7ee6b8aaffbab5442e0daad292592ac74701dbdf35af4b400ae0770ef3"
     },
     {
       "accession": "NC_002167.1",
       "label": "HK97",
       "length_bp": 39732,
-      "sha256": "95eb0b2a70cf58ec55848a8b2aeb7acd28d55edd8143d787c2bcb7d5395d80b5"
+      "sha256": "7996539385b22a6442ecf7a4682b22791682e84af084813198ef9e3238339080"
     }
   ],
-  "run_id": "be85df8be36e1c9b",
+  "run_id": "2c0055272b71cc48",
   "script_sha256": "b57d73ef4ed028b4a74f94855eb73846515651e60ef1cc4ea077bdc9ef75242a",
   "task": "design-e-coli",
   "traversal_regeneration": [
