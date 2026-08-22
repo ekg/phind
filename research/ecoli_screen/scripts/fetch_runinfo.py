@@ -34,7 +34,7 @@ def http_get(url, retries=3, backoff=(5, 20, 60)):
     last = None
     for attempt in range(retries + 1):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "local-ntm-logan/1.0"})
+            req = urllib.request.Request(url, headers={"User-Agent": "local-ecoli-logan/1.0"})
             with urllib.request.urlopen(req, timeout=180) as r:
                 return r.read()
         except Exception as e:  # noqa: BLE001
@@ -42,6 +42,25 @@ def http_get(url, retries=3, backoff=(5, 20, 60)):
             if attempt < retries:
                 time.sleep(backoff[min(attempt, len(backoff) - 1)])
     raise RuntimeError(f"GET failed after {retries} retries: {url}: {last}")
+
+
+def http_post(url, body, retries=3, backoff=(5, 20, 60)):
+    """Amendment A1: esummary via POST (HTTP 414 on GET with long id lists)."""
+    last = None
+    for attempt in range(retries + 1):
+        try:
+            data = body.encode()
+            req = urllib.request.Request(
+                url, data=data,
+                headers={"User-Agent": "local-ecoli-logan/1.0",
+                         "Content-Type": "application/x-www-form-urlencoded"})
+            with urllib.request.urlopen(req, timeout=180) as r:
+                return r.read()
+        except Exception as e:  # noqa: BLE001
+            last = e
+            if attempt < retries:
+                time.sleep(backoff[min(attempt, len(backoff) - 1)])
+    raise RuntimeError(f"POST failed after {retries} retries: {url} ({len(body)} B): {last}")
 
 
 def parse_uid_entry(e):
@@ -78,9 +97,9 @@ def main():
             w.writeheader()
         for i in range(0, len(todo), args.chunk):
             batch = todo[i:i + args.chunk]
-            q = urllib.parse.urlencode({"db": "sra", "id": ",".join(batch),
-                                        "retmode": "json"})
-            body = http_get(f"{EUTILS}/esummary.fcgi?{q}")
+            body = http_post(f"{EUTILS}/esummary.fcgi",
+                             urllib.parse.urlencode({"db": "sra", "id": ",".join(batch),
+                                                     "retmode": "json"}))
             data = json.loads(body).get("result", {})
             n_rows = 0
             for uid in batch:
