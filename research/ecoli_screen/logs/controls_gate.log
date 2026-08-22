@@ -1,0 +1,11 @@
+{"positive_controls": "PASS", "negative_controls_refs": "PASS", "overall": "PASS"}
+  ECBAIT_POSCON_LAMBDA_01    vs NC_001416.1.fa kcov=1.0 aln={'preset': 'sr', 'qcov': 1.0, 'identity': 1.0, 'n_matches': 1} pass=True
+  ECBAIT_POSCON_HK97_02      vs NC_002167.1.fa kcov=1.0 aln={'preset': 'sr', 'qcov': 1.0, 'identity': 1.0, 'n_matches': 1} pass=True
+  ECBAIT_SHUF_CONTROL_01     vs NC_001416.1.fa kcov=0.0 aln=None pass=True
+  ECBAIT_SHUF_CONTROL_02     vs NC_001416.1.fa kcov=0.0 aln=None pass=True
+  ECBAIT_HOST_CONTROL_01     vs NC_001416.1.fa kcov=0.0 aln=None pass=None
+  ECBAIT_HOST_CONTROL_02     vs NC_001416.1.fa kcov=0.0 aln=None pass=None
+  ECBAIT_SHUF_CONTROL_01     vs NC_002167.1.fa kcov=0.0 aln=None pass=True
+  ECBAIT_SHUF_CONTROL_02     vs NC_002167.1.fa kcov=0.0 aln=None pass=True
+  ECBAIT_HOST_CONTROL_01     vs NC_002167.1.fa kcov=0.0 aln=None pass=None
+  ECBAIT_HOST_CONTROL_02     vs NC_002167.1.fa kcov=0.0 aln=None pass=None

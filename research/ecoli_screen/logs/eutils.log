@@ -1,0 +1,7 @@
+{"event": "esearch_head", "term": "\"Escherichia coli\"[Organism] AND wgs[strategy]", "count": 538919, "webenv": "MCID_6a88ebd1ff8d84737f0440af\u2026", "query_key": "1", "sha256": "843ed77a2334924431271a375bb8a35e6584568d08bddad3c1474aa73d81056e", "ts": "2026-08-22T00:22:41Z"}
+{"event": "esearch_page", "retstart": 0, "returned": 100000, "sha256": "f914bef22cb7e33e26ab3b095631c3c2a3b51bff6cbddd62ce8fce783716b839", "ts": "2026-08-22T00:22:43Z"}
+{"event": "esearch_page", "retstart": 100000, "returned": 100000, "sha256": "4cb9e45c6788e3055f4b2c4479918b68b172f1cb2061b9b8bc9b3163d528a6d5", "ts": "2026-08-22T00:22:45Z"}
+{"event": "esearch_page", "retstart": 200000, "returned": 100000, "sha256": "d6bcf92739dcfafae63a8a616330c911990cee879fffb1f3af6a95bf6ec3df2c", "ts": "2026-08-22T00:22:48Z"}
+{"event": "esearch_page", "retstart": 300000, "returned": 100000, "sha256": "1999ae0ae338adf9871b2e9ee9826fff47608ac1207fde3c36fd27d12c4ab955", "ts": "2026-08-22T00:22:50Z"}
+{"event": "esearch_page", "retstart": 400000, "returned": 100000, "sha256": "55f93af75fd4d01473c30825bbb79072cec0da99084e7ffd137afcb03a753fda", "ts": "2026-08-22T00:22:52Z"}
+{"event": "esearch_page", "retstart": 500000, "returned": 38919, "sha256": "2685a8c0912d226d694fa8e8132a41809269b0679f0daf37507eacc55e96e976", "ts": "2026-08-22T00:22:54Z"}
