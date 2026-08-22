@@ -21,16 +21,18 @@ echo "RUN_START=$RUN_START deadline=$DEADLINE"
 
 step() { echo; echo "=== [$(date -u +%H:%M:%S)] $* ==="; }
 
-step "1. freeze WGS universe (RUN_PLAN §4)"
-python3 scripts/freeze_wgs_universe.py \
-  --universe-manifest "$NVME/metadata/ecoli_universe_manifest.json" \
-  --runinfo "$NVME/metadata/ecoli_universe_runinfo.tsv" \
-  --out "$NVME/metadata/ecoli_wgs_frozen.tsv"
-
-step "2. build Tier E1 + E2 manifests (RUN_PLAN §5 §6, seed 20260822)"
-python3 scripts/build_bioproject_table.py \
-  --frozen "$NVME/metadata/ecoli_wgs_frozen.tsv" \
-  --out-dir "$NVME/metadata" --manifest-dir ../manifests --log logs/eutils.log
+step "1-2. freeze universe + tier manifests (SKIP if frozen manifests exist)"
+if [ ! -f ../manifests/tierE1_manifest.json ] || [ ! -f ../manifests/tierE2_manifest.json ]; then
+  python3 scripts/freeze_wgs_universe.py \
+    --universe-manifest "$NVME/metadata/ecoli_universe_manifest.json" \
+    --runinfo "$NVME/metadata/ecoli_universe_runinfo.tsv" \
+    --out "$NVME/metadata/ecoli_wgs_frozen.tsv"
+  python3 scripts/build_bioproject_table.py \
+    --frozen "$NVME/metadata/ecoli_wgs_frozen.tsv" \
+    --out-dir "$NVME/metadata" --manifest-dir ../manifests --log logs/eutils.log
+else
+  echo "frozen tier manifests present — tier design is immutable (RUN_PLAN §5/§6)"
+fi
 
 step "3. disk preflight per tier (seed 20260822)"
 for T in E1 E2; do

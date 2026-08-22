@@ -1,0 +1,179 @@
+{
+ "archetypes": {
+  "ST131": {
+   "match_strings": [
+    "st131"
+   ]
+  },
+  "global-diversity": {
+   "match_strings": [
+    "global",
+    "worldwide",
+    "international",
+    "diversity"
+   ]
+  },
+  "longitudinal": {
+   "match_strings": [
+    "longitudinal",
+    "timecourse",
+    "time course",
+    "time-series",
+    "persistence",
+    "follow-up"
+   ]
+  }
+ },
+ "frozen_tsv_sha256": "ca768d6efd68e03df2c9503f96890df1c131b89ff2736bade30859fb69a87739",
+ "generated_utc": "2026-08-22T01:55:59Z",
+ "n_runs": 11975,
+ "projects": [
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP362296",
+   "bioproject_acc": "PRJNA804716",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 551,
+   "title": "Preclinical immunogenicity and efficacy of optimized O25b O-antigen glycoconjugates to prevent MDR ST131 E. coli infections"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP068615",
+   "bioproject_acc": "PRJNA307689",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 417,
+   "title": "E. coli ST131 from food and human sources"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "ERP165651",
+   "bioproject_acc": "PRJEB81860",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 363,
+   "title": "Escherichia coli ST131 carrying carbapenemase genes in the European Union/European Economic Area, August 2012 \u2013 May 2024"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP254876",
+   "bioproject_acc": "PRJNA622538",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 344,
+   "title": "Trends in population dynamics of Escherichia coli ST131 (2006 -16): a population based approach"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP567947",
+   "bioproject_acc": "PRJNA1230821",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 338,
+   "title": "Transmission dynamics of Escherichia coli ST131 in Singapore households"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "ERP126161",
+   "bioproject_acc": "PRJEB42322",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 200,
+   "title": "Host colonization as a major evolutionary force shaping the population structure of the worldwide multidrug resistant Escherichia coli ST131"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP637838",
+   "bioproject_acc": "PRJNA1354839",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 195,
+   "title": "Characterization of FQ-R E. coli ST131 from diverse sources in Sapporo area, Japan"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP255560",
+   "bioproject_acc": "PRJNA578285",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 191,
+   "title": "Genomic epidemiology of E. coli ST131-H30 among U.S. children"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "ERP105430",
+   "bioproject_acc": "PRJEB23663",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 164,
+   "title": "Whole genome analyses of CMY-2-producing Escherichia coli isolates from human, animal, and food in Germany reveals a ST131 clonal lineage distinct from the CTX-M-15-producing ST131-O25b cluster"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP066943",
+   "bioproject_acc": "PRJNA297860",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 139,
+   "title": "Global diversity and evolutionary history of Escherichia coli sequence type 131 (ST131)"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "ERP021173",
+   "bioproject_acc": "PRJEB19190",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 127,
+   "title": "Study of ST131 and other clonal groups of E. coli from Spain"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP546246",
+   "bioproject_acc": "PRJNA1141466",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 118,
+   "title": "Escherichia coli strain:ST131 C2/H30Rx Genome sequencing and assembly"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "ERP002086",
+   "bioproject_acc": "PRJEB1252",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 117,
+   "title": "Comparative_analysis_of_the_two_pandemic_CTX_M_15_ESBL_producing_E__coli_lineages_ST131_and_ST648_from_various_hosts"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP434545",
+   "bioproject_acc": "PRJNA961666",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 114,
+   "title": "ESBL-producing Escherichia coli ST131 from wastewater, rivers, and lakes"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "ERP119904",
+   "bioproject_acc": "PRJEB36686",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 112,
+   "title": "Predominance of CTX-M-15\u2013producing Escherichia coli belonging to MLST ST131 among ESBL isolates from asylum seekers in the Netherlands"
+  },
+  {
+   "archetype": "ST131",
+   "bioproject": "SRP027327",
+   "bioproject_acc": "PRJNA211153",
+   "justification": "ST131 archetype by frozen title match",
+   "n_wgs_runs": 105,
+   "title": "Escherichia coli O25b:H4-ST131 Genome sequencing"
+  },
+  {
+   "archetype": "global-diversity",
+   "bioproject": "ERP179860",
+   "bioproject_acc": "PRJEB97262",
+   "justification": "global-diversity archetype by frozen title match",
+   "n_wgs_runs": 7498,
+   "title": "Global distribution of O-serotypes and antibiotic resistance patterns in E. coli strains causing bloodstream infections among adults"
+  },
+  {
+   "archetype": "global-diversity",
+   "bioproject": "SRP456113",
+   "bioproject_acc": "PRJNA1007570",
+   "justification": "global-diversity archetype by frozen title match",
+   "n_wgs_runs": 882,
+   "title": "Global serotyping of invasive Escherichia coli"
+  }
+ ],
+ "rule": "RUN_PLAN \u00a75: BioProjects >= 100 frozen WGS runs, title-archetype match, greedy whole-project take in archetype order, cumulative <= 12000",
+ "seed": 20260822,
+ "tier": "E1"
+}

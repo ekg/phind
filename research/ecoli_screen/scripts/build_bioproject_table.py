@@ -70,6 +70,24 @@ def http_get(url, retries=3, backoff=(5, 20, 60)):
     raise RuntimeError(f"GET failed after {retries} retries: {url}: {last}")
 
 
+def http_post(url, body, retries=3, backoff=(5, 20, 60)):
+    """Amendment A1: EUtils via POST for long id lists."""
+    last = None
+    for attempt in range(retries + 1):
+        try:
+            req = urllib.request.Request(
+                url, data=body.encode(),
+                headers={"User-Agent": "local-ecoli-logan/1.0",
+                         "Content-Type": "application/x-www-form-urlencoded"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return r.read()
+        except Exception as e:  # noqa: BLE001
+            last = e
+            if attempt < retries:
+                time.sleep(backoff[min(attempt, len(backoff) - 1)])
+    raise RuntimeError(f"POST failed after {retries} retries: {url}: {last}")
+
+
 def load_frozen(path):
     by_proj = {}
     rows = list(csv.DictReader(open(path), delimiter="\t"))
@@ -80,28 +98,44 @@ def load_frozen(path):
     return rows, by_proj
 
 
-def fetch_titles(accs, log):
-    """db=bioproject esummary titles, <=1 req/s, sha256-logged."""
-    out = {}
-    todo = [a for a in accs if a != "(none)"]
-    for i in range(0, len(todo), 200):
-        batch = todo[i:i + 200]
-        q = urllib.parse.urlencode({"db": "bioproject", "id": ",".join(batch),
-                                    "retmode": "json"})
-        body = http_get(f"{EUTILS}/esummary.fcgi?{q}")
+def fetch_titles(reps, log):
+    """Study acc -> bioproject acc + title (Amendment A2).
+    One representative sra uid per project; batched POST esummary db=sra
+    (per-uid attribution guaranteed); extract <Bioproject> and Study@name
+    from expxml. Receipts sha256-logged; <= 1 req/s."""
+    BP = re.compile(r"<Bioproject>([^<]+)</Bioproject>")
+    SN = re.compile(r'<Study acc="[^"]+" name="([^"]*)"')
+    uid_meta = {}
+    uids = sorted(reps.values(), key=int)
+    for i in range(0, len(uids), 400):
+        batch = uids[i:i + 400]
+        body = urllib.parse.urlencode({"db": "sra", "id": ",".join(batch),
+                                       "retmode": "json"})
+        raw = http_post(f"{EUTILS}/esummary.fcgi", body)
         try:
-            data = json.loads(body).get("result", {})
+            data = json.loads(raw).get("result", {})
+            for u in batch:
+                e = data.get(u)
+                if not e:
+                    continue
+                xml = e.get("expxml", "") or ""
+                bp = BP.search(xml)
+                sn = SN.search(xml)
+                uid_meta[u] = {"bioproject_acc": bp.group(1) if bp else "",
+                               "title": (sn.group(1) if sn else "") or ""}
         except Exception:  # noqa: BLE001
-            data = {}
-        for a in batch:
-            e = data.get(a)
-            if e:
-                out[a] = e.get("title", "")
-        log.write(json.dumps({"event": "bioproject_esummary", "n": len(batch),
-                              "n_titles": len(out),
-                              "sha256": hashlib.sha256(body).hexdigest(),
+            pass
+        log.write(json.dumps({"event": "sra_esummary_titles", "n": len(batch),
+                              "n_meta": len(uid_meta),
+                              "sha256": hashlib.sha256(raw).hexdigest(),
                               "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}) + "\n")
+        log.flush()
         time.sleep(1.1)
+    out = {}
+    for study_acc, sra_uid in reps.items():
+        m = uid_meta.get(sra_uid, {})
+        out[study_acc] = {"bioproject_acc": m.get("bioproject_acc", ""),
+                          "title": m.get("title", "")}
     return out
 
 
@@ -134,6 +168,7 @@ def main():
     ap.add_argument("--skip-titles", action="store_true",
                     help="reuse existing metadata/bioproject_titles.tsv")
     args = ap.parse_args()
+    os.makedirs(args.manifest_dir, exist_ok=True)
 
     rows, by_proj = load_frozen(args.frozen)
     row_by_run = {r["run"]: r for r in rows}
@@ -150,20 +185,30 @@ def main():
             w.writerow([p, n])
 
     titles_path = os.path.join(args.out_dir, "bioproject_titles.tsv")
-    big = [p for p, n in proj_counts if n >= MIN_PROJECT_FOR_TITLE]
     if args.skip_titles and os.path.exists(titles_path):
-        titles = {r["bioproject"]: r["title"] for r in
-                  csv.DictReader(open(titles_path), delimiter="\t")}
+        titles = {r["bioproject"]: {"bioproject_acc": r.get("bioproject_acc", ""),
+                                     "title": r.get("title", "")}
+                  for r in csv.DictReader(open(titles_path), delimiter="\t")}
     else:
+        # representative sra uid (min numeric) per big project for elink
+        counts_map = dict(proj_counts)
+        reps = {}
+        for r in rows:
+            p = r["bioproject"] or "(none)"
+            if p == "(none)" or counts_map.get(p, 0) < MIN_PROJECT_FOR_TITLE:
+                continue
+            first_uid = (r.get("uids") or "").split(",")[0]
+            if first_uid and (p not in reps or int(first_uid) < int(reps[p])):
+                reps[p] = first_uid
         with open(args.log, "a") as log:
-            titles = fetch_titles([p for p, _ in proj_counts if p != "(none)"
-                                   and dict(proj_counts)[p] >= MIN_PROJECT_FOR_TITLE], log)
+            titles = fetch_titles(reps, log)
         with open(titles_path, "w", newline="") as fh:
             w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-            w.writerow(["bioproject", "n_wgs_runs", "title"])
+            w.writerow(["bioproject", "n_wgs_runs", "bioproject_acc", "title"])
             for p, n in proj_counts:
                 if p in titles:
-                    w.writerow([p, n, titles[p]])
+                    t = titles[p]
+                    w.writerow([p, n, t["bioproject_acc"], t["title"]])
     print(f"titles fetched for {len(titles)} projects >= {MIN_PROJECT_FOR_TITLE} runs")
 
     # ---- Tier E1 (RUN_PLAN §5) ----
@@ -171,8 +216,8 @@ def main():
     e1_candidates = []  # (archetype, project, n, title)
     for arch, _ in ARCHETYPES:
         for p, n in proj_counts:
-            if p in titles and match_archetype(titles[p]) == arch:
-                e1_candidates.append((arch, p, n, titles[p]))
+            if p in titles and match_archetype(titles[p]["title"]) == arch:
+                e1_candidates.append((arch, p, n, titles[p]["title"]))
     for arch, p, n, title in e1_candidates:
         if cumulative + n <= E1_HARD_CAP:
             e1_projects.append(p)
@@ -195,7 +240,9 @@ def main():
         "archetypes": {a: {"match_strings": [p.pattern for p in pats]}
                        for a, pats in ARCHETYPES},
         "projects": [{"bioproject": p, "archetype": e1_proj_arch[p],
-                      "n_wgs_runs": len(by_proj[p]), "title": titles.get(p, ""),
+                      "n_wgs_runs": len(by_proj[p]),
+                      "title": titles.get(p, {}).get("title", ""),
+                      "bioproject_acc": titles.get(p, {}).get("bioproject_acc", ""),
                       "justification": f"{e1_proj_arch[p]} archetype by frozen title match"}
                      for p in e1_projects],
         "n_runs": len(e1_runs), "frozen_tsv_sha256": e1_sha, "seed": SEED,

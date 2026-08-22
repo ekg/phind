@@ -21,3 +21,26 @@ output TSV).
 
 No query string, filter, threshold, tier rule, or budget is affected. This
 amendment is logged before the affected (re)start.
+
+## A2 — 2026-08-22T01:5xZ — project titles via SRA esummary (Study name), not db=bioproject
+
+**Observed (receipts in `logs/eutils.log`):**
+1. `esummary?db=bioproject&id=<SRP…>` → `Invalid uid` (db=bioproject accepts
+   numeric uids only; PRJN accessions are rejected the same way).
+2. `elink dbfrom=sra db=bioproject` batches return **grouped linksets** (one
+   linkset for the whole id list, union of links — no per-id attribution),
+   making batched translation unusable; per-id elink would cost 667 extra
+   requests at ≤1 req/s.
+3. POST elink additionally returned empty 200 bodies intermittently
+   (4-attempt retry loop burned ~30 s/batch without progress).
+
+**Remediation (same information, fewer requests):** the SRA esummary
+expxml already carries, per uid, `<Bioproject>PRJNA…</Bioproject>` **and**
+`<Study acc="…" name="…">` — the registered study title. Project titles for
+archetype matching (§5) and the bioproject table are now taken from the
+Study name over one representative uid per project (batched POST esummary,
+per-uid attribution guaranteed, sha256-logged). The BioProject accession is
+recorded alongside. The archetype match strings, thresholds, tier rules,
+and budgets are unchanged; the stratification key remains the study
+accession recorded at sweep time (mapped to its BioProject accession in
+`bioproject_titles.tsv` for auditability).
