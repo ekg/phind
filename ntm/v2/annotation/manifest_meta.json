@@ -1,0 +1,8 @@
+{
+ "source": "pharokka.gff (Pharokka 1.10.1, pyrodigal-gv 0.3.2, NTM v2 run 2026-08-17)",
+ "generated": "2026-09-07T22:30:21Z",
+ "n_genomes": 3639,
+ "genomes_with_zero_features": 0,
+ "total_cds_features": 206249,
+ "note": "per-genome GFF3 split by seqid; ##gff-version 3 + per-genome ##sequence-region header preserved; embedded ##FASTA omitted (genomes in ml/all_ntm2_ml_phage_genomes.fa)"
+}
