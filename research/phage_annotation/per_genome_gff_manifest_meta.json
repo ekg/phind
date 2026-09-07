@@ -1,0 +1,8 @@
+{
+ "source": "pharokka.gff (Pharokka, prodigal-gv; mixed run feeding per_genome_annotation_qc.tsv)",
+ "generated": "2026-09-07T22:31:51Z",
+ "n_genomes": 1970,
+ "genomes_with_zero_features": 0,
+ "total_cds_features": 219371,
+ "note": "per-genome split by seqid; ##FASTA omitted; sources: ecoli_ml 585, ntm_ml 913, ntm_anc 472 (see research/phage_annotation/README.md)"
+}

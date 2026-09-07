@@ -68,3 +68,19 @@ Low-quality 792, Not-determined 45.
    (45 Not-determined) and is conservative for reconstructed genomes.
 3. `missing_core` is a **detection** flag, not proof of absence — a genome may
    have an intact capsid that didn't hit a PHROG profile.
+
+## Per-genome GFF3 + raw source locations (2026-09-07)
+
+`per_genome_annotation_qc.tsv` is built from (all on NVMe,
+`/mnt/nvme3n1/erikg/phind-genome-work/annotation/`):
+
+- `pharokka_out/pharokka_cds_final_merged_output.tsv` (82 MB) — per-CDS PHROG
+  function/category + VFDB/CARD calls (primary read of the report builder)
+- `pharokka_out/pharokka_length_gc_cds_density.tsv` — length/GC/CDS density
+- `checkv_out/` — completeness/contamination/quality category
+- `pharokka_out/pharokka.gff|gbk|tbl`, `prodigal-gv.{faa,ffn}` — full outputs
+
+Per-genome GFF3 split (1,970 files, 219,371 CDS, 0 empty):
+`pharokka_out/per_genome_gff/<genome_id>.gff`; tarball `per_genome_gff_1970.tar.gz`
+(4.7 MB, sha256 `ce669f4789699f7efc31fa37ffc5277ce526f6e4b8a44f0cdc7e485d3429a2d3`).
+Index committed here: `per_genome_gff_manifest.tsv`.
