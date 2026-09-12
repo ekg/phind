@@ -1,6 +1,6 @@
 # NTM v3 — all-inclusive cohort acquisition report
 
-Generated: 2026-09-12T22:28:32.989180Z (task `acquire-ntm-v3`)
+Generated: 2026-09-12T22:39:03.637340Z (task `acquire-ntm-v3`)
 
 Cohort: union of the BV-BRC phigaro QC-passed export (26,499 genomes,
 2026-09-09) and the v2 local holdings (13,122 NCBI assembly entries +
@@ -132,7 +132,7 @@ collaborator run assemblies are delivered and linked (see blocked section).
 
 ## Artifacts
 
-- `ntm/v3/inputs/v3_acquisition_manifest.tsv` — one row per cohort row with terminal state
+- `ntm/v3/inputs/v3_acquisition_manifest.tsv.gz` — one row per cohort row with terminal state (plain copy on NVMe: `ntm/v3/genomes/v3_acquisition_manifest.tsv`)
 - `ntm/v3/inputs/bvbrc_resolution.tsv` — the 248 BV-BRC genome_id resolutions
 - `ntm/v3/inputs/coverage.tsv` — machine-readable counts (v2 convention)
 - `ntm/v3/scripts/` — build/`acquire`/validate pipeline

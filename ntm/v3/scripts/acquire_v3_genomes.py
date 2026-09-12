@@ -49,7 +49,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
-MANIFEST_TSV = REPO / "ntm/v3/inputs/v3_acquisition_manifest.tsv"
+MANIFEST_GZ = REPO / "ntm/v3/inputs/v3_acquisition_manifest.tsv.gz"
 GC_RE = re.compile(r"^GC([AF])_([0-9]{9})\.([0-9]+)$")
 FTP_BASE = "https://ftp.ncbi.nlm.nih.gov/genomes/all"
 DATASETS_BASE = "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/{acc}/download"
@@ -279,7 +279,8 @@ def main() -> int:
     co_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / "acquisition_log.jsonl"
 
-    rows = list(csv.DictReader(open(MANIFEST_TSV, newline=""), delimiter="\t"))
+    rows = list(csv.DictReader(
+        gzip.open(MANIFEST_GZ, "rt", newline=""), delimiter="\t"))
     print(f"manifest rows: {len(rows)}")
 
     # prune orphan objects from previous runs (only pure-symlink dirs)

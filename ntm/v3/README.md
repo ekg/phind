@@ -11,7 +11,7 @@ numeric + 18,055 runs + 248 BV-BRC).
 | step | status |
 |---|---|
 | Import source inputs (summary + coordinates CSVs, provenance, overlap report) | ✅ done — `inputs/` |
-| Acquire cohort (link existing v2 holdings, download delta) | ✅ done — `download_report.md`, `inputs/v3_acquisition_manifest.tsv`, `inputs/coverage.tsv` (34,846 rows resolved: 16,148 objects linked + 95 downloaded; 18,055 run assemblies blocked pending collaborator delivery, none dropped) |
+| Acquire cohort (link existing v2 holdings, download delta) | ✅ done — `download_report.md`, `inputs/v3_acquisition_manifest.tsv.gz`, `inputs/coverage.tsv` (34,846 rows resolved: 16,148 objects linked + 95 downloaded; 18,055 run assemblies blocked pending collaborator delivery, none dropped) |
 | Prophage extraction / downstream pipeline | ⏳ to run |
 
 ## Inputs
@@ -19,8 +19,9 @@ numeric + 18,055 runs + 248 BV-BRC).
 - `inputs/INPUTS.md` — provenance, schemas, sha256 receipts, identifier caveats
   (mixed `ASSEMBLY`/`NCBI`/`BV-BRC` namespaces; BV-BRC type-strain species labels)
 - `inputs/v2_overlap_report.md` — v2↔v3 contig-bridge and union analysis
-- `inputs/v3_acquisition_manifest.tsv` — acquisition manifest: one row per
+- `inputs/v3_acquisition_manifest.tsv.gz` — acquisition manifest: one row per
   cohort row (export ∪ v2 holdings) with terminal state and resolution method
+  (gzip -n, deterministic; plain copy on NVMe at `ntm/v3/genomes/`)
 - `inputs/bvbrc_resolution.tsv` — the 248 BV-BRC `taxid.version` genome_id
   resolutions (178 linked by contig identity, 70 downloaded from the BV-BRC API)
 - `inputs/coverage.tsv` — acquisition coverage metrics (v2 convention)

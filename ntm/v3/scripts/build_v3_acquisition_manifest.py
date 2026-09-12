@@ -35,11 +35,15 @@ sequence accessions are exactly the coordinates-CSV scaffolds minus the
 "accn|" prefix, so downloaded contig names address the prophage coordinates.
 
 Outputs (repo, committed):
-  ntm/v3/inputs/v3_acquisition_manifest.tsv   one row per cohort row
-  ntm/v3/inputs/bvbrc_resolution.tsv          the 248 BV-BRC resolutions
+  ntm/v3/inputs/v3_acquisition_manifest.tsv.gz  one row per cohort row (gzip -n;
+                                               deterministic; plain copy kept on
+                                               NVMe — repo precedent: large
+                                               tables are committed gzipped)
+  ntm/v3/inputs/bvbrc_resolution.tsv           the 248 BV-BRC resolutions
 Outputs (NVMe):
-  {work}/ntm/v3/genomes/manifest_summary.json  machine-readable summary
-  {work}/ntm/v3/scratch/bvbrc_resolution.json  full API cache (no sequences)
+  {work}/ntm/v3/genomes/manifest_summary.json       machine-readable summary
+  {work}/ntm/v3/genomes/v3_acquisition_manifest.tsv plain-text manifest copy
+  {work}/ntm/v3/scratch/bvbrc_resolution.json        full API cache (no sequences)
 
 Usage:
   python3 ntm/v3/scripts/build_v3_acquisition_manifest.py \
@@ -49,6 +53,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
+import io
 import json
 import os
 import re
@@ -184,7 +190,8 @@ def main() -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     scratch.mkdir(parents=True, exist_ok=True)
 
-    manifest_path = REPO / "ntm/v3/inputs/v3_acquisition_manifest.tsv"
+    manifest_path = REPO / "ntm/v3/inputs/v3_acquisition_manifest.tsv.gz"
+    manifest_nvme = out_dir / "v3_acquisition_manifest.tsv"
     bvbrc_tsv = REPO / "ntm/v3/inputs/bvbrc_resolution.tsv"
     cache_path = scratch / "bvbrc_resolution.json"
 
@@ -432,12 +439,19 @@ def main() -> int:
     fields = ["genome_key", "origin", "source_ns", "accession", "numeric",
               "species", "prophage_count", "canonical_acc", "plan",
               "resolution_method", "link_gz", "bvbrc_contigs", "notes"]
-    with open(manifest_path, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=fields, delimiter="\t",
-                           lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
-        w.writeheader()
-        for mrow in manifest:
-            w.writerow(mrow)
+    import gzip as _gzip
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=fields, delimiter="\t",
+                       lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
+    w.writeheader()
+    for mrow in manifest:
+        w.writerow(mrow)
+    with open(manifest_path, "wb") as _raw:
+        with _gzip.GzipFile(fileobj=_raw, mode="wb", compresslevel=9,
+                            mtime=0) as fh:
+            fh.write(buf.getvalue().encode("utf-8"))
+    with open(manifest_nvme, "w", newline="") as fh:
+        fh.write(buf.getvalue())
 
     with open(bvbrc_tsv, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["genome_id", "n_seqs",
@@ -470,7 +484,7 @@ def main() -> int:
     }
     (out_dir / "manifest_summary.json").write_text(json.dumps(summary, indent=1))
     print(json.dumps(summary, indent=1))
-    print(f"wrote {manifest_path} ({len(manifest)} rows)")
+    print(f"wrote {manifest_path} ({len(manifest)} rows) + plain copy {manifest_nvme}")
     print(f"wrote {bvbrc_tsv}")
     return 0
 

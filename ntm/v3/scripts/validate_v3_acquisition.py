@@ -43,7 +43,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
-MANIFEST_TSV = REPO / "ntm/v3/inputs/v3_acquisition_manifest.tsv"
+MANIFEST_GZ = REPO / "ntm/v3/inputs/v3_acquisition_manifest.tsv.gz"
 SUMMARY_CSV = REPO / "ntm/v3/inputs/ntm_qc_passed_phigaro_summary_20260909.csv"
 COORDS_CSV = REPO / "ntm/v3/inputs/ntm_qc_passed_phigaro_coordinates_20260909.csv"
 GC_RE = re.compile(r"^GC([AF])_([0-9]{9})\.([0-9]+)$")
@@ -79,7 +79,8 @@ def main() -> int:
     out_dir = Path(args.work_dir) / "ntm/v3/genomes"
     co_dir = out_dir / "canonical_objects"
 
-    rows = list(csv.DictReader(open(MANIFEST_TSV, newline=""), delimiter="\t"))
+    rows = list(csv.DictReader(
+        gzip.open(MANIFEST_GZ, "rt", newline=""), delimiter="\t"))
     export = list(csv.DictReader(open(SUMMARY_CSV, newline="")))
 
     # per-genome scaffolds (prophage-bearing genomes only)
@@ -506,7 +507,7 @@ def main() -> int:
     a("")
     a("## Artifacts")
     a("")
-    a("- `ntm/v3/inputs/v3_acquisition_manifest.tsv` — one row per cohort row with terminal state")
+    a("- `ntm/v3/inputs/v3_acquisition_manifest.tsv.gz` — one row per cohort row with terminal state (plain copy on NVMe: `ntm/v3/genomes/v3_acquisition_manifest.tsv`)")
     a("- `ntm/v3/inputs/bvbrc_resolution.tsv` — the 248 BV-BRC genome_id resolutions")
     a("- `ntm/v3/inputs/coverage.tsv` — machine-readable counts (v2 convention)")
     a("- `ntm/v3/scripts/` — build/`acquire`/validate pipeline")
