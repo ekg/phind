@@ -1,6 +1,6 @@
 # NTM v3 — all-inclusive cohort acquisition report
 
-Generated: 2026-09-12T22:27:30.506374Z (task `acquire-ntm-v3`)
+Generated: 2026-09-12T22:28:32.989180Z (task `acquire-ntm-v3`)
 
 Cohort: union of the BV-BRC phigaro QC-passed export (26,499 genomes,
 2026-09-09) and the v2 local holdings (13,122 NCBI assembly entries +
