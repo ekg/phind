@@ -16,9 +16,10 @@ phigaro QC-passed export, 2026-09-09).
 
 Both files are **byte-exact as exported** (CRLF line endings, 0x0D 0x0A —
 the BV-BRC export tool emits DOS line endings). The repo-root `.gitattributes`
-marks these two paths `whitespace=cr-at-eol` so git's whitespace lint does not
-flag the carriage returns; do **not** "normalize" these files to LF — that
-would break the sha256 receipts above.
+marks these two paths `-diff` (binary for diff purposes) and
+`whitespace=cr-at-eol`, so neither the whitespace lint nor the 10 MB textual
+diff machinery chokes on them; do **not** "normalize" these files to LF —
+that would break the sha256 receipts above.
 
 ## 2. Schema — `ntm_qc_passed_phigaro_summary_20260909.csv`
 
