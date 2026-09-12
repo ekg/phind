@@ -1,1 +1,2 @@
 ntm/v3/inputs/*.csv -diff whitespace=cr-at-eol
+ntm/v3/inputs/v3_acquisition_manifest.tsv -diff

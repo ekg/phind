@@ -1,0 +1,40 @@
+metric	value	detail
+manifest_rows	34846	export 26,499 + v2-only 8,212 numerics + 135 runs
+export_rows	26499	ntm_qc_passed_phigaro_summary_20260909.csv
+export_rows_by_source	ASSEMBLY=17920;NCBI=8331;BV-BRC=248	
+v2_only_numeric_rows	8212	v2 cohort assemblies not covered by export
+v2_only_run_rows	135	v2 runs absent from export
+unique_union_assemblies	31931	13,628 numerics + 18,055 runs + 248 BV-BRC (namespace union)
+unique_union_assemblies_identity	31753	13,628 GC numerics + 70 BV-BRC-only + 18,055 runs; the 178 contig-identity BV-BRC ids equal GC-held assemblies
+manifest_numerics_with_gc_rows	13619	9 further v2 numerics are represented via BV-BRC contig-identity rows
+unique_run_assemblies	18055	ERR/SRR/DRR, all blocked_run
+linked_rows	16688	rows linking existing v1/v2 objects
+linked_objects	16148	canonical_objects linked (symlink)
+downloaded_rows	103	rows resolved by download
+downloaded_objects	95	
+downloaded_bvbrc	70	BV-BRC API genome_sequence
+downloaded_ncbi	33	NCBI datasets ZIP: 12 no-local + 5 version-skew + 8 renamed-contig numerics
+blocked_run_rows	18055	collaborator delivery pending; explicit terminal state
+failed_rows	0	must be 0
+resolved_equals_total	True	34846 == 34846
+bvbrc_genomes	248	248 BV-BRC taxid.version ids
+bvbrc_linked_by_contig_identity	178	
+bvbrc_downloaded	70	
+bvbrc_unresolvable	0	all 248 resolved via BV-BRC API
+v2_runs_in_union	9543	9,408 in export + 135 v2-only; none dropped
+v2_runs_dropped	0	
+v2_numerics_in_union	13086	13086 in v2 cohort; 0 missing
+v2_numerics_dropped	0	
+canonical_objects_total	16243	v3/genomes/canonical_objects
+faidx_ok_objects	16243	samtools faidx region query per object
+total_bp	80772491382	sum of .fai contig lengths
+total_contigs	1623753	
+gzip_sampled	300	random sample seed=42
+gzip_pass	300	gzip -t full-stream
+scaffold_genomes_checked	5794	all non-run prophage-bearing rows
+scaffold_contigs_match	10540	normalized: accn| stripped, unversioned, NZ_-strip fallback
+scaffold_match_exact_name	9793	scaffold token is a literal contig name
+scaffold_match_version_suffix	168	scaffold unversioned, contig versioned (e.g. BV-BRC accn| -> GCA .1 contigs): extraction must resolve the version suffix
+scaffold_match_nz_strip	579	RefSeq NZ_ prefix must be stripped (v2 convention)
+scaffold_match_version_differs	0	scaffold version differs from the contig version (same unversioned accession)
+scaffold_contigs_mismatch	0	listed in download_report.md
