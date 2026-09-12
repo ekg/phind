@@ -14,6 +14,12 @@ phigaro QC-passed export, 2026-09-09).
 | `ntm_qc_passed_phigaro_summary_20260909.csv` | 2,241,769 | 26,499 | `c9968d395193b9046b09146a21a45fffb3dbc34903c63cdc5c2338d0037c877a` |
 | `ntm_qc_passed_phigaro_coordinates_20260909.csv` | 7,693,295 | 47,994 | `503bcd78862d13687595e548a7f42ac2b7bd7628f996748c51a9c39c83616420` |
 
+Both files are **byte-exact as exported** (CRLF line endings, 0x0D 0x0A —
+the BV-BRC export tool emits DOS line endings). The repo-root `.gitattributes`
+marks these two paths `whitespace=cr-at-eol` so git's whitespace lint does not
+flag the carriage returns; do **not** "normalize" these files to LF — that
+would break the sha256 receipts above.
+
 ## 2. Schema — `ntm_qc_passed_phigaro_summary_20260909.csv`
 
 Per-genome summary, one row per genome (26,499 rows).
