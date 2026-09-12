@@ -331,8 +331,11 @@ def main() -> int:
     with open(cov_path, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["metric", "value", "detail"])
-        for row in cov:
-            w.writerow(row)
+        for metric, value, detail in cov:
+            if detail:
+                w.writerow([metric, value, detail])
+            else:
+                w.writerow([metric, value])
 
     # ------------------------------------------------- download_report.md
     rep_path = REPO / "ntm/v3/download_report.md"
