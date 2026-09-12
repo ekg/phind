@@ -13,6 +13,16 @@ This README is the design + plan of record. The *E. coli* machinery
 the NTM-specific front-end (accessions, download path, prophage caller, host
 clades) is new.
 
+## Version map
+
+| version | scope | status |
+|---|---|---|
+| `v1/` | 7,352-assembly NCBI scoping pilot | superseded by v2 (still referenced) |
+| `v2/` | collaborator QC-passed cohort: 13,122 NCBI assemblies + 9,543 run assemblies | current release baseline |
+| `v3/` | **all-inclusive expansion**: union of the BV-BRC phigaro QC-passed export (26,499 genomes, 47,994 prophages, 2026-09-09) with the v2 local holdings (~31,975 unique assemblies) | inputs imported; acquisition next — see `v3/README.md` |
+
+The v2 text below is kept intact as the design record.
+
 ---
 
 ## 1. What counts as NTM (correct taxonomic scope)
