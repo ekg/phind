@@ -12,8 +12,9 @@ numeric + 18,055 runs + 248 BV-BRC).
 |---|---|
 | Import source inputs (summary + coordinates CSVs, provenance, overlap report) | ✅ done — `inputs/` |
 | Acquire cohort (link existing v2 holdings, download delta) | ✅ done — `download_report.md`, `inputs/v3_acquisition_manifest.tsv.gz`, `inputs/coverage.tsv` (34,846 rows resolved: 16,148 objects linked + 95 downloaded; 18,055 run assemblies blocked pending collaborator delivery, none dropped) |
+| Host clades (MASH, host structure) | ✅ done — `host_clades_report.md` (16,243/16,243 genomes labelled, 411 clades at dist ≤ 0.05; artifacts + sha256 receipts on NVMe `ntm/v3/host_clades/`) |
 | Prophage extraction (unified manifest + full_prophages.fa) | ✅ done — `extract_report.md`, `inputs/v3_prophage_manifest.tsv.gz`, `inputs/coverage.tsv` (36,940 unified rows: 36,321 BV-BRC phigaro + 619 V2; 9,446 extractable, all extracted; 27,494 run rows blocked pending collaborator delivery, none dropped) |
-| Downstream pipeline (MASH clades, …) | ⏳ to run |
+| Downstream prophage pipeline (MASH clades, …) | ⏳ to run |
 
 ## Inputs
 
