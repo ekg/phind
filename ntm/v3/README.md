@@ -14,7 +14,8 @@ numeric + 18,055 runs + 248 BV-BRC).
 | Acquire cohort (link existing v2 holdings, download delta) | ✅ done — `download_report.md`, `inputs/v3_acquisition_manifest.tsv.gz`, `inputs/coverage.tsv` (34,846 rows resolved: 16,148 objects linked + 95 downloaded; 18,055 run assemblies blocked pending collaborator delivery, none dropped) |
 | Host clades (MASH, host structure) | ✅ done — `host_clades_report.md` (16,243/16,243 genomes labelled, 411 clades at dist ≤ 0.05; artifacts + sha256 receipts on NVMe `ntm/v3/host_clades/`) |
 | Prophage extraction (unified manifest + full_prophages.fa) | ✅ done — `extract_report.md`, `inputs/v3_prophage_manifest.tsv.gz`, `inputs/coverage.tsv` (36,940 unified rows: 36,321 BV-BRC phigaro + 619 V2; 9,446 extractable, all extracted; 27,494 run rows blocked pending collaborator delivery, none dropped) |
-| Downstream prophage pipeline (MASH clades, …) | ⏳ to run |
+| Prophage MASH clades (sketch + triangle + tight clades) | ✅ done — `mash_clades_report.md`, `clades/` (813 clades at thr 0.25 / max 100 / community 0: 456 alignable + 357 singletons over 9,446 prophages; artifacts + sha256 receipts on NVMe `ntm/v3/mash_clades/`, `ntm/v3/clades/`) |
+| Downstream prophage pipeline (per-clade allwave + impg, ML, release) | ⏳ to run |
 
 ## Inputs
 
@@ -36,6 +37,15 @@ numeric + 18,055 runs + 248 BV-BRC).
 - `extract_report.md` — unified-manifest reconciliation + FASTA extraction
   report (stub-dup accounting, twin/BV-BRC-variant dedup, v2 supersession,
   length distribution, flagged warnings, spot checks, sha256)
+- `mash_clades_report.md` — prophage MASH sketch + triangle + tight clades
+  report (clade/alignable/singleton counts, internal similarity and size
+  distributions, length band check, v1/v2 comparison, exact commands;
+  includes the triangle-row-order mechanics note explaining why v1/v2 clade
+  counts are upper bounds)
+- `clades/` — committed clade definitions and per-clade similarity stats
+  (`tight_clades.json.gz`, `clade_similarity.json.gz`, `clade_summary.tsv`,
+  `alignable_clades.tsv`, `singletons.tsv`, `SHA256SUMS`) for the downstream
+  per-clade pipeline (task ntm-v3-per)
 - `download_report.md` — acquisition report with validation results and the
   blocked run-assembly accounting
 
