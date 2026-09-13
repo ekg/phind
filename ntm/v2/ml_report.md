@@ -15,6 +15,15 @@ Generated: 2026-08-16T15:17:24Z (task ntm-v2-ml)
 - Ancestral genomes written: 1251 (== alignable: 1251)
 - Traversal failures: 0
 
+> **Erratum (2026-09-13, task verify-v2-clade-order):** the clade counts
+> above — 2,388 total (1,251 alignable + 1,137 singletons) — come from the
+> frozen v2 clade run, which was inflated by NaN fragmentation (35.23% of
+> within-community distance-triangle pairs were never filled and behaved as
+> maximally distant). Re-derivation with a pre-sorted `ids.txt` gives **767
+> clades = 413 alignable + 354 singletons, median internal mash 0.0639** —
+> see [`clades_sorted_report.md`](clades_sorted_report.md). Historical
+> numbers in this report are unchanged.
+
 ## Length sanity
 
 - ML lengths: n=2388 min=237 median=20268 mean=28284 max=150000

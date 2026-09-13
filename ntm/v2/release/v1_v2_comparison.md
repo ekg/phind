@@ -20,6 +20,16 @@ v1 (`v1_qc_baseline/qc_table.tsv`).
 | host clades (re-sketch, dist ≤0.05) | 342 represented (of 730) | 623 represented (of 1,044) | +82% |
 | host species labelled | NTM only (TB-complex excluded by design) | TB-complex labels kept verbatim (ANI: *M. decipiens*), decision pending | scope change |
 
+> **Erratum (2026-09-13, task verify-v2-clade-order):** the v2 clade counts in
+> the table above — 2,388 total (1,251 alignable + 1,137 singletons) — are
+> inflated by NaN fragmentation in the frozen v2 clade run (35.23% of
+> within-community distance-triangle pairs were never filled and behaved as
+> maximally distant, over-splitting clades). Re-derivation with a pre-sorted
+> `ids.txt` gives **767 clades = 413 alignable + 354 singletons, median
+> internal mash 0.0639** — see
+> [`../clades_sorted_report.md`](../clades_sorted_report.md). Historical
+> numbers below are unchanged.
+
 ## Prophage caller agreement (collaborator calls vs geNomad)
 
 On the **2,867 genomes** called by both (numeric accession match; geNomad

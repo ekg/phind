@@ -42,6 +42,15 @@ processes, v1 practice). Log: `clades/partition_run.log`; per-clade
   convention; pass-through for the ML task)
 - Failures: **0** (no clade skipped; no FAILED.log)
 
+> **Erratum (2026-09-13, task verify-v2-clade-order):** the v2 clade counts
+> in this report — **2,388** total (1,251 alignable + 1,137 singletons) —
+> are inflated by NaN fragmentation in the frozen v2 clade run (35.23% of
+> within-community distance-triangle pairs were never filled and behaved as
+> maximally distant, over-splitting clades). Re-derivation with a pre-sorted
+> `ids.txt` gives **767 clades = 413 alignable + 354 singletons, median
+> internal mash 0.0639** — see [`clades_sorted_report.md`](clades_sorted_report.md).
+> Historical numbers below are unchanged.
+
 ## Partition stats
 
 - Total partitions (distinct blocks): **86,587**
