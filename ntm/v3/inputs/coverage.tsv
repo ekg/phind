@@ -21,10 +21,10 @@ blocked_run_rows	27494	ERR/SRR/DRR pending collaborator delivery; none dropped
 v2_run_rows_in_union	14741	14658 via export phigaro + 83 source=V2
 distinct_objects_read	3994	v3/genomes/canonical_objects
 total_bp	206284318	sum of extracted prophage lengths
-len_min	237	
-len_median	18276	
-len_mean	21838	
-len_max	93713	
+len_min	237
+len_median	18276
+len_mean	21838
+len_max	93713
 length_equals_end_minus_begin_plus_1	36940	holds for all manifest rows (asserted)
 begin_zero_rows_extracted	16	extracted as [1,end]; extracted = length - 1 (documented off-by-one)
 out_of_range_rows	91	outside [1000,100000] bp; flagged, kept

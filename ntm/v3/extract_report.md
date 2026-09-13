@@ -1,6 +1,6 @@
 # NTM v3 — unified prophage manifest + full_prophages.fa extraction report
 
-Generated: 2026-09-13T01:39:50Z
+Generated: 2026-09-13T01:41:55Z
 
 ## Design
 
@@ -205,4 +205,3 @@ to the record parsed back out of the written FASTA:
 
 FASTA stays on NVMe (repo holds only code, manifests and small
 reports — v1/v2 rule).
-

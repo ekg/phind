@@ -433,8 +433,9 @@ def main() -> int:
         "",
         "FASTA stays on NVMe (repo holds only code, manifests and small",
         "reports — v1/v2 rule).",
-        "",
     ]
+    while lines and lines[-1] == "":
+        lines.pop()
     report_path.write_text("\n".join(lines) + "\n")
 
     # ------------------------------------------------------- coverage.tsv
@@ -477,8 +478,11 @@ def main() -> int:
     ]
     with open(coverage_path, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        for row in cov:
-            w.writerow(row)
+        for metric, value, detail in cov:
+            if detail:
+                w.writerow([metric, value, detail])
+            else:
+                fh.write(f"{metric}\t{value}\n")
     print(f"[report] wrote {report_path}")
     print(f"[report] wrote {coverage_path}")
     print(f"[fasta] {out_fa} sha256={sha}")
