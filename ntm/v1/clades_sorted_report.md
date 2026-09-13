@@ -42,8 +42,10 @@ driven by v2's fragmentation: corrected, v2 has *fewer* clades than v1 (767 vs
 - TSV spot check 5 pairs vs frozen `prophages.dist.tsv`: worst |Δ| 0.0
 - clade invariants: sum of sizes == 10,438; ids unique; max size 100; worst
   non-singleton median 0.2488 ≤ 0.25 (recomputed from the matrix)
-- frozen outputs untouched (new outdirs only; md5s recorded before/after)
-- machine-readable comparison: `clades_sorted/sorted_vs_published.json`
+- frozen outputs untouched (new outdirs only): driver sha256-gates all frozen
+  inputs before vs after the run; independent validator re-verifies
+- machine-readable comparison: `clades_sorted/sorted_vs_published.json`;
+  deterministic re-validation: `python3 ntm/scripts/validate_sorted_clades.py`
 
 ## Outputs
 

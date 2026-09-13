@@ -178,6 +178,32 @@ def tsv_spotcheck(dist_tsv, ids, new_tri, seed=0, k=5):
     return len(found), worst
 
 
+def frozen_files(src_mash, old_clades):
+    """Frozen inputs this driver reads (never writes): hashed before and
+    after the run to prove they are untouched."""
+    return [
+        f"{src_mash}/ids.txt",
+        f"{src_mash}/labels.csv",
+        f"{src_mash}/prophages_mash.dist",
+        f"{src_mash}/prophages.dist.tsv",
+        f"{old_clades}/tight_clades_summary.json",
+        f"{old_clades}/0/tight_clades.json",
+        f"{old_clades}/0/clade_similarity.json",
+        f"{old_clades}/0/members.json",
+        f"{old_clades}/0/distances.npz",
+    ]
+
+
+def hash_files(paths):
+    """sha256 per file (dist.tsv is multi-GB; hashing it takes ~20-30 s —
+    acceptable for a one-shot verification run)."""
+    out = {}
+    for p in paths:
+        if os.path.exists(p):
+            out[p] = sha256(p)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--version", choices=["v1", "v2"], default="v2")
@@ -203,6 +229,12 @@ def main():
                 raise SystemExit(f"REFUSING to overwrite existing {p}")
     build_tight = os.path.join(repo_root(), "scripts", "build_tight_clades.py")
     assert os.path.exists(build_tight), build_tight
+
+    # frozen-input hashes BEFORE any work (also asserted again at the end)
+    frozen_paths = frozen_files(src_mash, old_clades)
+    frozen_before = hash_files(frozen_paths)
+    print(f"[{v}] hashed {len(frozen_before)} frozen inputs before work",
+          flush=True)
 
     # ---- 1. frozen inputs -------------------------------------------------
     ids = [l.strip() for l in open(f"{src_mash}/ids.txt")]
@@ -364,6 +396,16 @@ def main():
             if nm == 1:
                 f.write(f"{cid}\t{tc[cid][0]}\n")
 
+    # ---- frozen-outputs-untouched gate: re-hash and compare -------------
+    frozen_after = hash_files(frozen_paths)
+    assert frozen_before == frozen_after, \
+        "FROZEN INPUTS CHANGED during the run: " + \
+        str({k for k in frozen_before if frozen_before[k] != frozen_after.get(k)})
+    checks["frozen_inputs_hashed_before"] = len(frozen_before)
+    checks["frozen_inputs_unchanged_before_vs_after"] = True
+    print(f"[{v}] frozen inputs unchanged before vs after "
+          f"({len(frozen_after)} files sha256-verified)", flush=True)
+
     new_sum = json.load(open(f"{new_clades}/tight_clades_summary.json"))["0"]
     old_sum = json.load(open(f"{old_clades}/tight_clades_summary.json"))["0"]
     med_of_meds = new_sum["internal_similarity"]["median_median"]
@@ -391,6 +433,7 @@ def main():
         "delta_clades": new_sum["n_clades"] - old_sum["n_clades"],
         "checks": checks,
         "provenance": provenance,
+        "frozen_input_sha256_before": frozen_before,
         "new_outdirs": {"mash": new_mash, "clades": new_clades},
         "frozen_outputs_touched": False,
     }

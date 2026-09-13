@@ -87,13 +87,20 @@ prophage in exactly one clade.
 - clade invariants: sum of clade sizes == 8,502; all ids unique; max size 100;
   worst non-singleton internal median 0.2488 ≤ 0.25 (per-clade medians
   recomputed independently from the matrix, not trusted from the run's JSON)
-- frozen outputs untouched: only new outdirs written
-  (`mash_clades_sorted/`, `clades_sorted/`); md5/mtimes of the frozen
-  `ids.txt` / triangle / `tight_clades.json` recorded before and after —
-  unchanged
+- frozen outputs untouched: the driver sha256-hashes all 9 frozen input files
+  (ids.txt, labels.csv, both triangles' sources, old clade outputs) BEFORE any
+  work and again after all writes, asserts equality, and records both in
+  `clades_sorted/sorted_vs_published.json` (`frozen_input_sha256_before`,
+  `frozen_inputs_unchanged_before_vs_after`); only new outdirs
+  (`mash_clades_sorted/`, `clades_sorted/`) are written
 - permutation math covered by a built-in synthetic selftest
   (`rederive_sorted_clades.py --selftest`)
 - full machine-readable comparison: `clades_sorted/sorted_vs_published.json`
+- deterministic re-validation of every item above, from the on-disk artifacts
+  only: `python3 ntm/scripts/validate_sorted_clades.py` (prints one PASS/FAIL
+  line per check, non-zero exit on any failure; also re-hashes the frozen
+  inputs against the pre-run baseline and greps this report for the downstream
+  impact notes)
 
 ## Downstream impact (v2 artifacts that consumed the clade count)
 
@@ -131,4 +138,5 @@ prophage id, not clade id.
   distances.npz, commands.log), `tight_clades_summary.json`,
   `clade_summary.tsv`, `alignable_clades.tsv`, `singletons.tsv`,
   `sorted_vs_published.json`, `build_tight_clades.stdout.log`
-- repo: this report + driver `ntm/scripts/rederive_sorted_clades.py`
+- repo: this report + drivers `ntm/scripts/rederive_sorted_clades.py`,
+  `ntm/scripts/validate_sorted_clades.py`
