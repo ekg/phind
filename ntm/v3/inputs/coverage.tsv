@@ -1,40 +1,35 @@
 metric	value	detail
-manifest_rows	34846	export 26,499 + v2-only 8,212 numerics + 135 runs
-export_rows	26499	ntm_qc_passed_phigaro_summary_20260909.csv
-export_rows_by_source	ASSEMBLY=17920;NCBI=8331;BV-BRC=248
-v2_only_numeric_rows	8212	v2 cohort assemblies not covered by export
-v2_only_run_rows	135	v2 runs absent from export
-unique_union_assemblies	31931	13,628 numerics + 18,055 runs + 248 BV-BRC (namespace union)
-unique_union_assemblies_identity	31753	13,628 GC numerics + 70 BV-BRC-only + 18,055 runs; the 178 contig-identity BV-BRC ids equal GC-held assemblies
-manifest_numerics_with_gc_rows	13619	9 further v2 numerics are represented via BV-BRC contig-identity rows
-unique_run_assemblies	18055	ERR/SRR/DRR, all blocked_run
-linked_rows	16688	rows linking existing v1/v2 objects
-linked_objects	16148	canonical_objects linked (symlink)
-downloaded_rows	103	rows resolved by download
-downloaded_objects	95
-downloaded_bvbrc	70	BV-BRC API genome_sequence
-downloaded_ncbi	33	NCBI datasets ZIP: 12 no-local + 5 version-skew + 8 renamed-contig numerics
-blocked_run_rows	18055	collaborator delivery pending; explicit terminal state
-failed_rows	0	must be 0
-resolved_equals_total	True	34846 == 34846
-bvbrc_genomes	248	248 BV-BRC taxid.version ids
-bvbrc_linked_by_contig_identity	178
-bvbrc_downloaded	70
-bvbrc_unresolvable	0	all 248 resolved via BV-BRC API
-v2_runs_in_union	9543	9,408 in export + 135 v2-only; none dropped
-v2_runs_dropped	0
-v2_numerics_in_union	13086	13086 in v2 cohort; 0 missing
-v2_numerics_dropped	0
-canonical_objects_total	16243	v3/genomes/canonical_objects
-faidx_ok_objects	16243	samtools faidx region query per object
-total_bp	80772491382	sum of .fai contig lengths
-total_contigs	1623753
-gzip_sampled	300	random sample seed=42
-gzip_pass	300	gzip -t full-stream
-scaffold_genomes_checked	5794	all non-run prophage-bearing rows
-scaffold_contigs_match	10540	normalized: accn| stripped, unversioned, NZ_-strip fallback
-scaffold_match_exact_name	9793	scaffold token is a literal contig name
-scaffold_match_version_suffix	168	scaffold unversioned, contig versioned (e.g. BV-BRC accn| -> GCA .1 contigs): extraction must resolve the version suffix
-scaffold_match_nz_strip	579	RefSeq NZ_ prefix must be stripped (v2 convention)
-scaffold_match_version_differs	0	scaffold version differs from the contig version (same unversioned accession)
-scaffold_contigs_mismatch	0	listed in download_report.md
+manifest_rows	36940	unified v3 prophage manifest (BV-BRC ∪ V2)
+manifest_rows_bvbrc	36321	caller=phigaro (2026-09-09 export)
+manifest_rows_v2	619	caller=v2-collab (genomes absent from export)
+coords_csv_rows	47994	ntm_qc_passed_phigaro_coordinates_20260909.csv
+stub_rows	22225	empty prophage_id rows in CSV
+stub_rows_dup_dropped	5927	exact (genome,scaffold,begin,end) duplicate of a named row
+stub_rows_kept_synthesized	16298	only representation; pid = <scaffold>_prophage<N>
+unique_prophages_after_stub_dedup	42067	42,067 expected
+export_internal_multi_genome_groups	2218	assemblies with >1 export genome/object (GCA/GCF twins, BV-BRC taxid variants)
+export_internal_twin_assembly_groups	1870	assemblies held as both GCA_ and GCF_ canonical objects
+export_internal_superseded_genomes	2252	export genomes dropped (one kept per assembly, GCA-preferred v2 convention)
+export_internal_superseded_rows	5746	prophage rows on superseded export genomes
+v2_rows_kept_total	619	v2 genomes absent from export (536 NCBI + 83 runs)
+v2_superseded_numeric_rows	7966	v2 rows whose genome is in the export (phigaro primary)
+v2_superseded_run_rows	14658	v2 run rows whose run is in the export (phigaro primary)
+extractable_rows	9446	genome local on NVMe
+extracted_records	9446	FASTA records written == extractable − errors
+extraction_errors	0	target 0
+blocked_run_rows	27494	ERR/SRR/DRR pending collaborator delivery; none dropped
+v2_run_rows_in_union	14741	14658 via export phigaro + 83 source=V2
+distinct_objects_read	3994	v3/genomes/canonical_objects
+total_bp	206284318	sum of extracted prophage lengths
+len_min	237	
+len_median	18276	
+len_mean	21838	
+len_max	93713	
+length_equals_end_minus_begin_plus_1	36940	holds for all manifest rows (asserted)
+begin_zero_rows_extracted	16	extracted as [1,end]; extracted = length - 1 (documented off-by-one)
+out_of_range_rows	91	outside [1000,100000] bp; flagged, kept
+end_beyond_contig_rows	0	target 0
+spot_check_genomes	10	10/10 PASS (seed 42, independent faidx re-query)
+fasta_sha256	5adfd2aee6e1e03d109a49a3b1fbba837a21649851fc39ee9c9ff07217f0480c	/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/full_prophages.fa
+fasta_records	9446	== extracted_records
+fasta_single_source_per_genome	36940	no genome carries calls from two callers (asserted at build)

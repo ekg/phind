@@ -12,7 +12,8 @@ numeric + 18,055 runs + 248 BV-BRC).
 |---|---|
 | Import source inputs (summary + coordinates CSVs, provenance, overlap report) | ✅ done — `inputs/` |
 | Acquire cohort (link existing v2 holdings, download delta) | ✅ done — `download_report.md`, `inputs/v3_acquisition_manifest.tsv.gz`, `inputs/coverage.tsv` (34,846 rows resolved: 16,148 objects linked + 95 downloaded; 18,055 run assemblies blocked pending collaborator delivery, none dropped) |
-| Prophage extraction / downstream pipeline | ⏳ to run |
+| Prophage extraction (unified manifest + full_prophages.fa) | ✅ done — `extract_report.md`, `inputs/v3_prophage_manifest.tsv.gz`, `inputs/coverage.tsv` (36,940 unified rows: 36,321 BV-BRC phigaro + 619 V2; 9,446 extractable, all extracted; 27,494 run rows blocked pending collaborator delivery, none dropped) |
+| Downstream pipeline (MASH clades, …) | ⏳ to run |
 
 ## Inputs
 
@@ -24,7 +25,16 @@ numeric + 18,055 runs + 248 BV-BRC).
   (gzip -n, deterministic; plain copy on NVMe at `ntm/v3/genomes/`)
 - `inputs/bvbrc_resolution.tsv` — the 248 BV-BRC `taxid.version` genome_id
   resolutions (178 linked by contig identity, 70 downloaded from the BV-BRC API)
-- `inputs/coverage.tsv` — acquisition coverage metrics (v2 convention)
+- `inputs/coverage.tsv` — prophage manifest + extraction coverage metrics
+  (v2 convention; acquisition metrics preserved in git history of this file
+  and in `download_report.md`)
+- `inputs/v3_prophage_manifest.tsv.gz` — unified prophage manifest: one row
+  per prophage, BV-BRC phigaro primary, v2 calls kept only for genomes absent
+  from the export (gzip -n, deterministic; plain copy on NVMe at
+  `ntm/v3/inputs/v3_prophage_manifest.tsv`)
+- `extract_report.md` — unified-manifest reconciliation + FASTA extraction
+  report (stub-dup accounting, twin/BV-BRC-variant dedup, v2 supersession,
+  length distribution, flagged warnings, spot checks, sha256)
 - `download_report.md` — acquisition report with validation results and the
   blocked run-assembly accounting
 
