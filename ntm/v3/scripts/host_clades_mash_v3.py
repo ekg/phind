@@ -380,7 +380,12 @@ def phase_cluster(cfg, state, paths):
             pairs += 1
             if i in spot:
                 keep[j] = ds
-            if ds[0] != "0":        # any value not starting '0' is >= 0.1
+            # mash triangle prints plain decimals ("0.196705") but switches
+            # to scientific notation below ~1e-4 ("6.91981e-05") — exactly
+            # the near-identical pairs that MUST union. Fast path only for
+            # plain-format values >= 0.1 (leading char != '0'); everything
+            # else goes through float().
+            if "e" not in ds and "E" not in ds and ds[0] != "0":
                 continue
             if float(ds) <= THRESHOLD:
                 other = names[j]
@@ -424,7 +429,18 @@ def phase_cluster(cfg, state, paths):
             clade_of[m] = cid
 
     # --- annotations
-    ann, n_manifest, n_fallback = load_species_annotations(cfg.manifest, cfg.v2qc)
+    ann, n_manifest_avail, _ = load_species_annotations(cfg.manifest, cfg.v2qc)
+    # per-cohort source accounting (not dict-entry counts): a genome is
+    # "manifest"-labelled iff its canonical_acc carried a manifest species
+    manifest_species = {}
+    with open(cfg.manifest) as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            ca = (row.get("canonical_acc") or "").strip()
+            sp = (row.get("species") or "").strip()
+            if ca and sp and ca not in manifest_species:
+                manifest_species[ca] = sp
+    n_from_manifest = sum(1 for a in filelist_accs if a in manifest_species)
+    n_from_v2qc = n - n_from_manifest
     missing_ann = [a for a in filelist_accs if a not in ann]
 
     # --- host_clades.tsv (v2 schema)
@@ -456,7 +472,7 @@ def phase_cluster(cfg, state, paths):
     lines.append(f"filelist genomes: {n}")
     lines.append(f"host.dist pairs: {pairs}; union ops: {unions}; malformed: {malformed}")
     lines.append(f"clades: {len(clade_meta)}; assigned: {len(clade_of)} accessions; singletons: {singletons}")
-    lines.append(f"annotation sources: {n_manifest} from v3 manifest, {n_fallback} v2-QC fallback")
+    lines.append(f"annotation sources: {n_from_manifest} from v3 manifest (BV-BRC/NCBI export label), {n_from_v2qc} from v2 QC list (V2_NUMERIC-only objects)")
     lines.append("")
     lines.append("=== summary ===")
     lines.append("clade size distribution (size:count, top):")
@@ -513,7 +529,7 @@ def phase_cluster(cfg, state, paths):
 
     state.record("cluster", status="ok" if ok else "failed", genomes=n, clades=len(clade_meta),
                  pairs=pairs, unions=unions, singletons=singletons,
-                 annotation_manifest=n_manifest, annotation_v2qc=n_fallback)
+                 annotation_manifest=n_from_manifest, annotation_v2qc=n_from_v2qc)
     # stash spot values for the spotcheck phase
     spot_out = {str(i): spot_values[i] for i in spot_values} if spot_values else {}
     atomic_write_json(os.path.join(outdir, "spot_pairs.json"),
