@@ -738,22 +738,28 @@ def stage_report(cfg, ids, lenstats, clstats):
     m = clstats
     n = m["n_prophages"]
 
-    # repo copies: clade definitions (deterministic gzip) + summaries
-    tc_src = os.path.join(cfg.clades, "0", "tight_clades.json")
-    tc_gz = os.path.join(clades_repo, "tight_clades.json.gz")
-    with open(tc_src, "rb") as fi, open(tc_gz + ".tmp", "wb") as fo:
-        with gzip.GzipFile(filename="", mode="wb", fileobj=fo, mtime=0,
-                           compresslevel=9) as gz:
-            shutil.copyfileobj(fi, gz, 1 << 20)
-    atomic_replace(tc_gz + ".tmp", tc_gz)
+    # repo copies: clade definitions + per-clade similarity stats
+    # (deterministic gzip) + summaries
+    def gz_copy(src, dst):
+        with open(src, "rb") as fi, open(dst + ".tmp", "wb") as fo:
+            with gzip.GzipFile(filename="", mode="wb", fileobj=fo, mtime=0,
+                               compresslevel=9) as gz:
+                shutil.copyfileobj(fi, gz, 1 << 20)
+        atomic_replace(dst + ".tmp", dst)
+
+    gz_copy(os.path.join(cfg.clades, "0", "tight_clades.json"),
+            os.path.join(clades_repo, "tight_clades.json.gz"))
+    gz_copy(os.path.join(cfg.clades, "0", "clade_similarity.json"),
+            os.path.join(clades_repo, "clade_similarity.json.gz"))
     for name in ("clade_summary.tsv", "alignable_clades.tsv",
                  "singletons.tsv"):
         shutil.copyfile(os.path.join(cfg.clades, name),
                         os.path.join(clades_repo, name))
     sums_path = os.path.join(clades_repo, "SHA256SUMS")
     with open(sums_path + ".tmp", "w") as f:
-        for name in ("tight_clades.json.gz", "clade_summary.tsv",
-                     "alignable_clades.tsv", "singletons.tsv"):
+        for name in ("tight_clades.json.gz", "clade_similarity.json.gz",
+                     "clade_summary.tsv", "alignable_clades.tsv",
+                     "singletons.tsv"):
             f.write(f"{sha256(os.path.join(clades_repo, name))}  {name}\n")
     atomic_replace(sums_path + ".tmp", sums_path)
 
@@ -968,9 +974,11 @@ def stage_report(cfg, ids, lenstats, clstats):
                  f"commands.log), `tight_clades_summary.json`, "
                  f"`clade_summary.tsv`, `alignable_clades.tsv`, "
                  f"`singletons.tsv`")
-    lines.append("- repo `ntm/v3/clades/`: `tight_clades.json.gz` "
-                 "(deterministic gzip), `clade_summary.tsv`, "
-                 "`alignable_clades.tsv`, `singletons.tsv`, `SHA256SUMS`")
+    lines.append("- repo `ntm/v3/clades/`: `tight_clades.json.gz` (clade "
+                 "definitions), `clade_similarity.json.gz` (per-clade "
+                 "internal similarity stats), `clade_summary.tsv`, "
+                 "`alignable_clades.tsv`, `singletons.tsv`, `SHA256SUMS` "
+                 "(gzip artifacts deterministic, gzip -n)")
     lines.append("- FASTA / sketch / triangle stay on NVMe (repo holds only "
                  "code, manifests and small reports — v1/v2 rule)")
     lines.append("")

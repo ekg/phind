@@ -226,6 +226,16 @@ def main():
             dec = gzip.decompress(f.read())
         with open(f"{CLADES}/0/tight_clades.json", "rb") as f:
             ref = f.read()
+        sim_ref = open(f"{CLADES}/0/clade_similarity.json", "rb").read()
+        sim_gz = os.path.join(repo_clades, "clade_similarity.json.gz")
+        if os.path.exists(sim_gz) and gzip.decompress(
+                open(sim_gz, "rb").read()) == sim_ref:
+            info.append("repo clade_similarity.json.gz decompresses "
+                        "byte-identical to NVMe clade_similarity.json "
+                        f"({len(sim_ref):,} bytes)")
+        else:
+            errors.append("repo clade_similarity.json.gz missing or != NVMe "
+                          "clade_similarity.json")
         if dec == ref:
             info.append(f"repo ntm/v3/clades/{os.path.basename(gz)} "
                         f"decompresses byte-identical to NVMe "
@@ -244,7 +254,7 @@ def main():
             if bad:
                 errors.append(f"SHA256SUMS mismatch: {bad}")
             else:
-                info.append("repo SHA256SUMS verifies (4 files)")
+                info.append("repo SHA256SUMS verifies (5 files)")
         n_summary = sum(1 for _ in open(
             os.path.join(repo_clades, "clade_summary.tsv"))) - 1
         if n_summary != n_clades:
