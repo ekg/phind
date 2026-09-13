@@ -1,6 +1,6 @@
 # NTM v3 — prophage MASH + tight clades report
 
-Generated: 2026-09-13T17:53:02Z (task ntm-v3-prophage)
+Generated: 2026-09-13T17:55:20Z (task ntm-v3-prophage)
 
 ## Prophage set
 
@@ -86,4 +86,3 @@ Cohort note: the task brief anticipated "~4-6x more prophages than v2", but the 
 - NVMe `/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/clades/`: `0/` (tight_clades.json, clade_similarity.json, members.json, distances.npz, commands.log), `tight_clades_summary.json`, `clade_summary.tsv`, `alignable_clades.tsv`, `singletons.tsv`
 - repo `ntm/v3/clades/`: `tight_clades.json.gz` (clade definitions), `clade_similarity.json.gz` (per-clade internal similarity stats), `clade_summary.tsv`, `alignable_clades.tsv`, `singletons.tsv`, `SHA256SUMS` (gzip artifacts deterministic, gzip -n)
 - FASTA / sketch / triangle stay on NVMe (repo holds only code, manifests and small reports — v1/v2 rule)
-

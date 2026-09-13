@@ -537,8 +537,10 @@ def load_clade_stats(cfg, ids):
             for cid, nm, med, mn, mx in rows:
                 if not sel(nm):
                     continue
+                # singletons have no internal pairs: NA keeps the 5-column
+                # layout without trailing whitespace (repo lint)
                 def g(x):
-                    return "" if x is None else f"{x:.6f}"
+                    return "NA" if x is None else f"{x:.6f}"
                 f.write(f"{cid}\t{nm}\t{g(med)}\t{g(mn)}\t{g(mx)}\n")
         atomic_replace(tmp, path)
 
@@ -981,7 +983,6 @@ def stage_report(cfg, ids, lenstats, clstats):
                  "(gzip artifacts deterministic, gzip -n)")
     lines.append("- FASTA / sketch / triangle stay on NVMe (repo holds only "
                  "code, manifests and small reports — v1/v2 rule)")
-    lines.append("")
     tmp = report + ".tmp"
     with open(tmp, "w") as f:
         f.write("\n".join(lines) + "\n")
