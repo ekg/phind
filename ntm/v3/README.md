@@ -15,7 +15,8 @@ numeric + 18,055 runs + 248 BV-BRC).
 | Host clades (MASH, host structure) | ✅ done — `host_clades_report.md` (16,243/16,243 genomes labelled, 411 clades at dist ≤ 0.05; artifacts + sha256 receipts on NVMe `ntm/v3/host_clades/`) |
 | Prophage extraction (unified manifest + full_prophages.fa) | ✅ done — `extract_report.md`, `inputs/v3_prophage_manifest.tsv.gz`, `inputs/coverage.tsv` (36,940 unified rows: 36,321 BV-BRC phigaro + 619 V2; 9,446 extractable, all extracted; 27,494 run rows blocked pending collaborator delivery, none dropped) |
 | Prophage MASH clades (sketch + triangle + tight clades) | ✅ done — `mash_clades_report.md`, `clades/` (813 clades at thr 0.25 / max 100 / community 0: 456 alignable + 357 singletons over 9,446 prophages; artifacts + sha256 receipts on NVMe `ntm/v3/mash_clades/`, `ntm/v3/clades/`) |
-| Downstream prophage pipeline (per-clade allwave + impg, ML, release) | ⏳ to run |
+| Per-clade alignment + partition (allwave + impg) | ✅ done — `partition_report.md` (813/813 clades: 456 alignable with full PAF+BED+MAF+manifest, 357 singletons pass-through, 0 failures; artifacts on NVMe `ntm/v3/clades/`) |
+| Downstream prophage pipeline (ML, release) | ⏳ to run |
 
 ## Inputs
 
