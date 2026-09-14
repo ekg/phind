@@ -272,6 +272,12 @@ def process_clade(args, cid, members):
         bed = os.path.join(outdir, "partitions.bed")
         mafdir = os.path.join(outdir, "partitions")
         os.makedirs(mafdir, exist_ok=True)
+        # a killed prior run can leave a stale impg index whose byte offsets
+        # no longer match the regenerated segmented PAF (impg then panics
+        # with 'Invalid CIGAR operation'); always rebuild it from scratch
+        stale_idx = seg_paf + ".impg"
+        if os.path.exists(stale_idx):
+            os.remove(stale_idx)
         cmd = [IMPG, "partition", "-a", seg_paf] + PARTITION_FLAGS + \
               ["-o", "bed", "--output-folder", outdir, "--temp-dir", outdir]
         _, dt = run_cmd(cmd, log_path)
