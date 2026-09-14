@@ -89,6 +89,7 @@ def main():
     n_gt_1000 = 0
     n_lt_100 = 0
     gt1000_clades = []
+    global_max_span = 0
     align_rates = []
     member_hit_rates = []
     per_clade_runtime = []
@@ -180,6 +181,8 @@ def main():
                     spans.append(int(c[2]) - int(c[1]))
         total_intervals += len(spans)
         g = sum(1 for s in spans if s > 1000)
+        if spans:
+            global_max_span = max(global_max_span, max(spans))
         n_gt_1000 += g
         n_lt_100 += sum(1 for s in spans if s < 100)
         if g:
@@ -222,6 +225,10 @@ def main():
               f"{statistics.median(all_medians):.0f} max={max(all_medians):.0f}")
     print(f"intervals >1000bp: {n_gt_1000} ({100*n_gt_1000/max(total_intervals,1):.3f}%)"
           f"  <100bp: {n_lt_100} ({100*n_lt_100/max(total_intervals,1):.2f}%)")
+    print(f"global max interval span: {global_max_span} bp")
+    print(f"clades with >1000bp intervals: {len(gt1000_clades)} of {align_with_partition}; "
+          f"worst: " + ", ".join(f"{c}({g},max {m})" for c, g, m in
+                                  sorted(gt1000_clades, key=lambda x: -x[1])[:5]))
     if per_clade_runtime:
         print(f"per-clade runtime: total={sum(per_clade_runtime):.0f}s "
               f"median={statistics.median(per_clade_runtime):.1f}s "

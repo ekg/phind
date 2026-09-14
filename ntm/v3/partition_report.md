@@ -115,6 +115,11 @@ After the fix the independent validator
 outputs: 456; missing: 0 failed: 0 manifest issues: 0; VALIDATION: PASS`
 (parameter audit incl. k_farthest=0/no-stranger, window 500/max-span
 1000, scores, per-clade strategy-vs-n, repo==NVMe clades sha).
+The full executed validator output is checked in as
+`ntm/v3/partition_validation.txt` (exit 0, VALIDATION: PASS), including
+the per-clade `>1000bp` breakdown backing the justification above
+(137/456 clades affected, global max 2,049 bp, worst clades listed with
+their per-clade maxima).
 
 ## Outputs
 
@@ -132,6 +137,7 @@ outputs: 456; missing: 0 failed: 0 manifest issues: 0; VALIDATION: PASS`
   `ntm/v3/clades/tight_clades.json.gz`)
 
 Repo: `ntm/v3/partition_report.md` (this file),
+`ntm/v3/partition_validation.txt` (executed validator output, exit 0),
 `ntm/v3/scripts/validate_v3_partitions.py` (validator),
 `scripts/per_clade_alignment_pipeline.py` (stale-index fix).
 
