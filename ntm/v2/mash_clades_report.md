@@ -15,6 +15,16 @@ Generated: 2026-08-16T14:15:41Z
 - median internal mash distance per clade: **0.0060** (v1: 0.074)
 - assignment check: clade members + singletons == 8502 == 8502 prophages (every prophage assigned exactly once)
 
+> **Erratum (2026-09-13, task verify-v2-clade-order):** the v2 clade counts
+> in this report — **2,388** total (1,251 alignable + 1,137 singletons), median
+> internal mash 0.0060 — are inflated by NaN fragmentation in the frozen v2
+> clade run (35.23% of within-community distance-triangle pairs were never
+> filled and behaved as maximally distant, over-splitting clades). A
+> re-derivation with a pre-sorted `ids.txt` gives **767 clades = 413 alignable
+> + 354 singletons, median 0.0639** — see
+> [`clades_sorted_report.md`](clades_sorted_report.md). Historical numbers
+> below are unchanged.
+
 ## Outputs
 
 - `mash_clades/`: `prophages.msh`, `prophages.dist.tsv`, `prophages_mash.dist` (float32 upper triangle), `ids.txt`, `labels.csv`, `full_prophages.idx.json`, `prophages_tree.nwk`, `tree_stats.json`

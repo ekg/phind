@@ -66,6 +66,16 @@ Notes:
    prophage → source accession → host clade; FASTA headers and tables
    annotated with host clades + species.
 
+> **Erratum (2026-09-13, task verify-v2-clade-order):** the v2 clade counts
+> in this release — **2,388** total (1,251 alignable + 1,137 singletons),
+> median internal mash 0.0060 — are inflated by NaN fragmentation in the
+> frozen v2 clade run (35.23% of within-community distance-triangle pairs
+> were never filled and behaved as maximally distant, over-splitting
+> clades). Re-derivation with a pre-sorted `ids.txt` gives **767 clades =
+> 413 alignable + 354 singletons, median 0.0639** — see
+> [`../clades_sorted_report.md`](../clades_sorted_report.md). The release
+> artifacts and all historical numbers below are unchanged.
+
 ## Files (`ntm/v2/release/`)
 
 | File | Contents |
