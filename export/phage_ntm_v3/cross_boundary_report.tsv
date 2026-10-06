@@ -1,0 +1,8 @@
+clade_id	n_members	n_ntm_members	n_mtc_members	minority_scope	minority_members	median_mash	confidence	n_host_clades	mtc_species
+0_0306	100	7	93	NTM	7	0.035272	high	3	Mycobacterium sp.,Mycobacterium tuberculosis
+0_0338	100	10	90	NTM	10	0.045108	high	5	Mycobacterium sp.,Mycobacterium tuberculosis
+0_0365	53	51	2	MTC	2	0.026023	high	5	Mycobacterium tuberculosis
+0_0252	74	73	1	MTC	1	0.200342	low	11	Mycobacterium tuberculosis
+0_0413	79	78	1	MTC	1	0.021322	low	6	Mycobacterium canetti
+0_0435	18	17	1	MTC	1	0.113401	low	5	Mycobacterium canetti
+0_0657	3	2	1	MTC	1	0.239237	low	2	Mycobacterium canetti
