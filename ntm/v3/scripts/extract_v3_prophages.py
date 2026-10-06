@@ -37,7 +37,12 @@ Outputs (repo):
 
 Usage:
   python3 ntm/v3/scripts/extract_v3_prophages.py \
-      [--work-dir /mnt/nvme3n1/erikg/phind-genome-work]
+      [--work-dir /mnt/nvme3n1/erikg/phind-genome-work] \
+      [--manifest ntm/v3/inputs/v3_prophage_manifest.tsv.gz]
+
+  --manifest defaults to the frozen repo prophage manifest, so the default
+  run reproduces the original behavior; it is overridable to extract from a
+  delivery-updated manifest non-destructively.
 """
 from __future__ import annotations
 
@@ -133,8 +138,11 @@ def faidx(pansn: str, region: str) -> str | None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--work-dir", default="/mnt/nvme3n1/erikg/phind-genome-work")
+    ap.add_argument("--manifest", default=str(MANIFEST_GZ),
+                    help="prophage manifest (gzipped TSV) to extract from")
     args = ap.parse_args()
     work = Path(args.work_dir)
+    manifest_path = Path(args.manifest)
     genomes = work / "ntm/v3/genomes/canonical_objects"
     out_fa = work / "ntm/v3/full_prophages.fa"
     out_status = work / "ntm/v3/full_prophages.fa.manifest.tsv"
@@ -147,7 +155,7 @@ def main() -> int:
         recon = json.loads(stats_file.read_text())
 
     t0 = time.time()
-    with gzip.open(MANIFEST_GZ, "rt", newline="") as fh:
+    with gzip.open(manifest_path, "rt", newline="") as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
     extractable = [r for r in rows if r["genome_status"] == "extractable"]
     blocked = [r for r in rows if r["genome_status"] == "blocked_run"]

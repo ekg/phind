@@ -14,22 +14,22 @@ export_internal_superseded_rows	5746	prophage rows on superseded export genomes
 v2_rows_kept_total	619	v2 genomes absent from export (536 NCBI + 83 runs)
 v2_superseded_numeric_rows	7966	v2 rows whose genome is in the export (phigaro primary)
 v2_superseded_run_rows	14658	v2 run rows whose run is in the export (phigaro primary)
-extractable_rows	36857	genome local on NVMe
-extracted_records	36857	FASTA records written == extractable − errors
+extractable_rows	9446	genome local on NVMe
+extracted_records	9446	FASTA records written == extractable − errors
 extraction_errors	0	target 0
-blocked_run_rows	83	ERR/SRR/DRR pending collaborator delivery; none dropped
+blocked_run_rows	27494	ERR/SRR/DRR pending collaborator delivery; none dropped
 v2_run_rows_in_union	14741	14658 via export phigaro + 83 source=V2
-distinct_objects_read	15317	v3/genomes/canonical_objects
-total_bp	785633429	sum of extracted prophage lengths
+distinct_objects_read	3994	v3/genomes/canonical_objects
+total_bp	206284318	sum of extracted prophage lengths
 len_min	237
-len_median	18226
-len_mean	21315
-len_max	100585
+len_median	18276
+len_mean	21838
+len_max	93713
 length_equals_end_minus_begin_plus_1	36940	holds for all manifest rows (asserted)
-begin_zero_rows_extracted	46	extracted as [1,end]; extracted = length - 1 (documented off-by-one)
-out_of_range_rows	263	outside [1000,100000] bp; flagged, kept
+begin_zero_rows_extracted	16	extracted as [1,end]; extracted = length - 1 (documented off-by-one)
+out_of_range_rows	91	outside [1000,100000] bp; flagged, kept
 end_beyond_contig_rows	0	target 0
 spot_check_genomes	10	10/10 PASS (seed 42, independent faidx re-query)
-fasta_sha256	a949c653b104521f9d52aa95af4a233a3e35418c10cf3c782e26a6e3317441bf	/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/full_prophages.fa
-fasta_records	36857	== extracted_records
+fasta_sha256	5adfd2aee6e1e03d109a49a3b1fbba837a21649851fc39ee9c9ff07217f0480c	/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/full_prophages.fa
+fasta_records	9446	== extracted_records
 fasta_single_source_per_genome	36940	no genome carries calls from two callers (asserted at build)

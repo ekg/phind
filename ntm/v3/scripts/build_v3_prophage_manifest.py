@@ -52,7 +52,14 @@ Outputs:
 
 Usage:
   python3 ntm/v3/scripts/build_v3_prophage_manifest.py \
-      [--work-dir /mnt/nvme3n1/erikg/phind-genome-work]
+      [--work-dir /mnt/nvme3n1/erikg/phind-genome-work] \
+      [--acquisition ntm/v3/inputs/v3_acquisition_manifest.tsv.gz] \
+      [--out-manifest ntm/v3/inputs/v3_prophage_manifest.tsv.gz]
+
+  --acquisition defaults to the frozen repo acquisition manifest and
+  --out-manifest to the frozen repo prophage manifest, so the default run
+  reproduces the original behavior byte-for-byte. Both are overridable so a
+  delivery-updated manifest can be written non-destructively.
 """
 from __future__ import annotations
 
@@ -117,13 +124,20 @@ def icoord(v: str) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--work-dir", default="/mnt/nvme3n1/erikg/phind-genome-work")
+    ap.add_argument("--acquisition", default=str(ACQ_TSVGZ),
+                    help="acquisition manifest (gzipped TSV) to read")
+    ap.add_argument("--out-manifest", default=str(
+        REPO / "ntm/v3/inputs/v3_prophage_manifest.tsv.gz"),
+        help="repo prophage manifest output path (gzip -n, deterministic)")
     args = ap.parse_args()
     work = Path(args.work_dir)
+    acquisition_path = Path(args.acquisition)
     v2_manifest = work / "ntm/v2/inputs/NTM_QC_passed_prophage_master_manifest.tsv"
-    out_gz = REPO / "ntm/v3/inputs/v3_prophage_manifest.tsv.gz"
+    out_gz = Path(args.out_manifest)
     out_nvme = work / "ntm/v3/inputs/v3_prophage_manifest.tsv"
     stats_path = work / "ntm/v3/scratch/v3_prophage_reconciliation.json"
     out_nvme.parent.mkdir(parents=True, exist_ok=True)
+    out_gz.parent.mkdir(parents=True, exist_ok=True)
     stats_path.parent.mkdir(parents=True, exist_ok=True)
 
     # ------------------------------------------------------------- load
@@ -134,7 +148,7 @@ def main() -> int:
     assert len(summary) == 26499, len(summary)
 
     acq: dict[str, dict] = {}
-    with gzip.open(ACQ_TSVGZ, "rt", newline="") as fh:
+    with gzip.open(acquisition_path, "rt", newline="") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             acq[r["genome_key"]] = r
     assert len(acq) == 34846, len(acq)

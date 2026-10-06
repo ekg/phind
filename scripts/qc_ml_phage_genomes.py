@@ -136,9 +136,9 @@ def map_stats(query, members):
 
 
 def fasta_id_to_clade(fasta_id):
-    """clade_0_0000_ML / ntm_0_0000_ML / ntm2_0_0000_ML -> 0_0000"""
+    """clade_0_0000_ML / ntm_0_0000_ML / ntm2_0_0000_ML / ntm3_0_0000_ML -> 0_0000"""
     fid = fasta_id
-    for prefix in ("clade_", "ntm2_", "ntm_"):
+    for prefix in ("clade_", "ntm3_", "ntm2_", "ntm_"):
         if fid.startswith(prefix):
             fid = fid[len(prefix):]
             break

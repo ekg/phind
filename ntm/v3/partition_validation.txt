@@ -1,17 +1,17 @@
-# ntm-v3-per validation output — executed 2026-09-14T00:27:37Z
+# ntm-v3-per validation output — executed 2026-10-06T19:25:06Z
 # command: python3 ntm/v3/scripts/validate_v3_partitions.py --summary-tsv /mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/clades/partition_summary.tsv
-# exit code: 0 (VALIDATION: PASS); recompute: sha256 of NVMe inputs checked by the script against repo tight_clades.json.gz
-clades total=813 alignable=456 singletons=357 singleton_dirs=357
-alignable with full outputs: 456
+# exit code: 0 (VALIDATION: PASS); full-cohort regeneration (2026-10-06 delivery)
+clades total=1304 alignable=893 singletons=411 singleton_dirs=411
+alignable with full outputs: 893
 missing: 0  failed: 0  manifest issues: 0
-strategies: {'tree:5:0:0.0': 89, 'none': 367}
-alignment rate (pairs/possible): median=1.0000 min=0.0679
+strategies: {'tree:5:0:0.0': 374, 'none': 519}
+alignment rate (pairs/possible): median=1.0000 min=0.0661
 member-hit rate (seqs in paf / n): median=1.0000 min=1.0000
-total partitions: 151237  intervals: 500584
-per-clade median interval: median=500 max=853
-intervals >1000bp: 676 (0.135%)  <100bp: 55565 (11.10%)
-global max interval span: 2049 bp
-clades with >1000bp intervals: 137 of 456; worst: 0_0000(29,max 1626), 0_0003(28,max 1302), 0_0161(27,max 1747), 0_0055(21,max 1384), 0_0157(20,max 1345)
-per-clade runtime: total=65970s median=8.3s max=3121.4s
-wrote /mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/clades/partition_summary.tsv (456 rows)
+total partitions: 726121  intervals: 1847004
+per-clade median interval: median=500 max=926
+intervals >1000bp: 1579 (0.085%)  <100bp: 169744 (9.19%)
+global max interval span: 2180 bp
+clades with >1000bp intervals: 305 of 893; worst: 0_0308(34,max 1969), 0_0123(30,max 1720), 0_0164(26,max 1250), 0_0213(26,max 1535), 0_0434(23,max 1565)
+per-clade runtime: total=105448s median=8.6s max=4198.6s
+wrote /mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/clades/partition_summary.tsv (893 rows)
 VALIDATION: PASS

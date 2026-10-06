@@ -1,6 +1,6 @@
 # NTM v3 — unified prophage manifest + full_prophages.fa extraction report
 
-Generated: 2026-09-13T01:41:55Z
+Generated: 2026-10-06T16:51:28Z
 
 ## Design
 
@@ -46,12 +46,12 @@ genomes) and every v2 run accession present in the export
 | metric | count |
 |---|---:|
 | unified manifest rows | 36,940 |
-| extractable rows (genome local) | 9,446 (BV-BRC 8,910 + V2 536) |
-| extracted into FASTA | 9,446 |
+| extractable rows (genome local) | 36,857 (BV-BRC 36,321 + V2 536) |
+| extracted into FASTA | 36,857 |
 | errors (scaffold/end/length) | 0 |
-| blocked rows (run assemblies, collaborator pending) | 27,494 (BV-BRC 27,411 + V2 83) |
-| distinct canonical objects read | 3,994 |
-| FASTA records written | 9,446 == extractable − errors |
+| blocked rows (run assemblies, collaborator pending) | 83 (BV-BRC 0 + V2 83) |
+| distinct canonical objects read | 15,317 |
+| FASTA records written | 36,857 == extractable − errors |
 
 Run-assembly accounting (all-inclusive, none dropped): every v2 run
 prophage row is present in the union — 14,658 via the export phigaro
@@ -66,17 +66,17 @@ not used (v2 ena_backfill study).
 | stat | bp |
 |---|---:|
 | min | 237 |
-| median | 18,276 |
-| mean | 21,838 |
-| max | 93,713 |
-| total | 206,284,318 |
+| median | 18,226 |
+| mean | 21,315 |
+| max | 100,585 |
+| total | 785,633,429 |
 
 ## Coordinate conventions
 
 Coordinates are 1-based inclusive: `length == end − begin + 1` holds for
 all 36,940 manifest rows (asserted at build time), and every extracted
 sequence length equals its manifest length — except the begin==0 rows
-(16 extractable of 52 manifest-wide, same assemblies and
+(46 extractable of 52 manifest-wide, same assemblies and
 convention as the v2 extract report): there begin is 0-based while end
 stays 1-based inclusive, so the region is extracted as [1, end] and the
 extracted length is length − 1. The transposable flag is metadata only
@@ -90,7 +90,7 @@ unprefixed, and GCA twin objects store NZ_ contigs unprefixed):
 
 | method | rows |
 |---|---:|
-| exact | 9,240 |
+| exact | 36,651 |
 | exact+accn_strip | 107 |
 | nz_add | 72 |
 | version_suffix+accn_strip | 17 |
@@ -98,7 +98,7 @@ unprefixed, and GCA twin objects store NZ_ contigs unprefixed):
 
 ## Flagged warnings (kept, not dropped)
 
-Prophages outside [1,000, 100,000] bp: **91** — all extracted and retained:
+Prophages outside [1,000, 100,000] bp: **263** — all extracted and retained:
 
 | prophage | source | length |
 |---|---|---:|
@@ -110,49 +110,49 @@ Prophages outside [1,000, 100,000] bp: **91** — all extracted and retained:
 | 36809.1983#1#accn|JBOZMH010000005_prophage1 | BV-BRC | 680 |
 | 36809.2012#1#accn|JBOZNK010000004_prophage1 | BV-BRC | 680 |
 | 36809.2030#1#accn|JBGKBR010000004_prophage1 | BV-BRC | 680 |
-| GCA_001946105.1#1#GCA_001946105.1_ASM194610v1_genomic_prophage1 | V2 | 813 |
-| GCA_001948695.1#1#GCA_001948695.1_ASM194869v1_genomic_prophage1 | V2 | 813 |
-| GCA_002101775.1#1#LQPI01000027.1_prophage1 | BV-BRC | 516 |
-| GCA_002800615.1#1#NQRO01000009.1_prophage1 | BV-BRC | 731 |
-| GCA_002800805.1#1#NQSE01000008.1_prophage1 | BV-BRC | 680 |
-| GCA_002800815.1#1#NQSF01000008.1_prophage1 | BV-BRC | 680 |
-| GCA_002800845.1#1#NQSG01000009.1_prophage1 | BV-BRC | 680 |
-| GCA_002800945.1#1#NQSS01000010.1_prophage1 | BV-BRC | 978 |
-| GCA_002800965.1#1#NQSU01000009.1_prophage1 | BV-BRC | 680 |
-| GCA_002802225.1#1#NQSD01000008.1_prophage1 | BV-BRC | 680 |
-| GCA_002802285.1#1#NQSH01000009.1_prophage1 | BV-BRC | 680 |
-| GCA_003072295.1#1#QDEW01000008.1_prophage1 | BV-BRC | 731 |
-| GCA_003582525.1#1#QXBL01000001.1_prophage1 | BV-BRC | 731 |
-| GCA_003582645.1#1#QXBR01000001.1_prophage1 | BV-BRC | 731 |
-| GCA_003582765.1#1#QXBX01000004.1_prophage1 | BV-BRC | 680 |
-| GCA_003582845.1#1#QXCB01000004.1_prophage1 | BV-BRC | 680 |
-| GCA_004105485.1#1#GCA_004105485.1_ASM410548v1_genomic_prophage1 | V2 | 813 |
-| GCA_004106125.1#1#GCA_004106125.1_ASM410612v1_genomic_prophage1 | V2 | 813 |
-| GCA_015023895.1#1#JACVDN010000001.1_prophage1 | BV-BRC | 680 |
-| GCA_015355655.1#1#JACLAQ010000007.1_prophage2 | BV-BRC | 744 |
-| GCA_015355675.1#1#JACLAP010000005.1_prophage2 | BV-BRC | 744 |
-| GCA_015499795.1#1#JACDRJ010000027.1_prophage1 | BV-BRC | 731 |
-| GCA_016756035.1#1#AP024240.1_prophage7 | BV-BRC | 650 |
-| GCA_017176265.1#1#JADWXJ010000010.1_prophage1 | BV-BRC | 680 |
-| GCA_017183555.1#1#CP063318.1_prophage1 | BV-BRC | 680 |
-| GCA_020055525.1#1#WEHM01000002.1_prophage1 | BV-BRC | 641 |
-| GCA_028211145.1#1#JAQLTS010000015.1_prophage2 | BV-BRC | 638 |
-| GCA_030463595.1#1#CP119724.1_prophage1 | BV-BRC | 680 |
-| GCA_030513445.1#1#JAROLG010000008.1_prophage1 | BV-BRC | 680 |
-| GCA_030513785.1#1#JAROLS010000006.1_prophage1 | BV-BRC | 731 |
-| GCA_049066265.1#1#JBMEVX010000015.1_prophage1 | BV-BRC | 731 |
-| GCA_049066725.1#1#JBMEWK010000008.1_prophage1 | BV-BRC | 731 |
-| GCA_900133475.1#1#FVHJ01000008.1_prophage1 | BV-BRC | 853 |
-| GCA_900133695.1#1#FVHZ01000002.1_prophage1 | BV-BRC | 853 |
-| GCA_900133725.1#1#FVHQ01000008.1_prophage1 | BV-BRC | 853 |
-| GCA_900133745.1#1#FVHX01000001.1_prophage1 | BV-BRC | 853 |
-| GCA_900133755.1#1#FVIG01000008.1_prophage1 | BV-BRC | 853 |
-| GCA_900135145.1#1#FSGF01000001.1_prophage1 | BV-BRC | 731 |
-| GCA_900135205.1#1#FVLA01000022.1_prophage1 | BV-BRC | 731 |
-| GCA_900136385.1#1#FSIR01000005.1_prophage1 | BV-BRC | 680 |
-| GCA_900136595.1#1#FVNL01000004.1_prophage1 | BV-BRC | 731 |
-| GCA_900136615.1#1#FVNJ01000005.1_prophage1 | BV-BRC | 731 |
-| … 41 more (see manifest; filter length column) | | |
+| DRR317567#1#NODE_6_length_321285_cov_65.078585_prophage1 | BV-BRC | 100,585 |
+| DRR444226#1#NODE_4_length_230282_cov_15.436384_prophage1 | BV-BRC | 537 |
+| ERR115000#1#NODE_15_length_117014_cov_9.211228_prophage1 | BV-BRC | 731 |
+| ERR115004#1#NODE_24_length_79134_cov_19.873835_prophage1 | BV-BRC | 731 |
+| ERR115005#1#NODE_14_length_164903_cov_20.224534_prophage1 | BV-BRC | 731 |
+| ERR115031#1#NODE_4_length_372540_cov_25.784955_prophage2 | BV-BRC | 237 |
+| ERR115032#1#NODE_4_length_372540_cov_24.629134_prophage1 | BV-BRC | 237 |
+| ERR115033#1#NODE_4_length_372540_cov_27.174960_prophage2 | BV-BRC | 237 |
+| ERR115040#1#NODE_24_length_79133_cov_25.091315_prophage1 | BV-BRC | 731 |
+| ERR115046#1#NODE_22_length_79118_cov_22.203673_prophage1 | BV-BRC | 731 |
+| ERR115047#1#NODE_4_length_338841_cov_24.056573_prophage2 | BV-BRC | 237 |
+| ERR115079#1#NODE_24_length_79124_cov_29.069180_prophage1 | BV-BRC | 731 |
+| ERR119103#1#NODE_19_length_77853_cov_38.103525_prophage1 | BV-BRC | 680 |
+| ERR119107#1#NODE_14_length_164826_cov_37.801773_prophage1 | BV-BRC | 731 |
+| ERR13148610#1#NODE_51_length_30047_cov_59.265432_prophage1 | BV-BRC | 554 |
+| ERR16089468#1#NODE_9_length_234012_cov_173.900524_prophage1 | BV-BRC | 680 |
+| ERR16089539#1#NODE_9_length_234012_cov_214.094885_prophage1 | BV-BRC | 680 |
+| ERR16089633#1#NODE_9_length_234012_cov_238.695963_prophage1 | BV-BRC | 680 |
+| ERR16914737#1#NODE_18_length_120521_cov_63.284448_prophage1 | BV-BRC | 883 |
+| ERR2524309#1#NODE_16_length_140867_cov_64.265659_prophage1 | BV-BRC | 731 |
+| ERR2524342#1#NODE_12_length_163579_cov_66.657292_prophage1 | BV-BRC | 731 |
+| ERR2524354#1#NODE_3_length_687324_cov_85.222345_prophage2 | BV-BRC | 731 |
+| ERR2759453#1#NODE_1_length_787494_cov_26.280716_prophage1 | BV-BRC | 731 |
+| ERR2759457#1#NODE_1_length_1934245_cov_24.731971_prophage1 | BV-BRC | 731 |
+| ERR2759471#1#NODE_4_length_636007_cov_24.246119_prophage1 | BV-BRC | 680 |
+| ERR2759478#1#NODE_3_length_525046_cov_28.504138_prophage1 | BV-BRC | 680 |
+| ERR2759479#1#NODE_4_length_525046_cov_28.251785_prophage1 | BV-BRC | 680 |
+| ERR2759480#1#NODE_6_length_402313_cov_23.476363_prophage1 | BV-BRC | 680 |
+| ERR2759483#1#NODE_4_length_449205_cov_25.609736_prophage1 | BV-BRC | 680 |
+| ERR2759484#1#NODE_3_length_449196_cov_26.050283_prophage1 | BV-BRC | 680 |
+| ERR2759485#1#NODE_4_length_449196_cov_28.750766_prophage1 | BV-BRC | 680 |
+| ERR2759487#1#NODE_5_length_449205_cov_22.316992_prophage1 | BV-BRC | 680 |
+| ERR2759488#1#NODE_3_length_525046_cov_26.168073_prophage1 | BV-BRC | 680 |
+| ERR2759489#1#NODE_6_length_355569_cov_26.791237_prophage1 | BV-BRC | 680 |
+| ERR2759492#1#NODE_3_length_449196_cov_27.255298_prophage1 | BV-BRC | 680 |
+| ERR2759494#1#NODE_6_length_402363_cov_25.181540_prophage1 | BV-BRC | 680 |
+| ERR2759495#1#NODE_4_length_449205_cov_25.920053_prophage1 | BV-BRC | 680 |
+| ERR2759496#1#NODE_4_length_449205_cov_24.488883_prophage1 | BV-BRC | 680 |
+| ERR2759497#1#NODE_5_length_449205_cov_26.911192_prophage1 | BV-BRC | 680 |
+| ERR2759500#1#NODE_4_length_422143_cov_26.497761_prophage1 | BV-BRC | 680 |
+| ERR2759522#1#NODE_3_length_525046_cov_25.635079_prophage1 | BV-BRC | 680 |
+| ERR3198401#1#NODE_3_length_515028_cov_12.823854_prophage1 | BV-BRC | 731 |
+| … 213 more (see manifest; filter length column) | | |
 
 end > contig length rows: **0**
 
@@ -162,6 +162,19 @@ None — every prophage fits inside its resolved contig.
 
 | header | genome | scaffold | end | length |
 |---|---|---|---:|---:|
+| ERR1413183#1#NODE_29_length_53278_cov_57.370012_prophage1 | ERR1413183 | NODE_29_length_53278_cov_57.370012 | 26,489 | 26,490 |
+| ERR15535446#1#NODE_31_length_32374_cov_23.438740_prophage1 | ERR15535446 | NODE_31_length_32374_cov_23.438740 | 22,031 | 22,032 |
+| ERR3012659#1#NODE_3_length_182958_cov_24.190121_prophage1 | ERR3012659 | NODE_3_length_182958_cov_24.190121 | 23,101 | 23,102 |
+| ERR330893#1#NODE_67_length_21375_cov_4.526220_prophage1 | ERR330893 | NODE_67_length_21375_cov_4.526220 | 14,937 | 14,938 |
+| ERR337788#1#NODE_23_length_24386_cov_35.715384_prophage1 | ERR337788 | NODE_23_length_24386_cov_35.715384 | 23,808 | 23,809 |
+| ERR484975#1#NODE_27_length_26202_cov_713.379776_prophage1 | ERR484975 | NODE_27_length_26202_cov_713.379776 | 16,828 | 16,829 |
+| ERR5412607#1#NODE_37_length_50832_cov_23.344892_prophage1 | ERR5412607 | NODE_37_length_50832_cov_23.344892 | 21,878 | 21,879 |
+| ERR5412799#1#NODE_29_length_42306_cov_7.886523_prophage1 | ERR5412799 | NODE_29_length_42306_cov_7.886523 | 40,257 | 40,258 |
+| ERR5413109#1#NODE_71_length_21642_cov_17.558345_prophage1 | ERR5413109 | NODE_71_length_21642_cov_17.558345 | 19,701 | 19,702 |
+| ERR5413703#1#NODE_36_length_45043_cov_33.375834_prophage1 | ERR5413703 | NODE_36_length_45043_cov_33.375834 | 38,240 | 38,241 |
+| ERR5413755#1#NODE_45_length_37154_cov_28.307178_prophage1 | ERR5413755 | NODE_45_length_37154_cov_28.307178 | 21,538 | 21,539 |
+| ERR5414153#1#NODE_38_length_50696_cov_11.219802_prophage1 | ERR5414153 | NODE_38_length_50696_cov_11.219802 | 24,750 | 24,751 |
+| ERR7253671#1#NODE_23_length_95955_cov_39.359071_prophage1 | ERR7253671 | NODE_23_length_95955_cov_39.359071 | 20,507 | 20,508 |
 | GCA_000270825.1#1#AKUX01000007.1_prophage1 | GCA_000270825.1 | AKUX01000007.1 | 28,307 | 28,308 |
 | GCA_001545925.1#1#GCA_001545925.1_ASM154592v1_genomic_prophage1 | GCA_001545925.1_ASM154592v1_genomic | LMVQ01000168.1 | 32,509 | 32,510 |
 | GCA_030330585.1#1#JAQPLK010000002.1_prophage1 | GCA_030330585.1_ASM3033058v1_genomic | JAQPLK010000002.1 | 15,835 | 15,836 |
@@ -178,6 +191,23 @@ None — every prophage fits inside its resolved contig.
 | GCF_057397965.1#1#NZ_JBXXZF010000018.1_prophage1 | GCF_057397965.1_ASM5739796v1_genomic | NZ_JBXXZF010000018.1 | 27,824 | 27,825 |
 | GCF_900132295.1#1#NZ_FSBM01000004.1_prophage1 | GCF_900132295.1_12163_2_73_genomic | NZ_FSBM01000004.1 | 28,105 | 28,106 |
 | GCF_900133575.1#1#NZ_FSDN01000012.1_prophage1 | GCF_900133575.1_12082_5_56_genomic | NZ_FSDN01000012.1 | 29,572 | 29,573 |
+| SRR14719107#1#NODE_1_length_802290_cov_100.357398_prophage1 | SRR14719107 | NODE_1_length_802290_cov_100.357398 | 27,571 | 27,572 |
+| SRR14719143#1#NODE_25_length_21996_cov_227.234865_prophage1 | SRR14719143 | NODE_25_length_21996_cov_227.234865 | 13,115 | 13,116 |
+| SRR14719277#1#NODE_20_length_43016_cov_1427.344652_prophage1 | SRR14719277 | NODE_20_length_43016_cov_1427.344652 | 40,005 | 40,006 |
+| SRR17774879#1#NODE_27_length_68999_cov_14.921478_prophage1 | SRR17774879 | NODE_27_length_68999_cov_14.921478 | 37,660 | 37,661 |
+| SRR19543348#1#NODE_71_length_23702_cov_418.039704_prophage1 | SRR19543348 | NODE_71_length_23702_cov_418.039704 | 19,175 | 19,176 |
+| SRR21939558#1#NODE_4_length_392523_cov_25.262316_prophage1 | SRR21939558 | NODE_4_length_392523_cov_25.262316 | 27,070 | 27,071 |
+| SRR21939562#1#NODE_27_length_50832_cov_25.472485_prophage1 | SRR21939562 | NODE_27_length_50832_cov_25.472485 | 21,878 | 21,879 |
+| SRR21939572#1#NODE_14_length_102707_cov_205.917802_prophage1 | SRR21939572 | NODE_14_length_102707_cov_205.917802 | 27,070 | 27,071 |
+| SRR21939590#1#NODE_2_length_392528_cov_26.212032_prophage1 | SRR21939590 | NODE_2_length_392528_cov_26.212032 | 27,070 | 27,071 |
+| SRR32740559#1#NODE_5_length_292346_cov_257.915191_prophage1 | SRR32740559 | NODE_5_length_292346_cov_257.915191 | 24,401 | 24,402 |
+| SRR3394782#1#NODE_33_length_54486_cov_106.615486_prophage1 | SRR3394782 | NODE_33_length_54486_cov_106.615486 | 51,257 | 51,258 |
+| SRR6045021#1#NODE_20_length_89275_cov_12.265757_prophage1 | SRR6045021 | NODE_20_length_89275_cov_12.265757 | 14,001 | 14,002 |
+| SRR6045402#1#NODE_58_length_21880_cov_55.905013_prophage1 | SRR6045402 | NODE_58_length_21880_cov_55.905013 | 13,979 | 13,980 |
+| SRR6046714#1#NODE_43_length_21279_cov_30.978445_prophage1 | SRR6046714 | NODE_43_length_21279_cov_30.978445 | 20,150 | 20,151 |
+| SRR6046890#1#NODE_37_length_42337_cov_7.427094_prophage1 | SRR6046890 | NODE_37_length_42337_cov_7.427094 | 35,777 | 35,778 |
+| SRR6871408#1#NODE_21_length_91858_cov_29.861039_prophage1 | SRR6871408 | NODE_21_length_91858_cov_29.861039 | 27,070 | 27,071 |
+| SRR8291522#1#NODE_53_length_27688_cov_15.311072_prophage1 | SRR8291522 | NODE_53_length_27688_cov_15.311072 | 25,851 | 25,852 |
 
 ## Independent spot check (10 genomes, seed 42)
 
@@ -186,20 +216,20 @@ to the record parsed back out of the written FASTA:
 
 | header | scaffold | contig | begin | end | len | result |
 |---|---|---|---:|---:|---:|---|
-| GCA_905219475.1#1#CAJMWI010000001.1_prophage1 | CAJMWI010000001.1 | GCA_905219475.1#1#CAJMWI010000001.1 | 4,098,292 | 4,110,816 | 12,525 | PASS |
-| GCA_002304075.1#1#MBFN01000161.1_prophage1 | MBFN01000161.1 | GCA_002304075.1#1#MBFN01000161.1 | 2,880 | 9,186 | 6,307 | PASS |
-| GCA_000270865.1#1#AKUF01000004.1_prophage1 | AKUF01000004.1 | GCA_000270865.1#1#AKUF01000004.1 | 14,902 | 20,346 | 5,445 | PASS |
-| GCF_002013725.1#1#NZ_MAER01000011.1_prophage1 | NZ_MAER01000011.1 | GCF_002013725.1#1#NZ_MAER01000011.1 | 3,482 | 19,500 | 16,019 | PASS |
-| GCA_021559935.1#1#CP060055.1_prophage2 | CP060055.1 | GCA_021559935.1#1#CP060055.1 | 1,321,851 | 1,340,041 | 18,191 | PASS |
-| GCA_017176255.1#1#JADWXG010000002.1_prophage1 | JADWXG010000002.1 | GCA_017176255.1#1#JADWXG010000002.1 | 489,260 | 499,228 | 9,969 | PASS |
-| GCA_015499625.1#1#JACDRB010000004.1_prophage2 | JACDRB010000004.1 | GCA_015499625.1#1#JACDRB010000004.1 | 404,531 | 416,506 | 11,976 | PASS |
-| GCA_002802425.1#1#NQSX01000002.1_prophage1 | NQSX01000002.1 | GCA_002802425.1#1#NQSX01000002.1 | 525,177 | 528,528 | 3,352 | PASS |
-| GCF_001954125.1#1#NZ_MBGE01000274.1_prophage1 | NZ_MBGE01000274.1 | GCF_001954125.1#1#NZ_MBGE01000274.1 | 46,382 | 53,491 | 7,110 | PASS |
-| GCA_002102225.1#1#LQPB01000023.1_prophage1 | LQPB01000023.1 | GCA_002102225.1#1#LQPB01000023.1 | 3,883 | 33,112 | 29,230 | PASS |
+| SRR11090511#1#NODE_62_length_36083_cov_32.100817_prophage1 | NODE_62_length_36083_cov_32.100817 | SRR11090511#1#NODE_62_length_36083_cov_32.100817 | 803 | 7,907 | 7,105 | PASS |
+| ERR16914762#1#NODE_22_length_83412_cov_33.337625_prophage1 | NODE_22_length_83412_cov_33.337625 | ERR16914762#1#NODE_22_length_83412_cov_33.337625 | 41,384 | 47,429 | 6,046 | PASS |
+| DRR317494#1#NODE_1_length_532610_cov_73.703132_prophage1 | NODE_1_length_532610_cov_73.703132 | DRR317494#1#NODE_1_length_532610_cov_73.703132 | 139,198 | 149,807 | 10,610 | PASS |
+| SRR24581785#1#NODE_21_length_109192_cov_123.982862_prophage1 | NODE_21_length_109192_cov_123.982862 | SRR24581785#1#NODE_21_length_109192_cov_123.982862 | 58,719 | 64,580 | 5,862 | PASS |
+| ERR484990#1#NODE_14_length_148115_cov_26.614021_prophage1 | NODE_14_length_148115_cov_26.614021 | ERR484990#1#NODE_14_length_148115_cov_26.614021 | 39,479 | 67,130 | 27,652 | PASS |
+| ERR4022328#1#NODE_19_length_79838_cov_18.375760_prophage1 | NODE_19_length_79838_cov_18.375760 | ERR4022328#1#NODE_19_length_79838_cov_18.375760 | 64,999 | 73,680 | 8,682 | PASS |
+| ERR369324#1#NODE_2_length_948644_cov_27.668791_prophage1 | NODE_2_length_948644_cov_27.668791 | ERR369324#1#NODE_2_length_948644_cov_27.668791 | 440,404 | 483,184 | 42,781 | PASS |
+| ERR3142121#1#NODE_1_length_1750669_cov_21.989051_prophage1 | NODE_1_length_1750669_cov_21.989051 | ERR3142121#1#NODE_1_length_1750669_cov_21.989051 | 498,818 | 508,786 | 9,969 | PASS |
+| SRR22333106#1#NODE_1_length_222142_cov_111.984892_prophage1 | NODE_1_length_222142_cov_111.984892 | SRR22333106#1#NODE_1_length_222142_cov_111.984892 | 159,262 | 202,924 | 43,663 | PASS |
+| ERR15501063#1#NODE_34_length_67779_cov_40.821822_prophage1 | NODE_34_length_67779_cov_40.821822 | ERR15501063#1#NODE_34_length_67779_cov_40.821822 | 35,985 | 42,030 | 6,046 | PASS |
 
 ## Output
 
-- FASTA: `/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/full_prophages.fa` — 9,446 records, 206,284,318 bp, sha256 `5adfd2aee6e1e03d109a49a3b1fbba837a21649851fc39ee9c9ff07217f0480c`
+- FASTA: `/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/full_prophages.fa` — 36,857 records, 785,633,429 bp, sha256 `a949c653b104521f9d52aa95af4a233a3e35418c10cf3c782e26a6e3317441bf`
 - per-record status: `/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/full_prophages.fa.manifest.tsv`
 - manifest (repo): `ntm/v3/inputs/v3_prophage_manifest.tsv.gz` (36,940 rows; plain copy on NVMe at `/mnt/nvme3n1/erikg/phind-genome-work/ntm/v3/inputs/v3_prophage_manifest.tsv`)
 

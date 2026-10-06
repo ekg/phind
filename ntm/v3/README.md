@@ -16,7 +16,13 @@ numeric + 18,055 runs + 248 BV-BRC).
 | Prophage extraction (unified manifest + full_prophages.fa) | ✅ done — `extract_report.md`, `inputs/v3_prophage_manifest.tsv.gz`, `inputs/coverage.tsv` (36,940 unified rows: 36,321 BV-BRC phigaro + 619 V2; 9,446 extractable, all extracted; 27,494 run rows blocked pending collaborator delivery, none dropped) |
 | Prophage MASH clades (sketch + triangle + tight clades) | ✅ done — `mash_clades_report.md`, `clades/` (813 clades at thr 0.25 / max 100 / community 0: 456 alignable + 357 singletons over 9,446 prophages; artifacts + sha256 receipts on NVMe `ntm/v3/mash_clades/`, `ntm/v3/clades/`) |
 | Per-clade alignment + partition (allwave + impg) | ✅ done — `partition_report.md` (813/813 clades: 456 alignable with full PAF+BED+MAF+manifest, 357 singletons pass-through, 0 failures; artifacts on NVMe `ntm/v3/clades/`) |
-| Downstream prophage pipeline (ML, release) | ⏳ to run |
+| Downstream prophage pipeline (ML, ancestral, annotation, release) | ✅ done — `ml_report.md`, `annotation_report.md`, `partition_report.md`, **`RELEASE.md`** |
+
+**v3 is complete** (2026-10-06). Final catalog: 1,304 ML + 893 ancestral phage
+genomes from 36,857 prophages in 1,304 tight clades over the 34,163-object
+union cohort, with per-genome `host_scope` ∈ {NTM, MTC} labels and a
+cross-boundary report. See `RELEASE.md` for the deliverable and sha256 receipts.
+Scope rule: label, not filter — see the scope decision in `PLAYBOOK.md`.
 
 ## Inputs
 
