@@ -1,0 +1,1305 @@
+clade_id	n_members	status	target_len	target_source	ml_length_bp	length_ratio_vs_target	checkv_expected_length	checkv_completeness	checkv_quality	n_partitions	terminated_by	chimerism_verdict	longest_single_member_run_frac	n_members_to_cover
+0_0000	100	ok	61037	checkv_aai_median	64227	1.052	42340	100.0	High-quality	66	terminus	chimeric	0.197	15
+0_0001	100	ok	43616	checkv_aai_median	42808	0.981	49132	58.34	Medium-quality	55	terminus	chimeric	0.5273	3
+0_0002	100	ok	61042	checkv_aai_median	48709	0.798	61150	67.25	Medium-quality	58	terminus	chimeric	0.7931	5
+0_0003	100	ok	61105	checkv_aai_median	61645	1.009	43642	100.0	High-quality	73	terminus	chimeric	0.4247	15
+0_0004	100	ok	61074	checkv_aai_median	55968	0.916	61057	77.85	Medium-quality	59	terminus	chimeric	0.339	8
+0_0005	100	ok	61046	checkv_aai_median	64070	1.05	61094	100.0	High-quality	66	terminus	single_member	1.0	1
+0_0006	100	ok	61046	checkv_aai_median	62412	1.022	43672	100.0	High-quality	70	terminus	chimeric	0.9714	2
+0_0007	100	ok	61067	checkv_aai_median	62491	1.023	61189	100.0	High-quality	91	terminus	chimeric	0.4066	9
+0_0008	100	ok	51332	checkv_aai_median	52173	1.016	61299	85.11	Medium-quality	104	terminus	single_member	1.0	1
+0_0009	100	ok	51332	checkv_aai_median	42928	0.836	51334	83.62	Medium-quality	85	terminus	single_member	1.0	1
+0_0010	100	ok	51172	checkv_aai_median	51186	1.0	49276	81.47	Medium-quality	53	terminus	chimeric	0.2453	11
+0_0011	100	ok	43615	checkv_aai_median	50861	1.166	51225	99.29	High-quality	69	terminus	chimeric	0.6377	10
+0_0012	100	ok	42297	checkv_aai_median	43647	1.032	42285	100.0	High-quality	87	terminus	single_member	1.0	1
+0_0013	100	ok	61244	checkv_aai_median	61512	1.004	61200	100.0	High-quality	69	terminus	chimeric	0.1304	15
+0_0014	100	ok	51162	checkv_aai_median	50607	0.989	51121	98.99	High-quality	92	terminus	chimeric	0.3696	3
+0_0015	100	ok	43616	checkv_aai_median	43725	1.002	54250	80.6	Medium-quality	91	terminus	chimeric	0.2967	17
+0_0016	100	ok	51140	checkv_aai_median	48921	0.957	51162	95.62	High-quality	97	terminus	single_member	1.0	1
+0_0017	100	ok	51113	checkv_aai_median	51570	1.009	51095	72.33	Medium-quality	78	terminus	chimeric	0.3846	9
+0_0018	100	ok	61244	checkv_aai_median	48621	0.794	61244	79.39	Medium-quality	97	terminus	single_member	1.0	1
+0_0019	100	ok	61284	checkv_aai_median	59228	0.966	62522	72.71	Medium-quality	78	terminus	chimeric	0.7949	6
+0_0020	100	ok	51233	checkv_aai_median	52082	1.017	51238	100.0	High-quality	101	terminus	chimeric	0.802	2
+0_0021	100	ok	61363	checkv_aai_median	63469	1.034	61732	100.0	High-quality	64	terminus	chimeric	0.1719	16
+0_0022	100	ok	51177	checkv_aai_median	49743	0.972	51152	97.25	High-quality	81	terminus	chimeric	0.2593	13
+0_0023	100	ok	51177	checkv_aai_median	49691	0.971	51183	97.08	High-quality	90	terminus	chimeric	0.4222	12
+0_0024	100	ok	43617	checkv_aai_median	42031	0.964	54183	77.57	Medium-quality	45	terminus	chimeric	0.6	5
+0_0025	100	ok	51116	checkv_aai_median	49230	0.963	51154	96.24	High-quality	61	terminus	chimeric	0.377	11
+0_0026	100	ok	61248	checkv_aai_median	64951	1.06	61292	82.7	Medium-quality	72	terminus	chimeric	0.4444	8
+0_0027	100	ok	51137	checkv_aai_median	51063	0.999	51116	99.9	High-quality	83	terminus	chimeric	0.253	9
+0_0028	100	ok	51128	checkv_aai_median	45838	0.897	51121	89.67	Medium-quality	91	terminus	single_member	1.0	1
+0_0029	100	ok	51120	checkv_aai_median	46251	0.905	51349	90.07	High-quality	73	terminus	chimeric	0.3699	9
+0_0030	100	ok	54157	checkv_aai_median	55386	1.023	54174	100.0	High-quality	55	terminus	single_member	1.0	1
+0_0031	100	ok	51357	checkv_aai_median	56553	1.101	59948	94.34	High-quality	57	terminus	chimeric	0.386	7
+0_0032	100	ok	42292	checkv_aai_median	41714	0.986	42028	99.25	High-quality	54	terminus	chimeric	0.2037	15
+0_0033	100	ok	50714	checkv_aai_median	50363	0.993	51297	98.18	High-quality	73	terminus	chimeric	0.3973	8
+0_0034	100	ok	50657	checkv_aai_median	37427	0.739	43622	85.8	Medium-quality	67	terminus	chimeric	0.2388	12
+0_0035	100	ok	54157	checkv_aai_median	41290	0.762	54193	76.19	Medium-quality	77	terminus	chimeric	0.2208	16
+0_0036	100	ok	50693	checkv_aai_median	43727	0.863	55491	57.04	Medium-quality	44	terminus	single_member	1.0	1
+0_0037	100	ok	51438	checkv_aai_median	48887	0.95	51444	95.03	High-quality	97	terminus	single_member	1.0	1
+0_0038	100	ok	49803	checkv_aai_median	47185	0.947	42327	100.0	High-quality	64	terminus	chimeric	0.3594	7
+0_0039	100	ok	40190	checkv_aai_median	40120	0.998	54157	74.08	Medium-quality	80	terminus	single_member	1.0	1
+0_0040	100	ok	60021	checkv_aai_median	42781	0.713	60021	71.28	Medium-quality	85	terminus	single_member	1.0	1
+0_0041	100	ok	60021	checkv_aai_median	42781	0.713	60021	71.28	Medium-quality	85	terminus	single_member	1.0	1
+0_0042	100	ok	60021	checkv_aai_median	42781	0.713	60021	71.28	Medium-quality	85	terminus	single_member	1.0	1
+0_0043	100	ok	59952	checkv_aai_median	42781	0.714	60021	71.28	Medium-quality	85	terminus	single_member	1.0	1
+0_0044	100	ok	51318	checkv_aai_median	36649	0.714	42295	86.65	Medium-quality	67	terminus	chimeric	0.3881	7
+0_0045	100	ok	61300	checkv_aai_median	61450	1.002	61186	100.0	High-quality	62	terminus	single_member	1.0	1
+0_0046	100	ok	61295	checkv_aai_median	60451	0.986	61227	82.87	Medium-quality	61	terminus	single_member	1.0	1
+0_0047	100	ok	61298	checkv_aai_median	55499	0.905	61243	90.62	High-quality	56	terminus	single_member	1.0	1
+0_0048	100	ok	50462	checkv_aai_median	33742	0.669	42642	79.13	Medium-quality	34	terminus	chimeric	0.2941	7
+0_0049	100	ok	61288	checkv_aai_median	34643	0.565	61288	56.52	Medium-quality	69	terminus	single_member	1.0	1
+0_0050	100	ok	61288	checkv_aai_median	68654	1.12	61201	90.11	High-quality	69	terminus	single_member	1.0	1
+0_0051	100	ok	61288	checkv_aai_median	46422	0.757	61158	75.91	Medium-quality	61	terminus	chimeric	0.3607	6
+0_0052	100	ok	61288	checkv_aai_median	61836	1.009	61216	100.0	High-quality	62	terminus	chimeric	0.5323	4
+0_0053	100	ok	61288	checkv_aai_median	57640	0.94	61224	94.15	High-quality	58	terminus	chimeric	0.3621	7
+0_0054	100	ok	61288	checkv_aai_median	56505	0.922	61202	78.67	Medium-quality	57	terminus	chimeric	0.3333	11
+0_0055	100	ok	61288	checkv_aai_median	61727	1.007	61219	83.09	Medium-quality	62	terminus	chimeric	0.2097	14
+0_0056	100	ok	61306	checkv_aai_median	51072	0.833	61142	83.53	Medium-quality	60	terminus	chimeric	0.2667	12
+0_0057	100	ok	40184	checkv_aai_median	47040	1.171	40202	76.54	Medium-quality	50	terminus	chimeric	0.4	8
+0_0058	100	ok	40185	checkv_aai_median	40143	0.999	40197	99.86	High-quality	51	terminus	single_member	1.0	1
+0_0059	100	ok	40185	checkv_aai_median	39567	0.985	40192	67.01	Medium-quality	45	terminus	chimeric	0.3778	11
+0_0060	100	ok	40193	checkv_aai_median	42157	1.049	40210	61.02	Medium-quality	42	terminus	single_member	1.0	1
+0_0061	100	ok	40188	checkv_aai_median	38874	0.967	40205	96.69	High-quality	48	terminus	chimeric	0.2708	13
+0_0062	100	ok	40186	checkv_aai_median	38856	0.967	40201	64.47	Medium-quality	50	terminus	chimeric	0.26	9
+0_0063	100	ok	40184	checkv_aai_median	38980	0.97	40193	96.98	High-quality	52	terminus	chimeric	0.9423	2
+0_0064	100	ok	40187	checkv_aai_median	42439	1.056	40196	100.0	High-quality	42	terminus	chimeric	0.5714	3
+0_0065	100	ok	40189	checkv_aai_median	40293	1.003	40211	68.91	Medium-quality	45	terminus	chimeric	0.3556	9
+0_0066	100	ok	40190	checkv_aai_median	43144	1.074	40208	100.0	High-quality	43	terminus	chimeric	0.5116	8
+0_0067	100	ok	61298	checkv_aai_median	52770	0.861	61200	86.22	Medium-quality	80	terminus	chimeric	0.475	26
+0_0068	100	ok	40188	checkv_aai_median	27652	0.688	40188	68.8	Medium-quality	55	terminus	single_member	1.0	1
+0_0069	100	ok	40188	checkv_aai_median	41467	1.032	40185	63.63	Medium-quality	42	terminus	chimeric	0.4524	8
+0_0070	100	ok	40185	checkv_aai_median	36203	0.901	40207	53.19	Medium-quality	41	terminus	chimeric	0.3902	9
+0_0071	100	ok	61025	checkv_aai_median	32975	0.54	61036	54.02	Medium-quality	63	terminus	chimeric	0.1746	35
+0_0072	100	ok	61295	checkv_aai_median	43068	0.703	61208	70.36	Medium-quality	43	terminus	chimeric	0.4186	5
+0_0073	100	ok	40192	checkv_aai_median	36624	0.911	45607	80.3	Medium-quality	47	terminus	chimeric	0.5532	3
+0_0074	100	ok	61283	checkv_aai_median	33767	0.551	61168	45.4	Low-quality	36	terminus	chimeric	0.8333	4
+0_0075	100	ok	54207	checkv_aai_median	53435	0.986	54269	98.46	High-quality	76	terminus	chimeric	0.4211	10
+0_0076	100	ok	61363	checkv_aai_median	69736	1.136	60552	100.0	High-quality	70	terminus	single_member	1.0	1
+0_0077	100	ok	60552	checkv_aai_median	56125	0.927	60552	92.69	High-quality	67	terminus	chimeric	0.597	7
+0_0078	100	ok	60552	checkv_aai_median	60640	1.001	60552	100.0	High-quality	61	terminus	chimeric	0.3934	8
+0_0079	100	ok	51378	checkv_aai_median	51970	1.012	51093	100.0	High-quality	54	terminus	chimeric	0.2778	6
+0_0080	100	ok	60552	checkv_aai_median	59120	0.976	60552	73.84	Medium-quality	63	terminus	single_member	1.0	1
+0_0081	100	ok	60552	checkv_aai_median	66106	1.092	60552	77.49	Medium-quality	66	terminus	single_member	1.0	1
+0_0082	100	ok	60904	checkv_aai_median	43571	0.715	60552	71.96	Medium-quality	62	terminus	chimeric	0.6452	2
+0_0083	100	ok	61338	checkv_aai_median	59301	0.967	61156	80.4	Medium-quality	63	terminus	chimeric	0.9048	4
+0_0084	100	ok	61582	checkv_aai_median	53806	0.874	60552	60.73	Medium-quality	55	terminus	chimeric	0.2364	11
+0_0085	100	ok	51391	checkv_aai_median	49394	0.961	51410	96.08	High-quality	50	terminus	chimeric	0.98	2
+0_0086	100	ok	62095	checkv_aai_median	34069	0.549	61180	55.69	Medium-quality	36	terminus	chimeric	0.3333	7
+0_0087	100	ok	50545	checkv_aai_median	44382	0.878	66356	66.88	Medium-quality	68	terminus	chimeric	0.8235	3
+0_0088	100	ok	59895	checkv_aai_median	59713	0.997	59796	76.63	Medium-quality	65	terminus	chimeric	0.5077	4
+0_0089	100	ok	51356	checkv_aai_median	45587	0.888	51471	55.63	Medium-quality	47	terminus	chimeric	0.1915	13
+0_0090	100	ok	54216	checkv_aai_median	42338	0.781	66356	63.8	Medium-quality	94	terminus	chimeric	0.1809	14
+0_0091	100	ok	66356	checkv_aai_median	64230	0.968	66356	96.8	High-quality	127	terminus	chimeric	0.622	4
+0_0092	100	ok	51130	checkv_aai_median	48571	0.95	51168	58.49	Medium-quality	50	terminus	chimeric	0.26	12
+0_0093	100	ok	53881	checkv_aai_median	48577	0.902	54203	89.62	Medium-quality	97	terminus	single_member	1.0	1
+0_0094	100	ok	51130	checkv_aai_median	47661	0.932	51123	93.23	High-quality	48	terminus	chimeric	0.25	11
+0_0095	86	ok	61090	checkv_aai_median	39920	0.653	60552	49.72	Low-quality	75	terminus	chimeric	0.8	5
+0_0096	100	ok	51362	checkv_aai_median	51203	0.997	51135	66.53	Medium-quality	51	terminus	single_member	1.0	1
+0_0097	100	ok	51339	checkv_aai_median	51159	0.996	51144	100.0	High-quality	57	terminus	chimeric	0.3333	11
+0_0098	100	ok	51130	checkv_aai_median	45374	0.887	51386	88.3	Medium-quality	54	terminus	chimeric	0.1667	15
+0_0099	100	ok	50723	checkv_aai_median	17357	0.342	51206	33.9	Low-quality	17	terminus	chimeric	0.7059	3
+0_0100	25	ok	60552	checkv_aai_median	33340	0.551	60552	39.49	Low-quality	50	terminus	chimeric	0.38	6
+0_0101	100	ok	66356	checkv_aai_median	64672	0.975	54199	100.0	High-quality	80	terminus	chimeric	0.8	6
+0_0102	98	ok	49305	checkv_aai_median	32546	0.66	49329	65.98	Medium-quality	40	terminus	chimeric	0.475	4
+0_0103	100	ok	60946	checkv_aai_median	19570	0.321	60980	32.09	Low-quality	25	terminus	chimeric	0.4	4
+0_0104	100	ok	54195	checkv_aai_median	54143	0.999	53891	100.0	High-quality	95	terminus	chimeric	0.7474	7
+0_0105	100	ok	60946	checkv_aai_median	9969	0.164	60946	16.36	Low-quality	19	terminus	single_member	1.0	1
+0_0106	100	ok	60946	checkv_aai_median	9969	0.164	60946	16.36	Low-quality	19	terminus	single_member	1.0	1
+0_0107	100	ok	60946	checkv_aai_median	9969	0.164	60946	16.36	Low-quality	19	terminus	single_member	1.0	1
+0_0108	100	ok	60946	checkv_aai_median	19766	0.324	60973	31.72	Low-quality	19	terminus	single_member	1.0	1
+0_0109	100	ok	60946	checkv_aai_median	14424	0.237	60954	23.66	Low-quality	18	terminus	single_member	1.0	1
+0_0110	100	ok	60946	checkv_aai_median	10194	0.167	60946	16.73	Low-quality	21	terminus	single_member	1.0	1
+0_0111	100	ok	60946	checkv_aai_median	18171	0.298	60960	29.81	Low-quality	18	terminus	single_member	1.0	1
+0_0112	100	ok	60946	checkv_aai_median	19028	0.312	60975	21.0	Low-quality	20	terminus	chimeric	0.2	7
+0_0113	100	ok	60946	checkv_aai_median	20735	0.34	60963	34.01	Low-quality	21	terminus	single_member	1.0	1
+0_0114	100	ok	60946	checkv_aai_median	9969	0.164	60946	16.36	Low-quality	19	terminus	single_member	1.0	1
+0_0115	100	ok	60949	checkv_aai_median	16923	0.278	60987	27.75	Low-quality	17	terminus	single_member	1.0	1
+0_0116	100	ok	60949	checkv_aai_median	14592	0.239	60967	23.93	Low-quality	16	terminus	single_member	1.0	1
+0_0117	100	ok	60949	checkv_aai_median	53969	0.885	58864	91.68	High-quality	81	terminus	chimeric	0.642	17
+0_0118	100	ok	50700	checkv_aai_median	28451	0.561	50705	56.11	Medium-quality	44	terminus	chimeric	0.5909	6
+0_0119	28	ok	61167	checkv_aai_median	20737	0.339	61161	33.91	Low-quality	30	terminus	chimeric	0.4667	7
+0_0120	100	ok	51377	checkv_aai_median	52202	1.016	51334	100.0	High-quality	52	terminus	single_member	1.0	1
+0_0121	100	ok	61113	checkv_aai_median	25476	0.417	61003	41.76	Low-quality	30	terminus	chimeric	0.6	4
+0_0122	100	ok	60951	checkv_aai_median	16753	0.275	61230	27.36	Low-quality	25	terminus	chimeric	0.72	7
+0_0123	100	ok	42259	checkv_aai_median	47023	1.113	42317	67.36	Medium-quality	58	terminus	chimeric	0.4655	7
+0_0124	100	ok	61084	checkv_aai_median	14409	0.236	61152	23.56	Low-quality	20	terminus	chimeric	0.75	4
+0_0125	100	ok	45607	checkv_aai_median	44230	0.97	42161	61.24	Medium-quality	76	terminus	chimeric	0.2632	14
+0_0126	95	ok	49919	checkv_aai_median	12842	0.257	43597	29.46	Low-quality	17	terminus	chimeric	0.6471	3
+0_0127	100	ok	54731	checkv_aai_median	58029	1.06	54733	100.0	High-quality	101	terminus	chimeric	0.2871	10
+0_0128	43	ok	60938	checkv_aai_median	6549	0.107	63235	10.36	Low-quality	7	terminus	chimeric	0.5714	2
+0_0129	78	ok	61182	checkv_aai_median	14706	0.24	61142	24.05	Low-quality	23	terminus	chimeric	0.2174	11
+0_0130	100	ok	54170	checkv_aai_median	51342	0.948	53882	95.29	High-quality	102	terminus	chimeric	0.3333	21
+0_0131	100	ok	40187	checkv_aai_median	45433	1.131	40188	100.0	High-quality	45	terminus	chimeric	0.2667	10
+0_0132	60	ok	62871	checkv_aai_median	27909	0.444	159068	38.16	Low-quality	27	terminus	chimeric	0.9259	2
+0_0133	100	ok	51391	checkv_aai_median	41192	0.802	51441	80.08	Medium-quality	65	terminus	chimeric	0.1846	11
+0_0134	100	ok	66356	checkv_aai_median	81614	1.23	66356	100.0	High-quality	104	terminus	chimeric	0.1442	24
+0_0135	100	ok	54143	checkv_aai_median	50720	0.937	53903	94.09	High-quality	101	terminus	single_member	1.0	1
+0_0136	100	ok	54412	checkv_aai_median	52430	0.964	54329	96.5	High-quality	58	terminus	chimeric	0.4138	5
+0_0137	100	ok	76541	checkv_aai_median	62851	0.821	76541	82.11	Medium-quality	63	terminus	single_member	1.0	1
+0_0138	11	ok	63667	checkv_aai_median	309	0.005			Not-determined	5	terminus	chimeric	0.8	2
+0_0139	14	ok	52041	checkv_aai_median	28620	0.55	54432	52.58	Medium-quality	55	terminus	chimeric	0.2364	15
+0_0140	100	ok	54194	checkv_aai_median	50369	0.929	54184	92.96	High-quality	54	terminus	chimeric	0.7778	2
+0_0141	100	ok	42271	checkv_aai_median	43625	1.032	42311	100.0	High-quality	66	terminus	chimeric	0.4545	10
+0_0142	100	ok	54307	checkv_aai_median	51657	0.951	53906	95.83	High-quality	89	terminus	chimeric	0.7303	4
+0_0143	100	ok	40185	checkv_aai_median	40213	1.001	40192	100.0	High-quality	40	terminus	chimeric	0.625	3
+0_0144	34	ok	51988	checkv_aai_median	55553	1.069	52149	100.0	High-quality	80	terminus	chimeric	0.2125	35
+0_0145	100	ok	63426	checkv_aai_median	27291	0.43	65891	44.43	Low-quality	27	terminus	single_member	1.0	1
+0_0146	100	ok	40185	checkv_aai_median	39254	0.977	40192	97.67	High-quality	41	terminus	chimeric	0.2683	10
+0_0147	100	ok	54114	checkv_aai_median	55734	1.03	54239	90.44	High-quality	55	terminus	single_member	1.0	1
+0_0148	100	ok	40191	checkv_aai_median	42760	1.064	40199	100.0	High-quality	43	terminus	single_member	1.0	1
+0_0149	100	ok	60018	checkv_aai_median	56892	0.948	59863	75.05	Medium-quality	61	terminus	chimeric	0.1967	15
+0_0150	100	ok	54338	checkv_aai_median	20931	0.385	66356	31.54	Low-quality	30	terminus	chimeric	0.6667	3
+0_0151	100	ok	50291	checkv_aai_median	38927	0.774	50858	63.38	Medium-quality	38	terminus	chimeric	0.7105	2
+0_0152	79	ok	40193	checkv_aai_median	25227	0.628	40202	62.75	Medium-quality	46	terminus	chimeric	0.3043	10
+0_0153	100	ok	75650	checkv_aai_median	53594	0.708	75719	63.35	Medium-quality	54	terminus	single_member	1.0	1
+0_0154	100	ok	60020	checkv_aai_median	38712	0.645	60020	64.5	Medium-quality	77	terminus	single_member	1.0	1
+0_0155	100	ok	60020	checkv_aai_median	38712	0.645	60020	64.5	Medium-quality	77	terminus	single_member	1.0	1
+0_0156	100	ok	60020	checkv_aai_median	38712	0.645	60020	64.5	Medium-quality	77	terminus	single_member	1.0	1
+0_0157	100	ok	60020	checkv_aai_median	38712	0.645	60020	64.5	Medium-quality	77	terminus	single_member	1.0	1
+0_0158	100	ok	60020	checkv_aai_median	41740	0.695	59950	69.62	Medium-quality	77	terminus	chimeric	0.7403	4
+0_0159	100	ok	60020	checkv_aai_median	38713	0.645	60020	64.5	Medium-quality	77	terminus	single_member	1.0	1
+0_0160	100	ok	60020	checkv_aai_median	58015	0.967	60060	75.29	Medium-quality	59	terminus	chimeric	0.4576	8
+0_0161	100	ok	60020	checkv_aai_median	43160	0.719	59980	71.96	Medium-quality	86	terminus	chimeric	0.686	5
+0_0162	100	ok	59953	checkv_aai_median	62430	1.041	59954	78.89	Medium-quality	63	terminus	single_member	1.0	1
+0_0163	100	ok	16172	member_seq_median	16172	1.0	57830		Not-determined	32	terminus	single_member	1.0	1
+0_0164	26	ok	42946	checkv_aai_median	16986	0.396	52043	32.64	Low-quality	58	terminus	chimeric	0.1897	16
+0_0165	100	ok	54138	checkv_aai_median	53081	0.98	54135	85.95	Medium-quality	112	terminus	chimeric	0.1161	69
+0_0166	100	ok	59953	checkv_aai_median	61605	1.028	59975	76.35	Medium-quality	48	terminus	chimeric	0.4583	9
+0_0167	100	ok	59978	checkv_aai_median	35896	0.598	60027	59.8	Medium-quality	71	terminus	single_member	1.0	1
+0_0168	80	ok	59988	checkv_aai_median	55239	0.921	59932	72.86	Medium-quality	78	terminus	chimeric	0.3205	14
+0_0169	100	ok	75654	checkv_aai_median	59014	0.78	75751	77.9	Medium-quality	59	terminus	single_member	1.0	1
+0_0170	100	ok	54103	checkv_aai_median	59570	1.101	54142	100.0	High-quality	60	terminus	single_member	1.0	1
+0_0171	100	ok	16172	member_seq_median	16172	1.0	57830		Not-determined	32	terminus	single_member	1.0	1
+0_0172	100	ok	12069	member_seq_median	12069	1.0	62138		Not-determined	24	terminus	single_member	1.0	1
+0_0173	100	ok	54168	checkv_aai_median	55649	1.027	54136	100.0	High-quality	67	terminus	chimeric	0.3433	13
+0_0174	100	ok	12148	member_seq_median	12148	1.0	62138		Not-determined	24	terminus	single_member	1.0	1
+0_0175	100	ok	12069	member_seq_median	12069	1.0	62133		Not-determined	24	terminus	single_member	1.0	1
+0_0176	100	ok	12069	member_seq_median	12069	1.0	62138		Not-determined	24	terminus	single_member	1.0	1
+0_0177	100	ok	8682	member_seq_median	8682	1.0	87414		Not-determined	17	terminus	single_member	1.0	1
+0_0178	100	ok	8682	member_seq_median	8682	1.0	87414		Not-determined	17	terminus	single_member	1.0	1
+0_0179	100	ok	8682	member_seq_median	8682	1.0	87414		Not-determined	17	terminus	single_member	1.0	1
+0_0180	100	ok	8682	member_seq_median	8682	1.0	87414		Not-determined	17	terminus	single_member	1.0	1
+0_0181	100	ok	7984	member_seq_median	7984	1.0	87414		Not-determined	15	terminus	single_member	1.0	1
+0_0182	100	ok	66356	checkv_aai_median	59606	0.898	66356	84.53	Medium-quality	69	terminus	chimeric	0.2029	15
+0_0183	100	ok	11731	member_seq_median	11731	1.0	59320		Not-determined	23	terminus	single_member	1.0	1
+0_0184	100	ok	54170	checkv_aai_median	51920	0.958	54057	78.69	Medium-quality	62	terminus	chimeric	0.3065	10
+0_0185	100	ok	43617	checkv_aai_median	36786	0.843	47326	74.43	Medium-quality	69	terminus	chimeric	0.1449	17
+0_0186	46	ok	51894	checkv_aai_median	1713	0.033	50996	3.36	Low-quality	2	terminus	single_member	1.0	1
+0_0187	100	ok	7105	member_seq_median	7105	1.0	59320		Not-determined	14	terminus	single_member	1.0	1
+0_0188	100	ok	7105	member_seq_median	7105	1.0	59320		Not-determined	14	terminus	single_member	1.0	1
+0_0189	100	ok	7105	member_seq_median	7105	1.0	59320		Not-determined	14	terminus	single_member	1.0	1
+0_0190	100	ok	7105	member_seq_median	7105	1.0	59320		Not-determined	14	terminus	single_member	1.0	1
+0_0191	91	ok	72799	checkv_aai_median	42455	0.583	56060	75.73	Medium-quality	75	terminus	chimeric	0.3467	5
+0_0192	100	ok	54334	checkv_aai_median	28039	0.516	54211	51.72	Medium-quality	32	terminus	chimeric	0.4375	8
+0_0193	100	ok	66356	checkv_aai_median	30543	0.46	66356	43.01	Low-quality	30	terminus	single_member	1.0	1
+0_0194	100	ok	66356	checkv_aai_median	65748	0.991	65715	100.0	High-quality	113	terminus	chimeric	0.4159	7
+0_0195	100	ok	66356	checkv_aai_median	29461	0.444	66356	44.4	Low-quality	28	terminus	chimeric	0.9286	2
+0_0196	100	ok	76541	checkv_aai_median	78231	1.022	76541	100.0	High-quality	116	terminus	chimeric	0.3448	36
+0_0197	42	ok	40094	checkv_aai_median	42770	1.067	43965	59.85	Medium-quality	55	terminus	chimeric	0.3273	7
+0_0198	100	ok	54201	checkv_aai_median	21514	0.397	54235	39.67	Low-quality	30	terminus	chimeric	0.3667	6
+0_0199	100	ok	66356	checkv_aai_median	28935	0.436	66356	35.6	Low-quality	29	terminus	single_member	1.0	1
+0_0200	100	ok	54153	checkv_aai_median	49312	0.911	54130	91.1	High-quality	49	terminus	chimeric	0.2449	10
+0_0201	100	ok	42112	checkv_aai_median	40277	0.956	42172	70.42	Medium-quality	49	terminus	chimeric	0.4286	8
+0_0202	100	ok	66356	checkv_aai_median	36423	0.549	66356	54.89	Medium-quality	40	terminus	chimeric	0.575	7
+0_0203	100	ok	66356	checkv_aai_median	73538	1.108	66356	100.0	High-quality	74	terminus	single_member	1.0	1
+0_0204	5	ok	55122	checkv_aai_median	15654	0.284	69734	22.45	Low-quality	24	terminus	chimeric	0.875	3
+0_0205	100	ok	54140	checkv_aai_median	39644	0.732	54123	73.25	Medium-quality	40	terminus	chimeric	0.8	3
+0_0206	53	ok	54158	checkv_aai_median	38781	0.716	54188	71.57	Medium-quality	46	terminus	chimeric	0.2609	28
+0_0207	23	ok	58801	checkv_aai_median	17007	0.289	54289	31.33	Low-quality	27	terminus	chimeric	0.3333	6
+0_0208	100	ok	62873	checkv_aai_median	31727	0.505	87414		Not-determined	50	terminus	chimeric	0.22	12
+0_0209	24	ok	52229	checkv_aai_median	35491	0.68	86188		Not-determined	52	terminus	chimeric	0.5192	5
+0_0210	15	ok	53129	checkv_aai_median	38200	0.719	51448	74.25	Medium-quality	71	terminus	chimeric	0.4648	12
+0_0211	100	ok	66356	checkv_aai_median	61236	0.923	66356	86.47	Medium-quality	70	terminus	chimeric	0.4143	8
+0_0212	100	ok	54177	checkv_aai_median	14795	0.273	54255	27.27	Low-quality	17	terminus	single_member	1.0	1
+0_0213	100	ok	42263	checkv_aai_median	38370	0.908	42208	67.57	Medium-quality	45	terminus	chimeric	0.3778	9
+0_0214	100	ok	106057	checkv_aai_median	23451	0.221	74827	22.76	Low-quality	23	terminus	single_member	1.0	1
+0_0215	15	ok	53884	checkv_aai_median	46168	0.857	53882	85.68	Medium-quality	104	terminus	chimeric	0.3365	12
+0_0216	14	ok	55492	checkv_aai_median	9253	0.167	55492	16.67	Low-quality	30	terminus	chimeric	0.3	7
+0_0217	100	ok	66356	checkv_aai_median	74885	1.129	66356	99.55	High-quality	75	terminus	single_member	1.0	1
+0_0218	100	ok	66356	checkv_aai_median	65154	0.982	76148	90.19	High-quality	67	terminus	chimeric	0.3284	9
+0_0219	100	ok	66356	checkv_aai_median	38358	0.578	66356	57.81	Medium-quality	76	terminus	single_member	1.0	1
+0_0220	100	ok	66356	checkv_aai_median	63994	0.964	70021	90.6	High-quality	75	terminus	chimeric	0.3733	10
+0_0221	100	ok	54731	checkv_aai_median	61018	1.115	54733	100.0	High-quality	65	terminus	single_member	1.0	1
+0_0222	34	ok	66356	checkv_aai_median	42254	0.637	66356	63.68	Medium-quality	69	terminus	chimeric	0.3333	13
+0_0223	100	ok	54695	checkv_aai_median	50588	0.925	76476	73.27	Medium-quality	69	terminus	chimeric	0.3768	9
+0_0224	10	ok	54057	checkv_aai_median	10425	0.193	53955	19.32	Low-quality	21	terminus	chimeric	0.9524	2
+0_0225	100	ok	42772	checkv_aai_median	31615	0.739	51148	46.07	Low-quality	39	terminus	chimeric	0.6154	4
+0_0226	100	ok	7294	member_seq_median	7295	1.0	51136		Not-determined	14	terminus	single_member	1.0	1
+0_0227	35	ok	50975	checkv_aai_median	15317	0.3	50846	14.94	Low-quality	20	terminus	chimeric	0.8	2
+0_0228	100	ok	7295	member_seq_median	7295	1.0	51136		Not-determined	14	terminus	single_member	1.0	1
+0_0229	17	ok	69059	checkv_aai_median	20369	0.295	46897	43.43	Low-quality	72	terminus	chimeric	0.2917	14
+0_0230	43	ok	42507	checkv_aai_median	8831	0.208	42190	20.93	Low-quality	16	terminus	chimeric	0.625	2
+0_0231	100	ok	6751	member_seq_median	6751	1.0	51143	4.3	Low-quality	13	terminus	single_member	1.0	1
+0_0232	100	ok	6887	member_seq_median	6887	1.0	43603		Not-determined	13	terminus	single_member	1.0	1
+0_0233	100	ok	6887	member_seq_median	6887	1.0	43603		Not-determined	13	terminus	single_member	1.0	1
+0_0234	100	ok	6887	member_seq_median	6887	1.0	43603		Not-determined	13	terminus	single_member	1.0	1
+0_0235	100	ok	6887	member_seq_median	6887	1.0	43603		Not-determined	13	terminus	single_member	1.0	1
+0_0236	100	ok	6046	member_seq_median	6046	1.0	43603		Not-determined	12	terminus	single_member	1.0	1
+0_0237	100	ok	6046	member_seq_median	6046	1.0	43603		Not-determined	12	terminus	single_member	1.0	1
+0_0238	60	ok	6046	member_seq_median	6046	1.0	43603		Not-determined	12	terminus	single_member	1.0	1
+0_0239	100	ok	4186	member_seq_median	4186	1.0			Not-determined	8	terminus	single_member	1.0	1
+0_0240	100	ok	3302	member_seq_median	3302	1.0	49731	4.95	Low-quality	7	terminus	single_member	1.0	1
+0_0241	100	ok	48687	checkv_aai_median	10091	0.207	49731	15.12	Low-quality	15	terminus	chimeric	0.4667	9
+0_0242	3	ok	83776	checkv_aai_median	29102	0.347	85533	31.92	Low-quality	45	terminus	chimeric	0.4444	8
+0_0243	100	ok	106057	checkv_aai_median	28295	0.267	112538	11.71	Low-quality	28	terminus	single_member	1.0	1
+0_0244	48	ok	76148	checkv_aai_median	59308	0.779	76148	77.89	Medium-quality	84	terminus	chimeric	0.4405	11
+0_0245	100	ok	76541	checkv_aai_median	56762	0.742	76541	74.16	Medium-quality	55	terminus	chimeric	0.1636	14
+0_0246	100	ok	54468	checkv_aai_median	52773	0.969	54710	96.46	High-quality	75	terminus	chimeric	0.2667	16
+0_0247	100	ok	54452	checkv_aai_median	47993	0.881	54337	88.32	Medium-quality	71	terminus	chimeric	0.2254	13
+0_0248	100	ok	54497	checkv_aai_median	53422	0.98	54485	98.05	High-quality	93	terminus	chimeric	0.3011	25
+0_0249	100	ok	54411	checkv_aai_median	48323	0.888	54522	88.63	Medium-quality	74	terminus	chimeric	0.2703	10
+0_0250	100	ok	75782	checkv_aai_median	75922	1.002	55306	87.05	Medium-quality	76	terminus	single_member	1.0	1
+0_0251	100	ok	54543	checkv_aai_median	54139	0.993	54838	81.36	Medium-quality	63	terminus	chimeric	0.1746	17
+0_0252	74	ok	51143	checkv_aai_median	43604	0.853	49925	81.49	Medium-quality	62	terminus	chimeric	0.5323	3
+0_0253	100	ok	76541	checkv_aai_median	77454	1.012	76541	100.0	High-quality	60	terminus	single_member	1.0	1
+0_0254	100	ok	119426	checkv_aai_median	10974	0.092	280133		Not-determined	11	terminus	single_member	1.0	1
+0_0255	100	ok	119426	checkv_aai_median	12033	0.101	62828		Not-determined	12	terminus	chimeric	0.9167	2
+0_0256	100	ok	119426	checkv_aai_median	9511	0.08	52708	18.04	Low-quality	18	terminus	chimeric	0.8889	2
+0_0257	100	ok	118277	checkv_aai_median	12951	0.109	71681	22.21	Low-quality	13	terminus	chimeric	0.9231	2
+0_0258	68	ok	118277	checkv_aai_median	22892	0.194	51417	41.24	Low-quality	17	terminus	chimeric	0.2353	5
+0_0259	73	ok	54481	checkv_aai_median	39229	0.72	54525	71.95	Medium-quality	53	terminus	chimeric	0.4528	8
+0_0260	1	singleton_passthrough	3091	member_seq_median	3091	1.0	58498	5.28	Low-quality					
+0_0261	100	ok	76541	checkv_aai_median	82579	1.079	76541	100.0	High-quality	83	terminus	single_member	1.0	1
+0_0262	17	ok	54433	checkv_aai_median	12952	0.238	54114	23.93	Low-quality	32	terminus	chimeric	0.5938	4
+0_0263	60	ok	62701	checkv_aai_median	31975	0.51	61898	44.8	Low-quality	53	terminus	chimeric	0.434	6
+0_0264	9	ok	56174	checkv_aai_median	13878	0.247	55696	24.92	Low-quality	27	terminus	chimeric	0.5185	3
+0_0265	41	ok	43620	checkv_aai_median	49794	1.142	43619	77.65	Medium-quality	57	terminus	chimeric	0.7895	4
+0_0266	77	ok	45607	checkv_aai_median	46870	1.028	44267	62.89	Medium-quality	53	terminus	chimeric	0.8679	3
+0_0267	8	ok	51371	checkv_aai_median	11383	0.222	49731	15.37	Low-quality	21	terminus	chimeric	0.4286	5
+0_0268	2	ok	51765	checkv_aai_median	52593	1.016	51876	100.0	High-quality	72	terminus	single_member	1.0	1
+0_0269	100	ok	54732	checkv_aai_median	57798	1.056	54734	90.01	High-quality	58	terminus	single_member	1.0	1
+0_0270	100	ok	76541	checkv_aai_median	29517	0.386	76541	38.56	Low-quality	31	terminus	chimeric	0.5484	3
+0_0271	100	ok	54731	checkv_aai_median	53937	0.985	54731	98.55	High-quality	54	terminus	single_member	1.0	1
+0_0272	100	ok	54742	checkv_aai_median	45511	0.831	80782	56.34	Medium-quality	91	terminus	single_member	1.0	1
+0_0273	100	ok	54639	checkv_aai_median	14239	0.261	54503	26.12	Low-quality	15	terminus	chimeric	0.3333	5
+0_0274	100	ok	54738	checkv_aai_median	22013	0.402	54746	40.21	Low-quality	22	terminus	single_member	1.0	1
+0_0275	12	ok	54186	checkv_aai_median	2834	0.052	54219	5.23	Low-quality	2	terminus	single_member	1.0	1
+0_0276	100	ok	76681	checkv_aai_median	66054	0.861	76541	86.34	Medium-quality	67	terminus	chimeric	0.4776	5
+0_0277	100	ok	54735	checkv_aai_median	58874	1.076	54718	89.72	Medium-quality	59	terminus	single_member	1.0	1
+0_0278	1	singleton_passthrough	25219	member_seq_median	25219	1.0	41399	60.92	Medium-quality					
+0_0279	100	ok	76541	checkv_aai_median	60559	0.791	76541	79.12	Medium-quality	61	terminus	chimeric	0.9016	3
+0_0280	4	ok	42010	checkv_aai_median	20681	0.492	50561	33.98	Low-quality	46	terminus	chimeric	0.3043	8
+0_0281	100	ok	54723	checkv_aai_median	25966	0.474	54710	47.46	Low-quality	26	terminus	single_member	1.0	1
+0_0282	6	ok	76541	checkv_aai_median	28704	0.375	76541	37.5	Low-quality	30	terminus	chimeric	0.8667	2
+0_0283	31	ok	54730	checkv_aai_median	34672	0.634	54741	63.34	Medium-quality	51	terminus	chimeric	0.2549	12
+0_0284	86	ok	54719	checkv_aai_median	37859	0.692	54725	69.18	Medium-quality	57	terminus	chimeric	0.3158	20
+0_0285	6	ok	54458	checkv_aai_median	39552	0.726	56787	69.65	Medium-quality	83	terminus	chimeric	0.9157	2
+0_0286	3	ok	1828	member_seq_median	1820	0.996			Not-determined	3	terminus	single_member	1.0	1
+0_0287	100	ok	19797	member_seq_median	19797	1.0	46404	11.73	Low-quality	39	terminus	single_member	1.0	1
+0_0288	2	ok	54732	checkv_aai_median	6082	0.111	54734	11.11	Low-quality	10	terminus	chimeric	0.5	3
+0_0289	100	ok	52196	checkv_aai_median	19152	0.367		23.08	Low-quality	29	terminus	single_member	1.0	1
+0_0290	100	ok	57396	checkv_aai_median	60380	1.052	52691	81.36	Medium-quality	96	terminus	chimeric	0.3125	15
+0_0291	67	ok	58649	checkv_aai_median	62519	1.066	57726	100.0	High-quality	116	terminus	chimeric	0.3017	13
+0_0292	10	ok	76678	checkv_aai_median	63943	0.834	76684	83.38	Medium-quality	76	terminus	chimeric	0.5658	7
+0_0293	59	ok	54884	checkv_aai_median	55214	1.006	56646	78.37	Medium-quality	98	terminus	chimeric	0.2143	20
+0_0294	100	ok	76541	checkv_aai_median	29194	0.381	76541	38.14	Low-quality	29	terminus	chimeric	0.7241	3
+0_0295	100	ok	76541	checkv_aai_median	33534	0.438	76541	43.81	Low-quality	33	terminus	single_member	1.0	1
+0_0296	17	ok	63235	checkv_aai_median	1641	0.026	63235	2.6	Low-quality	5	terminus	single_member	1.0	1
+0_0297	1	singleton_passthrough	956	member_seq_median	956	1.0	49685	1.92	Low-quality					
+0_0298	56	ok	74554	checkv_aai_median	56551	0.759	79985	70.7	Medium-quality	86	terminus	chimeric	0.3721	11
+0_0299	100	ok	3242	member_seq_median	3286	1.014	58056	5.15	Low-quality	6	terminus	single_member	1.0	1
+0_0300	100	ok	2889	member_seq_median	2889	1.0	111683	2.6	Low-quality	5	terminus	single_member	1.0	1
+0_0301	59	ok	45607	checkv_aai_median	45646	1.001	45607	100.0	High-quality	46	terminus	chimeric	0.7609	4
+0_0302	5	ok	76541	checkv_aai_median	8830	0.115	76541	11.54	Low-quality	16	terminus	single_member	1.0	1
+0_0303	12	ok	58131	checkv_aai_median	5948	0.102	58131	10.23	Low-quality	11	terminus	single_member	1.0	1
+0_0304	100	ok	58313	checkv_aai_median	57768	0.991	83109	75.54	Medium-quality	71	terminus	chimeric	0.6197	4
+0_0305	100	ok	731	member_seq_median	731	1.0		0.66	Low-quality	1	terminus	single_member	1.0	1
+0_0306	100	ok	55759	checkv_aai_median	14546	0.261	56682		Not-determined	30	terminus	chimeric	0.8	4
+0_0307	100	ok	80137	checkv_aai_median	81107	1.012	79888	100.0	High-quality	81	terminus	chimeric	0.2716	8
+0_0308	29	ok	67314	checkv_aai_median	62872	0.934	64512	97.46	High-quality	110	terminus	chimeric	0.1636	18
+0_0309	85	ok	114763	checkv_aai_median	18415	0.16		8.53	Low-quality	18	terminus	single_member	1.0	1
+0_0310	100	ok	52425	checkv_aai_median	43826	0.836	40676	53.52	Medium-quality	44	terminus	single_member	1.0	1
+0_0311	12	ok	76541	checkv_aai_median	13668	0.179	76541	17.86	Low-quality	14	terminus	chimeric	0.9286	2
+0_0312	14	ok	88624	checkv_aai_median	15390	0.174	84496	18.21	Low-quality	41	terminus	chimeric	0.439	9
+0_0313	100	ok	54480	checkv_aai_median	15280	0.28	54460	28.06	Low-quality	16	terminus	single_member	1.0	1
+0_0314	1	singleton_passthrough	2935	member_seq_median	2935	1.0	54309	5.4	Low-quality					
+0_0315	51	ok	54480	checkv_aai_median	5309	0.097	54583	9.73	Low-quality	9	terminus	chimeric	0.5556	3
+0_0316	18	ok	46271	checkv_aai_median	39942	0.863	63714		Not-determined	77	terminus	chimeric	0.3377	11
+0_0317	77	ok	58173	checkv_aai_median	54586	0.938	56626	68.03	Medium-quality	75	terminus	chimeric	0.3733	11
+0_0318	91	ok	61136	checkv_aai_median	60219	0.985	52983	85.33	Medium-quality	83	terminus	chimeric	0.4337	8
+0_0319	91	ok	82484	checkv_aai_median	11676	0.142	76743	15.21	Low-quality	11	terminus	single_member	1.0	1
+0_0320	44	ok	52053	checkv_aai_median	29413	0.565	51176	40.72	Low-quality	29	terminus	chimeric	0.3448	6
+0_0321	55	ok	50238	checkv_aai_median	17422	0.347	49141	35.45	Low-quality	35	terminus	chimeric	0.2286	8
+0_0322	100	ok	75785	checkv_aai_median	59061	0.779	75607	78.12	Medium-quality	63	terminus	chimeric	0.9206	3
+0_0323	100	ok	75779	checkv_aai_median	77789	1.027	75596	100.0	High-quality	55	terminus	chimeric	0.2182	12
+0_0324	19	ok	5162	member_seq_median	5299	1.027			Not-determined	10	terminus	chimeric	0.8	2
+0_0325	82	ok	75655	checkv_aai_median	45685	0.604	75809	60.26	Medium-quality	46	terminus	single_member	1.0	1
+0_0326	100	ok	7784	member_seq_median	7784	1.0	50566		Not-determined	15	terminus	single_member	1.0	1
+0_0327	3	ok	1080	member_seq_median	2140	1.981			Not-determined	2	terminus	single_member	1.0	1
+0_0328	2	ok	60552	checkv_aai_median	2085	0.034	60552	3.44	Low-quality	4	terminus	single_member	1.0	1
+0_0329	4	ok	75660	checkv_aai_median	30532	0.404	75560	40.41	Low-quality	59	terminus	single_member	1.0	1
+0_0330	2	ok	75873	checkv_aai_median	15129	0.199	71703	18.61	Low-quality	15	terminus	single_member	1.0	1
+0_0331	100	ok	59616	checkv_aai_median	15221	0.255	46284		Not-determined	26	terminus	chimeric	0.2692	13
+0_0332	100	ok	50883	checkv_aai_median	7695	0.151	50476	10.82	Low-quality	15	terminus	single_member	1.0	1
+0_0333	45	ok	59593	checkv_aai_median	10281	0.173	107381		Not-determined	22	terminus	chimeric	0.8182	2
+0_0334	100	ok	60875	checkv_aai_median	34654	0.569	50116	50.84	Medium-quality	67	terminus	chimeric	0.3881	9
+0_0335	82	ok	50879	checkv_aai_median	25826	0.508	47354	42.15	Low-quality	36	terminus	chimeric	0.6389	5
+0_0336	48	ok	50883	checkv_aai_median	14900	0.293	50297	20.96	Low-quality	31	terminus	chimeric	0.1613	13
+0_0337	49	ok	80812	checkv_aai_median	82610	1.022	81639	100.0	High-quality	83	terminus	chimeric	0.6145	8
+0_0338	100	ok	62696	checkv_aai_median	37369	0.596	73257	49.32	Low-quality	50	terminus	chimeric	0.42	6
+0_0339	100	ok	3721	member_seq_median	3721	1.0	231832		Not-determined	7	terminus	single_member	1.0	1
+0_0340	100	ok	3173	member_seq_median	3173	1.0	53984	5.71	Low-quality	6	terminus	single_member	1.0	1
+0_0341	100	ok	46229	checkv_aai_median	46024	0.996	43803	75.39	Medium-quality	46	terminus	single_member	1.0	1
+0_0342	100	ok	4776	member_seq_median	5143	1.077	54653		Not-determined	10	terminus	single_member	1.0	1
+0_0343	99	ok	41379	checkv_aai_median	32563	0.787	67135		Not-determined	34	terminus	single_member	1.0	1
+0_0344	100	ok	45721	checkv_aai_median	46024	1.007	43803	75.39	Medium-quality	46	terminus	single_member	1.0	1
+0_0345	10	ok	42912	checkv_aai_median	23541	0.549	46185	34.06	Low-quality	44	terminus	chimeric	0.1818	11
+0_0346	100	ok	122891	checkv_aai_median	19540	0.159	90491		Not-determined	39	terminus	chimeric	0.7949	5
+0_0347	100	ok	75588	checkv_aai_median	53307	0.705	75639	70.47	Medium-quality	53	terminus	single_member	1.0	1
+0_0348	88	ok	3173	member_seq_median	3173	1.0	53984	5.71	Low-quality	6	terminus	single_member	1.0	1
+0_0349	85	ok	2107	member_seq_median	2107	1.0			Not-determined	4	terminus	single_member	1.0	1
+0_0350	6	ok	8703	member_seq_median	8818	1.013	54383	14.4	Low-quality	17	terminus	single_member	1.0	1
+0_0351	1	singleton_passthrough	1077	member_seq_median	1077	1.0	50432	2.14	Low-quality					
+0_0352	56	ok	53097	checkv_aai_median	35677	0.672	51381	55.64	Medium-quality	50	terminus	chimeric	0.4	16
+0_0353	19	ok	62540	checkv_aai_median	18489	0.296	63024	29.34	Low-quality	39	terminus	chimeric	0.1538	15
+0_0354	55	ok	68322	checkv_aai_median	12794	0.187	98514		Not-determined	26	terminus	single_member	1.0	1
+0_0355	100	ok	61250	checkv_aai_median	14050	0.229	65740	24.61	Low-quality	30	terminus	single_member	1.0	1
+0_0356	33	ok	61675	checkv_aai_median	66535	1.079	63260	58.11	Medium-quality	103	terminus	chimeric	0.2524	14
+0_0357	1	singleton_passthrough	6000	member_seq_median	6000	1.0	51735	7.18	Low-quality					
+0_0358	3	ok	53426	checkv_aai_median	42597	0.797	52070	81.81	Medium-quality	79	terminus	chimeric	0.8861	2
+0_0359	100	ok	75629	checkv_aai_median	38538	0.51	75518	51.03	Medium-quality	38	terminus	chimeric	0.6053	4
+0_0360	63	ok	75602	checkv_aai_median	49261	0.652	75696	65.08	Medium-quality	54	terminus	chimeric	0.3704	11
+0_0361	10	ok	76650	checkv_aai_median	71403	0.932	76726	93.06	High-quality	87	terminus	single_member	1.0	1
+0_0362	100	ok	6280	member_seq_median	6280	1.0	47419		Not-determined	12	terminus	single_member	1.0	1
+0_0363	54	ok	6280	member_seq_median	6280	1.0	47402		Not-determined	12	terminus	single_member	1.0	1
+0_0364	51	ok	75638	checkv_aai_median	25748	0.34	75648	34.04	Low-quality	42	terminus	chimeric	0.619	2
+0_0365	53	ok	273837	checkv_aai_median	10772	0.039	123390		Not-determined	13	terminus	chimeric	0.6154	3
+0_0366	8	ok	49987	checkv_aai_median	5631	0.113	47782	7.9	Low-quality	15	terminus	chimeric	0.4667	4
+0_0367	100	ok	56625	checkv_aai_median	27200	0.48	53506		Not-determined	44	terminus	chimeric	0.2045	9
+0_0368	100	ok	56410	checkv_aai_median	55599	0.986	69228	67.93	Medium-quality	57	terminus	chimeric	0.5263	5
+0_0369	26	ok	56517	checkv_aai_median	37049	0.656	55884	66.3	Medium-quality	80	terminus	chimeric	0.3	24
+0_0370	1	singleton_passthrough	2788	member_seq_median	2788	1.0	49293		Not-determined					
+0_0371	2	ok	44578	checkv_aai_median	81609	1.831	43140	96.55	High-quality	82	terminus	single_member	1.0	1
+0_0372	100	ok	52095	checkv_aai_median	7476	0.144	51136	16.24	Low-quality	7	terminus	single_member	1.0	1
+0_0373	100	ok	53827	checkv_aai_median	52973	0.984	52581	100.0	High-quality	53	terminus	single_member	1.0	1
+0_0374	1	singleton_passthrough	943	member_seq_median	943	1.0	63235	1.49	Low-quality					
+0_0375	26	ok	51624	checkv_aai_median	3177	0.062	49364	7.28	Low-quality	9	terminus	chimeric	0.4444	4
+0_0376	21	ok	54415	checkv_aai_median	26199	0.481	63054	24.06	Low-quality	65	terminus	chimeric	0.3077	10
+0_0377	100	ok	680	member_seq_median	680	1.0			Not-determined	1	terminus	single_member	1.0	1
+0_0378	5	ok	1499	member_seq_median	2981	1.989	64770		Not-determined	2	terminus	single_member	1.0	1
+0_0379	27	ok	61250	checkv_aai_median	19149	0.313	61212	31.03	Low-quality	32	terminus	chimeric	0.5	5
+0_0380	78	ok	57513	checkv_aai_median	57262	0.996	41937	100.0	High-quality	120	terminus	chimeric	0.4333	40
+0_0381	70	ok	79994	checkv_aai_median	58610	0.733	79917	73.34	Medium-quality	80	terminus	chimeric	0.1625	21
+0_0382	38	ok	59807	checkv_aai_median	60533	1.012	58673	87.22	Medium-quality	99	terminus	chimeric	0.2929	38
+0_0383	21	ok	680	member_seq_median	680	1.0			Not-determined	1	terminus	single_member	1.0	1
+0_0384	32	ok	57177	checkv_aai_median	13429	0.235	62235	21.58	Low-quality	17	terminus	chimeric	0.4706	3
+0_0385	16	ok	11139	member_seq_median	11603	1.042	56491	16.35	Low-quality	26	terminus	chimeric	0.4615	6
+0_0386	2	ok	11966	member_seq_median	23704	1.981	49337		Not-determined	23	terminus	single_member	1.0	1
+0_0387	56	ok	36010	member_seq_median	37136	1.031	84464	51.69	Medium-quality	79	terminus	chimeric	0.3418	15
+0_0388	49	ok	81571	checkv_aai_median	12513	0.153	80102	15.62	Low-quality	14	terminus	single_member	1.0	1
+0_0389	100	ok	53170	checkv_aai_median	15627	0.294	57872	7.07	Low-quality	16	terminus	chimeric	0.75	3
+0_0390	15	ok	50645	checkv_aai_median	18177	0.359	57914	8.19	Low-quality	18	terminus	single_member	1.0	1
+0_0391	100	ok	59924	checkv_aai_median	49628	0.828	55826	88.9	Medium-quality	98	terminus	chimeric	0.3163	12
+0_0392	72	ok	63254	checkv_aai_median	63068	0.997	99289		Not-determined	80	terminus	chimeric	0.1625	43
+0_0393	4	ok	11996	member_seq_median	11623	0.969			Not-determined	16	terminus	chimeric	0.25	5
+0_0394	100	ok	51838	checkv_aai_median	53430	1.031	51838	100.0	High-quality	55	terminus	chimeric	0.6364	8
+0_0395	9	ok	51838	checkv_aai_median	22813	0.44	51838	44.01	Low-quality	72	terminus	chimeric	0.375	11
+0_0396	3	ok	52347	checkv_aai_median	25742	0.492	52347	49.18	Low-quality	51	terminus	single_member	1.0	1
+0_0397	45	ok	81620	checkv_aai_median	7500	0.092	81699	9.18	Low-quality	14	terminus	chimeric	0.6429	3
+0_0398	100	ok	76148	checkv_aai_median	18285	0.24	76148	24.01	Low-quality	27	terminus	chimeric	0.963	2
+0_0399	40	ok	55549	checkv_aai_median	52453	0.944	42219	76.47	Medium-quality	65	terminus	chimeric	0.4	13
+0_0400	36	ok	38341	checkv_aai_median	33462	0.873	71662	48.48	Low-quality	58	terminus	chimeric	0.6897	7
+0_0401	94	ok	3008	member_seq_median	3008	1.0	51543	6.79	Low-quality	6	terminus	single_member	1.0	1
+0_0402	4	ok	56042	checkv_aai_median	1429	0.025	63095	2.26	Low-quality	4	terminus	chimeric	0.75	2
+0_0403	91	ok	57050	checkv_aai_median	60208	1.055	57315	82.01	Medium-quality	76	terminus	chimeric	0.4605	11
+0_0404	12	ok	54731	checkv_aai_median	9633	0.176	52710		Not-determined	19	terminus	single_member	1.0	1
+0_0405	4	ok	54187	checkv_aai_median	18208	0.336	56109	32.45	Low-quality	28	terminus	chimeric	0.5	5
+0_0406	16	ok	56002	checkv_aai_median	34956	0.624	51261	49.45	Low-quality	69	terminus	chimeric	0.1884	15
+0_0407	58	ok	58294	checkv_aai_median	38390	0.659	56603	49.68	Low-quality	56	terminus	chimeric	0.4821	4
+0_0408	1	singleton_passthrough	19175	member_seq_median	19175	1.0	52648	36.42	Low-quality					
+0_0409	79	ok	60734	checkv_aai_median	54135	0.891	60951	88.82	Medium-quality	95	terminus	chimeric	0.7053	4
+0_0410	87	ok	58886	checkv_aai_median	19727	0.335	49697	15.39	Low-quality	27	terminus	chimeric	0.6296	3
+0_0411	32	ok	51849	checkv_aai_median	51239	0.988	52089	77.32	Medium-quality	64	terminus	chimeric	0.3125	10
+0_0412	72	ok	69290	checkv_aai_median	11116	0.16	76638	14.5	Low-quality	11	terminus	single_member	1.0	1
+0_0413	79	ok	5421	member_seq_median	5421	1.0	49750	7.96	Low-quality	10	terminus	single_member	1.0	1
+0_0414	79	ok	11674	member_seq_median	11674	1.0	37986	14.22	Low-quality	23	terminus	single_member	1.0	1
+0_0415	13	ok	6283	member_seq_median	5993	0.954	44083	9.55	Low-quality	19	terminus	chimeric	0.3158	7
+0_0416	1	singleton_passthrough	12908	member_seq_median	12908	1.0	53692	24.04	Low-quality					
+0_0417	29	ok	10746	member_seq_median	10711	0.997	49553	13.37	Low-quality	19	terminus	chimeric	0.6842	4
+0_0418	53	ok	50950	checkv_aai_median	44918	0.882	55832	61.5	Medium-quality	45	terminus	chimeric	0.1333	14
+0_0419	13	ok	9143	member_seq_median	9181	1.004		15.8	Low-quality	28	terminus	chimeric	0.2857	8
+0_0420	1	singleton_passthrough	3465	member_seq_median	3465	1.0	57965	5.98	Low-quality					
+0_0421	18	ok	41094	checkv_aai_median	10715	0.261	17606	14.35	Low-quality	25	terminus	chimeric	0.24	7
+0_0422	13	ok	62303	checkv_aai_median	12076	0.194	62824	19.22	Low-quality	20	terminus	chimeric	0.5	7
+0_0423	66	ok	111245	checkv_aai_median	54120	0.486	90000	75.4	Medium-quality	90	terminus	chimeric	0.3667	10
+0_0424	52	ok	63711	checkv_aai_median	20811	0.327	73259	18.82	Low-quality	37	terminus	chimeric	0.5676	2
+0_0425	9	ok	9108	member_seq_median	8703	0.956	67115		Not-determined	17	terminus	chimeric	0.4706	4
+0_0426	13	ok	50938	checkv_aai_median	41977	0.824	53239	78.84	Medium-quality	83	terminus	chimeric	0.6024	23
+0_0427	63	ok	44305	checkv_aai_median	35934	0.811	47093	34.56	Low-quality	53	terminus	chimeric	0.3774	11
+0_0428	58	ok	56672	checkv_aai_median	32281	0.57	46490		Not-determined	39	terminus	chimeric	0.2821	16
+0_0429	7	ok	8948	member_seq_median	9360	1.046	47643	11.84	Low-quality	12	terminus	chimeric	0.5833	3
+0_0430	7	ok	63723	checkv_aai_median	17892	0.281	56406	24.76	Low-quality	30	terminus	chimeric	0.0667	29
+0_0431	63	ok	7389	member_seq_median	7389	1.0	58926	11.9	Low-quality	14	terminus	single_member	1.0	1
+0_0432	24	ok	55136	checkv_aai_median	35399	0.642	55564	63.71	Medium-quality	94	terminus	chimeric	0.1489	21
+0_0433	59	ok	11641	member_seq_median	11641	1.0	92117		Not-determined	23	terminus	single_member	1.0	1
+0_0434	15	ok	52189	checkv_aai_median	37153	0.712	52711	70.48	Medium-quality	84	terminus	chimeric	0.4048	12
+0_0435	18	ok	62584	checkv_aai_median	32201	0.515	56668	29.07	Low-quality	62	terminus	chimeric	0.5806	5
+0_0436	1	singleton_passthrough	2483	member_seq_median	2483	1.0	56712	4.38	Low-quality					
+0_0437	58	ok	51822	checkv_aai_median	56899	1.098	50799	100.0	High-quality	70	terminus	chimeric	0.3857	12
+0_0438	13	ok	87414	checkv_aai_median	9254	0.106		2.44	Low-quality	11	terminus	single_member	1.0	1
+0_0439	58	ok	6446	member_seq_median	6446	1.0	79054	5.63	Low-quality	12	terminus	single_member	1.0	1
+0_0440	58	ok	4345	member_seq_median	4345	1.0		4.64	Low-quality	9	terminus	single_member	1.0	1
+0_0441	14	ok	59250	checkv_aai_median	22035	0.372	98886	41.2	Low-quality	35	terminus	chimeric	0.4571	10
+0_0442	57	ok	73822	checkv_aai_median	40847	0.553	81961	55.89	Medium-quality	44	terminus	chimeric	0.2955	9
+0_0443	24	ok	67198	checkv_aai_median	9416	0.14	62163		Not-determined	19	terminus	chimeric	0.2632	6
+0_0444	1	singleton_passthrough	3826	member_seq_median	3826	1.0	48407	4.49	Low-quality					
+0_0445	6	ok	49515	checkv_aai_median	37342	0.754	50395	52.25	Medium-quality	66	terminus	chimeric	0.2121	19
+0_0446	4	ok	53795	checkv_aai_median	51772	0.962	61295	84.46	Medium-quality	94	terminus	chimeric	0.8936	3
+0_0447	3	ok	49376	checkv_aai_median	6556	0.133	42289	15.5	Low-quality	9	terminus	single_member	1.0	1
+0_0448	1	singleton_passthrough	1844	member_seq_median	1844	1.0	104583	1.99	Low-quality					
+0_0449	14	ok	10003	member_seq_median	10176	1.017	47829	13.07	Low-quality	19	terminus	chimeric	0.9474	2
+0_0450	50	ok	54187	checkv_aai_median	17539	0.324	51422	11.95	Low-quality	25	terminus	chimeric	0.4	5
+0_0451	3	ok	59779	checkv_aai_median	33715	0.564	56884	51.49	Medium-quality	34	terminus	single_member	1.0	1
+0_0452	50	ok	59235	checkv_aai_median	22842	0.386	57969	31.51	Low-quality	27	terminus	chimeric	0.5556	5
+0_0453	27	ok	55999	checkv_aai_median	32197	0.575	58245	55.28	Medium-quality	81	terminus	chimeric	0.321	10
+0_0454	3	ok	5131	member_seq_median	5929	1.156	144464		Not-determined	8	terminus	single_member	1.0	1
+0_0455	29	ok	52525	checkv_aai_median	17885	0.341	52933	25.95	Low-quality	70	terminus	chimeric	0.2286	16
+0_0456	6	ok	228947	checkv_aai_median	26950	0.118	338172	35.18	Low-quality	29	terminus	chimeric	0.5517	3
+0_0457	47	ok	53626	checkv_aai_median	10746	0.2	59395		Not-determined	19	terminus	chimeric	0.3684	4
+0_0458	44	ok	53230	checkv_aai_median	13701	0.257	129481		Not-determined	28	terminus	chimeric	0.4643	5
+0_0459	9	ok	49618	checkv_aai_median	49106	0.99	51370	70.44	Medium-quality	78	terminus	chimeric	0.3333	17
+0_0460	14	ok	11958	member_seq_median	13085	1.094	36373		Not-determined	31	terminus	chimeric	0.3226	8
+0_0461	2	ok	76649	checkv_aai_median	4883	0.064	76649	6.37	Low-quality	9	terminus	single_member	1.0	1
+0_0462	1	singleton_passthrough	3320	member_seq_median	3320	1.0	81630	4.07	Low-quality					
+0_0463	6	ok	6646	member_seq_median	6822	1.026	30129	7.92	Low-quality	21	terminus	chimeric	0.4286	6
+0_0464	2	ok	64208	checkv_aai_median	26640	0.415	64208	41.49	Low-quality	27	terminus	chimeric	0.6667	4
+0_0465	21	ok	56056	checkv_aai_median	36084	0.644	59215	60.94	Medium-quality	80	terminus	chimeric	0.4375	5
+0_0466	3	ok	53839	checkv_aai_median	51489	0.956	53731	95.83	High-quality	56	terminus	chimeric	0.2321	13
+0_0467	43	ok	4839	member_seq_median	4839	1.0	66945	7.1	Low-quality	9	terminus	single_member	1.0	1
+0_0468	2	ok	54571	checkv_aai_median	22255	0.408	55996	39.74	Low-quality	37	terminus	single_member	1.0	1
+0_0469	1	singleton_passthrough	11219	member_seq_median	11219	1.0	54402	20.62	Low-quality					
+0_0470	34	ok	135714	checkv_aai_median	20165	0.149	65189	32.47	Low-quality	35	terminus	chimeric	0.1429	16
+0_0471	27	ok	9982	member_seq_median	9773	0.979			Not-determined	20	terminus	chimeric	0.35	5
+0_0472	6	ok	59488	checkv_aai_median	29204	0.491	60372	48.37	Low-quality	54	terminus	chimeric	0.3704	5
+0_0473	40	ok	45075	checkv_aai_median	46238	1.026	46810	98.78	High-quality	92	terminus	single_member	1.0	1
+0_0474	2	ok	1176	member_seq_median	1176	1.0	51040		Not-determined	2	terminus	single_member	1.0	1
+0_0475	38	ok	10414	member_seq_median	10414	1.0	39785	1.59	Low-quality	20	terminus	single_member	1.0	1
+0_0476	5	ok	3334	member_seq_median	3351	1.005	45840		Not-determined	5	terminus	chimeric	0.6	3
+0_0477	35	ok	50376	checkv_aai_median	26036	0.517	54000	33.26	Low-quality	40	terminus	chimeric	0.2	10
+0_0478	4	ok	54977	checkv_aai_median	47485	0.864	56818	83.57	Medium-quality	74	terminus	chimeric	0.2568	13
+0_0479	16	ok	59492	checkv_aai_median	19876	0.334	66865	32.16	Low-quality	65	terminus	chimeric	0.1385	30
+0_0480	36	ok	9324	member_seq_median	9324	1.0	46793	9.45	Low-quality	18	terminus	single_member	1.0	1
+0_0481	36	ok	71550	checkv_aai_median	1076	0.015	71552	1.5	Low-quality	2	terminus	single_member	1.0	1
+0_0482	12	ok	126505	checkv_aai_median	19711	0.156	103480	17.92	Low-quality	19	terminus	single_member	1.0	1
+0_0483	26	ok	55492	checkv_aai_median	13930	0.251	55492	12.17	Low-quality	30	terminus	chimeric	0.3333	7
+0_0484	12	ok	101362	checkv_aai_median	14031	0.138	173027		Not-determined	28	terminus	chimeric	0.3929	7
+0_0485	31	ok	3855	member_seq_median	3855	1.0	151263	5.09	Low-quality	7	terminus	single_member	1.0	1
+0_0486	3	ok	8352	member_seq_median	8739	1.046			Not-determined	8	terminus	single_member	1.0	1
+0_0487	2	ok	58145	checkv_aai_median	20321	0.349	61183	33.21	Low-quality	20	terminus	single_member	1.0	1
+0_0488	12	ok	50996	checkv_aai_median	47583	0.933	79429	64.75	Medium-quality	69	terminus	chimeric	0.3913	11
+0_0489	7	ok	54619	checkv_aai_median	13146	0.241		15.65	Low-quality	34	terminus	chimeric	0.2941	7
+0_0490	33	ok	67310	checkv_aai_median	63576	0.945	60588	100.0	High-quality	100	terminus	chimeric	0.3	15
+0_0491	5	ok	63334	checkv_aai_median	65164	1.029	63334	100.0	High-quality	64	terminus	chimeric	0.7344	4
+0_0492	1	singleton_passthrough	5010	member_seq_median	5010	1.0	76148	6.58	Low-quality					
+0_0493	5	ok	53174	checkv_aai_median	26598	0.5	51909	31.03	Low-quality	43	terminus	chimeric	0.7209	6
+0_0494	4	ok	64277	checkv_aai_median	20508	0.319	76879	26.68	Low-quality	38	terminus	chimeric	0.6053	5
+0_0495	4	ok	59883	checkv_aai_median	37480	0.626	71404	62.28	Medium-quality	71	terminus	chimeric	0.2254	12
+0_0496	32	ok	51930	checkv_aai_median	16946	0.326	52006	30.24	Low-quality	17	terminus	single_member	1.0	1
+0_0497	2	ok	18951	member_seq_median	18951	1.0	41883	9.8	Low-quality	37	terminus	single_member	1.0	1
+0_0498	5	ok	53727	checkv_aai_median	21421	0.399	51234	32.57	Low-quality	29	terminus	chimeric	0.5862	5
+0_0499	4	ok	813	member_seq_median	813	1.0			Not-determined	1	terminus	single_member	1.0	1
+0_0500	31	ok	6010	member_seq_median	6629	1.103	129750		Not-determined	6	terminus	single_member	1.0	1
+0_0501	20	ok	94035	checkv_aai_median	12959	0.138	98844	10.47	Low-quality	25	terminus	chimeric	0.56	6
+0_0502	5	ok	77578	checkv_aai_median	20763	0.268	77019	26.96	Low-quality	26	terminus	chimeric	0.7692	3
+0_0503	10	ok	50990	checkv_aai_median	36644	0.719	45237	81.0	Medium-quality	65	terminus	chimeric	0.4308	5
+0_0504	1	singleton_passthrough	4444	member_seq_median	4444	1.0	35736		Not-determined					
+0_0505	1	singleton_passthrough	1892	member_seq_median	1892	1.0	45726	4.14	Low-quality					
+0_0506	21	ok	51626	checkv_aai_median	8556	0.166		10.3	Low-quality	20	terminus	chimeric	0.25	12
+0_0507	17	ok	51849	checkv_aai_median	21544	0.416	51814	28.32	Low-quality	75	terminus	chimeric	0.1733	13
+0_0508	28	ok	14790	member_seq_median	29309	1.982	93994	33.74	Low-quality	29	terminus	single_member	1.0	1
+0_0509	11	ok	51767	checkv_aai_median	18286	0.353	51758	35.33	Low-quality	35	terminus	chimeric	0.8571	2
+0_0510	28	ok	52367	checkv_aai_median	28929	0.552	55775	36.2	Low-quality	53	terminus	chimeric	0.434	8
+0_0511	28	ok	59929	checkv_aai_median	11618	0.194	56810	12.96	Low-quality	28	terminus	chimeric	0.5	9
+0_0512	18	ok	1549	member_seq_median	1554	1.003			Not-determined	4	terminus	single_member	1.0	1
+0_0513	5	ok	2093	member_seq_median	4147	1.981	65700	3.13	Low-quality	4	terminus	single_member	1.0	1
+0_0514	2	ok	19408	member_seq_median	21202	1.092	52590		Not-determined	40	terminus	chimeric	0.625	2
+0_0515	4	ok	51677	checkv_aai_median	25809	0.499	52224	30.71	Low-quality	37	terminus	single_member	1.0	1
+0_0516	22	ok	76679	checkv_aai_median	34272	0.447	101464	75.01	Medium-quality	53	terminus	chimeric	0.5283	8
+0_0517	24	ok	68188	checkv_aai_median	28761	0.422	68188		Not-determined	40	terminus	chimeric	0.3	8
+0_0518	12	ok	75054	checkv_aai_median	42609	0.568	48246	88.32	Medium-quality	91	terminus	chimeric	0.2418	15
+0_0519	4	ok	6260	member_seq_median	6428	1.027	65443		Not-determined	7	terminus	chimeric	0.5714	2
+0_0520	1	singleton_passthrough	1658	member_seq_median	1658	1.0	50002		Not-determined					
+0_0521	11	ok	11699	member_seq_median	11969	1.023			Not-determined	28	terminus	chimeric	0.4286	8
+0_0522	25	ok	60215	checkv_aai_median	1729	0.029	46744	1.53	Low-quality	10	terminus	single_member	1.0	1
+0_0523	1	singleton_passthrough	2490	member_seq_median	2490	1.0	46796	5.32	Low-quality					
+0_0524	2	ok	4318	member_seq_median	6048	1.401			Not-determined	7	terminus	chimeric	0.5714	2
+0_0525	2	ok	8333	member_seq_median	8186	0.982	44281	8.92	Low-quality	16	terminus	single_member	1.0	1
+0_0526	24	ok	11042	member_seq_median	10992	0.995			Not-determined	12	terminus	chimeric	0.3333	4
+0_0527	22	ok	53118	checkv_aai_median	36340	0.684	83975	43.27	Low-quality	69	terminus	chimeric	0.1884	13
+0_0528	7	ok	8776	member_seq_median	8805	1.003	54564	12.39	Low-quality	12	terminus	chimeric	0.5	4
+0_0529	4	ok	44090	checkv_aai_median	27803	0.631	61326	35.68	Low-quality	44	terminus	chimeric	0.5	6
+0_0530	3	ok	8006	member_seq_median	7750	0.968	48605	15.94	Low-quality	12	terminus	single_member	1.0	1
+0_0531	4	ok	59739	checkv_aai_median	8243	0.138	57704	14.28	Low-quality	14	terminus	single_member	1.0	1
+0_0532	1	singleton_passthrough	1706	member_seq_median	1706	1.0	64720	2.64	Low-quality					
+0_0533	2	ok	51846	checkv_aai_median	56433	1.088	51846	100.0	High-quality	79	terminus	chimeric	0.5696	9
+0_0534	6	ok	64613	checkv_aai_median	91311	1.413	64613	98.4	High-quality	95	terminus	chimeric	0.2421	20
+0_0535	3	ok	50174	checkv_aai_median	58833	1.173	50109	83.67	Medium-quality	68	terminus	chimeric	0.4265	7
+0_0536	2	ok	19036	member_seq_median	20344	1.069	54459	4.87	Low-quality	35	terminus	single_member	1.0	1
+0_0537	2	ok	54661	checkv_aai_median	21206	0.388	53052	39.97	Low-quality	42	terminus	single_member	1.0	1
+0_0538	6	ok	7638	member_seq_median	7592	0.994	52175		Not-determined	12	terminus	single_member	1.0	1
+0_0539	1	singleton_passthrough	17982	member_seq_median	17982	1.0	67110	26.79	Low-quality					
+0_0540	20	ok	147889	checkv_aai_median	7792	0.053	72608	10.73	Low-quality	17	terminus	chimeric	0.8235	3
+0_0541	21	ok	65257	checkv_aai_median	7165	0.11	88585	6.48	Low-quality	7	terminus	chimeric	0.7143	2
+0_0542	2	ok	728	member_seq_median	1446	1.986			Not-determined	1	terminus	single_member	1.0	1
+0_0543	5	ok	53671	checkv_aai_median	12579	0.234	59682	15.29	Low-quality	21	terminus	chimeric	0.7619	3
+0_0544	8	ok	5537	member_seq_median	4975	0.899	53172	9.36	Low-quality	9	terminus	chimeric	0.5556	4
+0_0545	5	ok	7221	member_seq_median	8458	1.171	54483	11.38	Low-quality	20	terminus	chimeric	0.6	4
+0_0546	1	singleton_passthrough	11890	member_seq_median	11890	1.0	53694	22.14	Low-quality					
+0_0547	11	ok	125295	checkv_aai_median	36432	0.291	41924		Not-determined	74	terminus	chimeric	0.6081	4
+0_0548	8	ok	7072	member_seq_median	10802	1.527			Not-determined	11	terminus	single_member	1.0	1
+0_0549	1	singleton_passthrough	1436	member_seq_median	1436	1.0	69737		Not-determined					
+0_0550	11	ok	54630	checkv_aai_median	17237	0.316	55445		Not-determined	39	terminus	chimeric	0.4872	8
+0_0551	3	ok	6008	member_seq_median	5782	0.962	85189		Not-determined	8	terminus	single_member	1.0	1
+0_0552	5	ok	50445	checkv_aai_median	43818	0.869	49870	87.86	Medium-quality	82	terminus	chimeric	0.4878	3
+0_0553	3	ok	3425	member_seq_median	4829	1.41	65093		Not-determined	7	terminus	single_member	1.0	1
+0_0554	2	ok	13742	member_seq_median	21329	1.552	71378	29.69	Low-quality	31	terminus	single_member	1.0	1
+0_0555	1	singleton_passthrough	41376	member_seq_median	41376	1.0	46598	88.79	Medium-quality					
+0_0556	1	singleton_passthrough	9249	member_seq_median	9249	1.0	57880		Not-determined					
+0_0557	11	ok	54250	checkv_aai_median	89604	1.652	55709	95.83	High-quality	90	terminus	chimeric	0.5	5
+0_0558	4	ok	56435	checkv_aai_median	40666	0.721	43630	93.21	High-quality	76	terminus	chimeric	0.4605	5
+0_0559	8	ok	206544	checkv_aai_median	24341	0.118	44270	31.65	Low-quality	39	terminus	chimeric	0.5128	4
+0_0560	17	ok	42935	checkv_aai_median	17522	0.408	49393	25.67	Low-quality	70	terminus	chimeric	0.2857	16
+0_0561	10	ok	46663	checkv_aai_median	30356	0.651	48299	62.85	Medium-quality	58	terminus	chimeric	0.2414	11
+0_0562	13	ok	50270	checkv_aai_median	11469	0.228	39089	16.88	Low-quality	30	terminus	chimeric	0.2333	10
+0_0563	2	ok	64522	checkv_aai_median	9144	0.142	81612	11.2	Low-quality	17	terminus	single_member	1.0	1
+0_0564	3	ok	8029	member_seq_median	6665	0.83			Not-determined	8	terminus	chimeric	0.5	5
+0_0565	15	ok	3338	member_seq_median	6997	2.096	87917	5.22	Low-quality	7	terminus	single_member	1.0	1
+0_0566	2	ok	8664	member_seq_median	7713	0.89	58731	13.13	Low-quality	11	terminus	chimeric	0.5455	2
+0_0567	1	singleton_passthrough	2342	member_seq_median	2342	1.0	50509	4.64	Low-quality					
+0_0568	8	ok	11236	member_seq_median	22278	1.983		24.67	Low-quality	22	terminus	single_member	1.0	1
+0_0569	2	ok	58291	checkv_aai_median	58417	1.002	81393	85.11	Medium-quality	66	terminus	chimeric	0.1818	17
+0_0570	7	ok	76449	checkv_aai_median	8113	0.106	59814	8.78	Low-quality	9	terminus	single_member	1.0	1
+0_0571	13	ok	54365	checkv_aai_median	21868	0.402	56249	27.41	Low-quality	63	terminus	chimeric	0.2381	14
+0_0572	13	ok	20253	member_seq_median	20757	1.025	90971	9.35	Low-quality	26	terminus	chimeric	0.4231	4
+0_0573	1	singleton_passthrough	1748	member_seq_median	1748	1.0	81438	2.15	Low-quality					
+0_0574	10	ok	53932	checkv_aai_median	36465	0.676	50968	71.54	Medium-quality	71	terminus	chimeric	0.3662	16
+0_0575	2	ok	75694	checkv_aai_median	85626	1.131	75779	100.0	High-quality	101	terminus	chimeric	0.396	12
+0_0576	7	ok	101909	checkv_aai_median	12241	0.12	59454	17.52	Low-quality	21	terminus	chimeric	0.5238	2
+0_0577	3	ok	1917	member_seq_median	3885	2.027	51091	2.65	Low-quality	5	terminus	single_member	1.0	1
+0_0578	1	singleton_passthrough	5996	member_seq_median	5996	1.0	48750	12.3	Low-quality					
+0_0579	6	ok	7462	member_seq_median	14788	1.982	47365		Not-determined	14	terminus	single_member	1.0	1
+0_0580	12	ok	67429	checkv_aai_median	45060	0.668	53534	59.59	Medium-quality	129	terminus	chimeric	0.3566	15
+0_0581	10	ok	43974	checkv_aai_median	21114	0.48	71798	25.39	Low-quality	44	terminus	chimeric	0.1818	18
+0_0582	12	ok	55405	checkv_aai_median	17011	0.307	50279	33.83	Low-quality	44	terminus	chimeric	0.2727	10
+0_0583	1	singleton_passthrough	8998	member_seq_median	8998	1.0	50642	17.77	Low-quality					
+0_0584	2	ok	6266	member_seq_median	10121	1.615	63276	6.27	Low-quality	20	terminus	single_member	1.0	1
+0_0585	2	ok	55647	checkv_aai_median	55696	1.001	59826	69.04	Medium-quality	56	terminus	chimeric	0.3393	8
+0_0586	1	singleton_passthrough	45023	member_seq_median	45023	1.0	51854	86.83	Medium-quality					
+0_0587	2	ok	4107	member_seq_median	3584	0.873	43224		Not-determined	7	terminus	single_member	1.0	1
+0_0588	6	ok	57820	checkv_aai_median	56383	0.975	60183	93.68	High-quality	71	terminus	chimeric	0.4085	8
+0_0589	1	singleton_passthrough	20122	member_seq_median	20122	1.0	49215	40.89	Low-quality					
+0_0590	3	ok	8002	member_seq_median	8150	1.018	56155		Not-determined	14	terminus	single_member	1.0	1
+0_0591	3	ok	8973	member_seq_median	13816	1.54			Not-determined	14	terminus	chimeric	0.8571	2
+0_0592	2	ok	8151	member_seq_median	8143	0.999	58549		Not-determined	16	terminus	single_member	1.0	1
+0_0593	6	ok	7574	member_seq_median	6258	0.826	191529		Not-determined	12	terminus	chimeric	0.6667	3
+0_0594	6	ok	10880	member_seq_median	11044	1.015	94505		Not-determined	17	terminus	chimeric	0.9412	2
+0_0595	11	ok	8350	member_seq_median	8350	1.0	92389		Not-determined	16	terminus	single_member	1.0	1
+0_0596	4	ok	46398	checkv_aai_median	11497	0.248	39857	14.98	Low-quality	19	terminus	chimeric	0.6842	4
+0_0597	2	ok	86195	checkv_aai_median	19854	0.23	86195	23.03	Low-quality	39	terminus	single_member	1.0	1
+0_0598	10	ok	42959	checkv_aai_median	9637	0.224	42674	22.58	Low-quality	24	terminus	chimeric	0.2917	8
+0_0599	5	ok	9229	member_seq_median	9344	1.012	60676		Not-determined	17	terminus	chimeric	0.5882	3
+0_0600	8	ok	237	member_seq_median	237	1.0			Not-determined	1	terminus	single_member	1.0	1
+0_0601	9	ok	46780	checkv_aai_median	46748	0.999	91838	56.55	Medium-quality	50	terminus	chimeric	0.84	5
+0_0602	1	singleton_passthrough	51081	member_seq_median	51081	1.0	51834	98.55	High-quality					
+0_0603	9	ok	5823	member_seq_median	4058	0.697	64498		Not-determined	5	terminus	chimeric	0.6	2
+0_0604	3	ok	8114	member_seq_median	11711	1.443		18.75	Low-quality	13	terminus	chimeric	0.3846	4
+0_0605	2	ok	52050	checkv_aai_median	23296	0.448	52050	44.76	Low-quality	46	terminus	single_member	1.0	1
+0_0606	10	ok	76031	checkv_aai_median	32631	0.429	50137	43.64	Low-quality	59	terminus	chimeric	0.3051	8
+0_0607	4	ok	1276	member_seq_median	2260	1.771			Not-determined	4	terminus	chimeric	0.75	2
+0_0608	1	singleton_passthrough	1717	member_seq_median	1717	1.0			Not-determined					
+0_0609	9	ok	10563	member_seq_median	10481	0.992	75604	13.3	Low-quality	18	terminus	chimeric	0.2778	6
+0_0610	7	ok	6331	member_seq_median	6732	1.063	49011	4.19	Low-quality	13	terminus	single_member	1.0	1
+0_0611	4	ok	62821	checkv_aai_median	44159	0.703	63423	69.63	Medium-quality	82	terminus	single_member	1.0	1
+0_0612	2	ok	9133	member_seq_median	9298	1.018	58459		Not-determined	14	terminus	chimeric	0.5714	3
+0_0613	3	ok	44173	checkv_aai_median	14433	0.327	63444	21.03	Low-quality	47	terminus	chimeric	0.2128	12
+0_0614	5	ok	50663	checkv_aai_median	36514	0.721	50639	72.11	Medium-quality	72	terminus	single_member	1.0	1
+0_0615	10	ok	44125	checkv_aai_median	46133	1.046	44072	100.0	High-quality	61	terminus	chimeric	0.6721	5
+0_0616	9	ok	69566	checkv_aai_median	48302	0.694	69638	69.36	Medium-quality	96	terminus	chimeric	0.6458	3
+0_0617	1	singleton_passthrough	5528	member_seq_median	5528	1.0	59390	8.0	Low-quality					
+0_0618	9	ok	51732	checkv_aai_median	10147	0.196	51636	19.65	Low-quality	20	terminus	chimeric	0.45	5
+0_0619	9	ok	3385	member_seq_median	3415	1.009		6.13	Low-quality	7	terminus	chimeric	0.5714	2
+0_0620	9	ok	51934	checkv_aai_median	9156	0.176	104721	15.02	Low-quality	19	terminus	chimeric	0.4211	5
+0_0621	3	ok	10649	member_seq_median	12334	1.158	93348		Not-determined	20	terminus	chimeric	0.85	2
+0_0622	5	ok	52860	checkv_aai_median	58473	1.106	52944	100.0	High-quality	93	terminus	chimeric	0.9677	2
+0_0623	1	singleton_passthrough	3339	member_seq_median	3339	1.0	122716		Not-determined					
+0_0624	2	ok	76668	checkv_aai_median	49797	0.65	76651	64.97	Medium-quality	60	terminus	chimeric	0.55	7
+0_0625	2	ok	9951	member_seq_median	10247	1.03	49878		Not-determined	13	terminus	chimeric	0.3846	4
+0_0626	8	ok	3343	member_seq_median	3340	0.999			Not-determined	9	terminus	chimeric	0.4444	3
+0_0627	2	ok	52124	checkv_aai_median	105960	2.033	52422	100.0	High-quality	106	terminus	single_member	1.0	1
+0_0628	2	ok	13783	member_seq_median	13783	1.0			Not-determined	27	terminus	single_member	1.0	1
+0_0629	2	ok	3916	member_seq_median	5102	1.303		5.83	Low-quality	9	terminus	single_member	1.0	1
+0_0630	8	ok	2281	member_seq_median	4526	1.984			Not-determined	4	terminus	single_member	1.0	1
+0_0631	8	ok	9579	member_seq_median	8622	0.9			Not-determined	11	terminus	chimeric	0.4545	3
+0_0632	1	singleton_passthrough	13296	member_seq_median	13296	1.0	75652	17.58	Low-quality					
+0_0633	8	ok	12978	member_seq_median	12734	0.981	113782		Not-determined	24	terminus	chimeric	0.375	5
+0_0634	7	ok	55565	checkv_aai_median	23179	0.417	59635	38.87	Low-quality	45	terminus	chimeric	0.3556	6
+0_0635	8	ok	51981	checkv_aai_median	28861	0.555	50590	34.78	Low-quality	56	terminus	chimeric	0.1429	15
+0_0636	3	ok	13205	member_seq_median	13378	1.013			Not-determined	16	terminus	chimeric	0.25	5
+0_0637	1	singleton_passthrough	650	member_seq_median	650	1.0	63659		Not-determined					
+0_0638	1	singleton_passthrough	6724	member_seq_median	6724	1.0	64450		Not-determined					
+0_0639	7	ok	49213	checkv_aai_median	10085	0.205	52401	9.17	Low-quality	18	terminus	chimeric	0.4444	4
+0_0640	1	singleton_passthrough	29651	member_seq_median	29651	1.0	62649	47.33	Low-quality					
+0_0641	1	singleton_passthrough	4696	member_seq_median	4696	1.0	64663		Not-determined					
+0_0642	1	singleton_passthrough	7752	member_seq_median	7752	1.0	97770		Not-determined					
+0_0643	4	ok	55830	checkv_aai_median	34783	0.623	56538	61.52	Medium-quality	58	terminus	chimeric	0.7586	4
+0_0644	2	ok	59418	checkv_aai_median	23116	0.389	50421	32.2	Low-quality	23	terminus	single_member	1.0	1
+0_0645	2	ok	7365	member_seq_median	7395	1.004	55496	12.61	Low-quality	14	terminus	single_member	1.0	1
+0_0646	3	ok	3487	member_seq_median	4458	1.278			Not-determined	7	terminus	single_member	1.0	1
+0_0647	3	ok	52594	checkv_aai_median	53390	1.015	52679	100.0	High-quality	97	terminus	chimeric	0.8351	4
+0_0648	4	ok	58960	checkv_aai_median	10377	0.176	50307		Not-determined	23	terminus	chimeric	0.5652	5
+0_0649	7	ok	54635	checkv_aai_median	24168	0.442	54386	44.44	Low-quality	46	terminus	chimeric	0.913	2
+0_0650	7	ok	56123	checkv_aai_median	17529	0.312	74609	19.71	Low-quality	17	terminus	single_member	1.0	1
+0_0651	3	ok	4616	member_seq_median	9147	1.982		11.61	Low-quality	9	terminus	single_member	1.0	1
+0_0652	1	singleton_passthrough	3861	member_seq_median	3861	1.0			Not-determined					
+0_0653	7	ok	56043	checkv_aai_median	21756	0.388	57398	37.9	Low-quality	38	terminus	chimeric	0.3684	7
+0_0654	7	ok	251737	checkv_aai_median	28683	0.114	252401	11.36	Low-quality	57	terminus	chimeric	0.2807	11
+0_0655	2	ok	5561	member_seq_median	4921	0.885	42633		Not-determined	7	terminus	chimeric	0.7143	2
+0_0656	6	ok	85987	checkv_aai_median	4162	0.048	63366		Not-determined	8	terminus	chimeric	0.375	4
+0_0657	3	ok	6554	member_seq_median	9316	1.421	31234	11.59	Low-quality	13	terminus	single_member	1.0	1
+0_0658	7	ok	1159	member_seq_median	2490	2.148	347539	0.72	Low-quality	4	terminus	chimeric	0.75	2
+0_0659	2	ok	4412	member_seq_median	4140	0.938		6.34	Low-quality	4	terminus	chimeric	0.75	2
+0_0660	4	ok	2531	member_seq_median	3621	1.431			Not-determined	6	terminus	chimeric	0.6667	2
+0_0661	1	singleton_passthrough	11630	member_seq_median	11630	1.0	88105		Not-determined					
+0_0662	1	singleton_passthrough	33174	member_seq_median	33174	1.0	55152	60.15	Medium-quality					
+0_0663	1	singleton_passthrough	15764	member_seq_median	15764	1.0	81447		Not-determined					
+0_0664	1	singleton_passthrough	5877	member_seq_median	5877	1.0	72848	4.46	Low-quality					
+0_0665	6	ok	96806	checkv_aai_median	4161	0.043	81948		Not-determined	4	terminus	single_member	1.0	1
+0_0666	3	ok	6190	member_seq_median	6009	0.971			Not-determined	7	terminus	chimeric	0.5714	3
+0_0667	1	singleton_passthrough	36679	member_seq_median	36679	1.0	41795	87.76	Medium-quality					
+0_0668	1	singleton_passthrough	2385	member_seq_median	2385	1.0	60390	3.95	Low-quality					
+0_0669	1	singleton_passthrough	4154	member_seq_median	4154	1.0	46520	7.25	Low-quality					
+0_0670	6	ok	44200	checkv_aai_median	17063	0.386	44123	22.36	Low-quality	19	terminus	single_member	1.0	1
+0_0671	6	ok	2520	member_seq_median	2520	1.0		0.56	Low-quality	5	terminus	single_member	1.0	1
+0_0672	6	ok	17492	member_seq_median	34658	1.981	52770	54.73	Medium-quality	34	terminus	single_member	1.0	1
+0_0673	1	singleton_passthrough	20515	member_seq_median	20515	1.0	43831	46.8	Low-quality					
+0_0674	5	ok	52024	checkv_aai_median	48364	0.93	52387	92.32	High-quality	61	terminus	chimeric	0.9016	3
+0_0675	6	ok	6399	member_seq_median	12676	1.981	50835	20.85	Low-quality	12	terminus	single_member	1.0	1
+0_0676	6	ok	52661	checkv_aai_median	6687	0.127	55698	9.52	Low-quality	10	terminus	chimeric	0.7	2
+0_0677	6	ok	3082	member_seq_median	2836	0.92	52422		Not-determined	6	terminus	chimeric	0.6667	2
+0_0678	3	ok	1051	member_seq_median	1051	1.0			Not-determined	2	terminus	single_member	1.0	1
+0_0679	3	ok	51947	checkv_aai_median	7237	0.139		10.18	Low-quality	7	terminus	single_member	1.0	1
+0_0680	4	ok	60945	checkv_aai_median	11049	0.181	46143	9.75	Low-quality	16	terminus	single_member	1.0	1
+0_0681	1	singleton_passthrough	3644	member_seq_median	3644	1.0	50619	4.1	Low-quality					
+0_0682	1	singleton_passthrough	20232	member_seq_median	20232	1.0	57353	35.28	Low-quality					
+0_0683	1	singleton_passthrough	1046	member_seq_median	1046	1.0		1.48	Low-quality					
+0_0684	3	ok	56701	checkv_aai_median	10906	0.192	58678	18.59	Low-quality	16	terminus	chimeric	0.5625	3
+0_0685	1	singleton_passthrough	9063	member_seq_median	9063	1.0	48216	18.8	Low-quality					
+0_0686	2	ok	936	member_seq_median	1855	1.982			Not-determined	2	terminus	single_member	1.0	1
+0_0687	2	ok	4694	member_seq_median	3720	0.793	87646	2.4	Low-quality	6	terminus	single_member	1.0	1
+0_0688	1	singleton_passthrough	8931	member_seq_median	8931	1.0	44899	19.89	Low-quality					
+0_0689	5	ok	51846	checkv_aai_median	13121	0.253	51693	25.38	Low-quality	18	terminus	chimeric	0.5	3
+0_0690	2	ok	11374	member_seq_median	11374	1.0	56494	9.93	Low-quality	22	terminus	single_member	1.0	1
+0_0691	5	ok	8426	member_seq_median	8426	1.0	533970		Not-determined	16	terminus	single_member	1.0	1
+0_0692	2	ok	4763	member_seq_median	4763	1.0	46280	8.1	Low-quality	9	terminus	single_member	1.0	1
+0_0693	4	ok	7330	member_seq_median	14536	1.983	86188		Not-determined	14	terminus	single_member	1.0	1
+0_0694	5	ok	15743	member_seq_median	15821	1.005	57723	14.22	Low-quality	25	terminus	chimeric	0.52	3
+0_0695	5	ok	85157	checkv_aai_median	3900	0.046	85157	4.58	Low-quality	7	terminus	single_member	1.0	1
+0_0696	2	ok	50414	checkv_aai_median	22037	0.437	50415	43.71	Low-quality	44	terminus	single_member	1.0	1
+0_0697	1	singleton_passthrough	23541	member_seq_median	23541	1.0	60449		Not-determined					
+0_0698	4	ok	48024	checkv_aai_median	10842	0.226	52771	23.09	Low-quality	15	terminus	single_member	1.0	1
+0_0699	1	singleton_passthrough	5224	member_seq_median	5224	1.0	54636	9.56	Low-quality					
+0_0700	1	singleton_passthrough	6657	member_seq_median	6657	1.0	50364	8.78	Low-quality					
+0_0701	5	ok	3535	member_seq_median	7321	2.071	54762		Not-determined	7	terminus	single_member	1.0	1
+0_0702	3	ok	57189	checkv_aai_median	45329	0.793	53971	83.99	Medium-quality	79	terminus	chimeric	0.7089	7
+0_0703	2	ok	4970	member_seq_median	8933	1.797	60892	14.67	Low-quality	12	terminus	single_member	1.0	1
+0_0704	2	ok	7464	member_seq_median	7340	0.983	55060	10.26	Low-quality	10	terminus	single_member	1.0	1
+0_0705	5	ok	9054	member_seq_median	9237	1.02	39459	11.89	Low-quality	16	terminus	chimeric	0.9375	2
+0_0706	5	ok	77581	checkv_aai_median	59905	0.772	78444	76.37	Medium-quality	94	terminus	chimeric	0.8298	3
+0_0707	2	ok	50808	checkv_aai_median	7898	0.155	50808	15.54	Low-quality	15	terminus	single_member	1.0	1
+0_0708	2	ok	2622	member_seq_median	2622	1.0	75919		Not-determined	5	terminus	single_member	1.0	1
+0_0709	5	ok	38254	checkv_aai_median	7540	0.197	40941	10.58	Low-quality	22	terminus	chimeric	0.6364	3
+0_0710	3	ok	9560	member_seq_median	9560	1.0	57628	15.3	Low-quality	19	terminus	single_member	1.0	1
+0_0711	1	singleton_passthrough	9343	member_seq_median	9343	1.0	60981		Not-determined					
+0_0712	4	ok	76728	checkv_aai_median	21826	0.284	51090	42.72	Low-quality	39	terminus	chimeric	0.8462	3
+0_0713	4	ok	9999	member_seq_median	9425	0.943	59070		Not-determined	15	terminus	chimeric	0.4	4
+0_0714	1	singleton_passthrough	9131	member_seq_median	9131	1.0	59930		Not-determined					
+0_0715	3	ok	15809	member_seq_median	16788	1.062	8241		Not-determined	31	terminus	chimeric	0.5806	4
+0_0716	2	ok	1724	member_seq_median	3423	1.985		5.63	Low-quality	4	terminus	single_member	1.0	1
+0_0717	2	ok	4405	member_seq_median	4405	1.0	60095	5.32	Low-quality	8	terminus	single_member	1.0	1
+0_0718	3	ok	7567	member_seq_median	8283	1.095		12.28	Low-quality	11	terminus	single_member	1.0	1
+0_0719	4	ok	55484	checkv_aai_median	6350	0.114	49043	12.95	Low-quality	13	terminus	chimeric	0.9231	2
+0_0720	5	ok	2286	member_seq_median	4534	1.983			Not-determined	4	terminus	single_member	1.0	1
+0_0721	2	ok	56086	checkv_aai_median	44042	0.785	56861	77.46	Medium-quality	82	terminus	single_member	1.0	1
+0_0722	4	ok	7078	member_seq_median	6994	0.988	90435	9.23	Low-quality	11	terminus	chimeric	0.8182	2
+0_0723	5	ok	1866	member_seq_median	4712	2.525		8.88	Low-quality	5	terminus	single_member	1.0	1
+0_0724	1	singleton_passthrough	4555	member_seq_median	4555	1.0	63068	7.22	Low-quality					
+0_0725	4	ok	57907	checkv_aai_median	13074	0.226	57592	18.31	Low-quality	22	terminus	chimeric	0.2727	7
+0_0726	4	ok	5196	member_seq_median	6733	1.296	43879	4.51	Low-quality	7	terminus	single_member	1.0	1
+0_0727	3	ok	52189	checkv_aai_median	16047	0.307	51624	31.08	Low-quality	23	terminus	chimeric	0.7391	3
+0_0728	2	ok	50135	checkv_aai_median	22616	0.451	48930	46.22	Low-quality	30	terminus	chimeric	0.3	9
+0_0729	1	singleton_passthrough	3619	member_seq_median	3619	1.0	53436	6.77	Low-quality					
+0_0730	1	singleton_passthrough	819	member_seq_median	819	1.0	56823	1.44	Low-quality					
+0_0731	4	ok	79386	checkv_aai_median	14105	0.178	54220		Not-determined	24	terminus	chimeric	0.6667	3
+0_0732	4	ok	16270	member_seq_median	32243	1.982	58507		Not-determined	32	terminus	single_member	1.0	1
+0_0733	4	ok	50635	checkv_aai_median	23480	0.464	53442	41.71	Low-quality	23	terminus	single_member	1.0	1
+0_0734	4	ok	68029	checkv_aai_median	72886	1.071	67038	97.92	High-quality	73	terminus	single_member	1.0	1
+0_0735	3	ok	8567	member_seq_median	14997	1.751	59695	21.06	Low-quality	15	terminus	single_member	1.0	1
+0_0736	4	ok	49429	checkv_aai_median	24379	0.493	28500	24.81	Low-quality	24	terminus	single_member	1.0	1
+0_0737	4	ok	12622	member_seq_median	22156	1.755	42551	16.71	Low-quality	25	terminus	single_member	1.0	1
+0_0738	4	ok	47455	checkv_aai_median	30495	0.643	34965	31.95	Low-quality	30	terminus	single_member	1.0	1
+0_0739	4	ok	11346	member_seq_median	22492	1.982	98936		Not-determined	22	terminus	single_member	1.0	1
+0_0740	2	ok	47074	checkv_aai_median	8712	0.185			Not-determined	8	terminus	single_member	1.0	1
+0_0741	1	singleton_passthrough	41796	member_seq_median	41796	1.0	59891	69.79	Medium-quality					
+0_0742	2	ok	1514	member_seq_median	1514	1.0	53696	1.37	Low-quality	3	terminus	single_member	1.0	1
+0_0743	3	ok	52584	checkv_aai_median	7684	0.146	42390	11.3	Low-quality	11	terminus	single_member	1.0	1
+0_0744	1	singleton_passthrough	2193	member_seq_median	2193	1.0	94706	2.32	Low-quality					
+0_0745	1	singleton_passthrough	44169	member_seq_median	44169	1.0	51953	85.02	Medium-quality					
+0_0746	1	singleton_passthrough	3228	member_seq_median	3228	1.0	54452	5.93	Low-quality					
+0_0747	4	ok	3276	member_seq_median	3359	1.025	59107		Not-determined	7	terminus	chimeric	0.7143	2
+0_0748	4	ok	51785	checkv_aai_median	16859	0.326	52773	31.95	Low-quality	26	terminus	chimeric	0.4231	7
+0_0749	3	ok	62610	checkv_aai_median	2532	0.04	75902	3.37	Low-quality	6	terminus	single_member	1.0	1
+0_0750	4	ok	8226	member_seq_median	9141	1.111	17304	8.31	Low-quality	12	terminus	single_member	1.0	1
+0_0751	4	ok	52036	checkv_aai_median	35850	0.689	51347	59.57	Medium-quality	36	terminus	single_member	1.0	1
+0_0752	4	ok	57582	checkv_aai_median	9710	0.169	47690	10.86	Low-quality	9	terminus	single_member	1.0	1
+0_0753	2	ok	3525	member_seq_median	7030	1.994	86700	7.44	Low-quality	12	terminus	chimeric	0.8333	2
+0_0754	4	ok	8820	member_seq_median	9918	1.124	28194		Not-determined	11	terminus	single_member	1.0	1
+0_0755	2	ok	3843	member_seq_median	7612	1.981	54801	6.65	Low-quality	7	terminus	single_member	1.0	1
+0_0756	3	ok	13317	member_seq_median	13032	0.979	54130		Not-determined	15	terminus	chimeric	0.4667	3
+0_0757	1	singleton_passthrough	23193	member_seq_median	23193	1.0	101544	22.84	Low-quality					
+0_0758	4	ok	67914	checkv_aai_median	57155	0.842	52878	83.95	Medium-quality	102	terminus	chimeric	0.3333	20
+0_0759	1	singleton_passthrough	7670	member_seq_median	7670	1.0	136186	5.63	Low-quality					
+0_0760	2	ok	51950	checkv_aai_median	30809	0.593	51465	59.86	Medium-quality	61	terminus	single_member	1.0	1
+0_0761	3	ok	10840	member_seq_median	10395	0.959	52371		Not-determined	12	terminus	chimeric	0.5	3
+0_0762	1	singleton_passthrough	12025	member_seq_median	12025	1.0	52704	7.97	Low-quality					
+0_0763	2	ok	51836	checkv_aai_median	30212	0.583	51836	58.28	Medium-quality	60	terminus	single_member	1.0	1
+0_0764	4	ok	81399	checkv_aai_median	10985	0.135	69403	15.39	Low-quality	11	terminus	single_member	1.0	1
+0_0765	1	singleton_passthrough	3072	member_seq_median	3072	1.0	51251	1.86	Low-quality					
+0_0766	4	ok	59218	checkv_aai_median	57600	0.973	57028	82.01	Medium-quality	51	terminus	chimeric	0.1176	15
+0_0767	4	ok	12205	member_seq_median	11967	0.98			Not-determined	16	terminus	chimeric	0.4375	4
+0_0768	3	ok	60640	checkv_aai_median	33639	0.555	60640	55.47	Medium-quality	67	terminus	single_member	1.0	1
+0_0769	1	singleton_passthrough	10028	member_seq_median	10028	1.0	51988	12.12	Low-quality					
+0_0770	4	ok	57527	checkv_aai_median	56760	0.987	57533	77.66	Medium-quality	58	terminus	chimeric	0.3103	8
+0_0771	1	singleton_passthrough	24823	member_seq_median	24823	1.0	70135		Not-determined					
+0_0772	3	ok	5866	member_seq_median	6509	1.11	118086	2.93	Low-quality	12	terminus	single_member	1.0	1
+0_0773	4	ok	45292	checkv_aai_median	28129	0.621	44840	46.86	Low-quality	48	terminus	chimeric	0.3958	7
+0_0774	3	ok	12008	member_seq_median	23777	1.98	48752	7.77	Low-quality	24	terminus	single_member	1.0	1
+0_0775	4	ok	53857	checkv_aai_median	41052	0.762	53857	76.22	Medium-quality	58	terminus	chimeric	0.4828	8
+0_0776	2	ok	62303	checkv_aai_median	2279	0.037	62303	3.66	Low-quality	4	terminus	single_member	1.0	1
+0_0777	1	singleton_passthrough	8168	member_seq_median	8168	1.0	41811	19.54	Low-quality					
+0_0778	1	singleton_passthrough	1754	member_seq_median	1754	1.0	324137		Not-determined					
+0_0779	1	singleton_passthrough	16122	member_seq_median	16122	1.0	64706	24.92	Low-quality					
+0_0780	4	ok	58285	checkv_aai_median	26043	0.447	55035	43.63	Low-quality	73	terminus	chimeric	0.1781	18
+0_0781	2	ok	4071	member_seq_median	6556	1.61	55494	5.86	Low-quality	10	terminus	single_member	1.0	1
+0_0782	1	singleton_passthrough	6031	member_seq_median	6031	1.0	54841	11.0	Low-quality					
+0_0783	4	ok	3122	member_seq_median	6332	2.028	48104	9.15	Low-quality	6	terminus	single_member	1.0	1
+0_0784	3	ok	43982	checkv_aai_median	40470	0.92	43934	92.11	High-quality	65	terminus	chimeric	0.9846	2
+0_0785	3	ok	5801	member_seq_median	11490	1.981		14.41	Low-quality	11	terminus	single_member	1.0	1
+0_0786	3	ok	6547	member_seq_median	12964	1.98		15.79	Low-quality	13	terminus	single_member	1.0	1
+0_0787	3	ok	1303	member_seq_median	2582	1.982			Not-determined	2	terminus	single_member	1.0	1
+0_0788	3	ok	1733	member_seq_median	1724	0.995			Not-determined	3	terminus	single_member	1.0	1
+0_0789	3	ok	57204	checkv_aai_median	2082	0.036	54338	3.83	Low-quality	2	terminus	single_member	1.0	1
+0_0790	3	ok	1634	member_seq_median	3235	1.98			Not-determined	3	terminus	single_member	1.0	1
+0_0791	3	ok	14102	member_seq_median	17401	1.234	281186		Not-determined	34	terminus	single_member	1.0	1
+0_0792	3	ok	11328	member_seq_median	22448	1.982			Not-determined	22	terminus	single_member	1.0	1
+0_0793	3	ok	4340	member_seq_median	5989	1.38	34839	9.78	Low-quality	9	terminus	single_member	1.0	1
+0_0794	2	ok	76060	checkv_aai_median	68367	0.899	99928	84.86	Medium-quality	84	terminus	chimeric	0.25	15
+0_0795	2	ok	60928	checkv_aai_median	15587	0.256	67085	26.07	Low-quality	17	terminus	chimeric	0.6471	3
+0_0796	3	ok	42110	checkv_aai_median	27954	0.664	47493	41.91	Low-quality	33	terminus	chimeric	0.3636	7
+0_0797	3	ok	3290	member_seq_median	5685	1.728		7.98	Low-quality	6	terminus	single_member	1.0	1
+0_0798	3	ok	4372	member_seq_median	8668	1.983			Not-determined	8	terminus	single_member	1.0	1
+0_0799	3	ok	95232	checkv_aai_median	5274	0.055	77972	4.56	Low-quality	5	terminus	single_member	1.0	1
+0_0800	1	singleton_passthrough	5467	member_seq_median	5467	1.0	50091	10.91	Low-quality					
+0_0801	3	ok	5901	member_seq_median	9366	1.587	44083	13.23	Low-quality	11	terminus	single_member	1.0	1
+0_0802	1	singleton_passthrough	51917	member_seq_median	51917	1.0	50721	100.0	High-quality					
+0_0803	3	ok	75457	checkv_aai_median	45184	0.599	61656	57.13	Medium-quality	59	terminus	chimeric	0.5085	3
+0_0804	3	ok	54858	checkv_aai_median	2926	0.053	58676	4.99	Low-quality	9	terminus	chimeric	0.8889	2
+0_0805	3	ok	2652	member_seq_median	3771	1.422	51095		Not-determined	7	terminus	single_member	1.0	1
+0_0806	1	singleton_passthrough	4687	member_seq_median	4687	1.0	46823		Not-determined					
+0_0807	3	ok	54138	checkv_aai_median	9226	0.17	49039	18.81	Low-quality	9	terminus	single_member	1.0	1
+0_0808	3	ok	53484	checkv_aai_median	56656	1.059	84524	75.02	Medium-quality	57	terminus	single_member	1.0	1
+0_0809	3	ok	5917	member_seq_median	5917	1.0	47943	7.5	Low-quality	11	terminus	single_member	1.0	1
+0_0810	3	ok	51672	checkv_aai_median	56100	1.086	41236	100.0	High-quality	57	terminus	chimeric	0.3509	10
+0_0811	3	ok	7670	member_seq_median	15201	1.982		9.81	Low-quality	15	terminus	single_member	1.0	1
+0_0812	2	ok	60406	checkv_aai_median	16148	0.267	75691	23.23	Low-quality	19	terminus	single_member	1.0	1
+0_0813	1	singleton_passthrough	11412	member_seq_median	11412	1.0	60588	18.84	Low-quality					
+0_0814	2	ok	28821	member_seq_median	57383	1.991	56109	100.0	High-quality	88	terminus	single_member	1.0	1
+0_0815	2	ok	9504	member_seq_median	6924	0.729			Not-determined	12	terminus	chimeric	0.8333	3
+0_0816	2	ok	49380	checkv_aai_median	4825	0.098	49380	9.77	Low-quality	9	terminus	single_member	1.0	1
+0_0817	2	ok	54412	checkv_aai_median	40969	0.753	53353	76.79	Medium-quality	73	terminus	chimeric	0.9726	2
+0_0818	3	ok	7621	member_seq_median	15094	1.981			Not-determined	15	terminus	single_member	1.0	1
+0_0819	2	ok	43574	member_seq_median	51740	1.187	65042	62.06	Medium-quality	72	terminus	chimeric	0.9444	3
+0_0820	3	ok	67824	checkv_aai_median	67347	0.993	56355	100.0	High-quality	87	terminus	chimeric	0.4368	17
+0_0821	1	singleton_passthrough	6553	member_seq_median	6553	1.0	53786		Not-determined					
+0_0822	1	singleton_passthrough	7889	member_seq_median	7889	1.0	521502	1.51	Low-quality					
+0_0823	1	singleton_passthrough	1969	member_seq_median	1969	1.0	57252		Not-determined					
+0_0824	3	ok	36344	checkv_aai_median	8887	0.245	45767	9.28	Low-quality	18	terminus	chimeric	0.5556	3
+0_0825	2	ok	2028	member_seq_median	3022	1.49			Not-determined	3	terminus	single_member	1.0	1
+0_0826	1	singleton_passthrough	10837	member_seq_median	10837	1.0	57064	18.99	Low-quality					
+0_0827	3	ok	51357	checkv_aai_median	15888	0.309	51357	30.94	Low-quality	31	terminus	single_member	1.0	1
+0_0828	1	singleton_passthrough	6637	member_seq_median	6637	1.0	74192		Not-determined					
+0_0829	2	ok	19000	member_seq_median	16765	0.882	63687	26.32	Low-quality	23	terminus	single_member	1.0	1
+0_0830	2	ok	8519	member_seq_median	16876	1.981			Not-determined	17	terminus	single_member	1.0	1
+0_0831	2	ok	49696	checkv_aai_median	44711	0.9	49201	90.87	High-quality	66	terminus	chimeric	0.697	5
+0_0832	1	singleton_passthrough	34391	member_seq_median	34391	1.0	51046	67.37	Medium-quality					
+0_0833	1	singleton_passthrough	20429	member_seq_median	20429	1.0	49814	14.64	Low-quality					
+0_0834	1	singleton_passthrough	7599	member_seq_median	7599	1.0	112440	6.76	Low-quality					
+0_0835	1	singleton_passthrough	19454	member_seq_median	19454	1.0	55089	35.31	Low-quality					
+0_0836	3	ok	10501	member_seq_median	11340	1.08	68097	13.22	Low-quality	21	terminus	single_member	1.0	1
+0_0837	3	ok	3676	member_seq_median	3676	1.0		5.16	Low-quality	7	terminus	single_member	1.0	1
+0_0838	2	ok	56092	checkv_aai_median	7940	0.142	44702	10.04	Low-quality	8	terminus	single_member	1.0	1
+0_0839	2	ok	54583	checkv_aai_median	29090	0.533	54583	53.29	Medium-quality	58	terminus	single_member	1.0	1
+0_0840	3	ok	5814	member_seq_median	14575	2.507	107345	14.36	Low-quality	17	terminus	single_member	1.0	1
+0_0841	1	singleton_passthrough	7656	member_seq_median	7656	1.0	99668		Not-determined					
+0_0842	3	ok	53531	checkv_aai_median	24306	0.454	54207	44.84	Low-quality	43	terminus	chimeric	0.6977	5
+0_0843	1	singleton_passthrough	26839	member_seq_median	26839	1.0	44176	60.75	Medium-quality					
+0_0844	2	ok	8547	member_seq_median	16938	1.982	55785	21.75	Low-quality	17	terminus	single_member	1.0	1
+0_0845	2	ok	1675	member_seq_median	3316	1.98		1.79	Low-quality	3	terminus	single_member	1.0	1
+0_0846	1	singleton_passthrough	17684	member_seq_median	17684	1.0	51806	34.13	Low-quality					
+0_0847	2	ok	76117	checkv_aai_median	10173	0.134	75966	13.39	Low-quality	20	terminus	single_member	1.0	1
+0_0848	1	singleton_passthrough	4240	member_seq_median	4240	1.0	55385	4.34	Low-quality					
+0_0849	2	ok	10463	member_seq_median	20735	1.982	59763	31.69	Low-quality	20	terminus	single_member	1.0	1
+0_0850	2	ok	54301	checkv_aai_median	57068	1.051	58610	97.37	High-quality	57	terminus	single_member	1.0	1
+0_0851	2	ok	9940	member_seq_median	9940	1.0	60373	3.06	Low-quality	19	terminus	single_member	1.0	1
+0_0852	2	ok	57898	checkv_aai_median	5532	0.096	58845	9.4	Low-quality	5	terminus	single_member	1.0	1
+0_0853	2	ok	29717	member_seq_median	35620	1.199	111289	59.6	Medium-quality	56	terminus	chimeric	0.9821	2
+0_0854	1	singleton_passthrough	46338	member_seq_median	46338	1.0	65529	70.71	Medium-quality					
+0_0855	2	ok	67607	checkv_aai_median	62274	0.921	64908	87.68	Medium-quality	65	terminus	chimeric	0.2308	13
+0_0856	2	ok	61633	checkv_aai_median	7788	0.126	49466	4.21	Low-quality	7	terminus	single_member	1.0	1
+0_0857	1	singleton_passthrough	2252	member_seq_median	2252	1.0	56428	3.99	Low-quality					
+0_0858	2	ok	77832	checkv_aai_median	13868	0.178	77832	17.82	Low-quality	26	terminus	single_member	1.0	1
+0_0859	1	singleton_passthrough	14873	member_seq_median	14873	1.0	77093	19.29	Low-quality					
+0_0860	2	ok	76148	checkv_aai_median	25138	0.33	66849	42.68	Low-quality	25	terminus	single_member	1.0	1
+0_0861	2	ok	58085	checkv_aai_median	15689	0.27	57740	27.17	Low-quality	15	terminus	single_member	1.0	1
+0_0862	2	ok	110870	checkv_aai_median	85301	0.769	110852	76.95	Medium-quality	86	terminus	single_member	1.0	1
+0_0863	2	ok	109792	checkv_aai_median	59811	0.545	110742	65.5	Medium-quality	60	terminus	chimeric	0.1833	18
+0_0864	2	ok	75772	checkv_aai_median	23635	0.312	70359	24.86	Low-quality	23	terminus	single_member	1.0	1
+0_0865	2	ok	1856	member_seq_median	1856	1.0			Not-determined	3	terminus	single_member	1.0	1
+0_0866	2	ok	5757	member_seq_median	5757	1.0	39785		Not-determined	11	terminus	single_member	1.0	1
+0_0867	2	ok	7171	member_seq_median	7171	1.0	47263	10.13	Low-quality	14	terminus	single_member	1.0	1
+0_0868	2	ok	12225	member_seq_median	12225	1.0	63276	17.22	Low-quality	24	terminus	single_member	1.0	1
+0_0869	2	ok	9552	member_seq_median	15321	1.604	50871	30.12	Low-quality	25	terminus	single_member	1.0	1
+0_0870	2	ok	9477	member_seq_median	12072	1.274	82157	14.69	Low-quality	24	terminus	single_member	1.0	1
+0_0871	2	ok	6030	member_seq_median	11940	1.98			Not-determined	12	terminus	single_member	1.0	1
+0_0872	2	ok	73836	checkv_aai_median	7916	0.107	73836	10.72	Low-quality	15	terminus	single_member	1.0	1
+0_0873	1	singleton_passthrough	1112	member_seq_median	1112	1.0	86451	1.29	Low-quality					
+0_0874	2	ok	61673	checkv_aai_median	6643	0.108	23936		Not-determined	6	terminus	chimeric	0.6667	2
+0_0875	2	ok	4240	member_seq_median	4240	1.0	37175	7.23	Low-quality	8	terminus	single_member	1.0	1
+0_0876	2	ok	9611	member_seq_median	13772	1.433	71030	22.52	Low-quality	27	terminus	single_member	1.0	1
+0_0877	2	ok	3494	member_seq_median	3494	1.0	46638	4.2	Low-quality	6	terminus	single_member	1.0	1
+0_0878	2	ok	86990	checkv_aai_median	11029	0.127	51619	21.37	Low-quality	18	terminus	chimeric	0.9444	2
+0_0879	2	ok	8621	member_seq_median	17076	1.981			Not-determined	17	terminus	single_member	1.0	1
+0_0880	2	ok	10496	member_seq_median	20798	1.982	54725	24.54	Low-quality	22	terminus	single_member	1.0	1
+0_0881	2	ok	108497	checkv_aai_median	27495	0.253	108497	25.34	Low-quality	54	terminus	single_member	1.0	1
+0_0882	2	ok	66628	checkv_aai_median	37127	0.557	66628	55.72	Medium-quality	74	terminus	single_member	1.0	1
+0_0883	2	ok	56389	checkv_aai_median	10049	0.178	58008	17.32	Low-quality	18	terminus	chimeric	0.5	3
+0_0884	2	ok	51918	checkv_aai_median	7221	0.139	51918	13.91	Low-quality	14	terminus	single_member	1.0	1
+0_0885	2	ok	7834	member_seq_median	7834	1.0	41216	12.29	Low-quality	15	terminus	single_member	1.0	1
+0_0886	2	ok	56686	checkv_aai_median	27785	0.49	56686	34.71	Low-quality	28	terminus	single_member	1.0	1
+0_0887	1	singleton_passthrough	24230	member_seq_median	24230	1.0	67726		Not-determined					
+0_0888	2	ok	4188	member_seq_median	3162	0.755		2.76	Low-quality	4	terminus	single_member	1.0	1
+0_0889	2	ok	90371	checkv_aai_median	38985	0.431	90371	43.14	Low-quality	77	terminus	single_member	1.0	1
+0_0890	2	ok	8139	member_seq_median	16135	1.982	54627	25.64	Low-quality	16	terminus	single_member	1.0	1
+0_0891	1	singleton_passthrough	4942	member_seq_median	4942	1.0		6.52	Low-quality					
+0_0892	1	singleton_passthrough	7186	member_seq_median	7186	1.0	49720	9.66	Low-quality					
+0_0893	2	ok	6690	member_seq_median	13257	1.982		21.38	Low-quality	13	terminus	single_member	1.0	1
+0_0894	2	ok	2760	member_seq_median	5471	1.982	181035		Not-determined	5	terminus	single_member	1.0	1
+0_0895	2	ok	6759	member_seq_median	7326	1.084			Not-determined	8	terminus	chimeric	0.75	2
+0_0896	2	ok	2930	member_seq_median	3738	1.276	55075	4.65	Low-quality	7	terminus	single_member	1.0	1
+0_0897	2	ok	7525	member_seq_median	7525	1.0	45106	5.42	Low-quality	15	terminus	single_member	1.0	1
+0_0898	2	ok	2293	member_seq_median	4546	1.983	50367	6.27	Low-quality	4	terminus	single_member	1.0	1
+0_0899	1	singleton_passthrough	10172	member_seq_median	10172	1.0	50446	20.16	Low-quality					
+0_0900	2	ok	12397	member_seq_median	15337	1.237	92045		Not-determined	16	terminus	chimeric	0.625	4
+0_0901	1	singleton_passthrough	28674	member_seq_median	28674	1.0	50772	56.48	Medium-quality					
+0_0902	2	ok	63517	checkv_aai_median	27164	0.428	48032	56.55	Medium-quality	44	terminus	chimeric	0.7727	5
+0_0903	1	singleton_passthrough	7670	member_seq_median	7670	1.0	54284	13.53	Low-quality					
+0_0904	2	ok	54904	checkv_aai_median	5632	0.103	54904	10.26	Low-quality	11	terminus	single_member	1.0	1
+0_0905	2	ok	11407	member_seq_median	11407	1.0	59446		Not-determined	22	terminus	single_member	1.0	1
+0_0906	2	ok	6155	member_seq_median	8218	1.335		4.28	Low-quality	8	terminus	chimeric	0.625	2
+0_0907	2	ok	58381	checkv_aai_median	10371	0.178	58380	17.76	Low-quality	20	terminus	single_member	1.0	1
+0_0908	1	singleton_passthrough	1715	member_seq_median	1715	1.0	50255	2.57	Low-quality					
+0_0909	1	singleton_passthrough	8119	member_seq_median	8119	1.0	63707	12.74	Low-quality					
+0_0910	2	ok	5184	member_seq_median	5409	1.043	39128	6.84	Low-quality	10	terminus	single_member	1.0	1
+0_0911	2	ok	49068	checkv_aai_median	8973	0.183		11.25	Low-quality	9	terminus	single_member	1.0	1
+0_0912	1	singleton_passthrough	25806	member_seq_median	25806	1.0	58881	43.83	Low-quality					
+0_0913	2	ok	4917	member_seq_median	4917	1.0	77566	3.17	Low-quality	9	terminus	single_member	1.0	1
+0_0914	1	singleton_passthrough	2769	member_seq_median	2769	1.0	72381		Not-determined					
+0_0915	2	ok	39449	checkv_aai_median	37787	0.958	46172	81.84	Medium-quality	73	terminus	single_member	1.0	1
+0_0916	2	ok	53857	checkv_aai_median	17979	0.334	53857	33.38	Low-quality	18	terminus	single_member	1.0	1
+0_0917	2	ok	61899	checkv_aai_median	5303	0.086	61899	8.57	Low-quality	10	terminus	single_member	1.0	1
+0_0918	2	ok	47566	checkv_aai_median	23182	0.487	47566	48.74	Low-quality	46	terminus	single_member	1.0	1
+0_0919	2	ok	53857	checkv_aai_median	25990	0.483	53857	48.26	Low-quality	51	terminus	single_member	1.0	1
+0_0920	1	singleton_passthrough	3684	member_seq_median	3684	1.0			Not-determined					
+0_0921	2	ok	42199	checkv_aai_median	1840	0.044			Not-determined	1	terminus	single_member	1.0	1
+0_0922	2	ok	6561	member_seq_median	7846	1.196			Not-determined	8	terminus	chimeric	0.75	2
+0_0923	2	ok	8264	member_seq_median	8264	1.0	69347	13.57	Low-quality	16	terminus	single_member	1.0	1
+0_0924	1	singleton_passthrough	17369	member_seq_median	17369	1.0	60892	27.86	Low-quality					
+0_0925	1	singleton_passthrough	33968	member_seq_median	33968	1.0	56365	60.26	Medium-quality					
+0_0926	1	singleton_passthrough	4417	member_seq_median	4417	1.0	54997	8.03	Low-quality					
+0_0927	1	singleton_passthrough	3959	member_seq_median	3959	1.0	59352	6.67	Low-quality					
+0_0928	2	ok	61054	checkv_aai_median	72608	1.189	61666	100.0	High-quality	85	terminus	chimeric	0.3412	17
+0_0929	1	singleton_passthrough	24916	member_seq_median	24916	1.0	53441	46.62	Low-quality					
+0_0930	2	ok	77633	checkv_aai_median	54479	0.702	77633	70.17	Medium-quality	108	terminus	single_member	1.0	1
+0_0931	2	ok	110893	checkv_aai_median	74182	0.669	110910	68.85	Medium-quality	76	terminus	chimeric	0.1842	20
+0_0932	2	ok	89469	checkv_aai_median	28256	0.316	107877	26.19	Low-quality	28	terminus	single_member	1.0	1
+0_0933	2	ok	109172	checkv_aai_median	23331	0.214	97242	19.7	Low-quality	24	terminus	chimeric	0.375	6
+0_0934	2	ok	109052	checkv_aai_median	3775	0.035	109026	3.46	Low-quality	3	terminus	single_member	1.0	1
+0_0935	2	ok	39133	checkv_aai_median	12987	0.332	25306	17.42	Low-quality	13	terminus	single_member	1.0	1
+0_0936	2	ok	11511	member_seq_median	11511	1.0	50916	4.59	Low-quality	23	terminus	single_member	1.0	1
+0_0937	2	ok	9794	member_seq_median	9552	0.975	67449		Not-determined	19	terminus	single_member	1.0	1
+0_0938	2	ok	5647	member_seq_median	6500	1.151		10.3	Low-quality	7	terminus	chimeric	0.7143	2
+0_0939	2	ok	12829	member_seq_median	21356	1.665			Not-determined	21	terminus	chimeric	0.9048	2
+0_0940	1	singleton_passthrough	7127	member_seq_median	7127	1.0	39531	11.02	Low-quality					
+0_0941	1	singleton_passthrough	6839	member_seq_median	6839	1.0	39877	11.58	Low-quality					
+0_0942	1	singleton_passthrough	5793	member_seq_median	5793	1.0	49177	7.39	Low-quality					
+0_0943	1	singleton_passthrough	11788	member_seq_median	11788	1.0	54948	21.45	Low-quality					
+0_0944	1	singleton_passthrough	9080	member_seq_median	9080	1.0	51844	17.51	Low-quality					
+0_0945	2	ok	16437	member_seq_median	21768	1.324	137574		Not-determined	28	terminus	single_member	1.0	1
+0_0946	2	ok	6182	member_seq_median	6182	1.0			Not-determined	12	terminus	single_member	1.0	1
+0_0947	1	singleton_passthrough	3980	member_seq_median	3980	1.0	46639	8.53	Low-quality					
+0_0948	1	singleton_passthrough	7047	member_seq_median	7047	1.0	113087	4.55	Low-quality					
+0_0949	1	singleton_passthrough	3523	member_seq_median	3523	1.0	56759	6.21	Low-quality					
+0_0950	1	singleton_passthrough	4054	member_seq_median	4054	1.0	49039	4.44	Low-quality					
+0_0951	1	singleton_passthrough	3279	member_seq_median	3279	1.0	54072	6.06	Low-quality					
+0_0952	1	singleton_passthrough	8616	member_seq_median	8616	1.0	53857	16.0	Low-quality					
+0_0953	1	singleton_passthrough	25050	member_seq_median	25050	1.0	39494	63.43	Medium-quality					
+0_0954	1	singleton_passthrough	9116	member_seq_median	9116	1.0	54948	16.59	Low-quality					
+0_0955	1	singleton_passthrough	36879	member_seq_median	36879	1.0	70225	52.51	Medium-quality					
+0_0956	1	singleton_passthrough	554	member_seq_median	554	1.0	97668	0.57	Low-quality					
+0_0957	1	singleton_passthrough	7546	member_seq_median	7546	1.0	52515	14.37	Low-quality					
+0_0958	1	singleton_passthrough	32447	member_seq_median	32447	1.0	60429	53.69	Medium-quality					
+0_0959	1	singleton_passthrough	2585	member_seq_median	2585	1.0	56789	2.59	Low-quality					
+0_0960	1	singleton_passthrough	10225	member_seq_median	10225	1.0	51201	15.54	Low-quality					
+0_0961	1	singleton_passthrough	9168	member_seq_median	9168	1.0	45173	15.0	Low-quality					
+0_0962	1	singleton_passthrough	15947	member_seq_median	15947	1.0	56686	28.13	Low-quality					
+0_0963	1	singleton_passthrough	4149	member_seq_median	4149	1.0	46266	8.97	Low-quality					
+0_0964	1	singleton_passthrough	4517	member_seq_median	4517	1.0	54858	8.23	Low-quality					
+0_0965	1	singleton_passthrough	7633	member_seq_median	7633	1.0	255522	3.65	Low-quality					
+0_0966	1	singleton_passthrough	9718	member_seq_median	9718	1.0	60640	11.29	Low-quality					
+0_0967	1	singleton_passthrough	17563	member_seq_median	17563	1.0	55823	31.46	Low-quality					
+0_0968	1	singleton_passthrough	17997	member_seq_median	17997	1.0	56005	32.13	Low-quality					
+0_0969	1	singleton_passthrough	31366	member_seq_median	31366	1.0	40802	76.87	Medium-quality					
+0_0970	1	singleton_passthrough	7784	member_seq_median	7784	1.0	49974	15.58	Low-quality					
+0_0971	1	singleton_passthrough	14829	member_seq_median	14829	1.0	44533	33.3	Low-quality					
+0_0972	1	singleton_passthrough	7748	member_seq_median	7748	1.0		4.74	Low-quality					
+0_0973	1	singleton_passthrough	4572	member_seq_median	4572	1.0	55159	6.39	Low-quality					
+0_0974	1	singleton_passthrough	9224	member_seq_median	9224	1.0	48823	13.07	Low-quality					
+0_0975	1	singleton_passthrough	7296	member_seq_median	7296	1.0	51517		Not-determined					
+0_0976	1	singleton_passthrough	3112	member_seq_median	3112	1.0	45068		Not-determined					
+0_0977	1	singleton_passthrough	2546	member_seq_median	2546	1.0	57239		Not-determined					
+0_0978	1	singleton_passthrough	11880	member_seq_median	11880	1.0	114695		Not-determined					
+0_0979	1	singleton_passthrough	27696	member_seq_median	27696	1.0	45183	61.3	Medium-quality					
+0_0980	1	singleton_passthrough	5067	member_seq_median	5067	1.0	37731	13.43	Low-quality					
+0_0981	1	singleton_passthrough	516	member_seq_median	516	1.0			Not-determined					
+0_0982	1	singleton_passthrough	5619	member_seq_median	5619	1.0	38089	14.75	Low-quality					
+0_0983	1	singleton_passthrough	4852	member_seq_median	4852	1.0	34382		Not-determined					
+0_0984	1	singleton_passthrough	3296	member_seq_median	3296	1.0	55520		Not-determined					
+0_0985	1	singleton_passthrough	4512	member_seq_median	4512	1.0	106249		Not-determined					
+0_0986	1	singleton_passthrough	2842	member_seq_median	2842	1.0	47560	3.34	Low-quality					
+0_0987	1	singleton_passthrough	36024	member_seq_median	36024	1.0	56387	63.89	Medium-quality					
+0_0988	1	singleton_passthrough	42964	member_seq_median	42964	1.0	59173	72.61	Medium-quality					
+0_0989	1	singleton_passthrough	8201	member_seq_median	8201	1.0	42710	19.2	Low-quality					
+0_0990	1	singleton_passthrough	3099	member_seq_median	3099	1.0	46751	6.63	Low-quality					
+0_0991	1	singleton_passthrough	3567	member_seq_median	3567	1.0	50999	6.99	Low-quality					
+0_0992	1	singleton_passthrough	2966	member_seq_median	2966	1.0	202380		Not-determined					
+0_0993	1	singleton_passthrough	33137	member_seq_median	33137	1.0	69151	47.92	Low-quality					
+0_0994	1	singleton_passthrough	4591	member_seq_median	4591	1.0	89859	5.11	Low-quality					
+0_0995	1	singleton_passthrough	1057	member_seq_median	1057	1.0	107394	0.98	Low-quality					
+0_0996	1	singleton_passthrough	13951	member_seq_median	13951	1.0	99998	13.95	Low-quality					
+0_0997	1	singleton_passthrough	1712	member_seq_median	1712	1.0	28236		Not-determined					
+0_0998	1	singleton_passthrough	8195	member_seq_median	8195	1.0	45319	9.43	Low-quality					
+0_0999	1	singleton_passthrough	20074	member_seq_median	20074	1.0	81799		Not-determined					
+0_1000	1	singleton_passthrough	8261	member_seq_median	8261	1.0	368207	0.38	Low-quality					
+0_1001	1	singleton_passthrough	10079	member_seq_median	10079	1.0			Not-determined					
+0_1002	1	singleton_passthrough	12927	member_seq_median	12927	1.0	208759	2.57	Low-quality					
+0_1003	1	singleton_passthrough	6392	member_seq_median	6392	1.0	54215		Not-determined					
+0_1004	1	singleton_passthrough	34808	member_seq_median	34808	1.0	68654	50.7	Medium-quality					
+0_1005	1	singleton_passthrough	12343	member_seq_median	12343	1.0	108374	11.39	Low-quality					
+0_1006	1	singleton_passthrough	5916	member_seq_median	5916	1.0	108355	5.46	Low-quality					
+0_1007	1	singleton_passthrough	4615	member_seq_median	4615	1.0	46011	10.03	Low-quality					
+0_1008	1	singleton_passthrough	2920	member_seq_median	2920	1.0	46720	6.25	Low-quality					
+0_1009	1	singleton_passthrough	11343	member_seq_median	11343	1.0	53891	21.05	Low-quality					
+0_1010	1	singleton_passthrough	8632	member_seq_median	8632	1.0	55552	15.54	Low-quality					
+0_1011	1	singleton_passthrough	13922	member_seq_median	13922	1.0	63910	21.78	Low-quality					
+0_1012	1	singleton_passthrough	11407	member_seq_median	11407	1.0	39999	28.52	Low-quality					
+0_1013	1	singleton_passthrough	5740	member_seq_median	5740	1.0	86577		Not-determined					
+0_1014	1	singleton_passthrough	2308	member_seq_median	2308	1.0	54006	4.27	Low-quality					
+0_1015	1	singleton_passthrough	7322	member_seq_median	7322	1.0	62336	11.75	Low-quality					
+0_1016	1	singleton_passthrough	6085	member_seq_median	6085	1.0	29187		Not-determined					
+0_1017	1	singleton_passthrough	6762	member_seq_median	6762	1.0	38887	8.22	Low-quality					
+0_1018	1	singleton_passthrough	4972	member_seq_median	4972	1.0	60647	6.31	Low-quality					
+0_1019	1	singleton_passthrough	5368	member_seq_median	5368	1.0	44411	9.32	Low-quality					
+0_1020	1	singleton_passthrough	1118	member_seq_median	1118	1.0			Not-determined					
+0_1021	1	singleton_passthrough	4854	member_seq_median	4854	1.0	85158	4.79	Low-quality					
+0_1022	1	singleton_passthrough	23007	member_seq_median	23007	1.0	42936	53.58	Medium-quality					
+0_1023	1	singleton_passthrough	10034	member_seq_median	10034	1.0	55570	18.06	Low-quality					
+0_1024	1	singleton_passthrough	15184	member_seq_median	15184	1.0	54877	27.67	Low-quality					
+0_1025	1	singleton_passthrough	10270	member_seq_median	10270	1.0	51722	19.86	Low-quality					
+0_1026	1	singleton_passthrough	8310	member_seq_median	8310	1.0	35118	10.27	Low-quality					
+0_1027	1	singleton_passthrough	17739	member_seq_median	17739	1.0	69196	25.64	Low-quality					
+0_1028	1	singleton_passthrough	3955	member_seq_median	3955	1.0	64133	3.94	Low-quality					
+0_1029	1	singleton_passthrough	1255	member_seq_median	1255	1.0	78455	1.6	Low-quality					
+0_1030	1	singleton_passthrough	7647	member_seq_median	7647	1.0	52963	14.44	Low-quality					
+0_1031	1	singleton_passthrough	7308	member_seq_median	7308	1.0	114001	11.7	Low-quality					
+0_1032	1	singleton_passthrough	32457	member_seq_median	32457	1.0	45233	71.75	Medium-quality					
+0_1033	1	singleton_passthrough	8374	member_seq_median	8374	1.0	67053	12.49	Low-quality					
+0_1034	1	singleton_passthrough	7532	member_seq_median	7532	1.0	43623	12.63	Low-quality					
+0_1035	1	singleton_passthrough	19795	member_seq_median	19795	1.0	68019	29.1	Low-quality					
+0_1036	1	singleton_passthrough	10865	member_seq_median	10865	1.0	97345	12.41	Low-quality					
+0_1037	1	singleton_passthrough	12335	member_seq_median	12335	1.0	41075	21.01	Low-quality					
+0_1038	1	singleton_passthrough	48632	member_seq_median	48632	1.0	58822	82.68	Medium-quality					
+0_1039	1	singleton_passthrough	33107	member_seq_median	33107	1.0	37188	89.03	Medium-quality					
+0_1040	1	singleton_passthrough	45008	member_seq_median	45008	1.0	55302	81.38	Medium-quality					
+0_1041	1	singleton_passthrough	43307	member_seq_median	43307	1.0	110896	39.05	Low-quality					
+0_1042	1	singleton_passthrough	18935	member_seq_median	18935	1.0	110903	17.07	Low-quality					
+0_1043	1	singleton_passthrough	3016	member_seq_median	3016	1.0	51583	5.85	Low-quality					
+0_1044	1	singleton_passthrough	45285	member_seq_median	45285	1.0	62515	72.44	Medium-quality					
+0_1045	1	singleton_passthrough	2771	member_seq_median	2771	1.0	122243	2.27	Low-quality					
+0_1046	1	singleton_passthrough	20600	member_seq_median	20600	1.0	91554	22.5	Low-quality					
+0_1047	1	singleton_passthrough	34344	member_seq_median	34344	1.0	54993	62.45	Medium-quality					
+0_1048	1	singleton_passthrough	10622	member_seq_median	10622	1.0	51757	20.52	Low-quality					
+0_1049	1	singleton_passthrough	7293	member_seq_median	7293	1.0	51873	14.06	Low-quality					
+0_1050	1	singleton_passthrough	14417	member_seq_median	14417	1.0	76671	18.8	Low-quality					
+0_1051	1	singleton_passthrough	11332	member_seq_median	11332	1.0	145460	7.79	Low-quality					
+0_1052	1	singleton_passthrough	7671	member_seq_median	7671	1.0	61209	5.72	Low-quality					
+0_1053	1	singleton_passthrough	54477	member_seq_median	54477	1.0	150206	36.27	Low-quality					
+0_1054	1	singleton_passthrough	8512	member_seq_median	8512	1.0	51705	16.46	Low-quality					
+0_1055	1	singleton_passthrough	4367	member_seq_median	4367	1.0	52998	8.24	Low-quality					
+0_1056	1	singleton_passthrough	3435	member_seq_median	3435	1.0	49707		Not-determined					
+0_1057	1	singleton_passthrough	7493	member_seq_median	7493	1.0	48473	12.25	Low-quality					
+0_1058	1	singleton_passthrough	31719	member_seq_median	31719	1.0	75614	41.95	Low-quality					
+0_1059	1	singleton_passthrough	22424	member_seq_median	22424	1.0	87293	25.69	Low-quality					
+0_1060	1	singleton_passthrough	3090	member_seq_median	3090	1.0	75181	4.11	Low-quality					
+0_1061	1	singleton_passthrough	2648	member_seq_median	2648	1.0	64149	1.69	Low-quality					
+0_1062	1	singleton_passthrough	44260	member_seq_median	44260	1.0	57972	68.98	Medium-quality					
+0_1063	1	singleton_passthrough	7554	member_seq_median	7554	1.0	81060	9.32	Low-quality					
+0_1064	1	singleton_passthrough	46288	member_seq_median	46288	1.0	80592	57.43	Medium-quality					
+0_1065	1	singleton_passthrough	5745	member_seq_median	5745	1.0	39230	9.13	Low-quality					
+0_1066	1	singleton_passthrough	12340	member_seq_median	12340	1.0	108023	11.42	Low-quality					
+0_1067	1	singleton_passthrough	6380	member_seq_median	6380	1.0	169725		Not-determined					
+0_1068	1	singleton_passthrough	4029	member_seq_median	4029	1.0	42228	5.09	Low-quality					
+0_1069	1	singleton_passthrough	8307	member_seq_median	8307	1.0	94319		Not-determined					
+0_1070	1	singleton_passthrough	3221	member_seq_median	3221	1.0	59904	5.38	Low-quality					
+0_1071	1	singleton_passthrough	3674	member_seq_median	3674	1.0	58232		Not-determined					
+0_1072	1	singleton_passthrough	4467	member_seq_median	4467	1.0		3.56	Low-quality					
+0_1073	1	singleton_passthrough	4962	member_seq_median	4962	1.0	164602	2.56	Low-quality					
+0_1074	1	singleton_passthrough	9806	member_seq_median	9806	1.0	50412	14.07	Low-quality					
+0_1075	1	singleton_passthrough	14597	member_seq_median	14597	1.0	102972	6.18	Low-quality					
+0_1076	1	singleton_passthrough	21616	member_seq_median	21616	1.0	54858	39.4	Low-quality					
+0_1077	1	singleton_passthrough	7204	member_seq_median	7204	1.0	63351	11.37	Low-quality					
+0_1078	1	singleton_passthrough	7480	member_seq_median	7480	1.0	52445	14.26	Low-quality					
+0_1079	1	singleton_passthrough	2859	member_seq_median	2859	1.0	71668	3.99	Low-quality					
+0_1080	1	singleton_passthrough	4353	member_seq_median	4353	1.0	51483		Not-determined					
+0_1081	1	singleton_passthrough	3571	member_seq_median	3571	1.0		0.5	Low-quality					
+0_1082	1	singleton_passthrough	917	member_seq_median	917	1.0	55941		Not-determined					
+0_1083	1	singleton_passthrough	5958	member_seq_median	5958	1.0	54243	8.34	Low-quality					
+0_1084	1	singleton_passthrough	12869	member_seq_median	12869	1.0	50944	14.93	Low-quality					
+0_1085	1	singleton_passthrough	7226	member_seq_median	7226	1.0	92568		Not-determined					
+0_1086	1	singleton_passthrough	2600	member_seq_median	2600	1.0	34291	4.7	Low-quality					
+0_1087	1	singleton_passthrough	26793	member_seq_median	26793	1.0	55051	48.67	Low-quality					
+0_1088	1	singleton_passthrough	3163	member_seq_median	3163	1.0	220753		Not-determined					
+0_1089	1	singleton_passthrough	48614	member_seq_median	48614	1.0	51816	93.82	High-quality					
+0_1090	1	singleton_passthrough	5746	member_seq_median	5746	1.0	51304	9.11	Low-quality					
+0_1091	1	singleton_passthrough	33054	member_seq_median	33054	1.0	55912	59.12	Medium-quality					
+0_1092	1	singleton_passthrough	1988	member_seq_median	1988	1.0	64199		Not-determined					
+0_1093	1	singleton_passthrough	37323	member_seq_median	37323	1.0	55682	67.03	Medium-quality					
+0_1094	1	singleton_passthrough	8737	member_seq_median	8737	1.0	41050	21.28	Low-quality					
+0_1095	1	singleton_passthrough	8972	member_seq_median	8972	1.0	57521	15.6	Low-quality					
+0_1096	1	singleton_passthrough	2251	member_seq_median	2251	1.0	59233		Not-determined					
+0_1097	1	singleton_passthrough	17177	member_seq_median	17177	1.0	140538		Not-determined					
+0_1098	1	singleton_passthrough	4871	member_seq_median	4871	1.0			Not-determined					
+0_1099	1	singleton_passthrough	3051	member_seq_median	3051	1.0	63511	4.8	Low-quality					
+0_1100	1	singleton_passthrough	6755	member_seq_median	6755	1.0	41958	10.89	Low-quality					
+0_1101	1	singleton_passthrough	4824	member_seq_median	4824	1.0			Not-determined					
+0_1102	1	singleton_passthrough	3571	member_seq_median	3571	1.0	89113	4.01	Low-quality					
+0_1103	1	singleton_passthrough	15111	member_seq_median	15111	1.0	88058	17.16	Low-quality					
+0_1104	1	singleton_passthrough	8566	member_seq_median	8566	1.0	79199	7.75	Low-quality					
+0_1105	1	singleton_passthrough	6416	member_seq_median	6416	1.0	97827	6.56	Low-quality					
+0_1106	1	singleton_passthrough	6158	member_seq_median	6158	1.0	38019	10.85	Low-quality					
+0_1107	1	singleton_passthrough	37971	member_seq_median	37971	1.0	39692	95.66	High-quality					
+0_1108	1	singleton_passthrough	9038	member_seq_median	9038	1.0	61212	14.76	Low-quality					
+0_1109	1	singleton_passthrough	44954	member_seq_median	44954	1.0	61120	73.55	Medium-quality					
+0_1110	1	singleton_passthrough	12311	member_seq_median	12311	1.0	56741		Not-determined					
+0_1111	1	singleton_passthrough	4943	member_seq_median	4943	1.0			Not-determined					
+0_1112	1	singleton_passthrough	5827	member_seq_median	5827	1.0	56398	10.33	Low-quality					
+0_1113	1	singleton_passthrough	4455	member_seq_median	4455	1.0	74704	5.96	Low-quality					
+0_1114	1	singleton_passthrough	37758	member_seq_median	37758	1.0	79664	47.4	Low-quality					
+0_1115	1	singleton_passthrough	4456	member_seq_median	4456	1.0	61173	7.28	Low-quality					
+0_1116	1	singleton_passthrough	11936	member_seq_median	11936	1.0	64901	15.66	Low-quality					
+0_1117	1	singleton_passthrough	8088	member_seq_median	8088	1.0	89415	9.15	Low-quality					
+0_1118	1	singleton_passthrough	5289	member_seq_median	5289	1.0	49043	10.78	Low-quality					
+0_1119	1	singleton_passthrough	5187	member_seq_median	5187	1.0	23447	4.95	Low-quality					
+0_1120	1	singleton_passthrough	4864	member_seq_median	4864	1.0	241784	2.15	Low-quality					
+0_1121	1	singleton_passthrough	922	member_seq_median	922	1.0			Not-determined					
+0_1122	1	singleton_passthrough	12868	member_seq_median	12868	1.0	690083	1.26	Low-quality					
+0_1123	1	singleton_passthrough	22101	member_seq_median	22101	1.0	57220	27.87	Low-quality					
+0_1124	1	singleton_passthrough	2274	member_seq_median	2274	1.0	48002	4.74	Low-quality					
+0_1125	1	singleton_passthrough	3001	member_seq_median	3001	1.0	51766	3.81	Low-quality					
+0_1126	1	singleton_passthrough	1824	member_seq_median	1824	1.0	69912	2.5	Low-quality					
+0_1127	1	singleton_passthrough	24177	member_seq_median	24177	1.0	73315	31.99	Low-quality					
+0_1128	1	singleton_passthrough	12815	member_seq_median	12815	1.0	52279		Not-determined					
+0_1129	1	singleton_passthrough	8313	member_seq_median	8313	1.0		13.33	Low-quality					
+0_1130	1	singleton_passthrough	948	member_seq_median	948	1.0	62836	1.51	Low-quality					
+0_1131	1	singleton_passthrough	10108	member_seq_median	10108	1.0	54616	11.56	Low-quality					
+0_1132	1	singleton_passthrough	29652	member_seq_median	29652	1.0	54707	54.2	Medium-quality					
+0_1133	1	singleton_passthrough	8290	member_seq_median	8290	1.0	54225	15.29	Low-quality					
+0_1134	1	singleton_passthrough	2837	member_seq_median	2837	1.0		0.64	Low-quality					
+0_1135	1	singleton_passthrough	1106	member_seq_median	1106	1.0	45540	1.01	Low-quality					
+0_1136	1	singleton_passthrough	18204	member_seq_median	18204	1.0	61031	29.83	Low-quality					
+0_1137	1	singleton_passthrough	6370	member_seq_median	6370	1.0	93550	6.81	Low-quality					
+0_1138	1	singleton_passthrough	43766	member_seq_median	43766	1.0	76672	57.08	Medium-quality					
+0_1139	1	singleton_passthrough	23814	member_seq_median	23814	1.0	58751	40.53	Low-quality					
+0_1140	1	singleton_passthrough	1404	member_seq_median	1404	1.0	124491		Not-determined					
+0_1141	1	singleton_passthrough	1886	member_seq_median	1886	1.0	53995	2.24	Low-quality					
+0_1142	1	singleton_passthrough	4198	member_seq_median	4198	1.0	65536	5.09	Low-quality					
+0_1143	1	singleton_passthrough	4026	member_seq_median	4026	1.0	53426	4.92	Low-quality					
+0_1144	1	singleton_passthrough	1829	member_seq_median	1829	1.0		2.1	Low-quality					
+0_1145	1	singleton_passthrough	48022	member_seq_median	48022	1.0	61101	78.59	Medium-quality					
+0_1146	1	singleton_passthrough	5743	member_seq_median	5743	1.0	87554		Not-determined					
+0_1147	1	singleton_passthrough	3472	member_seq_median	3472	1.0		2.44	Low-quality					
+0_1148	1	singleton_passthrough	3363	member_seq_median	3363	1.0	72090	4.66	Low-quality					
+0_1149	1	singleton_passthrough	7967	member_seq_median	7967	1.0	55490	14.36	Low-quality					
+0_1150	1	singleton_passthrough	4465	member_seq_median	4465	1.0	48548		Not-determined					
+0_1151	1	singleton_passthrough	3942	member_seq_median	3942	1.0	40135	9.82	Low-quality					
+0_1152	1	singleton_passthrough	37620	member_seq_median	37620	1.0	51736	72.71	Medium-quality					
+0_1153	1	singleton_passthrough	10093	member_seq_median	10093	1.0	41050	24.59	Low-quality					
+0_1154	1	singleton_passthrough	24572	member_seq_median	24572	1.0	76749	32.02	Low-quality					
+0_1155	1	singleton_passthrough	3585	member_seq_median	3585	1.0	44483	5.85	Low-quality					
+0_1156	51	ok	50640	checkv_aai_median	10200	0.201	51050	19.98	Low-quality	21	terminus	chimeric	0.7619	3
+0_1157	32	ok	43618	checkv_aai_median	42568	0.976	43606	97.62	High-quality	61	terminus	chimeric	0.7541	6
+0_1158	12	ok	42127	checkv_aai_median	37637	0.893	42043	89.52	Medium-quality	53	terminus	single_member	1.0	1
+0_1159	2	ok	66356	checkv_aai_median	36726	0.553	66356	55.35	Medium-quality	73	terminus	single_member	1.0	1
+0_1160	1	singleton_passthrough	22151	member_seq_median	22151	1.0	51086	43.36	Low-quality					
+0_1161	1	singleton_passthrough	24912	member_seq_median	24912	1.0	40985	60.78	Medium-quality					
+0_1162	1	singleton_passthrough	7198	member_seq_median	7198	1.0	53683	13.41	Low-quality					
+0_1163	2	ok	12177	member_seq_median	13330	1.095	88454		Not-determined	17	terminus	chimeric	0.8824	2
+0_1164	1	singleton_passthrough	1991	member_seq_median	1991	1.0	74597		Not-determined					
+0_1165	1	singleton_passthrough	11147	member_seq_median	11147	1.0	74683		Not-determined					
+0_1166	1	singleton_passthrough	5750	member_seq_median	5750	1.0	56493		Not-determined					
+0_1167	1	singleton_passthrough	995	member_seq_median	995	1.0	56512		Not-determined					
+0_1168	4	ok	41895	checkv_aai_median	24225	0.578	42374	31.23	Low-quality	49	terminus	chimeric	0.2449	9
+0_1169	4	ok	45066	checkv_aai_median	17107	0.38	49044	34.88	Low-quality	51	terminus	chimeric	0.4118	7
+0_1170	4	ok	41864	checkv_aai_median	44813	1.07	41876	75.08	Medium-quality	56	terminus	chimeric	0.6429	5
+0_1171	2	ok	41839	checkv_aai_median	37682	0.901	41841	90.06	High-quality	78	terminus	single_member	1.0	1
+0_1172	1	singleton_passthrough	32314	member_seq_median	32314	1.0	41846	77.22	Medium-quality					
+0_1173	1	singleton_passthrough	30319	member_seq_median	30319	1.0	41156	73.67	Medium-quality					
+0_1174	1	singleton_passthrough	37458	member_seq_median	37458	1.0	41329	90.63	High-quality					
+0_1175	1	singleton_passthrough	27890	member_seq_median	27890	1.0	41133	67.8	Medium-quality					
+0_1176	7	ok	21424	member_seq_median	17938	0.837	59995	24.97	Low-quality	41	terminus	chimeric	0.3171	12
+0_1177	5	ok	8939	member_seq_median	8939	1.0	63948		Not-determined	17	terminus	single_member	1.0	1
+0_1178	4	ok	18229	member_seq_median	18080	0.992	63479	22.61	Low-quality	34	terminus	chimeric	0.6471	3
+0_1179	2	ok	4456	member_seq_median	4154	0.932	47215		Not-determined	8	terminus	single_member	1.0	1
+0_1180	3	ok	9105	member_seq_median	9825	1.079	49733	10.53	Low-quality	12	terminus	chimeric	0.6667	3
+0_1181	3	ok	2406	member_seq_median	4773	1.984	62873		Not-determined	4	terminus	single_member	1.0	1
+0_1182	2	ok	56555	checkv_aai_median	24860	0.44	56608	43.92	Low-quality	47	terminus	chimeric	0.617	3
+0_1183	2	ok	8398	member_seq_median	16643	1.982		24.65	Low-quality	16	terminus	single_member	1.0	1
+0_1184	2	ok	5699	member_seq_median	5699	1.0	62613		Not-determined	11	terminus	single_member	1.0	1
+0_1185	1	singleton_passthrough	7439	member_seq_median	7439	1.0	50538		Not-determined					
+0_1186	1	singleton_passthrough	14173	member_seq_median	14173	1.0	67146		Not-determined					
+0_1187	1	singleton_passthrough	3369	member_seq_median	3369	1.0	63649	5.29	Low-quality					
+0_1188	1	singleton_passthrough	12719	member_seq_median	12719	1.0	177054		Not-determined					
+0_1189	1	singleton_passthrough	7542	member_seq_median	7542	1.0	63480	4.89	Low-quality					
+0_1190	1	singleton_passthrough	6712	member_seq_median	6712	1.0	58250		Not-determined					
+0_1191	1	singleton_passthrough	11497	member_seq_median	11497	1.0	62873		Not-determined					
+0_1192	1	singleton_passthrough	16264	member_seq_median	16264	1.0	65280		Not-determined					
+0_1193	1	singleton_passthrough	8375	member_seq_median	8375	1.0	58320	14.36	Low-quality					
+0_1194	1	singleton_passthrough	9529	member_seq_median	9529	1.0	62645		Not-determined					
+0_1195	1	singleton_passthrough	14825	member_seq_median	14825	1.0	60172		Not-determined					
+0_1196	1	singleton_passthrough	7107	member_seq_median	7107	1.0	63441	11.2	Low-quality					
+0_1197	1	singleton_passthrough	1286	member_seq_median	1286	1.0	62524	2.06	Low-quality					
+0_1198	25	ok	5785	member_seq_median	10947	1.892			Not-determined	11	terminus	single_member	1.0	1
+0_1199	12	ok	52417	checkv_aai_median	17637	0.336	42573		Not-determined	35	terminus	chimeric	0.7143	2
+0_1200	5	ok	56120	checkv_aai_median	53544	0.954	290974	15.21	Low-quality	63	terminus	chimeric	0.7143	2
+0_1201	3	ok	18349	member_seq_median	18671	1.018	63964	29.76	Low-quality	29	terminus	chimeric	0.8966	2
+0_1202	4	ok	43943	checkv_aai_median	12417	0.283	43943	28.26	Low-quality	24	terminus	single_member	1.0	1
+0_1203	3	ok	17366	member_seq_median	17183	0.989	59250		Not-determined	18	terminus	chimeric	0.3333	5
+0_1204	2	ok	12040	member_seq_median	12174	1.011	43943	27.7	Low-quality	22	terminus	chimeric	0.9545	2
+0_1205	2	ok	56095	checkv_aai_median	55134	0.983	56095	98.29	High-quality	110	terminus	single_member	1.0	1
+0_1206	2	ok	6563	member_seq_median	6645	1.012	158635		Not-determined	12	terminus	single_member	1.0	1
+0_1207	1	singleton_passthrough	10901	member_seq_median	10901	1.0	52142		Not-determined					
+0_1208	1	singleton_passthrough	9952	member_seq_median	9952	1.0	50515		Not-determined					
+0_1209	1	singleton_passthrough	3223	member_seq_median	3223	1.0			Not-determined					
+0_1210	1	singleton_passthrough	6872	member_seq_median	6872	1.0	43943	15.64	Low-quality					
+0_1211	1	singleton_passthrough	15565	member_seq_median	15565	1.0	64590		Not-determined					
+0_1212	1	singleton_passthrough	8807	member_seq_median	8807	1.0	45865	12.33	Low-quality					
+0_1213	9	ok	69780	checkv_aai_median	56883	0.815	76048	74.8	Medium-quality	106	terminus	chimeric	0.7075	6
+0_1214	3	ok	6111	member_seq_median	6288	1.029	63986		Not-determined	12	terminus	single_member	1.0	1
+0_1215	3	ok	5832	member_seq_median	5748	0.986	75876	6.48	Low-quality	11	terminus	chimeric	0.3636	4
+0_1216	1	singleton_passthrough	19905	member_seq_median	19905	1.0	60991	32.64	Low-quality					
+0_1217	1	singleton_passthrough	10038	member_seq_median	10038	1.0	55492		Not-determined					
+0_1218	1	singleton_passthrough	7735	member_seq_median	7735	1.0	65169		Not-determined					
+0_1219	1	singleton_passthrough	9507	member_seq_median	9507	1.0	54288		Not-determined					
+0_1220	1	singleton_passthrough	17557	member_seq_median	17557	1.0	158652		Not-determined					
+0_1221	1	singleton_passthrough	13975	member_seq_median	13975	1.0	62986	19.54	Low-quality					
+0_1222	11	ok	51473	checkv_aai_median	51230	0.995	44924	100.0	High-quality	54	terminus	chimeric	0.2407	7
+0_1223	3	ok	58320	checkv_aai_median	14852	0.255	53242	27.89	Low-quality	15	terminus	single_member	1.0	1
+0_1224	1	singleton_passthrough	49925	member_seq_median	49925	1.0	58574	85.23	Medium-quality					
+0_1225	1	singleton_passthrough	34766	member_seq_median	34766	1.0	63937	54.37	Medium-quality					
+0_1226	1	singleton_passthrough	37799	member_seq_median	37799	1.0	41316	91.49	High-quality					
+0_1227	1	singleton_passthrough	36613	member_seq_median	36613	1.0	41933	87.31	Medium-quality					
+0_1228	7	ok	3393	member_seq_median	3240	0.955	58588		Not-determined	6	terminus	single_member	1.0	1
+0_1229	1	singleton_passthrough	1936	member_seq_median	1936	1.0	63099	3.07	Low-quality					
+0_1230	6	ok	91567	checkv_aai_median	20681	0.226	90000	22.98	Low-quality	41	terminus	single_member	1.0	1
+0_1231	2	ok	58102	checkv_aai_median	30432	0.524	61208	49.72	Low-quality	32	terminus	single_member	1.0	1
+0_1232	1	singleton_passthrough	2921	member_seq_median	2921	1.0	70590		Not-determined					
+0_1233	1	singleton_passthrough	20628	member_seq_median	20628	1.0	94927	21.73	Low-quality					
+0_1234	9	ok	12189	member_seq_median	11910	0.977	47756		Not-determined	21	terminus	chimeric	0.2381	13
+0_1235	2	ok	55492	checkv_aai_median	9887	0.178	55492	17.82	Low-quality	19	terminus	chimeric	0.7895	2
+0_1236	2	ok	9992	member_seq_median	7791	0.78	83945		Not-determined	12	terminus	chimeric	0.8333	2
+0_1237	2	ok	7374	member_seq_median	7538	1.022	49964		Not-determined	10	terminus	chimeric	0.4	3
+0_1238	2	ok	8426	member_seq_median	16706	1.983	57516	20.57	Low-quality	16	terminus	single_member	1.0	1
+0_1239	2	ok	7452	member_seq_median	14774	1.983			Not-determined	14	terminus	single_member	1.0	1
+0_1240	1	singleton_passthrough	9502	member_seq_median	9502	1.0	121724	7.81	Low-quality					
+0_1241	1	singleton_passthrough	9093	member_seq_median	9093	1.0	55492	16.39	Low-quality					
+0_1242	7	ok	67753	checkv_aai_median	21663	0.32	123179	17.32	Low-quality	44	terminus	chimeric	0.6818	3
+0_1243	2	ok	8667	member_seq_median	17181	1.982	86799		Not-determined	17	terminus	single_member	1.0	1
+0_1244	2	ok	18397	member_seq_median	18905	1.028	54232		Not-determined	37	terminus	single_member	1.0	1
+0_1245	1	singleton_passthrough	6724	member_seq_median	6724	1.0	58556		Not-determined					
+0_1246	1	singleton_passthrough	7287	member_seq_median	7287	1.0	76183		Not-determined					
+0_1247	16	ok	55955	checkv_aai_median	10291	0.184	53029	14.48	Low-quality	11	terminus	chimeric	0.5455	3
+0_1248	6	ok	6646	member_seq_median	13148	1.978	65903		Not-determined	13	terminus	single_member	1.0	1
+0_1249	2	ok	61248	checkv_aai_median	4065	0.066	39580		Not-determined	4	terminus	single_member	1.0	1
+0_1250	2	ok	62528	checkv_aai_median	7793	0.125	62528	12.46	Low-quality	15	terminus	single_member	1.0	1
+0_1251	1	singleton_passthrough	7685	member_seq_median	7685	1.0	63413	12.12	Low-quality					
+0_1252	1	singleton_passthrough	9056	member_seq_median	9056	1.0	55403	10.94	Low-quality					
+0_1253	1	singleton_passthrough	10897	member_seq_median	10897	1.0	55761	19.54	Low-quality					
+0_1254	1	singleton_passthrough	4333	member_seq_median	4333	1.0	68180	6.36	Low-quality					
+0_1255	1	singleton_passthrough	4745	member_seq_median	4745	1.0	56385	6.4	Low-quality					
+0_1256	9	ok	18328	member_seq_median	18437	1.006			Not-determined	34	terminus	chimeric	0.4118	6
+0_1257	2	ok	33629	member_seq_median	36158	1.075	86407	38.23	Low-quality	48	terminus	chimeric	0.3542	7
+0_1258	1	singleton_passthrough	35701	member_seq_median	35701	1.0	77420	20.33	Low-quality					
+0_1259	1	singleton_passthrough	20121	member_seq_median	20121	1.0	131515		Not-determined					
+0_1260	1	singleton_passthrough	14057	member_seq_median	14057	1.0	151679		Not-determined					
+0_1261	1	singleton_passthrough	8290	member_seq_median	8290	1.0	209890		Not-determined					
+0_1262	3	ok	21208	member_seq_median	21208	1.0	63066		Not-determined	42	terminus	single_member	1.0	1
+0_1263	3	ok	5206	member_seq_median	5206	1.0	58946		Not-determined	10	terminus	single_member	1.0	1
+0_1264	2	ok	8567	member_seq_median	16977	1.982	61473		Not-determined	17	terminus	single_member	1.0	1
+0_1265	1	singleton_passthrough	26787	member_seq_median	26787	1.0	63565	21.94	Low-quality					
+0_1266	1	singleton_passthrough	4222	member_seq_median	4222	1.0	62920	6.71	Low-quality					
+0_1267	1	singleton_passthrough	13359	member_seq_median	13359	1.0	58033	19.46	Low-quality					
+0_1268	1	singleton_passthrough	14864	member_seq_median	14864	1.0	62781		Not-determined					
+0_1269	1	singleton_passthrough	30490	member_seq_median	30490	1.0	124055		Not-determined					
+0_1270	1	singleton_passthrough	2642	member_seq_median	2642	1.0	52155	5.07	Low-quality					
+0_1271	20	ok	9856	member_seq_median	11021	1.118	279339		Not-determined	23	terminus	chimeric	0.1739	11
+0_1272	1	singleton_passthrough	2469	member_seq_median	2469	1.0	51676		Not-determined					
+0_1273	1	singleton_passthrough	11344	member_seq_median	11344	1.0	60892		Not-determined					
+0_1274	5	ok	53871	checkv_aai_median	51809	0.962	58225	88.98	Medium-quality	87	terminus	chimeric	0.6897	7
+0_1275	4	ok	43854	checkv_aai_median	75479	1.721	46416	95.57	High-quality	76	terminus	single_member	1.0	1
+0_1276	1	singleton_passthrough	12027	member_seq_median	12027	1.0	54546	22.05	Low-quality					
+0_1277	1	singleton_passthrough	48954	member_seq_median	48954	1.0	58099	84.26	Medium-quality					
+0_1278	1	singleton_passthrough	34171	member_seq_median	34171	1.0	57865	59.05	Medium-quality					
+0_1279	3	ok	9647	member_seq_median	10585	1.097	87016	16.97	Low-quality	21	terminus	single_member	1.0	1
+0_1280	2	ok	11835	member_seq_median	11835	1.0	51845		Not-determined	23	terminus	single_member	1.0	1
+0_1281	1	singleton_passthrough	3783	member_seq_median	3783	1.0	45960		Not-determined					
+0_1282	2	ok	74947	checkv_aai_median	9695	0.129	81090	11.96	Low-quality	18	terminus	single_member	1.0	1
+0_1283	2	ok	2349	member_seq_median	3162	1.346	111674	3.12	Low-quality	6	terminus	single_member	1.0	1
+0_1284	2	ok	59950	checkv_aai_median	6766	0.113	59950	6.06	Low-quality	13	terminus	single_member	1.0	1
+0_1285	1	singleton_passthrough	11354	member_seq_median	11354	1.0	57927	19.6	Low-quality					
+0_1286	5	ok	5536	member_seq_median	9547	1.725	114304	13.44	Low-quality	12	terminus	single_member	1.0	1
+0_1287	4	ok	4713	member_seq_median	4554	0.966	52342	6.45	Low-quality	8	terminus	chimeric	0.75	2
+0_1288	1	singleton_passthrough	1450	member_seq_median	1450	1.0		2.24	Low-quality					
+0_1289	1	singleton_passthrough	1780	member_seq_median	1780	1.0	56928	3.13	Low-quality					
+0_1290	2	ok	41915	checkv_aai_median	16555	0.395	41915	39.5	Low-quality	33	terminus	single_member	1.0	1
+0_1291	1	singleton_passthrough	29545	member_seq_median	29545	1.0	41917	70.48	Medium-quality					
+0_1292	1	singleton_passthrough	10209	member_seq_median	10209	1.0	56454	18.08	Low-quality					
+0_1293	1	singleton_passthrough	34809	member_seq_median	34809	1.0	41391	84.1	Medium-quality					
+0_1294	2	ok	8923	member_seq_median	17688	1.982		19.91	Low-quality	17	terminus	single_member	1.0	1
+0_1295	2	ok	5752	member_seq_median	5752	1.0	44262	7.5	Low-quality	11	terminus	single_member	1.0	1
+0_1296	2	ok	5404	member_seq_median	10706	1.981	24614	13.75	Low-quality	10	terminus	single_member	1.0	1
+0_1297	1	singleton_passthrough	5843	member_seq_median	5843	1.0	46056	7.15	Low-quality					
+0_1298	1	singleton_passthrough	9403	member_seq_median	9403	1.0	46671	16.42	Low-quality					
+0_1299	1	singleton_passthrough	55504	member_seq_median	55504	1.0	49292	100.0	High-quality					
+0_1300	1	singleton_passthrough	34841	member_seq_median	34841	1.0	57611	60.48	Medium-quality					
+0_1301	1	singleton_passthrough	24371	member_seq_median	24371	1.0	51876	46.98	Low-quality					
+0_1302	1	singleton_passthrough	12540	member_seq_median	12540	1.0	48135	26.05	Low-quality					
+0_1303	1	singleton_passthrough	44341	member_seq_median	44341	1.0	54917	80.74	Medium-quality					

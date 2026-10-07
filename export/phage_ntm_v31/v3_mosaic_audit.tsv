@@ -1,0 +1,1305 @@
+clade_id	n_members	median_member_len	ml_length_bp	length_ratio	checkv_quality	checkv_completeness	flag
+0_0000	100	42485	150000	3.531	High-quality	99.57	mosaic
+0_0001	100	37178	149999	4.035	High-quality	99.37	mosaic
+0_0002	100	24164	149995	6.207	High-quality	99.47	mosaic
+0_0003	100	29926	150000	5.012	High-quality	99.91	mosaic
+0_0004	100	31879	149988	4.705	High-quality	100.0	mosaic
+0_0005	100	26454	149876	5.666	High-quality	99.5	mosaic
+0_0006	100	26454	150000	5.67	High-quality	100.0	mosaic
+0_0007	100	35553	150000	4.219	High-quality	99.65	mosaic
+0_0008	100	48919	149992	3.066	High-quality	99.13	mosaic
+0_0009	100	42545	150000	3.526	High-quality	99.63	mosaic
+0_0010	100	45187	150000	3.32	High-quality	99.8	mosaic
+0_0011	100	33643	150000	4.459	High-quality	99.93	mosaic
+0_0012	100	34627	150000	4.332	High-quality	99.47	mosaic
+0_0013	100	48621	150000	3.085	High-quality	99.12	mosaic
+0_0014	100	46811	150000	3.204	High-quality	100.0	mosaic
+0_0015	100	35480	150000	4.228	High-quality	99.65	mosaic
+0_0016	100	45272	150000	3.313	High-quality	100.0	mosaic
+0_0017	100	43768	150000	3.427	High-quality	99.68	mosaic
+0_0018	100	48621	149805	3.081	High-quality	100.0	mosaic
+0_0019	100	47278	149989	3.172	High-quality	98.97	mosaic
+0_0020	100	47845	149999	3.135	High-quality	100.0	mosaic
+0_0021	100	39593	150000	3.789	High-quality	100.0	mosaic
+0_0022	100	46031	149976	3.258	High-quality	100.0	mosaic
+0_0023	100	39562	149999	3.791	High-quality	100.0	mosaic
+0_0024	100	28121	149997	5.334	High-quality	99.9	mosaic
+0_0025	100	44542	150000	3.368	High-quality	99.73	mosaic
+0_0026	100	32132	150000	4.668	High-quality	100.0	mosaic
+0_0027	100	45113	149998	3.325	High-quality	100.0	mosaic
+0_0028	100	35109	150000	4.272	High-quality	100.0	mosaic
+0_0029	100	37899	149991	3.958	High-quality	100.0	mosaic
+0_0030	100	28322	149981	5.296	High-quality	99.97	mosaic
+0_0031	100	34176	150000	4.389	High-quality	99.97	mosaic
+0_0032	100	32742	150000	4.581	High-quality	99.74	mosaic
+0_0033	100	16660	150000	9.004	High-quality	100.0	mosaic
+0_0034	100	14065	149999	10.665	High-quality	100.0	mosaic
+0_0035	100	40120	149986	3.738	High-quality	100.0	mosaic
+0_0036	100	30720	149994	4.883	High-quality	99.54	mosaic
+0_0037	100	44288	150000	3.387	High-quality	99.06	mosaic
+0_0038	100	23655	150000	6.341	High-quality	99.81	mosaic
+0_0039	100	28330	150000	5.295	High-quality	99.74	mosaic
+0_0040	100	42781	149738	3.5	High-quality	99.96	mosaic
+0_0041	100	42781	149579	3.496	High-quality	100.0	mosaic
+0_0042	100	42781	149942	3.505	High-quality	100.0	mosaic
+0_0043	100	35830	149993	4.186	High-quality	100.0	mosaic
+0_0044	100	12837	150000	11.685	High-quality	100.0	mosaic
+0_0045	100	32618	149993	4.598	High-quality	99.54	mosaic
+0_0046	100	30462	149904	4.921	High-quality	100.0	mosaic
+0_0047	100	32706	149997	4.586	High-quality	99.31	mosaic
+0_0048	100	12759	150000	11.756	High-quality	100.0	mosaic
+0_0049	100	34643	149572	4.318	High-quality	98.94	mosaic
+0_0050	100	34643	149558	4.317	High-quality	99.18	mosaic
+0_0051	100	34643	149879	4.326	High-quality	100.0	mosaic
+0_0052	100	34643	149845	4.325	High-quality	99.67	mosaic
+0_0053	100	34643	149956	4.329	High-quality	100.0	mosaic
+0_0054	100	34643	149992	4.33	High-quality	99.35	mosaic
+0_0055	100	34643	149999	4.33	High-quality	99.29	mosaic
+0_0056	100	34071	150000	4.403	High-quality	100.0	mosaic
+0_0057	100	29308	149959	5.117	High-quality	100.0	mosaic
+0_0058	100	30341	149537	4.929	High-quality	100.0	mosaic
+0_0059	100	30308	149992	4.949	High-quality	100.0	mosaic
+0_0060	100	28046	149971	5.347	High-quality	100.0	mosaic
+0_0061	100	27793	149995	5.397	High-quality	100.0	mosaic
+0_0062	100	27144	149995	5.526	High-quality	100.0	mosaic
+0_0063	100	28406	149980	5.28	High-quality	100.0	mosaic
+0_0064	100	27093	150000	5.536	High-quality	100.0	mosaic
+0_0065	100	27321	149991	5.49	High-quality	100.0	mosaic
+0_0066	100	29804	149998	5.033	High-quality	99.6	mosaic
+0_0067	100	29153	150000	5.145	High-quality	99.56	mosaic
+0_0068	100	27652	149831	5.418	High-quality	100.0	mosaic
+0_0069	100	27652	149828	5.418	High-quality	100.0	mosaic
+0_0070	100	26435	149991	5.674	High-quality	100.0	mosaic
+0_0071	100	11091	150000	13.524	High-quality	98.47	mosaic
+0_0072	100	27885	149540	5.363	High-quality	99.55	mosaic
+0_0073	100	22939	149998	6.539	High-quality	99.98	mosaic
+0_0074	100	27885	150000	5.379	High-quality	99.64	mosaic
+0_0075	100	45396	150000	3.304	High-quality	100.0	mosaic
+0_0076	100	20673	150000	7.256	High-quality	99.75	mosaic
+0_0077	100	35191	149900	4.26	High-quality	100.0	mosaic
+0_0078	100	33347	149997	4.498	High-quality	99.72	mosaic
+0_0079	100	28438	150000	5.275	High-quality	99.52	mosaic
+0_0080	100	33347	149734	4.49	High-quality	99.7	mosaic
+0_0081	100	33347	149712	4.49	High-quality	99.74	mosaic
+0_0082	100	33347	149860	4.494	High-quality	99.64	mosaic
+0_0083	100	28719	150000	5.223	High-quality	99.13	mosaic
+0_0084	100	32050	150000	4.68	High-quality	99.65	mosaic
+0_0085	100	28949	150000	5.182	High-quality	99.77	mosaic
+0_0086	100	8239	149988	18.204	High-quality	99.75	mosaic
+0_0087	100	9705	150000	15.456	High-quality	99.6	mosaic
+0_0088	100	41714	150000	3.596	High-quality	99.57	mosaic
+0_0089	100	29635	150000	5.062	High-quality	99.39	mosaic
+0_0090	100	45750	150000	3.279	High-quality	99.88	mosaic
+0_0091	100	60833	149999	2.466	High-quality	99.8	mosaic
+0_0092	100	27070	149970	5.54	High-quality	99.51	mosaic
+0_0093	100	45128	150000	3.324	High-quality	99.38	mosaic
+0_0094	100	29306	149975	5.118	High-quality	100.0	mosaic
+0_0095	86	3197	149845	46.871	High-quality	100.0	mosaic
+0_0096	100	30379	149996	4.937	High-quality	99.89	mosaic
+0_0097	100	30884	150000	4.857	High-quality	99.6	mosaic
+0_0098	100	29009	149998	5.171	High-quality	99.81	mosaic
+0_0099	100	7128	149959	21.038	High-quality	100.0	mosaic
+0_0100	25	14193	47689	3.36	Medium-quality	78.76	mosaic
+0_0101	100	43042	150000	3.485	High-quality	99.83	mosaic
+0_0102	98	3975	150000	37.731	High-quality	99.87	mosaic
+0_0103	100	9969	149884	15.035	High-quality	100.0	mosaic
+0_0104	100	47596	149999	3.152	High-quality	99.68	mosaic
+0_0105	100	9969	149923	15.039	High-quality	100.0	mosaic
+0_0106	100	9969	149787	15.025	High-quality	100.0	mosaic
+0_0107	100	9969	149787	15.025	High-quality	100.0	mosaic
+0_0108	100	9969	149581	15.005	High-quality	100.0	mosaic
+0_0109	100	9969	149832	15.03	High-quality	100.0	mosaic
+0_0110	100	9969	149836	15.03	High-quality	100.0	mosaic
+0_0111	100	9969	149551	15.002	High-quality	100.0	mosaic
+0_0112	100	9969	149623	15.009	High-quality	100.0	mosaic
+0_0113	100	9969	149719	15.018	High-quality	100.0	mosaic
+0_0114	100	9969	149949	15.042	High-quality	100.0	mosaic
+0_0115	100	8691	149997	17.259	High-quality	100.0	mosaic
+0_0116	100	8538	149627	17.525	High-quality	100.0	mosaic
+0_0117	100	8691	149970	17.256	High-quality	100.0	mosaic
+0_0118	100	5669	149996	26.457	High-quality	100.0	mosaic
+0_0119	28	9943	31423	3.16	Medium-quality	51.37	mosaic
+0_0120	100	21561	150000	6.957	High-quality	99.78	mosaic
+0_0121	100	10079	149999	14.882	High-quality	100.0	mosaic
+0_0122	100	7299	149949	20.544	High-quality	100.0	mosaic
+0_0123	100	26897	150000	5.577	High-quality	99.42	mosaic
+0_0124	100	6441	150000	23.288	High-quality	100.0	mosaic
+0_0125	100	22904	149998	6.549	High-quality	100.0	mosaic
+0_0126	95	3600	149986	41.663	High-quality	100.0	mosaic
+0_0127	100	32216	150000	4.656	High-quality	99.51	mosaic
+0_0128	43	5132	123924	24.147	High-quality	97.29	mosaic
+0_0129	78	5306	149875	28.246	High-quality	100.0	mosaic
+0_0130	100	33215	149998	4.516	High-quality	100.0	mosaic
+0_0131	100	28031	150000	5.351	High-quality	100.0	mosaic
+0_0132	60	7883	149998	19.028	High-quality	100.0	mosaic
+0_0133	100	18316	149997	8.189	High-quality	100.0	mosaic
+0_0134	100	15413	150000	9.732	High-quality	100.0	mosaic
+0_0135	100	43682	149998	3.434	High-quality	99.68	mosaic
+0_0136	100	42543	150000	3.526	High-quality	100.0	mosaic
+0_0137	100	15472	149939	9.691	High-quality	100.0	mosaic
+0_0138	11	2066	309	0.15	Not-determined		ok
+0_0139	14	27052	36461	1.348	Medium-quality	56.03	ok
+0_0140	100	15092	149998	9.939	High-quality	100.0	mosaic
+0_0141	100	28915	150000	5.188	High-quality	99.89	mosaic
+0_0142	100	15196	150000	9.871	High-quality	100.0	mosaic
+0_0143	100	21489	150000	6.98	High-quality	100.0	mosaic
+0_0144	34	12938	149901	11.586	High-quality	100.0	mosaic
+0_0145	100	12658	149728	11.829	High-quality	97.56	mosaic
+0_0146	100	22046	149996	6.804	High-quality	100.0	mosaic
+0_0147	100	28418	149998	5.278	High-quality	99.98	mosaic
+0_0148	100	14971	149995	10.019	High-quality	100.0	mosaic
+0_0149	100	36521	149987	4.107	High-quality	100.0	mosaic
+0_0150	100	14421	149765	10.385	High-quality	100.0	mosaic
+0_0151	100	12658	149627	11.821	High-quality	98.73	mosaic
+0_0152	79	13096	149982	11.453	High-quality	100.0	mosaic
+0_0153	100	28112	149834	5.33	High-quality	99.03	mosaic
+0_0154	100	38712	149785	3.869	High-quality	100.0	mosaic
+0_0155	100	38712	149636	3.865	High-quality	100.0	mosaic
+0_0156	100	38712	149772	3.869	High-quality	99.85	mosaic
+0_0157	100	38712	149703	3.867	High-quality	100.0	mosaic
+0_0158	100	38712	149943	3.873	High-quality	100.0	mosaic
+0_0159	100	38712	149639	3.865	High-quality	100.0	mosaic
+0_0160	100	38712	149834	3.87	High-quality	99.9	mosaic
+0_0161	100	38712	149955	3.874	High-quality	99.91	mosaic
+0_0162	100	31513	149694	4.75	High-quality	99.96	mosaic
+0_0163	100	16172	149882	9.268	High-quality	95.72	mosaic
+0_0164	26	42537	56101	1.319	Medium-quality	77.71	ok
+0_0165	100	28418	149984	5.278	High-quality	99.97	mosaic
+0_0166	100	31513	149794	4.753	High-quality	100.0	mosaic
+0_0167	100	29333	149590	5.1	High-quality	100.0	mosaic
+0_0168	80	31596	150000	4.747	High-quality	100.0	mosaic
+0_0169	100	28338	149974	5.292	High-quality	100.0	mosaic
+0_0170	100	29965	149976	5.005	High-quality	99.97	mosaic
+0_0171	100	16172	149722	9.258	High-quality	95.62	mosaic
+0_0172	100	12069	149963	12.425	High-quality	95.77	mosaic
+0_0173	100	28526	149979	5.258	High-quality	99.98	mosaic
+0_0174	100	12148	149878	12.338	High-quality	95.72	mosaic
+0_0175	100	12069	149588	12.394	High-quality	95.53	mosaic
+0_0176	100	12069	149955	12.425	High-quality	95.76	mosaic
+0_0177	100	8682	149602	17.231	Not-determined		mosaic
+0_0178	100	8682	149866	17.262	Not-determined		mosaic
+0_0179	100	8682	149776	17.251	Not-determined		mosaic
+0_0180	100	8682	149776	17.251	Not-determined		mosaic
+0_0181	100	7984	149705	18.751	Not-determined		mosaic
+0_0182	100	15410	149892	9.727	High-quality	100.0	mosaic
+0_0183	100	11731	149578	12.751	Not-determined		mosaic
+0_0184	100	29431	149989	5.096	High-quality	100.0	mosaic
+0_0185	100	17470	149999	8.586	High-quality	100.0	mosaic
+0_0186	46	1278	29365	22.977	Medium-quality	56.78	mosaic
+0_0187	100	7105	149934	21.103	Not-determined		mosaic
+0_0188	100	7105	149608	21.057	Not-determined		mosaic
+0_0189	100	7105	149913	21.1	Not-determined		mosaic
+0_0190	100	7105	149511	21.043	Not-determined		mosaic
+0_0191	91	12047	149897	12.443	Not-determined		mosaic
+0_0192	100	11129	149825	13.462	High-quality	100.0	mosaic
+0_0193	100	15410	149513	9.702	High-quality	100.0	mosaic
+0_0194	100	39145	149993	3.832	High-quality	99.98	mosaic
+0_0195	100	13920	149994	10.775	High-quality	100.0	mosaic
+0_0196	100	13724	149949	10.926	High-quality	100.0	mosaic
+0_0197	42	30266	149996	4.956	High-quality	100.0	mosaic
+0_0198	100	9391	149996	15.972	High-quality	100.0	mosaic
+0_0199	100	14376	149786	10.419	High-quality	100.0	mosaic
+0_0200	100	29128	149824	5.144	High-quality	100.0	mosaic
+0_0201	100	35892	150000	4.179	High-quality	99.34	mosaic
+0_0202	100	13026	149995	11.515	High-quality	100.0	mosaic
+0_0203	100	37847	149990	3.963	High-quality	99.84	mosaic
+0_0204	5	5372	15656	2.914	Low-quality	28.49	mosaic
+0_0205	100	19921	149985	7.529	High-quality	100.0	mosaic
+0_0206	53	14625	149962	10.254	High-quality	100.0	mosaic
+0_0207	23	5815	37008	6.364	Medium-quality	67.31	mosaic
+0_0208	100	5880	150000	25.51	High-quality	100.0	mosaic
+0_0209	24	9981	65871	6.6	High-quality	100.0	mosaic
+0_0210	15	20362	53572	2.631	Medium-quality	80.52	mosaic
+0_0211	100	37795	150000	3.969	High-quality	99.99	mosaic
+0_0212	100	3791	142592	37.613	High-quality	100.0	mosaic
+0_0213	100	15364	150000	9.763	High-quality	99.36	mosaic
+0_0214	100	11840	149822	12.654	High-quality	100.0	mosaic
+0_0215	15	27070	60884	2.249	Medium-quality	74.83	mosaic
+0_0216	14	11818	17186	1.454	Low-quality	30.97	ok
+0_0217	100	38084	149926	3.937	High-quality	99.99	mosaic
+0_0218	100	38358	149983	3.91	High-quality	99.91	mosaic
+0_0219	100	38358	149999	3.911	High-quality	99.85	mosaic
+0_0220	100	36456	149996	4.114	High-quality	99.84	mosaic
+0_0221	100	26207	150000	5.724	High-quality	100.0	mosaic
+0_0222	34	9981	138003	13.827	High-quality	99.67	mosaic
+0_0223	100	35913	150000	4.177	High-quality	99.84	mosaic
+0_0224	10	5915	11860	2.005	Low-quality	21.97	mosaic
+0_0225	100	6887	149948	21.773	High-quality	100.0	mosaic
+0_0226	100	7294	149644	20.515	High-quality	100.0	mosaic
+0_0227	35	4800	82234	17.132	High-quality	100.0	mosaic
+0_0228	100	7295	149756	20.529	High-quality	100.0	mosaic
+0_0229	17	42004	90443	2.153	High-quality	96.62	mosaic
+0_0230	43	4758	51157	10.752	High-quality	100.0	mosaic
+0_0231	100	6751	149782	22.187	High-quality	100.0	mosaic
+0_0232	100	6887	149720	21.74	High-quality	100.0	mosaic
+0_0233	100	6887	149676	21.733	High-quality	100.0	mosaic
+0_0234	100	6887	149575	21.718	Not-determined		mosaic
+0_0235	100	6887	149835	21.756	High-quality	100.0	mosaic
+0_0236	100	6046	149777	24.773	High-quality	100.0	mosaic
+0_0237	100	6046	149575	24.739	Not-determined		mosaic
+0_0238	60	6046	149960	24.803	Not-determined		mosaic
+0_0239	100	4186	149564	35.73	Not-determined		mosaic
+0_0240	100	3302	149562	45.294	High-quality	100.0	mosaic
+0_0241	100	3160	149958	47.455	High-quality	100.0	mosaic
+0_0242	3	13688	33266	2.43	Not-determined		mosaic
+0_0243	100	11840	149789	12.651	High-quality	100.0	mosaic
+0_0244	48	41555	149993	3.61	High-quality	100.0	mosaic
+0_0245	100	32019	149977	4.684	High-quality	100.0	mosaic
+0_0246	100	40958	149999	3.662	High-quality	100.0	mosaic
+0_0247	100	41989	149993	3.572	High-quality	99.47	mosaic
+0_0248	100	33750	149996	4.444	High-quality	100.0	mosaic
+0_0249	100	35705	149989	4.201	High-quality	99.63	mosaic
+0_0250	100	32126	150000	4.669	High-quality	99.27	mosaic
+0_0251	100	37217	149998	4.03	High-quality	99.54	mosaic
+0_0252	74	4199	149876	35.693	High-quality	100.0	mosaic
+0_0253	100	31697	150000	4.732	High-quality	99.68	mosaic
+0_0254	100	5537	149568	27.012	Medium-quality	51.3	mosaic
+0_0255	100	5537	149678	27.032	Medium-quality	56.44	mosaic
+0_0256	100	5537	149995	27.09	Medium-quality	59.37	mosaic
+0_0257	100	5537	149945	27.081	Medium-quality	55.97	mosaic
+0_0258	68	8663	149925	17.305	High-quality	100.0	mosaic
+0_0259	73	19038	149999	7.879	High-quality	100.0	mosaic
+0_0260	1	3091	3091	1.0	Low-quality	5.28	ok
+0_0261	100	32216	149953	4.655	High-quality	100.0	mosaic
+0_0262	17	6574	15239	2.318	Low-quality	28.37	mosaic
+0_0263	60	4604	149904	32.56	High-quality	100.0	mosaic
+0_0264	9	9867	20739	2.102	Low-quality	39.45	mosaic
+0_0265	41	13985	149913	10.72	High-quality	99.66	mosaic
+0_0266	77	21578	150000	6.952	High-quality	100.0	mosaic
+0_0267	8	10307	14316	1.389	Low-quality	18.03	ok
+0_0268	2	44717	74093	1.657	High-quality	100.0	mosaic
+0_0269	100	29025	149999	5.168	High-quality	99.77	mosaic
+0_0270	100	13536	149992	11.081	High-quality	100.0	mosaic
+0_0271	100	28686	149997	5.229	High-quality	99.75	mosaic
+0_0272	100	11866	149969	12.639	High-quality	100.0	mosaic
+0_0273	100	7094	149989	21.143	High-quality	100.0	mosaic
+0_0274	100	12138	149975	12.356	High-quality	100.0	mosaic
+0_0275	12	1428	2834	1.985	Low-quality	5.23	mosaic
+0_0276	100	34749	149979	4.316	High-quality	99.74	mosaic
+0_0277	100	27877	149994	5.381	High-quality	99.49	mosaic
+0_0278	1	25219	25219	1.0	Medium-quality	60.92	ok
+0_0279	100	13946	149995	10.755	High-quality	100.0	mosaic
+0_0280	4	38868	58432	1.503	Medium-quality	86.99	mosaic
+0_0281	100	11627	149967	12.898	High-quality	100.0	mosaic
+0_0282	6	13213	28704	2.172	Low-quality	37.5	mosaic
+0_0283	31	28193	149953	5.319	High-quality	99.7	mosaic
+0_0284	86	11687	150000	12.835	High-quality	100.0	mosaic
+0_0285	6	12148	46657	3.841	Medium-quality	76.32	mosaic
+0_0286	3	1828	3602	1.97	Low-quality	5.4	mosaic
+0_0287	100	19797	149939	7.574	High-quality	100.0	mosaic
+0_0288	2	4315	6082	1.409	Low-quality	10.62	ok
+0_0289	100	5132	149978	29.224	High-quality	100.0	mosaic
+0_0290	100	28574	150000	5.25	High-quality	99.26	mosaic
+0_0291	67	31964	150000	4.693	High-quality	99.89	mosaic
+0_0292	10	34150	65941	1.931	Medium-quality	86.0	mosaic
+0_0293	59	45270	150000	3.313	High-quality	99.39	mosaic
+0_0294	100	16335	149897	9.176	High-quality	100.0	mosaic
+0_0295	100	11987	149995	12.513	High-quality	100.0	mosaic
+0_0296	17	1641	1641	1.0	Low-quality	2.6	ok
+0_0297	1	956	956	1.0	Low-quality	1.92	ok
+0_0298	56	32832	149999	4.569	High-quality	99.57	mosaic
+0_0299	100	3242	111889	34.512	High-quality	93.58	mosaic
+0_0300	100	2889	79823	27.63	High-quality	92.96	mosaic
+0_0301	59	37777	149710	3.963	High-quality	100.0	mosaic
+0_0302	5	7425	8877	1.196	Low-quality	11.6	ok
+0_0303	12	5948	5948	1.0	Low-quality	10.11	ok
+0_0304	100	30922	150000	4.851	High-quality	99.84	mosaic
+0_0305	100	731	89756	122.785	Medium-quality	61.88	mosaic
+0_0306	100	7695	149964	19.488	High-quality	100.0	mosaic
+0_0307	100	34343	150000	4.368	High-quality	100.0	mosaic
+0_0308	29	61393	150000	2.443	High-quality	99.77	mosaic
+0_0309	85	9019	149855	16.615	Medium-quality	81.68	mosaic
+0_0310	100	9038	149937	16.59	High-quality	100.0	mosaic
+0_0311	12	6729	16139	2.398	Low-quality	21.09	mosaic
+0_0312	14	11530	18422	1.598	Low-quality	15.73	mosaic
+0_0313	100	1669	135438	81.149	High-quality	100.0	mosaic
+0_0314	1	2935	2935	1.0	Low-quality	5.4	ok
+0_0315	51	1908	33890	17.762	Medium-quality	62.15	mosaic
+0_0316	18	10771	121159	11.249	Not-determined		mosaic
+0_0317	77	23476	150000	6.39	High-quality	99.06	mosaic
+0_0318	91	33168	149990	4.522	High-quality	99.94	mosaic
+0_0319	91	5887	149840	25.453	High-quality	100.0	mosaic
+0_0320	44	5445	83122	15.266	High-quality	96.03	mosaic
+0_0321	55	2686	74661	27.796	High-quality	92.7	mosaic
+0_0322	100	31698	149985	4.732	High-quality	99.22	mosaic
+0_0323	100	30233	149875	4.957	High-quality	100.0	mosaic
+0_0324	19	5162	26448	5.124	Not-determined		mosaic
+0_0325	82	22968	150000	6.531	High-quality	100.0	mosaic
+0_0326	100	7784	149894	19.257	Not-determined		mosaic
+0_0327	3	1080	2140	1.981	Not-determined		mosaic
+0_0328	2	2085	2085	1.0	Low-quality	3.44	ok
+0_0329	4	29055	31532	1.085	Low-quality	41.7	ok
+0_0330	2	7627	15129	1.984	Low-quality	18.61	mosaic
+0_0331	100	8281	149694	18.077	Not-determined		mosaic
+0_0332	100	7695	149730	19.458	High-quality	100.0	mosaic
+0_0333	45	8281	101129	12.212	Not-determined		mosaic
+0_0334	100	5666	149998	26.473	High-quality	99.83	mosaic
+0_0335	82	6009	149908	24.947	High-quality	100.0	mosaic
+0_0336	48	4891	139876	28.599	High-quality	100.0	mosaic
+0_0337	49	45370	149978	3.306	High-quality	100.0	mosaic
+0_0338	100	5574	149983	26.908	High-quality	100.0	mosaic
+0_0339	100	3721	149727	40.238	High-quality	96.28	mosaic
+0_0340	100	3173	149949	47.258	High-quality	100.0	mosaic
+0_0341	100	23235	149995	6.456	High-quality	99.97	mosaic
+0_0342	100	4776	149577	31.318	Not-determined		mosaic
+0_0343	99	3391	149986	44.231	Not-determined		mosaic
+0_0344	100	23235	149991	6.455	High-quality	99.89	mosaic
+0_0345	10	19060	29075	1.525	Low-quality	44.72	mosaic
+0_0346	100	3721	149576	40.198	Not-determined		mosaic
+0_0347	100	30167	149882	4.968	High-quality	100.0	mosaic
+0_0348	88	3173	149765	47.2	High-quality	100.0	mosaic
+0_0349	85	2107	149720	71.058	Not-determined		mosaic
+0_0350	6	8703	17043	1.958	Low-quality	25.99	mosaic
+0_0351	1	1077	1077	1.0	Low-quality	2.14	ok
+0_0352	56	15645	150000	9.588	High-quality	99.43	mosaic
+0_0353	19	7539	34206	4.537	Not-determined		mosaic
+0_0354	55	5387	149748	27.798	Not-determined		mosaic
+0_0355	100	11390	149952	13.165	High-quality	100.0	mosaic
+0_0356	33	14370	149989	10.438	High-quality	100.0	mosaic
+0_0357	1	6000	6000	1.0	Low-quality	7.18	ok
+0_0358	3	7580	46036	6.073	Medium-quality	68.59	mosaic
+0_0359	100	21488	149570	6.961	High-quality	100.0	mosaic
+0_0360	63	20346	149997	7.372	High-quality	100.0	mosaic
+0_0361	10	43851	71403	1.628	Medium-quality	85.38	mosaic
+0_0362	100	6280	149816	23.856	Not-determined		mosaic
+0_0363	54	6280	149589	23.82	Not-determined		mosaic
+0_0364	51	20099	149916	7.459	High-quality	100.0	mosaic
+0_0365	53	6778	149691	22.085	High-quality	99.97	mosaic
+0_0366	8	3601	6045	1.679	Low-quality	7.0	mosaic
+0_0367	100	11913	150000	12.591	High-quality	100.0	mosaic
+0_0368	100	29509	149993	5.083	High-quality	99.76	mosaic
+0_0369	26	42662	150000	3.516	High-quality	99.97	mosaic
+0_0370	1	2788	2788	1.0	Not-determined		ok
+0_0371	2	41211	81609	1.98	High-quality	96.63	mosaic
+0_0372	100	4203	138182	32.877	High-quality	100.0	mosaic
+0_0373	100	30575	150000	4.906	High-quality	100.0	mosaic
+0_0374	1	943	943	1.0	Low-quality	1.49	ok
+0_0375	26	3181	3177	0.999	Low-quality	2.16	ok
+0_0376	21	10879	123500	11.352	High-quality	95.91	mosaic
+0_0377	100	680	75761	111.413	Not-determined		mosaic
+0_0378	5	1499	2981	1.989	Not-determined		mosaic
+0_0379	27	8177	19649	2.403	Low-quality	31.84	mosaic
+0_0380	78	49232	150000	3.047	High-quality	99.4	mosaic
+0_0381	70	21369	149995	7.019	High-quality	100.0	mosaic
+0_0382	38	32456	149998	4.622	High-quality	99.8	mosaic
+0_0383	21	680	680	1.0	Not-determined		ok
+0_0384	32	3638	42029	11.553	Low-quality	47.0	mosaic
+0_0385	16	11139	29360	2.636	Medium-quality	51.43	mosaic
+0_0386	2	11966	23704	1.981	Not-determined		mosaic
+0_0387	56	36010	149999	4.165	High-quality	100.0	mosaic
+0_0388	49	6849	149946	21.893	High-quality	100.0	mosaic
+0_0389	100	9172	149885	16.342	High-quality	100.0	mosaic
+0_0390	15	9172	18177	1.982	Low-quality	15.87	mosaic
+0_0391	100	43663	150000	3.435	High-quality	99.57	mosaic
+0_0392	72	8462	149994	17.726	High-quality	100.0	mosaic
+0_0393	4	11996	16784	1.399	Low-quality	9.07	ok
+0_0394	100	44503	149978	3.37	High-quality	100.0	mosaic
+0_0395	9	41023	27228	0.664	Low-quality	37.33	ok
+0_0396	3	25742	25742	1.0	Low-quality	38.74	ok
+0_0397	45	5713	147589	25.834	High-quality	100.0	mosaic
+0_0398	100	10097	149991	14.855	High-quality	100.0	mosaic
+0_0399	40	34239	150000	4.381	High-quality	99.51	mosaic
+0_0400	36	31206	149976	4.806	High-quality	100.0	mosaic
+0_0401	94	3008	149598	49.733	High-quality	91.29	mosaic
+0_0402	4	638	1429	2.24	Low-quality	2.26	mosaic
+0_0403	91	41905	149996	3.579	High-quality	99.6	mosaic
+0_0404	12	5356	21013	3.923	Not-determined		mosaic
+0_0405	4	8075	25039	3.101	Low-quality	30.83	mosaic
+0_0406	16	40658	46524	1.144	Medium-quality	70.19	ok
+0_0407	58	9391	149993	15.972	High-quality	99.28	mosaic
+0_0408	1	19175	19175	1.0	Low-quality	36.42	ok
+0_0409	79	46990	150000	3.192	High-quality	99.75	mosaic
+0_0410	87	7054	149923	21.254	High-quality	98.34	mosaic
+0_0411	32	39572	149998	3.791	High-quality	100.0	mosaic
+0_0412	72	3100	126476	40.799	High-quality	100.0	mosaic
+0_0413	79	5421	149920	27.655	High-quality	100.0	mosaic
+0_0414	79	11674	149740	12.827	High-quality	100.0	mosaic
+0_0415	13	6283	34573	5.503	Medium-quality	52.77	mosaic
+0_0416	1	12908	12908	1.0	Low-quality	24.04	ok
+0_0417	29	10746	23180	2.157	Low-quality	32.46	mosaic
+0_0418	53	23292	149999	6.44	High-quality	100.0	mosaic
+0_0419	13	9143	24562	2.686	Low-quality	30.8	mosaic
+0_0420	1	3465	3465	1.0	Low-quality	5.98	ok
+0_0421	18	4798	22094	4.605	Low-quality	29.51	mosaic
+0_0422	13	5576	15528	2.785	Low-quality	24.8	mosaic
+0_0423	66	11759	149995	12.756	Not-determined		mosaic
+0_0424	52	6341	149603	23.593	High-quality	91.44	mosaic
+0_0425	9	9108	27692	3.04	Low-quality	38.77	mosaic
+0_0426	13	15713	87507	5.569	High-quality	96.74	mosaic
+0_0427	63	14043	149995	10.681	High-quality	99.41	mosaic
+0_0428	58	6759	149950	22.185	Not-determined		mosaic
+0_0429	7	8948	13965	1.561	Low-quality	23.45	mosaic
+0_0430	7	7131	26949	3.779	Low-quality	26.93	mosaic
+0_0431	63	7389	149947	20.293	High-quality	100.0	mosaic
+0_0432	24	32043	110352	3.444	High-quality	98.66	mosaic
+0_0433	59	11641	149700	12.86	Not-determined		mosaic
+0_0434	15	50572	97877	1.935	High-quality	100.0	mosaic
+0_0435	18	2474	59282	23.962	Medium-quality	54.43	mosaic
+0_0436	1	2483	2483	1.0	Low-quality	4.38	ok
+0_0437	58	46824	150000	3.203	High-quality	100.0	mosaic
+0_0438	13	6292	10762	1.71	Low-quality	2.83	mosaic
+0_0439	58	6446	149855	23.248	High-quality	100.0	mosaic
+0_0440	58	4345	149905	34.501	High-quality	99.32	mosaic
+0_0441	14	6495	31654	4.874	Low-quality	44.1	mosaic
+0_0442	57	23131	149976	6.484	High-quality	100.0	mosaic
+0_0443	24	2079	10898	5.242	Not-determined		mosaic
+0_0444	1	3826	3826	1.0	Low-quality	4.49	ok
+0_0445	6	39848	52642	1.321	Medium-quality	65.56	ok
+0_0446	4	10366	72264	6.971	High-quality	100.0	mosaic
+0_0447	3	1896	6556	3.458	Low-quality	15.5	mosaic
+0_0448	1	1844	1844	1.0	Low-quality	1.99	ok
+0_0449	14	10003	34461	3.445	Low-quality	44.25	mosaic
+0_0450	50	2303	66368	28.818	High-quality	100.0	mosaic
+0_0451	3	17022	33715	1.981	Medium-quality	51.49	mosaic
+0_0452	50	18276	149840	8.199	High-quality	100.0	mosaic
+0_0453	27	32597	85832	2.633	High-quality	94.99	mosaic
+0_0454	3	5131	15015	2.926	Low-quality	13.11	mosaic
+0_0455	29	24747	81274	3.284	High-quality	95.19	mosaic
+0_0456	6	7035	40406	5.744	Medium-quality	53.27	mosaic
+0_0457	47	2732	90007	32.945	High-quality	100.0	mosaic
+0_0458	44	5471	140313	25.647	High-quality	100.0	mosaic
+0_0459	9	37121	59886	1.613	Medium-quality	78.01	mosaic
+0_0460	14	11958	98555	8.241	High-quality	100.0	mosaic
+0_0461	2	4883	4883	1.0	Low-quality	6.34	ok
+0_0462	1	3320	3320	1.0	Low-quality	4.07	ok
+0_0463	6	6646	38361	5.772	Medium-quality	60.24	mosaic
+0_0464	2	13476	26640	1.977	Low-quality	41.49	mosaic
+0_0465	21	44752	80453	1.798	High-quality	94.3	mosaic
+0_0466	3	30092	57494	1.911	High-quality	100.0	mosaic
+0_0467	43	4839	149674	30.931	High-quality	100.0	mosaic
+0_0468	2	15397	28254	1.835	Low-quality	44.59	mosaic
+0_0469	1	11219	11219	1.0	Low-quality	20.62	ok
+0_0470	34	3438	75102	21.845	High-quality	91.12	mosaic
+0_0471	27	9982	12000	1.202	Not-determined		ok
+0_0472	6	41774	102550	2.455	High-quality	97.26	mosaic
+0_0473	40	20001	149953	7.497	High-quality	100.0	mosaic
+0_0474	2	1176	1176	1.0	Not-determined		ok
+0_0475	38	10414	149874	14.392	Medium-quality	60.19	mosaic
+0_0476	5	3334	11734	3.519	Low-quality	15.49	mosaic
+0_0477	35	7041	94446	13.414	High-quality	96.77	mosaic
+0_0478	4	25248	91505	3.624	High-quality	96.42	mosaic
+0_0479	16	34961	79419	2.272	High-quality	95.36	mosaic
+0_0480	36	9324	149767	16.063	High-quality	100.0	mosaic
+0_0481	36	1076	27976	26.0	Low-quality	37.98	mosaic
+0_0482	12	9938	21964	2.21	Low-quality	19.97	mosaic
+0_0483	26	9908	42623	4.302	Low-quality	37.22	mosaic
+0_0484	12	3888	23555	6.058	Low-quality	28.46	mosaic
+0_0485	31	3855	37628	9.761	Low-quality	24.47	mosaic
+0_0486	3	8352	18763	2.247	Low-quality	12.78	mosaic
+0_0487	2	10249	20321	1.983	Low-quality	33.21	mosaic
+0_0488	12	33738	137180	4.066	High-quality	99.52	mosaic
+0_0489	7	12907	14344	1.111	Low-quality	17.08	ok
+0_0490	33	43077	150000	3.482	High-quality	98.89	mosaic
+0_0491	5	42804	119796	2.799	High-quality	100.0	mosaic
+0_0492	1	5010	5010	1.0	Low-quality	6.58	ok
+0_0493	5	9793	39074	3.99	Medium-quality	51.25	mosaic
+0_0494	4	14059	54845	3.901	Medium-quality	69.85	mosaic
+0_0495	4	31452	50551	1.607	Medium-quality	77.9	mosaic
+0_0496	32	8551	94941	11.103	High-quality	99.01	mosaic
+0_0497	2	18951	18951	1.0	Low-quality	32.28	ok
+0_0498	5	5282	24967	4.727	Low-quality	15.75	mosaic
+0_0499	4	813	813	1.0	Not-determined		ok
+0_0500	31	6010	80535	13.4	Low-quality	36.26	mosaic
+0_0501	20	4800	14836	3.091	Low-quality	11.35	mosaic
+0_0502	5	4519	26509	5.866	Low-quality	34.48	mosaic
+0_0503	10	32148	42903	1.335	Medium-quality	60.86	ok
+0_0504	1	4444	4444	1.0	Not-determined		ok
+0_0505	1	1892	1892	1.0	Low-quality	4.14	ok
+0_0506	21	4435	10784	2.432	Low-quality	12.5	mosaic
+0_0507	17	53636	36379	0.678	Low-quality	48.57	ok
+0_0508	28	14790	29309	1.982	Low-quality	32.64	mosaic
+0_0509	11	8806	19430	2.206	Low-quality	37.55	mosaic
+0_0510	28	15051	39062	2.595	Low-quality	46.81	mosaic
+0_0511	28	5935	23037	3.882	Low-quality	25.69	mosaic
+0_0512	18	1549	44423	28.679	Medium-quality	88.03	mosaic
+0_0513	5	2093	4147	1.981	Low-quality	3.13	mosaic
+0_0514	2	19408	37202	1.917	Not-determined		mosaic
+0_0515	4	17105	27809	1.626	Medium-quality	50.61	mosaic
+0_0516	22	9733	47577	4.888	High-quality	93.82	mosaic
+0_0517	24	11741	46434	3.955	Not-determined		mosaic
+0_0518	12	33969	97521	2.871	High-quality	96.26	mosaic
+0_0519	4	6260	28524	4.557	Not-determined		mosaic
+0_0520	1	1658	1658	1.0	Not-determined		ok
+0_0521	11	11699	31624	2.703	Not-determined		mosaic
+0_0522	25	4271	1729	0.405	Low-quality	3.49	ok
+0_0523	1	2490	2490	1.0	Low-quality	5.32	ok
+0_0524	2	4318	8514	1.972	Not-determined		mosaic
+0_0525	2	8333	9186	1.102	Low-quality	12.46	ok
+0_0526	24	11042	22504	2.038	Not-determined		mosaic
+0_0527	22	32956	39610	1.202	Medium-quality	51.16	ok
+0_0528	7	8776	25357	2.889	Low-quality	30.64	mosaic
+0_0529	4	31712	53774	1.696	Medium-quality	84.74	mosaic
+0_0530	3	8006	14148	1.767	Low-quality	25.79	mosaic
+0_0531	4	5186	9243	1.782	Low-quality	8.92	mosaic
+0_0532	1	1706	1706	1.0	Low-quality	2.64	ok
+0_0533	2	33531	66253	1.976	High-quality	100.0	mosaic
+0_0534	6	63354	133773	2.112	High-quality	99.48	mosaic
+0_0535	3	44518	81033	1.82	High-quality	95.26	mosaic
+0_0536	2	19036	25344	1.331	Low-quality	5.57	ok
+0_0537	2	19194	25598	1.334	Low-quality	35.01	ok
+0_0538	6	7638	14737	1.929	Not-determined		mosaic
+0_0539	1	17982	17982	1.0	Low-quality	26.79	ok
+0_0540	20	3636	10275	2.826	Low-quality	11.73	mosaic
+0_0541	21	3698	7165	1.938	Low-quality	6.48	mosaic
+0_0542	2	728	1446	1.986	Not-determined		mosaic
+0_0543	5	5051	14581	2.887	Low-quality	21.17	mosaic
+0_0544	8	5537	42329	7.645	Medium-quality	60.47	mosaic
+0_0545	5	7221	13586	1.881	Low-quality	18.28	mosaic
+0_0546	1	11890	11890	1.0	Low-quality	22.14	ok
+0_0547	11	12653	97205	7.682	High-quality	100.0	mosaic
+0_0548	8	7072	13558	1.917	Not-determined		mosaic
+0_0549	1	1436	1436	1.0	Not-determined		ok
+0_0550	11	18329	30387	1.658	Not-determined		mosaic
+0_0551	3	6008	19782	3.293	Not-determined		mosaic
+0_0552	5	46071	74389	1.615	Medium-quality	85.62	mosaic
+0_0553	3	3425	12484	3.645	Not-determined		mosaic
+0_0554	2	13742	22829	1.661	Low-quality	31.78	mosaic
+0_0555	1	41376	41376	1.0	Medium-quality	88.79	ok
+0_0556	1	9249	9249	1.0	Not-determined		ok
+0_0557	11	56246	111380	1.98	High-quality	97.85	mosaic
+0_0558	4	41657	118476	2.844	High-quality	99.1	mosaic
+0_0559	8	8790	35405	4.028	Low-quality	48.73	mosaic
+0_0560	17	41833	69529	1.662	High-quality	90.09	mosaic
+0_0561	10	31225	101650	3.255	High-quality	96.98	mosaic
+0_0562	13	8798	22053	2.507	Low-quality	27.33	mosaic
+0_0563	2	6735	11144	1.655	Low-quality	14.19	mosaic
+0_0564	3	8029	34716	4.324	Not-determined		mosaic
+0_0565	15	3338	6997	2.096	Low-quality	5.22	mosaic
+0_0566	2	8664	17214	1.987	Not-determined		mosaic
+0_0567	1	2342	2342	1.0	Low-quality	4.64	ok
+0_0568	8	11236	22278	1.983	Low-quality	24.67	mosaic
+0_0569	2	47507	78950	1.662	High-quality	95.6	mosaic
+0_0570	7	4632	8113	1.752	Low-quality	8.78	mosaic
+0_0571	13	43283	72850	1.683	High-quality	94.64	mosaic
+0_0572	13	20253	31338	1.547	Low-quality	14.11	mosaic
+0_0573	1	1748	1748	1.0	Low-quality	2.15	ok
+0_0574	10	30417	52077	1.712	Medium-quality	72.78	mosaic
+0_0575	2	78643	131766	1.675	High-quality	100.0	mosaic
+0_0576	7	7764	16427	2.116	Low-quality	23.51	mosaic
+0_0577	3	1917	6351	3.313	Low-quality	4.59	mosaic
+0_0578	1	5996	5996	1.0	Low-quality	12.3	ok
+0_0579	6	7462	14788	1.982	Not-determined		mosaic
+0_0580	12	30462	66867	2.195	Medium-quality	89.85	mosaic
+0_0581	10	12156	38050	3.13	Low-quality	49.7	mosaic
+0_0582	12	25900	31119	1.202	Low-quality	45.49	ok
+0_0583	1	8998	8998	1.0	Low-quality	17.77	ok
+0_0584	2	6266	10121	1.615	Low-quality	6.27	mosaic
+0_0585	2	36175	71518	1.977	Medium-quality	87.22	mosaic
+0_0586	1	45023	45023	1.0	Medium-quality	86.83	ok
+0_0587	2	4107	5084	1.238	Not-determined		ok
+0_0588	6	35304	111629	3.162	High-quality	100.0	mosaic
+0_0589	1	20122	20122	1.0	Low-quality	40.89	ok
+0_0590	3	8002	16156	2.019	Low-quality	14.61	mosaic
+0_0591	3	8973	19389	2.161	Not-determined		mosaic
+0_0592	2	8151	8143	0.999	Not-determined		ok
+0_0593	6	7574	12248	1.617	Not-determined		mosaic
+0_0594	6	10880	23274	2.139	Low-quality	20.52	mosaic
+0_0595	11	8350	8350	1.0	Not-determined		ok
+0_0596	4	6080	14546	2.392	Low-quality	21.1	mosaic
+0_0597	2	19854	19854	1.0	Not-determined		ok
+0_0598	10	11041	22569	2.044	Low-quality	24.53	mosaic
+0_0599	5	9229	10029	1.087	Not-determined		ok
+0_0600	8	237	237	1.0	Not-determined		ok
+0_0601	9	21733	52054	2.395	Medium-quality	62.97	mosaic
+0_0602	1	51081	51081	1.0	High-quality	98.55	ok
+0_0603	9	5823	16058	2.758	Low-quality	17.61	mosaic
+0_0604	3	8114	17626	2.172	Low-quality	28.22	mosaic
+0_0605	2	23296	23296	1.0	Low-quality	44.24	ok
+0_0606	10	27491	45607	1.659	Medium-quality	57.72	mosaic
+0_0607	4	1276	8848	6.934	Low-quality	6.03	mosaic
+0_0608	1	1717	1717	1.0	Not-determined		ok
+0_0609	9	10563	14361	1.36	Low-quality	18.23	ok
+0_0610	7	6331	12742	2.013	Low-quality	17.53	mosaic
+0_0611	4	39836	44159	1.109	Medium-quality	57.72	ok
+0_0612	2	9133	18115	1.983	Low-quality	25.48	mosaic
+0_0613	3	25624	17875	0.698	Low-quality	25.91	ok
+0_0614	5	29079	36514	1.256	Low-quality	49.28	ok
+0_0615	10	10813	74578	6.897	High-quality	100.0	mosaic
+0_0616	9	52162	52302	1.003	Medium-quality	80.4	ok
+0_0617	1	5528	5528	1.0	Low-quality	8.0	ok
+0_0618	9	5709	12274	2.15	Low-quality	18.14	mosaic
+0_0619	9	3385	4795	1.417	Low-quality	8.47	ok
+0_0620	9	6837	17721	2.592	Low-quality	29.07	mosaic
+0_0621	3	10649	19658	1.846	Not-determined		mosaic
+0_0622	5	46027	95962	2.085	High-quality	95.68	mosaic
+0_0623	1	3339	3339	1.0	Not-determined		ok
+0_0624	2	30853	51782	1.678	Medium-quality	66.32	mosaic
+0_0625	2	9951	19648	1.974	Not-determined		mosaic
+0_0626	8	3343	4704	1.407	Not-determined		ok
+0_0627	2	53486	105960	1.981	High-quality	100.0	mosaic
+0_0628	2	13783	13783	1.0	Not-determined		ok
+0_0629	2	3916	5102	1.303	Low-quality	2.18	ok
+0_0630	8	2281	4526	1.984	Not-determined		mosaic
+0_0631	8	9579	23933	2.498	Not-determined		mosaic
+0_0632	1	13296	13296	1.0	Low-quality	17.58	ok
+0_0633	8	12978	13752	1.06	Not-determined		ok
+0_0634	7	23776	30680	1.29	Low-quality	43.83	ok
+0_0635	8	32987	56811	1.722	Medium-quality	78.96	mosaic
+0_0636	3	13205	40961	3.102	Not-determined		mosaic
+0_0637	1	650	650	1.0	Not-determined		ok
+0_0638	1	6724	6724	1.0	Not-determined		ok
+0_0639	7	6376	23474	3.682	Low-quality	24.97	mosaic
+0_0640	1	29651	29651	1.0	Low-quality	47.33	ok
+0_0641	1	4696	4696	1.0	Not-determined		ok
+0_0642	1	7752	7752	1.0	Not-determined		ok
+0_0643	4	40398	101404	2.51	High-quality	97.45	mosaic
+0_0644	2	11657	23116	1.983	Low-quality	32.2	mosaic
+0_0645	2	7365	7395	1.004	Low-quality	13.01	ok
+0_0646	3	3487	5910	1.695	Not-determined		mosaic
+0_0647	3	36972	64094	1.734	Medium-quality	72.93	mosaic
+0_0648	4	4699	10435	2.221	Not-determined		mosaic
+0_0649	7	17392	27625	1.588	Medium-quality	50.81	mosaic
+0_0650	7	8846	17529	1.982	Low-quality	19.71	mosaic
+0_0651	3	4616	9147	1.982	Low-quality	14.86	mosaic
+0_0652	1	3861	3861	1.0	Not-determined		ok
+0_0653	7	25087	85234	3.398	High-quality	95.2	mosaic
+0_0654	7	29289	31683	1.082	Low-quality	12.01	ok
+0_0655	2	5561	11034	1.984	Low-quality	1.76	mosaic
+0_0656	6	4351	7187	1.652	Not-determined		mosaic
+0_0657	3	6554	10817	1.65	Low-quality	12.67	mosaic
+0_0658	7	1159	15483	13.359	Low-quality	13.52	mosaic
+0_0659	2	4412	8680	1.967	Low-quality	12.49	mosaic
+0_0660	4	2531	12101	4.78	Low-quality	6.86	mosaic
+0_0661	1	11630	11630	1.0	Not-determined		ok
+0_0662	1	33174	33174	1.0	Medium-quality	60.15	ok
+0_0663	1	15764	15764	1.0	Not-determined		ok
+0_0664	1	5877	5877	1.0	Low-quality	4.46	ok
+0_0665	6	2098	4161	1.983	Not-determined		mosaic
+0_0666	3	6190	28840	4.659	Not-determined		mosaic
+0_0667	1	36679	36679	1.0	Medium-quality	87.76	ok
+0_0668	1	2385	2385	1.0	Low-quality	3.95	ok
+0_0669	1	4154	4154	1.0	Low-quality	7.25	ok
+0_0670	6	2704	18060	6.679	Low-quality	25.71	mosaic
+0_0671	6	2520	2520	1.0	Low-quality	0.99	ok
+0_0672	6	17492	34658	1.981	Medium-quality	54.73	mosaic
+0_0673	1	20515	20515	1.0	Low-quality	46.8	ok
+0_0674	5	24808	70936	2.859	High-quality	92.78	mosaic
+0_0675	6	6399	12676	1.981	Low-quality	20.85	mosaic
+0_0676	6	3791	6687	1.764	Low-quality	10.67	mosaic
+0_0677	6	3082	13328	4.324	Low-quality	18.66	mosaic
+0_0678	3	1051	1051	1.0	Not-determined		ok
+0_0679	3	3653	7237	1.981	Low-quality	10.18	mosaic
+0_0680	4	3394	11049	3.255	Low-quality	10.96	mosaic
+0_0681	1	3644	3644	1.0	Low-quality	4.1	ok
+0_0682	1	20232	20232	1.0	Low-quality	35.28	ok
+0_0683	1	1046	1046	1.0	Low-quality	1.48	ok
+0_0684	3	2814	10906	3.876	Low-quality	18.59	mosaic
+0_0685	1	9063	9063	1.0	Low-quality	18.8	ok
+0_0686	2	936	1855	1.982	Not-determined		mosaic
+0_0687	2	4694	9220	1.964	Low-quality	7.81	mosaic
+0_0688	1	8931	8931	1.0	Low-quality	19.89	ok
+0_0689	5	5110	13121	2.568	Low-quality	23.42	mosaic
+0_0690	2	11374	11374	1.0	Low-quality	9.93	ok
+0_0691	5	8426	8426	1.0	Not-determined		ok
+0_0692	2	4763	4763	1.0	Low-quality	8.0	ok
+0_0693	4	7330	14536	1.983	Not-determined		mosaic
+0_0694	5	15743	21832	1.387	Low-quality	19.62	ok
+0_0695	5	3900	3900	1.0	Low-quality	3.56	ok
+0_0696	2	22025	22037	1.001	Low-quality	33.42	ok
+0_0697	1	23541	23541	1.0	Not-determined		ok
+0_0698	4	5883	14445	2.455	Low-quality	30.75	mosaic
+0_0699	1	5224	5224	1.0	Low-quality	9.56	ok
+0_0700	1	6657	6657	1.0	Low-quality	8.78	ok
+0_0701	5	3535	7321	2.071	Not-determined		mosaic
+0_0702	3	16640	73793	4.435	Medium-quality	81.54	mosaic
+0_0703	2	4970	8933	1.797	Not-determined		mosaic
+0_0704	2	7464	14340	1.921	Low-quality	19.98	mosaic
+0_0705	5	9054	12211	1.349	Low-quality	17.73	ok
+0_0706	5	15543	66267	4.263	Medium-quality	82.13	mosaic
+0_0707	2	7898	7898	1.0	Low-quality	15.55	ok
+0_0708	2	2622	2622	1.0	Not-determined		ok
+0_0709	5	9734	7826	0.804	Low-quality	10.85	ok
+0_0710	3	9560	9560	1.0	Low-quality	15.2	ok
+0_0711	1	9343	9343	1.0	Not-determined		ok
+0_0712	4	8957	22326	2.493	Low-quality	32.41	mosaic
+0_0713	4	9999	23197	2.32	Not-determined		mosaic
+0_0714	1	9131	9131	1.0	Not-determined		ok
+0_0715	3	15809	20399	1.29	Not-determined		ok
+0_0716	2	1724	3423	1.985	Low-quality	5.63	mosaic
+0_0717	2	4405	4405	1.0	Low-quality	7.5	ok
+0_0718	3	7567	11283	1.491	Low-quality	14.39	ok
+0_0719	4	3105	6970	2.244	Low-quality	9.71	mosaic
+0_0720	5	2286	4534	1.983	Not-determined		mosaic
+0_0721	2	23523	45542	1.936	Medium-quality	68.87	mosaic
+0_0722	4	7078	11480	1.622	Low-quality	15.15	mosaic
+0_0723	5	1866	4712	2.525	Low-quality	8.88	mosaic
+0_0724	1	4555	4555	1.0	Low-quality	7.22	ok
+0_0725	4	9332	17045	1.826	Low-quality	24.48	mosaic
+0_0726	4	5196	8233	1.584	Low-quality	5.52	mosaic
+0_0727	3	7769	20617	2.654	Low-quality	25.67	mosaic
+0_0728	2	18342	34133	1.861	Low-quality	42.47	mosaic
+0_0729	1	3619	3619	1.0	Low-quality	6.77	ok
+0_0730	1	819	819	1.0	Low-quality	1.44	ok
+0_0731	4	10931	16115	1.474	Not-determined		ok
+0_0732	4	16270	32243	1.982	Not-determined		mosaic
+0_0733	4	11855	23480	1.981	Low-quality	40.61	mosaic
+0_0734	4	36803	72886	1.98	High-quality	98.17	mosaic
+0_0735	3	8567	16983	1.982	Low-quality	23.85	mosaic
+0_0736	4	12303	24379	1.982	Low-quality	24.81	mosaic
+0_0737	4	12622	28102	2.226	Low-quality	18.36	mosaic
+0_0738	4	15390	30495	1.981	Low-quality	35.47	mosaic
+0_0739	4	11346	22492	1.982	Not-determined		mosaic
+0_0740	2	4394	8712	1.983	Not-determined		mosaic
+0_0741	1	41796	41796	1.0	Medium-quality	69.79	ok
+0_0742	2	1514	1514	1.0	Low-quality	1.37	ok
+0_0743	3	3220	8184	2.542	Low-quality	12.04	mosaic
+0_0744	1	2193	2193	1.0	Low-quality	2.32	ok
+0_0745	1	44169	44169	1.0	Medium-quality	85.02	ok
+0_0746	1	3228	3228	1.0	Low-quality	5.93	ok
+0_0747	4	3276	9333	2.849	Low-quality	13.33	mosaic
+0_0748	4	14084	26738	1.898	Low-quality	42.13	mosaic
+0_0749	3	3040	2532	0.833	Low-quality	3.37	ok
+0_0750	4	8226	11790	1.433	Low-quality	14.25	ok
+0_0751	4	18096	35850	1.981	Medium-quality	68.99	mosaic
+0_0752	4	4896	9710	1.983	Low-quality	10.86	mosaic
+0_0753	2	3525	7030	1.994	Not-determined		mosaic
+0_0754	4	8820	14652	1.661	Not-determined		mosaic
+0_0755	2	3843	7612	1.981	Low-quality	6.65	mosaic
+0_0756	3	13317	21832	1.639	Not-determined		mosaic
+0_0757	1	23193	23193	1.0	Low-quality	22.84	ok
+0_0758	4	46322	64756	1.398	High-quality	92.38	ok
+0_0759	1	7670	7670	1.0	Low-quality	5.63	ok
+0_0760	2	28488	30809	1.081	Medium-quality	61.58	ok
+0_0761	3	10840	27051	2.495	Not-determined		mosaic
+0_0762	1	12025	12025	1.0	Low-quality	7.97	ok
+0_0763	2	30212	30212	1.0	Medium-quality	58.45	ok
+0_0764	4	5547	10985	1.98	Low-quality	15.39	mosaic
+0_0765	1	3072	3072	1.0	Low-quality	1.86	ok
+0_0766	4	35117	103121	2.936	High-quality	96.08	mosaic
+0_0767	4	12205	18915	1.55	Not-determined		mosaic
+0_0768	3	33639	33639	1.0	Medium-quality	50.19	ok
+0_0769	1	10028	10028	1.0	Low-quality	12.12	ok
+0_0770	4	40721	80484	1.976	High-quality	95.05	mosaic
+0_0771	1	24823	24823	1.0	Not-determined		ok
+0_0772	3	5866	6509	1.11	Low-quality	2.93	ok
+0_0773	4	26975	33543	1.243	Medium-quality	57.29	ok
+0_0774	3	12008	23777	1.98	Low-quality	15.0	mosaic
+0_0775	4	22420	44061	1.965	Medium-quality	81.81	mosaic
+0_0776	2	2279	2279	1.0	Low-quality	3.67	ok
+0_0777	1	8168	8168	1.0	Low-quality	19.54	ok
+0_0778	1	1754	1754	1.0	Not-determined		ok
+0_0779	1	16122	16122	1.0	Low-quality	24.92	ok
+0_0780	4	38843	57457	1.479	Medium-quality	89.93	ok
+0_0781	2	4071	6556	1.61	Low-quality	5.86	mosaic
+0_0782	1	6031	6031	1.0	Low-quality	11.0	ok
+0_0783	4	3122	6332	2.028	Low-quality	9.15	mosaic
+0_0784	3	32297	45470	1.408	Medium-quality	73.09	ok
+0_0785	3	5801	11490	1.981	Low-quality	14.41	mosaic
+0_0786	3	6547	12964	1.98	Low-quality	15.79	mosaic
+0_0787	3	1303	2582	1.982	Not-determined		mosaic
+0_0788	3	1733	2224	1.283	Not-determined		ok
+0_0789	3	1052	2082	1.979	Low-quality	3.7	mosaic
+0_0790	3	1634	3235	1.98	Not-determined		mosaic
+0_0791	3	14102	20901	1.482	Not-determined		ok
+0_0792	3	11328	22448	1.982	Not-determined		mosaic
+0_0793	3	4340	6568	1.513	Low-quality	10.73	mosaic
+0_0794	2	41647	78616	1.888	High-quality	91.92	mosaic
+0_0795	2	7885	15587	1.977	Low-quality	26.07	mosaic
+0_0796	3	16631	28806	1.732	Low-quality	42.37	mosaic
+0_0797	3	3290	5685	1.728	Low-quality	7.98	mosaic
+0_0798	3	4372	8668	1.983	Not-determined		mosaic
+0_0799	3	2664	5274	1.98	Low-quality	4.56	mosaic
+0_0800	1	5467	5467	1.0	Low-quality	10.91	ok
+0_0801	3	5901	9366	1.587	Low-quality	11.85	mosaic
+0_0802	1	51917	51917	1.0	High-quality	100.0	ok
+0_0803	3	30081	54128	1.799	Medium-quality	69.77	mosaic
+0_0804	3	3359	2938	0.875	Low-quality	5.01	ok
+0_0805	3	2652	11968	4.513	Low-quality	16.67	mosaic
+0_0806	1	4687	4687	1.0	Not-determined		ok
+0_0807	3	4656	9226	1.982	Low-quality	18.22	mosaic
+0_0808	3	28605	56656	1.981	Medium-quality	74.07	mosaic
+0_0809	3	5917	5917	1.0	Low-quality	7.46	ok
+0_0810	3	35704	77877	2.181	High-quality	97.56	mosaic
+0_0811	3	7670	15201	1.982	Low-quality	9.81	mosaic
+0_0812	2	9520	17648	1.854	Low-quality	25.51	mosaic
+0_0813	1	11412	11412	1.0	Low-quality	18.84	ok
+0_0814	2	28821	57383	1.991	Medium-quality	83.31	mosaic
+0_0815	2	9504	18848	1.983	Not-determined		mosaic
+0_0816	2	4825	4825	1.0	Low-quality	9.91	ok
+0_0817	2	35365	69469	1.964	High-quality	100.0	mosaic
+0_0818	3	7621	15094	1.981	Not-determined		mosaic
+0_0819	2	43574	66957	1.537	Medium-quality	82.07	mosaic
+0_0820	3	35100	96489	2.749	High-quality	99.34	mosaic
+0_0821	1	6553	6553	1.0	Not-determined		ok
+0_0822	1	7889	7889	1.0	Low-quality	1.51	ok
+0_0823	1	1969	1969	1.0	Not-determined		ok
+0_0824	3	7364	9438	1.282	Low-quality	9.86	ok
+0_0825	2	2028	4005	1.974	Not-determined		mosaic
+0_0826	1	10837	10837	1.0	Low-quality	18.99	ok
+0_0827	3	15888	15888	1.0	Low-quality	8.99	ok
+0_0828	1	6637	6637	1.0	Not-determined		ok
+0_0829	2	19000	32849	1.729	Low-quality	47.27	mosaic
+0_0830	2	8519	16876	1.981	Not-determined		mosaic
+0_0831	2	24321	48143	1.979	Medium-quality	74.06	mosaic
+0_0832	1	34391	34391	1.0	Medium-quality	67.37	ok
+0_0833	1	20429	20429	1.0	Low-quality	14.64	ok
+0_0834	1	7599	7599	1.0	Low-quality	6.76	ok
+0_0835	1	19454	19454	1.0	Low-quality	35.31	ok
+0_0836	3	10501	11340	1.08	Low-quality	13.22	ok
+0_0837	3	3676	3676	1.0	Low-quality	5.16	ok
+0_0838	2	4008	7940	1.981	Low-quality	8.22	mosaic
+0_0839	2	29090	29090	1.0	Low-quality	47.84	ok
+0_0840	3	5814	14575	2.507	Low-quality	13.99	mosaic
+0_0841	1	7656	7656	1.0	Not-determined		ok
+0_0842	3	8630	24664	2.858	Low-quality	31.82	mosaic
+0_0843	1	26839	26839	1.0	Medium-quality	60.75	ok
+0_0844	2	8547	16938	1.982	Low-quality	21.75	mosaic
+0_0845	2	1675	3316	1.98	Low-quality	1.79	mosaic
+0_0846	1	17684	17684	1.0	Low-quality	34.13	ok
+0_0847	2	9603	10173	1.059	Low-quality	13.52	ok
+0_0848	1	4240	4240	1.0	Low-quality	4.34	ok
+0_0849	2	10463	20735	1.982	Low-quality	27.92	mosaic
+0_0850	2	28814	57068	1.981	High-quality	100.0	mosaic
+0_0851	2	9940	9940	1.0	Low-quality	11.84	ok
+0_0852	2	2788	5532	1.984	Low-quality	9.72	mosaic
+0_0853	2	29717	54120	1.821	Medium-quality	79.65	mosaic
+0_0854	1	46338	46338	1.0	Medium-quality	70.71	ok
+0_0855	2	38402	73207	1.906	High-quality	99.05	mosaic
+0_0856	2	3929	7788	1.982	Low-quality	4.21	mosaic
+0_0857	1	2252	2252	1.0	Low-quality	3.99	ok
+0_0858	2	12708	13868	1.091	Low-quality	17.82	ok
+0_0859	1	14873	14873	1.0	Low-quality	19.29	ok
+0_0860	2	12681	25138	1.982	Low-quality	42.68	mosaic
+0_0861	2	7921	15689	1.981	Low-quality	6.93	mosaic
+0_0862	2	43058	85301	1.981	Medium-quality	83.34	mosaic
+0_0863	2	34243	67720	1.978	Medium-quality	70.12	mosaic
+0_0864	2	11927	23635	1.982	Low-quality	24.86	mosaic
+0_0865	2	1856	1856	1.0	Not-determined		ok
+0_0866	2	5757	5757	1.0	Not-determined		ok
+0_0867	2	7171	7171	1.0	Low-quality	9.19	ok
+0_0868	2	12225	12225	1.0	Low-quality	17.22	ok
+0_0869	2	9552	18971	1.986	Low-quality	23.92	mosaic
+0_0870	2	9477	12572	1.327	Low-quality	15.25	ok
+0_0871	2	6030	11940	1.98	Not-determined		mosaic
+0_0872	2	7916	7916	1.0	Low-quality	10.82	ok
+0_0873	1	1112	1112	1.0	Low-quality	1.29	ok
+0_0874	2	3352	6643	1.982	Not-determined		mosaic
+0_0875	2	4240	4240	1.0	Low-quality	5.37	ok
+0_0876	2	9611	13772	1.433	Low-quality	22.52	ok
+0_0877	2	3494	3494	1.0	Low-quality	4.2	ok
+0_0878	2	8547	17064	1.996	Low-quality	20.81	mosaic
+0_0879	2	8621	17076	1.981	Not-determined		mosaic
+0_0880	2	10496	20798	1.982	Low-quality	20.22	mosaic
+0_0881	2	27495	27495	1.0	Low-quality	25.46	ok
+0_0882	2	37127	37127	1.0	Low-quality	37.13	ok
+0_0883	2	8821	17049	1.933	Low-quality	23.36	mosaic
+0_0884	2	7221	7221	1.0	Low-quality	5.26	ok
+0_0885	2	7834	7834	1.0	Low-quality	12.2	ok
+0_0886	2	14020	27785	1.982	Low-quality	49.02	mosaic
+0_0887	1	24230	24230	1.0	Not-determined		ok
+0_0888	2	4188	8312	1.984	Low-quality	7.26	mosaic
+0_0889	2	38985	38985	1.0	Low-quality	49.32	ok
+0_0890	2	8139	16135	1.982	Low-quality	25.48	mosaic
+0_0891	1	4942	4942	1.0	Low-quality	6.52	ok
+0_0892	1	7186	7186	1.0	Low-quality	9.66	ok
+0_0893	2	6690	13257	1.982	Low-quality	21.38	mosaic
+0_0894	2	2760	5471	1.982	Not-determined		mosaic
+0_0895	2	6759	13341	1.974	Not-determined		mosaic
+0_0896	2	2930	3738	1.276	Low-quality	4.76	ok
+0_0897	2	7525	7525	1.0	Low-quality	6.57	ok
+0_0898	2	2293	4546	1.983	Low-quality	5.86	mosaic
+0_0899	1	10172	10172	1.0	Low-quality	20.16	ok
+0_0900	2	12397	24422	1.97	Not-determined		mosaic
+0_0901	1	28674	28674	1.0	Medium-quality	56.48	ok
+0_0902	2	14158	28147	1.988	Low-quality	26.87	mosaic
+0_0903	1	7670	7670	1.0	Low-quality	13.53	ok
+0_0904	2	4899	5632	1.15	Not-determined		ok
+0_0905	2	11407	11407	1.0	Not-determined		ok
+0_0906	2	6155	12176	1.978	Low-quality	6.35	mosaic
+0_0907	2	9554	10371	1.085	Low-quality	18.02	ok
+0_0908	1	1715	1715	1.0	Low-quality	2.57	ok
+0_0909	1	8119	8119	1.0	Low-quality	12.74	ok
+0_0910	2	5184	5409	1.043	Low-quality	6.84	ok
+0_0911	2	4532	8973	1.98	Low-quality	11.35	mosaic
+0_0912	1	25806	25806	1.0	Low-quality	43.83	ok
+0_0913	2	4917	4917	1.0	Low-quality	3.17	ok
+0_0914	1	2769	2769	1.0	Not-determined		ok
+0_0915	2	19749	38787	1.964	Medium-quality	84.01	mosaic
+0_0916	2	9070	17979	1.982	Low-quality	33.38	mosaic
+0_0917	2	5303	5303	1.0	Low-quality	8.33	ok
+0_0918	2	23182	23182	1.0	Low-quality	31.01	ok
+0_0919	2	25990	25990	1.0	Low-quality	48.26	ok
+0_0920	1	3684	3684	1.0	Not-determined		ok
+0_0921	2	926	1840	1.987	Not-determined		mosaic
+0_0922	2	6561	12904	1.967	Not-determined		mosaic
+0_0923	2	8264	8264	1.0	Low-quality	13.77	ok
+0_0924	1	17369	17369	1.0	Low-quality	27.86	ok
+0_0925	1	33968	33968	1.0	Medium-quality	60.26	ok
+0_0926	1	4417	4417	1.0	Low-quality	8.03	ok
+0_0927	1	3959	3959	1.0	Low-quality	6.67	ok
+0_0928	2	53311	95697	1.795	High-quality	98.4	mosaic
+0_0929	1	24916	24916	1.0	Low-quality	46.62	ok
+0_0930	2	54087	54479	1.007	Medium-quality	67.87	ok
+0_0931	2	43503	86044	1.978	Medium-quality	79.12	mosaic
+0_0932	2	14265	28256	1.981	Low-quality	29.63	mosaic
+0_0933	2	12796	25308	1.978	Low-quality	21.37	mosaic
+0_0934	2	1903	3775	1.984	Low-quality	3.46	mosaic
+0_0935	2	6554	12987	1.982	Low-quality	17.39	mosaic
+0_0936	2	11511	11511	1.0	Low-quality	16.04	ok
+0_0937	2	9794	10552	1.077	Not-determined		ok
+0_0938	2	5647	11139	1.973	Low-quality	16.1	mosaic
+0_0939	2	12829	25272	1.97	Not-determined		mosaic
+0_0940	1	7127	7127	1.0	Low-quality	11.02	ok
+0_0941	1	6839	6839	1.0	Low-quality	11.58	ok
+0_0942	1	5793	5793	1.0	Low-quality	7.39	ok
+0_0943	1	11788	11788	1.0	Low-quality	21.45	ok
+0_0944	1	9080	9080	1.0	Low-quality	17.51	ok
+0_0945	2	16437	22885	1.392	Not-determined		ok
+0_0946	2	6182	6182	1.0	Not-determined		ok
+0_0947	1	3980	3980	1.0	Low-quality	8.53	ok
+0_0948	1	7047	7047	1.0	Low-quality	4.55	ok
+0_0949	1	3523	3523	1.0	Low-quality	6.21	ok
+0_0950	1	4054	4054	1.0	Low-quality	4.44	ok
+0_0951	1	3279	3279	1.0	Low-quality	6.06	ok
+0_0952	1	8616	8616	1.0	Low-quality	16.0	ok
+0_0953	1	25050	25050	1.0	Medium-quality	63.43	ok
+0_0954	1	9116	9116	1.0	Low-quality	16.59	ok
+0_0955	1	36879	36879	1.0	Medium-quality	52.51	ok
+0_0956	1	554	554	1.0	Low-quality	0.57	ok
+0_0957	1	7546	7546	1.0	Low-quality	14.37	ok
+0_0958	1	32447	32447	1.0	Medium-quality	53.69	ok
+0_0959	1	2585	2585	1.0	Low-quality	2.59	ok
+0_0960	1	10225	10225	1.0	Low-quality	15.54	ok
+0_0961	1	9168	9168	1.0	Low-quality	15.0	ok
+0_0962	1	15947	15947	1.0	Low-quality	28.13	ok
+0_0963	1	4149	4149	1.0	Low-quality	8.97	ok
+0_0964	1	4517	4517	1.0	Low-quality	8.23	ok
+0_0965	1	7633	7633	1.0	Low-quality	3.65	ok
+0_0966	1	9718	9718	1.0	Low-quality	11.29	ok
+0_0967	1	17563	17563	1.0	Low-quality	31.46	ok
+0_0968	1	17997	17997	1.0	Low-quality	32.13	ok
+0_0969	1	31366	31366	1.0	Medium-quality	76.87	ok
+0_0970	1	7784	7784	1.0	Low-quality	15.58	ok
+0_0971	1	14829	14829	1.0	Low-quality	33.3	ok
+0_0972	1	7748	7748	1.0	Low-quality	4.74	ok
+0_0973	1	4572	4572	1.0	Low-quality	6.39	ok
+0_0974	1	9224	9224	1.0	Low-quality	13.07	ok
+0_0975	1	7296	7296	1.0	Not-determined		ok
+0_0976	1	3112	3112	1.0	Not-determined		ok
+0_0977	1	2546	2546	1.0	Not-determined		ok
+0_0978	1	11880	11880	1.0	Not-determined		ok
+0_0979	1	27696	27696	1.0	Medium-quality	61.3	ok
+0_0980	1	5067	5067	1.0	Low-quality	13.43	ok
+0_0981	1	516	516	1.0	Not-determined		ok
+0_0982	1	5619	5619	1.0	Low-quality	14.75	ok
+0_0983	1	4852	4852	1.0	Not-determined		ok
+0_0984	1	3296	3296	1.0	Not-determined		ok
+0_0985	1	4512	4512	1.0	Not-determined		ok
+0_0986	1	2842	2842	1.0	Low-quality	3.34	ok
+0_0987	1	36024	36024	1.0	Medium-quality	63.89	ok
+0_0988	1	42964	42964	1.0	Medium-quality	72.61	ok
+0_0989	1	8201	8201	1.0	Low-quality	19.2	ok
+0_0990	1	3099	3099	1.0	Low-quality	6.63	ok
+0_0991	1	3567	3567	1.0	Low-quality	6.99	ok
+0_0992	1	2966	2966	1.0	Not-determined		ok
+0_0993	1	33137	33137	1.0	Low-quality	47.92	ok
+0_0994	1	4591	4591	1.0	Low-quality	5.11	ok
+0_0995	1	1057	1057	1.0	Low-quality	0.98	ok
+0_0996	1	13951	13951	1.0	Low-quality	13.95	ok
+0_0997	1	1712	1712	1.0	Not-determined		ok
+0_0998	1	8195	8195	1.0	Low-quality	9.43	ok
+0_0999	1	20074	20074	1.0	Not-determined		ok
+0_1000	1	8261	8261	1.0	Low-quality	0.38	ok
+0_1001	1	10079	10079	1.0	Not-determined		ok
+0_1002	1	12927	12927	1.0	Low-quality	2.57	ok
+0_1003	1	6392	6392	1.0	Not-determined		ok
+0_1004	1	34808	34808	1.0	Medium-quality	50.7	ok
+0_1005	1	12343	12343	1.0	Low-quality	11.39	ok
+0_1006	1	5916	5916	1.0	Low-quality	5.46	ok
+0_1007	1	4615	4615	1.0	Low-quality	10.03	ok
+0_1008	1	2920	2920	1.0	Low-quality	6.25	ok
+0_1009	1	11343	11343	1.0	Low-quality	21.05	ok
+0_1010	1	8632	8632	1.0	Low-quality	15.54	ok
+0_1011	1	13922	13922	1.0	Low-quality	21.78	ok
+0_1012	1	11407	11407	1.0	Low-quality	28.52	ok
+0_1013	1	5740	5740	1.0	Not-determined		ok
+0_1014	1	2308	2308	1.0	Low-quality	4.27	ok
+0_1015	1	7322	7322	1.0	Low-quality	11.75	ok
+0_1016	1	6085	6085	1.0	Not-determined		ok
+0_1017	1	6762	6762	1.0	Low-quality	8.22	ok
+0_1018	1	4972	4972	1.0	Low-quality	6.31	ok
+0_1019	1	5368	5368	1.0	Low-quality	9.32	ok
+0_1020	1	1118	1118	1.0	Not-determined		ok
+0_1021	1	4854	4854	1.0	Low-quality	4.79	ok
+0_1022	1	23007	23007	1.0	Medium-quality	53.58	ok
+0_1023	1	10034	10034	1.0	Low-quality	18.06	ok
+0_1024	1	15184	15184	1.0	Low-quality	27.67	ok
+0_1025	1	10270	10270	1.0	Low-quality	19.86	ok
+0_1026	1	8310	8310	1.0	Low-quality	10.27	ok
+0_1027	1	17739	17739	1.0	Low-quality	25.64	ok
+0_1028	1	3955	3955	1.0	Low-quality	3.94	ok
+0_1029	1	1255	1255	1.0	Low-quality	1.6	ok
+0_1030	1	7647	7647	1.0	Low-quality	14.44	ok
+0_1031	1	7308	7308	1.0	Low-quality	11.7	ok
+0_1032	1	32457	32457	1.0	Medium-quality	71.75	ok
+0_1033	1	8374	8374	1.0	Low-quality	12.49	ok
+0_1034	1	7532	7532	1.0	Low-quality	12.63	ok
+0_1035	1	19795	19795	1.0	Low-quality	29.1	ok
+0_1036	1	10865	10865	1.0	Low-quality	12.41	ok
+0_1037	1	12335	12335	1.0	Low-quality	21.01	ok
+0_1038	1	48632	48632	1.0	Medium-quality	82.68	ok
+0_1039	1	33107	33107	1.0	Medium-quality	89.03	ok
+0_1040	1	45008	45008	1.0	Medium-quality	81.38	ok
+0_1041	1	43307	43307	1.0	Low-quality	39.05	ok
+0_1042	1	18935	18935	1.0	Low-quality	17.07	ok
+0_1043	1	3016	3016	1.0	Low-quality	5.85	ok
+0_1044	1	45285	45285	1.0	Medium-quality	72.44	ok
+0_1045	1	2771	2771	1.0	Low-quality	2.27	ok
+0_1046	1	20600	20600	1.0	Low-quality	22.5	ok
+0_1047	1	34344	34344	1.0	Medium-quality	62.45	ok
+0_1048	1	10622	10622	1.0	Low-quality	20.52	ok
+0_1049	1	7293	7293	1.0	Low-quality	14.06	ok
+0_1050	1	14417	14417	1.0	Low-quality	18.8	ok
+0_1051	1	11332	11332	1.0	Low-quality	7.79	ok
+0_1052	1	7671	7671	1.0	Low-quality	5.72	ok
+0_1053	1	54477	54477	1.0	Low-quality	36.27	ok
+0_1054	1	8512	8512	1.0	Low-quality	16.46	ok
+0_1055	1	4367	4367	1.0	Low-quality	8.24	ok
+0_1056	1	3435	3435	1.0	Not-determined		ok
+0_1057	1	7493	7493	1.0	Low-quality	12.25	ok
+0_1058	1	31719	31719	1.0	Low-quality	41.95	ok
+0_1059	1	22424	22424	1.0	Low-quality	25.69	ok
+0_1060	1	3090	3090	1.0	Low-quality	4.11	ok
+0_1061	1	2648	2648	1.0	Low-quality	1.69	ok
+0_1062	1	44260	44260	1.0	Medium-quality	68.98	ok
+0_1063	1	7554	7554	1.0	Low-quality	9.32	ok
+0_1064	1	46288	46288	1.0	Medium-quality	57.43	ok
+0_1065	1	5745	5745	1.0	Low-quality	9.13	ok
+0_1066	1	12340	12340	1.0	Low-quality	11.42	ok
+0_1067	1	6380	6380	1.0	Not-determined		ok
+0_1068	1	4029	4029	1.0	Low-quality	5.09	ok
+0_1069	1	8307	8307	1.0	Not-determined		ok
+0_1070	1	3221	3221	1.0	Low-quality	5.38	ok
+0_1071	1	3674	3674	1.0	Not-determined		ok
+0_1072	1	4467	4467	1.0	Low-quality	3.56	ok
+0_1073	1	4962	4962	1.0	Low-quality	2.56	ok
+0_1074	1	9806	9806	1.0	Low-quality	14.07	ok
+0_1075	1	14597	14597	1.0	Low-quality	6.18	ok
+0_1076	1	21616	21616	1.0	Low-quality	39.4	ok
+0_1077	1	7204	7204	1.0	Low-quality	11.37	ok
+0_1078	1	7480	7480	1.0	Low-quality	14.26	ok
+0_1079	1	2859	2859	1.0	Low-quality	3.99	ok
+0_1080	1	4353	4353	1.0	Not-determined		ok
+0_1081	1	3571	3571	1.0	Low-quality	0.5	ok
+0_1082	1	917	917	1.0	Not-determined		ok
+0_1083	1	5958	5958	1.0	Low-quality	8.34	ok
+0_1084	1	12869	12869	1.0	Low-quality	14.93	ok
+0_1085	1	7226	7226	1.0	Not-determined		ok
+0_1086	1	2600	2600	1.0	Low-quality	4.7	ok
+0_1087	1	26793	26793	1.0	Low-quality	48.67	ok
+0_1088	1	3163	3163	1.0	Not-determined		ok
+0_1089	1	48614	48614	1.0	High-quality	93.82	ok
+0_1090	1	5746	5746	1.0	Low-quality	9.11	ok
+0_1091	1	33054	33054	1.0	Medium-quality	59.12	ok
+0_1092	1	1988	1988	1.0	Not-determined		ok
+0_1093	1	37323	37323	1.0	Medium-quality	67.03	ok
+0_1094	1	8737	8737	1.0	Low-quality	21.28	ok
+0_1095	1	8972	8972	1.0	Low-quality	15.6	ok
+0_1096	1	2251	2251	1.0	Not-determined		ok
+0_1097	1	17177	17177	1.0	Not-determined		ok
+0_1098	1	4871	4871	1.0	Not-determined		ok
+0_1099	1	3051	3051	1.0	Low-quality	4.8	ok
+0_1100	1	6755	6755	1.0	Low-quality	10.89	ok
+0_1101	1	4824	4824	1.0	Not-determined		ok
+0_1102	1	3571	3571	1.0	Low-quality	4.01	ok
+0_1103	1	15111	15111	1.0	Low-quality	17.16	ok
+0_1104	1	8566	8566	1.0	Low-quality	7.75	ok
+0_1105	1	6416	6416	1.0	Low-quality	6.56	ok
+0_1106	1	6158	6158	1.0	Low-quality	10.85	ok
+0_1107	1	37971	37971	1.0	High-quality	95.66	ok
+0_1108	1	9038	9038	1.0	Low-quality	14.76	ok
+0_1109	1	44954	44954	1.0	Medium-quality	73.55	ok
+0_1110	1	12311	12311	1.0	Not-determined		ok
+0_1111	1	4943	4943	1.0	Not-determined		ok
+0_1112	1	5827	5827	1.0	Low-quality	10.33	ok
+0_1113	1	4455	4455	1.0	Low-quality	5.96	ok
+0_1114	1	37758	37758	1.0	Low-quality	47.4	ok
+0_1115	1	4456	4456	1.0	Low-quality	7.28	ok
+0_1116	1	11936	11936	1.0	Low-quality	15.66	ok
+0_1117	1	8088	8088	1.0	Low-quality	9.15	ok
+0_1118	1	5289	5289	1.0	Low-quality	10.78	ok
+0_1119	1	5187	5187	1.0	Low-quality	4.95	ok
+0_1120	1	4864	4864	1.0	Low-quality	2.15	ok
+0_1121	1	922	922	1.0	Not-determined		ok
+0_1122	1	12868	12868	1.0	Low-quality	1.26	ok
+0_1123	1	22101	22101	1.0	Low-quality	27.87	ok
+0_1124	1	2274	2274	1.0	Low-quality	4.74	ok
+0_1125	1	3001	3001	1.0	Low-quality	3.81	ok
+0_1126	1	1824	1824	1.0	Low-quality	2.5	ok
+0_1127	1	24177	24177	1.0	Low-quality	31.99	ok
+0_1128	1	12815	12815	1.0	Not-determined		ok
+0_1129	1	8313	8313	1.0	Low-quality	13.33	ok
+0_1130	1	948	948	1.0	Low-quality	1.51	ok
+0_1131	1	10108	10108	1.0	Low-quality	11.56	ok
+0_1132	1	29652	29652	1.0	Medium-quality	54.2	ok
+0_1133	1	8290	8290	1.0	Low-quality	15.29	ok
+0_1134	1	2837	2837	1.0	Low-quality	0.64	ok
+0_1135	1	1106	1106	1.0	Low-quality	1.01	ok
+0_1136	1	18204	18204	1.0	Low-quality	29.83	ok
+0_1137	1	6370	6370	1.0	Low-quality	6.81	ok
+0_1138	1	43766	43766	1.0	Medium-quality	57.08	ok
+0_1139	1	23814	23814	1.0	Low-quality	40.53	ok
+0_1140	1	1404	1404	1.0	Not-determined		ok
+0_1141	1	1886	1886	1.0	Low-quality	2.24	ok
+0_1142	1	4198	4198	1.0	Low-quality	5.09	ok
+0_1143	1	4026	4026	1.0	Low-quality	4.92	ok
+0_1144	1	1829	1829	1.0	Low-quality	2.1	ok
+0_1145	1	48022	48022	1.0	Medium-quality	78.59	ok
+0_1146	1	5743	5743	1.0	Not-determined		ok
+0_1147	1	3472	3472	1.0	Low-quality	2.44	ok
+0_1148	1	3363	3363	1.0	Low-quality	4.66	ok
+0_1149	1	7967	7967	1.0	Low-quality	14.36	ok
+0_1150	1	4465	4465	1.0	Not-determined		ok
+0_1151	1	3942	3942	1.0	Low-quality	9.82	ok
+0_1152	1	37620	37620	1.0	Medium-quality	72.71	ok
+0_1153	1	10093	10093	1.0	Low-quality	24.59	ok
+0_1154	1	24572	24572	1.0	Low-quality	32.02	ok
+0_1155	1	3585	3585	1.0	Low-quality	5.85	ok
+0_1156	51	8090	149633	18.496	High-quality	98.88	mosaic
+0_1157	32	26453	149982	5.67	High-quality	99.97	mosaic
+0_1158	12	26734	37637	1.408	Medium-quality	65.67	ok
+0_1159	2	36726	36726	1.0	Medium-quality	55.35	ok
+0_1160	1	22151	22151	1.0	Low-quality	43.36	ok
+0_1161	1	24912	24912	1.0	Medium-quality	60.78	ok
+0_1162	1	7198	7198	1.0	Low-quality	13.41	ok
+0_1163	2	12177	24114	1.98	Not-determined		mosaic
+0_1164	1	1991	1991	1.0	Not-determined		ok
+0_1165	1	11147	11147	1.0	Not-determined		ok
+0_1166	1	5750	5750	1.0	Not-determined		ok
+0_1167	1	995	995	1.0	Not-determined		ok
+0_1168	4	27243	48307	1.773	Medium-quality	76.5	mosaic
+0_1169	4	30513	29302	0.96	Low-quality	37.67	ok
+0_1170	4	21426	50331	2.349	Medium-quality	75.31	mosaic
+0_1171	2	37514	37682	1.004	Medium-quality	89.95	ok
+0_1172	1	32314	32314	1.0	Medium-quality	77.22	ok
+0_1173	1	30319	30319	1.0	Medium-quality	73.67	ok
+0_1174	1	37458	37458	1.0	High-quality	90.63	ok
+0_1175	1	27890	27890	1.0	Medium-quality	67.8	ok
+0_1176	7	21424	55839	2.606	Medium-quality	81.22	mosaic
+0_1177	5	8939	8939	1.0	Not-determined		ok
+0_1178	4	18229	25512	1.4	Low-quality	29.04	ok
+0_1179	2	4456	6154	1.381	Not-determined		ok
+0_1180	3	9105	15733	1.728	Not-determined		mosaic
+0_1181	3	2406	4773	1.984	Not-determined		mosaic
+0_1182	2	15017	27360	1.822	Low-quality	38.67	mosaic
+0_1183	2	8398	16643	1.982	Low-quality	24.65	mosaic
+0_1184	2	5699	5699	1.0	Not-determined		ok
+0_1185	1	7439	7439	1.0	Not-determined		ok
+0_1186	1	14173	14173	1.0	Not-determined		ok
+0_1187	1	3369	3369	1.0	Low-quality	5.29	ok
+0_1188	1	12719	12719	1.0	Not-determined		ok
+0_1189	1	7542	7542	1.0	Low-quality	4.89	ok
+0_1190	1	6712	6712	1.0	Not-determined		ok
+0_1191	1	11497	11497	1.0	Not-determined		ok
+0_1192	1	16264	16264	1.0	Not-determined		ok
+0_1193	1	8375	8375	1.0	Low-quality	14.36	ok
+0_1194	1	9529	9529	1.0	Not-determined		ok
+0_1195	1	14825	14825	1.0	Not-determined		ok
+0_1196	1	7107	7107	1.0	Low-quality	11.2	ok
+0_1197	1	1286	1286	1.0	Low-quality	2.06	ok
+0_1198	25	5785	10947	1.892	Not-determined		mosaic
+0_1199	12	11793	30109	2.553	Not-determined		mosaic
+0_1200	5	46455	110911	2.387	High-quality	97.46	mosaic
+0_1201	3	18349	23435	1.277	Low-quality	37.36	ok
+0_1202	4	7324	12417	1.695	Low-quality	28.26	mosaic
+0_1203	3	17366	53482	3.08	Not-determined		mosaic
+0_1204	2	12040	19167	1.592	Not-determined		mosaic
+0_1205	2	55134	55134	1.0	Medium-quality	74.61	ok
+0_1206	2	6563	7645	1.165	Low-quality	10.01	ok
+0_1207	1	10901	10901	1.0	Not-determined		ok
+0_1208	1	9952	9952	1.0	Not-determined		ok
+0_1209	1	3223	3223	1.0	Not-determined		ok
+0_1210	1	6872	6872	1.0	Low-quality	15.64	ok
+0_1211	1	15565	15565	1.0	Not-determined		ok
+0_1212	1	8807	8807	1.0	Low-quality	12.33	ok
+0_1213	9	5097	86189	16.91	High-quality	90.26	mosaic
+0_1214	3	6111	6789	1.111	Not-determined		ok
+0_1215	3	5832	8029	1.377	Low-quality	10.22	ok
+0_1216	1	19905	19905	1.0	Low-quality	32.64	ok
+0_1217	1	10038	10038	1.0	Not-determined		ok
+0_1218	1	7735	7735	1.0	Not-determined		ok
+0_1219	1	9507	9507	1.0	Not-determined		ok
+0_1220	1	17557	17557	1.0	Not-determined		ok
+0_1221	1	13975	13975	1.0	Low-quality	19.54	ok
+0_1222	11	39714	122336	3.08	High-quality	98.9	mosaic
+0_1223	3	7502	14852	1.98	Low-quality	28.44	mosaic
+0_1224	1	49925	49925	1.0	Medium-quality	85.23	ok
+0_1225	1	34766	34766	1.0	Medium-quality	54.37	ok
+0_1226	1	37799	37799	1.0	High-quality	91.49	ok
+0_1227	1	36613	36613	1.0	Medium-quality	87.31	ok
+0_1228	7	3393	40186	11.844	Medium-quality	73.02	mosaic
+0_1229	1	1936	1936	1.0	Low-quality	3.07	ok
+0_1230	6	11717	24181	2.064	Not-determined		mosaic
+0_1231	2	15356	30432	1.982	Low-quality	49.74	mosaic
+0_1232	1	2921	2921	1.0	Not-determined		ok
+0_1233	1	20628	20628	1.0	Low-quality	21.73	ok
+0_1234	9	12189	58179	4.773	Low-quality	37.25	mosaic
+0_1235	2	6585	10887	1.653	Not-determined		mosaic
+0_1236	2	9992	19911	1.993	Not-determined		mosaic
+0_1237	2	7374	14652	1.987	Not-determined		mosaic
+0_1238	2	8426	16706	1.983	Low-quality	24.14	mosaic
+0_1239	2	7452	14774	1.983	Not-determined		mosaic
+0_1240	1	9502	9502	1.0	Low-quality	7.81	ok
+0_1241	1	9093	9093	1.0	Low-quality	16.39	ok
+0_1242	7	4480	40092	8.949	Low-quality	32.05	mosaic
+0_1243	2	8667	17181	1.982	Not-determined		mosaic
+0_1244	2	18397	18905	1.028	Not-determined		ok
+0_1245	1	6724	6724	1.0	Not-determined		ok
+0_1246	1	7287	7287	1.0	Not-determined		ok
+0_1247	16	5207	10291	1.976	Low-quality	14.48	mosaic
+0_1248	6	6646	13148	1.978	Not-determined		mosaic
+0_1249	2	2054	4065	1.979	Not-determined		mosaic
+0_1250	2	7793	7793	1.0	Not-determined		ok
+0_1251	1	7685	7685	1.0	Low-quality	12.12	ok
+0_1252	1	9056	9056	1.0	Low-quality	10.94	ok
+0_1253	1	10897	10897	1.0	Low-quality	19.54	ok
+0_1254	1	4333	4333	1.0	Low-quality	6.36	ok
+0_1255	1	4745	4745	1.0	Low-quality	6.4	ok
+0_1256	9	18328	64524	3.521	Not-determined		mosaic
+0_1257	2	33629	66389	1.974	Medium-quality	75.8	mosaic
+0_1258	1	35701	35701	1.0	Low-quality	20.33	ok
+0_1259	1	20121	20121	1.0	Not-determined		ok
+0_1260	1	14057	14057	1.0	Not-determined		ok
+0_1261	1	8290	8290	1.0	Not-determined		ok
+0_1262	3	21208	21208	1.0	Not-determined		ok
+0_1263	3	5206	5206	1.0	Not-determined		ok
+0_1264	2	8567	16977	1.982	Not-determined		mosaic
+0_1265	1	26787	26787	1.0	Low-quality	21.94	ok
+0_1266	1	4222	4222	1.0	Low-quality	6.71	ok
+0_1267	1	13359	13359	1.0	Low-quality	19.46	ok
+0_1268	1	14864	14864	1.0	Not-determined		ok
+0_1269	1	30490	30490	1.0	Not-determined		ok
+0_1270	1	2642	2642	1.0	Low-quality	5.07	ok
+0_1271	20	9856	59553	6.042	Low-quality	37.99	mosaic
+0_1272	1	2469	2469	1.0	Not-determined		ok
+0_1273	1	11344	11344	1.0	Not-determined		ok
+0_1274	5	11733	74042	6.311	Medium-quality	89.89	mosaic
+0_1275	4	38105	75479	1.981	High-quality	95.56	mosaic
+0_1276	1	12027	12027	1.0	Low-quality	22.05	ok
+0_1277	1	48954	48954	1.0	Medium-quality	84.26	ok
+0_1278	1	34171	34171	1.0	Medium-quality	59.05	ok
+0_1279	3	9647	13085	1.356	Low-quality	20.14	ok
+0_1280	2	11835	11835	1.0	Not-determined		ok
+0_1281	1	3783	3783	1.0	Not-determined		ok
+0_1282	2	7526	13695	1.82	Low-quality	18.07	mosaic
+0_1283	2	2349	3787	1.612	Low-quality	3.33	mosaic
+0_1284	2	6766	6766	1.0	Low-quality	9.02	ok
+0_1285	1	11354	11354	1.0	Low-quality	19.6	ok
+0_1286	5	5536	13506	2.44	Low-quality	19.01	mosaic
+0_1287	4	4713	7856	1.667	Low-quality	10.88	mosaic
+0_1288	1	1450	1450	1.0	Low-quality	2.24	ok
+0_1289	1	1780	1780	1.0	Low-quality	3.13	ok
+0_1290	2	16555	16555	1.0	Low-quality	39.61	ok
+0_1291	1	29545	29545	1.0	Medium-quality	70.48	ok
+0_1292	1	10209	10209	1.0	Low-quality	18.08	ok
+0_1293	1	34809	34809	1.0	Medium-quality	84.1	ok
+0_1294	2	8923	17688	1.982	Low-quality	18.48	mosaic
+0_1295	2	5752	5752	1.0	Low-quality	7.58	ok
+0_1296	2	5404	10706	1.981	Low-quality	13.75	mosaic
+0_1297	1	5843	5843	1.0	Low-quality	7.15	ok
+0_1298	1	9403	9403	1.0	Low-quality	16.42	ok
+0_1299	1	55504	55504	1.0	High-quality	100.0	ok
+0_1300	1	34841	34841	1.0	Medium-quality	60.48	ok
+0_1301	1	24371	24371	1.0	Low-quality	46.98	ok
+0_1302	1	12540	12540	1.0	Low-quality	26.05	ok
+0_1303	1	44341	44341	1.0	Medium-quality	80.74	ok
