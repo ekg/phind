@@ -11,7 +11,10 @@ Covers:
     consensus + coverage gate, FASTA fallback, sampling weights
     (fraction^alpha, all positive), weighted path sampling (determinism,
     common-vs-rare distribution, no hard exclusion, alpha effect),
-    neighbor-joining (known matrices, determinism) and Fitch parsimony
+    **observed path mode** (adjacency strictly required, natural terminus with
+    no fallback, first partition must start a prophage, close-circle stops at
+    closure, budget is a safety cap) and free-mode invariance to the new
+    flags, neighbor-joining (known matrices, determinism) and Fitch parsimony
     (conserved/majority/tie columns, tree-informative columns, gap =
     missing, column gate, 1-/2-sequence blocks, determinism).
   * integration on the archived community_3 partition set: default ML run
@@ -23,7 +26,8 @@ Covers:
     ancestral genome and NJ trees, also phage-typical length.
   * integration on a synthetic community (per-partition BED dir layout):
     both modes emit all outputs; FASTA-only partitions fall back to the
-    longest member; determinism holds.
+    longest member; determinism holds; observed mode emits path_stats with
+    adjacency-only steps and free mode keeps the v3 schema byte-for-byte.
 """
 
 import json
@@ -337,6 +341,213 @@ class SamplingTests(unittest.TestCase):
         samples, _ = tp.sample_traversals(self.WEIGHTS, adj, plen, 3000, 20, 42)
         for s in samples:
             self.assertLessEqual(s['genome_length_bp'], 3000)
+
+
+# ─── Level 1: observed path mode (adjacency REQUIRED) ──────────────────────
+
+class ObservedPathModeTests(unittest.TestCase):
+    """--path-mode observed: candidates restricted to observed adjacencies;
+    no fallback -> natural terminus; first partition starts a prophage;
+    --close-circle stops at closure; --max-length is a safety cap only."""
+
+    def test_observed_requires_adjacency(self):
+        weights = {1: 0.9, 2: 0.9, 3: 0.9, 4: 0.9}
+        adj = {1: {2: 5}, 2: {3: 5}}          # 3 has no outgoing edge
+        plen = {p: 100 for p in weights}
+        samples, _ = tp.sample_traversals(
+            weights, adj, plen, 10_000_000, 50, 42,
+            path_mode='observed', first_counts=Counter({1: 3}))
+        for s in samples:
+            self.assertEqual(s['path'], [1, 2, 3])
+            self.assertEqual(s['terminated_by'], 'terminus')
+            self.assertFalse(s['budget_hit'])
+            for a, b in zip(s['path'], s['path'][1:]):
+                self.assertGreater(adj.get(a, {}).get(b, 0), 0,
+                                   'every step must be an observed adjacency')
+            self.assertNotIn(4, s['path'], 'never falls back to non-adjacent 4')
+        self.assertEqual(samples[0]['adj_pairs'], 2)
+
+    def test_observed_terminates_without_fallback_vs_free(self):
+        weights = {1: 0.9, 2: 0.9, 3: 0.9, 4: 0.9}
+        adj = {1: {2: 5}, 2: {3: 5}}
+        plen = {p: 100 for p in weights}
+        first = Counter({1: 1})
+        obs, _ = tp.sample_traversals(weights, adj, plen, 10_000_000, 5, 42,
+                                      path_mode='observed', first_counts=first)
+        free, _ = tp.sample_traversals(weights, adj, plen, 10_000_000, 5, 42)
+        for s in obs:
+            self.assertEqual(s['path'], [1, 2, 3])
+        # free mode keeps accumulating high-support blocks past the terminus
+        self.assertTrue(all(4 in s['path'] for s in free),
+                        'free mode biases, does not require, adjacency')
+
+    def test_observed_first_partition_must_start_a_prophage(self):
+        weights = {1: 0.1, 9: 1.0}            # 9 is high-weight but never first
+        adj = {1: {2: 1}, 9: {2: 1}}
+        plen = {1: 100, 9: 100, 2: 100}
+        samples, _ = tp.sample_traversals(
+            weights, adj, plen, 10_000_000, 20, 7,
+            path_mode='observed', first_counts=Counter({1: 5}))
+        for s in samples:
+            self.assertEqual(s['path'][0], 1,
+                             'first partition restricted to first_counts > 0')
+            self.assertNotIn(9, s['path'])
+
+    def test_close_circle_stops_at_closure(self):
+        weights = {1: 1.0, 2: 1.0}
+        adj = {1: {2: 5}, 2: {1: 5}}          # circular: 1 -> 2 -> 1
+        plen = {1: 100, 2: 100}
+        first = Counter({1: 1})
+        closed, _ = tp.sample_traversals(
+            weights, adj, plen, 10_000_000, 5, 42,
+            path_mode='observed', close_circle=True, first_counts=first,
+            close_min_len=150)
+        for s in closed:
+            self.assertEqual(s['path'], [1, 2])
+            self.assertEqual(s['terminated_by'], 'closed')
+            self.assertFalse(s['budget_hit'])
+        # without --close-circle the same walk ends at a natural terminus
+        open_, _ = tp.sample_traversals(
+            weights, adj, plen, 10_000_000, 5, 42,
+            path_mode='observed', close_circle=False, first_counts=first)
+        for s in open_:
+            self.assertEqual(s['path'], [1, 2])
+            self.assertEqual(s['terminated_by'], 'terminus')
+
+    def test_close_circle_min_coverage_guard(self):
+        # cycle 1 -> 2 -> 3 -> 1; guard 250 bp blocks closure until the path
+        # has accumulated enough length (100 bp/step), avoiding a one-step
+        # close on a single mutual adjacency
+        weights = {1: 1.0, 2: 1.0, 3: 1.0}
+        adj = {1: {2: 5}, 2: {3: 5}, 3: {1: 5}}
+        plen = {p: 100 for p in weights}
+        samples, _ = tp.sample_traversals(
+            weights, adj, plen, 10_000_000, 5, 42,
+            path_mode='observed', close_circle=True,
+            first_counts=Counter({1: 1}), close_min_len=250)
+        for s in samples:
+            self.assertEqual(s['path'], [1, 2, 3])
+            self.assertEqual(s['terminated_by'], 'closed')
+            self.assertGreaterEqual(s['genome_length_bp'], 250)
+
+    def test_observed_best_sample_rejects_above_member_max(self):
+        # max_member_len = 1000: the LONGEST within-member path wins; a longer
+        # path (4000 bp, highest typicality) is a chimera and is rejected
+        weights = {1: 0.9, 2: 0.9, 3: 0.05}
+        samples = [
+            {'index': 0, 'path': [1, 2], 'support': -1.0,
+             'genome_length_bp': 800, 'terminated_by': 'terminus'},
+            {'index': 1, 'path': [1, 3], 'support': -5.0,
+             'genome_length_bp': 1000, 'terminated_by': 'terminus'},
+            {'index': 2, 'path': [1, 2, 3], 'support': -9.0,
+             'genome_length_bp': 4000, 'terminated_by': 'terminus'},
+        ]
+        idx, best_by, relaxed = tp.select_best_observed_sample(samples, weights, 1000)
+        self.assertEqual(idx, 1, 'longest path within max_member_len wins')
+        self.assertEqual(best_by, 'longest_within_member_max')
+        self.assertFalse(relaxed)
+
+    def test_observed_best_sample_exceeded_member_max_flag(self):
+        # every terminated path exceeds max_member_len -> longest kept path,
+        # flagged 'exceeded_member_max'
+        weights = {1: 0.5, 2: 0.5}
+        samples = [
+            {'index': 0, 'path': [1], 'support': -1.0,
+             'genome_length_bp': 2000, 'terminated_by': 'terminus'},
+            {'index': 1, 'path': [1, 2], 'support': -3.0,
+             'genome_length_bp': 4000, 'terminated_by': 'terminus'},
+        ]
+        idx, best_by, _ = tp.select_best_observed_sample(samples, weights, 1000)
+        self.assertEqual(idx, 1)
+        self.assertEqual(best_by, 'exceeded_member_max')
+
+    def test_observed_best_sample_tiebreak_typicality(self):
+        # two equal-length within-member paths -> higher typicality wins
+        weights = {1: 0.5, 2: 0.5, 3: 0.4, 4: 0.4}
+        samples = [
+            {'index': 0, 'path': [1, 3], 'support': -1.0,
+             'genome_length_bp': 1000, 'terminated_by': 'terminus'},
+            {'index': 1, 'path': [1, 2], 'support': -2.0,
+             'genome_length_bp': 1000, 'terminated_by': 'terminus'},
+        ]
+        idx, best_by, _ = tp.select_best_observed_sample(samples, weights, 5000)
+        self.assertEqual(idx, 1)   # sum 1.0 > 0.9
+        self.assertEqual(best_by, 'longest_within_member_max')
+
+    def test_observed_best_sample_target_window(self):
+        # target = 1000: the much shorter (400 < 0.5x) and much longer
+        # (4000 > 1.2x) samples are both rejected; the on-target sample wins
+        weights = {1: 0.9, 2: 0.9, 3: 0.05}
+        samples = [
+            {'index': 0, 'path': [1, 2], 'support': -1.0,
+             'genome_length_bp': 400, 'terminated_by': 'terminus'},
+            {'index': 1, 'path': [1, 3], 'support': -5.0,
+             'genome_length_bp': 1000, 'terminated_by': 'terminus'},
+            {'index': 2, 'path': [1, 2, 3], 'support': -9.0,
+             'genome_length_bp': 4000, 'terminated_by': 'terminus'},
+        ]
+        idx, best_by, relaxed = tp.select_best_observed_sample(
+            samples, weights, 1000, target_length=1000)
+        self.assertEqual(idx, 1)
+        self.assertEqual(best_by, 'closest_to_target')
+        self.assertFalse(relaxed)
+
+    def test_observed_best_sample_target_guard_relaxed(self):
+        # target = 1000 but every terminated sample is outside the guards ->
+        # fall back to the closest-to-target sample and flag the relaxation
+        weights = {1: 0.5, 2: 0.5}
+        samples = [
+            {'index': 0, 'path': [1], 'support': -1.0,
+             'genome_length_bp': 400, 'terminated_by': 'terminus'},
+            {'index': 1, 'path': [1, 2], 'support': -3.0,
+             'genome_length_bp': 4000, 'terminated_by': 'terminus'},
+        ]
+        idx, best_by, relaxed = tp.select_best_observed_sample(
+            samples, weights, 10000, target_length=1000)
+        self.assertEqual(idx, 0, 'closest to target (400 vs 4000)')
+        self.assertEqual(best_by, 'target_guard_relaxed')
+        self.assertTrue(relaxed)
+
+    def test_observed_best_sample_fallback_all_budget(self):
+        weights = {1: 0.5, 2: 0.5}
+        samples = [
+            {'index': 0, 'path': [1], 'support': -1.0,
+             'genome_length_bp': 200, 'terminated_by': 'budget'},
+            {'index': 1, 'path': [1, 2], 'support': -3.0,
+             'genome_length_bp': 400, 'terminated_by': 'budget'},
+        ]
+        idx, best_by, _ = tp.select_best_observed_sample(samples, weights, 400)
+        self.assertEqual(idx, 0)
+        self.assertEqual(best_by, 'support_fallback')
+
+    def test_budget_is_safety_cap_only(self):
+        weights = {1: 1.0, 2: 1.0}
+        adj = {1: {2: 5}}
+        plen = {1: 100, 2: 1000}
+        samples, _ = tp.sample_traversals(
+            weights, adj, plen, 500, 3, 42,
+            path_mode='observed', first_counts=Counter({1: 1}))
+        for s in samples:
+            self.assertEqual(s['path'], [1])   # 2 fits the adjacency but not budget
+            self.assertEqual(s['terminated_by'], 'budget')
+            self.assertTrue(s['budget_hit'])
+
+    def test_free_mode_unchanged_and_ignores_new_flags(self):
+        adj = {1: {2: 10}, 2: {3: 10}, 3: {4: 10}, 4: {5: 10}}
+        plen = {p: 1000 for p in range(1, 11)}
+        weights = {p: 0.5 for p in range(1, 11)}
+        default, _ = tp.sample_traversals(weights, adj, plen, 8000, 50, 42)
+        explicit, _ = tp.sample_traversals(weights, adj, plen, 8000, 50, 42,
+                                           path_mode='free')
+        circ, _ = tp.sample_traversals(weights, adj, plen, 8000, 50, 42,
+                                       path_mode='free', close_circle=True)
+        self.assertEqual([s['path'] for s in default],
+                         [s['path'] for s in explicit])
+        self.assertEqual([s['path'] for s in default],
+                         [s['path'] for s in circ],
+                         'close-circle must not change free mode')
+        # free mode is a BIAS, not a requirement: it visits non-adjacent 6..10
+        self.assertTrue(any(set(range(6, 11)) & set(s['path']) for s in default))
 
 
 # ─── Level 2 (ancestral): NJ + Fitch ───────────────────────────────────────
@@ -657,6 +868,109 @@ class SyntheticIntegrationTests(unittest.TestCase):
         prefix = os.path.join(self.tmp, 'syn_a')
         rc, out = _run_cli(self.args + ['--output', prefix, '--alpha', '2.0'])
         self.assertEqual(rc, 0, out)
+
+    def test_free_mode_output_schema_unchanged(self):
+        prefix = os.path.join(self.tmp, 'syn_free_schema')
+        rc, out = _run_cli(self.args + ['--output', prefix])
+        self.assertEqual(rc, 0, out)
+        with open(prefix + '.traversal.json') as f:
+            data = json.load(f)
+        self.assertNotIn('path_stats', data)
+        self.assertNotIn('path_mode', data['parameters'])
+        with open(prefix + '.stats.json') as f:
+            stats = json.load(f)
+        self.assertNotIn('path_stats', stats)
+
+    def test_observed_mode_path_stats(self):
+        prefix = os.path.join(self.tmp, 'syn_obs')
+        rc, out = _run_cli(self.args + ['--output', prefix,
+                                        '--path-mode', 'observed',
+                                        '--n-samples', '20', '--seed', '42'])
+        self.assertEqual(rc, 0, out)
+        with open(prefix + '.traversal.json') as f:
+            data = json.load(f)
+        self.assertEqual(data['parameters']['path_mode'], 'observed')
+        self.assertFalse(data['parameters']['close_circle'])
+        ps = data['path_stats']
+        self.assertEqual(set(ps),
+                         {'n_path_steps', 'path_adj_fraction',
+                          'terminated_by', 'budget_hit', 'best_by',
+                          'best_len', 'max_member_len', 'member_len_p50',
+                          'member_len_p90', 'length_ratio',
+                          'target_len', 'target_source',
+                          'target_guard_relaxed', 'length_ratio_vs_target',
+                          'sample_len_min', 'sample_len_median',
+                          'sample_len_max'})
+        self.assertIn(ps['best_by'],
+                      ('longest_within_member_max', 'exceeded_member_max',
+                       'support_fallback'))
+        self.assertIsNone(ps['target_len'])
+        self.assertEqual(ps['target_source'], 'max_member')
+        self.assertFalse(ps['target_guard_relaxed'])
+        self.assertIsNone(ps['length_ratio_vs_target'])
+        self.assertGreater(ps['max_member_len'], 0)
+        self.assertGreater(ps['member_len_p50'], 0)
+        self.assertGreaterEqual(ps['member_len_p90'], ps['member_len_p50'])
+        self.assertAlmostEqual(
+            ps['length_ratio'], ps['best_len'] / ps['member_len_p50'],
+            places=3)
+        self.assertEqual(ps['best_len'],
+                         data['samples'][data['best_sample_index']]
+                         ['genome_length_bp'])
+        self.assertLessEqual(ps['sample_len_min'], ps['sample_len_median'])
+        self.assertLessEqual(ps['sample_len_median'], ps['sample_len_max'])
+        self.assertEqual(ps['n_path_steps'], len(data['best_sample']['path']))
+        self.assertIn(ps['terminated_by'], ('terminus', 'closed', 'budget'))
+        self.assertEqual(ps['budget_hit'], ps['terminated_by'] == 'budget')
+        # observed walks only follow observed adjacencies
+        adj = {}
+        raw = tp.parse_bed(os.path.join(self.tmp, 'partitions_bed'))
+        norm = tp.normalize_partition_lists(raw)
+        adj, _, _, _ = tp.build_adjacency_graph(norm)
+        path = data['best_sample']['path']
+        for a, b in zip(path, path[1:]):
+            self.assertGreater(adj.get(a, {}).get(b, 0), 0)
+        self.assertEqual(ps['path_adj_fraction'], 1.0)
+        with open(prefix + '.stats.json') as f:
+            stats = json.load(f)
+        self.assertEqual(stats['path_stats'], ps)
+
+    def test_close_circle_flag_accepted(self):
+        prefix = os.path.join(self.tmp, 'syn_circ')
+        rc, out = _run_cli(self.args + ['--output', prefix,
+                                        '--path-mode', 'observed',
+                                        '--close-circle'])
+        self.assertEqual(rc, 0, out)
+        with open(prefix + '.traversal.json') as f:
+            data = json.load(f)
+        self.assertTrue(data['parameters']['close_circle'])
+
+    def test_target_length_flag_accepted(self):
+        prefix = os.path.join(self.tmp, 'syn_target')
+        target = 12000
+        rc, out = _run_cli(self.args + ['--output', prefix,
+                                        '--path-mode', 'observed',
+                                        '--target-length', str(target),
+                                        '--n-samples', '20', '--seed', '42'])
+        self.assertEqual(rc, 0, out)
+        with open(prefix + '.traversal.json') as f:
+            data = json.load(f)
+        self.assertEqual(data['parameters']['target_length'], target)
+        ps = data['path_stats']
+        self.assertEqual(ps['target_len'], target)
+        self.assertEqual(ps['target_source'], 'cli')
+        self.assertIn(ps['best_by'], ('closest_to_target',
+                                      'target_guard_relaxed'))
+        self.assertAlmostEqual(ps['length_ratio_vs_target'],
+                               ps['best_len'] / target, places=3)
+
+    def test_target_length_must_be_positive(self):
+        rc, out = _run_cli(self.args + ['--output',
+                                        os.path.join(self.tmp, 'syn_bad'),
+                                        '--path-mode', 'observed',
+                                        '--target-length', '0'])
+        self.assertNotEqual(rc, 0)
+        self.assertIn('--target-length', out)
 
 
 if __name__ == '__main__':

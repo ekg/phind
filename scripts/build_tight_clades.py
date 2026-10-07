@@ -26,8 +26,28 @@ Clustering algorithm (greedy leader clustering):
      of its leader by construction. Clades that would exceed max-size split
      (the member becomes a new leader), so no clade exceeds max-size.
 
+Split modes (`--split-mode`):
+  cap (default): the v3 behaviour described above — leader clustering capped
+    at `--max-size`, then `tighten_clades` (median-criterion re-anchoring).
+    Output files are unchanged by this option when it is left at the default.
+  medoids: leader clustering at `--threshold` with NO size cap, then any clade
+    whose members are further than `--medoid-radius` (default 0.10) from its
+    medoid is recursively split with k-medoids (k=2) until every member is
+    within the radius of its clade medoid. Split points are structure-driven
+    rather than count-driven. `--max-size` is ignored in this mode.
+    Clade ids keep the v3 `<community>_<NNNN>` shape for initial clades and
+    add `_s1`/`_s2` suffixes for the children produced by each split, so the
+    ids in `split_trace.json` resolve against `tight_clades.json`.
+    A missing (NaN) MASH distance cannot be certified within the radius, so
+    a clade containing one is split as well — consistent with leader
+    clustering, where `D <= threshold` is False for NaN. Its radius is
+    reported as `null` in the trace.
+
 Outputs per community C (into --outdir/C/):
   tight_clades.json      clade_id -> [member ids (FASTA headers), ...]
+  split_trace.json       (medoids mode only) one record per k-medoids split:
+                         parent id, size before/after, radius before/after,
+                         iterations
   clade_similarity.json  per-clade internal pairwise MASH stats + global summary
   members.json           community member ids in triangle row order
   distances.npz          within-community float32 matrix + member order
@@ -39,6 +59,7 @@ first, then members). The representative is listed first.
 
 Usage:
   build_tight_clades.py [--threshold 0.10] [--max-size 800]
+                        [--split-mode cap|medoids] [--medoid-radius 0.10]
                         [--communities 0,1,2,3,4,5,6,7,8,9,10,11]
                         [--outdir research/clades]
 """
@@ -208,6 +229,121 @@ def tighten_clades(D, members, clades, threshold, max_size):
     return out
 
 
+def medoid_of(D, idx):
+    """Medoid of the members in `idx`: the member with the smallest total
+    distance to the other members of `idx`. Only meaningful for clades with
+    no missing distances; `cluster_radius` reports such clades as infinite
+    and therefore split before a medoid is ever reported."""
+    if len(idx) == 1:
+        return idx[0]
+    sub = D[np.ix_(idx, idx)]
+    return idx[int(np.argmin(sub.sum(axis=1)))]
+
+
+def cluster_radius(D, idx):
+    """Max distance from the clade medoid to any of its members.
+    0.0 for clades of size <= 1.
+
+    Returns inf when `idx` contains a missing (NaN) pairwise distance. A
+    missing distance cannot be certified to be within the radius, and the
+    rest of the script already treats NaN as "not close" (leader clustering's
+    `D <= threshold` is False for NaN, v3's median test fails on NaN), so such
+    clades are split until they are NaN-free."""
+    if len(idx) <= 1:
+        return 0.0
+    sub = D[np.ix_(idx, idx)]
+    if np.isnan(sub).any():
+        return float("inf")
+    med = medoid_of(D, idx)
+    return float(D[idx, med].max())
+
+
+def kmedoids_split(D, idx, max_iter=100):
+    """Split `idx` into two clades with k-medoids (k=2) on the pairwise
+    distances in D. Seeds are the clade medoid and the member farthest from
+    it; assignment (nearest medoid, ties to the lower index) and medoid
+    update alternate until the assignment is stable.
+
+    Returns (left, right, iterations) where both sides are non-empty member
+    index lists and `iterations` is the number of assignment/update rounds.
+    If the Lloyd loop degenerates to one non-empty side, the clade is split
+    in half by distance to its medoid instead."""
+    sub = D[np.ix_(idx, idx)]
+    k = len(idx)
+    c0 = int(np.argmin(sub.sum(axis=1)))
+    c1 = int(np.argmax(sub[c0]))
+    centers = [c0, c1]
+    labels = None
+    iters = 0
+    for _ in range(max_iter):
+        iters += 1
+        new = np.argmin(sub[:, centers], axis=1)
+        if labels is not None and np.array_equal(new, labels):
+            labels = new
+            break
+        labels = new
+        for side in (0, 1):
+            memb = np.where(labels == side)[0]
+            if len(memb):
+                centers[side] = int(memb[np.argmin(
+                    sub[np.ix_(memb, memb)].sum(axis=1))])
+    left = np.where(labels == 0)[0]
+    right = np.where(labels == 1)[0]
+    if len(left) == 0 or len(right) == 0:
+        order = np.argsort(sub[c0], kind="stable")
+        half = max(1, k // 2)
+        left = order[:half]
+        right = order[half:]
+    return ([idx[i] for i in left], [idx[i] for i in right], iters)
+
+
+def split_until_radius(D, clades, names, radius, max_iter=100):
+    """Recursively split every clade whose members exceed `radius` from its
+    medoid (k-medoids, k=2 per split) until every clade satisfies the radius
+    criterion. Each split strictly reduces size, so this terminates.
+
+    Returns (out, trace):
+      out   -- list of (clade_id, member index list), in input order with each
+               split parent replaced by its two children (left then right)
+      trace -- one record per split: parent id, sizes before/after, radii
+               before/after (`null` radius = the clade contains a missing
+               MASH distance) and the k-medoids iterations used."""
+    out = []
+    trace = []
+
+    def radius_or_null(D_, idx_):
+        r = cluster_radius(D_, idx_)
+        return None if not np.isfinite(r) else round(r, 6)
+
+    def visit(name, idx):
+        idx = list(idx)
+        r_before = cluster_radius(D, idx)
+        if len(idx) <= 1 or r_before <= radius + 1e-9:
+            out.append((name, idx))
+            return
+        left, right, iters = kmedoids_split(D, idx, max_iter=max_iter)
+        if not left or not right:
+            # cannot make progress; keep the clade rather than loop
+            out.append((name, idx))
+            return
+        lname, rname = f"{name}_s1", f"{name}_s2"
+        trace.append({
+            "parent_clade_id": name,
+            "size_before": len(idx),
+            "sizes_after": [len(left), len(right)],
+            "radius_before": radius_or_null(D, idx),
+            "radii_after": [radius_or_null(D, left),
+                            radius_or_null(D, right)],
+            "iterations": iters,
+        })
+        visit(lname, left)
+        visit(rname, right)
+
+    for name, idx in zip(names, clades):
+        visit(name, idx)
+    return out, trace
+
+
 def clade_stats(D, clades):
     """Per-clade internal similarity stats."""
     out = {}
@@ -237,7 +373,16 @@ def main():
     ap.add_argument("--threshold", type=float, default=0.10,
                     help="max MASH distance to clade representative (~90%% ANI)")
     ap.add_argument("--max-size", type=int, default=800,
-                    help="hard cap on clade size (split further if exceeded)")
+                    help="hard cap on clade size (split further if exceeded); "
+                         "ignored by --split-mode medoids")
+    ap.add_argument("--split-mode", choices=("cap", "medoids"), default="cap",
+                    help="cap: leader clustering capped at --max-size "
+                         "(v3 behaviour, default); medoids: uncapped leader "
+                         "clustering then recursive k-medoids splits until "
+                         "every member is within --medoid-radius of its medoid")
+    ap.add_argument("--medoid-radius", type=float, default=0.10,
+                    help="max MASH distance from a clade medoid allowed in "
+                         "--split-mode medoids")
     ap.add_argument("--communities", default="0,1,2,3,4,5,6,7,8,9,10,11",
                     help="comma-separated community ids")
     ap.add_argument("--outdir", default=os.path.join(REPO, "research/clades"))
@@ -272,8 +417,20 @@ def main():
         t0 = time.time()
         D = read_community_matrix(ids, idx, members, mm)
         t_read = time.time() - t0
-        clades, leaders = leader_cluster(D, members, args.threshold, args.max_size)
-        clades = tighten_clades(D, members, clades, args.threshold, args.max_size)
+        split_trace = None
+        if args.split_mode == "cap":
+            clades, leaders = leader_cluster(D, members, args.threshold, args.max_size)
+            clades = tighten_clades(D, members, clades, args.threshold, args.max_size)
+            clade_ids = [f"{c}_{ci:04d}" for ci in range(len(clades))]
+        else:
+            # re-anchor uncapped (max_size = number of members = no cap), then
+            # split on structure until every member is within the medoid radius
+            base, _ = leader_cluster(D, members, args.threshold, len(members))
+            base_names = [f"{c}_{ci:04d}" for ci in range(len(base))]
+            split, split_trace = split_until_radius(
+                D, base, base_names, args.medoid_radius)
+            clade_ids = [n for n, _ in split]
+            clades = [m for _, m in split]
         stats = clade_stats(D, clades)
 
         cdir = os.path.join(args.outdir, str(c))
@@ -282,14 +439,25 @@ def main():
         # tight_clades.json: clade_id -> member list (rep first)
         tc = {}
         for ci, clade in enumerate(clades):
-            cid = f"{c}_{ci:04d}"
+            cid = clade_ids[ci]
             tc[cid] = [members[j] for j in clade]
         with open(os.path.join(cdir, "tight_clades.json"), "w") as f:
             json.dump(tc, f, indent=1)
 
+        if split_trace is not None:
+            with open(os.path.join(cdir, "split_trace.json"), "w") as f:
+                json.dump({
+                    "community": c,
+                    "split_mode": args.split_mode,
+                    "threshold": args.threshold,
+                    "medoid_radius": args.medoid_radius,
+                    "n_splits": len(split_trace),
+                    "splits": split_trace,
+                }, f, indent=1)
+
         sim = {}
         for ci, clade in enumerate(clades):
-            cid = f"{c}_{ci:04d}"
+            cid = clade_ids[ci]
             sim[cid] = stats[ci]
         medians = [s["median"] for s in sim.values() if s["median"] is not None]
         report = {
@@ -338,10 +506,18 @@ def main():
         )
 
         with open(os.path.join(cdir, "commands.log"), "a") as f:
-            f.write(
-                f"# build_tight_clades.py --threshold {args.threshold} "
-                f"--max-size {args.max_size} --communities {c}\n"
-            )
+            if args.split_mode == "cap":
+                f.write(
+                    f"# build_tight_clades.py --threshold {args.threshold} "
+                    f"--max-size {args.max_size} --communities {c}\n"
+                )
+            else:
+                f.write(
+                    f"# build_tight_clades.py --threshold {args.threshold} "
+                    f"--split-mode {args.split_mode} "
+                    f"--medoid-radius {args.medoid_radius} "
+                    f"--communities {c}\n"
+                )
 
         summary_all[c] = report
         print(json.dumps(report, indent=1), flush=True)

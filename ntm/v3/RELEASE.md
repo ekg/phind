@@ -8,6 +8,38 @@ one per prophage tight clade, derived from prophages called across the whole
 **Date:** 2026-10-06 · **Cohort:** union of the 2026-09-22 collaborator delivery
 (26,499 genomes) and v2 local holdings.
 
+---
+
+## ⚠️ CORRECTION (2026-10-07) — the ML genomes are mosaics, not genomes
+
+The v3 ML genomes below are **not single phage genomes**. The reconstruction
+walk (`scripts/traverse_partitions.py`, default free mode) treats partitions as
+independent tiles and only *biases* toward observed adjacency
+(`w * (1 + beta*adj)`); it never *requires* it. It therefore accumulates
+high-support blocks until the `--max-length 150000` budget stops it.
+
+Measured consequences:
+
+| | |
+|---|---|
+| clades whose ML genome is >1.5× the median member length | **747 / 1,304 (57%)**, up to **6.2×** |
+| prophages covered by those mosaic clades | **35,747 / 36,857 (97%)** |
+| CheckV "High-quality" genomes that are mosaics | **387 / 395 (98%)** |
+
+**CheckV completeness rewards the mosaic**: concatenating every common block
+includes every marker gene, so a 150 kb chimera scores 99–100% complete while a
+real genome-length reconstruction scores ~81%. The quality label in this
+release is therefore an artifact of the defect, not evidence against it.
+Per-clade audit: `ntm/v3.1/v3_mosaic_audit.tsv` (length ratio, CheckV, flag).
+
+**Do not use the v3 ML/ancestral FASTAs as genome sequences.** Use the v3.1
+genome-path reconstructions (`--path-mode observed`, see `ntm/v3.1/SPEC.md` and
+the A/B report), which walk real observed adjacencies to a natural terminus and
+land at ~1.0× the member length. v3.1 replaces the **ML step only** — clades,
+partitions, host clades and annotation are unchanged.
+
+---
+
 ## Headline numbers
 
 | stage | count |

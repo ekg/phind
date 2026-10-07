@@ -1,5 +1,13 @@
 # Mycobacteriaceae prophage-derived ML phage genomes — NTM v3 (unified)
 
+> ## ⚠️ These ML genomes are MOSAICS — do not use as genome sequences (2026-10-07)
+>
+> 747/1,304 (57%) exceed 1.5x the median member length (up to 6.2x), covering 97%
+> of prophages, and **387/395 CheckV "high-quality" genomes are mosaics** (CheckV
+> rewards the chimera). They are 150 kb concatenations of common blocks, not
+> single genomes. Per-clade audit: `v3_mosaic_audit.tsv`.
+> Use the v3.1 genome-path reconstructions instead (`--path-mode observed`).
+
 **1,304 maximum-likelihood (ML) phage genomes** (+ **893** ancestral-state
 genomes) mined from **36,857 prophages** across the **union cohort** of
 **34,163 Mycobacteriaceae genomes** — spanning **443 host clades**, of which

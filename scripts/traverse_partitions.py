@@ -49,6 +49,27 @@ A traversal is sampled as a random walk over the partition set (seeded RNG):
     while the ``w_b`` factor keeps every unvisited partition reachable in
     proportion to its support.
 
+  * ``--path-mode observed`` instead RESTRICTS the candidate set at every
+    step to partitions with an observed adjacency from the current partition
+    (``adj[current][b] > 0``); the first partition must start at least one
+    prophage (``first_counts[p] > 0``).  When no observed-adjacent candidate
+    exists the walk terminates at a natural terminus -- it never falls back to
+    non-adjacent partitions -- so ``--max-length`` acts as a safety cap only.
+    ``--close-circle`` stops an observed walk early when the tail is observed
+    adjacent back to the path start (circular prophage), guarded by a minimum
+    accumulated length (0.5 x the clade's median member length, 5 kb floor) so
+    a single mutual adjacency cannot close a one-step walk.  Observed mode adds
+    per-community ``path_stats`` (``n_path_steps``, ``path_adj_fraction``,
+    ``terminated_by`` in {terminus, closed, budget}, ``budget_hit``,
+    ``best_by``/``best_len``, ``max_member_len``, ``member_len_p50``,
+    ``member_len_p90``, ``length_ratio``, ``target_len``/``target_source``/
+    ``target_guard_relaxed``/``length_ratio_vs_target``, and the sample length
+    min/median/max) to ``.traversal.json`` / ``.stats.json``.  With
+    ``--target-length N`` the ML sample is the closest-to-target sample within
+    ``[0.5N, 1.2N]`` (``best_by='closest_to_target'``); without it, the ML
+    sample is the longest terminated path that does not exceed the largest real
+    member (``best_by='longest_within_member_max'``).  Free mode is unchanged.
+
   * the walk stops when no unvisited partition fits the remaining budget
     (``--max-length``) or all partitions have been visited.
 
@@ -141,7 +162,8 @@ USAGE
 -----
     python3 scripts/traverse_partitions.py \
         --partitions-dir <dir> --bed <partitions.bed> --output <prefix> \
-        [--mode ml|ancestral] [--n-samples N] [--alpha A] [--seed S]
+        [--mode ml|ancestral] [--n-samples N] [--alpha A] [--seed S] \
+        [--path-mode free|observed] [--close-circle] [--target-length N]
 """
 
 import argparse
@@ -172,6 +194,9 @@ DEFAULT_COVERAGE_THRESHOLD = 0.25
 DEFAULT_GAP_SIZE = 0           # N-runs between partition blocks in the genome
 DEFAULT_SEED = 42              # seeded RNG -> reproducible samples
 DEFAULT_MODE = 'ml'
+DEFAULT_PATH_MODE = 'free'     # 'free' = current biased walk; 'observed' = adjacency-required
+DEFAULT_CLOSE_CIRCLE = False   # stop observed walks when the tail links back to the start
+DEFAULT_TARGET_LENGTH = None   # observed mode: CheckV aai_expected_length target (bp)
 
 STATES = 'ACGT-'                       # Fitch state order (tie-break order)
 _STATE_IDX = {c: i for i, c in enumerate(STATES)}
@@ -452,6 +477,26 @@ def build_adjacency_graph(normalized):
     return dict(adj), first_counts, last_counts, occurrence
 
 
+def median_length(lengths):
+    """Median of a list of lengths (0.0 when empty)."""
+    if not lengths:
+        return 0.0
+    s = sorted(lengths)
+    n = len(s)
+    mid = n // 2
+    return float(s[mid]) if n % 2 else (s[mid - 1] + s[mid]) / 2.0
+
+
+def percentile_length(lengths, q):
+    """Nearest-rank percentile (q in 0-100) of a list of lengths (0.0 when
+    empty)."""
+    if not lengths:
+        return 0.0
+    s = sorted(lengths)
+    rank = max(1, math.ceil(q / 100.0 * len(s)))
+    return float(s[rank - 1])
+
+
 # ─── Level 1 (ML across partitions): weights + weighted path sampling ──────
 
 def compute_sampling_weights(coverage_stats, alpha=DEFAULT_ALPHA):
@@ -463,19 +508,39 @@ def compute_sampling_weights(coverage_stats, alpha=DEFAULT_ALPHA):
             for pid, stats in coverage_stats.items()}
 
 
-def sample_traversal(weights, adj, part_lengths, max_length, rng, beta=DEFAULT_BETA):
+def sample_traversal(weights, adj, part_lengths, max_length, rng,
+                     beta=DEFAULT_BETA, path_mode=DEFAULT_PATH_MODE,
+                     close_circle=DEFAULT_CLOSE_CIRCLE, first_counts=None,
+                     close_min_len=None):
     """Draw ONE weighted traversal (a path) over the partition set.
 
-    First partition proportional to w; each next partition b among the
-    unvisited partitions that fit the remaining budget with
-    P(b) ~ w_b * (1 + beta * adj[current][b]).  Stops when nothing fits (or
-    all partitions visited).  No hard threshold on partition rarity.
+    ``path_mode='free'`` (default, byte-identical to v3): first partition
+    proportional to w; each next partition b among the unvisited partitions
+    that fit the remaining budget with P(b) ~ w_b * (1 + beta*adj[current][b]).
+    Adjacency only *biases* the step; nothing is required.  Stops when nothing
+    fits (or all partitions visited).
 
-    Returns (path, support, adj_pairs, genome_length_bp):
+    ``path_mode='observed'``: the candidate set is RESTRICTED to partitions
+    with an observed adjacency from the current partition (adj[current][b] > 0).
+    The first partition is restricted to partitions that start at least one
+    prophage (first_counts[p] > 0).  When no observed-adjacent candidate
+    exists the walk terminates at a natural terminus -- it does NOT fall back
+    to non-adjacent partitions.  ``--max-length`` is a safety cap only.
+    ``close_circle=True``: stop early when the tail partition is observed
+    adjacent back to the path start (circular prophage), but only once the
+    accumulated path length reaches ``close_min_len`` bp (a minimum-coverage
+    guard against firing on a single mutual edge; None falls back to a 5 kb
+    floor).
+
+    Returns (path, support, adj_pairs, genome_length_bp, terminated_by,
+    budget_hit):
       support    = sum(log2 w_p) over the path (relative path support),
       adj_pairs  = number of consecutive path pairs that are observed
                    adjacencies in some prophage,
-      genome_length_bp = sum of representative lengths on the path.
+      genome_length_bp = sum of representative lengths on the path,
+      terminated_by = 'terminus' | 'closed' | 'budget'  (observed mode;
+                      'terminus' is the only possible free-mode stop),
+      budget_hit = terminated_by == 'budget'.
     """
     pids = list(weights)
     path = []
@@ -483,11 +548,33 @@ def sample_traversal(weights, adj, part_lengths, max_length, rng, beta=DEFAULT_B
     remaining = max_length
     total_len = 0
     current = None
+    terminated_by = 'terminus'
+    close_floor = 5000 if close_min_len is None else close_min_len
     while True:
-        cand = [p for p in pids
-                if p not in visited and part_lengths.get(p, 0) <= remaining]
-        if not cand:
+        if (path_mode == 'observed' and close_circle and current is not None
+                and path and total_len >= close_floor
+                and adj.get(current, {}).get(path[0], 0) > 0):
+            terminated_by = 'closed'
             break
+        if path_mode == 'observed':
+            if current is None:
+                eligible = [p for p in pids
+                            if first_counts and first_counts.get(p, 0) > 0]
+            else:
+                adj_cur = adj.get(current, {})
+                eligible = [p for p in pids
+                            if p not in visited and adj_cur.get(p, 0) > 0]
+            cand = [p for p in eligible
+                    if part_lengths.get(p, 0) <= remaining]
+            if not cand:
+                # eligible-but-too-long -> safety cap; otherwise natural end
+                terminated_by = 'budget' if eligible else 'terminus'
+                break
+        else:
+            cand = [p for p in pids
+                    if p not in visited and part_lengths.get(p, 0) <= remaining]
+            if not cand:
+                break
         if current is None:
             scores = [weights[p] for p in cand]
         else:
@@ -504,23 +591,90 @@ def sample_traversal(weights, adj, part_lengths, max_length, rng, beta=DEFAULT_B
     support = sum(math.log2(max(weights[p], 1e-12)) for p in path)
     adj_pairs = sum(1 for i in range(len(path) - 1)
                     if adj.get(path[i], {}).get(path[i + 1], 0) > 0)
-    return path, round(support, 4), adj_pairs, total_len
+    budget_hit = terminated_by == 'budget'
+    return (path, round(support, 4), adj_pairs, total_len, terminated_by,
+            budget_hit)
 
 
 def sample_traversals(weights, adj, part_lengths, max_length, n_samples, seed,
-                      beta=DEFAULT_BETA):
+                      beta=DEFAULT_BETA, path_mode=DEFAULT_PATH_MODE,
+                      close_circle=DEFAULT_CLOSE_CIRCLE, first_counts=None,
+                      close_min_len=None):
     """Draw n_samples traversals with a seeded RNG.
 
     Same seed -> identical samples.  Returns (samples, rng) where each sample
-    is a dict {index, path, support, adj_pairs, genome_length_bp}."""
+    is a dict {index, path, support, adj_pairs, genome_length_bp,
+    terminated_by, budget_hit}."""
     rng = random.Random(seed)
     samples = []
     for s in range(n_samples):
-        path, support, adj_pairs, length = sample_traversal(
-            weights, adj, part_lengths, max_length, rng, beta)
+        path, support, adj_pairs, length, terminated_by, budget_hit = \
+            sample_traversal(weights, adj, part_lengths, max_length, rng, beta,
+                             path_mode=path_mode, close_circle=close_circle,
+                             first_counts=first_counts,
+                             close_min_len=close_min_len)
         samples.append({'index': s, 'path': path, 'support': support,
-                        'adj_pairs': adj_pairs, 'genome_length_bp': length})
+                        'adj_pairs': adj_pairs, 'genome_length_bp': length,
+                        'terminated_by': terminated_by,
+                        'budget_hit': budget_hit})
     return samples, rng
+
+
+def select_best_observed_sample(samples, weights, max_member_len=None,
+                                target_length=None):
+    """Pick the ML genome sample for --path-mode observed.
+
+    Prefer samples that reached a real genomic end (terminated_by in
+    {terminus, closed}) over budget-truncated ones.
+
+    With ``target_length`` (--target-length, typically CheckV
+    aai_expected_length): discard samples outside ``[0.5*target, 1.2*target]``
+    and, among the remainder, minimize ``abs(log(len / target))``; tie-break
+    higher TOTAL TYPICALITY = sum(w_p), then longer.  If the guards empty the
+    set, fall back to the closest-to-target sample and flag the relaxation.
+
+    Without ``target_length`` (selection rule v2): discard samples longer than
+    the clade's largest real member (``max_member_len``) -- a longer path is a
+    chimera -- and pick the LONGEST remainder; when the filter empties the set
+    fall back to the longest kept sample ('exceeded_member_max').
+
+    If no sample terminated, fall back to the max-support rule
+    ('support_fallback').
+
+    Returns (best_index, best_by, target_guard_relaxed)."""
+    terminated = [i for i, s in enumerate(samples)
+                  if s.get('terminated_by') in ('terminus', 'closed')]
+    if not terminated:
+        return (max(range(len(samples)),
+                    key=lambda i: samples[i]['support']),
+                'support_fallback', False)
+
+    def typicality(i):
+        return sum(weights.get(p, 0.0) for p in samples[i]['path'])
+
+    if target_length:
+        def target_key(i):
+            s = samples[i]
+            dist = abs(math.log(s['genome_length_bp'] / float(target_length)))
+            return (-dist, typicality(i), s['genome_length_bp'])
+
+        lo, hi = 0.5 * target_length, 1.2 * target_length
+        within = [i for i in terminated
+                  if lo <= samples[i]['genome_length_bp'] <= hi]
+        if within:
+            return max(within, key=target_key), 'closest_to_target', False
+        return (max(terminated, key=target_key), 'target_guard_relaxed', True)
+
+    def longest_key(i):
+        return (samples[i]['genome_length_bp'], typicality(i))
+
+    if max_member_len is not None:
+        within = [i for i in terminated
+                  if samples[i]['genome_length_bp'] <= max_member_len]
+        if within:
+            return max(within, key=longest_key), 'longest_within_member_max', False
+        return max(terminated, key=longest_key), 'exceeded_member_max', False
+    return max(terminated, key=longest_key), 'longest_within_member_max', False
 
 
 # ─── Ancestral mode: NJ tree + Fitch parsimony ─────────────────────────────
@@ -813,7 +967,11 @@ def _community_name(prefix):
 def write_outputs(prefix, mode, samples, best_index, weights, freq,
                   consensi, consensus_diag, ancestral, ancestral_diag,
                   trees, coverage_stats, adj, genome_seq, genome_pids,
-                  skipped_no_seq, metrics, params, inputs, part_lengths):
+                  skipped_no_seq, metrics, params, inputs, part_lengths,
+                  path_best_by=None, path_max_member_len=None,
+                  path_member_len_p50=None, path_member_len_p90=None,
+                  path_target_len=None, path_target_source=None,
+                  path_target_guard_relaxed=False):
     """Write all per-community outputs.  Returns dict of written files."""
     parent = os.path.dirname(prefix)
     if parent:
@@ -887,6 +1045,33 @@ def write_outputs(prefix, mode, samples, best_index, weights, freq,
         'metrics': metrics,
         'partitions': partitions_records,
     }
+    if params.get('path_mode') == 'observed':
+        n_pairs = max(len(best['path']) - 1, 0)
+        lens = sorted(s['genome_length_bp'] for s in samples)
+        traversal_json['path_stats'] = {
+            'n_path_steps': len(best['path']),
+            'path_adj_fraction': (round(best_observed / n_pairs, 4)
+                                  if n_pairs else 1.0),
+            'terminated_by': best.get('terminated_by', 'terminus'),
+            'budget_hit': bool(best.get('budget_hit', False)),
+            'best_by': path_best_by or 'support_fallback',
+            'best_len': best['genome_length_bp'],
+            'max_member_len': path_max_member_len,
+            'member_len_p50': path_member_len_p50,
+            'member_len_p90': path_member_len_p90,
+            'length_ratio': (round(best['genome_length_bp']
+                                   / path_member_len_p50, 4)
+                             if path_member_len_p50 else None),
+            'target_len': path_target_len,
+            'target_source': path_target_source,
+            'target_guard_relaxed': bool(path_target_guard_relaxed),
+            'length_ratio_vs_target': (round(best['genome_length_bp']
+                                             / path_target_len, 4)
+                                       if path_target_len else None),
+            'sample_len_min': lens[0],
+            'sample_len_median': median_length(lens),
+            'sample_len_max': lens[-1],
+        }
     json_path = prefix + '.traversal.json'
     with open(json_path, 'w') as f:
         json.dump(traversal_json, f, indent=2)
@@ -994,6 +1179,8 @@ def write_outputs(prefix, mode, samples, best_index, weights, freq,
                   'n_partitions_total': len(partitions),
                   'n_partitions_with_seq': sum(1 for p in partitions
                                                if part_lengths.get(p, 0))}
+    if params.get('path_mode') == 'observed':
+        stats_json['path_stats'] = traversal_json['path_stats']
     stats_path = prefix + '.stats.json'
     with open(stats_path, 'w') as f:
         json.dump(stats_json, f, indent=2)
@@ -1009,7 +1196,10 @@ def run_traversal(partitions_dir, bed_path, output_prefix, mode=DEFAULT_MODE,
                   seed=DEFAULT_SEED, beta=DEFAULT_BETA,
                   max_length=DEFAULT_MAX_LENGTH,
                   coverage_threshold=DEFAULT_COVERAGE_THRESHOLD,
-                  gap_size=DEFAULT_GAP_SIZE):
+                  gap_size=DEFAULT_GAP_SIZE,
+                  path_mode=DEFAULT_PATH_MODE,
+                  close_circle=DEFAULT_CLOSE_CIRCLE,
+                  target_length=DEFAULT_TARGET_LENGTH):
     """Run the full two-level ML pipeline.  Returns (result_dict, files_dict)."""
     t0 = time.time()
 
@@ -1068,13 +1258,50 @@ def run_traversal(partitions_dir, bed_path, output_prefix, mode=DEFAULT_MODE,
     # 5. Representative lengths + weighted path sampling
     part_lengths = {pid: len(consensi[pid]) if pid in consensi else 0
                     for pid in partitions}
+    # Clade member prophage lengths from the input member sequences (each
+    # member = sum of its partition representative lengths).  These bound the
+    # observed-mode genome: a path longer than the largest real member is a
+    # chimera.  Fall back to the sampled path lengths when no sequence exists.
+    member_lengths = [sum(part_lengths.get(p, 0) for p in pids)
+                      for pids in normalized.values()]
+    member_lengths = [ln for ln in member_lengths if ln > 0]
+    max_member_len = max(member_lengths) if member_lengths else None
+    member_len_p50 = median_length(member_lengths) if member_lengths else None
+    member_len_p90 = percentile_length(member_lengths, 90) if member_lengths else None
+    # Minimum-coverage guard for --close-circle: 0.5 x the clade's median
+    # member prophage length, 5 kb floor when unavailable.
+    close_min_len = (0.5 * member_len_p50
+                     if member_len_p50 else 5000)
     samples, rng = sample_traversals(weights, adj, part_lengths, max_length,
-                                     n_samples, seed, beta)
-    best_index = max(range(n_samples), key=lambda i: samples[i]['support'])
+                                     n_samples, seed, beta,
+                                     path_mode=path_mode,
+                                     close_circle=close_circle,
+                                     first_counts=first_counts,
+                                     close_min_len=close_min_len)
+    if max_member_len is None:
+        lens = [s['genome_length_bp'] for s in samples]
+        max_member_len = max(lens) if lens else 0
+        member_len_p50 = median_length(lens)
+        member_len_p90 = percentile_length(lens, 90)
+    if path_mode == 'observed':
+        best_index, path_best_by, target_guard_relaxed = \
+            select_best_observed_sample(samples, weights, max_member_len,
+                                        target_length)
+    else:
+        best_index = max(range(n_samples), key=lambda i: samples[i]['support'])
+        path_best_by = None
+        target_guard_relaxed = False
     best = samples[best_index]
+    target_len = target_length if target_length else None
+    target_source = 'cli' if target_length else 'max_member'
     print(f'[5] sampling: {n_samples} traversals (seed={seed}); best sample '
           f'#{best_index}: {len(best["path"])} partitions, '
-          f'{best["genome_length_bp"]:,} bp, support={best["support"]}')
+          f'{best["genome_length_bp"]:,} bp, support={best["support"]}'
+          + (f', best_by={path_best_by}, max_member_len='
+             f'{max_member_len:.0f}, member_len_p50={member_len_p50:.0f}'
+             + (f', target_len={target_len}, ' if target_len else ', ')
+             + f'target_guard_relaxed={target_guard_relaxed}'
+             if path_best_by else ''))
 
     # 6. Sampling statistics
     metrics, freq = compute_sampling_metrics(samples, weights)
@@ -1096,6 +1323,10 @@ def run_traversal(partitions_dir, bed_path, output_prefix, mode=DEFAULT_MODE,
         'seed': seed, 'max_length': max_length,
         'coverage_threshold': coverage_threshold, 'gap_size': gap_size,
     }
+    if path_mode == 'observed':
+        params['path_mode'] = path_mode
+        params['close_circle'] = close_circle
+        params['target_length'] = target_length
     inputs = {'bed': bed_path, 'partitions_dir': partitions_dir,
               'n_prophages': n_prophages, 'n_partitions': len(partitions)}
 
@@ -1104,7 +1335,14 @@ def run_traversal(partitions_dir, bed_path, output_prefix, mode=DEFAULT_MODE,
                           freq, consensi, consensus_diag, ancestral,
                           ancestral_diag, trees, coverage_stats, adj,
                           genome_seq, genome_pids, skipped_no_seq, metrics,
-                          params, inputs, part_lengths)
+                          params, inputs, part_lengths,
+                          path_best_by=path_best_by,
+                          path_max_member_len=max_member_len,
+                          path_member_len_p50=member_len_p50,
+                          path_member_len_p90=member_len_p90,
+                          path_target_len=target_len,
+                          path_target_source=target_source,
+                          path_target_guard_relaxed=target_guard_relaxed)
     print(f'[8] wrote {len(files)} output files under {output_prefix}.*')
     print(f'    completed in {time.time() - t0:.1f}s')
 
@@ -1178,6 +1416,30 @@ def main(argv=None):
     parser.add_argument('--gap-size', type=int, default=DEFAULT_GAP_SIZE,
                         help='N-runs inserted between partition blocks in the '
                              'stitched genome (default 0 = plain concatenation)')
+    parser.add_argument('--path-mode', choices=['free', 'observed'],
+                        default=DEFAULT_PATH_MODE,
+                        help='Level-1 walk rule. "free" (default) = current '
+                             'behaviour: every unvisited partition fitting the '
+                             'budget is a candidate and observed adjacency only '
+                             'biases the step (w*(1+beta*adj)). "observed" = '
+                             'restrict candidates to partitions with an '
+                             'observed adjacency from the current partition; '
+                             'the first partition must start at least one '
+                             'prophage; the walk terminates at a natural '
+                             'terminus when no adjacency exists (no fallback)')
+    parser.add_argument('--close-circle', action='store_true',
+                        default=DEFAULT_CLOSE_CIRCLE,
+                        help='observed mode only: stop early when a candidate '
+                             'is observed adjacent back to the path start '
+                             '(circular prophage). Default off')
+    parser.add_argument('--target-length', type=int,
+                        default=DEFAULT_TARGET_LENGTH,
+                        help='observed mode only: target genome length in bp '
+                             '(typically CheckV aai_expected_length). When '
+                             'given, samples outside [0.5x, 1.2x] the target '
+                             'are discarded and the closest-to-target sample '
+                             'wins (guards relaxed if nothing fits). Default '
+                             'None = longest path within the largest member')
     args = parser.parse_args(argv)
 
     if not os.path.isdir(args.partitions_dir):
@@ -1196,12 +1458,16 @@ def main(argv=None):
         parser.error('--coverage-threshold must be in [0, 1]')
     if args.max_length <= 0:
         parser.error('--max-length must be positive')
+    if args.target_length is not None and args.target_length <= 0:
+        parser.error('--target-length must be positive')
 
     result, files = run_traversal(
         args.partitions_dir, args.bed, args.output, mode=args.mode,
         n_samples=args.n_samples, alpha=args.alpha, seed=args.seed,
         beta=args.adj_weight, max_length=args.max_length,
-        coverage_threshold=args.coverage_threshold, gap_size=args.gap_size)
+        coverage_threshold=args.coverage_threshold, gap_size=args.gap_size,
+        path_mode=args.path_mode, close_circle=args.close_circle,
+        target_length=args.target_length)
     return result
 
 
